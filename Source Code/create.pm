@@ -171,7 +171,14 @@ sub compareDir {
                     $self->verbose("Delete file:\n$self->{destination}/$olderDir/$oldFile\n");
                     unlink("$self->{destination}/$olderDir/$oldFile");
                     $self->verbose("Link file:\n$self->{destination}/$olderDir/$oldFile\n=> $self->{destination}/$newerDir/$oldFile\n");
-                    symlink("$self->{destination}/$newerDir/$oldFile","$self->{destination}/$olderDir/$oldFile");
+                    if($^O eq "MSWin32")
+                    {
+                        link("$self->{destination}/$newerDir/$oldFile","$self->{destination}/$olderDir/$oldFile");
+                    }
+                    else
+                    {
+                        symlink("$self->{destination}/$newerDir/$oldFile","$self->{destination}/$olderDir/$oldFile");
+                    }
                 }
             }
             elsif (-d "$self->{destination}/$olderDir/$oldFile")
