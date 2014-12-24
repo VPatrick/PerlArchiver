@@ -19,22 +19,22 @@ sub activateVerboseMode {
 };
 
 sub create {
-	my $self = shift;
+	my ($self, @arguments) = @_;
 	$self->verbose("create");
 };
 
 sub restore {
-	my $self = shift;
+	my ($self, @arguments) = @_;
 	$self->verbose("restore");
 };
 
 sub del {
-	my $self = shift;
+	my ($self, @arguments) = @_;
 	$self->verbose("delete");
 };
 
 sub list {
-	my $self = shift;
+	my ($self, @arguments) = @_;
 	$self->verbose("list");
 };
 

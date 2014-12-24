@@ -14,10 +14,10 @@ my $i = Invoker->new();
 Getopt::Long::Configure ("bundling");
 GetOptions (
 	"verbose|v"  => sub { $i->activateVerboseMode(1) },
-	"create|c|cs" => sub { $i->create() },
-	"restore|r|rp" => sub { $i->restore() },
-	"slim|s" => sub { print "slim\n" },
-	"delete|d" => sub { $i->del() },
-	"list|l" => sub { $i->list() },
+	"create|c|cs" => sub { $i->create(@ARGV) },
+	"restore|r|rp" => sub { $i->restore(@ARGV) },
+	"slim|s" => sub { $i->slim(@ARGV) },
+	"delete|d" => sub { $i->del(@ARGV) },
+	"list|l" => sub { $i->list(@ARGV) },
 	"help|h" => sub { $i->help() }
 ) or die("Error in command line arguments\n");
