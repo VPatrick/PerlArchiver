@@ -13,7 +13,7 @@ sub new {
 	return $self;
 };
 
-sub setVerbosity {
+sub activateVerboseMode {
 	my ($self, $Verbosity) = @_;
 	$self->{isVerbose} = $Verbosity;
 };
@@ -44,9 +44,22 @@ sub help {
 };
 
 sub verbose {
-	my ($self, $message) = @_;
+	my ($self, $message, $state) = @_;
 	if ($self->{isVerbose}) {
-		print "$message\n";
+		if ($state) {
+			use Term::ANSIColor;
+			if ($state eq "OK") {
+				print color("bold green"), "[OK]\t", color("reset"), "$message\n";
+			} elsif ($state eq "WARNING") {
+				print color("bold yellow"), "[WARNING]\t", color("reset"), "$message\n";
+			} elsif ($state eq "ERROR") {
+				print color("bold red"), "[ERROR]\t", color("reset"), "$message\n";
+			} else {
+				print "$message\n";
+			}
+		} else {
+			print "$message\n";
+		}
 	}
 };
 

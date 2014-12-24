@@ -13,7 +13,7 @@ my $i = Invoker->new();
 
 Getopt::Long::Configure ("bundling");
 GetOptions (
-	"verbose|v"  => sub { $i->setVerbosity(1) },
+	"verbose|v"  => sub { $i->activateVerboseMode(1) },
 	"create|c|cs" => sub { $i->create() },
 	"restore|r|rp" => sub { $i->restore() },
 	"slim|s" => sub { print "slim\n" },
