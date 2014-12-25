@@ -1,5 +1,6 @@
 use strict;
 use warnings;
+use Data::Dumper;
 
 package Invoker;
 
@@ -35,7 +36,9 @@ sub del {
 
 sub list {
 	my ($self, @arguments) = @_;
-	$self->verbose("list");
+	use List;
+	my $list = List->new();
+	$list->list($arguments[0]);
 };
 
 sub help {
