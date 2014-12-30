@@ -77,6 +77,7 @@ sub create_c {
 #*****************************************************************************************************
 sub create_s {
     my $self=shift;
+    my $previousArchiveAvailable=0;
     $self->verbose("Start create s:\n***************\n");
     opendir(my $dsh,$self->{destination}) || die("Can't find directory $self->{destination}: $!");
     my @folder=readdir $dsh;
@@ -84,9 +85,14 @@ sub create_s {
     {
         if($folder[$i] ne "." and $folder[$i] ne ".." and $folder[$i] =~ /^SOURCE/)
         {
+            $previousArchiveAvailable=1;
             $self->verbose("Compare Archives: $folder[$i] <=> $folder[$i+1]\n");
-            $self->compareDir($folder[$i],$folder[$i+1]);
+            $self->compareDir("$folder[$i]","$folder[$i+1]");
         }
+    }
+    if(!$previousArchiveAvailable)
+    {
+        $self->verbose("No previous archive available");
     }
     closedir($dsh);
 };
@@ -184,8 +190,8 @@ sub compareDir {
             }
             elsif (-d "$self->{destination}/$olderDir/$oldFile")
             {
-                $self->verbose("Compare Diretory:\n $self->{destination}/$olderDir/$oldFile\n$self->{destination}/$newerDir/$oldFile\n");
-                $self->compareDir("/$olderDir/$oldFile","/$newerDir/$oldFile");
+                $self->verbose("Compare Diretory:\n$self->{destination}/$olderDir/$oldFile\n$self->{destination}/$newerDir/$oldFile\n");
+                $self->compareDir("$olderDir/$oldFile","$newerDir/$oldFile");
             }
             
         }
