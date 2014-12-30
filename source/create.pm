@@ -5,6 +5,7 @@
 #   Erstellt:       12.2014
 #*****************************************************************************************************
 use warnings;
+use strict;
 
 package Create;
 
@@ -59,10 +60,10 @@ sub create_c {
     my $self=shift;
     $self->verbose("Start create c:\n***************\n");
     opendir(my $dsh,$self->{source}) || die("Can't find directory $self->{source}: $!");
-    ($sec,$min,$hour,$day,$mon,$year,$wday,$yday,$isdst)=localtime();
+    my ($sec,$min,$hour,$day,$mon,$year,$wday,$yday,$isdst)=localtime();
     $year+=1900;
     $mon+=1;
-    $now=sprintf("%02d_%02d_%02d_%02d_%02d_%02d",$year%100,$mon,$day,$hour,$min,$sec);
+    my $now=sprintf("%02d_%02d_%02d_%02d_%02d_%02d",$year%100,$mon,$day,$hour,$min,$sec);
     mkdir($self->{destination}."/SOURCE_".$now);
     $self->verbose("Create Archive: $self->{destination}/SOURCE_$now\n");
     $self->copyDir("","SOURCE_$now");
@@ -78,7 +79,7 @@ sub create_s {
     my $self=shift;
     $self->verbose("Start create s:\n***************\n");
     opendir(my $dsh,$self->{destination}) || die("Can't find directory $self->{destination}: $!");
-    @folder=readdir $dsh;
+    my @folder=readdir $dsh;
     for(my $i=0;$i<scalar(@folder)-1;$i++)
     {
         if($folder[$i] ne "." and $folder[$i] ne ".." and $folder[$i] =~ /^SOURCE/)
@@ -165,7 +166,7 @@ sub compareDir {
             if (-f "$self->{destination}/$olderDir/$oldFile" )
             {
                 $self->verbose("Compare File:\n$self->{destination}/$olderDir/$oldFile\n$self->{destination}/$newerDir/$oldFile");
-                $result=$self->compareFile("$self->{destination}/$olderDir/$oldFile","$self->{destination}/$newerDir/$oldFile");
+                my $result=$self->compareFile("$self->{destination}/$olderDir/$oldFile","$self->{destination}/$newerDir/$oldFile");
                 if($result eq "true")
                 {
                     $self->verbose("Delete file:\n$self->{destination}/$olderDir/$oldFile\n");
@@ -201,16 +202,16 @@ sub compareDir {
 sub compareFile {
     my ($self,$olderFile,$newerFile)=@_;
     use Digest;                                     # Importieren des Core Module Digest
-    $md5=Digest->MD5;
+    my $md5=Digest->MD5;
     open(my $foh, "<", "$olderFile")
     or die "cannot open < $olderFile: $!";          # Öffnen der Datei zum Lesen
     open(my $fnh, "<", "$newerFile")
     or return "false";                              # Öffnen der Datei zum Lesen
     $md5->addfile($foh);                            # Hinzufügen der Datei
-    $digestOldFile=$md5->hexdigest;
+    my $digestOldFile=$md5->hexdigest;
     $md5->reset;
     $md5->addfile($fnh);                            # Hinzufügen der Datei
-    $digestNewFile=$md5->hexdigest;
+    my $digestNewFile=$md5->hexdigest;
     close($foh);
     close($fnh);
     if($digestOldFile eq $digestNewFile)
