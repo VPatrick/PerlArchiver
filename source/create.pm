@@ -1,9 +1,12 @@
+#!/usr/bin/perl
+
 #**************************************************************************************************+**
 #                                       Create Archiv
 #   Beschreibung:   Dieses Modul erstellt ein neues Archiv oder verschlankt ein bestehendes
 #   Autor:          Ramunno, Michel Angelo
 #   Erstellt:       12.2014
 #*****************************************************************************************************
+
 use warnings;
 use strict;
 
@@ -180,7 +183,11 @@ sub compareDir {
                     $self->verbose("Link file:\n$self->{destination}/$olderDir/$oldFile\n=> $self->{destination}/$newerDir/$oldFile\n");
                     if($^O eq "MSWin32")
                     {
-                        link("$self->{destination}/$newerDir/$oldFile","$self->{destination}/$olderDir/$oldFile");
+                        require Win32::Shortcut->import or die("Can't import Win32::Shortcut: $!");
+                        my $link = Win32::Shortcut->new();
+                        $link->{'Path'}="$self->{destination}/$newerDir/$oldFile";
+                        $link->Save("$self->{destination}/$olderDir/$oldFile.Ink");
+                        $link->close();
                     }
                     else
                     {
