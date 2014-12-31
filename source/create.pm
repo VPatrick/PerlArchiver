@@ -37,9 +37,9 @@ sub new {
 # Parameter:    Source = Pfad zum Quellverzeichnis
 #*****************************************************************************************************
 sub addSource{
-    my ($self,$Source) = @_;
+    my ($self,$source) = @_;
     # Hinzufügen des Quellverzeichnisses
-    $self->{source}=$Source;
+    $self->{source}=$source;
     $self->verbose("New source added: $self->{source}");
 }
 
@@ -49,9 +49,9 @@ sub addSource{
 # Parameter:    Destination = Pfad zum Zielverzeichnis
 #*****************************************************************************************************
 sub addDestination{
-    my ($self,$Destination) = @_;
+    my ($self,$destination) = @_;
     # Hinzufügen des Zielverzeichnisses
-    $self->{destination}=$Destination;
+    $self->{destination}=$destination;
     $self->verbose("New destination added: $self->{destination}");
 }
 
