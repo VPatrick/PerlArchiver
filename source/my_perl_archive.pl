@@ -10,12 +10,11 @@ use Getopt::Long;
 use Invoker;
 
 my $i = Invoker->new();
-
-Getopt::Long::Configure ("bundling");
+Getopt::Long::Configure("bundling");
 GetOptions (
 	"verbose|v"  => sub { $i->activateVerboseMode(1) },
 	"create|c|cs" => sub { $i->create(@ARGV) },
-	"restore|r|rp" => sub { $i->restore(@ARGV) },
+	"restore|r" => sub { $i->restore(@ARGV) },
 	"slim|s" => sub { $i->slim(@ARGV) },
 	"delete|d" => sub { $i->del(@ARGV) },
 	"list|l" => sub { $i->list(@ARGV) },
