@@ -14,29 +14,29 @@ sub new {
 	return $self;
 };
 
-sub activateVerboseMode {
+sub setVerboseLevel {
 	my ($self, $level) = @_;
 	$self->{verbosity}->setVerboseLevel($level);
 };
 
 sub create {
 	my ($self, @arguments) = @_;
-	$self->{verbosity}->verbose("create");
+	# Aufruf der entsprechenden Create-Methoden
 };
 
 sub slim {
 	my ($self, @arguments) = @_;
-	$self->{verbosity}->verbose("slim");
+	# Aufruf der entsprechenden Slim-Methoden
 }
 
 sub restore {
 	my ($self, @arguments) = @_;
-	$self->{verbosity}->verbose("restore");
+	# Aufruf der entsprechenden Restore-Methoden
 };
 
 sub del {
 	my ($self, @arguments) = @_;
-	$self->{verbosity}->verbose("delete");
+	# Aufruf der entsprechenden Delete-Methoden
 };
 
 sub list {

@@ -12,7 +12,7 @@ use Invoker;
 my $i = Invoker->new();
 Getopt::Long::Configure("bundling");
 GetOptions (
-	"verbose|v"  => sub { $i->activateVerboseMode(1) },
+	"verbose|v"  => sub { $i->setVerboseLevel(1) },
 	"create|c|cs" => sub { $i->create(@ARGV) },
 	"restore|r" => sub { $i->restore(@ARGV) },
 	"slim|s" => sub { $i->slim(@ARGV) },
