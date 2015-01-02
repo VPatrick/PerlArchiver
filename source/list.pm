@@ -1,39 +1,39 @@
 use strict;
 use warnings;
+use Verbosity;
 
 package List;
 
 sub new {
-	my ($invocant, $source) = @_;
+	my ($invocant) = @_;
 	my $class = ref($invocant) || $invocant;
 	my $self = {
-		source => $source
+		verbosity => Verbosity->new(0)
 	};
 	bless ($self, $class);
 	return $self;
 };
 
 sub list {
+	use File::Find qw(find);
 	my ($self, $directory) = @_;
-	$self->traverse($directory || ".", "");
+	my @list;
+	find(sub {
+		return if($_ eq '.' || $_ eq '..');
+		push @list, $File::Find::name;
+	}, $directory || ".");
+	$self->print_list(@list);
 };
 
-sub traverse {
-	my ($self, $dir, $margin) = @_;
-	print "[DIR]\t$dir\n";
-	chdir ($dir) || die "Cannot chdir to $dir\n";
-	local (*DIR);
-	opendir (DIR, ".");
-	while (my $f = readdir(DIR)) {
-		next if ($f eq "." or $f eq "..");
-		print "$margin$f\n";
-		if (-d $f) {
-			print "[REC]\t$f\n";
-			&traverse($f, $margin."    ");
+sub print_list {
+	my ($self, @list) = @_;
+	foreach (@list) {
+		if (-d $_) {
+			print "Directory\n";
+		} else {
+			print "File\n";
 		}
 	}
-	closedir (DIR);
-	chdir("..");
 };
 
 1;
