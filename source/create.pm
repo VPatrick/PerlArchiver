@@ -16,7 +16,7 @@ package Create;
 #                                         Konstruktor
 # Beschreibung: Erzeugt ein neues Objekt der Create Klasse
 # Parameter:    inFlag = Ansteuerung der Ausgabe von Programminformationen (optional)
-#                true => Ausgabe der Informationen
+#                1 => Ausgabe der Informationen
 #*****************************************************************************************************
 sub new {
     my ($invocant,$inFlag) = @_;
@@ -24,10 +24,10 @@ sub new {
     my $self = {
         source  => "",
         destination   => "",
-        flag  => $inFlag,
+        flag  => $inFlag || 0,
     };
     bless ($self, $class);
-    $self->verbose("New");
+    $self->verbose("New","OK");
     return $self;
 }
 
@@ -40,7 +40,7 @@ sub addSource{
     my ($self,$source) = @_;
     # Hinzufügen des Quellverzeichnisses
     $self->{source}=$source;
-    $self->verbose("New source added: $self->{source}");
+    $self->verbose("New source added: $self->{source}","OK");
 }
 
 #*****************************************************************************************************
@@ -52,7 +52,7 @@ sub addDestination{
     my ($self,$destination) = @_;
     # Hinzufügen des Zielverzeichnisses
     $self->{destination}=$destination;
-    $self->verbose("New destination added: $self->{destination}");
+    $self->verbose("New destination added: $self->{destination}","OK");
 }
 
 #*****************************************************************************************************
@@ -71,10 +71,10 @@ sub create_c {
     my ($sec,$min,$hour,$day,$mon,$year,$wday,$yday,$isdst)=localtime();
     $year+=1900;
     $mon+=1;
-    my $now=sprintf("%02d_%02d_%02d_%02d_%02d_%02d",$year%100,$mon,$day,$hour,$min,$sec);
+    my $now=sprintf("%04d_%02d_%02d_%02d_%02d_%02d",$year,$mon,$day,$hour,$min,$sec);
     # Erstellen des Zielverzeichnisses
     mkdir($self->{destination}."/SOURCE_".$now);
-    $self->verbose("Create Archive: $self->{destination}/SOURCE_$now\n");
+    $self->verbose("Create Archive: $self->{destination}/SOURCE_$now\n","OK");
     # Kopieren der Daten
     $self->copyDir("","SOURCE_$now");
 }
@@ -101,7 +101,7 @@ sub create_s {
         {
             # Falls vorhergehendes Archiv vorhanden
             $previousArchiveAvailable=1;
-            $self->verbose("Compare Archives: $folder[$i] <=> $folder[$i+1]\n");
+            $self->verbose("Compare Archives: $folder[$i] <=> $folder[$i+1]\n","OK");
             # Vergleich von einem Archiv mit dem vorhergehenden
             $self->compareDir("$folder[$i]","$folder[$i+1]");
         }
@@ -109,7 +109,7 @@ sub create_s {
     # Falls kein vorhergehendes Archiv vorhanden ist
     if(!$previousArchiveAvailable)
     {
-        $self->verbose("No previous archive available");
+        $self->verbose("No previous archive available","WARNING");
     }
 }
 
@@ -132,13 +132,16 @@ sub create_cs {
 #                                         verbose
 # Beschreibung: Erzeugt eine Ausgabe auf STDOUT, wenn das Flag gesetzt wurde
 # Parameter:    message = Ist die auszugebende Nachricht
+#               state = Gibt den Status der Nachtricht an {OK, WARNING, ERROR}
 #*****************************************************************************************************
 sub verbose {
-    my ($self,$message)=@_;
-    if($self->{flag})
+    my ($self,$message,$state)=@_;
+    if($self->{flag}==1)
     {
         # Ausgabe der Nachricht
-        print $message . "\n" ;
+        use Verbosity;
+        my $v = Verbosity->new(1);
+        $v->verbose($message,$state);
     }
 }
 
@@ -159,23 +162,23 @@ sub copyDir {
             # Überprüfen ob es sich um eine Datei handelt
             if (-f "$self->{source}/$directory/$_")
             {
-                $self->verbose("Copy file:\tSource = $self->{source}$directory/$_\n\t\t\tDestination = $self->{destination}/$destination$directory/$_\n");
+                $self->verbose("Copy file:\tSource = $self->{source}$directory/$_\n\t\t\tDestination = $self->{destination}/$destination$directory/$_\n","OK");
                 # Kopieren der Datei
                 copy("$self->{source}/$directory/$_","$self->{destination}/$destination/$directory/$_")or die "Can't copy file $_ : $!";
             }
             # Überprüfen ob es sich um ein Verzeichnis handelt
             elsif (-d "$self->{source}/$directory/$_")
             {
-                $self->verbose("Create directory:\t$self->{destination}/$destination$directory/$_\n");
+                $self->verbose("Create directory:\t$self->{destination}/$destination$directory/$_\n","OK");
                 # Erzeugen des Unterverzeichnisses
                 mkdir("$self->{destination}/$destination$directory/$_");
-                $self->verbose("Change directory:\t$self->{source}$directory/$_\n");
+                $self->verbose("Change directory:\t$self->{source}$directory/$_\n","OK");
                 # Rekursiver Aufruf der Methode zum Kopieren des Unterverzeichnisses
                 $self->copyDir("$directory/$_","$destination");
             }
         }
     }
-    $self->verbose("Leave directory:\t$self->{source}$directory\n");
+    $self->verbose("Leave directory:\t$self->{source}$directory\n","OK");
     # Schließen des Quellverzeichnisses bzw. dessen Unterverzeichnisses
     closedir($dsh);
 }
@@ -198,16 +201,16 @@ sub compareDir {
             # Überprüfen ob es sich um eine Datei handelt
             if (-f "$self->{destination}/$olderDir/$oldFile" )
             {
-                $self->verbose("Compare File:\n$self->{destination}/$olderDir/$oldFile\n$self->{destination}/$newerDir/$oldFile");
+                $self->verbose("Compare File:\n$self->{destination}/$olderDir/$oldFile\n$self->{destination}/$newerDir/$oldFile","OK");
                 # Überprüfung der Dateien auf Gleichheit
                 my $result=$self->compareFile("$self->{destination}/$olderDir/$oldFile","$self->{destination}/$newerDir/$oldFile");
                 if($result eq "true")
                 {
                     # Falls beide Dateien gleich sind
-                    $self->verbose("Delete file:\n$self->{destination}/$olderDir/$oldFile\n");
+                    $self->verbose("Delete file:\n$self->{destination}/$olderDir/$oldFile\n","OK");
                     # Löschen der alten Datei
                     unlink("$self->{destination}/$olderDir/$oldFile");
-                    $self->verbose("Link file:\n$self->{destination}/$olderDir/$oldFile\n=> $self->{destination}/$newerDir/$oldFile\n");
+                    $self->verbose("Link file:\n$self->{destination}/$olderDir/$oldFile\n=> $self->{destination}/$newerDir/$oldFile\n","OK");
                     # Überprüfen um welches Betriebssystem es sich handelt
                     if($^O eq "MSWin32")
                     {
@@ -228,7 +231,7 @@ sub compareDir {
             # Überprüfen ob es sich um ein Verzeichnis handelt
             elsif (-d "$self->{destination}/$olderDir/$oldFile")
             {
-                $self->verbose("Compare Diretory:\n$self->{destination}/$olderDir/$oldFile\n$self->{destination}/$newerDir/$oldFile\n");
+                $self->verbose("Compare Diretory:\n$self->{destination}/$olderDir/$oldFile\n$self->{destination}/$newerDir/$oldFile\n","OK");
                 # Rekursiver Aufruf der Methode zur Untesuchung des Unterverzeichnisses
                 $self->compareDir("$olderDir/$oldFile","$newerDir/$oldFile");
             }
@@ -273,7 +276,7 @@ sub compareFile {
     if($digestOldFile eq $digestNewFile)
     {
         # Falls beide Dateien gleich sind => unverändert
-        $self->verbose("=> Files are equal!\n");
+        $self->verbose("=> Files are equal!\n","OK");
         return "true";
     }
     else
@@ -281,12 +284,12 @@ sub compareFile {
         if(-l $olderFile)
         {
             # Falls ältere Datei bereits ein link ist => unverändert
-            $self->verbose("=> Files are is already link!\n");
+            $self->verbose("=> Files are is already link!\n","OK");
             return "true";
             
         }
         # Falls beide Dateien nicht gleich sind => verändert
-        $self->verbose("=> Files are diffrent!\n");
+        $self->verbose("=> Files are diffrent!\n","OK");
         return "false";
     }
 }
@@ -298,7 +301,7 @@ sub compareFile {
 #*****************************************************************************************************
 sub DESTROY {
     my $self = shift;
-    $self->verbose("Destroy");
+    $self->verbose("Destroy","OK");
 }
 
 1;
