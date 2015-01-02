@@ -1,32 +1,14 @@
 use strict;
 use warnings;
 
-package Verbosity;
+package Message;
 
 sub new {
 	my ($invocant, $level) = @_;
 	my $class = ref($invocant) || $invocant;
-	my $self = {
-		level => $level || 0
-	};
+	my $self = {};
 	bless ($self, $class);
 	return $self;
-};
-
-sub setVerboseLevel {
-	my ($self, $level) = @_;
-	$self->{level} = $level;
-};
-
-sub verbose {
-	my ($self, $message, $state) = @_;
-	if ($self->{level} > 0) {
-		if ($state) {
-			print $self->colourise($state), "$message\n";
-		} else {
-			print "$message\n";
-		}
-	}
 };
 
 sub message {
