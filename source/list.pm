@@ -16,12 +16,17 @@ sub new {
 
 sub list {
 	use File::Find qw(find);
-	my ($self, $directory) = @_;
+	my ($self, $archive, $timestamp) = @_;
+	
+	if ($timestamp =~ m/^\d{4}_\d{2}_\d{2}_\d{2}_\d{2}_\d{2}/) {
+		die $self->{verbosity}->error("Der übergebene Zeitstempel entspricht nicht dem vorgegebenen Format: yyyy_mm_dd_HH_MM_SS");
+	}
+	
 	my @list;
 	find(sub {
 		return if($_ eq '.' || $_ eq '..');
 		push @list, $File::Find::name;
-	}, $directory || ".");
+	}, $archive || ".");
 	$self->print_list(@list);
 };
 
@@ -29,9 +34,9 @@ sub print_list {
 	my ($self, @list) = @_;
 	foreach (@list) {
 		if (-d $_) {
-			print "Directory\n";
+			print "d\t$_\n";
 		} else {
-			print "File\n";
+			print "\t$_\n";
 		}
 	}
 };
