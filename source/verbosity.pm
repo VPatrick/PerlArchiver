@@ -7,7 +7,7 @@ sub new {
 	my ($invocant, $level) = @_;
 	my $class = ref($invocant) || $invocant;
 	my $self = {
-		level => $level
+		level => $level || 0
 	};
 	bless ($self, $class);
 	return $self;
