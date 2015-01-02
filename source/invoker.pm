@@ -1,6 +1,7 @@
 use strict;
 use warnings;
 use Verbosity;
+use Message;
 
 package Invoker;
 
@@ -8,7 +9,8 @@ sub new {
 	my ($invocant) = @_;
 	my $class = ref($invocant) || $invocant;
 	my $self = {
-		verbosity => Verbosity->new(0)
+		verbosity => Verbosity->new,
+		message => Message->new
 	};
 	bless ($self, $class);
 	return $self;
@@ -40,10 +42,15 @@ sub del {
 };
 
 sub list {
-	use List;
 	my ($self, @arguments) = @_;
-	my $list = List->new();
-	$list->list($arguments[0]);
+	if ($#arguments == 1) {
+		use List;
+		my $list = List->new();
+		$list->list($arguments[0], $arguments[1]);
+	} else {
+		print $self->{message}->error("Die Anzahl der Parameter stimmt nicht.");
+		exit;
+	}
 };
 
 sub help {
