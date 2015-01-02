@@ -1,6 +1,7 @@
 use strict;
 use warnings;
 use Verbosity;
+use Message;
 
 package List;
 
@@ -8,7 +9,8 @@ sub new {
 	my ($invocant) = @_;
 	my $class = ref($invocant) || $invocant;
 	my $self = {
-		verbosity => Verbosity->new(0)
+		verbosity => Verbosity->new,
+		message => Message->new
 	};
 	bless ($self, $class);
 	return $self;
@@ -17,9 +19,9 @@ sub new {
 sub list {
 	use File::Find qw(find);
 	my ($self, $archive, $timestamp) = @_;
-	
-	if ($timestamp =~ m/^\d{4}_\d{2}_\d{2}_\d{2}_\d{2}_\d{2}/) {
-		die $self->{verbosity}->error("Der übergebene Zeitstempel entspricht nicht dem vorgegebenen Format: yyyy_mm_dd_HH_MM_SS");
+	if ($timestamp !~ m/^\d{4}_\d{2}_\d{2}_\d{2}_\d{2}_\d{2}/) {
+		print $self->{message}->error("Der Zeitstempel entspricht nicht dem vorgegebenen Format: yyyy_mm_dd_HH_MM_SS");
+		exit;
 	}
 	
 	my @list;
