@@ -20,6 +20,11 @@ sub setVerboseLevel {
 	$self->{level} = $level;
 };
 
+sub getVerboseLevel {
+	my $self = shift;
+	return $self->{level};
+}
+
 sub verbose {
 	my ($self, $message, $state) = @_;
 	if ($self->{level} > 0) {
