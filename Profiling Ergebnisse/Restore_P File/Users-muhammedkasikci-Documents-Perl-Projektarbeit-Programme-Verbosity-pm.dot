@@ -1,0 +1,68 @@
+digraph {
+graph [overlap=false]
+subgraph cluster_Restore {
+	label="Restore";
+	"Restore::new";
+	"Restore::addSource";
+	"Restore::addSourceName";
+	"Restore::addDestination";
+	"Restore::addUserTime";
+	"Restore::restore_rp";
+	"Restore::addPartial";
+	"Restore::RestoreFile";
+	"Restore::Find_source_r";
+}
+subgraph cluster_warnings {
+	label="warnings";
+	"warnings::import";
+}
+subgraph cluster_Term_ANSIColor {
+	label="Term::ANSIColor";
+	"Term::ANSIColor::BEGIN@28";
+	"Term::ANSIColor::BEGIN@22";
+	"Term::ANSIColor::BEGIN@27";
+	"Term::ANSIColor::CORE:sort";
+	"Term::ANSIColor::BEGIN@23";
+}
+subgraph cluster_Exporter {
+	label="Exporter";
+	"Exporter::import";
+}
+subgraph cluster_main {
+	label="main";
+	"main::BEGIN@2";
+	"main::BEGIN@1.2";
+	"main::BEGIN@13";
+}
+subgraph cluster_strict {
+	label="strict";
+	"strict::import";
+}
+subgraph cluster_Verbosity {
+	label="Verbosity";
+	"Verbosity::new";
+	"Verbosity::BEGIN@33";
+	"Verbosity::verbose";
+}
+"Verbosity::BEGIN@33" -> "Term::ANSIColor::BEGIN@22";
+"Verbosity::BEGIN@33" -> "Term::ANSIColor::BEGIN@23";
+"Verbosity::BEGIN@33" -> "Term::ANSIColor::CORE:sort";
+"Verbosity::BEGIN@33" -> "Exporter::import";
+"Verbosity::BEGIN@33" -> "Term::ANSIColor::BEGIN@28";
+"main::BEGIN@13" -> "main::BEGIN@1.2";
+"main::BEGIN@2" -> "warnings::import";
+"main::BEGIN@13" -> "Verbosity::BEGIN@33";
+"Restore::new" -> "Verbosity::new";
+"main::BEGIN@13" -> "main::BEGIN@2";
+"Verbosity::BEGIN@33" -> "Term::ANSIColor::BEGIN@27";
+"Restore::new" -> "Verbosity::verbose";
+"Restore::addSource" -> "Verbosity::verbose";
+"Restore::addDestination" -> "Verbosity::verbose";
+"Restore::addSourceName" -> "Verbosity::verbose";
+"Restore::addUserTime" -> "Verbosity::verbose";
+"Restore::restore_rp" -> "Verbosity::verbose";
+"Restore::addPartial" -> "Verbosity::verbose";
+"Restore::RestoreFile" -> "Verbosity::verbose";
+"Restore::Find_source_r" -> "Verbosity::verbose";
+"main::BEGIN@1.2" -> "strict::import";
+}

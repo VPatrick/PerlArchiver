@@ -1,0 +1,43 @@
+digraph {
+graph [overlap=false]
+subgraph cluster_UNIVERSAL {
+	label="UNIVERSAL";
+	"UNIVERSAL::isa";
+}
+subgraph cluster_File_Path {
+	label="File::Path";
+	"File::Path::rmtree";
+	"File::Path::mkpath";
+	"File::Path::remove_tree";
+	"File::Path::make_path";
+}
+subgraph cluster_version {
+	label="version";
+	"version::(bool";
+	"version::(cmp";
+}
+subgraph cluster_main {
+	label="main";
+	"main::BEGIN@10";
+	"main::BEGIN@1";
+	"main::BEGIN@13";
+	"main::BEGIN@8";
+	"main::BEGIN@9";
+	"main::BEGIN@12";
+	"main::RUNTIME";
+	"main::BEGIN@11";
+}
+"main::BEGIN@1" -> "main::BEGIN@13";
+"File::Path::rmtree" -> "UNIVERSAL::isa";
+"File::Path::mkpath" -> "UNIVERSAL::isa";
+"File::Path::make_path" -> "UNIVERSAL::isa";
+"File::Path::remove_tree" -> "UNIVERSAL::isa";
+"main::BEGIN@9" -> "version::(bool";
+"main::BEGIN@1" -> "main::BEGIN@12";
+"main::BEGIN@9" -> "version::(cmp";
+"main::BEGIN@1" -> "main::BEGIN@10";
+"main::BEGIN@1" -> "main::BEGIN@8";
+"main::RUNTIME" -> "main::BEGIN@1";
+"main::BEGIN@1" -> "main::BEGIN@9";
+"main::BEGIN@1" -> "main::BEGIN@11";
+}

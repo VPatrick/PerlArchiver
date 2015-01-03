@@ -1,0 +1,45 @@
+digraph {
+graph [overlap=false]
+node [shape=doublecircle];
+"main" -> "Create";
+"Scalar::Util" -> "strict";
+"warnings" -> "warnings";
+"Digest" -> "strict";
+"File::Copy" -> "File::Copy";
+"File::Copy" -> "File::Spec::Unix";
+"Exporter" -> "Exporter";
+"Create" -> "List::Util";
+"vars" -> "warnings::register";
+"File::Spec" -> "vars";
+"main" -> "warnings";
+"File::Copy" -> "warnings";
+"main" -> "main";
+"Digest" -> "vars";
+"File::Spec::Unix" -> "vars";
+"Config" -> "strict";
+"File::Spec::Unix" -> "strict";
+"File::Copy" -> "File::Spec";
+"Create" -> "File::Copy";
+"Create" -> "Scalar::Util";
+"Config" -> "warnings";
+"File::Copy" -> "Scalar::Util";
+"overload" -> "warnings::register";
+"File::Copy" -> "strict";
+"Create" -> "XSLoader";
+"warnings::register" -> "warnings";
+"Create" -> "overload";
+"File::Copy" -> "Config";
+"main" -> "strict";
+"vars" -> "strict";
+"overload" -> "overloading";
+"Config" -> "vars";
+"File::Spec" -> "strict";
+"File::Copy" -> "version";
+"strict" -> "strict";
+"vars" -> "vars";
+"overloading" -> "warnings";
+"Create" -> "Exporter";
+"Create" -> "Digest";
+"List::Util" -> "strict";
+"Create" -> "Create";
+}

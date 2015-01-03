@@ -1,0 +1,51 @@
+digraph {
+graph [overlap=false]
+subgraph cluster_File_Copy {
+	label="File::Copy";
+	"File::Copy::_catname";
+}
+subgraph cluster_warnings {
+	label="warnings";
+	"warnings::import";
+}
+subgraph cluster_main {
+	label="main";
+	"main::BEGIN@9";
+}
+subgraph cluster_strict {
+	label="strict";
+	"strict::import";
+}
+subgraph cluster_File_Basename {
+	label="File::Basename";
+	"File::Basename::basename";
+	"File::Basename::BEGIN@52";
+	"File::Basename::BEGIN@371";
+	"File::Basename::BEGIN@50";
+	"File::Basename::CORE:substcont";
+	"File::Basename::fileparse_set_fstype";
+	"File::Basename::CORE:subst";
+	"File::Basename::BEGIN@42";
+	"File::Basename::fileparse";
+	"File::Basename::CORE:regcomp";
+	"File::Basename::_strip_trailing_sep";
+	"File::Basename::CORE:match";
+	"File::Basename::BEGIN@51";
+}
+"File::Basename::basename" -> "File::Basename::fileparse";
+"main::BEGIN@9" -> "File::Basename::BEGIN@51";
+"main::BEGIN@9" -> "File::Basename::BEGIN@371";
+"main::BEGIN@9" -> "File::Basename::BEGIN@50";
+"File::Basename::_strip_trailing_sep" -> "File::Basename::CORE:subst";
+"File::Basename::basename" -> "File::Basename::_strip_trailing_sep";
+"main::BEGIN@9" -> "File::Basename::fileparse_set_fstype";
+"File::Basename::BEGIN@52" -> "warnings::import";
+"main::BEGIN@9" -> "File::Basename::BEGIN@42";
+"File::Copy::_catname" -> "File::Basename::basename";
+"File::Basename::fileparse_set_fstype" -> "File::Basename::CORE:regcomp";
+"File::Basename::fileparse" -> "File::Basename::CORE:match";
+"File::Basename::fileparse_set_fstype" -> "File::Basename::CORE:match";
+"main::BEGIN@9" -> "File::Basename::BEGIN@52";
+"File::Basename::_strip_trailing_sep" -> "File::Basename::CORE:substcont";
+"File::Basename::BEGIN@50" -> "strict::import";
+}

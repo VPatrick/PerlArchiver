@@ -1,0 +1,23 @@
+digraph {
+graph [overlap=false]
+subgraph cluster_Scalar_Util {
+	label="Scalar::Util";
+	"Scalar::Util::BEGIN@9";
+	"Scalar::Util::blessed";
+}
+subgraph cluster_File_Copy {
+	label="File::Copy";
+	"File::Copy::_eq";
+}
+subgraph cluster_main {
+	label="main";
+	"main::BEGIN@9";
+}
+subgraph cluster_strict {
+	label="strict";
+	"strict::import";
+}
+"File::Copy::_eq" -> "Scalar::Util::blessed";
+"main::BEGIN@9" -> "Scalar::Util::BEGIN@9";
+"Scalar::Util::BEGIN@9" -> "strict::import";
+}

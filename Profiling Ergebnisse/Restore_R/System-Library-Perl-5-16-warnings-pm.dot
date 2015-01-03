@@ -1,0 +1,78 @@
+digraph {
+graph [overlap=false]
+subgraph cluster_Config {
+	label="Config";
+	"Config::BEGIN@10";
+}
+subgraph cluster_File_Find {
+	label="File::Find";
+	"File::Find::BEGIN@4";
+}
+subgraph cluster_File_Copy {
+	label="File::Copy";
+	"File::Copy::BEGIN@12";
+	"File::Copy::BEGIN@12.1";
+}
+subgraph cluster_Exporter_Heavy {
+	label="Exporter::Heavy";
+	"Exporter::Heavy::BEGIN@197";
+}
+subgraph cluster_warnings {
+	label="warnings";
+	"warnings::unimport";
+	"warnings::CORE:regcomp";
+	"warnings::register_categories";
+	"warnings::_mkMask";
+	"warnings::CORE:match";
+	"warnings::import";
+}
+subgraph cluster_File_Glob {
+	label="File::Glob";
+	"File::Glob::BEGIN@52";
+}
+subgraph cluster_overloading {
+	label="overloading";
+	"overloading::BEGIN@2";
+}
+subgraph cluster_main {
+	label="main";
+	"main::BEGIN@2";
+	"main::BEGIN@8";
+}
+subgraph cluster_Carp {
+	label="Carp";
+	"Carp::BEGIN@399";
+	"Carp::BEGIN@406";
+	"Carp::BEGIN@5";
+}
+subgraph cluster_warnings_register {
+	label="warnings::register";
+	"warnings::register::import";
+}
+subgraph cluster_File_Copy_Recursive {
+	label="File::Copy::Recursive";
+	"File::Copy::Recursive::BEGIN@8";
+}
+subgraph cluster_File_Basename {
+	label="File::Basename";
+	"File::Basename::BEGIN@52";
+}
+"Exporter::Heavy::BEGIN@197" -> "warnings::unimport";
+"Carp::BEGIN@399" -> "warnings::unimport";
+"Carp::BEGIN@406" -> "warnings::unimport";
+"File::Glob::BEGIN@52" -> "warnings::unimport";
+"File::Copy::BEGIN@12.1" -> "warnings::unimport";
+"main::BEGIN@8" -> "warnings::CORE:match";
+"warnings::register_categories" -> "warnings::_mkMask";
+"warnings::register::import" -> "warnings::register_categories";
+"File::Basename::BEGIN@52" -> "warnings::import";
+"File::Copy::Recursive::BEGIN@8" -> "warnings::import";
+"File::Copy::BEGIN@12" -> "warnings::import";
+"Carp::BEGIN@5" -> "warnings::import";
+"File::Find::BEGIN@4" -> "warnings::import";
+"main::BEGIN@8" -> "warnings::import";
+"main::BEGIN@2" -> "warnings::import";
+"Config::BEGIN@10" -> "warnings::import";
+"overloading::BEGIN@2" -> "warnings::import";
+"main::BEGIN@8" -> "warnings::CORE:regcomp";
+}

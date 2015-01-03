@@ -1,0 +1,14 @@
+digraph {
+graph [overlap=false]
+subgraph cluster_feature {
+	label="feature";
+	"feature::import";
+	"feature::__common";
+}
+subgraph cluster_File_Glob {
+	label="File::Glob";
+	"File::Glob::BEGIN@7";
+}
+"feature::import" -> "feature::__common";
+"File::Glob::BEGIN@7" -> "feature::import";
+}

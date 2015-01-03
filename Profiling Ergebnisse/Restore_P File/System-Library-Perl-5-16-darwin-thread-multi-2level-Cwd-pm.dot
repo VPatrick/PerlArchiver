@@ -1,0 +1,47 @@
+digraph {
+graph [overlap=false]
+subgraph cluster_vars {
+	label="vars";
+	"vars::BEGIN@3";
+	"vars::BEGIN@8";
+	"vars::import";
+	"vars::BEGIN@7";
+}
+subgraph cluster_Exporter {
+	label="Exporter";
+	"Exporter::import";
+}
+subgraph cluster_main {
+	label="main";
+	"main::BEGIN@9";
+}
+subgraph cluster_strict {
+	label="strict";
+	"strict::import";
+	"strict::unimport";
+}
+subgraph cluster_Cwd {
+	label="Cwd";
+	"Cwd::BEGIN@172";
+	"Cwd::BEGIN@170";
+	"Cwd::CORE:fteexec";
+	"Cwd::BEGIN@171";
+	"Cwd::BEGIN@823";
+	"Cwd::BEGIN@209";
+	"Cwd::CORE:regcomp";
+}
+"main::BEGIN@9" -> "Cwd::BEGIN@823";
+"Cwd::BEGIN@171" -> "Exporter::import";
+"Cwd::BEGIN@823" -> "strict::unimport";
+"main::BEGIN@9" -> "Cwd::BEGIN@171";
+"Cwd::BEGIN@172" -> "vars::BEGIN@8";
+"main::BEGIN@9" -> "Cwd::BEGIN@170";
+"Cwd::BEGIN@172" -> "vars::import";
+"main::BEGIN@9" -> "Cwd::BEGIN@209";
+"main::BEGIN@9" -> "Cwd::CORE:fteexec";
+"main::BEGIN@9" -> "Cwd::CORE:regcomp";
+"Cwd::BEGIN@172" -> "vars::BEGIN@3";
+"main::BEGIN@9" -> "Cwd::BEGIN@172";
+"Cwd::BEGIN@170" -> "strict::import";
+"Cwd::BEGIN@172" -> "vars::BEGIN@7";
+}

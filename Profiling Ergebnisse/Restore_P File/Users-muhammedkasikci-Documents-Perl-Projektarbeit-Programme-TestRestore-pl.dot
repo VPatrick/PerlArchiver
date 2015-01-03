@@ -1,0 +1,28 @@
+digraph {
+graph [overlap=false]
+subgraph cluster_version {
+	label="version";
+	"version::(bool";
+	"version::(cmp";
+}
+subgraph cluster_main {
+	label="main";
+	"main::BEGIN@10";
+	"main::BEGIN@1";
+	"main::BEGIN@13";
+	"main::BEGIN@8";
+	"main::BEGIN@9";
+	"main::BEGIN@12";
+	"main::RUNTIME";
+	"main::BEGIN@11";
+}
+"main::BEGIN@1" -> "main::BEGIN@13";
+"main::BEGIN@9" -> "version::(bool";
+"main::BEGIN@1" -> "main::BEGIN@12";
+"main::BEGIN@9" -> "version::(cmp";
+"main::BEGIN@1" -> "main::BEGIN@10";
+"main::BEGIN@1" -> "main::BEGIN@8";
+"main::RUNTIME" -> "main::BEGIN@1";
+"main::BEGIN@1" -> "main::BEGIN@9";
+"main::BEGIN@1" -> "main::BEGIN@11";
+}

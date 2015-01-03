@@ -1,0 +1,67 @@
+digraph {
+graph [overlap=false]
+subgraph cluster_File_Path {
+	label="File::Path";
+	"File::Path::BEGIN@6";
+}
+subgraph cluster_File_Copy {
+	label="File::Copy";
+	"File::Copy::_catname";
+}
+subgraph cluster_Exporter_Heavy {
+	label="Exporter::Heavy";
+	"Exporter::Heavy::BEGIN@197";
+	"Exporter::Heavy::BEGIN@4";
+	"Exporter::Heavy::BEGIN@3";
+}
+subgraph cluster_Term_ANSIColor {
+	label="Term::ANSIColor";
+	"Term::ANSIColor::BEGIN@28";
+}
+subgraph cluster_Exporter {
+	label="Exporter";
+	"Exporter::import";
+	"Exporter::as_heavy";
+	"Exporter::CORE:subst";
+	"Exporter::export_ok_tags";
+	"Exporter::CORE:match";
+}
+subgraph cluster_main {
+	label="main";
+	"main::BEGIN@9";
+	"main::BEGIN@10";
+	"main::BEGIN@12";
+	"main::BEGIN@11";
+}
+subgraph cluster_File_Copy_Recursive {
+	label="File::Copy::Recursive";
+	"File::Copy::Recursive::BEGIN@10";
+	"File::Copy::Recursive::BEGIN@11";
+}
+subgraph cluster_Verbosity {
+	label="Verbosity";
+	"Verbosity::BEGIN@33";
+}
+subgraph cluster_Cwd {
+	label="Cwd";
+	"Cwd::BEGIN@171";
+}
+"Exporter::export_ok_tags" -> "Exporter::as_heavy";
+"Exporter::import" -> "Exporter::CORE:match";
+"main::BEGIN@10" -> "Exporter::import";
+"File::Path::BEGIN@6" -> "Exporter::import";
+"File::Copy::Recursive::BEGIN@10" -> "Exporter::import";
+"Cwd::BEGIN@171" -> "Exporter::import";
+"File::Copy::Recursive::BEGIN@11" -> "Exporter::import";
+"Verbosity::BEGIN@33" -> "Exporter::import";
+"main::BEGIN@9" -> "Exporter::import";
+"main::BEGIN@12" -> "Exporter::import";
+"File::Copy::_catname" -> "Exporter::import";
+"main::BEGIN@11" -> "Exporter::import";
+"Exporter::import" -> "Exporter::CORE:subst";
+"Exporter::as_heavy" -> "Exporter::CORE:subst";
+"Exporter::as_heavy" -> "Exporter::Heavy::BEGIN@4";
+"Term::ANSIColor::BEGIN@28" -> "Exporter::export_ok_tags";
+"Exporter::as_heavy" -> "Exporter::Heavy::BEGIN@197";
+"Exporter::as_heavy" -> "Exporter::Heavy::BEGIN@3";
+}

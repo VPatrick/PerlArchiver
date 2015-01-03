@@ -1,0 +1,60 @@
+digraph {
+graph [overlap=false]
+subgraph cluster_File_Spec {
+	label="File::Spec";
+	"File::Spec::BEGIN@4";
+}
+subgraph cluster_File_Spec_Unix {
+	label="File::Spec::Unix";
+	"File::Spec::Unix::BEGIN@4";
+}
+subgraph cluster_Config {
+	label="Config";
+	"Config::BEGIN@11";
+}
+subgraph cluster_File_Path {
+	label="File::Path";
+	"File::Path::BEGIN@19";
+}
+subgraph cluster_Term_ANSIColor {
+	label="Term::ANSIColor";
+	"Term::ANSIColor::BEGIN@23";
+}
+subgraph cluster_vars {
+	label="vars";
+	"vars::BEGIN@3";
+	"vars::BEGIN@8";
+	"vars::import";
+	"vars::CORE:match";
+	"vars::BEGIN@7";
+}
+subgraph cluster_strict {
+	label="strict";
+	"strict::import";
+}
+subgraph cluster_warnings_register {
+	label="warnings::register";
+	"warnings::register::import";
+}
+subgraph cluster_File_Copy_Recursive {
+	label="File::Copy::Recursive";
+	"File::Copy::Recursive::BEGIN@14";
+}
+subgraph cluster_Cwd {
+	label="Cwd";
+	"Cwd::BEGIN@172";
+}
+"Cwd::BEGIN@172" -> "vars::BEGIN@8";
+"Config::BEGIN@11" -> "vars::import";
+"File::Copy::Recursive::BEGIN@14" -> "vars::import";
+"Cwd::BEGIN@172" -> "vars::import";
+"File::Spec::BEGIN@4" -> "vars::import";
+"File::Spec::Unix::BEGIN@4" -> "vars::import";
+"File::Path::BEGIN@19" -> "vars::import";
+"Term::ANSIColor::BEGIN@23" -> "vars::import";
+"vars::import" -> "vars::CORE:match";
+"Cwd::BEGIN@172" -> "vars::BEGIN@3";
+"vars::BEGIN@8" -> "strict::import";
+"Cwd::BEGIN@172" -> "vars::BEGIN@7";
+"vars::BEGIN@7" -> "warnings::register::import";
+}

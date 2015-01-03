@@ -1,0 +1,126 @@
+digraph {
+graph [overlap=false]
+subgraph cluster_warnings {
+	label="warnings";
+	"warnings::CORE:regcomp";
+	"warnings::CORE:match";
+	"warnings::import";
+}
+subgraph cluster_Scalar_Util {
+	label="Scalar::Util";
+	"Scalar::Util::BEGIN@9";
+}
+subgraph cluster_File_Copy {
+	label="File::Copy";
+	"File::Copy::BEGIN@13";
+	"File::Copy::copy";
+	"File::Copy::BEGIN@12";
+	"File::Copy::BEGIN@12.1";
+	"File::Copy::BEGIN@10";
+	"File::Copy::BEGIN@11";
+	"File::Copy::BEGIN@47";
+	"File::Copy::BEGIN@14";
+}
+subgraph cluster_XSLoader {
+	label="XSLoader";
+	"XSLoader::load";
+}
+subgraph cluster_overload {
+	label="overload";
+	"overload::BEGIN@116";
+	"overload::BEGIN@146";
+	"overload::BEGIN@85";
+}
+subgraph cluster_Create {
+	label="Create";
+	"Create::CORE:mkdir";
+	"Create::addDestination";
+	"Create::new";
+	"Create::BEGIN@64";
+	"Create::CORE:ftfile";
+	"Create::CORE:readdir";
+	"Create::create_c";
+	"Create::CORE:ftdir";
+	"Create::verbose";
+	"Create::CORE:closedir";
+	"Create::CORE:open_dir";
+	"Create::BEGIN@251";
+	"Create::addSource";
+	"Create::copyDir";
+}
+subgraph cluster_Exporter {
+	label="Exporter";
+	"Exporter::import";
+}
+subgraph cluster_main {
+	label="main";
+	"main::BEGIN@10";
+	"main::BEGIN@1";
+	"main::RUNTIME";
+	"main::BEGIN@11";
+}
+subgraph cluster_List_Util {
+	label="List::Util";
+	"List::Util::BEGIN@11";
+}
+subgraph cluster_strict {
+	label="strict";
+	"strict::import";
+	"strict::CORE:regcomp";
+	"strict::CORE:match";
+}
+subgraph cluster_Digest {
+	label="Digest";
+	"Digest::BEGIN@4";
+	"Digest::BEGIN@3";
+	"Digest::BEGIN@37";
+}
+"main::RUNTIME" -> "Create::addDestination";
+"Create::copyDir" -> "Create::CORE:ftfile";
+"main::RUNTIME" -> "Create::create_c";
+"Create::copyDir" -> "Create::CORE:ftdir";
+"Create::BEGIN@64" -> "File::Copy::BEGIN@11";
+"Create::BEGIN@251" -> "Digest::BEGIN@4";
+"Create::BEGIN@64" -> "File::Copy::BEGIN@47";
+"Create::create_c" -> "Create::CORE:open_dir";
+"Create::copyDir" -> "Create::CORE:open_dir";
+"main::BEGIN@11" -> "strict::CORE:match";
+"Create::BEGIN@64" -> "File::Copy::BEGIN@14";
+"Create::create_c" -> "Create::copyDir";
+"Create::copyDir" -> "Create::copyDir";
+"main::BEGIN@1" -> "Create::BEGIN@64";
+"Create::BEGIN@64" -> "overload::BEGIN@116";
+"Create::copyDir" -> "Create::CORE:readdir";
+"Create::BEGIN@64" -> "overload::BEGIN@85";
+"Create::BEGIN@64" -> "Exporter::import";
+"main::RUNTIME" -> "Create::addSource";
+"main::BEGIN@1" -> "main::BEGIN@10";
+"Create::BEGIN@64" -> "Scalar::Util::BEGIN@9";
+"Create::create_c" -> "Create::CORE:mkdir";
+"Create::copyDir" -> "Create::CORE:mkdir";
+"Create::BEGIN@64" -> "File::Copy::BEGIN@13";
+"Create::copyDir" -> "File::Copy::copy";
+"Create::BEGIN@64" -> "File::Copy::BEGIN@12";
+"main::BEGIN@10" -> "warnings::CORE:match";
+"Create::BEGIN@251" -> "Digest::BEGIN@37";
+"Create::BEGIN@64" -> "File::Copy::BEGIN@10";
+"Create::addDestination" -> "Create::verbose";
+"Create::new" -> "Create::verbose";
+"Create::create_c" -> "Create::verbose";
+"Create::addSource" -> "Create::verbose";
+"Create::copyDir" -> "Create::verbose";
+"main::BEGIN@11" -> "strict::CORE:regcomp";
+"Create::BEGIN@64" -> "XSLoader::load";
+"main::BEGIN@1" -> "Create::BEGIN@251";
+"Create::BEGIN@64" -> "List::Util::BEGIN@11";
+"main::RUNTIME" -> "Create::new";
+"Create::BEGIN@64" -> "overload::BEGIN@146";
+"main::BEGIN@10" -> "warnings::import";
+"Create::BEGIN@64" -> "File::Copy::BEGIN@12.1";
+"main::BEGIN@10" -> "warnings::CORE:regcomp";
+"main::BEGIN@11" -> "strict::import";
+"Create::create_c" -> "Create::CORE:closedir";
+"Create::copyDir" -> "Create::CORE:closedir";
+"Create::BEGIN@251" -> "Digest::BEGIN@3";
+"main::BEGIN@1" -> "main::BEGIN@11";
+}

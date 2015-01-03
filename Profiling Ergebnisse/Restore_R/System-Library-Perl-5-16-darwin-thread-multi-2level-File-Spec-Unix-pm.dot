@@ -1,0 +1,68 @@
+digraph {
+graph [overlap=false]
+subgraph cluster_File_Spec_Unix {
+	label="File::Spec::Unix";
+	"File::Spec::Unix::curdir";
+	"File::Spec::Unix::rel2abs";
+	"File::Spec::Unix::canonpath";
+	"File::Spec::Unix::CORE:match";
+	"File::Spec::Unix::catfile";
+	"File::Spec::Unix::updir";
+	"File::Spec::Unix::BEGIN@149";
+	"File::Spec::Unix::file_name_is_absolute";
+	"File::Spec::Unix::splitdir";
+	"File::Spec::Unix::splitpath";
+	"File::Spec::Unix::BEGIN@4";
+	"File::Spec::Unix::BEGIN@3";
+	"File::Spec::Unix::CORE:subst";
+	"File::Spec::Unix::catdir";
+}
+subgraph cluster_File_Path {
+	label="File::Path";
+	"File::Path::_rmtree";
+	"File::Path::_is_subdir";
+}
+subgraph cluster_vars {
+	label="vars";
+	"vars::import";
+}
+subgraph cluster_main {
+	label="main";
+	"main::BEGIN@9";
+}
+subgraph cluster_strict {
+	label="strict";
+	"strict::import";
+	"strict::unimport";
+}
+subgraph cluster_File_Copy_Recursive {
+	label="File::Copy::Recursive";
+	"File::Copy::Recursive::__ANON__[File/Copy/Recursive.pm:271]";
+	"File::Copy::Recursive::__ANON__[File/Copy/Recursive.pm:75]";
+	"File::Copy::Recursive::fcopy";
+}
+"main::BEGIN@9" -> "File::Spec::Unix::BEGIN@149";
+"File::Copy::Recursive::__ANON__[File/Copy/Recursive.pm:75]" -> "File::Spec::Unix::rel2abs";
+"File::Path::_rmtree" -> "File::Spec::Unix::updir";
+"File::Spec::Unix::BEGIN@149" -> "strict::unimport";
+"File::Path::_is_subdir" -> "File::Spec::Unix::splitpath";
+"File::Copy::Recursive::fcopy" -> "File::Spec::Unix::splitpath";
+"File::Spec::Unix::rel2abs" -> "File::Spec::Unix::canonpath";
+"File::Spec::Unix::catfile" -> "File::Spec::Unix::canonpath";
+"File::Spec::Unix::catdir" -> "File::Spec::Unix::canonpath";
+"main::BEGIN@9" -> "File::Spec::Unix::BEGIN@3";
+"main::BEGIN@9" -> "File::Spec::Unix::curdir";
+"File::Path::_rmtree" -> "File::Spec::Unix::curdir";
+"File::Spec::Unix::BEGIN@4" -> "vars::import";
+"File::Spec::Unix::rel2abs" -> "File::Spec::Unix::file_name_is_absolute";
+"File::Copy::Recursive::__ANON__[File/Copy/Recursive.pm:75]" -> "File::Spec::Unix::splitdir";
+"File::Path::_is_subdir" -> "File::Spec::Unix::splitdir";
+"File::Copy::Recursive::__ANON__[File/Copy/Recursive.pm:75]" -> "File::Spec::Unix::catdir";
+"File::Spec::Unix::catfile" -> "File::Spec::Unix::catdir";
+"File::Spec::Unix::file_name_is_absolute" -> "File::Spec::Unix::CORE:match";
+"File::Spec::Unix::splitpath" -> "File::Spec::Unix::CORE:match";
+"File::Copy::Recursive::__ANON__[File/Copy/Recursive.pm:271]" -> "File::Spec::Unix::catfile";
+"main::BEGIN@9" -> "File::Spec::Unix::BEGIN@4";
+"File::Spec::Unix::BEGIN@3" -> "strict::import";
+"File::Spec::Unix::canonpath" -> "File::Spec::Unix::CORE:subst";
+}

@@ -1,0 +1,55 @@
+digraph {
+graph [overlap=false]
+subgraph cluster_File_Spec {
+	label="File::Spec";
+	"File::Spec::BEGIN@4";
+}
+subgraph cluster_Digest_base {
+	label="Digest::base";
+	"Digest::base::BEGIN@4";
+}
+subgraph cluster_vars {
+	label="vars";
+	"vars::BEGIN@3";
+	"vars::BEGIN@8";
+	"vars::import";
+	"vars::CORE:match";
+	"vars::BEGIN@7";
+}
+subgraph cluster_File_Spec_Unix {
+	label="File::Spec::Unix";
+	"File::Spec::Unix::BEGIN@4";
+}
+subgraph cluster_Config {
+	label="Config";
+	"Config::BEGIN@11";
+}
+subgraph cluster_strict {
+	label="strict";
+	"strict::import";
+}
+subgraph cluster_warnings_register {
+	label="warnings::register";
+	"warnings::register::import";
+}
+subgraph cluster_Digest {
+	label="Digest";
+	"Digest::BEGIN@4";
+}
+subgraph cluster_Digest_MD5 {
+	label="Digest::MD5";
+	"Digest::MD5::BEGIN@4";
+}
+"File::Spec::BEGIN@4" -> "vars::BEGIN@8";
+"Config::BEGIN@11" -> "vars::import";
+"Digest::BEGIN@4" -> "vars::import";
+"File::Spec::BEGIN@4" -> "vars::import";
+"File::Spec::Unix::BEGIN@4" -> "vars::import";
+"Digest::base::BEGIN@4" -> "vars::import";
+"Digest::MD5::BEGIN@4" -> "vars::import";
+"vars::import" -> "vars::CORE:match";
+"File::Spec::BEGIN@4" -> "vars::BEGIN@3";
+"vars::BEGIN@8" -> "strict::import";
+"File::Spec::BEGIN@4" -> "vars::BEGIN@7";
+"vars::BEGIN@7" -> "warnings::register::import";
+}

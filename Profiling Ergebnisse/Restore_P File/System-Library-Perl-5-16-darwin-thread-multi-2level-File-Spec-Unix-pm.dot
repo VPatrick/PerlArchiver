@@ -1,0 +1,43 @@
+digraph {
+graph [overlap=false]
+subgraph cluster_File_Spec_Unix {
+	label="File::Spec::Unix";
+	"File::Spec::Unix::curdir";
+	"File::Spec::Unix::canonpath";
+	"File::Spec::Unix::catfile";
+	"File::Spec::Unix::BEGIN@149";
+	"File::Spec::Unix::BEGIN@4";
+	"File::Spec::Unix::BEGIN@3";
+	"File::Spec::Unix::CORE:subst";
+	"File::Spec::Unix::catdir";
+}
+subgraph cluster_File_Copy {
+	label="File::Copy";
+	"File::Copy::_catname";
+}
+subgraph cluster_vars {
+	label="vars";
+	"vars::import";
+}
+subgraph cluster_main {
+	label="main";
+	"main::BEGIN@9";
+}
+subgraph cluster_strict {
+	label="strict";
+	"strict::import";
+	"strict::unimport";
+}
+"main::BEGIN@9" -> "File::Spec::Unix::BEGIN@149";
+"File::Spec::Unix::BEGIN@149" -> "strict::unimport";
+"File::Spec::Unix::catfile" -> "File::Spec::Unix::canonpath";
+"File::Spec::Unix::catdir" -> "File::Spec::Unix::canonpath";
+"main::BEGIN@9" -> "File::Spec::Unix::BEGIN@3";
+"main::BEGIN@9" -> "File::Spec::Unix::curdir";
+"File::Spec::Unix::BEGIN@4" -> "vars::import";
+"File::Spec::Unix::catfile" -> "File::Spec::Unix::catdir";
+"File::Copy::_catname" -> "File::Spec::Unix::catfile";
+"main::BEGIN@9" -> "File::Spec::Unix::BEGIN@4";
+"File::Spec::Unix::BEGIN@3" -> "strict::import";
+"File::Spec::Unix::canonpath" -> "File::Spec::Unix::CORE:subst";
+}

@@ -1,0 +1,42 @@
+digraph {
+graph [overlap=false]
+subgraph cluster_File_Find {
+	label="File::Find";
+	"File::Find::BEGIN@3";
+	"File::Find::BEGIN@2";
+	"File::Find::BEGIN@4";
+	"File::Find::CORE:qr";
+	"File::Find::BEGIN@5";
+	"File::Find::BEGIN@349";
+}
+subgraph cluster_warnings {
+	label="warnings";
+	"warnings::import";
+}
+subgraph cluster_main {
+	label="main";
+	"main::BEGIN@9";
+}
+subgraph cluster_strict {
+	label="strict";
+	"strict::import";
+	"strict::CORE:regcomp";
+	"strict::CORE:match";
+}
+subgraph cluster_warnings_register {
+	label="warnings::register";
+	"warnings::register::import";
+}
+"File::Find::BEGIN@3" -> "strict::CORE:match";
+"main::BEGIN@9" -> "File::Find::BEGIN@2";
+"File::Find::BEGIN@3" -> "strict::CORE:regcomp";
+"main::BEGIN@9" -> "File::Find::BEGIN@5";
+"File::Find::BEGIN@4" -> "warnings::import";
+"main::BEGIN@9" -> "File::Find::CORE:qr";
+"main::BEGIN@9" -> "File::Find::BEGIN@3";
+"main::BEGIN@9" -> "File::Find::BEGIN@4";
+"main::BEGIN@9" -> "File::Find::BEGIN@349";
+"File::Find::BEGIN@3" -> "strict::import";
+"File::Find::BEGIN@349" -> "strict::import";
+"File::Find::BEGIN@5" -> "warnings::register::import";
+}

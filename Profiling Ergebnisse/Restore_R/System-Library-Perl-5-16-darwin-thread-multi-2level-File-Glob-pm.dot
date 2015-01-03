@@ -1,0 +1,39 @@
+digraph {
+graph [overlap=false]
+subgraph cluster_feature {
+	label="feature";
+	"feature::import";
+}
+subgraph cluster_warnings {
+	label="warnings";
+	"warnings::unimport";
+}
+subgraph cluster_File_Glob {
+	label="File::Glob";
+	"File::Glob::BEGIN@56";
+	"File::Glob::GLOB_CSH";
+	"File::Glob::BEGIN@3";
+	"File::Glob::BEGIN@52";
+	"File::Glob::BEGIN@7";
+	"File::Glob::CORE:match";
+}
+subgraph cluster_strict {
+	label="strict";
+	"strict::import";
+	"strict::unimport";
+}
+subgraph cluster_File_Copy_Recursive {
+	label="File::Copy::Recursive";
+	"File::Copy::Recursive::BEGIN@83";
+}
+"File::Copy::Recursive::BEGIN@83" -> "File::Glob::CORE:match";
+"File::Copy::Recursive::BEGIN@83" -> "File::Glob::GLOB_CSH";
+"File::Glob::BEGIN@52" -> "warnings::unimport";
+"File::Glob::BEGIN@56" -> "strict::unimport";
+"File::Glob::BEGIN@7" -> "feature::import";
+"File::Copy::Recursive::BEGIN@83" -> "File::Glob::BEGIN@7";
+"File::Copy::Recursive::BEGIN@83" -> "File::Glob::BEGIN@56";
+"File::Copy::Recursive::BEGIN@83" -> "File::Glob::BEGIN@52";
+"File::Copy::Recursive::BEGIN@83" -> "File::Glob::BEGIN@3";
+"File::Glob::BEGIN@3" -> "strict::import";
+}

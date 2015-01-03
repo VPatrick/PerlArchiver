@@ -1,0 +1,17 @@
+digraph {
+graph [overlap=false]
+subgraph cluster_Scalar_Util {
+	label="Scalar::Util";
+	"Scalar::Util::BEGIN@9";
+}
+subgraph cluster_Create {
+	label="Create";
+	"Create::BEGIN@64";
+}
+subgraph cluster_strict {
+	label="strict";
+	"strict::import";
+}
+"Create::BEGIN@64" -> "Scalar::Util::BEGIN@9";
+"Scalar::Util::BEGIN@9" -> "strict::import";
+}

@@ -1,0 +1,55 @@
+digraph {
+graph [overlap=false]
+subgraph cluster_warnings {
+	label="warnings";
+	"warnings::unimport";
+	"warnings::import";
+}
+subgraph cluster_Carp {
+	label="Carp";
+	"Carp::BEGIN@398";
+	"Carp::BEGIN@105";
+	"Carp::BEGIN@4";
+	"Carp::BEGIN@18";
+	"Carp::BEGIN@8";
+	"Carp::BEGIN@5";
+	"Carp::BEGIN@17";
+	"Carp::BEGIN@413";
+	"Carp::BEGIN@399";
+	"Carp::BEGIN@7";
+	"Carp::BEGIN@406";
+	"Carp::BEGIN@67";
+	"Carp::BEGIN@3";
+}
+subgraph cluster_strict {
+	label="strict";
+	"strict::import";
+	"strict::unimport";
+}
+subgraph cluster_File_Copy_Recursive {
+	label="File::Copy::Recursive";
+	"File::Copy::Recursive::BEGIN@10";
+}
+"File::Copy::Recursive::BEGIN@10" -> "Carp::BEGIN@18";
+"Carp::BEGIN@399" -> "warnings::unimport";
+"Carp::BEGIN@406" -> "warnings::unimport";
+"File::Copy::Recursive::BEGIN@10" -> "Carp::BEGIN@4";
+"Carp::BEGIN@398" -> "strict::unimport";
+"Carp::BEGIN@18" -> "strict::unimport";
+"Carp::BEGIN@8" -> "strict::unimport";
+"Carp::BEGIN@413" -> "strict::unimport";
+"Carp::BEGIN@67" -> "strict::unimport";
+"File::Copy::Recursive::BEGIN@10" -> "Carp::BEGIN@67";
+"File::Copy::Recursive::BEGIN@10" -> "Carp::BEGIN@105";
+"File::Copy::Recursive::BEGIN@10" -> "Carp::BEGIN@5";
+"Carp::BEGIN@5" -> "warnings::import";
+"File::Copy::Recursive::BEGIN@10" -> "Carp::BEGIN@399";
+"File::Copy::Recursive::BEGIN@10" -> "Carp::BEGIN@3";
+"File::Copy::Recursive::BEGIN@10" -> "Carp::BEGIN@7";
+"File::Copy::Recursive::BEGIN@10" -> "Carp::BEGIN@406";
+"File::Copy::Recursive::BEGIN@10" -> "Carp::BEGIN@398";
+"File::Copy::Recursive::BEGIN@10" -> "Carp::BEGIN@8";
+"File::Copy::Recursive::BEGIN@10" -> "Carp::BEGIN@17";
+"File::Copy::Recursive::BEGIN@10" -> "Carp::BEGIN@413";
+"Carp::BEGIN@4" -> "strict::import";
+}

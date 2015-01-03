@@ -1,0 +1,159 @@
+digraph {
+graph [overlap=false]
+subgraph cluster_XSLoader {
+	label="XSLoader";
+	"XSLoader::load";
+}
+subgraph cluster_File_Spec_Unix {
+	label="File::Spec::Unix";
+	"File::Spec::Unix::rel2abs";
+	"File::Spec::Unix::splitdir";
+	"File::Spec::Unix::splitpath";
+	"File::Spec::Unix::catfile";
+	"File::Spec::Unix::catdir";
+}
+subgraph cluster_Restore {
+	label="Restore";
+	"Restore::RestoreDirectory";
+}
+subgraph cluster_File_Copy {
+	label="File::Copy";
+	"File::Copy::copy";
+}
+subgraph cluster_warnings {
+	label="warnings";
+	"warnings::import";
+}
+subgraph cluster_File_Glob {
+	label="File::Glob";
+	"File::Glob::BEGIN@56";
+	"File::Glob::GLOB_CSH";
+	"File::Glob::BEGIN@3";
+	"File::Glob::BEGIN@52";
+	"File::Glob::BEGIN@7";
+	"File::Glob::CORE:match";
+}
+subgraph cluster_vars {
+	label="vars";
+	"vars::import";
+}
+subgraph cluster_Exporter {
+	label="Exporter";
+	"Exporter::import";
+}
+subgraph cluster_main {
+	label="main";
+	"main::BEGIN@11";
+}
+subgraph cluster_Carp {
+	label="Carp";
+	"Carp::BEGIN@398";
+	"Carp::BEGIN@105";
+	"Carp::BEGIN@4";
+	"Carp::BEGIN@18";
+	"Carp::BEGIN@8";
+	"Carp::BEGIN@5";
+	"Carp::BEGIN@17";
+	"Carp::BEGIN@413";
+	"Carp::BEGIN@399";
+	"Carp::BEGIN@7";
+	"Carp::BEGIN@406";
+	"Carp::BEGIN@67";
+	"Carp::BEGIN@3";
+}
+subgraph cluster_strict {
+	label="strict";
+	"strict::import";
+}
+subgraph cluster_File_Copy_Recursive {
+	label="File::Copy::Recursive";
+	"File::Copy::Recursive::CORE:readdir";
+	"File::Copy::Recursive::CORE:mkdir";
+	"File::Copy::Recursive::CORE:closedir";
+	"File::Copy::Recursive::BEGIN@10";
+	"File::Copy::Recursive::CORE:ftlink";
+	"File::Copy::Recursive::BEGIN@11";
+	"File::Copy::Recursive::fcopy";
+	"File::Copy::Recursive::BEGIN@14";
+	"File::Copy::Recursive::__ANON__[File/Copy/Recursive.pm:271]";
+	"File::Copy::Recursive::CORE:open_dir";
+	"File::Copy::Recursive::__ANON__[File/Copy/Recursive.pm:125]";
+	"File::Copy::Recursive::CORE:ftis";
+	"File::Copy::Recursive::CORE:stat";
+	"File::Copy::Recursive::dircopy";
+	"File::Copy::Recursive::BEGIN@4";
+	"File::Copy::Recursive::BEGIN@83";
+	"File::Copy::Recursive::BEGIN@8";
+	"File::Copy::Recursive::CORE:ftdir";
+	"File::Copy::Recursive::CORE:symlink";
+	"File::Copy::Recursive::CORE:match";
+	"File::Copy::Recursive::CORE:chmod";
+	"File::Copy::Recursive::BEGIN@3";
+	"File::Copy::Recursive::__ANON__[File/Copy/Recursive.pm:75]";
+	"File::Copy::Recursive::BEGIN@12";
+}
+"File::Copy::Recursive::__ANON__[File/Copy/Recursive.pm:271]" -> "File::Copy::Recursive::CORE:readdir";
+"File::Copy::Recursive::__ANON__[File/Copy/Recursive.pm:271]" -> "File::Copy::Recursive::CORE:closedir";
+"File::Copy::Recursive::BEGIN@10" -> "Carp::BEGIN@18";
+"File::Copy::Recursive::BEGIN@83" -> "File::Glob::CORE:match";
+"main::BEGIN@11" -> "File::Copy::Recursive::BEGIN@83";
+"File::Copy::Recursive::__ANON__[File/Copy/Recursive.pm:75]" -> "File::Spec::Unix::rel2abs";
+"main::BEGIN@11" -> "File::Copy::Recursive::BEGIN@8";
+"File::Copy::Recursive::__ANON__[File/Copy/Recursive.pm:271]" -> "File::Copy::Recursive::CORE:ftdir";
+"File::Copy::Recursive::__ANON__[File/Copy/Recursive.pm:75]" -> "File::Copy::Recursive::CORE:ftdir";
+"File::Copy::Recursive::fcopy" -> "File::Copy::Recursive::CORE:ftdir";
+"File::Copy::Recursive::dircopy" -> "File::Copy::Recursive::CORE:ftdir";
+"File::Copy::Recursive::BEGIN@83" -> "File::Glob::GLOB_CSH";
+"File::Copy::Recursive::BEGIN@10" -> "Exporter::import";
+"File::Copy::Recursive::BEGIN@11" -> "Exporter::import";
+"File::Copy::Recursive::__ANON__[File/Copy/Recursive.pm:271]" -> "File::Copy::Recursive::CORE:chmod";
+"File::Copy::Recursive::fcopy" -> "File::Copy::Recursive::CORE:chmod";
+"File::Copy::Recursive::BEGIN@10" -> "Carp::BEGIN@4";
+"File::Copy::Recursive::__ANON__[File/Copy/Recursive.pm:271]" -> "File::Copy::Recursive::CORE:mkdir";
+"File::Copy::Recursive::BEGIN@10" -> "Carp::BEGIN@67";
+"File::Copy::Recursive::fcopy" -> "File::Spec::Unix::splitpath";
+"Restore::RestoreDirectory" -> "File::Copy::Recursive::dircopy";
+"File::Copy::Recursive::BEGIN@10" -> "Carp::BEGIN@105";
+"main::BEGIN@11" -> "File::Copy::Recursive::CORE:symlink";
+"File::Copy::Recursive::BEGIN@10" -> "Carp::BEGIN@5";
+"File::Copy::Recursive::BEGIN@8" -> "warnings::import";
+"main::BEGIN@11" -> "File::Copy::Recursive::BEGIN@10";
+"File::Copy::Recursive::__ANON__[File/Copy/Recursive.pm:271]" -> "File::Copy::Recursive::fcopy";
+"main::BEGIN@11" -> "File::Copy::Recursive::BEGIN@11";
+"File::Copy::Recursive::BEGIN@83" -> "File::Glob::BEGIN@7";
+"File::Copy::Recursive::BEGIN@10" -> "Carp::BEGIN@399";
+"File::Copy::Recursive::__ANON__[File/Copy/Recursive.pm:271]" -> "File::Copy::Recursive::CORE:open_dir";
+"File::Copy::Recursive::__ANON__[File/Copy/Recursive.pm:271]" -> "File::Copy::Recursive::__ANON__[File/Copy/Recursive.pm:125]";
+"File::Copy::Recursive::dircopy" -> "File::Copy::Recursive::CORE:ftis";
+"File::Copy::Recursive::BEGIN@10" -> "Carp::BEGIN@3";
+"File::Copy::Recursive::__ANON__[File/Copy/Recursive.pm:271]" -> "File::Copy::Recursive::CORE:match";
+"File::Copy::Recursive::BEGIN@14" -> "vars::import";
+"File::Copy::Recursive::BEGIN@83" -> "File::Glob::BEGIN@56";
+"File::Copy::Recursive::BEGIN@83" -> "File::Glob::BEGIN@52";
+"File::Copy::Recursive::BEGIN@10" -> "Carp::BEGIN@7";
+"File::Copy::Recursive::BEGIN@10" -> "Carp::BEGIN@406";
+"File::Copy::Recursive::fcopy" -> "File::Copy::Recursive::__ANON__[File/Copy/Recursive.pm:75]";
+"File::Copy::Recursive::dircopy" -> "File::Copy::Recursive::__ANON__[File/Copy/Recursive.pm:75]";
+"main::BEGIN@11" -> "File::Copy::Recursive::BEGIN@12";
+"File::Copy::Recursive::fcopy" -> "File::Copy::copy";
+"File::Copy::Recursive::__ANON__[File/Copy/Recursive.pm:271]" -> "File::Copy::Recursive::CORE:ftlink";
+"File::Copy::Recursive::fcopy" -> "File::Copy::Recursive::CORE:ftlink";
+"File::Copy::Recursive::__ANON__[File/Copy/Recursive.pm:271]" -> "File::Copy::Recursive::__ANON__[File/Copy/Recursive.pm:271]";
+"File::Copy::Recursive::dircopy" -> "File::Copy::Recursive::__ANON__[File/Copy/Recursive.pm:271]";
+"main::BEGIN@11" -> "File::Copy::Recursive::BEGIN@14";
+"File::Copy::Recursive::__ANON__[File/Copy/Recursive.pm:75]" -> "File::Spec::Unix::splitdir";
+"File::Copy::Recursive::BEGIN@83" -> "XSLoader::load";
+"File::Copy::Recursive::__ANON__[File/Copy/Recursive.pm:271]" -> "File::Copy::Recursive::CORE:stat";
+"File::Copy::Recursive::__ANON__[File/Copy/Recursive.pm:75]" -> "File::Copy::Recursive::CORE:stat";
+"File::Copy::Recursive::fcopy" -> "File::Copy::Recursive::CORE:stat";
+"File::Copy::Recursive::BEGIN@83" -> "File::Glob::BEGIN@3";
+"File::Copy::Recursive::__ANON__[File/Copy/Recursive.pm:75]" -> "File::Spec::Unix::catdir";
+"File::Copy::Recursive::BEGIN@10" -> "Carp::BEGIN@398";
+"main::BEGIN@11" -> "File::Copy::Recursive::BEGIN@4";
+"File::Copy::Recursive::BEGIN@10" -> "Carp::BEGIN@8";
+"File::Copy::Recursive::__ANON__[File/Copy/Recursive.pm:271]" -> "File::Spec::Unix::catfile";
+"File::Copy::Recursive::BEGIN@10" -> "Carp::BEGIN@17";
+"File::Copy::Recursive::BEGIN@10" -> "Carp::BEGIN@413";
+"main::BEGIN@11" -> "File::Copy::Recursive::BEGIN@3";
+"File::Copy::Recursive::BEGIN@3" -> "strict::import";
+}

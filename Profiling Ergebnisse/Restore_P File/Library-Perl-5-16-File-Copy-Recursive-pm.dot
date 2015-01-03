@@ -1,0 +1,98 @@
+digraph {
+graph [overlap=false]
+subgraph cluster_XSLoader {
+	label="XSLoader";
+	"XSLoader::load";
+}
+subgraph cluster_warnings {
+	label="warnings";
+	"warnings::import";
+}
+subgraph cluster_File_Glob {
+	label="File::Glob";
+	"File::Glob::BEGIN@56";
+	"File::Glob::GLOB_CSH";
+	"File::Glob::BEGIN@3";
+	"File::Glob::BEGIN@52";
+	"File::Glob::BEGIN@7";
+	"File::Glob::CORE:match";
+}
+subgraph cluster_vars {
+	label="vars";
+	"vars::import";
+}
+subgraph cluster_Exporter {
+	label="Exporter";
+	"Exporter::import";
+}
+subgraph cluster_main {
+	label="main";
+	"main::BEGIN@11";
+}
+subgraph cluster_Carp {
+	label="Carp";
+	"Carp::BEGIN@398";
+	"Carp::BEGIN@105";
+	"Carp::BEGIN@4";
+	"Carp::BEGIN@18";
+	"Carp::BEGIN@8";
+	"Carp::BEGIN@5";
+	"Carp::BEGIN@17";
+	"Carp::BEGIN@413";
+	"Carp::BEGIN@399";
+	"Carp::BEGIN@7";
+	"Carp::BEGIN@406";
+	"Carp::BEGIN@67";
+	"Carp::BEGIN@3";
+}
+subgraph cluster_strict {
+	label="strict";
+	"strict::import";
+}
+subgraph cluster_File_Copy_Recursive {
+	label="File::Copy::Recursive";
+	"File::Copy::Recursive::BEGIN@4";
+	"File::Copy::Recursive::BEGIN@83";
+	"File::Copy::Recursive::BEGIN@8";
+	"File::Copy::Recursive::CORE:symlink";
+	"File::Copy::Recursive::BEGIN@10";
+	"File::Copy::Recursive::BEGIN@11";
+	"File::Copy::Recursive::BEGIN@14";
+	"File::Copy::Recursive::BEGIN@3";
+	"File::Copy::Recursive::BEGIN@12";
+}
+"File::Copy::Recursive::BEGIN@10" -> "Carp::BEGIN@18";
+"File::Copy::Recursive::BEGIN@83" -> "File::Glob::CORE:match";
+"main::BEGIN@11" -> "File::Copy::Recursive::BEGIN@83";
+"main::BEGIN@11" -> "File::Copy::Recursive::BEGIN@8";
+"File::Copy::Recursive::BEGIN@83" -> "File::Glob::GLOB_CSH";
+"File::Copy::Recursive::BEGIN@10" -> "Exporter::import";
+"File::Copy::Recursive::BEGIN@11" -> "Exporter::import";
+"File::Copy::Recursive::BEGIN@10" -> "Carp::BEGIN@4";
+"File::Copy::Recursive::BEGIN@10" -> "Carp::BEGIN@67";
+"File::Copy::Recursive::BEGIN@10" -> "Carp::BEGIN@105";
+"main::BEGIN@11" -> "File::Copy::Recursive::CORE:symlink";
+"File::Copy::Recursive::BEGIN@10" -> "Carp::BEGIN@5";
+"File::Copy::Recursive::BEGIN@8" -> "warnings::import";
+"main::BEGIN@11" -> "File::Copy::Recursive::BEGIN@10";
+"main::BEGIN@11" -> "File::Copy::Recursive::BEGIN@11";
+"File::Copy::Recursive::BEGIN@83" -> "File::Glob::BEGIN@7";
+"File::Copy::Recursive::BEGIN@10" -> "Carp::BEGIN@399";
+"File::Copy::Recursive::BEGIN@10" -> "Carp::BEGIN@3";
+"File::Copy::Recursive::BEGIN@14" -> "vars::import";
+"File::Copy::Recursive::BEGIN@83" -> "File::Glob::BEGIN@56";
+"File::Copy::Recursive::BEGIN@83" -> "File::Glob::BEGIN@52";
+"File::Copy::Recursive::BEGIN@10" -> "Carp::BEGIN@7";
+"File::Copy::Recursive::BEGIN@10" -> "Carp::BEGIN@406";
+"main::BEGIN@11" -> "File::Copy::Recursive::BEGIN@12";
+"main::BEGIN@11" -> "File::Copy::Recursive::BEGIN@14";
+"File::Copy::Recursive::BEGIN@83" -> "XSLoader::load";
+"File::Copy::Recursive::BEGIN@83" -> "File::Glob::BEGIN@3";
+"File::Copy::Recursive::BEGIN@10" -> "Carp::BEGIN@398";
+"main::BEGIN@11" -> "File::Copy::Recursive::BEGIN@4";
+"File::Copy::Recursive::BEGIN@10" -> "Carp::BEGIN@8";
+"File::Copy::Recursive::BEGIN@10" -> "Carp::BEGIN@17";
+"File::Copy::Recursive::BEGIN@10" -> "Carp::BEGIN@413";
+"main::BEGIN@11" -> "File::Copy::Recursive::BEGIN@3";
+"File::Copy::Recursive::BEGIN@3" -> "strict::import";
+}

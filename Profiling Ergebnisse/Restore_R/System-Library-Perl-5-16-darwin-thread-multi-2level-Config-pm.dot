@@ -1,0 +1,47 @@
+digraph {
+graph [overlap=false]
+subgraph cluster_Config {
+	label="Config";
+	"Config::BEGIN@11";
+	"Config::TIEHASH";
+	"Config::BEGIN@45";
+	"Config::BEGIN@10";
+	"Config::BEGIN@9";
+	"Config::import";
+	"Config::FETCH";
+}
+subgraph cluster_File_Copy {
+	label="File::Copy";
+	"File::Copy::copy";
+	"File::Copy::BEGIN@14";
+}
+subgraph cluster_warnings {
+	label="warnings";
+	"warnings::import";
+}
+subgraph cluster_vars {
+	label="vars";
+	"vars::import";
+}
+subgraph cluster_main {
+	label="main";
+	"main::BEGIN@9";
+}
+subgraph cluster_strict {
+	label="strict";
+	"strict::import";
+	"strict::unimport";
+}
+"main::BEGIN@9" -> "Config::BEGIN@10";
+"Config::BEGIN@45" -> "strict::unimport";
+"Config::BEGIN@10" -> "warnings::import";
+"main::BEGIN@9" -> "Config::BEGIN@11";
+"main::BEGIN@9" -> "Config::BEGIN@45";
+"main::BEGIN@9" -> "Config::TIEHASH";
+"File::Copy::BEGIN@14" -> "Config::import";
+"main::BEGIN@9" -> "Config::BEGIN@9";
+"Config::BEGIN@11" -> "vars::import";
+"main::BEGIN@9" -> "Config::FETCH";
+"File::Copy::copy" -> "Config::FETCH";
+"Config::BEGIN@9" -> "strict::import";
+}

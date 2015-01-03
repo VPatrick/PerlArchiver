@@ -1,0 +1,119 @@
+digraph {
+graph [overlap=false]
+subgraph cluster_UNIVERSAL {
+	label="UNIVERSAL";
+	"UNIVERSAL::isa";
+}
+subgraph cluster_File_Spec_Unix {
+	label="File::Spec::Unix";
+	"File::Spec::Unix::curdir";
+	"File::Spec::Unix::splitdir";
+	"File::Spec::Unix::splitpath";
+	"File::Spec::Unix::updir";
+}
+subgraph cluster_Restore {
+	label="Restore";
+	"Restore::restore_rp";
+	"Restore::RestoreSubDirectory";
+}
+subgraph cluster_File_Path {
+	label="File::Path";
+	"File::Path::rmtree";
+	"File::Path::CORE:closedir";
+	"File::Path::CORE:lstat";
+	"File::Path::BEGIN@6";
+	"File::Path::BEGIN@8";
+	"File::Path::CORE:stat";
+	"File::Path::_is_subdir";
+	"File::Path::BEGIN@10";
+	"File::Path::_mkpath";
+	"File::Path::BEGIN@4";
+	"File::Path::BEGIN@18";
+	"File::Path::remove_tree";
+	"File::Path::CORE:mkdir";
+	"File::Path::CORE:rmdir";
+	"File::Path::BEGIN@7";
+	"File::Path::CORE:chdir";
+	"File::Path::CORE:open_dir";
+	"File::Path::CORE:ftdir";
+	"File::Path::BEGIN@19";
+	"File::Path::make_path";
+	"File::Path::CORE:match";
+	"File::Path::CORE:readdir";
+	"File::Path::BEGIN@3";
+	"File::Path::mkpath";
+	"File::Path::_rmtree";
+	"File::Path::CORE:subst";
+	"File::Path::BEGIN@329";
+}
+subgraph cluster_vars {
+	label="vars";
+	"vars::import";
+}
+subgraph cluster_Exporter {
+	label="Exporter";
+	"Exporter::import";
+}
+subgraph cluster_main {
+	label="main";
+	"main::BEGIN@12";
+}
+subgraph cluster_strict {
+	label="strict";
+	"strict::import";
+	"strict::unimport";
+}
+subgraph cluster_File_Basename {
+	label="File::Basename";
+	"File::Basename::dirname";
+}
+subgraph cluster_Cwd {
+	label="Cwd";
+	"Cwd::getcwd";
+}
+"main::BEGIN@12" -> "File::Path::BEGIN@6";
+"File::Path::rmtree" -> "File::Path::CORE:lstat";
+"File::Path::_rmtree" -> "File::Path::CORE:lstat";
+"main::BEGIN@12" -> "File::Path::BEGIN@4";
+"File::Path::_mkpath" -> "File::Basename::dirname";
+"File::Path::_rmtree" -> "File::Spec::Unix::updir";
+"File::Path::BEGIN@6" -> "Exporter::import";
+"File::Path::rmtree" -> "File::Path::CORE:subst";
+"File::Path::_rmtree" -> "File::Path::CORE:closedir";
+"File::Path::BEGIN@329" -> "strict::unimport";
+"main::BEGIN@12" -> "File::Path::BEGIN@10";
+"File::Path::rmtree" -> "UNIVERSAL::isa";
+"File::Path::mkpath" -> "UNIVERSAL::isa";
+"File::Path::make_path" -> "UNIVERSAL::isa";
+"File::Path::remove_tree" -> "UNIVERSAL::isa";
+"File::Path::_is_subdir" -> "File::Spec::Unix::splitpath";
+"File::Path::_rmtree" -> "File::Path::CORE:rmdir";
+"main::BEGIN@12" -> "File::Path::BEGIN@7";
+"File::Path::_mkpath" -> "File::Path::CORE:ftdir";
+"File::Path::_rmtree" -> "File::Path::CORE:ftdir";
+"Restore::restore_rp" -> "File::Path::make_path";
+"Restore::RestoreSubDirectory" -> "File::Path::make_path";
+"File::Path::rmtree" -> "File::Path::CORE:match";
+"File::Path::_rmtree" -> "File::Path::CORE:readdir";
+"Restore::restore_rp" -> "File::Path::mkpath";
+"Restore::RestoreSubDirectory" -> "File::Path::mkpath";
+"main::BEGIN@12" -> "File::Path::BEGIN@329";
+"main::BEGIN@12" -> "File::Path::BEGIN@8";
+"File::Path::rmtree" -> "File::Path::_is_subdir";
+"File::Path::mkpath" -> "File::Path::_mkpath";
+"Restore::RestoreSubDirectory" -> "File::Path::remove_tree";
+"File::Path::_mkpath" -> "File::Path::CORE:mkdir";
+"File::Path::_rmtree" -> "File::Spec::Unix::curdir";
+"File::Path::BEGIN@19" -> "vars::import";
+"File::Path::rmtree" -> "Cwd::getcwd";
+"main::BEGIN@12" -> "File::Path::BEGIN@3";
+"Restore::RestoreSubDirectory" -> "File::Path::rmtree";
+"File::Path::_rmtree" -> "File::Path::CORE:stat";
+"File::Path::_is_subdir" -> "File::Spec::Unix::splitdir";
+"main::BEGIN@12" -> "File::Path::BEGIN@18";
+"File::Path::_rmtree" -> "File::Path::CORE:open_dir";
+"File::Path::_rmtree" -> "File::Path::CORE:chdir";
+"main::BEGIN@12" -> "File::Path::BEGIN@19";
+"File::Path::BEGIN@4" -> "strict::import";
+"File::Path::rmtree" -> "File::Path::_rmtree";
+}
