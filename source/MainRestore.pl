@@ -6,7 +6,8 @@ $C->addSource("/Users/muhammedkasikci/Documents/Perl/Projektarbeit/Archiv");
 $C->addDestination("/Users/muhammedkasikci/Documents/Perl/Projektarbeit/Übung");
 $C->addSourceName("Verzeichnis 1");
 $C->addUserTime("2014_12_12_12_12_13");
-$C->addVerbose("1");
+#$C->setVerboseLevel(1);
+
 
 
 ##################################################################################
