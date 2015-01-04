@@ -25,6 +25,7 @@ sub new {
         source  => "",
         destination   => "",
         flag  => $inFlag || 0,
+        archiveName => "",
     };
     bless ($self, $class);
     $self->verbose("New","OK");
@@ -46,13 +47,25 @@ sub addSource{
 #*****************************************************************************************************
 #                                         addDestination
 # Beschreibung: Fügt ein Zielverzeichnis hinzu
-# Parameter:    Destination = Pfad zum Zielverzeichnis
+# Parameter:    destination = Pfad zum Zielverzeichnis
 #*****************************************************************************************************
 sub addDestination{
     my ($self,$destination) = @_;
     # Hinzufügen des Zielverzeichnisses
     $self->{destination}=$destination;
     $self->verbose("New destination added: $self->{destination}","OK");
+}
+
+#*****************************************************************************************************
+#                                         addArchiveName
+# Beschreibung: Fügt den Archivname hinzu, der für die Verschlankung benötigt wird
+# Parameter:    archiveName = Pfad zum Zielverzeichnis
+#*****************************************************************************************************
+sub addArchiveName{
+    my ($self,$archiveName) = @_;
+    # Hinzufügen des Archivverzeichnisses
+    $self->{archiveName}=$archiveName;
+    $self->verbose("New archive name added: $self->{archiveName}","OK");
 }
 
 #*****************************************************************************************************
@@ -72,11 +85,25 @@ sub create_c {
     $year+=1900;
     $mon+=1;
     my $now=sprintf("%04d_%02d_%02d_%02d_%02d_%02d",$year,$mon,$day,$hour,$min,$sec);
+    $_=$self->{source};
+    # Überprüfen um welches Betriebssystem es sich handelt
+    if($^O eq "MSWin32")
+    {
+        s/://;
+        s/\\/_/g;
+    }
+    else
+    {
+        s/^\///;
+        s/\//_/g;
+    }
+    my $sourceName=$_;
+    $self->addArchiveName($sourceName);
     # Erstellen des Zielverzeichnisses
-    mkdir($self->{destination}."/SOURCE_".$now);
-    $self->verbose("Create Archive: $self->{destination}/SOURCE_$now\n","OK");
+    mkdir($self->{destination}."/".$self->{archiveName}."_".$now);
+    $self->verbose("Create Archive: $self->{destination}/$self->{archiveName}_$now\n","OK");
     # Kopieren der Daten
-    $self->copyDir("","SOURCE_$now");
+    $self->copyDir("",$self->{archiveName}."_".$now);
 }
 
 #*****************************************************************************************************
@@ -85,26 +112,27 @@ sub create_c {
 # Parameter:    Keine
 #*****************************************************************************************************
 sub create_s {
-    my $self=shift;
+    my ($self)=shift;
     my $previousArchiveAvailable=0;
     $self->verbose("Start create s:\n***************\n");
     # Öffnen des Archivverzeichnisses
     opendir(my $dsh,$self->{destination}) || die("Can't find directory $self->{destination}: $!");
     # Alle Verzeichnisse des Archivverzeichnisses einlesen
     my @folder=readdir $dsh;
+    my @seperateFolder=grep(/^$self->{archiveName}/,@folder);
+    @folder=sort(@seperateFolder);
     # Schließen des Archivverzeichnisses
     closedir($dsh);
     # Durchlaufen aller Archivverzeichnisse und Suche nach unveränderten Dateien
-    for(my $i=0;$i<scalar(@folder)-1;$i++)
+    
+    for(my $i=scalar(@folder)-1;$i>0;$i--)
     {
-        if($folder[$i] ne "." and $folder[$i] ne ".." and $folder[$i] =~ /^SOURCE/)
-        {
-            # Falls vorhergehendes Archiv vorhanden
-            $previousArchiveAvailable=1;
-            $self->verbose("Compare Archives: $folder[$i] <=> $folder[$i+1]\n","OK");
-            # Vergleich von einem Archiv mit dem vorhergehenden
-            $self->compareDir("$folder[$i]","$folder[$i+1]");
-        }
+        # Falls vorhergehendes Archiv vorhanden
+        $previousArchiveAvailable=1;
+        $self->verbose("Compare Archives: $folder[$i-1] <=> $folder[$i]\n","OK");
+        # Vergleich von einem Archiv mit dem vorhergehenden
+        $self->compareDir("$folder[$i-1]","$folder[$i]");
+
     }
     # Falls kein vorhergehendes Archiv vorhanden ist
     if(!$previousArchiveAvailable)
@@ -125,7 +153,7 @@ sub create_cs {
     # Erstellen des neuen Archivs
     $self->create_c();
     # Verschlanken der Archive
-    $self->create_s();
+    $self->create_s($self->{archiveName});
 }
 
 #*****************************************************************************************************
@@ -215,11 +243,14 @@ sub compareDir {
                     if($^O eq "MSWin32")
                     {
                         # Falls Windows, erzeugen eines shortcuts
-                        require Win32::Shortcut->import or die("Can't import Win32::Shortcut: $!");
+                        require Win32::Shortcut or die("Can't import Win32::Shortcut: $!");
                         my $link = Win32::Shortcut->new();
                         $link->{'Path'}="$self->{destination}/$newerDir/$oldFile";
-                        $link->Save("$self->{destination}/$olderDir/$oldFile.Ink");
-                        $link->close();
+                        my ($fileName)=split('\.',$oldFile);
+                        $fileName=$fileName.".lnk";
+                        $link->{'File'}="$self->{destination}/$olderDir/$fileName";
+                        $link->Save();
+                        $link->Close();
                     }
                     else
                     {
@@ -281,10 +312,10 @@ sub compareFile {
     }
     else
     {
-        if(-l $olderFile)
+        if(-l $olderFile or $olderFile=~/.lnk$/)
         {
             # Falls ältere Datei bereits ein link ist => unverändert
-            $self->verbose("=> Files are is already link!\n","OK");
+            $self->verbose("=> Old file is already link!\n","OK");
             return "true";
             
         }
