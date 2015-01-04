@@ -56,5 +56,10 @@ sub compare_to {
 	return "$y$m$d$H$M$S";
 };
 
+sub get_os {
+	my $self = shift;
+	return $^O;
+}
+
 1;
 __END__
