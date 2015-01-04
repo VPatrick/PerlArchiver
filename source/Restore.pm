@@ -160,10 +160,9 @@ sub Find_source_r
     {
         if($_ ne "." and $_ ne ".." and $_ ne ".DS_Store")
         {
-            @tmp = split(/[<>]/, $_);
-            @tmp1 = split(/_/,$tmp[0]);
-            $ArchivName = $tmp1[0];
-            $ArchivTime = $tmp[1];
+            @tmp = split(/_/,$_);
+            $ArchivName = $tmp[0];
+            $ArchivTime = ("$tmp[1]_$tmp[2]_$tmp[3]_$tmp[4]_$tmp[5]_$tmp[6]");
             
             $self->{verbosity}->verbose("Compare times:\n","OK");
             
