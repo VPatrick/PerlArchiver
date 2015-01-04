@@ -1,12 +1,15 @@
 use strict;
 use warnings;
+use Utils;
 
 package Message;
 
 sub new {
 	my ($invocant, $level) = @_;
 	my $class = ref($invocant) || $invocant;
-	my $self = {};
+	my $self = {
+		utils => Utils->new
+	};
 	bless ($self, $class);
 	return $self;
 };
@@ -22,6 +25,9 @@ sub message {
 
 sub ok {
 	use Term::ANSIColor;
+	if ($self->{utils}->get_os() eq "MSWin32") {
+		use Win32::Console::ANSI;
+	}
 	my ($self, $message) = @_;
 	if ($message) {
 		return color("bold green"), "[OK]\t", color("reset"), "$message\n";
@@ -32,6 +38,9 @@ sub ok {
 
 sub warning {
 	use Term::ANSIColor;
+	if ($self->{utils}->get_os() eq "MSWin32") {
+		use Win32::Console::ANSI;
+	}
 	my ($self, $message) = @_;
 	if ($message) {
 		return color("bold yellow"), "[WARNING]\t", color("reset"), "$message\n";
@@ -41,6 +50,9 @@ sub warning {
 };
 
 sub error {
+	if ($self->{utils}->get_os() eq "MSWin32") {
+		use Win32::Console::ANSI;
+	}
 	use Term::ANSIColor;
 	my ($self, $message) = @_;
 	if ($message) {
@@ -51,7 +63,6 @@ sub error {
 };
 
 sub colourise {
-	use Term::ANSIColor;
 	my ($self, $state) = @_;
 	if ($state eq "OK") {
 		return $self->ok();
