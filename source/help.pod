@@ -1,0 +1,63 @@
+=head1 NAME
+
+my_perl_archiver - Create, Restore, Delete and List archives
+
+=head1 SYNOPSIS
+
+my_perl_archiver [options] [file ...]
+
+Options:
+
+	--create|-c		Create an archive
+	--restore|-r|-rp	Restore an archive
+	--delete|-d		Delete an existing archive
+	--list|-l		List all files of an existing archive
+	--slim|-s		Slim
+
+=head1 OPTIONS
+
+=over 4
+
+=item B<-create>
+
+Creating a backup (copy) of a directory and all its subdirectories in an arbitrary target directory.
+
+=item B<-restore>
+
+Restoring a file, a subdirectory or all of the archived directory.
+
+=item B<-delete>
+
+Removal of archive of a directory including its subdirectories or removing parts (subdirectories and files) of an archive
+
+=item B<-list>
+
+List all files, links and subdirectories of an archive.
+
+=item B<-slim>
+
+Care is taken that the totality of all archives of a subdirectory consumes as little space.
+
+=item B<-verbose>
+
+Cause B<my_perl_archiver> to be verbose
+
+=item B<-help>
+
+Prints the manual page and exits.
+
+=back
+
+=head1 DESCRIPTION
+
+B<my_perl_archiver> will create archives. If an archive exists B<my_perl_archiver> will restore, delete or list it.
+
+=head1 AUTHORS
+
+Patrick Vogt, Michel Angelo Rammuno, Muhammed Kasikci, Michalea Fenzel
+
+Technische Hochschule Georg-Simon-Ohm Nuernberg
+
+Prof. Dr.-Ing. Axel Hein
+
+=cut
