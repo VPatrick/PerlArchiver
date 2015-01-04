@@ -70,9 +70,5 @@ sub list {
 	}
 };
 
-sub help {
-	my $self = shift;
-};
-
 1;
 __END__
