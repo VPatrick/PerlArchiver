@@ -75,24 +75,61 @@ sub slim {
 # Parameter:	arguments	Parameter für restore
 sub restore {
 	my ($self, @arguments) = @_;
-	if ($self->{level} > 0) {
-		# Verbose-Mode aktivieren
+	if ($#arguments == 3) {
+	#	if ($^O == "MSWin32") {
+	#		use RestoreWin;
+	#		my $restore_win = RestoreWin->new;
+	#		if ($self->{level} > 0) {
+	#			$restore_win->setVerboseLevel($self->{level});
+	#		}
+	#		$restore_win->addSource($arguments[0]);
+	#		$restore_win->addDestination($arguments[1]);
+	#		$restore_win->addSourceName($arguments[2]);
+	#		$restore_win->addUserTime($arguments[3]);
+	#		$restore_win->restore_r();
+	#	} else {
+	#		use Restore;
+	#		my $restore = Restore->new;
+	#		if ($self->{level} > 0) {
+	#			$restore->setVerboseLevel($self->{level});
+	#		}
+	#		$restore->addSource($arguments[0]);
+	#		$restore->addDestination($arguments[1]);
+	#		$restore->addSourceName($arguments[2]);
+	#		$restore->addUserTime($arguments[3]);
+	#		$restore->restore_r();
+	#	}
+		print "restore\n";
+	} else {
+		print $self->{message}->error("Four parameters needed.");
+		exit;
 	}
-	# Aufruf der entsprechenden Restore-Methoden
 };
+
+# partial
+# Beschreibung: Ruft die Funktion partial auf
+# Parameter:	arugments	Parameter für partial
+sub partial {
+	my ($self, @arguments) = @_;
+	print "partial\n";
+}
 
 # del
 # Beschreibung: Ruft die Funktion delete auf
 # Parameter:	arguments	Parameter für delete
 sub del {
 	my ($self, @arguments) = @_;
-	#if ($#arguments == 0) {
+	if ($#arguments == 0) {
 	#	use del;
 	#	my $delete = del->new($arguments[0]);
 	#	if ($self->{level} > 0) {
 	#		# Verbose-Mode aktivieren
 	#	}
-	#}
+		print "delete\n";
+	} else {
+		print $self->{message}->error("One parameter needed.");
+		exit;
+	}
 };
 
 # list
