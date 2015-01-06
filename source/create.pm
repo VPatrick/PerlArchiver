@@ -325,6 +325,11 @@ sub compareFile {
     }
 }
 
+sub setVerboseLevel {
+	my ($self, $level) = @_;
+	$self->{flag} = $level;
+}
+
 #*****************************************************************************************************
 #                                        Destruktor
 # Beschreibung: Zerstört das Objekt
