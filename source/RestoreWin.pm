@@ -13,7 +13,7 @@ use File::Path qw(make_path remove_tree);
 use Verbosity;
 
 
-package Restore;
+package RestoreWin;
 
 our $FinalTime;
 
