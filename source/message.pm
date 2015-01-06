@@ -1,15 +1,12 @@
 use strict;
 use warnings;
-use Utils;
 
 package Message;
 
 sub new {
 	my ($invocant, $level) = @_;
 	my $class = ref($invocant) || $invocant;
-	my $self = {
-		utils => Utils->new
-	};
+	my $self = {};
 	bless ($self, $class);
 	return $self;
 };
@@ -24,41 +21,44 @@ sub message {
 };
 
 sub ok {
-	use Term::ANSIColor;
-	if ($self->{utils}->get_os() eq "MSWin32") {
-		use Win32::Console::ANSI;
-	}
 	my ($self, $message) = @_;
-	if ($message) {
-		return color("bold green"), "[OK]\t", color("reset"), "$message\n";
+	if ($^O eq "MSWin32") {
+		return ($message) ? "[OK]\t$message\n" : "[OK]\t";
 	} else {
-		return color("bold green"), "[OK]\t", color("reset");
+		use Term::ANSIColor;
+		if ($message) {
+			return color("bold green"), "[OK]\t", color("reset"), "$message\n";
+		} else {
+			return color("bold green"), "[OK]\t", color("reset");
+		}
 	}
 };
 
 sub warning {
-	use Term::ANSIColor;
-	if ($self->{utils}->get_os() eq "MSWin32") {
-		use Win32::Console::ANSI;
-	}
 	my ($self, $message) = @_;
-	if ($message) {
-		return color("bold yellow"), "[WARNING]\t", color("reset"), "$message\n";
+	if ($^O eq "MSWin32") {
+		return ($message) ? "[WARNING]\t$message\n" : "[WARNING]\t";
 	} else {
-		return color("bold yellow"), "[WARNING]\t", color("reset");
+		use Term::ANSIColor;
+		if ($message) {
+			return color("bold yellow"), "[WARNING]\t", color("reset"), "$message\n";
+		} else {
+			return color("bold yellow"), "[WARNING]\t", color("reset");
+		}
 	}
 };
 
 sub error {
-	if ($self->{utils}->get_os() eq "MSWin32") {
-		use Win32::Console::ANSI;
-	}
-	use Term::ANSIColor;
 	my ($self, $message) = @_;
-	if ($message) {
-		return color("bold red"), "[ERROR]\t", color("reset"), "$message\n";
+	if ($^O eq "MSWin32") {
+		return ($message) ? "[ERROR]\t$message\n" : "[ERROR]\t";
 	} else {
-		return color("bold red"), "[ERROR]\t", color("reset");
+		use Term::ANSIColor;
+		if ($message) {
+			return color("bold red"), "[ERROR]\t", color("reset"), "$message\n";
+		} else {
+			return color("bold red"), "[ERROR]\t", color("reset");
+		}
 	}
 };
 
