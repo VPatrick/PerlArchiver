@@ -1,8 +1,13 @@
 use strict;
 use warnings;
 
+# Message
+# Beschreibung: Dieses Modul gibt Texte abhängig vom Status aus
+# Autor:		Patrick Vogt
+# Datum:		Dezember 2014
 package Message;
 
+# Konstruktor
 sub new {
 	my ($invocant, $level) = @_;
 	my $class = ref($invocant) || $invocant;
@@ -11,6 +16,10 @@ sub new {
 	return $self;
 };
 
+# message
+# Beschreibung: Gibt eine Nachricht abhängig vom Status aus
+# Parameter: message	Auszugebende Nachricht
+#			 [state]	Gibt Nachrichten-Status an
 sub message {
 	my ($self, $message, $state) = @_;
 	if ($state) {
@@ -20,6 +29,9 @@ sub message {
 	}
 };
 
+# ok
+# Beschreibung: Gibt den Text [OK] und eine optionale Nachricht auf STDOUT aus
+# Parameter: [message]	Optionale auszugebende Nachricht
 sub ok {
 	my ($self, $message) = @_;
 	if ($^O eq "MSWin32") {
@@ -34,6 +46,9 @@ sub ok {
 	}
 };
 
+# warning
+# Beschreibung: Gibt den Text [WARNING] und eine optionale Nachricht auf STDOUT aus
+# Parameter: [message]	Optionale auszugebende Nachricht
 sub warning {
 	my ($self, $message) = @_;
 	if ($^O eq "MSWin32") {
@@ -48,6 +63,9 @@ sub warning {
 	}
 };
 
+# error
+# Beschreibung: Gibt den Text [ERROR] und eine optionale Nachricht auf STDOUT aus
+# Parameter: [message]	Optionale auszugebende Nachricht
 sub error {
 	my ($self, $message) = @_;
 	if ($^O eq "MSWin32") {
@@ -62,6 +80,9 @@ sub error {
 	}
 };
 
+# colourise
+# Beschreibung: Liefert [OK], [WARNING] oder [ERROR] zurück
+# Parameter: state	Status
 sub colourise {
 	my ($self, $state) = @_;
 	if ($state eq "OK") {

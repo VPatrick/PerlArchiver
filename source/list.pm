@@ -5,8 +5,13 @@ use Message;
 use Utils;
 use Verbosity;
 
+# List
+# Beschreibung: Dieses Modul listet die Inhalte eines Archivs auf
+# Autor:		Patrick Vogt
+# Datum:		Dezember 2014
 package List;
 
+# Konstruktor
 sub new {
 	my ($invocant) = @_;
 	my $class = ref($invocant) || $invocant;
@@ -19,11 +24,18 @@ sub new {
 	return $self;
 };
 
+# setVerboseLevel
+# Beschreibung: Setzt das Verbose-Level
+# Parameter:	level	Verbose-Level
 sub setVerboseLevel {
 	my ($self, $level) = @_;
 	$self->{verbosity}->setVerboseLevel($level);
 };
 
+# list
+# Beschreibung: Durchforstet das aufzulistende Archiv
+# Parameter: archive	Verzeichnis zu den Archiven
+#			 timestamp	Zeitpunkt
 sub list {
 	use File::Find qw(find);
 	my ($self, $archive, $timestamp) = @_;
@@ -48,6 +60,9 @@ sub list {
 	$self->print_list(@list);
 };
 
+# print_list
+# Beschreibung: Gibt den Archivinhalt auf STDOUT aus
+# Parameter: list
 sub print_list {
 	my ($self, @list) = @_;
 	foreach (@list) {
