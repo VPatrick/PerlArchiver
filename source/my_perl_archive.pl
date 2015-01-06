@@ -10,8 +10,18 @@ use Getopt::Long;
 use Pod::Usage qw(pod2usage);
 use FindBin;
 use Invoker;
+use Message;
 
-my $i = Invoker->new();
+my $message = Message->new;
+my $i = Invoker->new;
+
+foreach (@ARGV) {
+	if ($_ =~ m/-(cr|cd|cl|cp|rc|rd|rl|dc|dr|dl|dp|lc|lr|ld|lp)/i) {
+		print $message->error("The combination of $_ is not valid.");
+		exit;
+	}
+}
+
 Getopt::Long::Configure("bundling");
 GetOptions (
 	"verbose|v"  => sub { $i->setVerboseLevel(1) },
