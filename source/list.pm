@@ -51,14 +51,14 @@ sub list {
 sub print_list {
 	my ($self, @list) = @_;
 	foreach (@list) {
-		if (-l $_) {
+		if (-l $_ or $_ =~ m/.lnk$/i) {
 			$_ =~ m|(/[^/]+?)$|;
-			print "link\t$1\n";
+			print "lnk\t$1\n";
 		} elsif (-d $_) {
 			$_ =~ m|(/[^/]+?)$|;
 			print "dir\t$1\n";
 		} else {
-			$_ =~m|(/[^/]+?)$|;
+			$_ =~ m|(/[^/]+?)$|;
 			print "\t$1\n";
 		}
 	}
