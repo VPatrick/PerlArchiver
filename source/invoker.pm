@@ -2,6 +2,7 @@ use strict;
 use warnings;
 use Verbosity;
 use Message;
+use Instances;
 
 # Invoker
 # Beschreibung: Dieses Modul dient zum Aufruf der entsprechenden Funktionen von my_perl_archiver
@@ -16,6 +17,7 @@ sub new {
 	my $self = {
 		verbosity => Verbosity->new,
 		message => Message->new,
+		instances => Instances->new,
 		level => 0
 	};
 	bless ($self, $class);
@@ -36,19 +38,15 @@ sub setVerboseLevel {
 # Parameter:	arguments	Parameter für create
 sub create {
 	my ($self, @arguments) = @_;
-	#if ($#arguments == 1) {
-	#	use Create;
-	#	my $create = Create->new;
-	#	if ($self->{level} > 0) {
-	#		$create->setVerboseLevel($self->{level});
-	#	}
-	#	$create->addSource($arguments[0]);
-	#	$create->addDestination($arguments[1]);
-	#	$create->create_c();
-	#} else {
-	#	print $self->{message}->error("Two parameters needed.");
-	#	exit;
-	#}
+	if ($#arguments >= 1) {
+		my $create = $self->{instances}->create($self->{level});
+		$create->addSource($arguments[0]);
+		$create->addDestination($arguments[1]);
+		$create->create_c();
+	} else {
+		print $self->{message}->error("Wrong amount of parameters given: ");
+		exit;
+	}
 };
 
 # slim
@@ -56,19 +54,17 @@ sub create {
 # Parameter:	arguments	Parameter für slim
 sub slim {
 	my ($self, @arguments) = @_;
-	#if ($#arguments == 0) {
-	#	use Create;
-	#	my $create = Create->new;
-	#	if ($self->{level} > 0) {
-	#		$create->setVerboseLevel($self->{level});
-	#	}
-	#	$create->addDestination($arguments[0]);
-	#	$create->create_s();
-	#} else {
-	#	print $self->{message}->error("One parameters needed.");
-	#	exit;
-	#}
-}
+	my $create = $self->{instances}->create($self->{level});
+	if ($#arguments == 0) {
+		$create->addDestination($arguments[0]);
+		$create->create_s();
+	} elsif ($#arguments == 1) {
+		$create->create_s();
+	} else {
+		print $self->{message}->error("Wrong amount of paramters given: ");
+		exit;
+	}
+};
 
 # restore
 # Beschreibung: Ruft die Funktion restore auf
@@ -76,32 +72,14 @@ sub slim {
 sub restore {
 	my ($self, @arguments) = @_;
 	if ($#arguments == 3) {
-	#	if ($^O == "MSWin32") {
-	#		use RestoreWin;
-	#		my $restore_win = RestoreWin->new;
-	#		if ($self->{level} > 0) {
-	#			$restore_win->setVerboseLevel($self->{level});
-	#		}
-	#		$restore_win->addSource($arguments[0]);
-	#		$restore_win->addDestination($arguments[1]);
-	#		$restore_win->addSourceName($arguments[2]);
-	#		$restore_win->addUserTime($arguments[3]);
-	#		$restore_win->restore_r();
-	#	} else {
-	#		use Restore;
-	#		my $restore = Restore->new;
-	#		if ($self->{level} > 0) {
-	#			$restore->setVerboseLevel($self->{level});
-	#		}
-	#		$restore->addSource($arguments[0]);
-	#		$restore->addDestination($arguments[1]);
-	#		$restore->addSourceName($arguments[2]);
-	#		$restore->addUserTime($arguments[3]);
-	#		$restore->restore_r();
-	#	}
-		print "restore\n";
+		my $restore = $self->{instances}->restore($self->{level});
+		$restore->addSource($arguments[0]);
+		$restore->addDestination($arguments[1]);
+		$restore->addSourceName($arguments[2]);
+		$restore->addUserTime($arguments[3]);
+		$restore->restore_r();
 	} else {
-		print $self->{message}->error("Four parameters needed.");
+		print $self->{message}->error("Wrong amount of parameters given: ");
 		exit;
 	}
 };
@@ -111,7 +89,14 @@ sub restore {
 # Parameter:	arugments	Parameter für partial
 sub partial {
 	my ($self, @arguments) = @_;
-	print "partial\n";
+	if ($#arguments == 4) {
+		my $restore = $self->{instances}->restore($self->{level});
+		$restore->addPartial($arguments[4]);
+		$restore->restore_rp();
+	} else {
+		print $self->{message}->error("Wrong amount of parameters given: ");
+		exit;
+	}
 }
 
 # del
@@ -120,14 +105,11 @@ sub partial {
 sub del {
 	my ($self, @arguments) = @_;
 	if ($#arguments == 0) {
-	#	use del;
-	#	my $delete = del->new($arguments[0]);
-	#	if ($self->{level} > 0) {
-	#		# Verbose-Mode aktivieren
-	#	}
-		print "delete\n";
+		if ($self->{level} > 0) {
+			# Verbose-Mode aktivieren
+		}
 	} else {
-		print $self->{message}->error("One parameter needed.");
+		print $self->{message}->error("Wrong amount of parameters given: Path to an archive needed.");
 		exit;
 	}
 };
@@ -145,7 +127,7 @@ sub list {
 		}
 		$list->list($arguments[0], $arguments[1]);
 	} else {
-		print $self->{message}->error("Two parameters needed.");
+		print $self->{message}->error("Wrong amount of paramters given: Path to an archive and a timestamp needed.");
 		exit;
 	}
 };
