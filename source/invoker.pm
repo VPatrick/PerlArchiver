@@ -107,7 +107,7 @@ sub partial {
 sub del {
 	my ($self, @arguments) = @_;
 	if ($#arguments == 0) {
-		if ($^O == "MSWin32") {
+		if ($^O eq "MSWin32") {
             use del;
             my $delete = del->new;
             if ($self->{level} > 0) {
