@@ -11,15 +11,29 @@ use File::Path;
 use Verbosity;
 
 sub new {
-	my ( $invocant, $inDeleteFile ) = @_;
+	my $invocant = shift;
 	my $class = ref($invocant) || $invocant;
-	if ( !-e $inDeleteFile ) {
+	my $self = {
+		 deleteFile     => "",                  #Zu löschendes Objekt inkl Pfad
+		 mainArchivpath => "",                  #Nur Pfad
+		 archivFullName => "",                  #Archivname ohne Pfad mit Datum
+		 archivName     => "",                  #Archivname ohne Datum
+		 verbosity      => Verbosity->new(1),
+	};
+	bless $self, $class;
+	return $self;
+}
+
+sub addDestination {
+	my ( $self, $destination ) = @_;
+	
+	if ( !-e $destination ) {
 		print "No such file or directory!";
 		exit;
 	}
 
 	#Verzeichnispfad splitten
-	my @DeleteDirectory = split( /\//, $inDeleteFile );
+	my @DeleteDirectory = split( /\//, $destination );
 	my $main;
 	foreach (@DeleteDirectory) {
 		if ( $_ =~ m/\d{4}\_\d{2}\_\d{2}\_\d{2}\_\d{2}\_\d{2}/i ) { last; }
@@ -35,20 +49,22 @@ sub new {
 	my @tmp =
 	  split( /\_\d{4}\_\d{2}\_\d{2}\_\d{2}\_\d{2}\_\d{2}/, $archivFullName );
 	my $archivName = $tmp[0];
-	my $self = {
-		 deleteFile     => $inDeleteFile,       #Zu löschendes Objekt inkl Pfad
-		 mainArchivpath => $main,               #Nur Pfad
-		 archivFullName => $archivFullName,     #Archivname ohne Pfad mit Datum
-		 archivName     => $archivName,         #Archivname ohne Datum
-		 verbosity      => Verbosity->new(1),
-	};
-	bless $self, $class;
-	$self->init();
-	return $self;
+	
+	$self->{deleteFile}     = $destination;
+	$self->{mainArchivpath} = $main;             #Nur Pfad
+	$self->{archivFullName} = $archivFullName;   #Archivname ohne Pfad mit Datum
+	$self->{archivName}     = $archivName;		 #Archivname ohne Pfad ohne Datum
+	
+	$self->{verbosity}->verbose("Added new path to delete: $self->{deleteFile}");
+}
+
+sub setVerboseLevel {
+	my ( $self, $level ) = @_;
+	$self->{verbosity}->setVerboseLevel($level);
 }
 
 #--------------------------Loeschvorgang-------------------------------------------------------
-sub init {
+sub delete_d {
 	my $inself = shift;
 	my @foundDir;
 	my @allFoundLnk;
