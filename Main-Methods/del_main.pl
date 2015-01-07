@@ -7,7 +7,16 @@ use Cwd qw(abs_path);
 use lib qw(dirname(dirname abs_path $0) . "/Archiver");
 use del;
 
+ my $d = del->new();
+ 
+#$d->verbose("Debug");
 
-# my $test = del->new("D:/Dropbox/FH/ws14_15/Perl/github/Archiver/C_Users_Hein_Data_2014_12_20_11_30_58");
-# my $test2 = del->new("D:/Dropbox/FH/ws14_15/Perl/github/Archiver/C_Users_Hein_Data_2014_12_20_11_30_58/test.txt");
- my $test3 = del->new("D:/Dropbox/FH/ws14_15/Perl/github/Archiver/C_Users_Hein_Data_2014_12_20_11_30_58/Unterordner");
+#*****************************
+#       Create -c
+#*****************************
+
+$d->addDestination("D:/Dropbox/FH/ws14_15/Perl/github/Archiver/C_Users_Hein_Data_2014_12_20_11_30_58/Unterordner");   # TestArchive ist das Zielverzeichnis, muss angepasst werden
+# $d->addDestination("D:/Dropbox/FH/ws14_15/Perl/github/Archiver/C_Users_Hein_Data_2014_12_20_11_30_58");
+# $d->addDestination("D:/Dropbox/FH/ws14_15/Perl/github/Archiver/C_Users_Hein_Data_2014_12_20_11_30_58/test.txt");
+
+$d->delete_d();                    # Aufruf von Delete d
