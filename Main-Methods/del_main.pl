@@ -9,7 +9,6 @@ use del;
 
  my $d = del->new();
  
-#$d->verbose("Debug");
 
 #*****************************
 #       Create -c
