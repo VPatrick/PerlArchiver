@@ -40,7 +40,7 @@ sub list {
 	use File::Find qw(find);
 	my ($self, $archive, $timestamp) = @_;
 	if ($timestamp !~ m/^\d{4}_\d{2}_\d{2}_\d{2}_\d{2}_\d{2}/i) {
-		print $self->{message}->error("No valid timestamp: yyyy_mm_dd_HH_MM_SS");
+		print $self->{message}->error("No valid timestamp: yyyy_mm_dd_hh_ii_ss");
 		exit;
 	}
 	
