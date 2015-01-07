@@ -1,0 +1,101 @@
+digraph {
+graph [overlap=false]
+subgraph cluster_Pod_Text {
+	label="Pod::Text";
+	"Pod::Text::BEGIN@32";
+}
+subgraph cluster_Encode {
+	label="Encode";
+	"Encode::BEGIN@13";
+	"Encode::CORE:match";
+	"Encode::define_encoding";
+	"Encode::predefine_encodings";
+	"Encode::BEGIN@242";
+	"Encode::BEGIN@8";
+	"Encode::BEGIN@48";
+	"Encode::BEGIN@6";
+	"Encode::BEGIN@9";
+	"Encode::BEGIN@5";
+}
+subgraph cluster_warnings {
+	label="warnings";
+	"warnings::unimport";
+	"warnings::import";
+}
+subgraph cluster_base {
+	label="base";
+	"base::BEGIN@3";
+	"base::BEGIN@4";
+	"base::import";
+}
+subgraph cluster_strict {
+	label="strict";
+	"strict::import";
+}
+subgraph cluster_Encode_Encoding {
+	label="Encode::Encoding";
+	"Encode::Encoding::BEGIN@4";
+	"Encode::Encoding::BEGIN@5";
+	"Encode::Encoding::CORE:match";
+}
+subgraph cluster_XSLoader {
+	label="XSLoader";
+	"XSLoader::load";
+}
+subgraph cluster_bytes {
+	label="bytes";
+	"bytes::import";
+}
+subgraph cluster_Encode_utf8 {
+	label="Encode::utf8";
+	"Encode::utf8::BEGIN@325";
+}
+subgraph cluster_constant {
+	label="constant";
+	"constant::import";
+}
+subgraph cluster_Exporter {
+	label="Exporter";
+	"Exporter::import";
+}
+subgraph cluster_Encode_Alias {
+	label="Encode::Alias";
+	"Encode::Alias::BEGIN@6";
+	"Encode::Alias::BEGIN@3";
+	"Encode::Alias::CORE:match";
+	"Encode::Alias::BEGIN@8";
+	"Encode::Alias::BEGIN@4";
+	"Encode::Alias::init_aliases";
+	"Encode::Alias::BEGIN@2";
+}
+"Encode::BEGIN@13" -> "base::BEGIN@3";
+"Pod::Text::BEGIN@32" -> "Encode::BEGIN@5";
+"Encode::BEGIN@48" -> "Encode::Alias::BEGIN@2";
+"Encode::BEGIN@48" -> "Encode::Alias::BEGIN@8";
+"Encode::utf8::BEGIN@325" -> "bytes::import";
+"Encode::BEGIN@242" -> "warnings::unimport";
+"Encode::BEGIN@48" -> "Exporter::import";
+"Encode::BEGIN@48" -> "Encode::Alias::BEGIN@3";
+"Encode::BEGIN@13" -> "base::BEGIN@4";
+"Encode::BEGIN@8" -> "constant::import";
+"Pod::Text::BEGIN@32" -> "Encode::BEGIN@242";
+"Encode::BEGIN@13" -> "base::import";
+"Pod::Text::BEGIN@32" -> "Encode::utf8::BEGIN@325";
+"Encode::BEGIN@6" -> "warnings::import";
+"Pod::Text::BEGIN@32" -> "Encode::BEGIN@9";
+"Pod::Text::BEGIN@32" -> "Encode::CORE:match";
+"Encode::predefine_encodings" -> "Encode::Encoding::BEGIN@4";
+"Encode::BEGIN@48" -> "Encode::Alias::BEGIN@6";
+"Pod::Text::BEGIN@32" -> "Encode::BEGIN@13";
+"Pod::Text::BEGIN@32" -> "Encode::predefine_encodings";
+"Pod::Text::BEGIN@32" -> "Encode::BEGIN@48";
+"Pod::Text::BEGIN@32" -> "Encode::BEGIN@6";
+"Encode::predefine_encodings" -> "Encode::Encoding::CORE:match";
+"XSLoader::load" -> "Encode::define_encoding";
+"Pod::Text::BEGIN@32" -> "Encode::BEGIN@8";
+"Encode::BEGIN@48" -> "Encode::Alias::CORE:match";
+"Encode::predefine_encodings" -> "Encode::Encoding::BEGIN@5";
+"Encode::BEGIN@48" -> "Encode::Alias::init_aliases";
+"Encode::BEGIN@48" -> "Encode::Alias::BEGIN@4";
+"Encode::BEGIN@5" -> "strict::import";
+}

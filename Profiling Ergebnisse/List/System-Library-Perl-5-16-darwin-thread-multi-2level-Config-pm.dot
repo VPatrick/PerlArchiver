@@ -1,0 +1,60 @@
+digraph {
+graph [overlap=false]
+subgraph cluster_Pod_Usage {
+	label="Pod::Usage";
+	"Pod::Usage::BEGIN@455";
+}
+subgraph cluster_Config {
+	label="Config";
+	"Config::BEGIN@11";
+	"Config::TIEHASH";
+	"Config::BEGIN@45";
+	"Config::BEGIN@10";
+	"Config::BEGIN@9";
+	"Config::import";
+	"Config::FETCH";
+}
+subgraph cluster_File_Copy {
+	label="File::Copy";
+	"File::Copy::BEGIN@14";
+}
+subgraph cluster_warnings {
+	label="warnings";
+	"warnings::import";
+}
+subgraph cluster_vars {
+	label="vars";
+	"vars::import";
+}
+subgraph cluster_main {
+	label="main";
+	"main::BEGIN@7";
+}
+subgraph cluster_strict {
+	label="strict";
+	"strict::import";
+	"strict::unimport";
+}
+subgraph cluster_List {
+	label="List";
+	"List::BEGIN@40";
+}
+subgraph cluster_lib {
+	label="lib";
+	"lib::BEGIN@6";
+}
+"lib::BEGIN@6" -> "Config::BEGIN@10";
+"Config::BEGIN@45" -> "strict::unimport";
+"Config::BEGIN@10" -> "warnings::import";
+"lib::BEGIN@6" -> "Config::BEGIN@11";
+"lib::BEGIN@6" -> "Config::BEGIN@45";
+"lib::BEGIN@6" -> "Config::TIEHASH";
+"lib::BEGIN@6" -> "Config::import";
+"Pod::Usage::BEGIN@455" -> "Config::import";
+"File::Copy::BEGIN@14" -> "Config::import";
+"lib::BEGIN@6" -> "Config::BEGIN@9";
+"Config::BEGIN@11" -> "vars::import";
+"main::BEGIN@7" -> "Config::FETCH";
+"List::BEGIN@40" -> "Config::FETCH";
+"Config::BEGIN@9" -> "strict::import";
+}

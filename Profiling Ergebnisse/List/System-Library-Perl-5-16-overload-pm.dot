@@ -1,0 +1,38 @@
+digraph {
+graph [overlap=false]
+subgraph cluster_Getopt_Long_CallBack {
+	label="Getopt::Long::CallBack";
+	"Getopt::Long::CallBack::BEGIN@1489";
+}
+subgraph cluster_overload {
+	label="overload";
+	"overload::OVERLOAD";
+	"overload::BEGIN@116";
+	"overload::BEGIN@146";
+	"overload::import";
+	"overload::BEGIN@85";
+}
+subgraph cluster_overloading {
+	label="overloading";
+	"overloading::BEGIN@2";
+	"overloading::unimport";
+}
+subgraph cluster_warnings_register {
+	label="warnings::register";
+	"warnings::register::import";
+}
+subgraph cluster_Pod_Simple_LinkSection {
+	label="Pod::Simple::LinkSection";
+	"Pod::Simple::LinkSection::BEGIN@13";
+}
+"overload::import" -> "overload::OVERLOAD";
+"Getopt::Long::CallBack::BEGIN@1489" -> "overload::BEGIN@85";
+"overload::BEGIN@116" -> "overloading::unimport";
+"overload::BEGIN@85" -> "overloading::unimport";
+"Pod::Simple::LinkSection::BEGIN@13" -> "overload::import";
+"Getopt::Long::CallBack::BEGIN@1489" -> "overload::import";
+"Getopt::Long::CallBack::BEGIN@1489" -> "overload::BEGIN@116";
+"Getopt::Long::CallBack::BEGIN@1489" -> "overload::BEGIN@146";
+"overload::BEGIN@85" -> "overloading::BEGIN@2";
+"overload::BEGIN@146" -> "warnings::register::import";
+}

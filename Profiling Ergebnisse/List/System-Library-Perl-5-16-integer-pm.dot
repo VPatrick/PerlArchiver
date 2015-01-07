@@ -1,0 +1,20 @@
+digraph {
+graph [overlap=false]
+subgraph cluster_Pod_Simple {
+	label="Pod::Simple";
+	"Pod::Simple::BEGIN@7";
+}
+subgraph cluster_integer {
+	label="integer";
+	"integer::import";
+	"integer::unimport";
+}
+subgraph cluster_Pod_Simple_BlackBox {
+	label="Pod::Simple::BlackBox";
+	"Pod::Simple::BlackBox::BEGIN@1151";
+	"Pod::Simple::BlackBox::BEGIN@22";
+}
+"Pod::Simple::BlackBox::BEGIN@1151" -> "integer::unimport";
+"Pod::Simple::BEGIN@7" -> "integer::import";
+"Pod::Simple::BlackBox::BEGIN@22" -> "integer::import";
+}

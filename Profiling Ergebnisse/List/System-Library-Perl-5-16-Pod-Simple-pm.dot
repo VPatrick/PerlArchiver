@@ -1,0 +1,83 @@
+digraph {
+graph [overlap=false]
+subgraph cluster_Pod_Escapes {
+	label="Pod::Escapes";
+	"Pod::Escapes::BEGIN@22";
+	"Pod::Escapes::BEGIN@23";
+}
+subgraph cluster_Pod_Text {
+	label="Pod::Text";
+	"Pod::Text::BEGIN@34";
+}
+subgraph cluster_Pod_Simple {
+	label="Pod::Simple";
+	"Pod::Simple::CORE:match";
+	"Pod::Simple::_accessorize";
+	"Pod::Simple::BEGIN@9";
+	"Pod::Simple::BEGIN@10";
+	"Pod::Simple::BEGIN@1438";
+	"Pod::Simple::BEGIN@7";
+	"Pod::Simple::BEGIN@1434";
+	"Pod::Simple::BEGIN@116";
+	"Pod::Simple::BEGIN@6";
+	"Pod::Simple::BEGIN@8";
+	"Pod::Simple::BEGIN@4";
+	"Pod::Simple::BEGIN@32";
+	"Pod::Simple::__ANON__";
+	"Pod::Simple::BEGIN@13";
+	"Pod::Simple::BEGIN@5";
+}
+subgraph cluster_integer {
+	label="integer";
+	"integer::import";
+}
+subgraph cluster_vars {
+	label="vars";
+	"vars::import";
+}
+subgraph cluster_strict {
+	label="strict";
+	"strict::import";
+	"strict::unimport";
+}
+subgraph cluster_UNIVERSAL {
+	label="UNIVERSAL";
+	"UNIVERSAL::VERSION";
+}
+subgraph cluster_Pod_Simple_LinkSection {
+	label="Pod::Simple::LinkSection";
+	"Pod::Simple::LinkSection::BEGIN@10";
+	"Pod::Simple::LinkSection::BEGIN@8";
+	"Pod::Simple::LinkSection::BEGIN@13";
+	"Pod::Simple::LinkSection::BEGIN@9";
+	"Pod::Simple::LinkSection::BEGIN@5";
+}
+"Pod::Text::BEGIN@34" -> "Pod::Simple::BEGIN@1434";
+"Pod::Simple::BEGIN@9" -> "Pod::Simple::LinkSection::BEGIN@8";
+"Pod::Text::BEGIN@34" -> "Pod::Simple::BEGIN@1438";
+"Pod::Text::BEGIN@34" -> "Pod::Simple::BEGIN@6";
+"Pod::Text::BEGIN@34" -> "Pod::Simple::BEGIN@8";
+"Pod::Text::BEGIN@34" -> "Pod::Simple::BEGIN@4";
+"Pod::Simple::BEGIN@1434" -> "strict::unimport";
+"Pod::Text::BEGIN@34" -> "Pod::Simple::BEGIN@13";
+"Pod::Simple::_accessorize" -> "Pod::Simple::CORE:match";
+"Pod::Text::BEGIN@34" -> "Pod::Simple::BEGIN@10";
+"Pod::Text::BEGIN@34" -> "Pod::Simple::BEGIN@7";
+"Pod::Simple::BEGIN@9" -> "Pod::Simple::LinkSection::BEGIN@5";
+"Pod::Text::BEGIN@34" -> "Pod::Simple::_accessorize";
+"Pod::Simple::BEGIN@9" -> "Pod::Simple::LinkSection::BEGIN@13";
+"Pod::Simple::BEGIN@9" -> "Pod::Simple::LinkSection::BEGIN@9";
+"Pod::Text::BEGIN@34" -> "Pod::Simple::BEGIN@9";
+"Pod::Simple::BEGIN@13" -> "vars::import";
+"Pod::Simple::BEGIN@8" -> "Pod::Escapes::BEGIN@23";
+"Pod::Simple::BEGIN@32" -> "Pod::Simple::__ANON__";
+"Pod::Simple::BEGIN@7" -> "integer::import";
+"Pod::Simple::BEGIN@9" -> "Pod::Simple::LinkSection::BEGIN@10";
+"Pod::Text::BEGIN@34" -> "Pod::Simple::BEGIN@5";
+"Pod::Simple::BEGIN@8" -> "Pod::Escapes::BEGIN@22";
+"Pod::Text::BEGIN@34" -> "Pod::Simple::BEGIN@116";
+"Pod::Text::BEGIN@34" -> "Pod::Simple::BEGIN@32";
+"Pod::Simple::BEGIN@8" -> "UNIVERSAL::VERSION";
+"Pod::Simple::BEGIN@1438" -> "strict::import";
+"Pod::Simple::BEGIN@4" -> "strict::import";
+}

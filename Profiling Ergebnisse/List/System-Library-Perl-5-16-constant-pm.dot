@@ -1,0 +1,112 @@
+digraph {
+graph [overlap=false]
+subgraph cluster_Internals {
+	label="Internals";
+	"Internals::SvREADONLY";
+}
+subgraph cluster_Encode {
+	label="Encode";
+	"Encode::BEGIN@8";
+}
+subgraph cluster_Getopt_Long {
+	label="Getopt::Long";
+	"Getopt::Long::BEGIN@222";
+	"Getopt::Long::BEGIN@228";
+	"Getopt::Long::BEGIN@220";
+	"Getopt::Long::BEGIN@223";
+	"Getopt::Long::BEGIN@237";
+	"Getopt::Long::BEGIN@208";
+	"Getopt::Long::BEGIN@247";
+	"Getopt::Long::BEGIN@229";
+	"Getopt::Long::BEGIN@236";
+	"Getopt::Long::BEGIN@226";
+	"Getopt::Long::BEGIN@225";
+	"Getopt::Long::BEGIN@218";
+	"Getopt::Long::BEGIN@224";
+}
+subgraph cluster_Data_Dumper {
+	label="Data::Dumper";
+	"Data::Dumper::BEGIN@275";
+}
+subgraph cluster_vars {
+	label="vars";
+	"vars::import";
+}
+subgraph cluster_strict {
+	label="strict";
+	"strict::import";
+	"strict::unimport";
+}
+subgraph cluster_constant {
+	label="constant";
+	"constant::import";
+	"constant::BEGIN@4";
+	"constant::BEGIN@36";
+	"constant::BEGIN@3";
+	"constant::BEGIN@25";
+	"constant::BEGIN@29";
+	"constant::CORE:regcomp";
+	"constant::CORE:qr";
+	"constant::BEGIN@65";
+	"constant::BEGIN@2";
+	"constant::BEGIN@127";
+	"constant::CORE:match";
+	"constant::BEGIN@6";
+}
+subgraph cluster_utf8 {
+	label="utf8";
+	"utf8::AUTOLOAD";
+	"utf8::SWASHNEW";
+}
+subgraph cluster_warnings_register {
+	label="warnings::register";
+	"warnings::register::import";
+}
+subgraph cluster_Encode_Alias {
+	label="Encode::Alias";
+	"Encode::Alias::BEGIN@6";
+}
+subgraph cluster_mro {
+	label="mro";
+	"mro::method_changed_in";
+}
+"Getopt::Long::BEGIN@208" -> "constant::BEGIN@29";
+"constant::import" -> "mro::method_changed_in";
+"Getopt::Long::BEGIN@208" -> "constant::BEGIN@2";
+"Getopt::Long::BEGIN@208" -> "constant::BEGIN@4";
+"Getopt::Long::BEGIN@208" -> "constant::BEGIN@65";
+"Getopt::Long::BEGIN@208" -> "constant::BEGIN@6";
+"Getopt::Long::BEGIN@220" -> "constant::import";
+"Getopt::Long::BEGIN@208" -> "constant::import";
+"Getopt::Long::BEGIN@237" -> "constant::import";
+"Encode::BEGIN@8" -> "constant::import";
+"Getopt::Long::BEGIN@226" -> "constant::import";
+"Getopt::Long::BEGIN@236" -> "constant::import";
+"Getopt::Long::BEGIN@225" -> "constant::import";
+"Getopt::Long::BEGIN@218" -> "constant::import";
+"Getopt::Long::BEGIN@222" -> "constant::import";
+"Encode::Alias::BEGIN@6" -> "constant::import";
+"Data::Dumper::BEGIN@275" -> "constant::import";
+"Getopt::Long::BEGIN@228" -> "constant::import";
+"Getopt::Long::BEGIN@223" -> "constant::import";
+"Getopt::Long::BEGIN@247" -> "constant::import";
+"Getopt::Long::BEGIN@229" -> "constant::import";
+"Getopt::Long::BEGIN@224" -> "constant::import";
+"constant::BEGIN@29" -> "strict::unimport";
+"constant::BEGIN@65" -> "strict::unimport";
+"constant::BEGIN@127" -> "strict::unimport";
+"constant::import" -> "constant::CORE:regcomp";
+"Getopt::Long::BEGIN@208" -> "constant::CORE:regcomp";
+"constant::import" -> "Internals::SvREADONLY";
+"Getopt::Long::BEGIN@208" -> "constant::BEGIN@127";
+"constant::BEGIN@25" -> "utf8::AUTOLOAD";
+"constant::BEGIN@25" -> "constant::BEGIN@36";
+"constant::BEGIN@25" -> "utf8::SWASHNEW";
+"constant::BEGIN@6" -> "vars::import";
+"Getopt::Long::BEGIN@208" -> "constant::CORE:qr";
+"Getopt::Long::BEGIN@208" -> "constant::BEGIN@3";
+"Getopt::Long::BEGIN@208" -> "constant::BEGIN@25";
+"constant::import" -> "constant::CORE:match";
+"constant::BEGIN@3" -> "strict::import";
+"constant::BEGIN@4" -> "warnings::register::import";
+}

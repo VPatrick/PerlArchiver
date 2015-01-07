@@ -1,0 +1,51 @@
+digraph {
+graph [overlap=false]
+subgraph cluster_Config {
+	label="Config";
+	"Config::BEGIN@11";
+	"Config::TIEHASH";
+	"Config::BEGIN@45";
+	"Config::BEGIN@10";
+	"Config::BEGIN@9";
+	"Config::import";
+}
+subgraph cluster_main {
+	label="main";
+	"main::BEGIN@7";
+}
+subgraph cluster_strict {
+	label="strict";
+	"strict::import";
+}
+subgraph cluster_lib {
+	label="lib";
+	"lib::_get_dirs";
+	"lib::BEGIN@6";
+	"lib::CORE:match";
+	"lib::BEGIN@8";
+	"lib::CORE:ftdir";
+	"lib::CORE:ftis";
+	"lib::import";
+}
+subgraph cluster_version {
+	label="version";
+	"version::(bool";
+	"version::(cmp";
+}
+"lib::BEGIN@6" -> "Config::BEGIN@10";
+"main::BEGIN@7" -> "lib::BEGIN@6";
+"lib::BEGIN@6" -> "version::(bool";
+"lib::BEGIN@6" -> "Config::BEGIN@11";
+"lib::BEGIN@6" -> "Config::BEGIN@45";
+"lib::BEGIN@6" -> "Config::TIEHASH";
+"lib::BEGIN@6" -> "Config::import";
+"lib::import" -> "lib::_get_dirs";
+"lib::BEGIN@6" -> "Config::BEGIN@9";
+"lib::BEGIN@6" -> "version::(cmp";
+"lib::import" -> "lib::CORE:ftis";
+"main::BEGIN@7" -> "lib::import";
+"main::BEGIN@7" -> "lib::BEGIN@8";
+"lib::import" -> "lib::CORE:match";
+"lib::BEGIN@8" -> "strict::import";
+"lib::import" -> "lib::CORE:ftdir";
+}

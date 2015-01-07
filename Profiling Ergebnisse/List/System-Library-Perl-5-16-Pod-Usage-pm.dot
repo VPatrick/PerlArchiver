@@ -1,0 +1,105 @@
+digraph {
+graph [overlap=false]
+subgraph cluster_Pod_Usage {
+	label="Pod::Usage";
+	"Pod::Usage::BEGIN@11";
+	"Pod::Usage::BEGIN@456";
+	"Pod::Usage::BEGIN@460";
+	"Pod::Usage::BEGIN@455";
+	"Pod::Usage::BEGIN@13";
+	"Pod::Usage::BEGIN@457";
+	"Pod::Usage::BEGIN@454";
+}
+subgraph cluster_Pod_Text {
+	label="Pod::Text";
+	"Pod::Text::BEGIN@34";
+	"Pod::Text::BEGIN@33";
+	"Pod::Text::BEGIN@28";
+	"Pod::Text::BEGIN@32";
+	"Pod::Text::BEGIN@31";
+	"Pod::Text::BEGIN@29";
+}
+subgraph cluster_Config {
+	label="Config";
+	"Config::import";
+}
+subgraph cluster_File_Spec_Unix {
+	label="File::Spec::Unix";
+	"File::Spec::Unix::BEGIN@4";
+	"File::Spec::Unix::BEGIN@3";
+	"File::Spec::Unix::BEGIN@149";
+}
+subgraph cluster_vars {
+	label="vars";
+	"vars::import";
+}
+subgraph cluster_main {
+	label="main";
+	"main::BEGIN@10";
+}
+subgraph cluster_strict {
+	label="strict";
+	"strict::import";
+}
+subgraph cluster_File_Spec {
+	label="File::Spec";
+	"File::Spec::BEGIN@4";
+	"File::Spec::BEGIN@3";
+}
+subgraph cluster_Exporter {
+	label="Exporter";
+	"Exporter::import";
+}
+subgraph cluster_Carp {
+	label="Carp";
+	"Carp::BEGIN@398";
+	"Carp::BEGIN@105";
+	"Carp::BEGIN@4";
+	"Carp::BEGIN@18";
+	"Carp::BEGIN@8";
+	"Carp::BEGIN@5";
+	"Carp::BEGIN@17";
+	"Carp::BEGIN@413";
+	"Carp::BEGIN@399";
+	"Carp::BEGIN@7";
+	"Carp::BEGIN@406";
+	"Carp::BEGIN@67";
+	"Carp::BEGIN@3";
+}
+"Pod::Usage::BEGIN@454" -> "Carp::BEGIN@18";
+"main::BEGIN@10" -> "Pod::Usage::BEGIN@454";
+"Pod::Usage::BEGIN@460" -> "Pod::Text::BEGIN@29";
+"Pod::Usage::BEGIN@457" -> "File::Spec::Unix::BEGIN@149";
+"main::BEGIN@10" -> "Pod::Usage::BEGIN@13";
+"Pod::Usage::BEGIN@454" -> "Exporter::import";
+"Pod::Usage::BEGIN@456" -> "Exporter::import";
+"Pod::Usage::BEGIN@454" -> "Carp::BEGIN@4";
+"Pod::Usage::BEGIN@454" -> "Carp::BEGIN@67";
+"Pod::Usage::BEGIN@454" -> "Carp::BEGIN@105";
+"Pod::Usage::BEGIN@454" -> "Carp::BEGIN@5";
+"Pod::Usage::BEGIN@455" -> "Config::import";
+"Pod::Usage::BEGIN@454" -> "Carp::BEGIN@399";
+"Pod::Usage::BEGIN@460" -> "Pod::Text::BEGIN@34";
+"Pod::Usage::BEGIN@457" -> "File::Spec::Unix::BEGIN@3";
+"Pod::Usage::BEGIN@454" -> "Carp::BEGIN@3";
+"Pod::Usage::BEGIN@13" -> "vars::import";
+"Pod::Usage::BEGIN@460" -> "Pod::Text::BEGIN@31";
+"Pod::Usage::BEGIN@454" -> "Carp::BEGIN@7";
+"main::BEGIN@10" -> "Pod::Usage::BEGIN@456";
+"Pod::Usage::BEGIN@454" -> "Carp::BEGIN@406";
+"Pod::Usage::BEGIN@460" -> "Pod::Text::BEGIN@28";
+"main::BEGIN@10" -> "Pod::Usage::BEGIN@455";
+"Pod::Usage::BEGIN@460" -> "Pod::Text::BEGIN@33";
+"Pod::Usage::BEGIN@457" -> "File::Spec::BEGIN@3";
+"main::BEGIN@10" -> "Pod::Usage::BEGIN@460";
+"Pod::Usage::BEGIN@454" -> "Carp::BEGIN@398";
+"Pod::Usage::BEGIN@454" -> "Carp::BEGIN@8";
+"main::BEGIN@10" -> "Pod::Usage::BEGIN@457";
+"Pod::Usage::BEGIN@454" -> "Carp::BEGIN@17";
+"Pod::Usage::BEGIN@460" -> "Pod::Text::BEGIN@32";
+"main::BEGIN@10" -> "Pod::Usage::BEGIN@11";
+"Pod::Usage::BEGIN@454" -> "Carp::BEGIN@413";
+"Pod::Usage::BEGIN@457" -> "File::Spec::BEGIN@4";
+"Pod::Usage::BEGIN@457" -> "File::Spec::Unix::BEGIN@4";
+"Pod::Usage::BEGIN@11" -> "strict::import";
+}

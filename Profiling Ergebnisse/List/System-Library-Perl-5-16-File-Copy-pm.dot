@@ -1,0 +1,41 @@
+digraph {
+graph [overlap=false]
+subgraph cluster_Config {
+	label="Config";
+	"Config::import";
+}
+subgraph cluster_warnings {
+	label="warnings";
+	"warnings::unimport";
+	"warnings::import";
+}
+subgraph cluster_File_Copy {
+	label="File::Copy";
+	"File::Copy::BEGIN@10";
+	"File::Copy::BEGIN@11";
+	"File::Copy::BEGIN@13";
+	"File::Copy::BEGIN@12.11";
+	"File::Copy::BEGIN@47";
+	"File::Copy::BEGIN@12";
+	"File::Copy::BEGIN@14";
+}
+subgraph cluster_strict {
+	label="strict";
+	"strict::import";
+}
+subgraph cluster_Create {
+	label="Create";
+	"Create::BEGIN@77";
+}
+"Create::BEGIN@77" -> "File::Copy::BEGIN@47";
+"File::Copy::BEGIN@12.11" -> "warnings::unimport";
+"Create::BEGIN@77" -> "File::Copy::BEGIN@12.11";
+"Create::BEGIN@77" -> "File::Copy::BEGIN@13";
+"File::Copy::BEGIN@12" -> "warnings::import";
+"File::Copy::BEGIN@14" -> "Config::import";
+"Create::BEGIN@77" -> "File::Copy::BEGIN@11";
+"Create::BEGIN@77" -> "File::Copy::BEGIN@14";
+"Create::BEGIN@77" -> "File::Copy::BEGIN@12";
+"Create::BEGIN@77" -> "File::Copy::BEGIN@10";
+"File::Copy::BEGIN@11" -> "strict::import";
+}

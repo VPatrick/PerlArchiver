@@ -1,0 +1,119 @@
+digraph {
+graph [overlap=false]
+subgraph cluster_Config {
+	label="Config";
+	"Config::BEGIN@10";
+}
+subgraph cluster_Encode {
+	label="Encode";
+	"Encode::BEGIN@6";
+	"Encode::BEGIN@242";
+}
+subgraph cluster_Instances {
+	label="Instances";
+	"Instances::BEGIN@10";
+}
+subgraph cluster_Invoker {
+	label="Invoker";
+	"Invoker::BEGIN@2.13";
+	"Invoker::BEGIN@2";
+}
+subgraph cluster_File_Copy {
+	label="File::Copy";
+	"File::Copy::BEGIN@12.11";
+	"File::Copy::BEGIN@12";
+}
+subgraph cluster_warnings {
+	label="warnings";
+	"warnings::unimport";
+	"warnings::CORE:regcomp";
+	"warnings::register_categories";
+	"warnings::_mkMask";
+	"warnings::CORE:match";
+	"warnings::import";
+}
+subgraph cluster_main {
+	label="main";
+	"main::BEGIN@2.7";
+	"main::BEGIN@2.10";
+	"main::BEGIN@2.4";
+	"main::BEGIN@3";
+	"main::BEGIN@2.1";
+}
+subgraph cluster_Encode_Encoding {
+	label="Encode::Encoding";
+	"Encode::Encoding::BEGIN@5";
+}
+subgraph cluster_Encode_Config {
+	label="Encode::Config";
+	"Encode::Config::BEGIN@8";
+}
+subgraph cluster_File_Find {
+	label="File::Find";
+	"File::Find::BEGIN@4";
+}
+subgraph cluster_Exporter_Heavy {
+	label="Exporter::Heavy";
+	"Exporter::Heavy::BEGIN@197";
+}
+subgraph cluster_overloading {
+	label="overloading";
+	"overloading::BEGIN@2";
+}
+subgraph cluster_Carp {
+	label="Carp";
+	"Carp::BEGIN@399";
+	"Carp::BEGIN@406";
+	"Carp::BEGIN@5";
+}
+subgraph cluster_utf8 {
+	label="utf8";
+	"utf8::BEGIN@147";
+	"utf8::BEGIN@3";
+	"utf8::BEGIN@542";
+}
+subgraph cluster_warnings_register {
+	label="warnings::register";
+	"warnings::register::import";
+}
+subgraph cluster_File_Basename {
+	label="File::Basename";
+	"File::Basename::BEGIN@52";
+}
+subgraph cluster_Encode_Alias {
+	label="Encode::Alias";
+	"Encode::Alias::BEGIN@3";
+	"Encode::Alias::BEGIN@4";
+}
+"utf8::BEGIN@147" -> "warnings::unimport";
+"Exporter::Heavy::BEGIN@197" -> "warnings::unimport";
+"Encode::BEGIN@242" -> "warnings::unimport";
+"Carp::BEGIN@399" -> "warnings::unimport";
+"File::Copy::BEGIN@12.11" -> "warnings::unimport";
+"Carp::BEGIN@406" -> "warnings::unimport";
+"Encode::Alias::BEGIN@4" -> "warnings::unimport";
+"utf8::BEGIN@542" -> "warnings::unimport";
+"main::BEGIN@3" -> "warnings::CORE:match";
+"warnings::register_categories" -> "warnings::_mkMask";
+"warnings::register::import" -> "warnings::register_categories";
+"main::BEGIN@2.4" -> "warnings::import";
+"Invoker::BEGIN@2.13" -> "warnings::import";
+"Instances::BEGIN@10" -> "warnings::import";
+"File::Copy::BEGIN@12" -> "warnings::import";
+"Encode::Config::BEGIN@8" -> "warnings::import";
+"File::Find::BEGIN@4" -> "warnings::import";
+"Invoker::BEGIN@2" -> "warnings::import";
+"Config::BEGIN@10" -> "warnings::import";
+"main::BEGIN@2.10" -> "warnings::import";
+"Encode::Encoding::BEGIN@5" -> "warnings::import";
+"main::BEGIN@3" -> "warnings::import";
+"File::Basename::BEGIN@52" -> "warnings::import";
+"Carp::BEGIN@5" -> "warnings::import";
+"main::BEGIN@2.1" -> "warnings::import";
+"utf8::BEGIN@3" -> "warnings::import";
+"Encode::BEGIN@6" -> "warnings::import";
+"Encode::Alias::BEGIN@3" -> "warnings::import";
+"main::BEGIN@2.7" -> "warnings::import";
+"overloading::BEGIN@2" -> "warnings::import";
+"main::BEGIN@3" -> "warnings::CORE:regcomp";
+}

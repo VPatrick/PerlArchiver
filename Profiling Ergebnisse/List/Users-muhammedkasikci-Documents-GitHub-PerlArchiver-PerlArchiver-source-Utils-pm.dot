@@ -1,0 +1,78 @@
+digraph {
+graph [overlap=false]
+subgraph cluster_Utils {
+	label="Utils";
+	"Utils::CORE:open_dir";
+	"Utils::findLastValidArchive";
+	"Utils::CORE:regcomp";
+	"Utils::CORE:closedir";
+	"Utils::setVerboseLevel";
+	"Utils::new";
+	"Utils::compare_to";
+	"Utils::CORE:readdir";
+}
+subgraph cluster_Invoker {
+	label="Invoker";
+	"Invoker::BEGIN@3.14";
+	"Invoker::BEGIN@5";
+	"Invoker::BEGIN@2.13";
+	"Invoker::BEGIN@1.12";
+	"Invoker::BEGIN@4.15";
+}
+subgraph cluster_warnings {
+	label="warnings";
+	"warnings::import";
+}
+subgraph cluster_Data_Dumper {
+	label="Data::Dumper";
+	"Data::Dumper::BEGIN@12";
+	"Data::Dumper::BEGIN@22";
+	"Data::Dumper::BEGIN@24";
+	"Data::Dumper::BEGIN@275";
+	"Data::Dumper::BEGIN@18";
+	"Data::Dumper::BEGIN@718";
+}
+subgraph cluster_strict {
+	label="strict";
+	"strict::import";
+}
+subgraph cluster_Verbosity {
+	label="Verbosity";
+	"Verbosity::new";
+	"Verbosity::setVerboseLevel";
+	"Verbosity::verbose";
+}
+subgraph cluster_List {
+	label="List";
+	"List::list";
+	"List::new";
+}
+subgraph cluster_Exporter {
+	label="Exporter";
+	"Exporter::import";
+}
+"Utils::findLastValidArchive" -> "Utils::CORE:open_dir";
+"Invoker::BEGIN@5" -> "Invoker::BEGIN@2.13";
+"Invoker::BEGIN@4.15" -> "Data::Dumper::BEGIN@22";
+"Invoker::BEGIN@4.15" -> "Data::Dumper::BEGIN@275";
+"Invoker::BEGIN@4.15" -> "Exporter::import";
+"Utils::setVerboseLevel" -> "Verbosity::setVerboseLevel";
+"Utils::findLastValidArchive" -> "Utils::CORE:readdir";
+"Invoker::BEGIN@4.15" -> "Data::Dumper::BEGIN@24";
+"Invoker::BEGIN@5" -> "Invoker::BEGIN@4.15";
+"Invoker::BEGIN@5" -> "Invoker::BEGIN@1.12";
+"Invoker::BEGIN@2.13" -> "warnings::import";
+"Invoker::BEGIN@4.15" -> "Data::Dumper::BEGIN@12";
+"Utils::findLastValidArchive" -> "Utils::CORE:closedir";
+"Utils::new" -> "Verbosity::new";
+"Utils::findLastValidArchive" -> "Utils::CORE:regcomp";
+"Invoker::BEGIN@4.15" -> "Data::Dumper::BEGIN@718";
+"Invoker::BEGIN@4.15" -> "Data::Dumper::BEGIN@18";
+"Utils::findLastValidArchive" -> "Verbosity::verbose";
+"Invoker::BEGIN@5" -> "Invoker::BEGIN@3.14";
+"List::list" -> "Utils::setVerboseLevel";
+"List::new" -> "Utils::new";
+"List::list" -> "Utils::findLastValidArchive";
+"Invoker::BEGIN@1.12" -> "strict::import";
+"Utils::findLastValidArchive" -> "Utils::compare_to";
+}

@@ -1,0 +1,39 @@
+digraph {
+graph [overlap=false]
+subgraph cluster_integer {
+	label="integer";
+	"integer::import";
+	"integer::unimport";
+}
+subgraph cluster_vars {
+	label="vars";
+	"vars::import";
+}
+subgraph cluster_strict {
+	label="strict";
+	"strict::import";
+}
+subgraph cluster_Pod_Simple_BlackBox {
+	label="Pod::Simple::BlackBox";
+	"Pod::Simple::BlackBox::BEGIN@28";
+	"Pod::Simple::BlackBox::BEGIN@25";
+	"Pod::Simple::BlackBox::BEGIN@1151";
+	"Pod::Simple::BlackBox::BEGIN@23";
+	"Pod::Simple::BlackBox::BEGIN@24";
+	"Pod::Simple::BlackBox::BEGIN@22";
+}
+subgraph cluster_Pod_Simple_LinkSection {
+	label="Pod::Simple::LinkSection";
+	"Pod::Simple::LinkSection::BEGIN@9";
+}
+"Pod::Simple::LinkSection::BEGIN@9" -> "Pod::Simple::BlackBox::BEGIN@1151";
+"Pod::Simple::LinkSection::BEGIN@9" -> "Pod::Simple::BlackBox::BEGIN@24";
+"Pod::Simple::LinkSection::BEGIN@9" -> "Pod::Simple::BlackBox::BEGIN@23";
+"Pod::Simple::BlackBox::BEGIN@1151" -> "integer::unimport";
+"Pod::Simple::BlackBox::BEGIN@25" -> "vars::import";
+"Pod::Simple::LinkSection::BEGIN@9" -> "Pod::Simple::BlackBox::BEGIN@22";
+"Pod::Simple::BlackBox::BEGIN@22" -> "integer::import";
+"Pod::Simple::LinkSection::BEGIN@9" -> "Pod::Simple::BlackBox::BEGIN@25";
+"Pod::Simple::LinkSection::BEGIN@9" -> "Pod::Simple::BlackBox::BEGIN@28";
+"Pod::Simple::BlackBox::BEGIN@23" -> "strict::import";
+}

@@ -1,0 +1,28 @@
+digraph {
+graph [overlap=false]
+subgraph cluster_vars {
+	label="vars";
+	"vars::import";
+}
+subgraph cluster_strict {
+	label="strict";
+	"strict::import";
+	"strict::unimport";
+}
+subgraph cluster_Digest {
+	label="Digest";
+	"Digest::BEGIN@4";
+	"Digest::BEGIN@3";
+	"Digest::BEGIN@37";
+}
+subgraph cluster_Create {
+	label="Create";
+	"Create::BEGIN@285";
+}
+"Create::BEGIN@285" -> "Digest::BEGIN@4";
+"Digest::BEGIN@37" -> "strict::unimport";
+"Digest::BEGIN@4" -> "vars::import";
+"Create::BEGIN@285" -> "Digest::BEGIN@37";
+"Digest::BEGIN@3" -> "strict::import";
+"Create::BEGIN@285" -> "Digest::BEGIN@3";
+}

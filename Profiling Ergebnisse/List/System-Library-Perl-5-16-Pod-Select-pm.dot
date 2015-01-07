@@ -1,0 +1,54 @@
+digraph {
+graph [overlap=false]
+subgraph cluster_vars {
+	label="vars";
+	"vars::import";
+}
+subgraph cluster_main {
+	label="main";
+	"main::BEGIN@10";
+}
+subgraph cluster_strict {
+	label="strict";
+	"strict::import";
+}
+subgraph cluster_UNIVERSAL {
+	label="UNIVERSAL";
+	"UNIVERSAL::VERSION";
+}
+subgraph cluster_Pod_Select {
+	label="Pod::Select";
+	"Pod::Select::BEGIN@11";
+	"Pod::Select::BEGIN@241";
+	"Pod::Select::BEGIN@242";
+	"Pod::Select::BEGIN@13";
+}
+subgraph cluster_Pod_Parser {
+	label="Pod::Parser";
+	"Pod::Parser::BEGIN@206";
+	"Pod::Parser::BEGIN@14";
+	"Pod::Parser::BEGIN@208";
+	"Pod::Parser::BEGIN@207";
+	"Pod::Parser::BEGIN@205";
+	"Pod::Parser::BEGIN@11";
+}
+subgraph cluster_Exporter {
+	label="Exporter";
+	"Exporter::import";
+}
+"main::BEGIN@10" -> "Pod::Select::BEGIN@13";
+"Pod::Select::BEGIN@242" -> "Exporter::import";
+"Pod::Select::BEGIN@241" -> "Exporter::import";
+"main::BEGIN@10" -> "Pod::Select::BEGIN@11";
+"Pod::Select::BEGIN@242" -> "Pod::Parser::BEGIN@206";
+"Pod::Select::BEGIN@13" -> "vars::import";
+"Pod::Select::BEGIN@242" -> "Pod::Parser::BEGIN@205";
+"Pod::Select::BEGIN@242" -> "Pod::Parser::BEGIN@14";
+"Pod::Select::BEGIN@242" -> "Pod::Parser::BEGIN@208";
+"Pod::Select::BEGIN@242" -> "Pod::Parser::BEGIN@207";
+"main::BEGIN@10" -> "Pod::Select::BEGIN@242";
+"Pod::Select::BEGIN@242" -> "UNIVERSAL::VERSION";
+"Pod::Select::BEGIN@11" -> "strict::import";
+"main::BEGIN@10" -> "Pod::Select::BEGIN@241";
+"Pod::Select::BEGIN@242" -> "Pod::Parser::BEGIN@11";
+}

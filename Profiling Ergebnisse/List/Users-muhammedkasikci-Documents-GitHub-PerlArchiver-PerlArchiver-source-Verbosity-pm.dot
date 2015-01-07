@@ -1,0 +1,70 @@
+digraph {
+graph [overlap=false]
+subgraph cluster_Utils {
+	label="Utils";
+	"Utils::findLastValidArchive";
+	"Utils::setVerboseLevel";
+	"Utils::new";
+}
+subgraph cluster_Invoker {
+	label="Invoker";
+	"Invoker::new";
+}
+subgraph cluster_warnings {
+	label="warnings";
+	"warnings::import";
+}
+subgraph cluster_main {
+	label="main";
+	"main::BEGIN@2.7";
+	"main::BEGIN@1.6";
+	"main::BEGIN@1.3";
+	"main::BEGIN@2.4";
+	"main::BEGIN@3.2";
+	"main::BEGIN@3.5";
+}
+subgraph cluster_strict {
+	label="strict";
+	"strict::import";
+}
+subgraph cluster_Verbosity {
+	label="Verbosity";
+	"Verbosity::new";
+	"Verbosity::CORE:print";
+	"Verbosity::getVerboseLevel";
+	"Verbosity::setVerboseLevel";
+	"Verbosity::verbose";
+}
+subgraph cluster_List {
+	label="List";
+	"List::setVerboseLevel";
+	"List::list";
+	"List::new";
+}
+subgraph cluster_Message {
+	label="Message";
+	"Message::new";
+	"Message::BEGIN@40";
+	"Message::BEGIN@57";
+	"Message::BEGIN@74";
+}
+"main::BEGIN@3.2" -> "main::BEGIN@2.4";
+"List::list" -> "Verbosity::getVerboseLevel";
+"main::BEGIN@3.5" -> "Message::BEGIN@74";
+"main::BEGIN@3.5" -> "main::BEGIN@2.7";
+"List::setVerboseLevel" -> "Verbosity::setVerboseLevel";
+"Utils::setVerboseLevel" -> "Verbosity::setVerboseLevel";
+"main::BEGIN@2.4" -> "warnings::import";
+"Verbosity::verbose" -> "Verbosity::CORE:print";
+"Utils::new" -> "Verbosity::new";
+"List::new" -> "Verbosity::new";
+"Invoker::new" -> "Verbosity::new";
+"main::BEGIN@3.2" -> "main::BEGIN@3.5";
+"Verbosity::new" -> "Message::new";
+"main::BEGIN@3.5" -> "Message::BEGIN@57";
+"main::BEGIN@3.2" -> "main::BEGIN@1.3";
+"Utils::findLastValidArchive" -> "Verbosity::verbose";
+"main::BEGIN@3.5" -> "main::BEGIN@1.6";
+"main::BEGIN@1.3" -> "strict::import";
+"main::BEGIN@3.5" -> "Message::BEGIN@40";
+}

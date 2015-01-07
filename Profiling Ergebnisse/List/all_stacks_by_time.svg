@@ -1,0 +1,1390 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" width="1200" height="210" onload="init(evt)" viewBox="0 0 1200 210" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<defs >
+	<linearGradient id="background" y1="0" y2="1" x1="0" x2="0" >
+		<stop stop-color="#eeeeee" offset="5%" />
+		<stop stop-color="#eeeeb0" offset="95%" />
+	</linearGradient>
+</defs>
+<style type="text/css">
+	.func_g:hover { stroke:black; stroke-width:0.5; }
+</style>
+<script type="text/ecmascript">
+<![CDATA[
+	var details;
+	function init(evt) { details = document.getElementById("details").firstChild; }
+	function s(info) { details.nodeValue = "sub " + info; }
+	function c() { details.nodeValue = ' '; }
+]]>
+</script>
+<rect x="0.0" y="0" width="1200.0" height="210.0" fill="url(#background)"  />
+<text text-anchor="middle" x="600" y="24" font-size="17" font-family="Verdana" fill="rgb(0,0,0)"  >Flame Graph</text>
+<text text-anchor="" x="10" y="193" font-size="12" font-family="Verdana" fill="rgb(0,0,0)" id="details" > </text>
+<g class="func_g" onmouseover="s('Utils::CORE:readdir (34 microseconds, 0.01%)')" onmouseout="c()">
+<title>Utils::CORE:readdir (34 microseconds, 0.01%)</title><a xlink:href="Utils-pm-58-sub.html#Utils__CORE_readdir" target="_top"><rect x="516.7" y="65" width="0.1" height="15.0" fill="rgb(226,102,17)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('vars::import (38 microseconds, 0.01%)')" onmouseout="c()">
+<title>vars::import (38 microseconds, 0.01%)</title><a xlink:href="vars-pm-7-sub.html#10" target="_top"><rect x="990.8" y="97" width="0.2" height="15.0" fill="rgb(233,210,39)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('File::Find::CORE:open_dir (90 microseconds, 0.03%)')" onmouseout="c()">
+<title>File::Find::CORE:open_dir (90 microseconds, 0.03%)</title><a xlink:href="File-Find-pm-60-sub.html#File__Find__CORE_open_dir" target="_top"><rect x="181.7" y="33" width="0.3" height="15.0" fill="rgb(216,48,18)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('overload::OVERLOAD (24 microseconds, 0.01%)')" onmouseout="c()">
+<title>overload::OVERLOAD (24 microseconds, 0.01%)</title><a xlink:href="overload-pm-17-sub.html#30" target="_top"><rect x="1142.7" y="97" width="0.1" height="15.0" fill="rgb(213,166,1)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Invoker::BEGIN@134 (12,023 microseconds, 4.29%)')" onmouseout="c()">
+<title>Invoker::BEGIN@134 (12,023 microseconds, 4.29%)</title><a xlink:href="Invoker-pm-44-sub.html#134" target="_top"><rect x="772.6" y="129" width="50.7" height="15.0" fill="rgb(228,109,46)" rx="2" ry="2" />
+<text text-anchor="" x="775.645342187432" y="139.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >Invok..</text>
+</a>
+</g>
+<g class="func_g" onmouseover="s('Pod::Text::BEGIN@32 (9,100 microseconds, 3.25%)')" onmouseout="c()">
+<title>Pod::Text::BEGIN@32 (9,100 microseconds, 3.25%)</title><a xlink:href="Pod-Text-pm-24-sub.html#32" target="_top"><rect x="604.8" y="113" width="38.3" height="15.0" fill="rgb(218,60,0)" rx="2" ry="2" />
+<text text-anchor="" x="607.798159257111" y="123.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >Pod..</text>
+</a>
+</g>
+<g class="func_g" onmouseover="s('strict::unimport (51 microseconds, 0.02%)')" onmouseout="c()">
+<title>strict::unimport (51 microseconds, 0.02%)</title><a xlink:href="strict-pm-2-sub.html#47" target="_top"><rect x="676.2" y="81" width="0.2" height="15.0" fill="rgb(249,60,36)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Pod::ParseTree::BEGIN@826 (38 microseconds, 0.01%)')" onmouseout="c()">
+<title>Pod::ParseTree::BEGIN@826 (38 microseconds, 0.01%)</title><a xlink:href="Pod-InputObjects-pm-42-sub.html#826" target="_top"><rect x="560.7" y="97" width="0.1" height="15.0" fill="rgb(237,155,21)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Exporter::import (1,994 microseconds, 0.71%)')" onmouseout="c()">
+<title>Exporter::import (1,994 microseconds, 0.71%)</title><a xlink:href="Exporter-pm-5-sub.html#28" target="_top"><rect x="1143.1" y="113" width="8.4" height="15.0" fill="rgb(226,140,52)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('lib::import (96 microseconds, 0.03%)')" onmouseout="c()">
+<title>lib::import (96 microseconds, 0.03%)</title><a xlink:href="lib-pm-9-sub.html#18" target="_top"><rect x="991.7" y="129" width="0.4" height="15.0" fill="rgb(234,141,52)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('main::BEGIN@2.1 (34 microseconds, 0.01%)')" onmouseout="c()">
+<title>main::BEGIN@2.1 (34 microseconds, 0.01%)</title><a xlink:href="Invoker-pm-44-sub.html#2" target="_top"><rect x="824.2" y="129" width="0.1" height="15.0" fill="rgb(248,109,34)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('List::CORE:ftdir (6,490 microseconds, 2.32%)')" onmouseout="c()">
+<title>List::CORE:ftdir (6,490 microseconds, 2.32%)</title><a xlink:href="List-pm-57-sub.html#List__CORE_ftdir" target="_top"><rect x="334.6" y="65" width="27.4" height="15.0" fill="rgb(228,208,20)" rx="2" ry="2" />
+<text text-anchor="" x="337.640637973623" y="75.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >Li..</text>
+</a>
+</g>
+<g class="func_g" onmouseover="s('Getopt::Long::BEGIN@222 (29 microseconds, 0.01%)')" onmouseout="c()">
+<title>Getopt::Long::BEGIN@222 (29 microseconds, 0.01%)</title><a xlink:href="Getopt-Long-pm-11-sub.html#222" target="_top"><rect x="1129.8" y="129" width="0.1" height="15.0" fill="rgb(223,140,31)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Exporter::import (54 microseconds, 0.02%)')" onmouseout="c()">
+<title>Exporter::import (54 microseconds, 0.02%)</title><a xlink:href="Exporter-pm-5-sub.html#28" target="_top"><rect x="576.1" y="113" width="0.2" height="15.0" fill="rgb(205,53,4)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Getopt::Long::BEGIN@26 (75 microseconds, 0.03%)')" onmouseout="c()">
+<title>Getopt::Long::BEGIN@26 (75 microseconds, 0.03%)</title><a xlink:href="Getopt-Long-pm-11-sub.html#26" target="_top"><rect x="1131.2" y="129" width="0.3" height="15.0" fill="rgb(218,177,11)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('vars::import (26 microseconds, 0.01%)')" onmouseout="c()">
+<title>vars::import (26 microseconds, 0.01%)</title><a xlink:href="vars-pm-7-sub.html#10" target="_top"><rect x="560.7" y="81" width="0.1" height="15.0" fill="rgb(212,201,15)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Exporter::import (91 microseconds, 0.03%)')" onmouseout="c()">
+<title>Exporter::import (91 microseconds, 0.03%)</title><a xlink:href="Exporter-pm-5-sub.html#28" target="_top"><rect x="802.5" y="65" width="0.4" height="15.0" fill="rgb(225,60,16)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('strict::unimport (25 microseconds, 0.01%)')" onmouseout="c()">
+<title>strict::unimport (25 microseconds, 0.01%)</title><a xlink:href="strict-pm-2-sub.html#47" target="_top"><rect x="575.2" y="97" width="0.1" height="15.0" fill="rgb(235,224,9)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Digest::BEGIN@3 (28 microseconds, 0.01%)')" onmouseout="c()">
+<title>Digest::BEGIN@3 (28 microseconds, 0.01%)</title><a xlink:href="Digest-pm-56-sub.html#3" target="_top"><rect x="882.6" y="81" width="0.2" height="15.0" fill="rgb(248,88,26)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Cwd::CORE:fteexec (1,581 microseconds, 0.56%)')" onmouseout="c()">
+<title>Cwd::CORE:fteexec (1,581 microseconds, 0.56%)</title><a xlink:href="Cwd-pm-6-sub.html#Cwd__CORE_fteexec" target="_top"><rect x="970.5" y="129" width="6.6" height="15.0" fill="rgb(224,205,24)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Pod::Simple::BEGIN@7 (314 microseconds, 0.11%)')" onmouseout="c()">
+<title>Pod::Simple::BEGIN@7 (314 microseconds, 0.11%)</title><a xlink:href="Pod-Simple-pm-35-sub.html#7" target="_top"><rect x="676.7" y="97" width="1.3" height="15.0" fill="rgb(206,104,14)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('vars::import (68 microseconds, 0.02%)')" onmouseout="c()">
+<title>vars::import (68 microseconds, 0.02%)</title><a xlink:href="vars-pm-7-sub.html#10" target="_top"><rect x="969.9" y="113" width="0.3" height="15.0" fill="rgb(244,118,34)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Exporter::export_ok_tags (41 microseconds, 0.01%)')" onmouseout="c()">
+<title>Exporter::export_ok_tags (41 microseconds, 0.01%)</title><a xlink:href="Exporter-pm-5-sub.html#88" target="_top"><rect x="851.0" y="65" width="0.2" height="15.0" fill="rgb(214,74,36)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('FindBin::cwd2 (40 microseconds, 0.01%)')" onmouseout="c()">
+<title>FindBin::cwd2 (40 microseconds, 0.01%)</title><a xlink:href="FindBin-pm-43-sub.html#100" target="_top"><rect x="735.7" y="97" width="0.2" height="15.0" fill="rgb(240,215,47)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Config::BEGIN@11 (51 microseconds, 0.02%)')" onmouseout="c()">
+<title>Config::BEGIN@11 (51 microseconds, 0.02%)</title><a xlink:href="Config-pm-10-sub.html#11" target="_top"><rect x="990.8" y="113" width="0.2" height="15.0" fill="rgb(249,91,3)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('main::BEGIN@1 (213 microseconds, 0.08%)')" onmouseout="c()">
+<title>main::BEGIN@1 (213 microseconds, 0.08%)</title><a xlink:href="Invoker-pm-44-sub.html#1" target="_top"><rect x="823.3" y="129" width="0.9" height="15.0" fill="rgb(219,178,45)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Getopt::Long::BEGIN@224 (27 microseconds, 0.01%)')" onmouseout="c()">
+<title>Getopt::Long::BEGIN@224 (27 microseconds, 0.01%)</title><a xlink:href="Getopt-Long-pm-11-sub.html#224" target="_top"><rect x="1130.0" y="129" width="0.1" height="15.0" fill="rgb(235,149,48)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('main::BEGIN@2 (1,188 microseconds, 0.42%)')" onmouseout="c()">
+<title>main::BEGIN@2 (1,188 microseconds, 0.42%)</title><a xlink:href="my_perl_archive-pl-1-sub.html#2" target="_top"><rect x="912.1" y="145" width="5.0" height="15.0" fill="rgb(236,179,6)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('strict::CORE:regcomp (44 microseconds, 0.02%)')" onmouseout="c()">
+<title>strict::CORE:regcomp (44 microseconds, 0.02%)</title><a xlink:href="strict-pm-2-sub.html#strict__CORE_regcomp" target="_top"><rect x="916.8" y="129" width="0.2" height="15.0" fill="rgb(244,99,20)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('base::import (79 microseconds, 0.03%)')" onmouseout="c()">
+<title>base::import (79 microseconds, 0.03%)</title><a xlink:href="base-pm-26-sub.html#58" target="_top"><rect x="633.6" y="65" width="0.3" height="15.0" fill="rgb(248,39,50)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('vars::import (66 microseconds, 0.02%)')" onmouseout="c()">
+<title>vars::import (66 microseconds, 0.02%)</title><a xlink:href="vars-pm-7-sub.html#10" target="_top"><rect x="551.2" y="97" width="0.2" height="15.0" fill="rgb(232,111,48)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('vars::import (72 microseconds, 0.03%)')" onmouseout="c()">
+<title>vars::import (72 microseconds, 0.03%)</title><a xlink:href="vars-pm-7-sub.html#10" target="_top"><rect x="604.2" y="97" width="0.3" height="15.0" fill="rgb(221,162,41)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Invoker::BEGIN@1.12 (141 microseconds, 0.05%)')" onmouseout="c()">
+<title>Invoker::BEGIN@1.12 (141 microseconds, 0.05%)</title><a xlink:href="Utils-pm-58-sub.html#1" target="_top"><rect x="783.7" y="97" width="0.6" height="15.0" fill="rgb(223,57,13)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Pod::Usage::BEGIN@457 (2,938 microseconds, 1.05%)')" onmouseout="c()">
+<title>Pod::Usage::BEGIN@457 (2,938 microseconds, 1.05%)</title><a xlink:href="Pod-Usage-pm-20-sub.html#457" target="_top"><rect x="576.5" y="129" width="12.4" height="15.0" fill="rgb(216,108,26)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Pod::Usage::BEGIN@454 (3,467 microseconds, 1.24%)')" onmouseout="c()">
+<title>Pod::Usage::BEGIN@454 (3,467 microseconds, 1.24%)</title><a xlink:href="Pod-Usage-pm-20-sub.html#454" target="_top"><rect x="561.7" y="129" width="14.6" height="15.0" fill="rgb(219,66,47)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('main::BEGIN@1.6 (122 microseconds, 0.04%)')" onmouseout="c()">
+<title>main::BEGIN@1.6 (122 microseconds, 0.04%)</title><a xlink:href="Message-pm-46-sub.html#1" target="_top"><rect x="851.8" y="97" width="0.5" height="15.0" fill="rgb(208,1,50)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Exporter::Heavy::BEGIN@197 (29 microseconds, 0.01%)')" onmouseout="c()">
+<title>Exporter::Heavy::BEGIN@197 (29 microseconds, 0.01%)</title><a xlink:href="Exporter-Heavy-pm-19-sub.html#197" target="_top"><rect x="1151.1" y="65" width="0.1" height="15.0" fill="rgb(217,127,39)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Pod::Select::BEGIN@241 (56 microseconds, 0.02%)')" onmouseout="c()">
+<title>Pod::Select::BEGIN@241 (56 microseconds, 0.02%)</title><a xlink:href="Pod-Select-pm-40-sub.html#241" target="_top"><rect x="535.4" y="129" width="0.3" height="15.0" fill="rgb(228,189,16)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Getopt::Long::CallBack::new (35 microseconds, 0.01%)')" onmouseout="c()">
+<title>Getopt::Long::CallBack::new (35 microseconds, 0.01%)</title><a xlink:href="Getopt-Long-pm-11-sub.html#1477" target="_top"><rect x="11.2" y="129" width="0.1" height="15.0" fill="rgb(250,180,40)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Getopt::Long::BEGIN@229 (26 microseconds, 0.01%)')" onmouseout="c()">
+<title>Getopt::Long::BEGIN@229 (26 microseconds, 0.01%)</title><a xlink:href="Getopt-Long-pm-11-sub.html#229" target="_top"><rect x="1130.5" y="129" width="0.1" height="15.0" fill="rgb(254,163,15)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Pod::Parser::BEGIN@205 (2,232 microseconds, 0.80%)')" onmouseout="c()">
+<title>Pod::Parser::BEGIN@205 (2,232 microseconds, 0.80%)</title><a xlink:href="Pod-Parser-pm-41-sub.html#205" target="_top"><rect x="551.4" y="113" width="9.4" height="15.0" fill="rgb(250,90,51)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('File::Basename::CORE:regcomp (32 microseconds, 0.01%)')" onmouseout="c()">
+<title>File::Basename::CORE:regcomp (32 microseconds, 0.01%)</title><a xlink:href="File-Basename-pm-4-sub.html#File__Basename__CORE_regcomp" target="_top"><rect x="945.4" y="113" width="0.1" height="15.0" fill="rgb(242,167,1)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Exporter::import (33 microseconds, 0.01%)')" onmouseout="c()">
+<title>Exporter::import (33 microseconds, 0.01%)</title><a xlink:href="Exporter-pm-5-sub.html#28" target="_top"><rect x="805.4" y="81" width="0.2" height="15.0" fill="rgb(231,67,34)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Term::ANSIColor::BEGIN@28 (173 microseconds, 0.06%)')" onmouseout="c()">
+<title>Term::ANSIColor::BEGIN@28 (173 microseconds, 0.06%)</title><a xlink:href="Term-ANSIColor-pm-47-sub.html#28" target="_top"><rect x="850.4" y="81" width="0.8" height="15.0" fill="rgb(254,130,33)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Exporter::export (1,888 microseconds, 0.67%)')" onmouseout="c()">
+<title>Exporter::export (1,888 microseconds, 0.67%)</title><a xlink:href="Exporter-pm-5-sub.html#24" target="_top"><rect x="1143.5" y="97" width="8.0" height="15.0" fill="rgb(232,3,22)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Invoker::new (40 microseconds, 0.01%)')" onmouseout="c()">
+<title>Invoker::new (40 microseconds, 0.01%)</title><a xlink:href="Invoker-pm-44-sub.html#14" target="_top"><rect x="517.5" y="145" width="0.2" height="15.0" fill="rgb(220,212,7)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Encode::Alias::BEGIN@4 (25 microseconds, 0.01%)')" onmouseout="c()">
+<title>Encode::Alias::BEGIN@4 (25 microseconds, 0.01%)</title><a xlink:href="Encode-Alias-pm-29-sub.html#4" target="_top"><rect x="633.2" y="81" width="0.1" height="15.0" fill="rgb(253,174,44)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Carp::BEGIN@67 (25 microseconds, 0.01%)')" onmouseout="c()">
+<title>Carp::BEGIN@67 (25 microseconds, 0.01%)</title><a xlink:href="Carp-pm-21-sub.html#67" target="_top"><rect x="575.8" y="113" width="0.1" height="15.0" fill="rgb(223,31,28)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Exporter::Heavy::_push_tags (44 microseconds, 0.02%)')" onmouseout="c()">
+<title>Exporter::Heavy::_push_tags (44 microseconds, 0.02%)</title><a xlink:href="Exporter-Heavy-pm-19-sub.html#219" target="_top"><rect x="850.8" y="49" width="0.2" height="15.0" fill="rgb(232,134,35)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('strict::import (26 microseconds, 0.01%)')" onmouseout="c()">
+<title>strict::import (26 microseconds, 0.01%)</title><a xlink:href="strict-pm-2-sub.html#42" target="_top"><rect x="991.3" y="97" width="0.1" height="15.0" fill="rgb(217,40,24)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('File::Copy::BEGIN@10 (46 microseconds, 0.02%)')" onmouseout="c()">
+<title>File::Copy::BEGIN@10 (46 microseconds, 0.02%)</title><a xlink:href="File-Copy-pm-50-sub.html#10" target="_top"><rect x="907.6" y="81" width="0.1" height="15.0" fill="rgb(208,223,31)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('File::Find::CORE:readdir (1,440 microseconds, 0.51%)')" onmouseout="c()">
+<title>File::Find::CORE:readdir (1,440 microseconds, 0.51%)</title><a xlink:href="File-Find-pm-60-sub.html#File__Find__CORE_readdir" target="_top"><rect x="182.0" y="33" width="6.1" height="15.0" fill="rgb(238,150,36)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('base::import (99 microseconds, 0.04%)')" onmouseout="c()">
+<title>base::import (99 microseconds, 0.04%)</title><a xlink:href="base-pm-26-sub.html#58" target="_top"><rect x="624.0" y="81" width="0.4" height="15.0" fill="rgb(208,212,46)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Carp::BEGIN@398 (40 microseconds, 0.01%)')" onmouseout="c()">
+<title>Carp::BEGIN@398 (40 microseconds, 0.01%)</title><a xlink:href="Carp-pm-21-sub.html#398" target="_top"><rect x="575.2" y="113" width="0.1" height="15.0" fill="rgb(250,174,53)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Pod::Text::BEGIN@34 (20,906 microseconds, 7.46%)')" onmouseout="c()">
+<title>Pod::Text::BEGIN@34 (20,906 microseconds, 7.46%)</title><a xlink:href="Pod-Text-pm-24-sub.html#34" target="_top"><rect x="643.1" y="113" width="88.0" height="15.0" fill="rgb(241,150,39)" rx="2" ry="2" />
+<text text-anchor="" x="646.122071184083" y="123.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >Pod::Text::..</text>
+</a>
+</g>
+<g class="func_g" onmouseover="s('vars::import (166 microseconds, 0.06%)')" onmouseout="c()">
+<title>vars::import (166 microseconds, 0.06%)</title><a xlink:href="vars-pm-7-sub.html#10" target="_top"><rect x="1131.6" y="113" width="0.7" height="15.0" fill="rgb(230,118,16)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('File::Basename::_strip_trailing_sep (89 microseconds, 0.03%)')" onmouseout="c()">
+<title>File::Basename::_strip_trailing_sep (89 microseconds, 0.03%)</title><a xlink:href="File-Basename-pm-4-sub.html#331" target="_top"><rect x="984.8" y="113" width="0.4" height="15.0" fill="rgb(229,208,0)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Invoker::BEGIN@4.15 (5,015 microseconds, 1.79%)')" onmouseout="c()">
+<title>Invoker::BEGIN@4.15 (5,015 microseconds, 1.79%)</title><a xlink:href="Utils-pm-58-sub.html#4" target="_top"><rect x="784.4" y="97" width="21.2" height="15.0" fill="rgb(216,108,7)" rx="2" ry="2" />
+<text text-anchor="" x="787.446705870298" y="107.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >I..</text>
+</a>
+</g>
+<g class="func_g" onmouseover="s('Encode::Encoding::BEGIN@4 (27 microseconds, 0.01%)')" onmouseout="c()">
+<title>Encode::Encoding::BEGIN@4 (27 microseconds, 0.01%)</title><a xlink:href="Encode-Encoding-pm-34-sub.html#4" target="_top"><rect x="639.3" y="81" width="0.1" height="15.0" fill="rgb(232,163,2)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('warnings::register_categories (80 microseconds, 0.03%)')" onmouseout="c()">
+<title>warnings::register_categories (80 microseconds, 0.03%)</title><a xlink:href="warnings-pm-3-sub.html#520" target="_top"><rect x="1139.8" y="81" width="0.3" height="15.0" fill="rgb(232,188,14)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('strict::import (26 microseconds, 0.01%)')" onmouseout="c()">
+<title>strict::import (26 microseconds, 0.01%)</title><a xlink:href="strict-pm-2-sub.html#42" target="_top"><rect x="907.8" y="65" width="0.1" height="15.0" fill="rgb(230,141,47)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Pod::Text::BEGIN@29 (82 microseconds, 0.03%)')" onmouseout="c()">
+<title>Pod::Text::BEGIN@29 (82 microseconds, 0.03%)</title><a xlink:href="Pod-Text-pm-24-sub.html#29" target="_top"><rect x="604.1" y="113" width="0.4" height="15.0" fill="rgb(218,121,12)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Pod::Simple::LinkSection::BEGIN@9 (9,127 microseconds, 3.26%)')" onmouseout="c()">
+<title>Pod::Simple::LinkSection::BEGIN@9 (9,127 microseconds, 3.26%)</title><a xlink:href="Pod-Simple-LinkSection-pm-38-sub.html#9" target="_top"><rect x="691.6" y="81" width="38.5" height="15.0" fill="rgb(232,51,8)" rx="2" ry="2" />
+<text text-anchor="" x="694.631257931165" y="91.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >Pod..</text>
+</a>
+</g>
+<g class="func_g" onmouseover="s('vars::import (41 microseconds, 0.01%)')" onmouseout="c()">
+<title>vars::import (41 microseconds, 0.01%)</title><a xlink:href="vars-pm-7-sub.html#10" target="_top"><rect x="1032.8" y="113" width="0.2" height="15.0" fill="rgb(240,73,28)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Term::ANSIColor::BEGIN@23 (261 microseconds, 0.09%)')" onmouseout="c()">
+<title>Term::ANSIColor::BEGIN@23 (261 microseconds, 0.09%)</title><a xlink:href="Term-ANSIColor-pm-47-sub.html#23" target="_top"><rect x="849.3" y="81" width="1.1" height="15.0" fill="rgb(254,168,39)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Encode::BEGIN@48 (2,734 microseconds, 0.98%)')" onmouseout="c()">
+<title>Encode::BEGIN@48 (2,734 microseconds, 0.98%)</title><a xlink:href="Encode-pm-25-sub.html#48" target="_top"><rect x="624.5" y="97" width="11.5" height="15.0" fill="rgb(236,31,20)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('File::Copy::BEGIN@12.11 (36 microseconds, 0.01%)')" onmouseout="c()">
+<title>File::Copy::BEGIN@12.11 (36 microseconds, 0.01%)</title><a xlink:href="File-Copy-pm-50-sub.html#12" target="_top"><rect x="908.0" y="81" width="0.2" height="15.0" fill="rgb(220,148,32)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('strict::bits (24 microseconds, 0.01%)')" onmouseout="c()">
+<title>strict::bits (24 microseconds, 0.01%)</title><a xlink:href="strict-pm-2-sub.html#23" target="_top"><rect x="824.1" y="97" width="0.1" height="15.0" fill="rgb(212,50,1)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('FindBin::BEGIN@84 (43 microseconds, 0.02%)')" onmouseout="c()">
+<title>FindBin::BEGIN@84 (43 microseconds, 0.02%)</title><a xlink:href="FindBin-pm-43-sub.html#84" target="_top"><rect x="736.3" y="129" width="0.2" height="15.0" fill="rgb(237,129,5)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Pod::Usage::BEGIN@460 (33,793 microseconds, 12.06%)')" onmouseout="c()">
+<title>Pod::Usage::BEGIN@460 (33,793 microseconds, 12.06%)</title><a xlink:href="Pod-Usage-pm-20-sub.html#460" target="_top"><rect x="588.9" y="129" width="142.2" height="15.0" fill="rgb(230,100,32)" rx="2" ry="2" />
+<text text-anchor="" x="591.870906815746" y="139.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >Pod::Usage::BEGIN@460</text>
+</a>
+</g>
+<g class="func_g" onmouseover="s('Pod::Text::BEGIN@28 (41 microseconds, 0.01%)')" onmouseout="c()">
+<title>Pod::Text::BEGIN@28 (41 microseconds, 0.01%)</title><a xlink:href="Pod-Text-pm-24-sub.html#28" target="_top"><rect x="604.0" y="113" width="0.1" height="15.0" fill="rgb(206,216,49)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('File::Find::CORE:regcomp (1,467 microseconds, 0.52%)')" onmouseout="c()">
+<title>File::Find::CORE:regcomp (1,467 microseconds, 0.52%)</title><a xlink:href="File-Find-pm-60-sub.html#File__Find__CORE_regcomp" target="_top"><rect x="188.1" y="33" width="6.2" height="15.0" fill="rgb(206,38,42)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Exporter::import (28 microseconds, 0.01%)')" onmouseout="c()">
+<title>Exporter::import (28 microseconds, 0.01%)</title><a xlink:href="Exporter-pm-5-sub.html#28" target="_top"><rect x="736.2" y="113" width="0.1" height="15.0" fill="rgb(209,169,5)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('overload::import (40 microseconds, 0.01%)')" onmouseout="c()">
+<title>overload::import (40 microseconds, 0.01%)</title><a xlink:href="overload-pm-17-sub.html#55" target="_top"><rect x="1142.6" y="113" width="0.2" height="15.0" fill="rgb(248,164,0)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('strict::import (26 microseconds, 0.01%)')" onmouseout="c()">
+<title>strict::import (26 microseconds, 0.01%)</title><a xlink:href="strict-pm-2-sub.html#42" target="_top"><rect x="882.9" y="65" width="0.2" height="15.0" fill="rgb(221,124,17)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('File::Basename::CORE:subst (46 microseconds, 0.02%)')" onmouseout="c()">
+<title>File::Basename::CORE:subst (46 microseconds, 0.02%)</title><a xlink:href="File-Basename-pm-4-sub.html#File__Basename__CORE_subst" target="_top"><rect x="984.9" y="97" width="0.2" height="15.0" fill="rgb(243,130,48)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Getopt::Long::import (2,040 microseconds, 0.73%)')" onmouseout="c()">
+<title>Getopt::Long::import (2,040 microseconds, 0.73%)</title><a xlink:href="Getopt-Long-pm-11-sub.html#98" target="_top"><rect x="1142.9" y="129" width="8.6" height="15.0" fill="rgb(208,9,19)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('warnings::register_categories (87 microseconds, 0.03%)')" onmouseout="c()">
+<title>warnings::register_categories (87 microseconds, 0.03%)</title><a xlink:href="warnings-pm-3-sub.html#520" target="_top"><rect x="1128.4" y="81" width="0.3" height="15.0" fill="rgb(236,155,44)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Verbosity::CORE:print (27 microseconds, 0.01%)')" onmouseout="c()">
+<title>Verbosity::CORE:print (27 microseconds, 0.01%)</title><a xlink:href="Verbosity-pm-45-sub.html#Verbosity__CORE_print" target="_top"><rect x="517.2" y="49" width="0.1" height="15.0" fill="rgb(215,213,44)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Getopt::Long::BEGIN@48 (111 microseconds, 0.04%)')" onmouseout="c()">
+<title>Getopt::Long::BEGIN@48 (111 microseconds, 0.04%)</title><a xlink:href="Getopt-Long-pm-11-sub.html#48" target="_top"><rect x="1132.6" y="129" width="0.5" height="15.0" fill="rgb(237,168,41)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('strict::bits (27 microseconds, 0.01%)')" onmouseout="c()">
+<title>strict::bits (27 microseconds, 0.01%)</title><a xlink:href="strict-pm-2-sub.html#23" target="_top"><rect x="917.0" y="113" width="0.1" height="15.0" fill="rgb(209,171,43)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('constant::import (53 microseconds, 0.02%)')" onmouseout="c()">
+<title>constant::import (53 microseconds, 0.02%)</title><a xlink:href="constant-pm-12-sub.html#55" target="_top"><rect x="1129.2" y="113" width="0.3" height="15.0" fill="rgb(246,150,1)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Pod::Select::BEGIN@11 (42 microseconds, 0.01%)')" onmouseout="c()">
+<title>Pod::Select::BEGIN@11 (42 microseconds, 0.01%)</title><a xlink:href="Pod-Select-pm-40-sub.html#11" target="_top"><rect x="534.9" y="129" width="0.1" height="15.0" fill="rgb(225,42,12)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('main::BEGIN@3.5 (5,378 microseconds, 1.92%)')" onmouseout="c()">
+<title>main::BEGIN@3.5 (5,378 microseconds, 1.92%)</title><a xlink:href="Verbosity-pm-45-sub.html#3" target="_top"><rect x="829.8" y="113" width="22.6" height="15.0" fill="rgb(206,225,25)" rx="2" ry="2" />
+<text text-anchor="" x="832.793595264676" y="123.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >m..</text>
+</a>
+</g>
+<g class="func_g" onmouseover="s('List::CORE:print (4,652 microseconds, 1.66%)')" onmouseout="c()">
+<title>List::CORE:print (4,652 microseconds, 1.66%)</title><a xlink:href="List-pm-57-sub.html#List__CORE_print" target="_top"><rect x="496.3" y="65" width="19.6" height="15.0" fill="rgb(218,214,19)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('base::BEGIN@3 (39 microseconds, 0.01%)')" onmouseout="c()">
+<title>base::BEGIN@3 (39 microseconds, 0.01%)</title><a xlink:href="base-pm-26-sub.html#3" target="_top"><rect x="623.6" y="81" width="0.2" height="15.0" fill="rgb(242,28,40)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Getopt::Long::BEGIN@236 (28 microseconds, 0.01%)')" onmouseout="c()">
+<title>Getopt::Long::BEGIN@236 (28 microseconds, 0.01%)</title><a xlink:href="Getopt-Long-pm-11-sub.html#236" target="_top"><rect x="1130.6" y="129" width="0.1" height="15.0" fill="rgb(251,54,39)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('warnings::unimport (24 microseconds, 0.01%)')" onmouseout="c()">
+<title>warnings::unimport (24 microseconds, 0.01%)</title><a xlink:href="warnings-pm-3-sub.html#402" target="_top"><rect x="1062.8" y="65" width="0.1" height="15.0" fill="rgb(235,191,15)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('File::Basename::fileparse (57 microseconds, 0.02%)')" onmouseout="c()">
+<title>File::Basename::fileparse (57 microseconds, 0.02%)</title><a xlink:href="File-Basename-pm-4-sub.html#104" target="_top"><rect x="985.2" y="113" width="0.2" height="15.0" fill="rgb(242,158,18)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Data::Dumper::BEGIN@275 (81 microseconds, 0.03%)')" onmouseout="c()">
+<title>Data::Dumper::BEGIN@275 (81 microseconds, 0.03%)</title><a xlink:href="Data-Dumper-pm-59-sub.html#275" target="_top"><rect x="805.0" y="81" width="0.4" height="15.0" fill="rgb(211,181,19)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Encode::Alias::BEGIN@8 (88 microseconds, 0.03%)')" onmouseout="c()">
+<title>Encode::Alias::BEGIN@8 (88 microseconds, 0.03%)</title><a xlink:href="Encode-Alias-pm-29-sub.html#8" target="_top"><rect x="633.6" y="81" width="0.3" height="15.0" fill="rgb(205,138,35)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('vars::import (72 microseconds, 0.03%)')" onmouseout="c()">
+<title>vars::import (72 microseconds, 0.03%)</title><a xlink:href="vars-pm-7-sub.html#10" target="_top"><rect x="1132.3" y="113" width="0.3" height="15.0" fill="rgb(210,200,37)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('File::Find::CORE:ftdir (298 microseconds, 0.11%)')" onmouseout="c()">
+<title>File::Find::CORE:ftdir (298 microseconds, 0.11%)</title><a xlink:href="File-Find-pm-60-sub.html#File__Find__CORE_ftdir" target="_top"><rect x="149.6" y="33" width="1.3" height="15.0" fill="rgb(215,225,2)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Exporter::Heavy::heavy_export_ok_tags (58 microseconds, 0.02%)')" onmouseout="c()">
+<title>Exporter::Heavy::heavy_export_ok_tags (58 microseconds, 0.02%)</title><a xlink:href="Exporter-Heavy-pm-19-sub.html#244" target="_top"><rect x="850.7" y="65" width="0.3" height="15.0" fill="rgb(214,217,34)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('vars::import (102 microseconds, 0.04%)')" onmouseout="c()">
+<title>vars::import (102 microseconds, 0.04%)</title><a xlink:href="vars-pm-7-sub.html#10" target="_top"><rect x="883.1" y="65" width="0.5" height="15.0" fill="rgb(217,211,13)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Exporter::import (44 microseconds, 0.02%)')" onmouseout="c()">
+<title>Exporter::import (44 microseconds, 0.02%)</title><a xlink:href="Exporter-pm-5-sub.html#28" target="_top"><rect x="851.6" y="81" width="0.2" height="15.0" fill="rgb(246,125,12)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Pod::Simple::BEGIN@1438 (29 microseconds, 0.01%)')" onmouseout="c()">
+<title>Pod::Simple::BEGIN@1438 (29 microseconds, 0.01%)</title><a xlink:href="Pod-Simple-pm-35-sub.html#1438" target="_top"><rect x="676.4" y="97" width="0.1" height="15.0" fill="rgb(222,23,43)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Encode::Config::BEGIN@7 (34 microseconds, 0.01%)')" onmouseout="c()">
+<title>Encode::Config::BEGIN@7 (34 microseconds, 0.01%)</title><a xlink:href="Encode-Config-pm-33-sub.html#7" target="_top"><rect x="636.5" y="97" width="0.1" height="15.0" fill="rgb(212,147,47)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Carp::BEGIN@3 (25 microseconds, 0.01%)')" onmouseout="c()">
+<title>Carp::BEGIN@3 (25 microseconds, 0.01%)</title><a xlink:href="Carp-pm-21-sub.html#3" target="_top"><rect x="575.1" y="113" width="0.1" height="15.0" fill="rgb(237,137,30)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('strict::import (30 microseconds, 0.01%)')" onmouseout="c()">
+<title>strict::import (30 microseconds, 0.01%)</title><a xlink:href="strict-pm-2-sub.html#42" target="_top"><rect x="852.2" y="81" width="0.1" height="15.0" fill="rgb(241,127,21)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Cwd::abs_path (57 microseconds, 0.02%)')" onmouseout="c()">
+<title>Cwd::abs_path (57 microseconds, 0.02%)</title><a xlink:href="Cwd-pm-6-sub.html#Cwd__abs_path" target="_top"><rect x="734.9" y="97" width="0.2" height="15.0" fill="rgb(230,151,22)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('utf8::BEGIN@153 (36 microseconds, 0.01%)')" onmouseout="c()">
+<title>utf8::BEGIN@153 (36 microseconds, 0.01%)</title><a xlink:href="utf8_heavy-pl-14-sub.html#153" target="_top"><rect x="1062.3" y="81" width="0.1" height="15.0" fill="rgb(244,147,48)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Config::import (25 microseconds, 0.01%)')" onmouseout="c()">
+<title>Config::import (25 microseconds, 0.01%)</title><a xlink:href="Config-pm-10-sub.html#38" target="_top"><rect x="908.3" y="65" width="0.1" height="15.0" fill="rgb(215,37,39)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('constant::BEGIN@3 (31 microseconds, 0.01%)')" onmouseout="c()">
+<title>constant::BEGIN@3 (31 microseconds, 0.01%)</title><a xlink:href="constant-pm-12-sub.html#3" target="_top"><rect x="1128.2" y="113" width="0.1" height="15.0" fill="rgb(226,125,0)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('List::__ANON__[List.pm:58] (2,879 microseconds, 1.03%)')" onmouseout="c()">
+<title>List::__ANON__[List.pm:58] (2,879 microseconds, 1.03%)</title><a xlink:href="List-pm-57-sub.html#55" target="_top"><rect x="194.3" y="33" width="12.1" height="15.0" fill="rgb(240,191,43)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('main::BEGIN@1.3 (121 microseconds, 0.04%)')" onmouseout="c()">
+<title>main::BEGIN@1.3 (121 microseconds, 0.04%)</title><a xlink:href="Verbosity-pm-45-sub.html#1" target="_top"><rect x="829.2" y="113" width="0.5" height="15.0" fill="rgb(210,143,53)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('vars::import (88 microseconds, 0.03%)')" onmouseout="c()">
+<title>vars::import (88 microseconds, 0.03%)</title><a xlink:href="vars-pm-7-sub.html#10" target="_top"><rect x="535.1" y="113" width="0.3" height="15.0" fill="rgb(234,43,8)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Getopt::Long::BEGIN@247 (29 microseconds, 0.01%)')" onmouseout="c()">
+<title>Getopt::Long::BEGIN@247 (29 microseconds, 0.01%)</title><a xlink:href="Getopt-Long-pm-11-sub.html#247" target="_top"><rect x="1130.8" y="129" width="0.1" height="15.0" fill="rgb(241,18,8)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Getopt::Long::GetOptionsFromArray (120,526 microseconds, 43.00%)')" onmouseout="c()">
+<title>Getopt::Long::GetOptionsFromArray (120,526 microseconds, 43.00%)</title><a xlink:href="Getopt-Long-pm-11-sub.html#270" target="_top"><rect x="10.1" y="145" width="507.4" height="15.0" fill="rgb(220,85,1)" rx="2" ry="2" />
+<text text-anchor="" x="13.1355510846074" y="155.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >Getopt::Long::GetOptionsFromArray</text>
+</a>
+</g>
+<g class="func_g" onmouseover="s('File::Find::BEGIN@5 (91 microseconds, 0.03%)')" onmouseout="c()">
+<title>File::Find::BEGIN@5 (91 microseconds, 0.03%)</title><a xlink:href="File-Find-pm-60-sub.html#5" target="_top"><rect x="822.8" y="97" width="0.4" height="15.0" fill="rgb(228,225,6)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Message::BEGIN@40 (3,400 microseconds, 1.21%)')" onmouseout="c()">
+<title>Message::BEGIN@40 (3,400 microseconds, 1.21%)</title><a xlink:href="Message-pm-46-sub.html#40" target="_top"><rect x="837.0" y="97" width="14.3" height="15.0" fill="rgb(253,145,12)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Pod::Simple::BlackBox::BEGIN@25 (25 microseconds, 0.01%)')" onmouseout="c()">
+<title>Pod::Simple::BlackBox::BEGIN@25 (25 microseconds, 0.01%)</title><a xlink:href="Pod-Simple-BlackBox-pm-39-sub.html#25" target="_top"><rect x="729.9" y="65" width="0.1" height="15.0" fill="rgb(247,7,52)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('main::BEGIN@9 (37,845 microseconds, 13.50%)')" onmouseout="c()">
+<title>main::BEGIN@9 (37,845 microseconds, 13.50%)</title><a xlink:href="my_perl_archive-pl-1-sub.html#9" target="_top"><rect x="992.1" y="145" width="159.4" height="15.0" fill="rgb(206,118,44)" rx="2" ry="2" />
+<text text-anchor="" x="995.145065742981" y="155.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >main::BEGIN@9</text>
+</a>
+</g>
+<g class="func_g" onmouseover="s('Pod::Usage::BEGIN@455 (25 microseconds, 0.01%)')" onmouseout="c()">
+<title>Pod::Usage::BEGIN@455 (25 microseconds, 0.01%)</title><a xlink:href="Pod-Usage-pm-20-sub.html#455" target="_top"><rect x="576.3" y="129" width="0.1" height="15.0" fill="rgb(209,7,8)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('strict::import (38 microseconds, 0.01%)')" onmouseout="c()">
+<title>strict::import (38 microseconds, 0.01%)</title><a xlink:href="strict-pm-2-sub.html#42" target="_top"><rect x="911.8" y="97" width="0.2" height="15.0" fill="rgb(215,18,33)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Pod::Parser::BEGIN@14 (74 microseconds, 0.03%)')" onmouseout="c()">
+<title>Pod::Parser::BEGIN@14 (74 microseconds, 0.03%)</title><a xlink:href="Pod-Parser-pm-41-sub.html#14" target="_top"><rect x="551.1" y="113" width="0.3" height="15.0" fill="rgb(211,75,14)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Term::ANSIColor::BEGIN@22 (64 microseconds, 0.02%)')" onmouseout="c()">
+<title>Term::ANSIColor::BEGIN@22 (64 microseconds, 0.02%)</title><a xlink:href="Term-ANSIColor-pm-47-sub.html#22" target="_top"><rect x="849.0" y="81" width="0.3" height="15.0" fill="rgb(233,95,46)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('vars::import (31 microseconds, 0.01%)')" onmouseout="c()">
+<title>vars::import (31 microseconds, 0.01%)</title><a xlink:href="vars-pm-7-sub.html#10" target="_top"><rect x="691.0" y="65" width="0.2" height="15.0" fill="rgb(250,2,43)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Getopt::Long::Configure (27 microseconds, 0.01%)')" onmouseout="c()">
+<title>Getopt::Long::Configure (27 microseconds, 0.01%)</title><a xlink:href="Getopt-Long-pm-11-sub.html#1266" target="_top"><rect x="10.0" y="145" width="0.1" height="15.0" fill="rgb(232,24,13)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Cwd::abs_path (104 microseconds, 0.04%)')" onmouseout="c()">
+<title>Cwd::abs_path (104 microseconds, 0.04%)</title><a xlink:href="Cwd-pm-6-sub.html#Cwd__abs_path" target="_top"><rect x="984.2" y="129" width="0.4" height="15.0" fill="rgb(252,29,5)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('strict::import (40 microseconds, 0.01%)')" onmouseout="c()">
+<title>strict::import (40 microseconds, 0.01%)</title><a xlink:href="strict-pm-2-sub.html#42" target="_top"><rect x="917.0" y="129" width="0.1" height="15.0" fill="rgb(228,22,7)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Getopt::Long::BEGIN@19 (53 microseconds, 0.02%)')" onmouseout="c()">
+<title>Getopt::Long::BEGIN@19 (53 microseconds, 0.02%)</title><a xlink:href="Getopt-Long-pm-11-sub.html#19" target="_top"><rect x="1032.8" y="129" width="0.2" height="15.0" fill="rgb(228,9,17)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('main::BEGIN@5.8 (14,167 microseconds, 5.05%)')" onmouseout="c()">
+<title>main::BEGIN@5.8 (14,167 microseconds, 5.05%)</title><a xlink:href="Invoker-pm-44-sub.html#5" target="_top"><rect x="852.5" y="129" width="59.6" height="15.0" fill="rgb(205,106,21)" rx="2" ry="2" />
+<text text-anchor="" x="855.474827834738" y="139.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >main::B..</text>
+</a>
+</g>
+<g class="func_g" onmouseover="s('File::Spec::Unix::BEGIN@3 (37 microseconds, 0.01%)')" onmouseout="c()">
+<title>File::Spec::Unix::BEGIN@3 (37 microseconds, 0.01%)</title><a xlink:href="File-Spec-Unix-pm-23-sub.html#3" target="_top"><rect x="588.5" y="113" width="0.2" height="15.0" fill="rgb(229,34,45)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('base::BEGIN@4 (40 microseconds, 0.01%)')" onmouseout="c()">
+<title>base::BEGIN@4 (40 microseconds, 0.01%)</title><a xlink:href="base-pm-26-sub.html#4" target="_top"><rect x="623.8" y="81" width="0.2" height="15.0" fill="rgb(233,31,23)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Pod::Simple::BEGIN@13 (79 microseconds, 0.03%)')" onmouseout="c()">
+<title>Pod::Simple::BEGIN@13 (79 microseconds, 0.03%)</title><a xlink:href="Pod-Simple-pm-35-sub.html#13" target="_top"><rect x="675.8" y="97" width="0.3" height="15.0" fill="rgb(213,127,19)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('vars::import (33 microseconds, 0.01%)')" onmouseout="c()">
+<title>vars::import (33 microseconds, 0.01%)</title><a xlink:href="vars-pm-7-sub.html#10" target="_top"><rect x="588.7" y="97" width="0.2" height="15.0" fill="rgb(240,163,23)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Instances::BEGIN@11 (47 microseconds, 0.02%)')" onmouseout="c()">
+<title>Instances::BEGIN@11 (47 microseconds, 0.02%)</title><a xlink:href="Create-pm-49-sub.html#11" target="_top"><rect x="911.1" y="97" width="0.2" height="15.0" fill="rgb(247,121,26)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('strict::import (31 microseconds, 0.01%)')" onmouseout="c()">
+<title>strict::import (31 microseconds, 0.01%)</title><a xlink:href="strict-pm-2-sub.html#42" target="_top"><rect x="911.2" y="81" width="0.1" height="15.0" fill="rgb(230,129,23)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('all (280,308 microseconds, 100%)')" onmouseout="c()">
+<title>all (280,308 microseconds, 100%)</title><rect x="10.0" y="161" width="1180.0" height="15.0" fill="rgb(238,16,3)" rx="2" ry="2" />
+<text text-anchor="" x="13" y="171.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  ></text>
+</g>
+<g class="func_g" onmouseover="s('Exporter::import (37 microseconds, 0.01%)')" onmouseout="c()">
+<title>Exporter::import (37 microseconds, 0.01%)</title><a xlink:href="Exporter-pm-5-sub.html#28" target="_top"><rect x="635.8" y="81" width="0.2" height="15.0" fill="rgb(230,39,46)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Exporter::import (52 microseconds, 0.02%)')" onmouseout="c()">
+<title>Exporter::import (52 microseconds, 0.02%)</title><a xlink:href="Exporter-pm-5-sub.html#28" target="_top"><rect x="907.3" y="81" width="0.3" height="15.0" fill="rgb(238,177,4)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Pod::Text::BEGIN@31 (73 microseconds, 0.03%)')" onmouseout="c()">
+<title>Pod::Text::BEGIN@31 (73 microseconds, 0.03%)</title><a xlink:href="Pod-Text-pm-24-sub.html#31" target="_top"><rect x="604.5" y="113" width="0.3" height="15.0" fill="rgb(210,80,2)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('utf8::BEGIN@542 (48 microseconds, 0.02%)')" onmouseout="c()">
+<title>utf8::BEGIN@542 (48 microseconds, 0.02%)</title><a xlink:href="utf8_heavy-pl-14-sub.html#542" target="_top"><rect x="1062.7" y="81" width="0.2" height="15.0" fill="rgb(208,7,18)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('vars::import (30 microseconds, 0.01%)')" onmouseout="c()">
+<title>vars::import (30 microseconds, 0.01%)</title><a xlink:href="vars-pm-7-sub.html#10" target="_top"><rect x="560.5" y="81" width="0.2" height="15.0" fill="rgb(246,12,26)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Digest::BEGIN@4 (125 microseconds, 0.04%)')" onmouseout="c()">
+<title>Digest::BEGIN@4 (125 microseconds, 0.04%)</title><a xlink:href="Digest-pm-56-sub.html#4" target="_top"><rect x="883.1" y="81" width="0.5" height="15.0" fill="rgb(234,164,42)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('main::BEGIN@2.7 (24 microseconds, 0.01%)')" onmouseout="c()">
+<title>main::BEGIN@2.7 (24 microseconds, 0.01%)</title><a xlink:href="Message-pm-46-sub.html#2" target="_top"><rect x="852.3" y="97" width="0.1" height="15.0" fill="rgb(218,35,46)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Getopt::Long::BEGIN@15 (48 microseconds, 0.02%)')" onmouseout="c()">
+<title>Getopt::Long::BEGIN@15 (48 microseconds, 0.02%)</title><a xlink:href="Getopt-Long-pm-11-sub.html#15" target="_top"><rect x="1032.3" y="129" width="0.2" height="15.0" fill="rgb(208,187,33)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('FindBin::init (302 microseconds, 0.11%)')" onmouseout="c()">
+<title>FindBin::init (302 microseconds, 0.11%)</title><a xlink:href="FindBin-pm-43-sub.html#109" target="_top"><rect x="734.6" y="113" width="1.3" height="15.0" fill="rgb(227,149,25)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Invoker::BEGIN@3 (78 microseconds, 0.03%)')" onmouseout="c()">
+<title>Invoker::BEGIN@3 (78 microseconds, 0.03%)</title><a xlink:href="List-pm-57-sub.html#3" target="_top"><rect x="778.3" y="113" width="0.3" height="15.0" fill="rgb(233,111,33)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('constant::BEGIN@6 (42 microseconds, 0.01%)')" onmouseout="c()">
+<title>constant::BEGIN@6 (42 microseconds, 0.01%)</title><a xlink:href="constant-pm-12-sub.html#6" target="_top"><rect x="1128.9" y="113" width="0.2" height="15.0" fill="rgb(227,150,29)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Getopt::Long::BEGIN@220 (32 microseconds, 0.01%)')" onmouseout="c()">
+<title>Getopt::Long::BEGIN@220 (32 microseconds, 0.01%)</title><a xlink:href="Getopt-Long-pm-11-sub.html#220" target="_top"><rect x="1129.6" y="129" width="0.2" height="15.0" fill="rgb(228,201,44)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('vars::import (42 microseconds, 0.01%)')" onmouseout="c()">
+<title>vars::import (42 microseconds, 0.01%)</title><a xlink:href="vars-pm-7-sub.html#10" target="_top"><rect x="1128.9" y="97" width="0.2" height="15.0" fill="rgb(232,12,4)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Invoker::BEGIN@1 (124 microseconds, 0.04%)')" onmouseout="c()">
+<title>Invoker::BEGIN@1 (124 microseconds, 0.04%)</title><a xlink:href="List-pm-57-sub.html#1" target="_top"><rect x="777.7" y="113" width="0.5" height="15.0" fill="rgb(234,207,11)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Config::BEGIN@10 (26 microseconds, 0.01%)')" onmouseout="c()">
+<title>Config::BEGIN@10 (26 microseconds, 0.01%)</title><a xlink:href="Config-pm-10-sub.html#10" target="_top"><rect x="990.7" y="113" width="0.1" height="15.0" fill="rgb(235,22,27)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Pod::Parser::BEGIN@11 (39 microseconds, 0.01%)')" onmouseout="c()">
+<title>Pod::Parser::BEGIN@11 (39 microseconds, 0.01%)</title><a xlink:href="Pod-Parser-pm-41-sub.html#11" target="_top"><rect x="551.0" y="113" width="0.1" height="15.0" fill="rgb(237,138,39)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Exporter::import (62 microseconds, 0.02%)')" onmouseout="c()">
+<title>Exporter::import (62 microseconds, 0.02%)</title><a xlink:href="Exporter-pm-5-sub.html#28" target="_top"><rect x="604.5" y="97" width="0.3" height="15.0" fill="rgb(215,2,16)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('vars::import (72 microseconds, 0.03%)')" onmouseout="c()">
+<title>vars::import (72 microseconds, 0.03%)</title><a xlink:href="vars-pm-7-sub.html#10" target="_top"><rect x="675.8" y="81" width="0.3" height="15.0" fill="rgb(207,181,42)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('constant::BEGIN@65 (31 microseconds, 0.01%)')" onmouseout="c()">
+<title>constant::BEGIN@65 (31 microseconds, 0.01%)</title><a xlink:href="constant-pm-12-sub.html#65" target="_top"><rect x="1128.8" y="113" width="0.1" height="15.0" fill="rgb(206,127,34)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('vars::BEGIN@3 (44 microseconds, 0.02%)')" onmouseout="c()">
+<title>vars::BEGIN@3 (44 microseconds, 0.02%)</title><a xlink:href="vars-pm-7-sub.html#3" target="_top"><rect x="966.7" y="113" width="0.2" height="15.0" fill="rgb(232,171,40)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('warnings::register_categories (146 microseconds, 0.05%)')" onmouseout="c()">
+<title>warnings::register_categories (146 microseconds, 0.05%)</title><a xlink:href="warnings-pm-3-sub.html#520" target="_top"><rect x="969.2" y="81" width="0.6" height="15.0" fill="rgb(240,92,42)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('warnings::register_categories (71 microseconds, 0.03%)')" onmouseout="c()">
+<title>warnings::register_categories (71 microseconds, 0.03%)</title><a xlink:href="warnings-pm-3-sub.html#520" target="_top"><rect x="822.9" y="65" width="0.3" height="15.0" fill="rgb(254,84,11)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Getopt::Long::ParseOptionSpec (122 microseconds, 0.04%)')" onmouseout="c()">
+<title>Getopt::Long::ParseOptionSpec (122 microseconds, 0.04%)</title><a xlink:href="Getopt-Long-pm-11-sub.html#770" target="_top"><rect x="11.7" y="129" width="0.5" height="15.0" fill="rgb(227,154,10)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Exporter::import (42 microseconds, 0.01%)')" onmouseout="c()">
+<title>Exporter::import (42 microseconds, 0.01%)</title><a xlink:href="Exporter-pm-5-sub.html#28" target="_top"><rect x="735.9" y="113" width="0.2" height="15.0" fill="rgb(234,68,27)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('main::BEGIN@3 (3,545 microseconds, 1.26%)')" onmouseout="c()">
+<title>main::BEGIN@3 (3,545 microseconds, 1.26%)</title><a xlink:href="my_perl_archive-pl-1-sub.html#3" target="_top"><rect x="917.1" y="145" width="15.0" height="15.0" fill="rgb(250,31,49)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Getopt::Long::BEGIN@46 (83 microseconds, 0.03%)')" onmouseout="c()">
+<title>Getopt::Long::BEGIN@46 (83 microseconds, 0.03%)</title><a xlink:href="Getopt-Long-pm-11-sub.html#46" target="_top"><rect x="1132.3" y="129" width="0.3" height="15.0" fill="rgb(206,35,6)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('constant::import (54 microseconds, 0.02%)')" onmouseout="c()">
+<title>constant::import (54 microseconds, 0.02%)</title><a xlink:href="constant-pm-12-sub.html#55" target="_top"><rect x="805.1" y="65" width="0.3" height="15.0" fill="rgb(246,165,52)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('strict::bits (25 microseconds, 0.01%)')" onmouseout="c()">
+<title>strict::bits (25 microseconds, 0.01%)</title><a xlink:href="strict-pm-2-sub.html#23" target="_top"><rect x="676.3" y="65" width="0.1" height="15.0" fill="rgb(237,167,53)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('constant::CORE:regcomp (29 microseconds, 0.01%)')" onmouseout="c()">
+<title>constant::CORE:regcomp (29 microseconds, 0.01%)</title><a xlink:href="constant-pm-12-sub.html#constant__CORE_regcomp" target="_top"><rect x="1129.1" y="113" width="0.1" height="15.0" fill="rgb(229,56,25)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('List::list (119,949 microseconds, 42.79%)')" onmouseout="c()">
+<title>List::list (119,949 microseconds, 42.79%)</title><a xlink:href="List-pm-57-sub.html#39" target="_top"><rect x="12.4" y="97" width="504.9" height="15.0" fill="rgb(222,117,29)" rx="2" ry="2" />
+<text text-anchor="" x="15.3649875569074" y="107.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >List::list</text>
+</a>
+</g>
+<g class="func_g" onmouseover="s('Utils::findLastValidArchive (319 microseconds, 0.11%)')" onmouseout="c()">
+<title>Utils::findLastValidArchive (319 microseconds, 0.11%)</title><a xlink:href="Utils-pm-58-sub.html#35" target="_top"><rect x="515.9" y="81" width="1.4" height="15.0" fill="rgb(226,161,26)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Utils::compare_to (43 microseconds, 0.02%)')" onmouseout="c()">
+<title>Utils::compare_to (43 microseconds, 0.02%)</title><a xlink:href="Utils-pm-58-sub.html#68" target="_top"><rect x="516.8" y="65" width="0.2" height="15.0" fill="rgb(235,170,49)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Invoker::BEGIN@5 (6,386 microseconds, 2.28%)')" onmouseout="c()">
+<title>Invoker::BEGIN@5 (6,386 microseconds, 2.28%)</title><a xlink:href="List-pm-57-sub.html#5" target="_top"><rect x="778.7" y="113" width="26.9" height="15.0" fill="rgb(217,189,24)" rx="2" ry="2" />
+<text text-anchor="" x="781.675681588054" y="123.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >In..</text>
+</a>
+</g>
+<g class="func_g" onmouseover="s('Getopt::Long::BEGIN@226 (28 microseconds, 0.01%)')" onmouseout="c()">
+<title>Getopt::Long::BEGIN@226 (28 microseconds, 0.01%)</title><a xlink:href="Getopt-Long-pm-11-sub.html#226" target="_top"><rect x="1130.2" y="129" width="0.2" height="15.0" fill="rgb(223,114,38)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('List::BEGIN@40 (4,198 microseconds, 1.50%)')" onmouseout="c()">
+<title>List::BEGIN@40 (4,198 microseconds, 1.50%)</title><a xlink:href="List-pm-57-sub.html#40" target="_top"><rect x="805.6" y="113" width="17.7" height="15.0" fill="rgb(205,108,19)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('warnings::register::import (84 microseconds, 0.03%)')" onmouseout="c()">
+<title>warnings::register::import (84 microseconds, 0.03%)</title><a xlink:href="warnings-register-pm-8-sub.html#38" target="_top"><rect x="822.9" y="81" width="0.3" height="15.0" fill="rgb(238,207,53)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('strict::import (41 microseconds, 0.01%)')" onmouseout="c()">
+<title>strict::import (41 microseconds, 0.01%)</title><a xlink:href="strict-pm-2-sub.html#42" target="_top"><rect x="824.0" y="113" width="0.2" height="15.0" fill="rgb(235,21,12)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Carp::BEGIN@399 (29 microseconds, 0.01%)')" onmouseout="c()">
+<title>Carp::BEGIN@399 (29 microseconds, 0.01%)</title><a xlink:href="Carp-pm-21-sub.html#399" target="_top"><rect x="575.3" y="113" width="0.1" height="15.0" fill="rgb(223,115,37)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Pod::Usage::BEGIN@11 (38 microseconds, 0.01%)')" onmouseout="c()">
+<title>Pod::Usage::BEGIN@11 (38 microseconds, 0.01%)</title><a xlink:href="Pod-Usage-pm-20-sub.html#11" target="_top"><rect x="561.2" y="129" width="0.2" height="15.0" fill="rgb(205,81,45)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('File::Basename::dirname (183 microseconds, 0.07%)')" onmouseout="c()">
+<title>File::Basename::dirname (183 microseconds, 0.07%)</title><a xlink:href="File-Basename-pm-4-sub.html#283" target="_top"><rect x="984.6" y="129" width="0.8" height="15.0" fill="rgb(208,129,22)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('File::Spec::Unix::BEGIN@149 (27 microseconds, 0.01%)')" onmouseout="c()">
+<title>File::Spec::Unix::BEGIN@149 (27 microseconds, 0.01%)</title><a xlink:href="File-Spec-Unix-pm-23-sub.html#149" target="_top"><rect x="588.4" y="113" width="0.1" height="15.0" fill="rgb(209,165,38)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('main::BEGIN@12 (41,721 microseconds, 14.88%)')" onmouseout="c()">
+<title>main::BEGIN@12 (41,721 microseconds, 14.88%)</title><a xlink:href="my_perl_archive-pl-1-sub.html#12" target="_top"><rect x="736.5" y="145" width="175.6" height="15.0" fill="rgb(217,96,26)" rx="2" ry="2" />
+<text text-anchor="" x="739.483512156557" y="155.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >main::BEGIN@12</text>
+</a>
+</g>
+<g class="func_g" onmouseover="s('overload::import (41 microseconds, 0.01%)')" onmouseout="c()">
+<title>overload::import (41 microseconds, 0.01%)</title><a xlink:href="overload-pm-17-sub.html#55" target="_top"><rect x="691.2" y="65" width="0.2" height="15.0" fill="rgb(241,207,12)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('constant::import (25 microseconds, 0.01%)')" onmouseout="c()">
+<title>constant::import (25 microseconds, 0.01%)</title><a xlink:href="constant-pm-12-sub.html#55" target="_top"><rect x="1129.7" y="113" width="0.1" height="15.0" fill="rgb(233,41,39)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Cwd::BEGIN@172 (1,630 microseconds, 0.58%)')" onmouseout="c()">
+<title>Cwd::BEGIN@172 (1,630 microseconds, 0.58%)</title><a xlink:href="Cwd-pm-6-sub.html#172" target="_top"><rect x="963.3" y="129" width="6.9" height="15.0" fill="rgb(247,164,27)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Data::Dumper::BEGIN@24 (506 microseconds, 0.18%)')" onmouseout="c()">
+<title>Data::Dumper::BEGIN@24 (506 microseconds, 0.18%)</title><a xlink:href="Data-Dumper-pm-59-sub.html#24" target="_top"><rect x="802.9" y="81" width="2.1" height="15.0" fill="rgb(247,9,41)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('warnings::unimport (26 microseconds, 0.01%)')" onmouseout="c()">
+<title>warnings::unimport (26 microseconds, 0.01%)</title><a xlink:href="warnings-pm-3-sub.html#402" target="_top"><rect x="1062.2" y="65" width="0.1" height="15.0" fill="rgb(211,165,22)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Cwd::BEGIN@171 (32 microseconds, 0.01%)')" onmouseout="c()">
+<title>Cwd::BEGIN@171 (32 microseconds, 0.01%)</title><a xlink:href="Cwd-pm-6-sub.html#171" target="_top"><rect x="963.2" y="129" width="0.1" height="15.0" fill="rgb(215,138,49)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('vars::import (99 microseconds, 0.04%)')" onmouseout="c()">
+<title>vars::import (99 microseconds, 0.04%)</title><a xlink:href="vars-pm-7-sub.html#10" target="_top"><rect x="1132.7" y="113" width="0.4" height="15.0" fill="rgb(232,23,27)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('File::Copy::BEGIN@14 (41 microseconds, 0.01%)')" onmouseout="c()">
+<title>File::Copy::BEGIN@14 (41 microseconds, 0.01%)</title><a xlink:href="File-Copy-pm-50-sub.html#14" target="_top"><rect x="908.2" y="81" width="0.2" height="15.0" fill="rgb(234,29,2)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('warnings::register::import (170 microseconds, 0.06%)')" onmouseout="c()">
+<title>warnings::register::import (170 microseconds, 0.06%)</title><a xlink:href="warnings-register-pm-8-sub.html#38" target="_top"><rect x="969.1" y="97" width="0.7" height="15.0" fill="rgb(233,63,29)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Message::BEGIN@74 (60 microseconds, 0.02%)')" onmouseout="c()">
+<title>Message::BEGIN@74 (60 microseconds, 0.02%)</title><a xlink:href="Message-pm-46-sub.html#74" target="_top"><rect x="851.6" y="97" width="0.2" height="15.0" fill="rgb(249,218,49)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Pod::Simple::BlackBox::BEGIN@1151 (25 microseconds, 0.01%)')" onmouseout="c()">
+<title>Pod::Simple::BlackBox::BEGIN@1151 (25 microseconds, 0.01%)</title><a xlink:href="Pod-Simple-BlackBox-pm-39-sub.html#1151" target="_top"><rect x="729.7" y="65" width="0.1" height="15.0" fill="rgb(233,102,0)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Invoker::list (120,019 microseconds, 42.82%)')" onmouseout="c()">
+<title>Invoker::list (120,019 microseconds, 42.82%)</title><a xlink:href="Invoker-pm-44-sub.html#131" target="_top"><rect x="12.3" y="113" width="505.2" height="15.0" fill="rgb(248,11,25)" rx="2" ry="2" />
+<text text-anchor="" x="15.2698492180214" y="123.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >Invoker::list</text>
+</a>
+</g>
+<g class="func_g" onmouseover="s('Getopt::Long::FindOption (88 microseconds, 0.03%)')" onmouseout="c()">
+<title>Getopt::Long::FindOption (88 microseconds, 0.03%)</title><a xlink:href="Getopt-Long-pm-11-sub.html#892" target="_top"><rect x="11.3" y="129" width="0.4" height="15.0" fill="rgb(233,94,32)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Exporter::import (30 microseconds, 0.01%)')" onmouseout="c()">
+<title>Exporter::import (30 microseconds, 0.01%)</title><a xlink:href="Exporter-pm-5-sub.html#28" target="_top"><rect x="736.3" y="113" width="0.2" height="15.0" fill="rgb(242,83,39)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('XSLoader::load (417 microseconds, 0.15%)')" onmouseout="c()">
+<title>XSLoader::load (417 microseconds, 0.15%)</title><a xlink:href="XSLoader-pm-32-sub.html#17" target="_top"><rect x="641.4" y="97" width="1.7" height="15.0" fill="rgb(236,134,17)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('main::__ANON__[my_perl_archive.pl:33] (120,024 microseconds, 42.82%)')" onmouseout="c()">
+<title>main::__ANON__[my_perl_archive.pl:33] (120,024 microseconds, 42.82%)</title><a xlink:href="my_perl_archive-pl-1-sub.html#33" target="_top"><rect x="12.2" y="129" width="505.3" height="15.0" fill="rgb(212,215,12)" rx="2" ry="2" />
+<text text-anchor="" x="15.2492218790594" y="139.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >main::__ANON__[my_perl_archive.pl:33]</text>
+</a>
+</g>
+<g class="func_g" onmouseover="s('Pod::Select::BEGIN@13 (96 microseconds, 0.03%)')" onmouseout="c()">
+<title>Pod::Select::BEGIN@13 (96 microseconds, 0.03%)</title><a xlink:href="Pod-Select-pm-40-sub.html#13" target="_top"><rect x="535.0" y="129" width="0.4" height="15.0" fill="rgb(240,120,43)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Digest::BEGIN@37 (42 microseconds, 0.01%)')" onmouseout="c()">
+<title>Digest::BEGIN@37 (42 microseconds, 0.01%)</title><a xlink:href="Digest-pm-56-sub.html#37" target="_top"><rect x="882.8" y="81" width="0.1" height="15.0" fill="rgb(212,226,10)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('utf8::SWASHNEW (15,441 microseconds, 5.51%)')" onmouseout="c()">
+<title>utf8::SWASHNEW (15,441 microseconds, 5.51%)</title><a xlink:href="utf8_heavy-pl-14-sub.html#45" target="_top"><rect x="1063.1" y="97" width="65.0" height="15.0" fill="rgb(207,47,49)" rx="2" ry="2" />
+<text text-anchor="" x="1066.0622780604" y="107.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >utf8::S..</text>
+</a>
+</g>
+<g class="func_g" onmouseover="s('File::Find::_find_dir (45,625 microseconds, 16.28%)')" onmouseout="c()">
+<title>File::Find::_find_dir (45,625 microseconds, 16.28%)</title><a xlink:href="File-Find-pm-60-sub.html#629" target="_top"><rect x="14.3" y="49" width="192.1" height="15.0" fill="rgb(242,194,53)" rx="2" ry="2" />
+<text text-anchor="" x="17.3313202159167" y="59.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >File::Find::_find_dir</text>
+</a>
+</g>
+<g class="func_g" onmouseover="s('strict::import (33 microseconds, 0.01%)')" onmouseout="c()">
+<title>strict::import (33 microseconds, 0.01%)</title><a xlink:href="strict-pm-2-sub.html#42" target="_top"><rect x="784.2" y="81" width="0.1" height="15.0" fill="rgb(246,139,22)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Exporter::import (37 microseconds, 0.01%)')" onmouseout="c()">
+<title>Exporter::import (37 microseconds, 0.01%)</title><a xlink:href="Exporter-pm-5-sub.html#28" target="_top"><rect x="822.4" y="97" width="0.1" height="15.0" fill="rgb(245,185,31)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('List::CORE:ftlink (9,346 microseconds, 3.33%)')" onmouseout="c()">
+<title>List::CORE:ftlink (9,346 microseconds, 3.33%)</title><a xlink:href="List-pm-57-sub.html#List__CORE_ftlink" target="_top"><rect x="362.0" y="65" width="39.3" height="15.0" fill="rgb(240,18,44)" rx="2" ry="2" />
+<text text-anchor="" x="364.962179877931" y="75.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >Lis..</text>
+</a>
+</g>
+<g class="func_g" onmouseover="s('Exporter::import (40 microseconds, 0.01%)')" onmouseout="c()">
+<title>Exporter::import (40 microseconds, 0.01%)</title><a xlink:href="Exporter-pm-5-sub.html#28" target="_top"><rect x="534.7" y="129" width="0.2" height="15.0" fill="rgb(223,205,31)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('main::BEGIN@7 (3,017 microseconds, 1.08%)')" onmouseout="c()">
+<title>main::BEGIN@7 (3,017 microseconds, 1.08%)</title><a xlink:href="my_perl_archive-pl-1-sub.html#7" target="_top"><rect x="979.4" y="145" width="12.7" height="15.0" fill="rgb(225,125,11)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Instances::BEGIN@10 (149 microseconds, 0.05%)')" onmouseout="c()">
+<title>Instances::BEGIN@10 (149 microseconds, 0.05%)</title><a xlink:href="Create-pm-49-sub.html#10" target="_top"><rect x="910.5" y="97" width="0.6" height="15.0" fill="rgb(242,37,20)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('List::CORE:match (22,578 microseconds, 8.05%)')" onmouseout="c()">
+<title>List::CORE:match (22,578 microseconds, 8.05%)</title><a xlink:href="List-pm-57-sub.html#List__CORE_match" target="_top"><rect x="401.3" y="65" width="95.0" height="15.0" fill="rgb(250,110,0)" rx="2" ry="2" />
+<text text-anchor="" x="404.305250736066" y="75.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >List::CORE:m..</text>
+</a>
+</g>
+<g class="func_g" onmouseover="s('strict::import (30 microseconds, 0.01%)')" onmouseout="c()">
+<title>strict::import (30 microseconds, 0.01%)</title><a xlink:href="strict-pm-2-sub.html#42" target="_top"><rect x="829.6" y="97" width="0.1" height="15.0" fill="rgb(212,141,40)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Pod::Simple::BEGIN@9 (9,878 microseconds, 3.52%)')" onmouseout="c()">
+<title>Pod::Simple::BEGIN@9 (9,878 microseconds, 3.52%)</title><a xlink:href="Pod-Simple-pm-35-sub.html#9" target="_top"><rect x="688.5" y="97" width="41.6" height="15.0" fill="rgb(209,70,2)" rx="2" ry="2" />
+<text text-anchor="" x="691.470223476765" y="107.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >Pod:..</text>
+</a>
+</g>
+<g class="func_g" onmouseover="s('main::BEGIN@10 (50,694 microseconds, 18.09%)')" onmouseout="c()">
+<title>main::BEGIN@10 (50,694 microseconds, 18.09%)</title><a xlink:href="my_perl_archive-pl-1-sub.html#10" target="_top"><rect x="517.7" y="145" width="213.4" height="15.0" fill="rgb(237,73,23)" rx="2" ry="2" />
+<text text-anchor="" x="520.725109905335" y="155.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >main::BEGIN@10</text>
+</a>
+</g>
+<g class="func_g" onmouseover="s('File::Copy::BEGIN@11 (40 microseconds, 0.01%)')" onmouseout="c()">
+<title>File::Copy::BEGIN@11 (40 microseconds, 0.01%)</title><a xlink:href="File-Copy-pm-50-sub.html#11" target="_top"><rect x="907.7" y="81" width="0.2" height="15.0" fill="rgb(252,184,18)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Pod::InputObjects::BEGIN@14 (39 microseconds, 0.01%)')" onmouseout="c()">
+<title>Pod::InputObjects::BEGIN@14 (39 microseconds, 0.01%)</title><a xlink:href="Pod-InputObjects-pm-42-sub.html#14" target="_top"><rect x="560.5" y="97" width="0.2" height="15.0" fill="rgb(233,26,14)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Config::BEGIN@45 (32 microseconds, 0.01%)')" onmouseout="c()">
+<title>Config::BEGIN@45 (32 microseconds, 0.01%)</title><a xlink:href="Config-pm-10-sub.html#45" target="_top"><rect x="991.0" y="113" width="0.1" height="15.0" fill="rgb(213,163,4)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Encode::Alias::init_aliases (446 microseconds, 0.16%)')" onmouseout="c()">
+<title>Encode::Alias::init_aliases (446 microseconds, 0.16%)</title><a xlink:href="Encode-Alias-pm-29-sub.html#130" target="_top"><rect x="633.9" y="81" width="1.9" height="15.0" fill="rgb(238,211,20)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Encode::Alias::define_alias (187 microseconds, 0.07%)')" onmouseout="c()">
+<title>Encode::Alias::define_alias (187 microseconds, 0.07%)</title><a xlink:href="Encode-Alias-pm-29-sub.html#80" target="_top"><rect x="635.0" y="65" width="0.8" height="15.0" fill="rgb(229,104,46)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Pod::Escapes::BEGIN@22 (26 microseconds, 0.01%)')" onmouseout="c()">
+<title>Pod::Escapes::BEGIN@22 (26 microseconds, 0.01%)</title><a xlink:href="Pod-Escapes-pm-37-sub.html#22" target="_top"><rect x="687.9" y="81" width="0.1" height="15.0" fill="rgb(234,121,38)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('File::Spec::Unix::BEGIN@4 (42 microseconds, 0.01%)')" onmouseout="c()">
+<title>File::Spec::Unix::BEGIN@4 (42 microseconds, 0.01%)</title><a xlink:href="File-Spec-Unix-pm-23-sub.html#4" target="_top"><rect x="588.7" y="113" width="0.2" height="15.0" fill="rgb(236,146,5)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Exporter::import (74 microseconds, 0.03%)')" onmouseout="c()">
+<title>Exporter::import (74 microseconds, 0.03%)</title><a xlink:href="Exporter-pm-5-sub.html#28" target="_top"><rect x="977.2" y="129" width="0.3" height="15.0" fill="rgb(234,21,43)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Config::BEGIN@9 (55 microseconds, 0.02%)')" onmouseout="c()">
+<title>Config::BEGIN@9 (55 microseconds, 0.02%)</title><a xlink:href="Config-pm-10-sub.html#9" target="_top"><rect x="991.1" y="113" width="0.3" height="15.0" fill="rgb(222,107,35)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Pod::Simple::LinkSection::BEGIN@13 (51 microseconds, 0.02%)')" onmouseout="c()">
+<title>Pod::Simple::LinkSection::BEGIN@13 (51 microseconds, 0.02%)</title><a xlink:href="Pod-Simple-LinkSection-pm-38-sub.html#13" target="_top"><rect x="691.2" y="81" width="0.2" height="15.0" fill="rgb(245,1,22)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('File::Basename::BEGIN@50 (36 microseconds, 0.01%)')" onmouseout="c()">
+<title>File::Basename::BEGIN@50 (36 microseconds, 0.01%)</title><a xlink:href="File-Basename-pm-4-sub.html#50" target="_top"><rect x="944.8" y="129" width="0.2" height="15.0" fill="rgb(242,198,43)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Encode::Alias::BEGIN@6 (71 microseconds, 0.03%)')" onmouseout="c()">
+<title>Encode::Alias::BEGIN@6 (71 microseconds, 0.03%)</title><a xlink:href="Encode-Alias-pm-29-sub.html#6" target="_top"><rect x="633.3" y="81" width="0.3" height="15.0" fill="rgb(235,197,10)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Data::Dumper::BEGIN@18 (32 microseconds, 0.01%)')" onmouseout="c()">
+<title>Data::Dumper::BEGIN@18 (32 microseconds, 0.01%)</title><a xlink:href="Data-Dumper-pm-59-sub.html#18" target="_top"><rect x="802.3" y="81" width="0.1" height="15.0" fill="rgb(239,164,41)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('File::Spec::BEGIN@4 (60 microseconds, 0.02%)')" onmouseout="c()">
+<title>File::Spec::BEGIN@4 (60 microseconds, 0.02%)</title><a xlink:href="File-Spec-pm-22-sub.html#4" target="_top"><rect x="588.2" y="113" width="0.2" height="15.0" fill="rgb(246,21,10)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Pod::Simple::BEGIN@8 (2,479 microseconds, 0.88%)')" onmouseout="c()">
+<title>Pod::Simple::BEGIN@8 (2,479 microseconds, 0.88%)</title><a xlink:href="Pod-Simple-pm-35-sub.html#8" target="_top"><rect x="678.0" y="97" width="10.5" height="15.0" fill="rgb(238,217,46)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('strict::unimport (39 microseconds, 0.01%)')" onmouseout="c()">
+<title>strict::unimport (39 microseconds, 0.01%)</title><a xlink:href="strict-pm-2-sub.html#47" target="_top"><rect x="970.3" y="113" width="0.2" height="15.0" fill="rgb(217,43,15)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('overload::OVERLOAD (29 microseconds, 0.01%)')" onmouseout="c()">
+<title>overload::OVERLOAD (29 microseconds, 0.01%)</title><a xlink:href="overload-pm-17-sub.html#30" target="_top"><rect x="691.3" y="49" width="0.1" height="15.0" fill="rgb(234,81,14)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('utf8::BEGIN@147 (56 microseconds, 0.02%)')" onmouseout="c()">
+<title>utf8::BEGIN@147 (56 microseconds, 0.02%)</title><a xlink:href="utf8_heavy-pl-14-sub.html#147" target="_top"><rect x="1062.0" y="81" width="0.3" height="15.0" fill="rgb(214,89,26)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('vars::import (244 microseconds, 0.09%)')" onmouseout="c()">
+<title>vars::import (244 microseconds, 0.09%)</title><a xlink:href="vars-pm-7-sub.html#10" target="_top"><rect x="849.4" y="65" width="1.0" height="15.0" fill="rgb(231,42,8)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Getopt::Long::BEGIN@225 (27 microseconds, 0.01%)')" onmouseout="c()">
+<title>Getopt::Long::BEGIN@225 (27 microseconds, 0.01%)</title><a xlink:href="Getopt-Long-pm-11-sub.html#225" target="_top"><rect x="1130.1" y="129" width="0.1" height="15.0" fill="rgb(241,164,42)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('vars::import (29 microseconds, 0.01%)')" onmouseout="c()">
+<title>vars::import (29 microseconds, 0.01%)</title><a xlink:href="vars-pm-7-sub.html#10" target="_top"><rect x="623.8" y="65" width="0.2" height="15.0" fill="rgb(233,27,45)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Exporter::import (46 microseconds, 0.02%)')" onmouseout="c()">
+<title>Exporter::import (46 microseconds, 0.02%)</title><a xlink:href="Exporter-pm-5-sub.html#28" target="_top"><rect x="851.4" y="81" width="0.2" height="15.0" fill="rgb(221,222,39)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('XSLoader::load (467 microseconds, 0.17%)')" onmouseout="c()">
+<title>XSLoader::load (467 microseconds, 0.17%)</title><a xlink:href="XSLoader-pm-32-sub.html#17" target="_top"><rect x="977.5" y="129" width="1.9" height="15.0" fill="rgb(226,43,16)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Exporter::import (82 microseconds, 0.03%)')" onmouseout="c()">
+<title>Exporter::import (82 microseconds, 0.03%)</title><a xlink:href="Exporter-pm-5-sub.html#28" target="_top"><rect x="641.0" y="97" width="0.4" height="15.0" fill="rgb(244,49,40)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('File::Find::CORE:lstat (6,973 microseconds, 2.49%)')" onmouseout="c()">
+<title>File::Find::CORE:lstat (6,973 microseconds, 2.49%)</title><a xlink:href="File-Find-pm-60-sub.html#File__Find__CORE_lstat" target="_top"><rect x="150.9" y="33" width="29.3" height="15.0" fill="rgb(213,145,22)" rx="2" ry="2" />
+<text text-anchor="" x="153.866623568038" y="43.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >Fi..</text>
+</a>
+</g>
+<g class="func_g" onmouseover="s('Invoker::BEGIN@2.13 (28 microseconds, 0.01%)')" onmouseout="c()">
+<title>Invoker::BEGIN@2.13 (28 microseconds, 0.01%)</title><a xlink:href="Utils-pm-58-sub.html#2" target="_top"><rect x="784.3" y="97" width="0.1" height="15.0" fill="rgb(229,58,33)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Message::BEGIN@57 (64 microseconds, 0.02%)')" onmouseout="c()">
+<title>Message::BEGIN@57 (64 microseconds, 0.02%)</title><a xlink:href="Message-pm-46-sub.html#57" target="_top"><rect x="851.3" y="97" width="0.3" height="15.0" fill="rgb(221,12,51)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Getopt::Long::BEGIN@45 (179 microseconds, 0.06%)')" onmouseout="c()">
+<title>Getopt::Long::BEGIN@45 (179 microseconds, 0.06%)</title><a xlink:href="Getopt-Long-pm-11-sub.html#45" target="_top"><rect x="1131.5" y="129" width="0.8" height="15.0" fill="rgb(208,217,51)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Cwd::getcwd (33 microseconds, 0.01%)')" onmouseout="c()">
+<title>Cwd::getcwd (33 microseconds, 0.01%)</title><a xlink:href="Cwd-pm-6-sub.html#Cwd__getcwd" target="_top"><rect x="735.7" y="81" width="0.2" height="15.0" fill="rgb(212,140,29)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('constant::import (60 microseconds, 0.02%)')" onmouseout="c()">
+<title>constant::import (60 microseconds, 0.02%)</title><a xlink:href="constant-pm-12-sub.html#55" target="_top"><rect x="633.3" y="65" width="0.3" height="15.0" fill="rgb(207,90,21)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('File::Find::CORE:match (343 microseconds, 0.12%)')" onmouseout="c()">
+<title>File::Find::CORE:match (343 microseconds, 0.12%)</title><a xlink:href="File-Find-pm-60-sub.html#File__Find__CORE_match" target="_top"><rect x="180.2" y="33" width="1.5" height="15.0" fill="rgb(247,166,38)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Create::BEGIN@77 (6,400 microseconds, 2.28%)')" onmouseout="c()">
+<title>Create::BEGIN@77 (6,400 microseconds, 2.28%)</title><a xlink:href="Create-pm-49-sub.html#77" target="_top"><rect x="883.6" y="97" width="26.9" height="15.0" fill="rgb(237,31,5)" rx="2" ry="2" />
+<text text-anchor="" x="886.577487260609" y="107.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >Cr..</text>
+</a>
+</g>
+<g class="func_g" onmouseover="s('main::BEGIN@1.9 (151 microseconds, 0.05%)')" onmouseout="c()">
+<title>main::BEGIN@1.9 (151 microseconds, 0.05%)</title><a xlink:href="Instances-pm-48-sub.html#1" target="_top"><rect x="911.3" y="113" width="0.7" height="15.0" fill="rgb(218,2,36)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('vars::import (100 microseconds, 0.04%)')" onmouseout="c()">
+<title>vars::import (100 microseconds, 0.04%)</title><a xlink:href="vars-pm-7-sub.html#10" target="_top"><rect x="1133.1" y="113" width="0.5" height="15.0" fill="rgb(242,116,42)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('XSLoader::load (416 microseconds, 0.15%)')" onmouseout="c()">
+<title>XSLoader::load (416 microseconds, 0.15%)</title><a xlink:href="XSLoader-pm-32-sub.html#17" target="_top"><rect x="908.8" y="81" width="1.7" height="15.0" fill="rgb(244,176,7)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Encode::BEGIN@13 (1,403 microseconds, 0.50%)')" onmouseout="c()">
+<title>Encode::BEGIN@13 (1,403 microseconds, 0.50%)</title><a xlink:href="Encode-pm-25-sub.html#13" target="_top"><rect x="618.5" y="97" width="5.9" height="15.0" fill="rgb(213,62,35)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('strict::import (31 microseconds, 0.01%)')" onmouseout="c()">
+<title>strict::import (31 microseconds, 0.01%)</title><a xlink:href="strict-pm-2-sub.html#42" target="_top"><rect x="1032.6" y="113" width="0.2" height="15.0" fill="rgb(226,93,15)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('vars::import (49 microseconds, 0.02%)')" onmouseout="c()">
+<title>vars::import (49 microseconds, 0.02%)</title><a xlink:href="vars-pm-7-sub.html#10" target="_top"><rect x="588.2" y="97" width="0.2" height="15.0" fill="rgb(232,16,33)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Exporter::import (69 microseconds, 0.02%)')" onmouseout="c()">
+<title>Exporter::import (69 microseconds, 0.02%)</title><a xlink:href="Exporter-pm-5-sub.html#28" target="_top"><rect x="848.7" y="81" width="0.3" height="15.0" fill="rgb(243,35,45)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Pod::Simple::BEGIN@1434 (74 microseconds, 0.03%)')" onmouseout="c()">
+<title>Pod::Simple::BEGIN@1434 (74 microseconds, 0.03%)</title><a xlink:href="Pod-Simple-pm-35-sub.html#1434" target="_top"><rect x="676.1" y="97" width="0.3" height="15.0" fill="rgb(235,200,34)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('strict::import (27 microseconds, 0.01%)')" onmouseout="c()">
+<title>strict::import (27 microseconds, 0.01%)</title><a xlink:href="strict-pm-2-sub.html#42" target="_top"><rect x="588.1" y="97" width="0.1" height="15.0" fill="rgb(246,129,53)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('vars::import (63 microseconds, 0.02%)')" onmouseout="c()">
+<title>vars::import (63 microseconds, 0.02%)</title><a xlink:href="vars-pm-7-sub.html#10" target="_top"><rect x="1131.2" y="113" width="0.3" height="15.0" fill="rgb(206,180,34)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Encode::predefine_encodings (659 microseconds, 0.24%)')" onmouseout="c()">
+<title>Encode::predefine_encodings (659 microseconds, 0.24%)</title><a xlink:href="Encode-pm-25-sub.html#240" target="_top"><rect x="636.7" y="97" width="2.8" height="15.0" fill="rgb(215,63,41)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Verbosity::verbose (63 microseconds, 0.02%)')" onmouseout="c()">
+<title>Verbosity::verbose (63 microseconds, 0.02%)</title><a xlink:href="Verbosity-pm-45-sub.html#43" target="_top"><rect x="517.0" y="65" width="0.3" height="15.0" fill="rgb(229,26,53)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Pod::Select::BEGIN@242 (6,065 microseconds, 2.16%)')" onmouseout="c()">
+<title>Pod::Select::BEGIN@242 (6,065 microseconds, 2.16%)</title><a xlink:href="Pod-Select-pm-40-sub.html#242" target="_top"><rect x="535.7" y="129" width="25.5" height="15.0" fill="rgb(242,47,18)" rx="2" ry="2" />
+<text text-anchor="" x="538.681418954798" y="139.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >P..</text>
+</a>
+</g>
+<g class="func_g" onmouseover="s('Pod::Simple::_accessorize (256 microseconds, 0.09%)')" onmouseout="c()">
+<title>Pod::Simple::_accessorize (256 microseconds, 0.09%)</title><a xlink:href="Pod-Simple-pm-35-sub.html#1433" target="_top"><rect x="730.1" y="97" width="1.0" height="15.0" fill="rgb(236,77,40)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('warnings::register::import (92 microseconds, 0.03%)')" onmouseout="c()">
+<title>warnings::register::import (92 microseconds, 0.03%)</title><a xlink:href="warnings-register-pm-8-sub.html#38" target="_top"><rect x="1139.7" y="97" width="0.4" height="15.0" fill="rgb(220,228,50)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Getopt::Long::BEGIN@228 (27 microseconds, 0.01%)')" onmouseout="c()">
+<title>Getopt::Long::BEGIN@228 (27 microseconds, 0.01%)</title><a xlink:href="Getopt-Long-pm-11-sub.html#228" target="_top"><rect x="1130.4" y="129" width="0.1" height="15.0" fill="rgb(215,54,1)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Pod::Simple::BEGIN@4 (26 microseconds, 0.01%)')" onmouseout="c()">
+<title>Pod::Simple::BEGIN@4 (26 microseconds, 0.01%)</title><a xlink:href="Pod-Simple-pm-35-sub.html#4" target="_top"><rect x="676.6" y="97" width="0.1" height="15.0" fill="rgb(246,139,23)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('constant::BEGIN@25 (21,006 microseconds, 7.49%)')" onmouseout="c()">
+<title>constant::BEGIN@25 (21,006 microseconds, 7.49%)</title><a xlink:href="constant-pm-12-sub.html#25" target="_top"><rect x="1039.6" y="113" width="88.5" height="15.0" fill="rgb(244,3,1)" rx="2" ry="2" />
+<text text-anchor="" x="1042.63804032161" y="123.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >constant::B..</text>
+</a>
+</g>
+<g class="func_g" onmouseover="s('Pod::InputObjects::BEGIN@12 (32 microseconds, 0.01%)')" onmouseout="c()">
+<title>Pod::InputObjects::BEGIN@12 (32 microseconds, 0.01%)</title><a xlink:href="Pod-InputObjects-pm-42-sub.html#12" target="_top"><rect x="560.4" y="97" width="0.1" height="15.0" fill="rgb(243,192,14)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('main::BEGIN@11 (1,272 microseconds, 0.45%)')" onmouseout="c()">
+<title>main::BEGIN@11 (1,272 microseconds, 0.45%)</title><a xlink:href="my_perl_archive-pl-1-sub.html#11" target="_top"><rect x="731.1" y="145" width="5.4" height="15.0" fill="rgb(209,70,4)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Term::ANSIColor::CORE:sort (33 microseconds, 0.01%)')" onmouseout="c()">
+<title>Term::ANSIColor::CORE:sort (33 microseconds, 0.01%)</title><a xlink:href="Term-ANSIColor-pm-47-sub.html#Term__ANSIColor__CORE_sort" target="_top"><rect x="851.2" y="81" width="0.1" height="15.0" fill="rgb(207,206,4)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Getopt::Long::BEGIN@223 (28 microseconds, 0.01%)')" onmouseout="c()">
+<title>Getopt::Long::BEGIN@223 (28 microseconds, 0.01%)</title><a xlink:href="Getopt-Long-pm-11-sub.html#223" target="_top"><rect x="1129.9" y="129" width="0.1" height="15.0" fill="rgb(221,186,41)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('lib::BEGIN@8 (34 microseconds, 0.01%)')" onmouseout="c()">
+<title>lib::BEGIN@8 (34 microseconds, 0.01%)</title><a xlink:href="lib-pm-9-sub.html#8" target="_top"><rect x="991.6" y="129" width="0.1" height="15.0" fill="rgb(221,55,36)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('strict::import (27 microseconds, 0.01%)')" onmouseout="c()">
+<title>strict::import (27 microseconds, 0.01%)</title><a xlink:href="strict-pm-2-sub.html#42" target="_top"><rect x="944.8" y="113" width="0.2" height="15.0" fill="rgb(248,107,4)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Exporter::import (46 microseconds, 0.02%)')" onmouseout="c()">
+<title>Exporter::import (46 microseconds, 0.02%)</title><a xlink:href="Exporter-pm-5-sub.html#28" target="_top"><rect x="535.5" y="113" width="0.2" height="15.0" fill="rgb(219,88,1)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Exporter::import (45 microseconds, 0.02%)')" onmouseout="c()">
+<title>Exporter::import (45 microseconds, 0.02%)</title><a xlink:href="Exporter-pm-5-sub.html#28" target="_top"><rect x="560.9" y="97" width="0.2" height="15.0" fill="rgb(247,221,7)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Getopt::Long::BEGIN@237 (28 microseconds, 0.01%)')" onmouseout="c()">
+<title>Getopt::Long::BEGIN@237 (28 microseconds, 0.01%)</title><a xlink:href="Getopt-Long-pm-11-sub.html#237" target="_top"><rect x="1130.7" y="129" width="0.1" height="15.0" fill="rgb(218,34,43)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('utf8::BEGIN@654 (37 microseconds, 0.01%)')" onmouseout="c()">
+<title>utf8::BEGIN@654 (37 microseconds, 0.01%)</title><a xlink:href="utf8_heavy-pl-14-sub.html#654" target="_top"><rect x="1062.9" y="81" width="0.2" height="15.0" fill="rgb(253,115,53)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('main::BEGIN@5 (3,191 microseconds, 1.14%)')" onmouseout="c()">
+<title>main::BEGIN@5 (3,191 microseconds, 1.14%)</title><a xlink:href="my_perl_archive-pl-1-sub.html#5" target="_top"><rect x="932.1" y="145" width="13.4" height="15.0" fill="rgb(233,153,0)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Getopt::Long::BEGIN@218 (39 microseconds, 0.01%)')" onmouseout="c()">
+<title>Getopt::Long::BEGIN@218 (39 microseconds, 0.01%)</title><a xlink:href="Getopt-Long-pm-11-sub.html#218" target="_top"><rect x="1129.5" y="129" width="0.1" height="15.0" fill="rgb(235,199,49)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Getopt::Long::BEGIN@208 (22,919 microseconds, 8.18%)')" onmouseout="c()">
+<title>Getopt::Long::BEGIN@208 (22,919 microseconds, 8.18%)</title><a xlink:href="Getopt-Long-pm-11-sub.html#208" target="_top"><rect x="1033.0" y="129" width="96.5" height="15.0" fill="rgb(208,206,32)" rx="2" ry="2" />
+<text text-anchor="" x="1035.98972268433" y="139.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >Getopt::Long..</text>
+</a>
+</g>
+<g class="func_g" onmouseover="s('Exporter::Heavy::heavy_export (67 microseconds, 0.02%)')" onmouseout="c()">
+<title>Exporter::Heavy::heavy_export (67 microseconds, 0.02%)</title><a xlink:href="Exporter-Heavy-pm-19-sub.html#39" target="_top"><rect x="1143.2" y="97" width="0.3" height="15.0" fill="rgb(247,187,49)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('FindBin::BEGIN@83 (37 microseconds, 0.01%)')" onmouseout="c()">
+<title>FindBin::BEGIN@83 (37 microseconds, 0.01%)</title><a xlink:href="FindBin-pm-43-sub.html#83" target="_top"><rect x="736.1" y="129" width="0.2" height="15.0" fill="rgb(240,115,4)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('vars::CORE:match (27 microseconds, 0.01%)')" onmouseout="c()">
+<title>vars::CORE:match (27 microseconds, 0.01%)</title><a xlink:href="vars-pm-7-sub.html#vars__CORE_match" target="_top"><rect x="1132.1" y="97" width="0.2" height="15.0" fill="rgb(249,132,26)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Pod::Simple::LinkSection::BEGIN@5 (38 microseconds, 0.01%)')" onmouseout="c()">
+<title>Pod::Simple::LinkSection::BEGIN@5 (38 microseconds, 0.01%)</title><a xlink:href="Pod-Simple-LinkSection-pm-38-sub.html#5" target="_top"><rect x="691.4" y="81" width="0.2" height="15.0" fill="rgb(224,20,30)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('FindBin::BEGIN@80 (60 microseconds, 0.02%)')" onmouseout="c()">
+<title>FindBin::BEGIN@80 (60 microseconds, 0.02%)</title><a xlink:href="FindBin-pm-43-sub.html#80" target="_top"><rect x="735.9" y="129" width="0.2" height="15.0" fill="rgb(205,160,29)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('File::Spec::BEGIN@3 (105 microseconds, 0.04%)')" onmouseout="c()">
+<title>File::Spec::BEGIN@3 (105 microseconds, 0.04%)</title><a xlink:href="File-Spec-pm-22-sub.html#3" target="_top"><rect x="587.7" y="113" width="0.5" height="15.0" fill="rgb(222,117,10)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Pod::Usage::BEGIN@13 (80 microseconds, 0.03%)')" onmouseout="c()">
+<title>Pod::Usage::BEGIN@13 (80 microseconds, 0.03%)</title><a xlink:href="Pod-Usage-pm-20-sub.html#13" target="_top"><rect x="561.4" y="129" width="0.3" height="15.0" fill="rgb(209,111,44)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('constant::BEGIN@36 (373 microseconds, 0.13%)')" onmouseout="c()">
+<title>constant::BEGIN@36 (373 microseconds, 0.13%)</title><a xlink:href="constant-pm-12-sub.html#36" target="_top"><rect x="1040.4" y="97" width="1.6" height="15.0" fill="rgb(226,27,18)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('strict::import (31 microseconds, 0.01%)')" onmouseout="c()">
+<title>strict::import (31 microseconds, 0.01%)</title><a xlink:href="strict-pm-2-sub.html#42" target="_top"><rect x="778.1" y="97" width="0.1" height="15.0" fill="rgb(243,207,54)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('main::BEGIN@2.4 (24 microseconds, 0.01%)')" onmouseout="c()">
+<title>main::BEGIN@2.4 (24 microseconds, 0.01%)</title><a xlink:href="Verbosity-pm-45-sub.html#2" target="_top"><rect x="829.7" y="113" width="0.1" height="15.0" fill="rgb(210,59,14)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('strict::import (26 microseconds, 0.01%)')" onmouseout="c()">
+<title>strict::import (26 microseconds, 0.01%)</title><a xlink:href="strict-pm-2-sub.html#42" target="_top"><rect x="963.1" y="113" width="0.1" height="15.0" fill="rgb(211,121,38)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('List::print_list (73,512 microseconds, 26.23%)')" onmouseout="c()">
+<title>List::print_list (73,512 microseconds, 26.23%)</title><a xlink:href="List-pm-57-sub.html#66" target="_top"><rect x="206.5" y="81" width="309.4" height="15.0" fill="rgb(226,139,7)" rx="2" ry="2" />
+<text text-anchor="" x="209.472877816348" y="91.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >List::print_list</text>
+</a>
+</g>
+<g class="func_g" onmouseover="s('File::Find::_find_opt (45,709 microseconds, 16.31%)')" onmouseout="c()">
+<title>File::Find::_find_opt (45,709 microseconds, 16.31%)</title><a xlink:href="File-Find-pm-60-sub.html#462" target="_top"><rect x="14.0" y="65" width="192.4" height="15.0" fill="rgb(251,139,48)" rx="2" ry="2" />
+<text text-anchor="" x="16.9781296569552" y="75.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >File::Find::_find_opt</text>
+</a>
+</g>
+<g class="func_g" onmouseover="s('main::BEGIN@3.2 (6,683 microseconds, 2.38%)')" onmouseout="c()">
+<title>main::BEGIN@3.2 (6,683 microseconds, 2.38%)</title><a xlink:href="Invoker-pm-44-sub.html#3" target="_top"><rect x="824.3" y="129" width="28.1" height="15.0" fill="rgb(207,150,36)" rx="2" ry="2" />
+<text text-anchor="" x="827.299145710964" y="139.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >ma..</text>
+</a>
+</g>
+<g class="func_g" onmouseover="s('List::Util::BEGIN@11 (37 microseconds, 0.01%)')" onmouseout="c()">
+<title>List::Util::BEGIN@11 (37 microseconds, 0.01%)</title><a xlink:href="List-Util-pm-53-sub.html#11" target="_top"><rect x="908.4" y="81" width="0.2" height="15.0" fill="rgb(249,16,53)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Getopt::Long::BEGIN@17 (56 microseconds, 0.02%)')" onmouseout="c()">
+<title>Getopt::Long::BEGIN@17 (56 microseconds, 0.02%)</title><a xlink:href="Getopt-Long-pm-11-sub.html#17" target="_top"><rect x="1032.5" y="129" width="0.3" height="15.0" fill="rgb(219,161,36)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('vars::BEGIN@8 (32 microseconds, 0.01%)')" onmouseout="c()">
+<title>vars::BEGIN@8 (32 microseconds, 0.01%)</title><a xlink:href="vars-pm-7-sub.html#8" target="_top"><rect x="969.8" y="113" width="0.1" height="15.0" fill="rgb(211,50,47)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('constant::BEGIN@4 (108 microseconds, 0.04%)')" onmouseout="c()">
+<title>constant::BEGIN@4 (108 microseconds, 0.04%)</title><a xlink:href="constant-pm-12-sub.html#4" target="_top"><rect x="1128.3" y="113" width="0.4" height="15.0" fill="rgb(251,52,22)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Encode::utf8::BEGIN@325 (368 microseconds, 0.13%)')" onmouseout="c()">
+<title>Encode::utf8::BEGIN@325 (368 microseconds, 0.13%)</title><a xlink:href="Encode-pm-25-sub.html#325" target="_top"><rect x="639.5" y="97" width="1.5" height="15.0" fill="rgb(212,176,49)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Pod::Escapes::BEGIN@23 (92 microseconds, 0.03%)')" onmouseout="c()">
+<title>Pod::Escapes::BEGIN@23 (92 microseconds, 0.03%)</title><a xlink:href="Pod-Escapes-pm-37-sub.html#23" target="_top"><rect x="688.0" y="81" width="0.4" height="15.0" fill="rgb(237,89,16)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('main::BEGIN@2.10 (31 microseconds, 0.01%)')" onmouseout="c()">
+<title>main::BEGIN@2.10 (31 microseconds, 0.01%)</title><a xlink:href="Instances-pm-48-sub.html#2" target="_top"><rect x="912.0" y="113" width="0.1" height="15.0" fill="rgb(245,23,39)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Getopt::Long::CORE:match (26 microseconds, 0.01%)')" onmouseout="c()">
+<title>Getopt::Long::CORE:match (26 microseconds, 0.01%)</title><a xlink:href="Getopt-Long-pm-11-sub.html#Getopt__Long__CORE_match" target="_top"><rect x="1133.6" y="129" width="0.1" height="15.0" fill="rgb(254,153,46)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Create::BEGIN@285 (2,253 microseconds, 0.80%)')" onmouseout="c()">
+<title>Create::BEGIN@285 (2,253 microseconds, 0.80%)</title><a xlink:href="Create-pm-49-sub.html#285" target="_top"><rect x="874.1" y="97" width="9.5" height="15.0" fill="rgb(250,39,9)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('File::Spec::Unix::catfile (66 microseconds, 0.02%)')" onmouseout="c()">
+<title>File::Spec::Unix::catfile (66 microseconds, 0.02%)</title><a xlink:href="File-Spec-Unix-pm-23-sub.html#96" target="_top"><rect x="735.3" y="97" width="0.3" height="15.0" fill="rgb(245,171,24)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Cwd::BEGIN@170 (76 microseconds, 0.03%)')" onmouseout="c()">
+<title>Cwd::BEGIN@170 (76 microseconds, 0.03%)</title><a xlink:href="Cwd-pm-6-sub.html#170" target="_top"><rect x="962.9" y="129" width="0.3" height="15.0" fill="rgb(243,148,33)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('vars::BEGIN@7 (690 microseconds, 0.25%)')" onmouseout="c()">
+<title>vars::BEGIN@7 (690 microseconds, 0.25%)</title><a xlink:href="vars-pm-7-sub.html#7" target="_top"><rect x="966.9" y="113" width="2.9" height="15.0" fill="rgb(243,209,2)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Scalar::Util::BEGIN@9 (42 microseconds, 0.01%)')" onmouseout="c()">
+<title>Scalar::Util::BEGIN@9 (42 microseconds, 0.01%)</title><a xlink:href="Scalar-Util-pm-52-sub.html#9" target="_top"><rect x="908.6" y="81" width="0.2" height="15.0" fill="rgb(205,86,12)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('File::Find::CORE:closedir (37 microseconds, 0.01%)')" onmouseout="c()">
+<title>File::Find::CORE:closedir (37 microseconds, 0.01%)</title><a xlink:href="File-Find-pm-60-sub.html#File__Find__CORE_closedir" target="_top"><rect x="149.5" y="33" width="0.1" height="15.0" fill="rgb(244,52,44)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Pod::Simple::LinkSection::BEGIN@10 (44 microseconds, 0.02%)')" onmouseout="c()">
+<title>Pod::Simple::LinkSection::BEGIN@10 (44 microseconds, 0.02%)</title><a xlink:href="Pod-Simple-LinkSection-pm-38-sub.html#10" target="_top"><rect x="691.0" y="81" width="0.2" height="15.0" fill="rgb(243,183,18)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Exporter::Heavy::BEGIN@3 (43 microseconds, 0.02%)')" onmouseout="c()">
+<title>Exporter::Heavy::BEGIN@3 (43 microseconds, 0.02%)</title><a xlink:href="Exporter-Heavy-pm-19-sub.html#3" target="_top"><rect x="1151.2" y="65" width="0.2" height="15.0" fill="rgb(223,200,22)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('XSLoader::load (465 microseconds, 0.17%)')" onmouseout="c()">
+<title>XSLoader::load (465 microseconds, 0.17%)</title><a xlink:href="XSLoader-pm-32-sub.html#17" target="_top"><rect x="803.1" y="65" width="1.9" height="15.0" fill="rgb(230,162,23)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Exporter::as_heavy (1,869 microseconds, 0.67%)')" onmouseout="c()">
+<title>Exporter::as_heavy (1,869 microseconds, 0.67%)</title><a xlink:href="Exporter-pm-5-sub.html#15" target="_top"><rect x="1143.6" y="81" width="7.9" height="15.0" fill="rgb(233,226,3)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('utf8::AUTOLOAD (5,002 microseconds, 1.78%)')" onmouseout="c()">
+<title>utf8::AUTOLOAD (5,002 microseconds, 1.78%)</title><a xlink:href="utf8-pm-13-sub.html#16" target="_top"><rect x="1042.0" y="97" width="21.1" height="15.0" fill="rgb(206,38,4)" rx="2" ry="2" />
+<text text-anchor="" x="1045.00513270902" y="107.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >u..</text>
+</a>
+</g>
+<g class="func_g" onmouseover="s('File::Find::find (45,720 microseconds, 16.31%)')" onmouseout="c()">
+<title>File::Find::find (45,720 microseconds, 16.31%)</title><a xlink:href="File-Find-pm-60-sub.html#1068" target="_top"><rect x="13.9" y="81" width="192.5" height="15.0" fill="rgb(223,163,26)" rx="2" ry="2" />
+<text text-anchor="" x="16.944452368854" y="91.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >File::Find::find</text>
+</a>
+</g>
+<g class="func_g" onmouseover="s('Encode::Alias::CORE:qr (45 microseconds, 0.02%)')" onmouseout="c()">
+<title>Encode::Alias::CORE:qr (45 microseconds, 0.02%)</title><a xlink:href="Encode-Alias-pm-29-sub.html#Encode__Alias__CORE_qr" target="_top"><rect x="634.8" y="65" width="0.2" height="15.0" fill="rgb(227,119,54)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Encode::Alias::BEGIN@2 (38 microseconds, 0.01%)')" onmouseout="c()">
+<title>Encode::Alias::BEGIN@2 (38 microseconds, 0.01%)</title><a xlink:href="Encode-Alias-pm-29-sub.html#2" target="_top"><rect x="632.9" y="81" width="0.2" height="15.0" fill="rgb(253,143,38)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('constant::import (30 microseconds, 0.01%)')" onmouseout="c()">
+<title>constant::import (30 microseconds, 0.01%)</title><a xlink:href="constant-pm-12-sub.html#55" target="_top"><rect x="1129.5" y="113" width="0.1" height="15.0" fill="rgb(237,148,54)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('warnings::register::import (99 microseconds, 0.04%)')" onmouseout="c()">
+<title>warnings::register::import (99 microseconds, 0.04%)</title><a xlink:href="warnings-register-pm-8-sub.html#38" target="_top"><rect x="1128.3" y="97" width="0.4" height="15.0" fill="rgb(229,2,5)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Cwd::BEGIN@823 (61 microseconds, 0.02%)')" onmouseout="c()">
+<title>Cwd::BEGIN@823 (61 microseconds, 0.02%)</title><a xlink:href="Cwd-pm-6-sub.html#823" target="_top"><rect x="970.2" y="129" width="0.3" height="15.0" fill="rgb(229,193,34)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('vars::import (67 microseconds, 0.02%)')" onmouseout="c()">
+<title>vars::import (67 microseconds, 0.02%)</title><a xlink:href="vars-pm-7-sub.html#10" target="_top"><rect x="561.4" y="113" width="0.3" height="15.0" fill="rgb(234,80,50)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('vars::import (84 microseconds, 0.03%)')" onmouseout="c()">
+<title>vars::import (84 microseconds, 0.03%)</title><a xlink:href="vars-pm-7-sub.html#10" target="_top"><rect x="688.1" y="65" width="0.3" height="15.0" fill="rgb(207,195,27)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Exporter::import (54 microseconds, 0.02%)')" onmouseout="c()">
+<title>Exporter::import (54 microseconds, 0.02%)</title><a xlink:href="Exporter-pm-5-sub.html#28" target="_top"><rect x="944.4" y="129" width="0.3" height="15.0" fill="rgb(225,25,35)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('File::Basename::fileparse_set_fstype (92 microseconds, 0.03%)')" onmouseout="c()">
+<title>File::Basename::fileparse_set_fstype (92 microseconds, 0.03%)</title><a xlink:href="File-Basename-pm-4-sub.html#376" target="_top"><rect x="945.1" y="129" width="0.4" height="15.0" fill="rgb(213,148,7)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('File::Basename::fileparse (38 microseconds, 0.01%)')" onmouseout="c()">
+<title>File::Basename::fileparse (38 microseconds, 0.01%)</title><a xlink:href="File-Basename-pm-4-sub.html#104" target="_top"><rect x="735.1" y="97" width="0.2" height="15.0" fill="rgb(209,40,11)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('overloading::BEGIN@2 (33 microseconds, 0.01%)')" onmouseout="c()">
+<title>overloading::BEGIN@2 (33 microseconds, 0.01%)</title><a xlink:href="overloading-pm-18-sub.html#2" target="_top"><rect x="1142.4" y="97" width="0.2" height="15.0" fill="rgb(239,167,36)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Data::Dumper::BEGIN@22 (109 microseconds, 0.04%)')" onmouseout="c()">
+<title>Data::Dumper::BEGIN@22 (109 microseconds, 0.04%)</title><a xlink:href="Data-Dumper-pm-59-sub.html#22" target="_top"><rect x="802.4" y="81" width="0.5" height="15.0" fill="rgb(211,31,36)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Digest::BEGIN@3 (26 microseconds, 0.01%)')" onmouseout="c()">
+<title>Digest::BEGIN@3 (26 microseconds, 0.01%)</title><a xlink:href="Digest-pm-56-sub.html#3" target="_top"><rect x="882.9" y="81" width="0.2" height="15.0" fill="rgb(233,49,12)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Pod::Parser::BEGIN@206 (56 microseconds, 0.02%)')" onmouseout="c()">
+<title>Pod::Parser::BEGIN@206 (56 microseconds, 0.02%)</title><a xlink:href="Pod-Parser-pm-41-sub.html#206" target="_top"><rect x="560.8" y="113" width="0.3" height="15.0" fill="rgb(213,78,2)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('FindBin::BEGIN@166 (312 microseconds, 0.11%)')" onmouseout="c()">
+<title>FindBin::BEGIN@166 (312 microseconds, 0.11%)</title><a xlink:href="FindBin-pm-43-sub.html#166" target="_top"><rect x="734.6" y="129" width="1.3" height="15.0" fill="rgb(207,184,2)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Instances::BEGIN@24 (12,865 microseconds, 4.59%)')" onmouseout="c()">
+<title>Instances::BEGIN@24 (12,865 microseconds, 4.59%)</title><a xlink:href="Instances-pm-48-sub.html#24" target="_top"><rect x="857.2" y="113" width="54.1" height="15.0" fill="rgb(208,112,20)" rx="2" ry="2" />
+<text text-anchor="" x="860.188806236705" y="123.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >Instan..</text>
+</a>
+</g>
+<g class="func_g" onmouseover="s('vars::CORE:match (44 microseconds, 0.02%)')" onmouseout="c()">
+<title>vars::CORE:match (44 microseconds, 0.02%)</title><a xlink:href="vars-pm-7-sub.html#vars__CORE_match" target="_top"><rect x="850.2" y="49" width="0.2" height="15.0" fill="rgb(245,86,49)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Getopt::Long::BEGIN@25 (51 microseconds, 0.02%)')" onmouseout="c()">
+<title>Getopt::Long::BEGIN@25 (51 microseconds, 0.02%)</title><a xlink:href="Getopt-Long-pm-11-sub.html#25" target="_top"><rect x="1130.9" y="129" width="0.3" height="15.0" fill="rgb(224,174,29)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('constant::import (49 microseconds, 0.02%)')" onmouseout="c()">
+<title>constant::import (49 microseconds, 0.02%)</title><a xlink:href="constant-pm-12-sub.html#55" target="_top"><rect x="636.2" y="81" width="0.2" height="15.0" fill="rgb(226,172,36)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Encode::BEGIN@8 (60 microseconds, 0.02%)')" onmouseout="c()">
+<title>Encode::BEGIN@8 (60 microseconds, 0.02%)</title><a xlink:href="Encode-pm-25-sub.html#8" target="_top"><rect x="636.2" y="97" width="0.2" height="15.0" fill="rgb(216,72,36)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('constant::BEGIN@127 (25 microseconds, 0.01%)')" onmouseout="c()">
+<title>constant::BEGIN@127 (25 microseconds, 0.01%)</title><a xlink:href="constant-pm-12-sub.html#127" target="_top"><rect x="1039.4" y="113" width="0.1" height="15.0" fill="rgb(211,131,12)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Exporter::import (36 microseconds, 0.01%)')" onmouseout="c()">
+<title>Exporter::import (36 microseconds, 0.01%)</title><a xlink:href="Exporter-pm-5-sub.html#28" target="_top"><rect x="1131.0" y="113" width="0.2" height="15.0" fill="rgb(207,190,50)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('strict::import (30 microseconds, 0.01%)')" onmouseout="c()">
+<title>strict::import (30 microseconds, 0.01%)</title><a xlink:href="strict-pm-2-sub.html#42" target="_top"><rect x="849.2" y="65" width="0.1" height="15.0" fill="rgb(248,59,10)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Getopt::Long::CallBack::BEGIN@1489 (2,165 microseconds, 0.77%)')" onmouseout="c()">
+<title>Getopt::Long::CallBack::BEGIN@1489 (2,165 microseconds, 0.77%)</title><a xlink:href="Getopt-Long-pm-11-sub.html#1489" target="_top"><rect x="1133.7" y="129" width="9.1" height="15.0" fill="rgb(253,205,24)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Exporter::import (64 microseconds, 0.02%)')" onmouseout="c()">
+<title>Exporter::import (64 microseconds, 0.02%)</title><a xlink:href="Exporter-pm-5-sub.html#28" target="_top"><rect x="778.4" y="97" width="0.2" height="15.0" fill="rgb(214,15,0)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('main::BEGIN@6 (8,064 microseconds, 2.88%)')" onmouseout="c()">
+<title>main::BEGIN@6 (8,064 microseconds, 2.88%)</title><a xlink:href="my_perl_archive-pl-1-sub.html#6" target="_top"><rect x="945.5" y="145" width="33.9" height="15.0" fill="rgb(230,224,12)" rx="2" ry="2" />
+<text text-anchor="" x="948.4994959262" y="155.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >mai..</text>
+</a>
+</g>
+<g class="func_g" onmouseover="s('List::new (40 microseconds, 0.01%)')" onmouseout="c()">
+<title>List::new (40 microseconds, 0.01%)</title><a xlink:href="List-pm-57-sub.html#15" target="_top"><rect x="517.3" y="97" width="0.2" height="15.0" fill="rgb(218,86,3)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Getopt::Long::BEGIN@51 (113 microseconds, 0.04%)')" onmouseout="c()">
+<title>Getopt::Long::BEGIN@51 (113 microseconds, 0.04%)</title><a xlink:href="Getopt-Long-pm-11-sub.html#51" target="_top"><rect x="1133.1" y="129" width="0.5" height="15.0" fill="rgb(246,189,49)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('utf8::BEGIN@2 (32 microseconds, 0.01%)')" onmouseout="c()">
+<title>utf8::BEGIN@2 (32 microseconds, 0.01%)</title><a xlink:href="utf8_heavy-pl-14-sub.html#2" target="_top"><rect x="1062.5" y="81" width="0.1" height="15.0" fill="rgb(252,101,7)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('overload::BEGIN@85 (593 microseconds, 0.21%)')" onmouseout="c()">
+<title>overload::BEGIN@85 (593 microseconds, 0.21%)</title><a xlink:href="overload-pm-17-sub.html#85" target="_top"><rect x="1140.1" y="113" width="2.5" height="15.0" fill="rgb(236,107,34)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('lib::BEGIN@6 (1,469 microseconds, 0.52%)')" onmouseout="c()">
+<title>lib::BEGIN@6 (1,469 microseconds, 0.52%)</title><a xlink:href="lib-pm-9-sub.html#6" target="_top"><rect x="985.4" y="129" width="6.2" height="15.0" fill="rgb(236,1,52)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('overload::BEGIN@146 (102 microseconds, 0.04%)')" onmouseout="c()">
+<title>overload::BEGIN@146 (102 microseconds, 0.04%)</title><a xlink:href="overload-pm-17-sub.html#146" target="_top"><rect x="1139.7" y="113" width="0.4" height="15.0" fill="rgb(242,194,48)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Encode::BEGIN@5 (32 microseconds, 0.01%)')" onmouseout="c()">
+<title>Encode::BEGIN@5 (32 microseconds, 0.01%)</title><a xlink:href="Encode-pm-25-sub.html#5" target="_top"><rect x="636.0" y="97" width="0.1" height="15.0" fill="rgb(242,31,31)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Exporter::as_heavy (30 microseconds, 0.01%)')" onmouseout="c()">
+<title>Exporter::as_heavy (30 microseconds, 0.01%)</title><a xlink:href="Exporter-pm-5-sub.html#15" target="_top"><rect x="851.0" y="49" width="0.2" height="15.0" fill="rgb(233,131,46)" rx="2" ry="2" />
+</a>
+</g>
+</svg>

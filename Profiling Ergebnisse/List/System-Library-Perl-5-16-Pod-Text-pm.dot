@@ -1,0 +1,107 @@
+digraph {
+graph [overlap=false]
+subgraph cluster_Pod_Usage {
+	label="Pod::Usage";
+	"Pod::Usage::BEGIN@460";
+}
+subgraph cluster_Pod_Text {
+	label="Pod::Text";
+	"Pod::Text::BEGIN@34";
+	"Pod::Text::BEGIN@33";
+	"Pod::Text::BEGIN@28";
+	"Pod::Text::BEGIN@32";
+	"Pod::Text::BEGIN@31";
+	"Pod::Text::BEGIN@29";
+}
+subgraph cluster_Pod_Simple {
+	label="Pod::Simple";
+	"Pod::Simple::_accessorize";
+	"Pod::Simple::BEGIN@9";
+	"Pod::Simple::BEGIN@10";
+	"Pod::Simple::BEGIN@1438";
+	"Pod::Simple::BEGIN@7";
+	"Pod::Simple::BEGIN@1434";
+	"Pod::Simple::BEGIN@116";
+	"Pod::Simple::BEGIN@6";
+	"Pod::Simple::BEGIN@8";
+	"Pod::Simple::BEGIN@4";
+	"Pod::Simple::BEGIN@32";
+	"Pod::Simple::BEGIN@13";
+	"Pod::Simple::BEGIN@5";
+}
+subgraph cluster_Encode {
+	label="Encode";
+	"Encode::BEGIN@13";
+	"Encode::CORE:match";
+	"Encode::predefine_encodings";
+	"Encode::BEGIN@242";
+	"Encode::BEGIN@8";
+	"Encode::BEGIN@48";
+	"Encode::BEGIN@6";
+	"Encode::BEGIN@9";
+	"Encode::BEGIN@5";
+}
+subgraph cluster_vars {
+	label="vars";
+	"vars::import";
+}
+subgraph cluster_strict {
+	label="strict";
+	"strict::import";
+}
+subgraph cluster_XSLoader {
+	label="XSLoader";
+	"XSLoader::load";
+}
+subgraph cluster_Encode_utf8 {
+	label="Encode::utf8";
+	"Encode::utf8::BEGIN@325";
+}
+subgraph cluster_Encode_Config {
+	label="Encode::Config";
+	"Encode::Config::BEGIN@7";
+	"Encode::Config::BEGIN@8";
+	"Encode::Config::CORE:match";
+}
+subgraph cluster_Exporter {
+	label="Exporter";
+	"Exporter::import";
+}
+"Pod::Text::BEGIN@34" -> "Pod::Simple::BEGIN@1434";
+"Pod::Usage::BEGIN@460" -> "Pod::Text::BEGIN@29";
+"Pod::Text::BEGIN@32" -> "Encode::BEGIN@5";
+"Pod::Text::BEGIN@34" -> "Pod::Simple::BEGIN@1438";
+"Pod::Text::BEGIN@34" -> "Pod::Simple::BEGIN@6";
+"Pod::Text::BEGIN@34" -> "Pod::Simple::BEGIN@8";
+"Pod::Text::BEGIN@32" -> "Exporter::import";
+"Pod::Text::BEGIN@31" -> "Exporter::import";
+"Pod::Text::BEGIN@34" -> "Pod::Simple::BEGIN@4";
+"Pod::Text::BEGIN@32" -> "Encode::BEGIN@242";
+"Pod::Text::BEGIN@32" -> "Encode::Config::BEGIN@8";
+"Pod::Text::BEGIN@34" -> "Pod::Simple::BEGIN@13";
+"Pod::Text::BEGIN@32" -> "Encode::utf8::BEGIN@325";
+"Pod::Text::BEGIN@32" -> "Encode::Config::CORE:match";
+"Pod::Text::BEGIN@32" -> "Encode::Config::BEGIN@7";
+"Pod::Text::BEGIN@34" -> "Pod::Simple::BEGIN@10";
+"Pod::Text::BEGIN@34" -> "Pod::Simple::BEGIN@7";
+"Pod::Text::BEGIN@34" -> "Pod::Simple::_accessorize";
+"Pod::Usage::BEGIN@460" -> "Pod::Text::BEGIN@34";
+"Pod::Text::BEGIN@32" -> "Encode::BEGIN@9";
+"Pod::Text::BEGIN@32" -> "Encode::CORE:match";
+"Pod::Text::BEGIN@32" -> "Encode::BEGIN@13";
+"Pod::Text::BEGIN@32" -> "Encode::predefine_encodings";
+"Pod::Text::BEGIN@34" -> "Pod::Simple::BEGIN@9";
+"Pod::Text::BEGIN@29" -> "vars::import";
+"Pod::Usage::BEGIN@460" -> "Pod::Text::BEGIN@31";
+"Pod::Text::BEGIN@32" -> "Encode::BEGIN@48";
+"Pod::Text::BEGIN@32" -> "Encode::BEGIN@6";
+"Pod::Usage::BEGIN@460" -> "Pod::Text::BEGIN@28";
+"Pod::Usage::BEGIN@460" -> "Pod::Text::BEGIN@33";
+"Pod::Text::BEGIN@32" -> "Encode::BEGIN@8";
+"Pod::Text::BEGIN@34" -> "Pod::Simple::BEGIN@5";
+"Pod::Text::BEGIN@32" -> "XSLoader::load";
+"Pod::Text::BEGIN@34" -> "Pod::Simple::BEGIN@116";
+"Pod::Usage::BEGIN@460" -> "Pod::Text::BEGIN@32";
+"Pod::Text::BEGIN@34" -> "Pod::Simple::BEGIN@32";
+"Pod::Text::BEGIN@28" -> "strict::import";
+}

@@ -1,0 +1,17 @@
+digraph {
+graph [overlap=false]
+subgraph cluster_List_Util {
+	label="List::Util";
+	"List::Util::BEGIN@11";
+}
+subgraph cluster_strict {
+	label="strict";
+	"strict::import";
+}
+subgraph cluster_Create {
+	label="Create";
+	"Create::BEGIN@77";
+}
+"Create::BEGIN@77" -> "List::Util::BEGIN@11";
+"List::Util::BEGIN@11" -> "strict::import";
+}

@@ -1,0 +1,51 @@
+digraph {
+graph [overlap=false]
+subgraph cluster_Pod_Usage {
+	label="Pod::Usage";
+	"Pod::Usage::BEGIN@457";
+}
+subgraph cluster_File_Spec_Unix {
+	label="File::Spec::Unix";
+	"File::Spec::Unix::curdir";
+	"File::Spec::Unix::canonpath";
+	"File::Spec::Unix::CORE:match";
+	"File::Spec::Unix::catfile";
+	"File::Spec::Unix::BEGIN@149";
+	"File::Spec::Unix::file_name_is_absolute";
+	"File::Spec::Unix::BEGIN@4";
+	"File::Spec::Unix::BEGIN@3";
+	"File::Spec::Unix::CORE:subst";
+	"File::Spec::Unix::catdir";
+}
+subgraph cluster_vars {
+	label="vars";
+	"vars::import";
+}
+subgraph cluster_strict {
+	label="strict";
+	"strict::import";
+	"strict::unimport";
+}
+subgraph cluster_List {
+	label="List";
+	"List::BEGIN@40";
+}
+subgraph cluster_FindBin {
+	label="FindBin";
+	"FindBin::init";
+}
+"Pod::Usage::BEGIN@457" -> "File::Spec::Unix::BEGIN@149";
+"File::Spec::Unix::BEGIN@149" -> "strict::unimport";
+"File::Spec::Unix::catfile" -> "File::Spec::Unix::canonpath";
+"File::Spec::Unix::catdir" -> "File::Spec::Unix::canonpath";
+"Pod::Usage::BEGIN@457" -> "File::Spec::Unix::BEGIN@3";
+"List::BEGIN@40" -> "File::Spec::Unix::curdir";
+"File::Spec::Unix::BEGIN@4" -> "vars::import";
+"FindBin::init" -> "File::Spec::Unix::file_name_is_absolute";
+"File::Spec::Unix::catfile" -> "File::Spec::Unix::catdir";
+"File::Spec::Unix::file_name_is_absolute" -> "File::Spec::Unix::CORE:match";
+"FindBin::init" -> "File::Spec::Unix::catfile";
+"Pod::Usage::BEGIN@457" -> "File::Spec::Unix::BEGIN@4";
+"File::Spec::Unix::BEGIN@3" -> "strict::import";
+"File::Spec::Unix::canonpath" -> "File::Spec::Unix::CORE:subst";
+}

@@ -1,0 +1,32 @@
+digraph {
+graph [overlap=false]
+subgraph cluster_Pod_Text {
+	label="Pod::Text";
+	"Pod::Text::BEGIN@32";
+}
+subgraph cluster_Encode {
+	label="Encode";
+	"Encode::define_encoding";
+}
+subgraph cluster_Data_Dumper {
+	label="Data::Dumper";
+	"Data::Dumper::BEGIN@24";
+}
+subgraph cluster_main {
+	label="main";
+	"main::BEGIN@6";
+}
+subgraph cluster_XSLoader {
+	label="XSLoader";
+	"XSLoader::load";
+}
+subgraph cluster_Create {
+	label="Create";
+	"Create::BEGIN@77";
+}
+"XSLoader::load" -> "Encode::define_encoding";
+"Data::Dumper::BEGIN@24" -> "XSLoader::load";
+"Create::BEGIN@77" -> "XSLoader::load";
+"Pod::Text::BEGIN@32" -> "XSLoader::load";
+"main::BEGIN@6" -> "XSLoader::load";
+}

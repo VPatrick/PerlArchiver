@@ -1,0 +1,68 @@
+digraph {
+graph [overlap=false]
+subgraph cluster_Invoker {
+	label="Invoker";
+	"Invoker::new";
+}
+subgraph cluster_warnings {
+	label="warnings";
+	"warnings::import";
+}
+subgraph cluster_Term_ANSIColor {
+	label="Term::ANSIColor";
+	"Term::ANSIColor::BEGIN@28";
+	"Term::ANSIColor::BEGIN@22";
+	"Term::ANSIColor::BEGIN@27";
+	"Term::ANSIColor::CORE:sort";
+	"Term::ANSIColor::BEGIN@23";
+}
+subgraph cluster_main {
+	label="main";
+	"main::BEGIN@2.7";
+	"main::BEGIN@1.6";
+	"main::RUNTIME";
+	"main::BEGIN@3.5";
+}
+subgraph cluster_strict {
+	label="strict";
+	"strict::import";
+}
+subgraph cluster_Verbosity {
+	label="Verbosity";
+	"Verbosity::new";
+}
+subgraph cluster_List {
+	label="List";
+	"List::new";
+}
+subgraph cluster_Message {
+	label="Message";
+	"Message::new";
+	"Message::BEGIN@40";
+	"Message::BEGIN@57";
+	"Message::BEGIN@74";
+}
+subgraph cluster_Exporter {
+	label="Exporter";
+	"Exporter::import";
+}
+"Message::BEGIN@40" -> "Term::ANSIColor::BEGIN@22";
+"Message::BEGIN@40" -> "Term::ANSIColor::BEGIN@23";
+"Message::BEGIN@40" -> "Term::ANSIColor::CORE:sort";
+"main::BEGIN@3.5" -> "Message::BEGIN@74";
+"Message::BEGIN@74" -> "Exporter::import";
+"Message::BEGIN@40" -> "Exporter::import";
+"Message::BEGIN@57" -> "Exporter::import";
+"main::BEGIN@3.5" -> "main::BEGIN@2.7";
+"Message::BEGIN@40" -> "Term::ANSIColor::BEGIN@28";
+"main::BEGIN@2.7" -> "warnings::import";
+"Verbosity::new" -> "Message::new";
+"List::new" -> "Message::new";
+"main::RUNTIME" -> "Message::new";
+"Invoker::new" -> "Message::new";
+"main::BEGIN@3.5" -> "Message::BEGIN@57";
+"Message::BEGIN@40" -> "Term::ANSIColor::BEGIN@27";
+"main::BEGIN@3.5" -> "main::BEGIN@1.6";
+"main::BEGIN@1.6" -> "strict::import";
+"main::BEGIN@3.5" -> "Message::BEGIN@40";
+}

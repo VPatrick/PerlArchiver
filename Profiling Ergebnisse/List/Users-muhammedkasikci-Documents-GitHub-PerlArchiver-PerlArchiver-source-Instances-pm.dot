@@ -1,0 +1,45 @@
+digraph {
+graph [overlap=false]
+subgraph cluster_Invoker {
+	label="Invoker";
+	"Invoker::new";
+}
+subgraph cluster_Instances {
+	label="Instances";
+	"Instances::BEGIN@11";
+	"Instances::new";
+	"Instances::BEGIN@24";
+	"Instances::BEGIN@10";
+}
+subgraph cluster_warnings {
+	label="warnings";
+	"warnings::import";
+}
+subgraph cluster_main {
+	label="main";
+	"main::BEGIN@1.9";
+	"main::BEGIN@2.10";
+	"main::BEGIN@5.8";
+}
+subgraph cluster_strict {
+	label="strict";
+	"strict::import";
+}
+subgraph cluster_Create {
+	label="Create";
+	"Create::BEGIN@285";
+	"Create::BEGIN@77";
+	"Create::BEGIN@170";
+}
+"main::BEGIN@5.8" -> "main::BEGIN@1.9";
+"Instances::BEGIN@24" -> "Instances::BEGIN@10";
+"Invoker::new" -> "Instances::new";
+"Instances::BEGIN@24" -> "Create::BEGIN@285";
+"main::BEGIN@5.8" -> "Instances::BEGIN@24";
+"main::BEGIN@2.10" -> "warnings::import";
+"main::BEGIN@5.8" -> "main::BEGIN@2.10";
+"Instances::BEGIN@24" -> "Create::BEGIN@77";
+"Instances::BEGIN@24" -> "Create::BEGIN@170";
+"Instances::BEGIN@24" -> "Instances::BEGIN@11";
+"main::BEGIN@1.9" -> "strict::import";
+}

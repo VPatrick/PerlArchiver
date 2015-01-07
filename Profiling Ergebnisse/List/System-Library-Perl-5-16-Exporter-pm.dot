@@ -1,0 +1,130 @@
+digraph {
+graph [overlap=false]
+subgraph cluster_Pod_Usage {
+	label="Pod::Usage";
+	"Pod::Usage::BEGIN@456";
+	"Pod::Usage::BEGIN@454";
+}
+subgraph cluster_Pod_Text {
+	label="Pod::Text";
+	"Pod::Text::BEGIN@32";
+	"Pod::Text::BEGIN@31";
+}
+subgraph cluster_Encode {
+	label="Encode";
+	"Encode::BEGIN@48";
+}
+subgraph cluster_Invoker {
+	label="Invoker";
+	"Invoker::BEGIN@3";
+	"Invoker::BEGIN@4.15";
+}
+subgraph cluster_Getopt_Long {
+	label="Getopt::Long";
+	"Getopt::Long::import";
+	"Getopt::Long::BEGIN@25";
+}
+subgraph cluster_Term_ANSIColor {
+	label="Term::ANSIColor";
+	"Term::ANSIColor::BEGIN@28";
+}
+subgraph cluster_Data_Dumper {
+	label="Data::Dumper";
+	"Data::Dumper::BEGIN@22";
+}
+subgraph cluster_main {
+	label="main";
+	"main::BEGIN@10";
+	"main::BEGIN@5";
+	"main::BEGIN@11";
+	"main::BEGIN@6";
+}
+subgraph cluster_List {
+	label="List";
+	"List::BEGIN@40";
+}
+subgraph cluster_FindBin {
+	label="FindBin";
+	"FindBin::BEGIN@84";
+	"FindBin::BEGIN@83";
+	"FindBin::BEGIN@80";
+}
+subgraph cluster_Message {
+	label="Message";
+	"Message::BEGIN@40";
+	"Message::BEGIN@57";
+	"Message::BEGIN@74";
+}
+subgraph cluster_Pod_Select {
+	label="Pod::Select";
+	"Pod::Select::BEGIN@241";
+	"Pod::Select::BEGIN@242";
+}
+subgraph cluster_Exporter_Heavy {
+	label="Exporter::Heavy";
+	"Exporter::Heavy::BEGIN@197";
+	"Exporter::Heavy::BEGIN@4";
+	"Exporter::Heavy::heavy_export";
+	"Exporter::Heavy::BEGIN@3";
+}
+subgraph cluster_Pod_Parser {
+	label="Pod::Parser";
+	"Pod::Parser::BEGIN@206";
+	"Pod::Parser::BEGIN@207";
+}
+subgraph cluster_Create {
+	label="Create";
+	"Create::BEGIN@77";
+}
+subgraph cluster_Exporter {
+	label="Exporter";
+	"Exporter::import";
+	"Exporter::as_heavy";
+	"Exporter::CORE:subst";
+	"Exporter::export";
+	"Exporter::export_ok_tags";
+	"Exporter::CORE:match";
+}
+subgraph cluster_Cwd {
+	label="Cwd";
+	"Cwd::BEGIN@171";
+}
+"Exporter::export" -> "Exporter::as_heavy";
+"Exporter::export_ok_tags" -> "Exporter::as_heavy";
+"Exporter::import" -> "Exporter::CORE:match";
+"main::BEGIN@10" -> "Exporter::import";
+"Pod::Parser::BEGIN@206" -> "Exporter::import";
+"Pod::Usage::BEGIN@454" -> "Exporter::import";
+"Pod::Parser::BEGIN@207" -> "Exporter::import";
+"FindBin::BEGIN@83" -> "Exporter::import";
+"Invoker::BEGIN@4.15" -> "Exporter::import";
+"FindBin::BEGIN@84" -> "Exporter::import";
+"Data::Dumper::BEGIN@22" -> "Exporter::import";
+"Getopt::Long::BEGIN@25" -> "Exporter::import";
+"Create::BEGIN@77" -> "Exporter::import";
+"main::BEGIN@5" -> "Exporter::import";
+"Invoker::BEGIN@3" -> "Exporter::import";
+"Getopt::Long::import" -> "Exporter::import";
+"Cwd::BEGIN@171" -> "Exporter::import";
+"Message::BEGIN@74" -> "Exporter::import";
+"Pod::Select::BEGIN@242" -> "Exporter::import";
+"Pod::Text::BEGIN@31" -> "Exporter::import";
+"Pod::Text::BEGIN@32" -> "Exporter::import";
+"Encode::BEGIN@48" -> "Exporter::import";
+"FindBin::BEGIN@80" -> "Exporter::import";
+"main::BEGIN@6" -> "Exporter::import";
+"Pod::Usage::BEGIN@456" -> "Exporter::import";
+"List::BEGIN@40" -> "Exporter::import";
+"Pod::Select::BEGIN@241" -> "Exporter::import";
+"Message::BEGIN@57" -> "Exporter::import";
+"Message::BEGIN@40" -> "Exporter::import";
+"main::BEGIN@11" -> "Exporter::import";
+"Exporter::import" -> "Exporter::export";
+"Exporter::import" -> "Exporter::CORE:subst";
+"Exporter::as_heavy" -> "Exporter::CORE:subst";
+"Exporter::as_heavy" -> "Exporter::Heavy::BEGIN@4";
+"Term::ANSIColor::BEGIN@28" -> "Exporter::export_ok_tags";
+"Exporter::as_heavy" -> "Exporter::Heavy::BEGIN@197";
+"Exporter::import" -> "Exporter::Heavy::heavy_export";
+"Exporter::as_heavy" -> "Exporter::Heavy::BEGIN@3";
+}

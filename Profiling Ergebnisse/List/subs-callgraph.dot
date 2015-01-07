@@ -1,0 +1,1123 @@
+digraph {
+graph [overlap=false]
+subgraph cluster_Pod_Usage {
+	label="Pod::Usage";
+	"Pod::Usage::BEGIN@11";
+	"Pod::Usage::BEGIN@456";
+	"Pod::Usage::BEGIN@455";
+	"Pod::Usage::BEGIN@460";
+	"Pod::Usage::BEGIN@13";
+	"Pod::Usage::BEGIN@457";
+	"Pod::Usage::BEGIN@454";
+}
+subgraph cluster_Pod_Escapes {
+	label="Pod::Escapes";
+	"Pod::Escapes::BEGIN@22";
+	"Pod::Escapes::BEGIN@23";
+}
+subgraph cluster_Pod_Text {
+	label="Pod::Text";
+	"Pod::Text::BEGIN@34";
+	"Pod::Text::BEGIN@33";
+	"Pod::Text::BEGIN@28";
+	"Pod::Text::BEGIN@31";
+	"Pod::Text::BEGIN@32";
+	"Pod::Text::BEGIN@29";
+}
+subgraph cluster_Internals {
+	label="Internals";
+	"Internals::SvREADONLY";
+}
+subgraph cluster_Pod_Simple {
+	label="Pod::Simple";
+	"Pod::Simple::CORE:match";
+	"Pod::Simple::_accessorize";
+	"Pod::Simple::BEGIN@10";
+	"Pod::Simple::BEGIN@9";
+	"Pod::Simple::BEGIN@1438";
+	"Pod::Simple::BEGIN@7";
+	"Pod::Simple::BEGIN@1434";
+	"Pod::Simple::BEGIN@116";
+	"Pod::Simple::BEGIN@6";
+	"Pod::Simple::BEGIN@8";
+	"Pod::Simple::BEGIN@4";
+	"Pod::Simple::BEGIN@32";
+	"Pod::Simple::__ANON__";
+	"Pod::Simple::BEGIN@13";
+	"Pod::Simple::BEGIN@5";
+}
+subgraph cluster_Config {
+	label="Config";
+	"Config::BEGIN@11";
+	"Config::BEGIN@45";
+	"Config::TIEHASH";
+	"Config::BEGIN@10";
+	"Config::BEGIN@9";
+	"Config::import";
+	"Config::FETCH";
+}
+subgraph cluster_File_Spec_Unix {
+	label="File::Spec::Unix";
+	"File::Spec::Unix::curdir";
+	"File::Spec::Unix::canonpath";
+	"File::Spec::Unix::CORE:match";
+	"File::Spec::Unix::catfile";
+	"File::Spec::Unix::BEGIN@149";
+	"File::Spec::Unix::file_name_is_absolute";
+	"File::Spec::Unix::BEGIN@4";
+	"File::Spec::Unix::BEGIN@3";
+	"File::Spec::Unix::CORE:subst";
+	"File::Spec::Unix::catdir";
+}
+subgraph cluster_Encode {
+	label="Encode";
+	"Encode::CORE:match";
+	"Encode::BEGIN@13";
+	"Encode::define_encoding";
+	"Encode::predefine_encodings";
+	"Encode::BEGIN@242";
+	"Encode::BEGIN@8";
+	"Encode::BEGIN@48";
+	"Encode::BEGIN@6";
+	"Encode::BEGIN@9";
+	"Encode::BEGIN@5";
+}
+subgraph cluster_List_Util {
+	label="List::Util";
+	"List::Util::BEGIN@11";
+}
+subgraph cluster_Utils {
+	label="Utils";
+	"Utils::CORE:open_dir";
+	"Utils::findLastValidArchive";
+	"Utils::CORE:regcomp";
+	"Utils::CORE:closedir";
+	"Utils::setVerboseLevel";
+	"Utils::compare_to";
+	"Utils::new";
+	"Utils::CORE:readdir";
+}
+subgraph cluster_integer {
+	label="integer";
+	"integer::import";
+	"integer::unimport";
+}
+subgraph cluster_Instances {
+	label="Instances";
+	"Instances::BEGIN@11";
+	"Instances::new";
+	"Instances::BEGIN@24";
+	"Instances::BEGIN@10";
+}
+subgraph cluster_Invoker {
+	label="Invoker";
+	"Invoker::BEGIN@2.13";
+	"Invoker::setVerboseLevel";
+	"Invoker::BEGIN@2";
+	"Invoker::BEGIN@4.15";
+	"Invoker::list";
+	"Invoker::BEGIN@3.14";
+	"Invoker::BEGIN@134";
+	"Invoker::BEGIN@5";
+	"Invoker::BEGIN@4";
+	"Invoker::BEGIN@1";
+	"Invoker::BEGIN@6";
+	"Invoker::BEGIN@3";
+	"Invoker::BEGIN@1.12";
+	"Invoker::new";
+}
+subgraph cluster_warnings {
+	label="warnings";
+	"warnings::unimport";
+	"warnings::CORE:regcomp";
+	"warnings::_mkMask";
+	"warnings::register_categories";
+	"warnings::CORE:match";
+	"warnings::import";
+}
+subgraph cluster_base {
+	label="base";
+	"base::BEGIN@3";
+	"base::BEGIN@4";
+	"base::has_fields";
+	"base::has_attr";
+	"base::import";
+}
+subgraph cluster_File_Copy {
+	label="File::Copy";
+	"File::Copy::BEGIN@10";
+	"File::Copy::BEGIN@11";
+	"File::Copy::BEGIN@13";
+	"File::Copy::BEGIN@12.11";
+	"File::Copy::BEGIN@47";
+	"File::Copy::BEGIN@12";
+	"File::Copy::BEGIN@14";
+}
+subgraph cluster_Getopt_Long {
+	label="Getopt::Long";
+	"Getopt::Long::FindOption";
+	"Getopt::Long::BEGIN@220";
+	"Getopt::Long::BEGIN@226";
+	"Getopt::Long::BEGIN@225";
+	"Getopt::Long::BEGIN@218";
+	"Getopt::Long::BEGIN@46";
+	"Getopt::Long::ParseOptionSpec";
+	"Getopt::Long::BEGIN@222";
+	"Getopt::Long::BEGIN@51";
+	"Getopt::Long::import";
+	"Getopt::Long::BEGIN@247";
+	"Getopt::Long::BEGIN@19";
+	"Getopt::Long::BEGIN@48";
+	"Getopt::Long::BEGIN@26";
+	"Getopt::Long::CORE:match";
+	"Getopt::Long::BEGIN@237";
+	"Getopt::Long::BEGIN@208";
+	"Getopt::Long::CORE:regcomp";
+	"Getopt::Long::Configure";
+	"Getopt::Long::BEGIN@236";
+	"Getopt::Long::BEGIN@37";
+	"Getopt::Long::BEGIN@25";
+	"Getopt::Long::GetOptions";
+	"Getopt::Long::BEGIN@15";
+	"Getopt::Long::BEGIN@228";
+	"Getopt::Long::BEGIN@223";
+	"Getopt::Long::BEGIN@229";
+	"Getopt::Long::GetOptionsFromArray";
+	"Getopt::Long::ConfigDefaults";
+	"Getopt::Long::BEGIN@17";
+	"Getopt::Long::BEGIN@224";
+	"Getopt::Long::BEGIN@45";
+}
+subgraph cluster_Getopt_Long_CallBack {
+	label="Getopt::Long::CallBack";
+	"Getopt::Long::CallBack::new";
+	"Getopt::Long::CallBack::BEGIN@1489";
+}
+subgraph cluster_Term_ANSIColor {
+	label="Term::ANSIColor";
+	"Term::ANSIColor::BEGIN@28";
+	"Term::ANSIColor::BEGIN@22";
+	"Term::ANSIColor::BEGIN@27";
+	"Term::ANSIColor::CORE:sort";
+	"Term::ANSIColor::BEGIN@23";
+}
+subgraph cluster_Pod_InputObjects {
+	label="Pod::InputObjects";
+	"Pod::InputObjects::BEGIN@12";
+	"Pod::InputObjects::BEGIN@14";
+}
+subgraph cluster_Data_Dumper {
+	label="Data::Dumper";
+	"Data::Dumper::_vstring";
+	"Data::Dumper::BEGIN@22";
+	"Data::Dumper::BEGIN@12";
+	"Data::Dumper::BEGIN@24";
+	"Data::Dumper::BEGIN@275";
+	"Data::Dumper::BEGIN@18";
+	"Data::Dumper::BEGIN@718";
+}
+subgraph cluster_overload {
+	label="overload";
+	"overload::OVERLOAD";
+	"overload::BEGIN@116";
+	"overload::BEGIN@146";
+	"overload::import";
+	"overload::BEGIN@85";
+}
+subgraph cluster_vars {
+	label="vars";
+	"vars::BEGIN@8";
+	"vars::BEGIN@3";
+	"vars::import";
+	"vars::CORE:match";
+	"vars::BEGIN@7";
+}
+subgraph cluster_main {
+	label="main";
+	"main::BEGIN@10";
+	"main::BEGIN@1.3";
+	"main::BEGIN@2.4";
+	"main::BEGIN@5.8";
+	"main::CORE:match";
+	"main::BEGIN@3.2";
+	"main::BEGIN@3.5";
+	"main::BEGIN@12";
+	"main::BEGIN@2.10";
+	"main::BEGIN@3";
+	"main::BEGIN@5";
+	"main::BEGIN@1.6";
+	"main::BEGIN@7";
+	"main::BEGIN@1";
+	"main::BEGIN@13";
+	"main::BEGIN@2.1";
+	"main::__ANON__[my_perl_archive.pl:33]";
+	"main::BEGIN@6";
+	"main::BEGIN@9";
+	"main::__ANON__[my_perl_archive.pl:27]";
+	"main::BEGIN@2";
+	"main::BEGIN@1.9";
+	"main::BEGIN@2.7";
+	"main::BEGIN@4";
+	"main::RUNTIME";
+	"main::BEGIN@11";
+}
+subgraph cluster_strict {
+	label="strict";
+	"strict::import";
+	"strict::CORE:regcomp";
+	"strict::unimport";
+	"strict::CORE:match";
+	"strict::bits";
+}
+subgraph cluster_Encode_Encoding {
+	label="Encode::Encoding";
+	"Encode::Encoding::BEGIN@4";
+	"Encode::Encoding::BEGIN@5";
+	"Encode::Encoding::CORE:match";
+}
+subgraph cluster_Verbosity {
+	label="Verbosity";
+	"Verbosity::new";
+	"Verbosity::CORE:print";
+	"Verbosity::getVerboseLevel";
+	"Verbosity::setVerboseLevel";
+	"Verbosity::verbose";
+}
+subgraph cluster_Scalar_Util {
+	label="Scalar::Util";
+	"Scalar::Util::BEGIN@9";
+}
+subgraph cluster_List {
+	label="List";
+	"List::CORE:match";
+	"List::__ANON__[List.pm:58]";
+	"List::CORE:print";
+	"List::CORE:ftdir";
+	"List::print_list";
+	"List::setVerboseLevel";
+	"List::BEGIN@40";
+	"List::CORE:ftlink";
+	"List::list";
+	"List::new";
+	"List::CORE:chdir";
+}
+subgraph cluster_XSLoader {
+	label="XSLoader";
+	"XSLoader::load";
+}
+subgraph cluster_bytes {
+	label="bytes";
+	"bytes::import";
+}
+subgraph cluster_UNIVERSAL {
+	label="UNIVERSAL";
+	"UNIVERSAL::isa";
+	"UNIVERSAL::VERSION";
+}
+subgraph cluster_FindBin {
+	label="FindBin";
+	"FindBin::CORE:ftfile";
+	"FindBin::init";
+	"FindBin::BEGIN@83";
+	"FindBin::CORE:readlink";
+	"FindBin::BEGIN@80";
+	"FindBin::BEGIN@85";
+	"FindBin::BEGIN@84";
+	"FindBin::BEGIN@166";
+	"FindBin::cwd2";
+}
+subgraph cluster_File_Spec {
+	label="File::Spec";
+	"File::Spec::BEGIN@4";
+	"File::Spec::BEGIN@3";
+}
+subgraph cluster_Encode_utf8 {
+	label="Encode::utf8";
+	"Encode::utf8::BEGIN@325";
+}
+subgraph cluster_Pod_ParseTree {
+	label="Pod::ParseTree";
+	"Pod::ParseTree::BEGIN@826";
+}
+subgraph cluster_Encode_Config {
+	label="Encode::Config";
+	"Encode::Config::BEGIN@7";
+	"Encode::Config::BEGIN@8";
+	"Encode::Config::CORE:match";
+}
+subgraph cluster_File_Find {
+	label="File::Find";
+	"File::Find::BEGIN@2";
+	"File::Find::BEGIN@3";
+	"File::Find::BEGIN@4";
+	"File::Find::CORE:open_dir";
+	"File::Find::BEGIN@349";
+	"File::Find::CORE:readdir";
+	"File::Find::CORE:match";
+	"File::Find::CORE:closedir";
+	"File::Find::_find_dir";
+	"File::Find::CORE:regcomp";
+	"File::Find::wrap_wanted";
+	"File::Find::CORE:lstat";
+	"File::Find::BEGIN@5";
+	"File::Find::CORE:subst";
+	"File::Find::CORE:ftdir";
+	"File::Find::find";
+	"File::Find::CORE:qr";
+	"File::Find::CORE:chdir";
+	"File::Find::_find_opt";
+}
+subgraph cluster_Digest {
+	label="Digest";
+	"Digest::BEGIN@4";
+	"Digest::BEGIN@3";
+	"Digest::BEGIN@37";
+}
+subgraph cluster_Message {
+	label="Message";
+	"Message::new";
+	"Message::BEGIN@40";
+	"Message::BEGIN@74";
+	"Message::BEGIN@57";
+}
+subgraph cluster_lib {
+	label="lib";
+	"lib::_get_dirs";
+	"lib::BEGIN@6";
+	"lib::CORE:match";
+	"lib::BEGIN@8";
+	"lib::CORE:ftis";
+	"lib::CORE:ftdir";
+	"lib::import";
+}
+subgraph cluster_Pod_Simple_BlackBox {
+	label="Pod::Simple::BlackBox";
+	"Pod::Simple::BlackBox::BEGIN@25";
+	"Pod::Simple::BlackBox::BEGIN@28";
+	"Pod::Simple::BlackBox::BEGIN@1151";
+	"Pod::Simple::BlackBox::BEGIN@23";
+	"Pod::Simple::BlackBox::BEGIN@24";
+	"Pod::Simple::BlackBox::BEGIN@22";
+}
+subgraph cluster_Pod_Select {
+	label="Pod::Select";
+	"Pod::Select::BEGIN@11";
+	"Pod::Select::BEGIN@241";
+	"Pod::Select::BEGIN@242";
+	"Pod::Select::BEGIN@13";
+}
+subgraph cluster_Exporter_Heavy {
+	label="Exporter::Heavy";
+	"Exporter::Heavy::BEGIN@197";
+	"Exporter::Heavy::_push_tags";
+	"Exporter::Heavy::BEGIN@4";
+	"Exporter::Heavy::CORE:subst";
+	"Exporter::Heavy::heavy_export_ok_tags";
+	"Exporter::Heavy::heavy_export";
+	"Exporter::Heavy::BEGIN@3";
+}
+subgraph cluster_version {
+	label="version";
+	"version::(bool";
+	"version::(cmp";
+}
+subgraph cluster_Pod_Parser {
+	label="Pod::Parser";
+	"Pod::Parser::BEGIN@206";
+	"Pod::Parser::BEGIN@14";
+	"Pod::Parser::BEGIN@208";
+	"Pod::Parser::BEGIN@207";
+	"Pod::Parser::BEGIN@205";
+	"Pod::Parser::BEGIN@11";
+}
+subgraph cluster_Create {
+	label="Create";
+	"Create::BEGIN@285";
+	"Create::BEGIN@77";
+	"Create::BEGIN@170";
+}
+subgraph cluster_constant {
+	label="constant";
+	"constant::import";
+	"constant::BEGIN@4";
+	"constant::BEGIN@36";
+	"constant::BEGIN@3";
+	"constant::BEGIN@25";
+	"constant::BEGIN@29";
+	"constant::CORE:regcomp";
+	"constant::CORE:qr";
+	"constant::BEGIN@65";
+	"constant::BEGIN@2";
+	"constant::BEGIN@127";
+	"constant::CORE:match";
+	"constant::BEGIN@6";
+}
+subgraph cluster_overloading {
+	label="overloading";
+	"overloading::BEGIN@2";
+	"overloading::unimport";
+}
+subgraph cluster_Exporter {
+	label="Exporter";
+	"Exporter::import";
+	"Exporter::as_heavy";
+	"Exporter::export";
+	"Exporter::CORE:subst";
+	"Exporter::export_ok_tags";
+	"Exporter::CORE:match";
+}
+subgraph cluster_utf8 {
+	label="utf8";
+	"utf8::BEGIN@147";
+	"utf8::BEGIN@178";
+	"utf8::AUTOLOAD";
+	"utf8::BEGIN@166";
+	"utf8::CORE:match";
+	"utf8::BEGIN@2";
+	"utf8::BEGIN@654";
+	"utf8::SWASHNEW";
+	"utf8::BEGIN@3";
+	"utf8::CORE:subst";
+	"utf8::BEGIN@153";
+	"utf8::BEGIN@542";
+}
+subgraph cluster_Carp {
+	label="Carp";
+	"Carp::BEGIN@398";
+	"Carp::BEGIN@105";
+	"Carp::BEGIN@4";
+	"Carp::BEGIN@18";
+	"Carp::BEGIN@8";
+	"Carp::BEGIN@5";
+	"Carp::BEGIN@17";
+	"Carp::BEGIN@413";
+	"Carp::BEGIN@399";
+	"Carp::BEGIN@7";
+	"Carp::BEGIN@67";
+	"Carp::BEGIN@406";
+	"Carp::BEGIN@3";
+}
+subgraph cluster_warnings_register {
+	label="warnings::register";
+	"warnings::register::import";
+}
+subgraph cluster_Pod_Simple_LinkSection {
+	label="Pod::Simple::LinkSection";
+	"Pod::Simple::LinkSection::BEGIN@8";
+	"Pod::Simple::LinkSection::BEGIN@10";
+	"Pod::Simple::LinkSection::BEGIN@13";
+	"Pod::Simple::LinkSection::BEGIN@9";
+	"Pod::Simple::LinkSection::BEGIN@5";
+}
+subgraph cluster_File_Basename {
+	label="File::Basename";
+	"File::Basename::BEGIN@52";
+	"File::Basename::BEGIN@371";
+	"File::Basename::BEGIN@50";
+	"File::Basename::dirname";
+	"File::Basename::CORE:substcont";
+	"File::Basename::fileparse_set_fstype";
+	"File::Basename::CORE:subst";
+	"File::Basename::BEGIN@42";
+	"File::Basename::fileparse";
+	"File::Basename::_strip_trailing_sep";
+	"File::Basename::CORE:regcomp";
+	"File::Basename::CORE:match";
+	"File::Basename::BEGIN@51";
+}
+subgraph cluster_Encode_Alias {
+	label="Encode::Alias";
+	"Encode::Alias::BEGIN@6";
+	"Encode::Alias::BEGIN@8";
+	"Encode::Alias::undef_aliases";
+	"Encode::Alias::CORE:qr";
+	"Encode::Alias::BEGIN@3";
+	"Encode::Alias::CORE:match";
+	"Encode::Alias::BEGIN@4";
+	"Encode::Alias::define_alias";
+	"Encode::Alias::init_aliases";
+	"Encode::Alias::BEGIN@2";
+}
+subgraph cluster_mro {
+	label="mro";
+	"mro::method_changed_in";
+}
+subgraph cluster_Cwd {
+	label="Cwd";
+	"Cwd::BEGIN@170";
+	"Cwd::CORE:fteexec";
+	"Cwd::BEGIN@823";
+	"Cwd::BEGIN@171";
+	"Cwd::getcwd";
+	"Cwd::BEGIN@209";
+	"Cwd::CORE:regcomp";
+	"Cwd::BEGIN@172";
+	"Cwd::abs_path";
+}
+"main::BEGIN@9" -> "Getopt::Long::BEGIN@220";
+"main::BEGIN@3.2" -> "main::BEGIN@2.4";
+"Pod::Usage::BEGIN@457" -> "File::Spec::Unix::BEGIN@149";
+"Message::BEGIN@40" -> "Term::ANSIColor::BEGIN@23";
+"Create::BEGIN@285" -> "Digest::BEGIN@4";
+"Invoker::BEGIN@134" -> "Invoker::BEGIN@5";
+"constant::import" -> "mro::method_changed_in";
+"FindBin::init" -> "File::Basename::fileparse";
+"File::Basename::dirname" -> "File::Basename::fileparse";
+"Create::BEGIN@77" -> "File::Copy::BEGIN@47";
+"main::BEGIN@10" -> "Pod::Select::BEGIN@13";
+"Message::BEGIN@40" -> "Term::ANSIColor::CORE:sort";
+"Invoker::BEGIN@4.15" -> "Data::Dumper::BEGIN@275";
+"main::BEGIN@5" -> "File::Basename::BEGIN@371";
+"Exporter::import" -> "Exporter::CORE:match";
+"Getopt::Long::CallBack::BEGIN@1489" -> "overload::BEGIN@85";
+"Encode::Alias::init_aliases" -> "Encode::Alias::CORE:qr";
+"File::Basename::_strip_trailing_sep" -> "File::Basename::CORE:subst";
+"main::BEGIN@10" -> "Exporter::import";
+"Pod::Parser::BEGIN@206" -> "Exporter::import";
+"Pod::Usage::BEGIN@454" -> "Exporter::import";
+"Pod::Parser::BEGIN@207" -> "Exporter::import";
+"FindBin::BEGIN@83" -> "Exporter::import";
+"Invoker::BEGIN@4.15" -> "Exporter::import";
+"FindBin::BEGIN@84" -> "Exporter::import";
+"Data::Dumper::BEGIN@22" -> "Exporter::import";
+"Getopt::Long::BEGIN@25" -> "Exporter::import";
+"Create::BEGIN@77" -> "Exporter::import";
+"main::BEGIN@5" -> "Exporter::import";
+"Invoker::BEGIN@3" -> "Exporter::import";
+"Getopt::Long::import" -> "Exporter::import";
+"Cwd::BEGIN@171" -> "Exporter::import";
+"Message::BEGIN@74" -> "Exporter::import";
+"Pod::Select::BEGIN@242" -> "Exporter::import";
+"Pod::Text::BEGIN@31" -> "Exporter::import";
+"Pod::Text::BEGIN@32" -> "Exporter::import";
+"Encode::BEGIN@48" -> "Exporter::import";
+"FindBin::BEGIN@80" -> "Exporter::import";
+"main::BEGIN@6" -> "Exporter::import";
+"Pod::Usage::BEGIN@456" -> "Exporter::import";
+"List::BEGIN@40" -> "Exporter::import";
+"Pod::Select::BEGIN@241" -> "Exporter::import";
+"Message::BEGIN@57" -> "Exporter::import";
+"Message::BEGIN@40" -> "Exporter::import";
+"main::BEGIN@11" -> "Exporter::import";
+"Pod::Text::BEGIN@34" -> "Pod::Simple::BEGIN@4";
+"main::BEGIN@10" -> "Pod::Select::BEGIN@11";
+"Create::BEGIN@77" -> "File::Copy::BEGIN@12.11";
+"File::Basename::dirname" -> "File::Basename::_strip_trailing_sep";
+"List::print_list" -> "List::CORE:ftdir";
+"File::Find::_find_dir" -> "File::Find::CORE:open_dir";
+"Pod::Parser::BEGIN@205" -> "Pod::ParseTree::BEGIN@826";
+"Exporter::import" -> "Exporter::CORE:subst";
+"Exporter::as_heavy" -> "Exporter::CORE:subst";
+"Pod::Text::BEGIN@34" -> "Pod::Simple::BEGIN@13";
+"Pod::Text::BEGIN@32" -> "Encode::Config::BEGIN@7";
+"main::BEGIN@9" -> "Getopt::Long::BEGIN@15";
+"Exporter::Heavy::heavy_export_ok_tags" -> "Exporter::Heavy::_push_tags";
+"Create::BEGIN@77" -> "List::Util::BEGIN@11";
+"Getopt::Long::GetOptionsFromArray" -> "main::__ANON__[my_perl_archive.pl:33]";
+"constant::import" -> "Internals::SvREADONLY";
+"Pod::Simple::BEGIN@9" -> "Pod::Simple::LinkSection::BEGIN@5";
+"Invoker::BEGIN@4.15" -> "Data::Dumper::BEGIN@12";
+"Getopt::Long::GetOptionsFromArray" -> "main::__ANON__[my_perl_archive.pl:27]";
+"Exporter::as_heavy" -> "Exporter::Heavy::BEGIN@4";
+"List::BEGIN@40" -> "File::Find::CORE:qr";
+"lib::BEGIN@6" -> "Config::TIEHASH";
+"constant::BEGIN@25" -> "constant::BEGIN@36";
+"File::Spec::Unix::catfile" -> "File::Spec::Unix::canonpath";
+"File::Spec::Unix::catdir" -> "File::Spec::Unix::canonpath";
+"Utils::findLastValidArchive" -> "Utils::CORE:regcomp";
+"FindBin::init" -> "FindBin::CORE:readlink";
+"lib::BEGIN@6" -> "Config::import";
+"Pod::Usage::BEGIN@455" -> "Config::import";
+"File::Copy::BEGIN@14" -> "Config::import";
+"main::BEGIN@9" -> "Getopt::Long::BEGIN@226";
+"main::BEGIN@3.2" -> "main::BEGIN@3.5";
+"Pod::Usage::BEGIN@454" -> "Carp::BEGIN@399";
+"lib::import" -> "lib::_get_dirs";
+"Pod::Text::BEGIN@32" -> "Encode::BEGIN@9";
+"Pod::Simple::BlackBox::BEGIN@1151" -> "integer::unimport";
+"Term::ANSIColor::BEGIN@28" -> "Exporter::export_ok_tags";
+"File::Basename::fileparse_set_fstype" -> "File::Basename::CORE:regcomp";
+"Verbosity::new" -> "Message::new";
+"List::new" -> "Message::new";
+"main::RUNTIME" -> "Message::new";
+"Invoker::new" -> "Message::new";
+"Pod::Usage::BEGIN@457" -> "File::Spec::Unix::BEGIN@3";
+"Pod::Text::BEGIN@32" -> "Encode::BEGIN@13";
+"Getopt::Long::CallBack::BEGIN@1489" -> "overload::BEGIN@116";
+"main::BEGIN@6" -> "Cwd::BEGIN@209";
+"Pod::Simple::BEGIN@8" -> "Pod::Escapes::BEGIN@23";
+"Pod::Simple::LinkSection::BEGIN@9" -> "Pod::Simple::BlackBox::BEGIN@22";
+"Pod::Parser::BEGIN@205" -> "Pod::InputObjects::BEGIN@12";
+"Pod::Text::BEGIN@32" -> "Encode::BEGIN@6";
+"Pod::Usage::BEGIN@454" -> "Carp::BEGIN@7";
+"main::BEGIN@10" -> "Pod::Usage::BEGIN@456";
+"Pod::Select::BEGIN@242" -> "Pod::Parser::BEGIN@14";
+"Pod::Usage::BEGIN@454" -> "Carp::BEGIN@406";
+"Pod::Simple::BEGIN@32" -> "Pod::Simple::__ANON__";
+"main::BEGIN@3.5" -> "Message::BEGIN@57";
+"File::Basename::fileparse" -> "File::Basename::CORE:match";
+"File::Basename::fileparse_set_fstype" -> "File::Basename::CORE:match";
+"Create::BEGIN@77" -> "Scalar::Util::BEGIN@9";
+"List::BEGIN@40" -> "File::Find::BEGIN@3";
+"Getopt::Long::BEGIN@208" -> "constant::BEGIN@25";
+"main::BEGIN@11" -> "FindBin::BEGIN@83";
+"File::Find::_find_dir" -> "File::Find::CORE:readdir";
+"main::BEGIN@6" -> "Cwd::CORE:regcomp";
+"main::__ANON__[my_perl_archive.pl:33]" -> "Invoker::list";
+"Cwd::BEGIN@172" -> "vars::BEGIN@3";
+"Pod::Simple::LinkSection::BEGIN@9" -> "Pod::Simple::BlackBox::BEGIN@28";
+"main::BEGIN@12" -> "Invoker::BEGIN@134";
+"utf8::AUTOLOAD" -> "utf8::BEGIN@153";
+"FindBin::init" -> "FindBin::cwd2";
+"utf8::AUTOLOAD" -> "utf8::BEGIN@178";
+"main::BEGIN@5" -> "File::Basename::BEGIN@52";
+"File::Spec::Unix::file_name_is_absolute" -> "File::Spec::Unix::CORE:match";
+"main::BEGIN@12" -> "main::BEGIN@1";
+"utf8::AUTOLOAD" -> "utf8::BEGIN@3";
+"main::BEGIN@9" -> "Getopt::Long::BEGIN@229";
+"main::BEGIN@10" -> "Pod::Usage::BEGIN@11";
+"Pod::Usage::BEGIN@457" -> "File::Spec::BEGIN@4";
+"List::print_list" -> "List::CORE:ftlink";
+"main::BEGIN@12" -> "main::BEGIN@4";
+"Utils::findLastValidArchive" -> "Utils::compare_to";
+"overload::BEGIN@85" -> "overloading::BEGIN@2";
+"Create::BEGIN@285" -> "Digest::BEGIN@3";
+"constant::BEGIN@4" -> "warnings::register::import";
+"overload::BEGIN@146" -> "warnings::register::import";
+"vars::BEGIN@7" -> "warnings::register::import";
+"File::Find::BEGIN@5" -> "warnings::register::import";
+"File::Find::find" -> "File::Find::_find_opt";
+"Pod::Usage::BEGIN@454" -> "Carp::BEGIN@18";
+"Pod::Text::BEGIN@34" -> "Pod::Simple::BEGIN@1434";
+"main::BEGIN@10" -> "Pod::Usage::BEGIN@454";
+"Getopt::Long::BEGIN@208" -> "constant::BEGIN@29";
+"main::BEGIN@9" -> "Getopt::Long::BEGIN@225";
+"main::BEGIN@11" -> "FindBin::BEGIN@84";
+"Invoker::BEGIN@4.15" -> "Data::Dumper::BEGIN@22";
+"Pod::Text::BEGIN@32" -> "Encode::BEGIN@5";
+"List::list" -> "Verbosity::getVerboseLevel";
+"main::BEGIN@9" -> "Getopt::Long::BEGIN@51";
+"List::print_list" -> "List::CORE:match";
+"List::list" -> "List::CORE:match";
+"Getopt::Long::BEGIN@208" -> "constant::BEGIN@4";
+"overload::import" -> "overload::OVERLOAD";
+"main::RUNTIME" -> "main::BEGIN@7";
+"main::BEGIN@10" -> "Pod::Usage::BEGIN@13";
+"main::RUNTIME" -> "main::BEGIN@13";
+"main::BEGIN@3.5" -> "Message::BEGIN@74";
+"strict::import" -> "strict::bits";
+"strict::unimport" -> "strict::bits";
+"File::Find::_find_dir" -> "File::Find::CORE:lstat";
+"File::Find::_find_opt" -> "File::Find::CORE:lstat";
+"Encode::BEGIN@48" -> "Encode::Alias::BEGIN@3";
+"Encode::BEGIN@13" -> "base::BEGIN@4";
+"Getopt::Long::BEGIN@220" -> "constant::import";
+"Getopt::Long::BEGIN@208" -> "constant::import";
+"Getopt::Long::BEGIN@237" -> "constant::import";
+"Encode::BEGIN@8" -> "constant::import";
+"Getopt::Long::BEGIN@226" -> "constant::import";
+"Getopt::Long::BEGIN@236" -> "constant::import";
+"Getopt::Long::BEGIN@225" -> "constant::import";
+"Getopt::Long::BEGIN@218" -> "constant::import";
+"Getopt::Long::BEGIN@222" -> "constant::import";
+"Encode::Alias::BEGIN@6" -> "constant::import";
+"Data::Dumper::BEGIN@275" -> "constant::import";
+"Getopt::Long::BEGIN@228" -> "constant::import";
+"Getopt::Long::BEGIN@223" -> "constant::import";
+"Getopt::Long::BEGIN@247" -> "constant::import";
+"Getopt::Long::BEGIN@229" -> "constant::import";
+"Getopt::Long::BEGIN@224" -> "constant::import";
+"Pod::Usage::BEGIN@454" -> "Carp::BEGIN@4";
+"Create::BEGIN@77" -> "File::Copy::BEGIN@13";
+"Pod::Text::BEGIN@32" -> "Encode::BEGIN@242";
+"Instances::BEGIN@24" -> "Instances::BEGIN@10";
+"Config::BEGIN@45" -> "strict::unimport";
+"Carp::BEGIN@18" -> "strict::unimport";
+"Cwd::BEGIN@823" -> "strict::unimport";
+"Pod::Simple::BEGIN@1434" -> "strict::unimport";
+"Digest::BEGIN@37" -> "strict::unimport";
+"constant::BEGIN@29" -> "strict::unimport";
+"File::Spec::Unix::BEGIN@149" -> "strict::unimport";
+"utf8::BEGIN@153" -> "strict::unimport";
+"Carp::BEGIN@67" -> "strict::unimport";
+"Carp::BEGIN@398" -> "strict::unimport";
+"Carp::BEGIN@8" -> "strict::unimport";
+"utf8::BEGIN@654" -> "strict::unimport";
+"Carp::BEGIN@413" -> "strict::unimport";
+"Exporter::Heavy::BEGIN@4" -> "strict::unimport";
+"constant::BEGIN@65" -> "strict::unimport";
+"constant::BEGIN@127" -> "strict::unimport";
+"main::BEGIN@9" -> "Getopt::Long::BEGIN@237";
+"main::BEGIN@3" -> "warnings::CORE:match";
+"main::BEGIN@5" -> "File::Basename::fileparse_set_fstype";
+"main::BEGIN@9" -> "Getopt::Long::CallBack::BEGIN@1489";
+"Encode::BEGIN@13" -> "base::import";
+"Encode::Alias::BEGIN@8" -> "base::import";
+"main::BEGIN@9" -> "Getopt::Long::BEGIN@37";
+"base::import" -> "base::has_fields";
+"Invoker::BEGIN@134" -> "Invoker::BEGIN@1";
+"main::BEGIN@11" -> "FindBin::BEGIN@166";
+"main::BEGIN@2" -> "strict::CORE:regcomp";
+"Invoker::BEGIN@5" -> "Invoker::BEGIN@1.12";
+"Pod::Simple::LinkSection::BEGIN@13" -> "overload::import";
+"Getopt::Long::CallBack::BEGIN@1489" -> "overload::import";
+"main::RUNTIME" -> "Invoker::new";
+"main::BEGIN@5.8" -> "Instances::BEGIN@24";
+"Pod::Text::BEGIN@34" -> "Pod::Simple::BEGIN@7";
+"main::BEGIN@6" -> "Cwd::BEGIN@171";
+"main::BEGIN@2.4" -> "warnings::import";
+"Invoker::BEGIN@2.13" -> "warnings::import";
+"Instances::BEGIN@10" -> "warnings::import";
+"File::Copy::BEGIN@12" -> "warnings::import";
+"Encode::Config::BEGIN@8" -> "warnings::import";
+"File::Find::BEGIN@4" -> "warnings::import";
+"Invoker::BEGIN@2" -> "warnings::import";
+"Config::BEGIN@10" -> "warnings::import";
+"main::BEGIN@2.10" -> "warnings::import";
+"Encode::Encoding::BEGIN@5" -> "warnings::import";
+"main::BEGIN@3" -> "warnings::import";
+"File::Basename::BEGIN@52" -> "warnings::import";
+"Carp::BEGIN@5" -> "warnings::import";
+"main::BEGIN@2.1" -> "warnings::import";
+"utf8::BEGIN@3" -> "warnings::import";
+"Encode::BEGIN@6" -> "warnings::import";
+"Encode::Alias::BEGIN@3" -> "warnings::import";
+"main::BEGIN@2.7" -> "warnings::import";
+"overloading::BEGIN@2" -> "warnings::import";
+"lib::BEGIN@6" -> "Config::BEGIN@11";
+"Invoker::BEGIN@134" -> "Invoker::BEGIN@6";
+"Invoker::list" -> "List::list";
+"Getopt::Long::BEGIN@208" -> "constant::BEGIN@127";
+"utf8::AUTOLOAD" -> "utf8::BEGIN@2";
+"Pod::Simple::BEGIN@9" -> "Pod::Simple::LinkSection::BEGIN@13";
+"main::BEGIN@9" -> "Getopt::Long::BEGIN@218";
+"List::BEGIN@40" -> "File::Spec::Unix::curdir";
+"Encode::BEGIN@48" -> "Encode::Alias::BEGIN@6";
+"Pod::Simple::LinkSection::BEGIN@10" -> "vars::import";
+"Pod::InputObjects::BEGIN@14" -> "vars::import";
+"Pod::Text::BEGIN@29" -> "vars::import";
+"Term::ANSIColor::BEGIN@23" -> "vars::import";
+"Pod::ParseTree::BEGIN@826" -> "vars::import";
+"Pod::Simple::BlackBox::BEGIN@25" -> "vars::import";
+"Digest::BEGIN@4" -> "vars::import";
+"Cwd::BEGIN@172" -> "vars::import";
+"Pod::Simple::BEGIN@13" -> "vars::import";
+"Getopt::Long::BEGIN@46" -> "vars::import";
+"Pod::Select::BEGIN@13" -> "vars::import";
+"Getopt::Long::BEGIN@51" -> "vars::import";
+"Pod::Usage::BEGIN@13" -> "vars::import";
+"Pod::Escapes::BEGIN@23" -> "vars::import";
+"Pod::Simple::LinkSection::BEGIN@5" -> "vars::import";
+"Config::BEGIN@11" -> "vars::import";
+"Getopt::Long::BEGIN@19" -> "vars::import";
+"Getopt::Long::BEGIN@48" -> "vars::import";
+"base::BEGIN@4" -> "vars::import";
+"Pod::Parser::BEGIN@14" -> "vars::import";
+"File::Spec::BEGIN@4" -> "vars::import";
+"File::Spec::Unix::BEGIN@4" -> "vars::import";
+"Getopt::Long::BEGIN@26" -> "vars::import";
+"Getopt::Long::BEGIN@45" -> "vars::import";
+"constant::BEGIN@6" -> "vars::import";
+"Pod::Select::BEGIN@242" -> "Pod::Parser::BEGIN@205";
+"main::RUNTIME" -> "main::BEGIN@2";
+"FindBin::init" -> "File::Spec::Unix::file_name_is_absolute";
+"Encode::predefine_encodings" -> "Encode::Encoding::CORE:match";
+"main::RUNTIME" -> "main::BEGIN@10";
+"main::BEGIN@9" -> "Getopt::Long::CORE:match";
+"Getopt::Long::FindOption" -> "Getopt::Long::CORE:match";
+"Getopt::Long::ParseOptionSpec" -> "Getopt::Long::CORE:match";
+"Getopt::Long::Configure" -> "Getopt::Long::CORE:match";
+"Getopt::Long::GetOptionsFromArray" -> "Getopt::Long::CORE:match";
+"Pod::Simple::BEGIN@9" -> "Pod::Simple::LinkSection::BEGIN@10";
+"main::BEGIN@3.2" -> "main::BEGIN@1.3";
+"Exporter::Heavy::heavy_export" -> "Exporter::Heavy::CORE:subst";
+"Getopt::Long::BEGIN@208" -> "constant::BEGIN@3";
+"Pod::Text::BEGIN@32" -> "Encode::BEGIN@8";
+"Create::BEGIN@77" -> "File::Copy::BEGIN@12";
+"base::import" -> "base::has_attr";
+"Getopt::Long::FindOption" -> "Getopt::Long::CORE:regcomp";
+"Getopt::Long::GetOptionsFromArray" -> "Getopt::Long::CORE:regcomp";
+"Utils::findLastValidArchive" -> "Verbosity::verbose";
+"Create::BEGIN@77" -> "File::Copy::BEGIN@10";
+"Invoker::list" -> "List::setVerboseLevel";
+"main::BEGIN@6" -> "Cwd::BEGIN@172";
+"main::BEGIN@10" -> "Pod::Usage::BEGIN@460";
+"List::new" -> "Utils::new";
+"Exporter::import" -> "Exporter::Heavy::heavy_export";
+"File::Spec::Unix::catfile" -> "File::Spec::Unix::catdir";
+"main::BEGIN@7" -> "Config::FETCH";
+"List::BEGIN@40" -> "Config::FETCH";
+"Pod::Usage::BEGIN@454" -> "Carp::BEGIN@398";
+"main::BEGIN@9" -> "Getopt::Long::BEGIN@228";
+"File::Find::_find_dir" -> "List::__ANON__[List.pm:58]";
+"Pod::Simple::BEGIN@8" -> "Pod::Escapes::BEGIN@22";
+"List::list" -> "Utils::findLastValidArchive";
+"Pod::Usage::BEGIN@454" -> "Carp::BEGIN@8";
+"main::BEGIN@10" -> "Pod::Usage::BEGIN@457";
+"FindBin::init" -> "File::Spec::Unix::catfile";
+"Pod::Usage::BEGIN@460" -> "Pod::Text::BEGIN@32";
+"Pod::Text::BEGIN@34" -> "Pod::Simple::BEGIN@32";
+"Pod::Select::BEGIN@242" -> "UNIVERSAL::VERSION";
+"Pod::Simple::BEGIN@8" -> "UNIVERSAL::VERSION";
+"Pod::Usage::BEGIN@457" -> "File::Spec::Unix::BEGIN@4";
+"base::BEGIN@3" -> "strict::import";
+"Term::ANSIColor::BEGIN@22" -> "strict::import";
+"utf8::BEGIN@2" -> "strict::import";
+"vars::BEGIN@8" -> "strict::import";
+"Pod::Simple::LinkSection::BEGIN@8" -> "strict::import";
+"File::Copy::BEGIN@11" -> "strict::import";
+"Config::BEGIN@9" -> "strict::import";
+"Encode::BEGIN@5" -> "strict::import";
+"File::Spec::Unix::BEGIN@3" -> "strict::import";
+"Encode::Alias::BEGIN@2" -> "strict::import";
+"Encode::Encoding::BEGIN@4" -> "strict::import";
+"Cwd::BEGIN@170" -> "strict::import";
+"Pod::Simple::BEGIN@1438" -> "strict::import";
+"File::Basename::BEGIN@50" -> "strict::import";
+"Pod::InputObjects::BEGIN@12" -> "strict::import";
+"main::BEGIN@1.9" -> "strict::import";
+"Pod::Select::BEGIN@11" -> "strict::import";
+"main::BEGIN@2" -> "strict::import";
+"Pod::Simple::BEGIN@4" -> "strict::import";
+"Pod::Text::BEGIN@28" -> "strict::import";
+"File::Find::BEGIN@3" -> "strict::import";
+"Scalar::Util::BEGIN@9" -> "strict::import";
+"main::BEGIN@1.3" -> "strict::import";
+"Carp::BEGIN@4" -> "strict::import";
+"constant::BEGIN@3" -> "strict::import";
+"File::Find::BEGIN@349" -> "strict::import";
+"File::Spec::BEGIN@3" -> "strict::import";
+"Invoker::BEGIN@1" -> "strict::import";
+"Invoker::BEGIN@1.12" -> "strict::import";
+"Instances::BEGIN@11" -> "strict::import";
+"Encode::Config::BEGIN@7" -> "strict::import";
+"List::Util::BEGIN@11" -> "strict::import";
+"main::BEGIN@1.6" -> "strict::import";
+"Pod::Escapes::BEGIN@22" -> "strict::import";
+"Pod::Simple::BlackBox::BEGIN@23" -> "strict::import";
+"main::BEGIN@1" -> "strict::import";
+"Pod::Usage::BEGIN@11" -> "strict::import";
+"lib::BEGIN@8" -> "strict::import";
+"Digest::BEGIN@3" -> "strict::import";
+"Getopt::Long::BEGIN@17" -> "strict::import";
+"Exporter::Heavy::BEGIN@3" -> "strict::import";
+"Pod::Parser::BEGIN@11" -> "strict::import";
+"Cwd::BEGIN@172" -> "vars::BEGIN@7";
+"lib::import" -> "lib::CORE:ftdir";
+"File::Spec::Unix::canonpath" -> "File::Spec::Unix::CORE:subst";
+"List::list" -> "List::CORE:chdir";
+"Exporter::as_heavy" -> "Exporter::Heavy::BEGIN@3";
+"File::Find::_find_dir" -> "File::Find::CORE:chdir";
+"File::Find::_find_opt" -> "File::Find::CORE:chdir";
+"Pod::Simple::LinkSection::BEGIN@9" -> "Pod::Simple::BlackBox::BEGIN@1151";
+"Utils::findLastValidArchive" -> "Utils::CORE:open_dir";
+"Pod::Parser::BEGIN@205" -> "Pod::InputObjects::BEGIN@14";
+"Invoker::BEGIN@5" -> "Invoker::BEGIN@2.13";
+"main::RUNTIME" -> "main::CORE:match";
+"Pod::Usage::BEGIN@460" -> "Pod::Text::BEGIN@29";
+"Getopt::Long::GetOptionsFromArray" -> "Getopt::Long::CallBack::new";
+"main::BEGIN@12" -> "main::BEGIN@3.2";
+"lib::BEGIN@6" -> "Config::BEGIN@10";
+"main::RUNTIME" -> "main::BEGIN@3";
+"main::BEGIN@5" -> "File::Basename::BEGIN@51";
+"main::BEGIN@2" -> "strict::CORE:match";
+"Encode::BEGIN@48" -> "Encode::Alias::BEGIN@2";
+"Invoker::BEGIN@134" -> "Invoker::BEGIN@3";
+"Exporter::export" -> "Exporter::as_heavy";
+"Exporter::export_ok_tags" -> "Exporter::as_heavy";
+"Encode::BEGIN@48" -> "Encode::Alias::BEGIN@8";
+"Encode::utf8::BEGIN@325" -> "bytes::import";
+"Data::Dumper::BEGIN@718" -> "bytes::import";
+"File::Find::_find_dir" -> "File::Find::CORE:regcomp";
+"main::BEGIN@5" -> "File::Basename::BEGIN@50";
+"utf8::AUTOLOAD" -> "utf8::BEGIN@654";
+"main::BEGIN@9" -> "Getopt::Long::BEGIN@247";
+"List::print_list" -> "List::CORE:print";
+"Pod::Text::BEGIN@34" -> "Pod::Simple::BEGIN@6";
+"utf8::BEGIN@147" -> "warnings::unimport";
+"Exporter::Heavy::BEGIN@197" -> "warnings::unimport";
+"Encode::BEGIN@242" -> "warnings::unimport";
+"Carp::BEGIN@399" -> "warnings::unimport";
+"File::Copy::BEGIN@12.11" -> "warnings::unimport";
+"Carp::BEGIN@406" -> "warnings::unimport";
+"Encode::Alias::BEGIN@4" -> "warnings::unimport";
+"utf8::BEGIN@542" -> "warnings::unimport";
+"main::BEGIN@5.8" -> "main::BEGIN@1.9";
+"main::BEGIN@3.5" -> "main::BEGIN@2.7";
+"Getopt::Long::BEGIN@208" -> "constant::BEGIN@65";
+"overload::BEGIN@116" -> "overloading::unimport";
+"overload::BEGIN@85" -> "overloading::unimport";
+"Utils::findLastValidArchive" -> "Utils::CORE:readdir";
+"main::BEGIN@9" -> "Getopt::Long::BEGIN@26";
+"List::BEGIN@40" -> "File::Find::BEGIN@2";
+"Term::ANSIColor::BEGIN@28" -> "Exporter::Heavy::heavy_export_ok_tags";
+"main::BEGIN@9" -> "Getopt::Long::BEGIN@236";
+"Encode::Alias::init_aliases" -> "Encode::Alias::undef_aliases";
+"Invoker::BEGIN@5" -> "Invoker::BEGIN@4.15";
+"Invoker::BEGIN@134" -> "Invoker::BEGIN@2";
+"constant::import" -> "constant::CORE:regcomp";
+"Getopt::Long::BEGIN@208" -> "constant::CORE:regcomp";
+"Invoker::new" -> "Instances::new";
+"File::Find::_find_dir" -> "File::Find::CORE:closedir";
+"Encode::Alias::init_aliases" -> "Encode::Alias::define_alias";
+"Pod::Text::BEGIN@32" -> "Encode::Config::CORE:match";
+"Pod::Simple::_accessorize" -> "Pod::Simple::CORE:match";
+"File::Find::find" -> "File::Find::wrap_wanted";
+"lib::BEGIN@6" -> "version::(bool";
+"Pod::Simple::LinkSection::BEGIN@9" -> "Pod::Simple::BlackBox::BEGIN@23";
+"Instances::BEGIN@24" -> "Create::BEGIN@285";
+"warnings::register::import" -> "warnings::register_categories";
+"FindBin::init" -> "FindBin::CORE:ftfile";
+"Pod::Usage::BEGIN@454" -> "Carp::BEGIN@5";
+"FindBin::BEGIN@166" -> "FindBin::init";
+"List::BEGIN@40" -> "File::Find::BEGIN@5";
+"main::RUNTIME" -> "main::BEGIN@6";
+"main::BEGIN@5" -> "File::Basename::BEGIN@42";
+"Utils::findLastValidArchive" -> "Utils::CORE:closedir";
+"Invoker::BEGIN@134" -> "List::BEGIN@40";
+"Verbosity::verbose" -> "Verbosity::CORE:print";
+"Utils::new" -> "Verbosity::new";
+"List::new" -> "Verbosity::new";
+"Invoker::new" -> "Verbosity::new";
+"main::BEGIN@9" -> "Getopt::Long::BEGIN@17";
+"Invoker::list" -> "List::new";
+"main::BEGIN@9" -> "Getopt::Long::BEGIN@224";
+"utf8::AUTOLOAD" -> "utf8::BEGIN@147";
+"Pod::Select::BEGIN@242" -> "Pod::Parser::BEGIN@206";
+"lib::BEGIN@6" -> "Config::BEGIN@45";
+"Cwd::BEGIN@172" -> "vars::BEGIN@8";
+"Create::BEGIN@77" -> "File::Copy::BEGIN@11";
+"main::BEGIN@7" -> "Cwd::abs_path";
+"FindBin::init" -> "Cwd::abs_path";
+"main::BEGIN@5.8" -> "main::BEGIN@2.10";
+"lib::BEGIN@6" -> "Config::BEGIN@9";
+"Getopt::Long::GetOptionsFromArray" -> "Getopt::Long::ParseOptionSpec";
+"File::Find::_find_opt" -> "File::Find::_find_dir";
+"Encode::predefine_encodings" -> "Encode::Encoding::BEGIN@4";
+"utf8::SWASHNEW" -> "utf8::CORE:match";
+"Invoker::BEGIN@4.15" -> "Data::Dumper::BEGIN@18";
+"Pod::Text::BEGIN@34" -> "Pod::Simple::BEGIN@9";
+"Pod::Usage::BEGIN@460" -> "Pod::Text::BEGIN@31";
+"lib::import" -> "lib::CORE:ftis";
+"Pod::Text::BEGIN@32" -> "Encode::BEGIN@48";
+"List::list" -> "List::print_list";
+"main::BEGIN@9" -> "Getopt::Long::BEGIN@48";
+"Pod::Select::BEGIN@242" -> "Pod::Parser::BEGIN@208";
+"File::Find::_find_dir" -> "File::Find::CORE:ftdir";
+"File::Find::_find_opt" -> "File::Find::CORE:ftdir";
+"Exporter::as_heavy" -> "Exporter::Heavy::BEGIN@197";
+"main::BEGIN@10" -> "Pod::Usage::BEGIN@455";
+"Pod::Usage::BEGIN@460" -> "Pod::Text::BEGIN@33";
+"main::BEGIN@6" -> "Cwd::CORE:fteexec";
+"Message::BEGIN@40" -> "Term::ANSIColor::BEGIN@27";
+"Create::BEGIN@285" -> "Digest::BEGIN@37";
+"List::BEGIN@40" -> "File::Find::BEGIN@349";
+"Data::Dumper::BEGIN@275" -> "Data::Dumper::_vstring";
+"List::list" -> "Utils::setVerboseLevel";
+"Encode::BEGIN@48" -> "Encode::Alias::init_aliases";
+"Data::Dumper::BEGIN@24" -> "XSLoader::load";
+"Create::BEGIN@77" -> "XSLoader::load";
+"Pod::Text::BEGIN@32" -> "XSLoader::load";
+"main::BEGIN@6" -> "XSLoader::load";
+"utf8::AUTOLOAD" -> "utf8::BEGIN@166";
+"main::BEGIN@3.5" -> "main::BEGIN@1.6";
+"main::BEGIN@9" -> "Getopt::Long::BEGIN@223";
+"Getopt::Long::CallBack::BEGIN@1489" -> "overload::BEGIN@146";
+"File::Basename::_strip_trailing_sep" -> "File::Basename::CORE:substcont";
+"Pod::Usage::BEGIN@454" -> "Carp::BEGIN@17";
+"File::Find::_find_opt" -> "File::Find::CORE:subst";
+"main::BEGIN@11" -> "FindBin::BEGIN@80";
+"Pod::Usage::BEGIN@454" -> "Carp::BEGIN@413";
+"main::BEGIN@3" -> "warnings::CORE:regcomp";
+"main::BEGIN@7" -> "lib::BEGIN@8";
+"lib::import" -> "lib::CORE:match";
+"Pod::Select::BEGIN@242" -> "Pod::Parser::BEGIN@11";
+"main::RUNTIME" -> "main::BEGIN@11";
+"Encode::BEGIN@13" -> "base::BEGIN@3";
+"Message::BEGIN@40" -> "Term::ANSIColor::BEGIN@22";
+"main::BEGIN@6" -> "Cwd::BEGIN@823";
+"Pod::Simple::BEGIN@9" -> "Pod::Simple::LinkSection::BEGIN@8";
+"Pod::Simple::LinkSection::BEGIN@9" -> "Pod::Simple::BlackBox::BEGIN@24";
+"main::BEGIN@9" -> "Getopt::Long::BEGIN@46";
+"Getopt::Long::BEGIN@208" -> "constant::BEGIN@2";
+"Pod::Text::BEGIN@34" -> "Pod::Simple::BEGIN@1438";
+"main::BEGIN@9" -> "Getopt::Long::import";
+"main::BEGIN@7" -> "File::Basename::dirname";
+"main::BEGIN@12" -> "main::BEGIN@2.1";
+"Pod::Text::BEGIN@34" -> "Pod::Simple::BEGIN@8";
+"main::BEGIN@9" -> "Getopt::Long::BEGIN@19";
+"Message::BEGIN@40" -> "Term::ANSIColor::BEGIN@28";
+"utf8::AUTOLOAD" -> "utf8::BEGIN@542";
+"List::setVerboseLevel" -> "Verbosity::setVerboseLevel";
+"Utils::setVerboseLevel" -> "Verbosity::setVerboseLevel";
+"Getopt::Long::BEGIN@208" -> "constant::BEGIN@6";
+"main::BEGIN@7" -> "lib::BEGIN@6";
+"Invoker::BEGIN@4.15" -> "Data::Dumper::BEGIN@24";
+"Pod::Text::BEGIN@32" -> "Encode::Config::BEGIN@8";
+"main::BEGIN@9" -> "Getopt::Long::Configure";
+"main::RUNTIME" -> "Getopt::Long::Configure";
+"Exporter::import" -> "Exporter::export";
+"base::import" -> "UNIVERSAL::isa";
+"Pod::Usage::BEGIN@454" -> "Carp::BEGIN@67";
+"main::BEGIN@9" -> "Getopt::Long::BEGIN@25";
+"Pod::Text::BEGIN@32" -> "Encode::utf8::BEGIN@325";
+"main::RUNTIME" -> "Getopt::Long::GetOptions";
+"Pod::Text::BEGIN@34" -> "Pod::Simple::BEGIN@10";
+"Pod::Usage::BEGIN@454" -> "Carp::BEGIN@105";
+"warnings::register_categories" -> "warnings::_mkMask";
+"main::__ANON__[my_perl_archive.pl:27]" -> "Invoker::setVerboseLevel";
+"main::BEGIN@9" -> "Getopt::Long::ConfigDefaults";
+"utf8::SWASHNEW" -> "utf8::CORE:subst";
+"Invoker::BEGIN@134" -> "Invoker::BEGIN@4";
+"List::list" -> "File::Find::find";
+"main::BEGIN@9" -> "Getopt::Long::BEGIN@45";
+"Pod::Text::BEGIN@34" -> "Pod::Simple::_accessorize";
+"Getopt::Long::GetOptionsFromArray" -> "Getopt::Long::FindOption";
+"constant::BEGIN@25" -> "utf8::AUTOLOAD";
+"constant::BEGIN@25" -> "utf8::SWASHNEW";
+"main::BEGIN@12" -> "main::BEGIN@5.8";
+"Pod::Simple::BEGIN@9" -> "Pod::Simple::LinkSection::BEGIN@9";
+"Pod::Usage::BEGIN@460" -> "Pod::Text::BEGIN@34";
+"main::RUNTIME" -> "main::BEGIN@12";
+"Pod::Usage::BEGIN@454" -> "Carp::BEGIN@3";
+"Instances::BEGIN@24" -> "Create::BEGIN@77";
+"Invoker::BEGIN@4.15" -> "Data::Dumper::BEGIN@718";
+"Create::BEGIN@77" -> "File::Copy::BEGIN@14";
+"Instances::BEGIN@24" -> "Create::BEGIN@170";
+"Pod::Text::BEGIN@32" -> "Encode::CORE:match";
+"main::BEGIN@9" -> "Getopt::Long::BEGIN@222";
+"main::BEGIN@6" -> "Cwd::BEGIN@170";
+"Pod::Text::BEGIN@32" -> "Encode::predefine_encodings";
+"lib::BEGIN@6" -> "version::(cmp";
+"FindBin::cwd2" -> "Cwd::getcwd";
+"List::list" -> "Cwd::getcwd";
+"File::Find::_find_opt" -> "Cwd::getcwd";
+"Pod::Usage::BEGIN@460" -> "Pod::Text::BEGIN@28";
+"Getopt::Long::BEGIN@208" -> "constant::CORE:qr";
+"vars::import" -> "vars::CORE:match";
+"main::BEGIN@7" -> "lib::import";
+"Pod::Simple::BEGIN@7" -> "integer::import";
+"Pod::Simple::BlackBox::BEGIN@22" -> "integer::import";
+"XSLoader::load" -> "Encode::define_encoding";
+"main::BEGIN@9" -> "Getopt::Long::BEGIN@208";
+"Pod::Select::BEGIN@242" -> "Pod::Parser::BEGIN@207";
+"List::BEGIN@40" -> "File::Find::BEGIN@4";
+"Pod::Usage::BEGIN@457" -> "File::Spec::BEGIN@3";
+"Invoker::BEGIN@5" -> "Invoker::BEGIN@3.14";
+"Pod::Simple::LinkSection::BEGIN@9" -> "Pod::Simple::BlackBox::BEGIN@25";
+"File::Find::_find_dir" -> "File::Find::CORE:match";
+"Encode::BEGIN@48" -> "Encode::Alias::CORE:match";
+"Encode::predefine_encodings" -> "Encode::Encoding::BEGIN@5";
+"Pod::Text::BEGIN@34" -> "Pod::Simple::BEGIN@5";
+"main::RUNTIME" -> "main::BEGIN@5";
+"constant::import" -> "constant::CORE:match";
+"Instances::BEGIN@24" -> "Instances::BEGIN@11";
+"main::BEGIN@10" -> "Pod::Select::BEGIN@242";
+"Pod::Text::BEGIN@34" -> "Pod::Simple::BEGIN@116";
+"main::RUNTIME" -> "Getopt::Long::GetOptionsFromArray";
+"main::RUNTIME" -> "main::BEGIN@9";
+"main::BEGIN@11" -> "FindBin::BEGIN@85";
+"Encode::BEGIN@48" -> "Encode::Alias::BEGIN@4";
+"main::BEGIN@10" -> "Pod::Select::BEGIN@241";
+"main::BEGIN@3.5" -> "Message::BEGIN@40";
+}

@@ -1,0 +1,50 @@
+digraph {
+graph [overlap=false]
+subgraph cluster_Pod_InputObjects {
+	label="Pod::InputObjects";
+	"Pod::InputObjects::BEGIN@12";
+	"Pod::InputObjects::BEGIN@14";
+}
+subgraph cluster_vars {
+	label="vars";
+	"vars::import";
+}
+subgraph cluster_strict {
+	label="strict";
+	"strict::import";
+}
+subgraph cluster_Pod_ParseTree {
+	label="Pod::ParseTree";
+	"Pod::ParseTree::BEGIN@826";
+}
+subgraph cluster_Pod_Select {
+	label="Pod::Select";
+	"Pod::Select::BEGIN@242";
+}
+subgraph cluster_Pod_Parser {
+	label="Pod::Parser";
+	"Pod::Parser::BEGIN@206";
+	"Pod::Parser::BEGIN@14";
+	"Pod::Parser::BEGIN@208";
+	"Pod::Parser::BEGIN@207";
+	"Pod::Parser::BEGIN@205";
+	"Pod::Parser::BEGIN@11";
+}
+subgraph cluster_Exporter {
+	label="Exporter";
+	"Exporter::import";
+}
+"Pod::Parser::BEGIN@205" -> "Pod::InputObjects::BEGIN@14";
+"Pod::Parser::BEGIN@206" -> "Exporter::import";
+"Pod::Parser::BEGIN@207" -> "Exporter::import";
+"Pod::Parser::BEGIN@205" -> "Pod::ParseTree::BEGIN@826";
+"Pod::Select::BEGIN@242" -> "Pod::Parser::BEGIN@206";
+"Pod::Parser::BEGIN@14" -> "vars::import";
+"Pod::Select::BEGIN@242" -> "Pod::Parser::BEGIN@205";
+"Pod::Parser::BEGIN@205" -> "Pod::InputObjects::BEGIN@12";
+"Pod::Select::BEGIN@242" -> "Pod::Parser::BEGIN@14";
+"Pod::Select::BEGIN@242" -> "Pod::Parser::BEGIN@208";
+"Pod::Select::BEGIN@242" -> "Pod::Parser::BEGIN@207";
+"Pod::Parser::BEGIN@11" -> "strict::import";
+"Pod::Select::BEGIN@242" -> "Pod::Parser::BEGIN@11";
+}

@@ -1,0 +1,49 @@
+digraph {
+graph [overlap=false]
+subgraph cluster_warnings {
+	label="warnings";
+	"warnings::unimport";
+	"warnings::import";
+}
+subgraph cluster_strict {
+	label="strict";
+	"strict::import";
+	"strict::unimport";
+}
+subgraph cluster_constant {
+	label="constant";
+	"constant::BEGIN@25";
+}
+subgraph cluster_utf8 {
+	label="utf8";
+	"utf8::BEGIN@178";
+	"utf8::BEGIN@147";
+	"utf8::AUTOLOAD";
+	"utf8::BEGIN@166";
+	"utf8::CORE:match";
+	"utf8::BEGIN@2";
+	"utf8::BEGIN@654";
+	"utf8::SWASHNEW";
+	"utf8::BEGIN@3";
+	"utf8::CORE:subst";
+	"utf8::BEGIN@153";
+	"utf8::BEGIN@542";
+}
+"utf8::AUTOLOAD" -> "utf8::BEGIN@654";
+"utf8::BEGIN@147" -> "warnings::unimport";
+"utf8::BEGIN@542" -> "warnings::unimport";
+"utf8::AUTOLOAD" -> "utf8::BEGIN@542";
+"utf8::BEGIN@153" -> "strict::unimport";
+"utf8::BEGIN@654" -> "strict::unimport";
+"utf8::BEGIN@3" -> "warnings::import";
+"utf8::SWASHNEW" -> "utf8::CORE:subst";
+"utf8::AUTOLOAD" -> "utf8::BEGIN@147";
+"utf8::AUTOLOAD" -> "utf8::BEGIN@2";
+"constant::BEGIN@25" -> "utf8::SWASHNEW";
+"utf8::SWASHNEW" -> "utf8::CORE:match";
+"utf8::AUTOLOAD" -> "utf8::BEGIN@153";
+"utf8::AUTOLOAD" -> "utf8::BEGIN@178";
+"utf8::AUTOLOAD" -> "utf8::BEGIN@166";
+"utf8::AUTOLOAD" -> "utf8::BEGIN@3";
+"utf8::BEGIN@2" -> "strict::import";
+}

@@ -1,0 +1,285 @@
+digraph {
+graph [overlap=false]
+subgraph cluster_Pod_Usage {
+	label="Pod::Usage";
+	"Pod::Usage::BEGIN@11";
+	"Pod::Usage::BEGIN@456";
+	"Pod::Usage::BEGIN@460";
+	"Pod::Usage::BEGIN@455";
+	"Pod::Usage::BEGIN@13";
+	"Pod::Usage::BEGIN@457";
+	"Pod::Usage::BEGIN@454";
+}
+subgraph cluster_Internals {
+	label="Internals";
+	"Internals::SvREADONLY";
+}
+subgraph cluster_Pod_Simple {
+	label="Pod::Simple";
+	"Pod::Simple::BEGIN@8";
+}
+subgraph cluster_Config {
+	label="Config";
+	"Config::FETCH";
+}
+subgraph cluster_Invoker {
+	label="Invoker";
+	"Invoker::BEGIN@134";
+	"Invoker::setVerboseLevel";
+	"Invoker::list";
+	"Invoker::new";
+}
+subgraph cluster_base {
+	label="base";
+	"base::import";
+}
+subgraph cluster_warnings {
+	label="warnings";
+	"warnings::CORE:regcomp";
+	"warnings::CORE:match";
+	"warnings::import";
+}
+subgraph cluster_Getopt_Long {
+	label="Getopt::Long";
+	"Getopt::Long::CORE:match";
+	"Getopt::Long::BEGIN@220";
+	"Getopt::Long::BEGIN@208";
+	"Getopt::Long::BEGIN@237";
+	"Getopt::Long::Configure";
+	"Getopt::Long::BEGIN@226";
+	"Getopt::Long::BEGIN@236";
+	"Getopt::Long::BEGIN@37";
+	"Getopt::Long::BEGIN@225";
+	"Getopt::Long::BEGIN@218";
+	"Getopt::Long::BEGIN@25";
+	"Getopt::Long::BEGIN@46";
+	"Getopt::Long::GetOptions";
+	"Getopt::Long::BEGIN@222";
+	"Getopt::Long::BEGIN@51";
+	"Getopt::Long::BEGIN@15";
+	"Getopt::Long::BEGIN@228";
+	"Getopt::Long::BEGIN@223";
+	"Getopt::Long::import";
+	"Getopt::Long::BEGIN@247";
+	"Getopt::Long::BEGIN@229";
+	"Getopt::Long::GetOptionsFromArray";
+	"Getopt::Long::ConfigDefaults";
+	"Getopt::Long::BEGIN@48";
+	"Getopt::Long::BEGIN@19";
+	"Getopt::Long::BEGIN@17";
+	"Getopt::Long::BEGIN@224";
+	"Getopt::Long::BEGIN@45";
+	"Getopt::Long::BEGIN@26";
+}
+subgraph cluster_Getopt_Long_CallBack {
+	label="Getopt::Long::CallBack";
+	"Getopt::Long::CallBack::BEGIN@1489";
+}
+subgraph cluster_main {
+	label="main";
+	"main::BEGIN@10";
+	"main::BEGIN@5.8";
+	"main::CORE:match";
+	"main::BEGIN@3.2";
+	"main::BEGIN@12";
+	"main::BEGIN@3";
+	"main::BEGIN@5";
+	"main::BEGIN@7";
+	"main::BEGIN@13";
+	"main::BEGIN@1";
+	"main::BEGIN@2.1";
+	"main::__ANON__[my_perl_archive.pl:33]";
+	"main::BEGIN@6";
+	"main::__ANON__[my_perl_archive.pl:27]";
+	"main::BEGIN@9";
+	"main::BEGIN@2";
+	"main::BEGIN@4";
+	"main::RUNTIME";
+	"main::BEGIN@11";
+}
+subgraph cluster_strict {
+	label="strict";
+	"strict::import";
+	"strict::CORE:regcomp";
+	"strict::CORE:match";
+}
+subgraph cluster_XSLoader {
+	label="XSLoader";
+	"XSLoader::load";
+}
+subgraph cluster_UNIVERSAL {
+	label="UNIVERSAL";
+	"UNIVERSAL::isa";
+	"UNIVERSAL::VERSION";
+}
+subgraph cluster_FindBin {
+	label="FindBin";
+	"FindBin::BEGIN@85";
+	"FindBin::BEGIN@84";
+	"FindBin::BEGIN@166";
+	"FindBin::BEGIN@83";
+	"FindBin::BEGIN@80";
+}
+subgraph cluster_Message {
+	label="Message";
+	"Message::new";
+}
+subgraph cluster_lib {
+	label="lib";
+	"lib::BEGIN@6";
+	"lib::BEGIN@8";
+	"lib::import";
+}
+subgraph cluster_Pod_Select {
+	label="Pod::Select";
+	"Pod::Select::BEGIN@11";
+	"Pod::Select::BEGIN@241";
+	"Pod::Select::BEGIN@242";
+	"Pod::Select::BEGIN@13";
+}
+subgraph cluster_version {
+	label="version";
+	"version::(bool";
+	"version::(cmp";
+}
+subgraph cluster_constant {
+	label="constant";
+	"constant::import";
+}
+subgraph cluster_Exporter {
+	label="Exporter";
+	"Exporter::import";
+}
+subgraph cluster_File_Basename {
+	label="File::Basename";
+	"File::Basename::BEGIN@52";
+	"File::Basename::BEGIN@42";
+	"File::Basename::BEGIN@371";
+	"File::Basename::BEGIN@50";
+	"File::Basename::dirname";
+	"File::Basename::BEGIN@51";
+	"File::Basename::fileparse_set_fstype";
+}
+subgraph cluster_mro {
+	label="mro";
+	"mro::method_changed_in";
+}
+subgraph cluster_Cwd {
+	label="Cwd";
+	"Cwd::BEGIN@170";
+	"Cwd::CORE:fteexec";
+	"Cwd::BEGIN@171";
+	"Cwd::BEGIN@823";
+	"Cwd::BEGIN@209";
+	"Cwd::CORE:regcomp";
+	"Cwd::BEGIN@172";
+	"Cwd::abs_path";
+}
+"main::BEGIN@9" -> "Getopt::Long::BEGIN@220";
+"main::BEGIN@6" -> "Cwd::BEGIN@823";
+"main::BEGIN@10" -> "Pod::Usage::BEGIN@454";
+"main::RUNTIME" -> "main::CORE:match";
+"main::BEGIN@12" -> "main::BEGIN@3.2";
+"main::BEGIN@9" -> "Getopt::Long::BEGIN@225";
+"main::BEGIN@11" -> "FindBin::BEGIN@84";
+"constant::import" -> "mro::method_changed_in";
+"main::BEGIN@9" -> "Getopt::Long::BEGIN@46";
+"main::RUNTIME" -> "main::BEGIN@3";
+"main::BEGIN@10" -> "Pod::Select::BEGIN@13";
+"main::BEGIN@5" -> "File::Basename::BEGIN@51";
+"main::BEGIN@2" -> "strict::CORE:match";
+"main::BEGIN@9" -> "Getopt::Long::BEGIN@51";
+"main::BEGIN@5" -> "File::Basename::BEGIN@371";
+"main::BEGIN@9" -> "Getopt::Long::import";
+"main::RUNTIME" -> "main::BEGIN@7";
+"main::BEGIN@10" -> "Pod::Usage::BEGIN@13";
+"main::BEGIN@5" -> "File::Basename::BEGIN@50";
+"main::RUNTIME" -> "main::BEGIN@13";
+"main::BEGIN@7" -> "File::Basename::dirname";
+"main::BEGIN@9" -> "Getopt::Long::BEGIN@247";
+"main::BEGIN@12" -> "main::BEGIN@2.1";
+"main::BEGIN@9" -> "Getopt::Long::BEGIN@19";
+"main::BEGIN@10" -> "Exporter::import";
+"main::BEGIN@5" -> "Exporter::import";
+"main::BEGIN@6" -> "Exporter::import";
+"main::BEGIN@11" -> "Exporter::import";
+"main::BEGIN@10" -> "Pod::Select::BEGIN@11";
+"main::BEGIN@9" -> "Getopt::Long::BEGIN@26";
+"main::BEGIN@7" -> "lib::BEGIN@6";
+"main::BEGIN@9" -> "Getopt::Long::BEGIN@237";
+"main::BEGIN@9" -> "Getopt::Long::Configure";
+"main::RUNTIME" -> "Getopt::Long::Configure";
+"main::BEGIN@3" -> "warnings::CORE:match";
+"main::BEGIN@9" -> "Getopt::Long::BEGIN@236";
+"main::BEGIN@5" -> "File::Basename::fileparse_set_fstype";
+"main::BEGIN@9" -> "Getopt::Long::CallBack::BEGIN@1489";
+"main::BEGIN@9" -> "Getopt::Long::BEGIN@37";
+"base::import" -> "UNIVERSAL::isa";
+"main::BEGIN@9" -> "Getopt::Long::BEGIN@25";
+"main::BEGIN@11" -> "FindBin::BEGIN@166";
+"main::BEGIN@2" -> "strict::CORE:regcomp";
+"main::RUNTIME" -> "Getopt::Long::GetOptions";
+"main::RUNTIME" -> "Invoker::new";
+"main::BEGIN@9" -> "Getopt::Long::BEGIN@15";
+"lib::BEGIN@6" -> "version::(bool";
+"main::BEGIN@6" -> "Cwd::BEGIN@171";
+"main::__ANON__[my_perl_archive.pl:27]" -> "Invoker::setVerboseLevel";
+"main::BEGIN@3" -> "warnings::import";
+"Getopt::Long::GetOptionsFromArray" -> "main::__ANON__[my_perl_archive.pl:33]";
+"constant::import" -> "Internals::SvREADONLY";
+"main::BEGIN@9" -> "Getopt::Long::ConfigDefaults";
+"main::RUNTIME" -> "main::BEGIN@6";
+"Getopt::Long::GetOptionsFromArray" -> "main::__ANON__[my_perl_archive.pl:27]";
+"main::BEGIN@5" -> "File::Basename::BEGIN@42";
+"main::BEGIN@9" -> "Getopt::Long::BEGIN@17";
+"main::BEGIN@9" -> "Getopt::Long::BEGIN@45";
+"main::BEGIN@9" -> "Getopt::Long::BEGIN@224";
+"main::BEGIN@12" -> "main::BEGIN@5.8";
+"main::BEGIN@9" -> "Getopt::Long::BEGIN@226";
+"main::RUNTIME" -> "main::BEGIN@12";
+"main::BEGIN@7" -> "Cwd::abs_path";
+"main::BEGIN@9" -> "Getopt::Long::BEGIN@218";
+"main::RUNTIME" -> "Message::new";
+"main::BEGIN@9" -> "Getopt::Long::BEGIN@222";
+"main::BEGIN@6" -> "Cwd::BEGIN@170";
+"main::BEGIN@6" -> "Cwd::BEGIN@209";
+"lib::BEGIN@6" -> "version::(cmp";
+"main::BEGIN@9" -> "Getopt::Long::BEGIN@48";
+"main::RUNTIME" -> "main::BEGIN@2";
+"main::BEGIN@10" -> "Pod::Usage::BEGIN@456";
+"main::BEGIN@7" -> "lib::import";
+"main::RUNTIME" -> "main::BEGIN@10";
+"main::BEGIN@9" -> "Getopt::Long::CORE:match";
+"main::BEGIN@10" -> "Pod::Usage::BEGIN@455";
+"main::BEGIN@6" -> "Cwd::CORE:fteexec";
+"main::BEGIN@9" -> "Getopt::Long::BEGIN@208";
+"main::BEGIN@11" -> "FindBin::BEGIN@83";
+"main::BEGIN@6" -> "Cwd::CORE:regcomp";
+"main::__ANON__[my_perl_archive.pl:33]" -> "Invoker::list";
+"main::BEGIN@12" -> "Invoker::BEGIN@134";
+"main::BEGIN@6" -> "Cwd::BEGIN@172";
+"main::BEGIN@10" -> "Pod::Usage::BEGIN@460";
+"main::RUNTIME" -> "main::BEGIN@5";
+"main::BEGIN@6" -> "XSLoader::load";
+"main::BEGIN@7" -> "Config::FETCH";
+"main::BEGIN@5" -> "File::Basename::BEGIN@52";
+"main::BEGIN@9" -> "Getopt::Long::BEGIN@228";
+"main::BEGIN@9" -> "Getopt::Long::BEGIN@223";
+"main::BEGIN@12" -> "main::BEGIN@1";
+"main::BEGIN@10" -> "Pod::Usage::BEGIN@457";
+"main::BEGIN@10" -> "Pod::Select::BEGIN@242";
+"main::RUNTIME" -> "Getopt::Long::GetOptionsFromArray";
+"main::BEGIN@9" -> "Getopt::Long::BEGIN@229";
+"main::BEGIN@11" -> "FindBin::BEGIN@80";
+"main::BEGIN@10" -> "Pod::Usage::BEGIN@11";
+"main::RUNTIME" -> "main::BEGIN@9";
+"main::BEGIN@11" -> "FindBin::BEGIN@85";
+"main::BEGIN@3" -> "warnings::CORE:regcomp";
+"main::BEGIN@7" -> "lib::BEGIN@8";
+"Pod::Select::BEGIN@242" -> "UNIVERSAL::VERSION";
+"Pod::Simple::BEGIN@8" -> "UNIVERSAL::VERSION";
+"main::BEGIN@2" -> "strict::import";
+"main::BEGIN@10" -> "Pod::Select::BEGIN@241";
+"main::BEGIN@12" -> "main::BEGIN@4";
+"main::RUNTIME" -> "main::BEGIN@11";
+}

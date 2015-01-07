@@ -1,0 +1,236 @@
+digraph {
+graph [overlap=false]
+subgraph cluster_Pod_Usage {
+	label="Pod::Usage";
+	"Pod::Usage::BEGIN@11";
+}
+subgraph cluster_Pod_Escapes {
+	label="Pod::Escapes";
+	"Pod::Escapes::BEGIN@22";
+}
+subgraph cluster_Pod_Text {
+	label="Pod::Text";
+	"Pod::Text::BEGIN@28";
+}
+subgraph cluster_Pod_Simple {
+	label="Pod::Simple";
+	"Pod::Simple::BEGIN@4";
+	"Pod::Simple::BEGIN@1438";
+	"Pod::Simple::BEGIN@1434";
+}
+subgraph cluster_File_Spec_Unix {
+	label="File::Spec::Unix";
+	"File::Spec::Unix::BEGIN@3";
+	"File::Spec::Unix::BEGIN@149";
+}
+subgraph cluster_Config {
+	label="Config";
+	"Config::BEGIN@45";
+	"Config::BEGIN@9";
+}
+subgraph cluster_Encode {
+	label="Encode";
+	"Encode::BEGIN@5";
+}
+subgraph cluster_List_Util {
+	label="List::Util";
+	"List::Util::BEGIN@11";
+}
+subgraph cluster_Instances {
+	label="Instances";
+	"Instances::BEGIN@11";
+}
+subgraph cluster_Invoker {
+	label="Invoker";
+	"Invoker::BEGIN@1";
+	"Invoker::BEGIN@1.12";
+}
+subgraph cluster_Getopt_Long {
+	label="Getopt::Long";
+	"Getopt::Long::BEGIN@17";
+}
+subgraph cluster_File_Copy {
+	label="File::Copy";
+	"File::Copy::BEGIN@11";
+}
+subgraph cluster_base {
+	label="base";
+	"base::BEGIN@3";
+}
+subgraph cluster_Term_ANSIColor {
+	label="Term::ANSIColor";
+	"Term::ANSIColor::BEGIN@22";
+}
+subgraph cluster_Pod_InputObjects {
+	label="Pod::InputObjects";
+	"Pod::InputObjects::BEGIN@12";
+}
+subgraph cluster_vars {
+	label="vars";
+	"vars::BEGIN@8";
+}
+subgraph cluster_main {
+	label="main";
+	"main::BEGIN@1.9";
+	"main::BEGIN@2";
+	"main::BEGIN@1.6";
+	"main::BEGIN@1.3";
+	"main::BEGIN@1";
+}
+subgraph cluster_strict {
+	label="strict";
+	"strict::import";
+	"strict::CORE:regcomp";
+	"strict::unimport";
+	"strict::bits";
+	"strict::CORE:match";
+}
+subgraph cluster_Encode_Encoding {
+	label="Encode::Encoding";
+	"Encode::Encoding::BEGIN@4";
+}
+subgraph cluster_Scalar_Util {
+	label="Scalar::Util";
+	"Scalar::Util::BEGIN@9";
+}
+subgraph cluster_File_Spec {
+	label="File::Spec";
+	"File::Spec::BEGIN@3";
+}
+subgraph cluster_Encode_Config {
+	label="Encode::Config";
+	"Encode::Config::BEGIN@7";
+}
+subgraph cluster_File_Find {
+	label="File::Find";
+	"File::Find::BEGIN@3";
+	"File::Find::BEGIN@349";
+}
+subgraph cluster_Digest {
+	label="Digest";
+	"Digest::BEGIN@3";
+	"Digest::BEGIN@37";
+}
+subgraph cluster_lib {
+	label="lib";
+	"lib::BEGIN@8";
+}
+subgraph cluster_Pod_Simple_BlackBox {
+	label="Pod::Simple::BlackBox";
+	"Pod::Simple::BlackBox::BEGIN@23";
+}
+subgraph cluster_Pod_Select {
+	label="Pod::Select";
+	"Pod::Select::BEGIN@11";
+}
+subgraph cluster_Exporter_Heavy {
+	label="Exporter::Heavy";
+	"Exporter::Heavy::BEGIN@4";
+	"Exporter::Heavy::BEGIN@3";
+}
+subgraph cluster_Pod_Parser {
+	label="Pod::Parser";
+	"Pod::Parser::BEGIN@11";
+}
+subgraph cluster_constant {
+	label="constant";
+	"constant::BEGIN@3";
+	"constant::BEGIN@65";
+	"constant::BEGIN@127";
+	"constant::BEGIN@29";
+}
+subgraph cluster_utf8 {
+	label="utf8";
+	"utf8::BEGIN@2";
+	"utf8::BEGIN@153";
+	"utf8::BEGIN@654";
+}
+subgraph cluster_Carp {
+	label="Carp";
+	"Carp::BEGIN@413";
+	"Carp::BEGIN@398";
+	"Carp::BEGIN@4";
+	"Carp::BEGIN@67";
+	"Carp::BEGIN@18";
+	"Carp::BEGIN@8";
+}
+subgraph cluster_Pod_Simple_LinkSection {
+	label="Pod::Simple::LinkSection";
+	"Pod::Simple::LinkSection::BEGIN@8";
+}
+subgraph cluster_File_Basename {
+	label="File::Basename";
+	"File::Basename::BEGIN@50";
+}
+subgraph cluster_Encode_Alias {
+	label="Encode::Alias";
+	"Encode::Alias::BEGIN@2";
+}
+subgraph cluster_Cwd {
+	label="Cwd";
+	"Cwd::BEGIN@170";
+	"Cwd::BEGIN@823";
+}
+"main::BEGIN@2" -> "strict::CORE:match";
+"strict::import" -> "strict::bits";
+"strict::unimport" -> "strict::bits";
+"Config::BEGIN@45" -> "strict::unimport";
+"Carp::BEGIN@18" -> "strict::unimport";
+"Cwd::BEGIN@823" -> "strict::unimport";
+"Pod::Simple::BEGIN@1434" -> "strict::unimport";
+"Digest::BEGIN@37" -> "strict::unimport";
+"constant::BEGIN@29" -> "strict::unimport";
+"File::Spec::Unix::BEGIN@149" -> "strict::unimport";
+"utf8::BEGIN@153" -> "strict::unimport";
+"Carp::BEGIN@67" -> "strict::unimport";
+"Carp::BEGIN@398" -> "strict::unimport";
+"Carp::BEGIN@8" -> "strict::unimport";
+"utf8::BEGIN@654" -> "strict::unimport";
+"Carp::BEGIN@413" -> "strict::unimport";
+"Exporter::Heavy::BEGIN@4" -> "strict::unimport";
+"constant::BEGIN@65" -> "strict::unimport";
+"constant::BEGIN@127" -> "strict::unimport";
+"main::BEGIN@2" -> "strict::CORE:regcomp";
+"base::BEGIN@3" -> "strict::import";
+"Term::ANSIColor::BEGIN@22" -> "strict::import";
+"utf8::BEGIN@2" -> "strict::import";
+"vars::BEGIN@8" -> "strict::import";
+"Pod::Simple::LinkSection::BEGIN@8" -> "strict::import";
+"File::Copy::BEGIN@11" -> "strict::import";
+"Config::BEGIN@9" -> "strict::import";
+"Encode::BEGIN@5" -> "strict::import";
+"File::Spec::Unix::BEGIN@3" -> "strict::import";
+"Encode::Alias::BEGIN@2" -> "strict::import";
+"Encode::Encoding::BEGIN@4" -> "strict::import";
+"Cwd::BEGIN@170" -> "strict::import";
+"Pod::Simple::BEGIN@1438" -> "strict::import";
+"File::Basename::BEGIN@50" -> "strict::import";
+"Pod::InputObjects::BEGIN@12" -> "strict::import";
+"main::BEGIN@1.9" -> "strict::import";
+"Pod::Select::BEGIN@11" -> "strict::import";
+"main::BEGIN@2" -> "strict::import";
+"Pod::Simple::BEGIN@4" -> "strict::import";
+"Pod::Text::BEGIN@28" -> "strict::import";
+"File::Find::BEGIN@3" -> "strict::import";
+"Scalar::Util::BEGIN@9" -> "strict::import";
+"main::BEGIN@1.3" -> "strict::import";
+"Carp::BEGIN@4" -> "strict::import";
+"constant::BEGIN@3" -> "strict::import";
+"File::Find::BEGIN@349" -> "strict::import";
+"File::Spec::BEGIN@3" -> "strict::import";
+"Invoker::BEGIN@1" -> "strict::import";
+"Invoker::BEGIN@1.12" -> "strict::import";
+"Instances::BEGIN@11" -> "strict::import";
+"Encode::Config::BEGIN@7" -> "strict::import";
+"List::Util::BEGIN@11" -> "strict::import";
+"main::BEGIN@1.6" -> "strict::import";
+"Pod::Escapes::BEGIN@22" -> "strict::import";
+"Pod::Simple::BlackBox::BEGIN@23" -> "strict::import";
+"main::BEGIN@1" -> "strict::import";
+"Pod::Usage::BEGIN@11" -> "strict::import";
+"lib::BEGIN@8" -> "strict::import";
+"Digest::BEGIN@3" -> "strict::import";
+"Getopt::Long::BEGIN@17" -> "strict::import";
+"Exporter::Heavy::BEGIN@3" -> "strict::import";
+"Pod::Parser::BEGIN@11" -> "strict::import";
+}

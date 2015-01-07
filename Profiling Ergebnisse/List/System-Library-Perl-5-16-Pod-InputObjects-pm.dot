@@ -1,0 +1,30 @@
+digraph {
+graph [overlap=false]
+subgraph cluster_Pod_InputObjects {
+	label="Pod::InputObjects";
+	"Pod::InputObjects::BEGIN@12";
+	"Pod::InputObjects::BEGIN@14";
+}
+subgraph cluster_vars {
+	label="vars";
+	"vars::import";
+}
+subgraph cluster_strict {
+	label="strict";
+	"strict::import";
+}
+subgraph cluster_Pod_ParseTree {
+	label="Pod::ParseTree";
+	"Pod::ParseTree::BEGIN@826";
+}
+subgraph cluster_Pod_Parser {
+	label="Pod::Parser";
+	"Pod::Parser::BEGIN@205";
+}
+"Pod::Parser::BEGIN@205" -> "Pod::InputObjects::BEGIN@14";
+"Pod::Parser::BEGIN@205" -> "Pod::ParseTree::BEGIN@826";
+"Pod::InputObjects::BEGIN@14" -> "vars::import";
+"Pod::ParseTree::BEGIN@826" -> "vars::import";
+"Pod::Parser::BEGIN@205" -> "Pod::InputObjects::BEGIN@12";
+"Pod::InputObjects::BEGIN@12" -> "strict::import";
+}

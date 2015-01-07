@@ -1,0 +1,132 @@
+digraph {
+graph [overlap=false]
+subgraph cluster_Pod_Escapes {
+	label="Pod::Escapes";
+	"Pod::Escapes::BEGIN@23";
+}
+subgraph cluster_Pod_Usage {
+	label="Pod::Usage";
+	"Pod::Usage::BEGIN@13";
+}
+subgraph cluster_Pod_Text {
+	label="Pod::Text";
+	"Pod::Text::BEGIN@29";
+}
+subgraph cluster_Pod_Simple {
+	label="Pod::Simple";
+	"Pod::Simple::BEGIN@13";
+}
+subgraph cluster_File_Spec_Unix {
+	label="File::Spec::Unix";
+	"File::Spec::Unix::BEGIN@4";
+}
+subgraph cluster_Config {
+	label="Config";
+	"Config::BEGIN@11";
+}
+subgraph cluster_base {
+	label="base";
+	"base::BEGIN@4";
+}
+subgraph cluster_Getopt_Long {
+	label="Getopt::Long";
+	"Getopt::Long::BEGIN@48";
+	"Getopt::Long::BEGIN@19";
+	"Getopt::Long::BEGIN@51";
+	"Getopt::Long::BEGIN@46";
+	"Getopt::Long::BEGIN@45";
+	"Getopt::Long::BEGIN@26";
+}
+subgraph cluster_Term_ANSIColor {
+	label="Term::ANSIColor";
+	"Term::ANSIColor::BEGIN@23";
+}
+subgraph cluster_Pod_InputObjects {
+	label="Pod::InputObjects";
+	"Pod::InputObjects::BEGIN@14";
+}
+subgraph cluster_vars {
+	label="vars";
+	"vars::BEGIN@3";
+	"vars::BEGIN@8";
+	"vars::import";
+	"vars::CORE:match";
+	"vars::BEGIN@7";
+}
+subgraph cluster_strict {
+	label="strict";
+	"strict::import";
+}
+subgraph cluster_File_Spec {
+	label="File::Spec";
+	"File::Spec::BEGIN@4";
+}
+subgraph cluster_Pod_ParseTree {
+	label="Pod::ParseTree";
+	"Pod::ParseTree::BEGIN@826";
+}
+subgraph cluster_Digest {
+	label="Digest";
+	"Digest::BEGIN@4";
+}
+subgraph cluster_Pod_Simple_BlackBox {
+	label="Pod::Simple::BlackBox";
+	"Pod::Simple::BlackBox::BEGIN@25";
+}
+subgraph cluster_Pod_Select {
+	label="Pod::Select";
+	"Pod::Select::BEGIN@13";
+}
+subgraph cluster_Pod_Parser {
+	label="Pod::Parser";
+	"Pod::Parser::BEGIN@14";
+}
+subgraph cluster_constant {
+	label="constant";
+	"constant::BEGIN@6";
+}
+subgraph cluster_warnings_register {
+	label="warnings::register";
+	"warnings::register::import";
+}
+subgraph cluster_Pod_Simple_LinkSection {
+	label="Pod::Simple::LinkSection";
+	"Pod::Simple::LinkSection::BEGIN@10";
+	"Pod::Simple::LinkSection::BEGIN@5";
+}
+subgraph cluster_Cwd {
+	label="Cwd";
+	"Cwd::BEGIN@172";
+}
+"Cwd::BEGIN@172" -> "vars::BEGIN@8";
+"Pod::Simple::LinkSection::BEGIN@10" -> "vars::import";
+"Pod::InputObjects::BEGIN@14" -> "vars::import";
+"Pod::Text::BEGIN@29" -> "vars::import";
+"Term::ANSIColor::BEGIN@23" -> "vars::import";
+"Pod::ParseTree::BEGIN@826" -> "vars::import";
+"Pod::Simple::BlackBox::BEGIN@25" -> "vars::import";
+"Digest::BEGIN@4" -> "vars::import";
+"Cwd::BEGIN@172" -> "vars::import";
+"Pod::Simple::BEGIN@13" -> "vars::import";
+"Getopt::Long::BEGIN@46" -> "vars::import";
+"Pod::Select::BEGIN@13" -> "vars::import";
+"Getopt::Long::BEGIN@51" -> "vars::import";
+"Pod::Usage::BEGIN@13" -> "vars::import";
+"Pod::Escapes::BEGIN@23" -> "vars::import";
+"Pod::Simple::LinkSection::BEGIN@5" -> "vars::import";
+"Config::BEGIN@11" -> "vars::import";
+"Getopt::Long::BEGIN@19" -> "vars::import";
+"Getopt::Long::BEGIN@48" -> "vars::import";
+"base::BEGIN@4" -> "vars::import";
+"Pod::Parser::BEGIN@14" -> "vars::import";
+"File::Spec::BEGIN@4" -> "vars::import";
+"File::Spec::Unix::BEGIN@4" -> "vars::import";
+"Getopt::Long::BEGIN@26" -> "vars::import";
+"Getopt::Long::BEGIN@45" -> "vars::import";
+"constant::BEGIN@6" -> "vars::import";
+"vars::import" -> "vars::CORE:match";
+"Cwd::BEGIN@172" -> "vars::BEGIN@3";
+"vars::BEGIN@8" -> "strict::import";
+"Cwd::BEGIN@172" -> "vars::BEGIN@7";
+"vars::BEGIN@7" -> "warnings::register::import";
+}

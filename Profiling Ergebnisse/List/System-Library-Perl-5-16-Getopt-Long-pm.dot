@@ -1,0 +1,161 @@
+digraph {
+graph [overlap=false]
+subgraph cluster_Getopt_Long {
+	label="Getopt::Long";
+	"Getopt::Long::FindOption";
+	"Getopt::Long::BEGIN@220";
+	"Getopt::Long::BEGIN@226";
+	"Getopt::Long::BEGIN@225";
+	"Getopt::Long::BEGIN@218";
+	"Getopt::Long::BEGIN@46";
+	"Getopt::Long::ParseOptionSpec";
+	"Getopt::Long::BEGIN@222";
+	"Getopt::Long::BEGIN@51";
+	"Getopt::Long::import";
+	"Getopt::Long::BEGIN@247";
+	"Getopt::Long::BEGIN@48";
+	"Getopt::Long::BEGIN@19";
+	"Getopt::Long::BEGIN@26";
+	"Getopt::Long::CORE:match";
+	"Getopt::Long::BEGIN@237";
+	"Getopt::Long::BEGIN@208";
+	"Getopt::Long::Configure";
+	"Getopt::Long::CORE:regcomp";
+	"Getopt::Long::BEGIN@236";
+	"Getopt::Long::BEGIN@37";
+	"Getopt::Long::BEGIN@25";
+	"Getopt::Long::GetOptions";
+	"Getopt::Long::BEGIN@15";
+	"Getopt::Long::BEGIN@228";
+	"Getopt::Long::BEGIN@223";
+	"Getopt::Long::GetOptionsFromArray";
+	"Getopt::Long::BEGIN@229";
+	"Getopt::Long::ConfigDefaults";
+	"Getopt::Long::BEGIN@17";
+	"Getopt::Long::BEGIN@45";
+	"Getopt::Long::BEGIN@224";
+}
+subgraph cluster_Getopt_Long_CallBack {
+	label="Getopt::Long::CallBack";
+	"Getopt::Long::CallBack::BEGIN@1489";
+	"Getopt::Long::CallBack::new";
+}
+subgraph cluster_overload {
+	label="overload";
+	"overload::BEGIN@116";
+	"overload::BEGIN@146";
+	"overload::import";
+	"overload::BEGIN@85";
+}
+subgraph cluster_vars {
+	label="vars";
+	"vars::import";
+}
+subgraph cluster_main {
+	label="main";
+	"main::BEGIN@9";
+	"main::__ANON__[my_perl_archive.pl:27]";
+	"main::RUNTIME";
+	"main::__ANON__[my_perl_archive.pl:33]";
+}
+subgraph cluster_strict {
+	label="strict";
+	"strict::import";
+}
+subgraph cluster_constant {
+	label="constant";
+	"constant::import";
+	"constant::BEGIN@4";
+	"constant::BEGIN@3";
+	"constant::BEGIN@25";
+	"constant::BEGIN@29";
+	"constant::CORE:regcomp";
+	"constant::CORE:qr";
+	"constant::BEGIN@65";
+	"constant::BEGIN@2";
+	"constant::BEGIN@127";
+	"constant::BEGIN@6";
+}
+subgraph cluster_Exporter {
+	label="Exporter";
+	"Exporter::import";
+}
+"main::BEGIN@9" -> "Getopt::Long::BEGIN@220";
+"Getopt::Long::BEGIN@208" -> "constant::BEGIN@29";
+"Getopt::Long::GetOptionsFromArray" -> "Getopt::Long::CallBack::new";
+"main::BEGIN@9" -> "Getopt::Long::BEGIN@225";
+"main::BEGIN@9" -> "Getopt::Long::BEGIN@46";
+"Getopt::Long::BEGIN@208" -> "constant::BEGIN@2";
+"main::BEGIN@9" -> "Getopt::Long::BEGIN@51";
+"Getopt::Long::BEGIN@208" -> "constant::BEGIN@4";
+"main::BEGIN@9" -> "Getopt::Long::import";
+"main::BEGIN@9" -> "Getopt::Long::BEGIN@247";
+"Getopt::Long::CallBack::BEGIN@1489" -> "overload::BEGIN@85";
+"main::BEGIN@9" -> "Getopt::Long::BEGIN@19";
+"Getopt::Long::BEGIN@25" -> "Exporter::import";
+"Getopt::Long::import" -> "Exporter::import";
+"Getopt::Long::BEGIN@208" -> "constant::BEGIN@65";
+"Getopt::Long::BEGIN@208" -> "constant::BEGIN@6";
+"main::BEGIN@9" -> "Getopt::Long::BEGIN@26";
+"Getopt::Long::BEGIN@220" -> "constant::import";
+"Getopt::Long::BEGIN@237" -> "constant::import";
+"Getopt::Long::BEGIN@208" -> "constant::import";
+"Getopt::Long::BEGIN@236" -> "constant::import";
+"Getopt::Long::BEGIN@226" -> "constant::import";
+"Getopt::Long::BEGIN@225" -> "constant::import";
+"Getopt::Long::BEGIN@218" -> "constant::import";
+"Getopt::Long::BEGIN@222" -> "constant::import";
+"Getopt::Long::BEGIN@228" -> "constant::import";
+"Getopt::Long::BEGIN@223" -> "constant::import";
+"Getopt::Long::BEGIN@247" -> "constant::import";
+"Getopt::Long::BEGIN@229" -> "constant::import";
+"Getopt::Long::BEGIN@224" -> "constant::import";
+"main::BEGIN@9" -> "Getopt::Long::BEGIN@237";
+"main::BEGIN@9" -> "Getopt::Long::Configure";
+"main::RUNTIME" -> "Getopt::Long::Configure";
+"main::BEGIN@9" -> "Getopt::Long::BEGIN@236";
+"main::BEGIN@9" -> "Getopt::Long::CallBack::BEGIN@1489";
+"main::BEGIN@9" -> "Getopt::Long::BEGIN@37";
+"Getopt::Long::BEGIN@208" -> "constant::CORE:regcomp";
+"main::BEGIN@9" -> "Getopt::Long::BEGIN@25";
+"Getopt::Long::CallBack::BEGIN@1489" -> "overload::import";
+"main::RUNTIME" -> "Getopt::Long::GetOptions";
+"main::BEGIN@9" -> "Getopt::Long::BEGIN@15";
+"Getopt::Long::GetOptionsFromArray" -> "main::__ANON__[my_perl_archive.pl:33]";
+"main::BEGIN@9" -> "Getopt::Long::ConfigDefaults";
+"Getopt::Long::GetOptionsFromArray" -> "main::__ANON__[my_perl_archive.pl:27]";
+"main::BEGIN@9" -> "Getopt::Long::BEGIN@17";
+"Getopt::Long::BEGIN@208" -> "constant::BEGIN@127";
+"main::BEGIN@9" -> "Getopt::Long::BEGIN@45";
+"main::BEGIN@9" -> "Getopt::Long::BEGIN@224";
+"Getopt::Long::GetOptionsFromArray" -> "Getopt::Long::FindOption";
+"main::BEGIN@9" -> "Getopt::Long::BEGIN@226";
+"main::BEGIN@9" -> "Getopt::Long::BEGIN@218";
+"Getopt::Long::GetOptionsFromArray" -> "Getopt::Long::ParseOptionSpec";
+"main::BEGIN@9" -> "Getopt::Long::BEGIN@222";
+"Getopt::Long::BEGIN@46" -> "vars::import";
+"Getopt::Long::BEGIN@51" -> "vars::import";
+"Getopt::Long::BEGIN@48" -> "vars::import";
+"Getopt::Long::BEGIN@19" -> "vars::import";
+"Getopt::Long::BEGIN@45" -> "vars::import";
+"Getopt::Long::BEGIN@26" -> "vars::import";
+"Getopt::Long::CallBack::BEGIN@1489" -> "overload::BEGIN@116";
+"main::BEGIN@9" -> "Getopt::Long::BEGIN@48";
+"Getopt::Long::BEGIN@208" -> "constant::CORE:qr";
+"main::BEGIN@9" -> "Getopt::Long::CORE:match";
+"Getopt::Long::FindOption" -> "Getopt::Long::CORE:match";
+"Getopt::Long::ParseOptionSpec" -> "Getopt::Long::CORE:match";
+"Getopt::Long::Configure" -> "Getopt::Long::CORE:match";
+"Getopt::Long::GetOptionsFromArray" -> "Getopt::Long::CORE:match";
+"Getopt::Long::BEGIN@208" -> "constant::BEGIN@3";
+"main::BEGIN@9" -> "Getopt::Long::BEGIN@208";
+"Getopt::Long::BEGIN@208" -> "constant::BEGIN@25";
+"Getopt::Long::FindOption" -> "Getopt::Long::CORE:regcomp";
+"Getopt::Long::GetOptionsFromArray" -> "Getopt::Long::CORE:regcomp";
+"main::BEGIN@9" -> "Getopt::Long::BEGIN@228";
+"main::BEGIN@9" -> "Getopt::Long::BEGIN@223";
+"Getopt::Long::CallBack::BEGIN@1489" -> "overload::BEGIN@146";
+"main::RUNTIME" -> "Getopt::Long::GetOptionsFromArray";
+"main::BEGIN@9" -> "Getopt::Long::BEGIN@229";
+"Getopt::Long::BEGIN@17" -> "strict::import";
+}

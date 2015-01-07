@@ -1,0 +1,126 @@
+digraph {
+graph [overlap=false]
+subgraph cluster_Config {
+	label="Config";
+	"Config::FETCH";
+}
+subgraph cluster_File_Spec_Unix {
+	label="File::Spec::Unix";
+	"File::Spec::Unix::curdir";
+}
+subgraph cluster_Utils {
+	label="Utils";
+	"Utils::findLastValidArchive";
+	"Utils::setVerboseLevel";
+	"Utils::new";
+}
+subgraph cluster_Invoker {
+	label="Invoker";
+	"Invoker::BEGIN@2.13";
+	"Invoker::list";
+	"Invoker::BEGIN@2";
+	"Invoker::BEGIN@4.15";
+	"Invoker::BEGIN@134";
+	"Invoker::BEGIN@3.14";
+	"Invoker::BEGIN@5";
+	"Invoker::BEGIN@1";
+	"Invoker::BEGIN@4";
+	"Invoker::BEGIN@6";
+	"Invoker::BEGIN@3";
+	"Invoker::BEGIN@1.12";
+}
+subgraph cluster_warnings {
+	label="warnings";
+	"warnings::import";
+}
+subgraph cluster_strict {
+	label="strict";
+	"strict::import";
+}
+subgraph cluster_Verbosity {
+	label="Verbosity";
+	"Verbosity::new";
+	"Verbosity::getVerboseLevel";
+	"Verbosity::setVerboseLevel";
+}
+subgraph cluster_List {
+	label="List";
+	"List::CORE:match";
+	"List::__ANON__[List.pm:58]";
+	"List::CORE:ftdir";
+	"List::CORE:print";
+	"List::print_list";
+	"List::setVerboseLevel";
+	"List::BEGIN@40";
+	"List::CORE:ftlink";
+	"List::list";
+	"List::CORE:chdir";
+	"List::new";
+}
+subgraph cluster_File_Find {
+	label="File::Find";
+	"File::Find::BEGIN@3";
+	"File::Find::BEGIN@2";
+	"File::Find::BEGIN@4";
+	"File::Find::BEGIN@5";
+	"File::Find::BEGIN@349";
+	"File::Find::find";
+	"File::Find::CORE:qr";
+	"File::Find::_find_dir";
+}
+subgraph cluster_Message {
+	label="Message";
+	"Message::new";
+}
+subgraph cluster_Exporter {
+	label="Exporter";
+	"Exporter::import";
+}
+subgraph cluster_Cwd {
+	label="Cwd";
+	"Cwd::getcwd";
+}
+"Invoker::BEGIN@5" -> "Invoker::BEGIN@2.13";
+"Invoker::BEGIN@134" -> "Invoker::BEGIN@5";
+"List::list" -> "Verbosity::getVerboseLevel";
+"Invoker::BEGIN@134" -> "Invoker::BEGIN@3";
+"List::print_list" -> "List::CORE:match";
+"List::list" -> "List::CORE:match";
+"List::print_list" -> "List::CORE:print";
+"Invoker::BEGIN@3" -> "Exporter::import";
+"List::BEGIN@40" -> "Exporter::import";
+"List::setVerboseLevel" -> "Verbosity::setVerboseLevel";
+"List::BEGIN@40" -> "File::Find::BEGIN@2";
+"List::print_list" -> "List::CORE:ftdir";
+"Invoker::BEGIN@5" -> "Invoker::BEGIN@4.15";
+"Invoker::BEGIN@134" -> "Invoker::BEGIN@2";
+"Invoker::BEGIN@134" -> "Invoker::BEGIN@1";
+"Invoker::BEGIN@5" -> "Invoker::BEGIN@1.12";
+"List::BEGIN@40" -> "File::Find::BEGIN@5";
+"Invoker::BEGIN@2" -> "warnings::import";
+"Invoker::BEGIN@134" -> "List::BEGIN@40";
+"Invoker::BEGIN@134" -> "Invoker::BEGIN@4";
+"List::new" -> "Verbosity::new";
+"Invoker::BEGIN@134" -> "Invoker::BEGIN@6";
+"Invoker::list" -> "List::list";
+"List::list" -> "File::Find::find";
+"Invoker::list" -> "List::new";
+"List::BEGIN@40" -> "File::Find::CORE:qr";
+"List::new" -> "Message::new";
+"List::BEGIN@40" -> "File::Spec::Unix::curdir";
+"List::list" -> "Cwd::getcwd";
+"List::list" -> "List::print_list";
+"List::BEGIN@40" -> "File::Find::BEGIN@3";
+"List::BEGIN@40" -> "File::Find::BEGIN@4";
+"List::BEGIN@40" -> "File::Find::BEGIN@349";
+"Invoker::BEGIN@5" -> "Invoker::BEGIN@3.14";
+"Invoker::list" -> "List::setVerboseLevel";
+"List::list" -> "Utils::setVerboseLevel";
+"List::new" -> "Utils::new";
+"List::BEGIN@40" -> "Config::FETCH";
+"File::Find::_find_dir" -> "List::__ANON__[List.pm:58]";
+"List::list" -> "Utils::findLastValidArchive";
+"Invoker::BEGIN@1" -> "strict::import";
+"List::print_list" -> "List::CORE:ftlink";
+"List::list" -> "List::CORE:chdir";
+}

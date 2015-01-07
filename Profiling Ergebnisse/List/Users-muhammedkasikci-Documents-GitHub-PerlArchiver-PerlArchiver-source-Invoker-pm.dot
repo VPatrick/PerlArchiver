@@ -1,0 +1,91 @@
+digraph {
+graph [overlap=false]
+subgraph cluster_Instances {
+	label="Instances";
+	"Instances::new";
+	"Instances::BEGIN@24";
+}
+subgraph cluster_Invoker {
+	label="Invoker";
+	"Invoker::setVerboseLevel";
+	"Invoker::list";
+	"Invoker::BEGIN@2";
+	"Invoker::BEGIN@134";
+	"Invoker::BEGIN@5";
+	"Invoker::BEGIN@1";
+	"Invoker::BEGIN@4";
+	"Invoker::BEGIN@6";
+	"Invoker::BEGIN@3";
+	"Invoker::new";
+}
+subgraph cluster_warnings {
+	label="warnings";
+	"warnings::import";
+}
+subgraph cluster_main {
+	label="main";
+	"main::BEGIN@1.3";
+	"main::BEGIN@2.4";
+	"main::BEGIN@1";
+	"main::__ANON__[my_perl_archive.pl:33]";
+	"main::BEGIN@5.8";
+	"main::BEGIN@2.1";
+	"main::BEGIN@3.5";
+	"main::BEGIN@3.2";
+	"main::__ANON__[my_perl_archive.pl:27]";
+	"main::BEGIN@1.9";
+	"main::BEGIN@12";
+	"main::BEGIN@2.10";
+	"main::BEGIN@4";
+	"main::RUNTIME";
+}
+subgraph cluster_strict {
+	label="strict";
+	"strict::import";
+}
+subgraph cluster_Verbosity {
+	label="Verbosity";
+	"Verbosity::new";
+}
+subgraph cluster_List {
+	label="List";
+	"List::setVerboseLevel";
+	"List::BEGIN@40";
+	"List::list";
+	"List::new";
+}
+subgraph cluster_Message {
+	label="Message";
+	"Message::new";
+}
+"main::BEGIN@3.2" -> "main::BEGIN@2.4";
+"main::BEGIN@12" -> "main::BEGIN@3.2";
+"Invoker::BEGIN@134" -> "Invoker::BEGIN@5";
+"Invoker::BEGIN@134" -> "Invoker::BEGIN@3";
+"main::BEGIN@12" -> "main::BEGIN@2.1";
+"main::BEGIN@5.8" -> "main::BEGIN@1.9";
+"Invoker::BEGIN@134" -> "Invoker::BEGIN@2";
+"Invoker::new" -> "Instances::new";
+"Invoker::BEGIN@134" -> "Invoker::BEGIN@1";
+"main::RUNTIME" -> "Invoker::new";
+"main::BEGIN@5.8" -> "Instances::BEGIN@24";
+"main::__ANON__[my_perl_archive.pl:27]" -> "Invoker::setVerboseLevel";
+"main::BEGIN@2.1" -> "warnings::import";
+"Invoker::BEGIN@134" -> "List::BEGIN@40";
+"Invoker::BEGIN@134" -> "Invoker::BEGIN@4";
+"Invoker::new" -> "Verbosity::new";
+"Invoker::BEGIN@134" -> "Invoker::BEGIN@6";
+"Invoker::list" -> "List::list";
+"Invoker::list" -> "List::new";
+"main::BEGIN@12" -> "main::BEGIN@5.8";
+"main::BEGIN@3.2" -> "main::BEGIN@3.5";
+"main::BEGIN@5.8" -> "main::BEGIN@2.10";
+"Invoker::new" -> "Message::new";
+"main::BEGIN@3.2" -> "main::BEGIN@1.3";
+"main::__ANON__[my_perl_archive.pl:33]" -> "Invoker::list";
+"main::BEGIN@12" -> "Invoker::BEGIN@134";
+"Invoker::list" -> "List::setVerboseLevel";
+"main::BEGIN@12" -> "main::BEGIN@1";
+"main::BEGIN@1" -> "strict::import";
+"main::BEGIN@12" -> "main::BEGIN@4";
+}
