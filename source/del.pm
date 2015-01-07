@@ -32,8 +32,16 @@ sub addDestination {
 		exit;
 	}
 
-	#Verzeichnispfad splitten
-	my @DeleteDirectory = split( /\//, $destination );
+		#Verzeichnispfad splitten
+	my @DeleteDirectory;
+	if($destination =~ m/\\/){
+		@DeleteDirectory = split( /\\/, $destination );
+	}
+		
+	elsif($destination =~ m/\//){
+		@DeleteDirectory = split( /\//, $destination );
+	}
+	
 	my $main;
 	foreach (@DeleteDirectory) {
 		if ( $_ =~ m/\d{4}\_\d{2}\_\d{2}\_\d{2}\_\d{2}\_\d{2}/i ) { last; }
