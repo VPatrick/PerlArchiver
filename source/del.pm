@@ -18,7 +18,7 @@ sub new {
 		 mainArchivpath => "",                  #Nur Pfad
 		 archivFullName => "",                  #Archivname ohne Pfad mit Datum
 		 archivName     => "",                  #Archivname ohne Datum
-		 verbosity      => Verbosity->new(1),
+		 verbosity      => Verbosity->new,
 	};
 	bless $self, $class;
 	return $self;
