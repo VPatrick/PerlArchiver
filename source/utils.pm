@@ -1,6 +1,7 @@
 use strict;
 use warnings;
 use Verbosity;
+use Data::Dumper;
 
 # Utils
 # Beschreibung: Hilfsklasse
@@ -39,7 +40,10 @@ sub findLastValidArchive {
 	my $tmpTimestamp = "0000_00_00_00_00_00";
 	while (readdir $dir) {
 		if ($_ ne "." and $_ ne ".." and $_ ne ".DS_Store") {
-			my ($archiveName, $archiveTimestamp) = split(/_/, $_, 2);
+			my @split1 = split(/_\d{4}_\d{2}_\d{2}_\d{2}_\d{2}_\d{2}$/, $_);
+			my $archiveName = $split1[0];
+			my @split2 = split(/$archiveName\_/, $_);
+			my $archiveTimestamp = $split2[1];
 			$self->{verbosity}->verbose("Compare times");
 			if ($archiveName) {
 				if ($self->compare_to($archiveTimestamp) <= $self->compare_to($timestamp)) {

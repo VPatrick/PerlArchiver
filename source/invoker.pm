@@ -107,13 +107,13 @@ sub partial {
 sub del {
 	my ($self, @arguments) = @_;
 	if ($#arguments == 0) {
-		use del;
-		my $delete = del->new;
-		if ($self->{level} > 0) {
-			$delete->setVerboseLevel($self->{level});
-		}
-		$delete->addDestination($arguments[0]);
-		$delete->delete_d();
+		#use del;
+		#my $delete = del->new;
+		#if ($self->{level} > 0) {
+		#	$delete->setVerboseLevel($self->{level});
+		#}
+		#$delete->addDestination($arguments[0]);
+		#$delete->delete_d();
 	} else {
 		print $self->{message}->error("Wrong amount of parameters given: Path to an archive needed.");
 		exit;
