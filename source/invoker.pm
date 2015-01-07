@@ -30,7 +30,6 @@ sub new {
 sub setVerboseLevel {
 	my ($self, $level) = @_;
 	$self->{level} = $level;
-	$self->{verbosity}->setVerboseLevel($level);
 };
 
 # create
@@ -130,7 +129,7 @@ sub list {
 		}
 		$list->list($arguments[0], $arguments[1]);
 	} else {
-		print $self->{message}->error("Wrong amount of paramters given: Path to an archive and a timestamp needed.");
+		print $self->{message}->error("Wrong amount of paramters given: Path to an archive and a timestamp (yyyy_mm_dd_hh_ii_ss) needed.");
 		exit;
 	}
 };

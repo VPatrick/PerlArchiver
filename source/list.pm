@@ -26,7 +26,7 @@ sub new {
 
 # setVerboseLevel
 # Beschreibung: Setzt das Verbose-Level
-# Parameter:	level	Verbose-Level
+# Parameter: level	Verbose-Level
 sub setVerboseLevel {
 	my ($self, $level) = @_;
 	$self->{verbosity}->setVerboseLevel($level);

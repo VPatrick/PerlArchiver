@@ -40,7 +40,7 @@ sub findLastValidArchive {
 	while (readdir $dir) {
 		if ($_ ne "." and $_ ne ".." and $_ ne ".DS_Store") {
 			my ($archiveName, $archiveTimestamp) = split(/_/, $_, 2);
-			$self->{verbosity}->verbose("Compare times:");
+			$self->{verbosity}->verbose("Compare times");
 			if ($archiveName) {
 				if ($self->compare_to($archiveTimestamp) <= $self->compare_to($timestamp)) {
 					$self->{verbosity}->verbose("Compare $archiveTimestamp with $timestamp");

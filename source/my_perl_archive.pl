@@ -13,7 +13,7 @@ use Invoker;
 use Message;
 
 my $message = Message->new;
-my $i = Invoker->new;
+my $invoker = Invoker->new;
 
 foreach (@ARGV) {
 	if ($_ =~ m/-(cr|cd|cl|cp|rc|rd|rl|rs|dc|dr|dl|dp|ds|lc|lr|ld|lp|ls)/i) {
@@ -24,13 +24,13 @@ foreach (@ARGV) {
 
 Getopt::Long::Configure("bundling");
 GetOptions (
-	"verbose|v"  => sub { $i->setVerboseLevel(1) },
-	"create|c|cs" => sub { $i->create(@ARGV) },
-	"restore|r" => sub { $i->restore(@ARGV) },
-	"partial|p" => sub { $i->partial(@ARGV) },
-	"slim|s" => sub { $i->slim(@ARGV) },
-	"delete|d" => sub { $i->del(@ARGV) },
-	"list|l" => sub { $i->list(@ARGV) },
+	"verbose|v"  => sub { $invoker->setVerboseLevel(1) },
+	"create|c|cs" => sub { $invoker->create(@ARGV) },
+	"restore|r" => sub { $invoker->restore(@ARGV) },
+	"partial|p" => sub { $invoker->partial(@ARGV) },
+	"slim|s" => sub { $invoker->slim(@ARGV) },
+	"delete|d" => sub { $invoker->del(@ARGV) },
+	"list|l" => sub { $invoker->list(@ARGV) },
 	"help|h" => sub { help() }
 ) or die("Error in command line arguments\n");
 
