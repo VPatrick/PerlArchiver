@@ -11,6 +11,7 @@ use File::Copy;
 use File::Copy::Recursive;
 use File::Path qw(make_path remove_tree);
 use Verbosity;
+use utils;
 
 
 package Restore;

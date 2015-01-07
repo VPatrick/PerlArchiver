@@ -44,6 +44,7 @@ sub findLastValidArchive {
 			my $archiveName = $split1[0];
 			my @split2 = split(/$archiveName\_/, $_);
 			my $archiveTimestamp = $split2[1];
+            
 			$self->{verbosity}->verbose("Compare times");
 			if ($archiveName) {
 				if ($self->compare_to($archiveTimestamp) <= $self->compare_to($timestamp)) {

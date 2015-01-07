@@ -11,6 +11,7 @@ use File::Copy;
 use File::Copy::Recursive;
 use File::Path qw(make_path remove_tree);
 use Verbosity;
+use Utils;
 
 
 package RestoreWin;
@@ -27,6 +28,7 @@ sub new
         destination   => "",
         usertime => "",
         partial => "",
+        rel_path => "",
         verbosity => Verbosity->new(0),
     };
     bless ($self, $class);
@@ -58,6 +60,8 @@ sub addUserTime{
 sub addPartial{
     my($self,$Partial) = @_;
     $self->{partial} = $Partial;
+    $self->{rel_path} = "0";
+    $self->{rel_path} = "1" if($Partial =~ m/\\/);
     $self->{verbosity}->verbose("New partial added: $self->{partial}");
 }
 sub setVerboseLevel{
@@ -69,9 +73,11 @@ sub restore_r
 {
     my $self = shift;
     $self->{verbosity}->verbose("Start Restore r.\n","OK");
-    $SourceArchiv = Find_source_r
+    $tmp = Utils->new();
+    $SourceArchiv = $tmp->findLastValidArchive
     (
-    $self,
+    $self->{source},
+    $self->{usertime},
     );
     chop($SourceArchiv);
     $self->{verbosity}->verbose("Find Source Directory: $SourceArchiv.\n","OK");
@@ -94,20 +100,27 @@ sub restore_rp
     );
     chop($SourceArchiv);
     my $partial = $self->{partial};
-    $FileorArchivSource = Find_source_rp
-    (
-		$SourceArchiv,
-		$partial,
-    );
-    $self->{verbosity}->verbose("The given Subdirectory or File does not exist!","WARNING");
-    die if (!(-f $FileorArchivSource || -d $FileorArchivSource));
-    my $destination = $self->{destination};
+    
+    if($self->{rel_path} eq "1"){
+        $FileorArchivSource = "$self->{source}\\$self->{rel_path}";
+        $FileorArchivSource = "$self->{destination}\\$self->{rel_path}"
+    }
+    else{
+        $FileorArchivSource = Find_source_rp
+        (
+            $SourceArchiv,
+            $partial,
+        );
+        $self->{verbosity}->verbose("The given Subdirectory or File does not exist!","WARNING");
+        die if (!(-f $FileorArchivSource || -d $FileorArchivSource));
+        my $destination = $self->{destination};
 	
-    $FileorArchivDestination = Find_source_rp
-    (
-		$destination,
-		$partial,
-    );
+        $FileorArchivDestination = Find_source_rp
+        (
+            $destination,
+            $partial,
+        );
+    }
 	
 	if(! (-e $FileorArchivDestination))
 	{
@@ -143,59 +156,6 @@ sub restore_rp
 			$self,
         );
     }
-}
-
-
-##########################################################################################
-#									Find_source_r										 #
-#			Hilfsfunktion um das passenste Verzeichnis zu finden (angegebene Zeit)		 #
-##########################################################################################
-sub Find_source_r
-{
-    my $self = shift;
-    my $FinalSource = "";
-    my $FileTime= "";
-    my $TmpTime="0000_00_00_00_00_00";
-    opendir(my $dir, $self->{source});
-    while(readdir $dir)
-    {
-        if($_ ne "." and $_ ne ".." and $_ ne ".DS_Store")
-        {
-            @tmp = split(/_/,$_);
-            $ArchivName = $tmp[0];
-            $ArchivTime = ("$tmp[1]_$tmp[2]_$tmp[3]_$tmp[4]_$tmp[5]_$tmp[6]");
-            
-            $self->{verbosity}->verbose("Compare times:\n","OK");
-            
-            if($ArchivName eq $self->{sourcename})
-            {
-                if(compare_to($ArchivTime) <= compare_to($self->{usertime}))
-                {
-                    $self->{verbosity}->verbose("Compare $ArchivTime with $self->{usertime}");
-                    if(compare_to($ArchivTime) > compare_to($TmpTime))
-                    {
-                        $tmpTime = $ArchivTime;
-                        $FinalSource = "$self->{source}\\${_}";
-                        $FinalTime = $ArchivTime;
-                    }
-                }
-            }
-        }
-    }
-    closedir($dir);
-    return "$FinalSource\n";
-}
-
-
-##########################################################################################
-#									compare_to											 #
-#				Hilfsfunktion zum vergleichen von zwei Daten							 #
-##########################################################################################
-sub compare_to
-{
-    my $date = shift;
-    my($y,$m,$d,$H,$M,$S) = split(/_/,$date);
-    return "$y$m$d$H$M$S";
 }
 
 
