@@ -55,11 +55,14 @@ sub create {
 sub slim {
 	my ($self, @arguments) = @_;
 	my $create = $self->{instances}->create($self->{level});
-	if ($#arguments == 0) {
-		$create->addDestination($arguments[0]);
-		$create->create_s();
-	} elsif ($#arguments == 1) {
-		$create->create_s();
+	if ($#arguments == 1) {
+		if (-d $arguments[1]) {
+			$create->create_s();
+		} else {
+			$create->addDestination($arguments[0]);
+			$create->addArchiveName($arguments[1]);
+			$create->create_s();
+		}
 	} else {
 		print $self->{message}->error("Wrong amount of paramters given: ");
 		exit;
