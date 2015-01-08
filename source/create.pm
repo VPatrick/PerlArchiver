@@ -4,7 +4,7 @@
 #                                       Create Archiv
 #   Beschreibung:   Dieses Modul erstellt ein neues Archiv oder verschlankt ein bestehendes
 #   Autor:          Ramunno, Michel Angelo
-#   Erstellt:       12.2014
+#   Erstellt:       08.01.2015
 #*****************************************************************************************************
 
 use warnings;
@@ -129,7 +129,7 @@ sub create_s {
     {
         # Falls vorhergehendes Archiv vorhanden
         $previousArchiveAvailable=1;
-        $self->verbose("Compare Archives: $folder[$i-1] <=> $folder[$i]\n","OK");
+        $self->verbose("Compare Archives:\nOlder:\t$folder[$i-1]\nNewer:\t$folder[$i]\n");
         # Vergleich von einem Archiv mit dem vorhergehenden
         $self->compareDir("$folder[$i-1]","$folder[$i]");
 
@@ -159,8 +159,8 @@ sub create_cs {
 #*****************************************************************************************************
 #                                         verbose
 # Beschreibung: Erzeugt eine Ausgabe auf STDOUT, wenn das Flag gesetzt wurde
-# Parameter:    message = Ist die auszugebende Nachricht
-#               state = Gibt den Status der Nachtricht an {OK, WARNING, ERROR}
+# Parameter:    $message = Ist die auszugebende Nachricht
+#               $state = Gibt den Status der Nachtricht an {OK, WARNING, ERROR}
 #*****************************************************************************************************
 sub verbose {
     my ($self,$message,$state)=@_;
@@ -240,7 +240,6 @@ my $createDir = sub{
         # Verzeichnis konnte nicht erstellt werden
         $self->verbose("Can't create directory $dirName!\n","ERROR");
     }
-
 };
 
 #*****************************************************************************************************
@@ -366,7 +365,7 @@ my $updateLink = sub{
         require Win32::Shortcut or die("Can't import Win32::Shortcut: $!");
         my $link = Win32::Shortcut->new();
         $link->Load("$linkPath\\$linkName");
-        $self->verbose("Update link:\nOld:\t$link->{'Path'}\nNew:\t$linkSource");
+        $self->verbose("Update link:\nOld Path:\t$link->{'Path'}\nNew Path:\t$linkSource");
         $link->{'Path'}="$linkSource";
         $result=$link->Save();
         $link->Close();
@@ -399,7 +398,7 @@ my $getLinkPath = sub{
         require Win32::Shortcut or die("Can't import Win32::Shortcut: $!");
         my $link = Win32::Shortcut->new();
         $result=$link->Load("$linkPath\\$linkName");
-        $self->verbose("Get link Path:\n$linkPath\\$linkName");
+        $self->verbose("Get original file path from link:\nLink:\t$linkPath\\$linkName\nPath:\t$link->{'Path'}");
         $path=$link->{'Path'};
         $link->Close();
         if($result)
@@ -441,24 +440,28 @@ sub compareDir {
                 # Überprüfung der Dateien auf Gleichheit
                 if($^O eq "MSWin32")
                 {
-                    # Überprüfe ob neue Datei ein Link ist
+                    # Überprüfung ob neue Datei ein Link ist
                     if($newFile=~/.lnk$/i)
                     {
-                        # Überprüfe alte Datei als Link vorhanden ist
+                        # Überprüfung ob alte Datei als Link vorhanden ist
                         if(-e "$self->{destination}\\$olderDir\\$newFile")
                         {
+                            # Hole Pfad der aktuellen Datei
                             my $path=$getLinkPath->($self,"$newFile","$self->{destination}\\$newerDir");
+                            # Aktualisiere alten Link
                             $updateLink->($self,$newFile,$path,"$self->{destination}\\$olderDir");
                         }
-                        # Überpüfe alte Datei als normale Datei vorhanden ist
+                        # Überpüfung ob alte Datei als normale Datei vorhanden ist
                         elsif(-e "$self->{destination}\\$olderDir\\$newFileNoLink")
                         {
                             # Hole Pfad der aktuellen Datei
                             my $path=$getLinkPath->($self,"$newFile","$self->{destination}\\$newerDir");
-                            # Falls beide Dateien gleich sind
+                            # Überprüfe ob beide Dateien gleich sind
                             my $result=$self->compareFile("$self->{destination}\\$olderDir\\$newFileNoLink",$path);
                             if($result eq "true")
                             {
+                                # Falls beide Dateien gleich sind
+                                # Löschen der alten Datei
                                 $deleteFile->($self,$newFileNoLink,"$self->{destination}/$olderDir");
                                 # Entfernen des Dateinames
                                 $_=$path;
@@ -471,31 +474,35 @@ sub compareDir {
                     }
                     else # Neue Datei ist kein Link
                     {
-                        # Überprüfe ob alte Datei ein normale Datei ist
+                        # Überprüfe ob beide Dateien gleich sind
+                        # Überpüfung ob alte Datei ein normale Datei ist
                         if(-e "$self->{destination}\\$olderDir\\$newFileNoLink")
                         {
                             my $result=$self->compareFile("$self->{destination}\\$olderDir\\$newFileNoLink","$self->{destination}\\$newerDir\\$newFile");
                             if($result eq "true")
                             {
                                 # Falls beide Dateien gleich sind
+                                # Löschen der alten Datei
                                 $deleteFile->($self,$newFile,"$self->{destination}\\$olderDir");
                                 # Erstellen eines Links zur neueren Datei
                                 $createLink->($self,$newFile,"$self->{destination}\\$newerDir","$self->{destination}\\$olderDir");
                             }
                         }
-                        # Überprüfe ob alte Datei ein link ist
+                        # Überpüfung ob alte Datei ein link ist
                         elsif("$self->{destination}\\$olderDir\\$newFile"=~/.lnk$/i)
                         {
                             # Hole Pfad der aktuellen Datei
                             my $path=$getLinkPath->($self,"$newFile","$self->{destination}\\$olderDir");
-                            # Falls beide Dateien gleich sind
+                            # Überpüfung ob beide Dateien gleich sind
                             my $result=$self->compareFile($path,"$self->{destination}\\$newerDir\\$newFileNoLink",);
                             if($result eq "true")
                             {
+                                # Falls beide Dateien gleich sind
                                 # Entfernen des Dateinames
                                 $_=$path;
                                 s/\\$newFileNoLink//;
                                 $path=$_;
+                                # Aktualisiere alten Link
                                 $updateLink->($self,$newFile,$path,"$self->{destination}\\$olderDir");
                             }
                         }
@@ -503,20 +510,23 @@ sub compareDir {
                 }
                 else
                 {
+                    # Falls Unix basiertes System
+                    # Überpüfung ob beide Dateien gleich sind
                     my $result=$self->compareFile("$self->{destination}/$olderDir/$newFileNoLink","$self->{destination}/$newerDir/$newFile");
                     if($result eq "true")
                     {
                         # Falls beide Dateien gleich sind
+                        # Löschen der alten Datei
                         $deleteFile->($self,$newFile,"$self->{destination}/$olderDir");
                         # Erstellen eines Links zur neueren Datei
                         $createLink->($self,$newFile,"$self->{destination}/$newerDir","$self->{destination}/$olderDir");
                     }
                 }
             }
-            # Überprüfen ob es sich um ein Verzeichnis handelt
+            # Überpüfung ob es sich um ein Verzeichnis handelt
             elsif (-d "$self->{destination}/$olderDir/$newFile")
             {
-                $self->verbose("Compare Diretory:\n$self->{destination}/$olderDir/$newFile\n$self->{destination}/$newerDir/$newFile\n");
+                $self->verbose("Compare Diretory:\nOlder Directory:\t$self->{destination}/$olderDir/$newFile\nNewer Directory:\t$self->{destination}/$newerDir/$newFile\n");
                 # Rekursiver Aufruf der Methode zur Untesuchung des Unterverzeichnisses
                 $self->compareDir("$olderDir/$newFile","$newerDir/$newFile");
             }
@@ -537,7 +547,7 @@ sub compareDir {
 sub compareFile {
     my ($self,$olderFile,$newerFile)=@_;
     # Ausgabe auf Konsole
-    $self->verbose("Compare Files:\nOld file:\t$olderFile\nNew file:\t$newerFile");
+    $self->verbose("Compare Files:\nOlder file:\t$olderFile\nNewer file:\t$newerFile");
     # Importieren des Core Module Digest
     use Digest;
     # Erzeugen eines MD5 Objekts
@@ -578,11 +588,6 @@ sub compareFile {
         $self->verbose("Files are diffrent!\n","OK");
         return "false";
     }
-}
-
-sub setVerboseLevel {
-	my ($self, $level) = @_;
-	$self->{flag} = $level;
 }
 
 #*****************************************************************************************************
