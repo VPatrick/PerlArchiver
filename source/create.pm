@@ -439,41 +439,78 @@ sub compareDir {
                 s/.lnk//;
                 my $newFileNoLink=$_;
                 # Überprüfung der Dateien auf Gleichheit
-                if($^O eq "MSWin32" and $newFile=~/.lnk$/i)
+                if($^O eq "MSWin32")
                 {
-                    # Überprüfe ob alte Datei link ist
-                    if(-e "$self->{destination}\\$olderDir\\$newFile")
+                    # Überprüfe ob neue Datei ein Link ist
+                    if($newFile=~/.lnk$/i)
                     {
-                        my $path=$getLinkPath->($self,"$newFile","$self->{destination}\\$newerDir");
-                        $updateLink->($self,$newFile,$path,"$self->{destination}\\$olderDir");
-                        next;
+                        # Überprüfe alte Datei als Link vorhanden ist
+                        if(-e "$self->{destination}\\$olderDir\\$newFile")
+                        {
+                            my $path=$getLinkPath->($self,"$newFile","$self->{destination}\\$newerDir");
+                            $updateLink->($self,$newFile,$path,"$self->{destination}\\$olderDir");
+                        }
+                        # Überpüfe alte Datei als normale Datei vorhanden ist
+                        elsif(-e "$self->{destination}\\$olderDir\\$newFileNoLink")
+                        {
+                            # Hole Pfad der aktuellen Datei
+                            my $path=$getLinkPath->($self,"$newFile","$self->{destination}\\$newerDir");
+                            # Falls beide Dateien gleich sind
+                            my $result=$self->compareFile("$self->{destination}\\$olderDir\\$newFileNoLink",$path);
+                            if($result eq "true")
+                            {
+                                $deleteFile->($self,$newFileNoLink,"$self->{destination}/$olderDir");
+                                # Entfernen des Dateinames
+                                $_=$path;
+                                s/\\$newFileNoLink//;
+                                $path=$_;
+                                # Erstellen eines Links zur neueren Datei
+                                $createLink->($self,$newFileNoLink,$path,"$self->{destination}/$olderDir");
+                            }
+                        }
                     }
-                    # Überpüfe ob alte Datei als normale Datei vorhanden ist
-                    if(-e "$self->{destination}\\$olderDir\\$newFileNoLink")
+                    else # Neue Datei ist kein Link
                     {
-                        # Hole Pfad der aktuellen Datei
-                        $_=$getLinkPath->($self,"$newFile","$self->{destination}\\$newerDir");
-                        # Entfernen des Dateinames
-                        s/\\$newFileNoLink//;
-                        my $path=$_;
-                        # Falls beide Dateien gleich sind
-                        $deleteFile->($self,$newFileNoLink,"$self->{destination}/$olderDir");
-                        # Erstellen eines Links zur neueren Datei
-                        $createLink->($self,$newFileNoLink,$path,"$self->{destination}/$olderDir");
-                        next;
-                    }
-                    else
-                    {
-                        next;
+                        # Überprüfe ob alte Datei ein normale Datei ist
+                        if(-e "$self->{destination}\\$olderDir\\$newFileNoLink")
+                        {
+                            my $result=$self->compareFile("$self->{destination}\\$olderDir\\$newFileNoLink","$self->{destination}\\$newerDir\\$newFile");
+                            if($result eq "true")
+                            {
+                                # Falls beide Dateien gleich sind
+                                $deleteFile->($self,$newFile,"$self->{destination}\\$olderDir");
+                                # Erstellen eines Links zur neueren Datei
+                                $createLink->($self,$newFile,"$self->{destination}\\$newerDir","$self->{destination}\\$olderDir");
+                            }
+                        }
+                        # Überprüfe ob alte Datei ein link ist
+                        elsif("$self->{destination}\\$olderDir\\$newFile"=~/.lnk$/i)
+                        {
+                            # Hole Pfad der aktuellen Datei
+                            my $path=$getLinkPath->($self,"$newFile","$self->{destination}\\$olderDir");
+                            # Falls beide Dateien gleich sind
+                            my $result=$self->compareFile($path,"$self->{destination}\\$newerDir\\$newFileNoLink",);
+                            if($result eq "true")
+                            {
+                                # Entfernen des Dateinames
+                                $_=$path;
+                                s/\\$newFileNoLink//;
+                                $path=$_;
+                                $updateLink->($self,$newFile,$path,"$self->{destination}\\$olderDir");
+                            }
+                        }
                     }
                 }
-                my $result=$self->compareFile("$self->{destination}/$olderDir/$newFileNoLink","$self->{destination}/$newerDir/$newFile");
-                if($result eq "true")
+                else
                 {
-                    # Falls beide Dateien gleich sind
-                    $deleteFile->($self,$newFile,"$self->{destination}/$olderDir");
-                    # Erstellen eines Links zur neueren Datei
-                    $createLink->($self,$newFile,"$self->{destination}/$newerDir","$self->{destination}/$olderDir");
+                    my $result=$self->compareFile("$self->{destination}/$olderDir/$newFileNoLink","$self->{destination}/$newerDir/$newFile");
+                    if($result eq "true")
+                    {
+                        # Falls beide Dateien gleich sind
+                        $deleteFile->($self,$newFile,"$self->{destination}/$olderDir");
+                        # Erstellen eines Links zur neueren Datei
+                        $createLink->($self,$newFile,"$self->{destination}/$newerDir","$self->{destination}/$olderDir");
+                    }
                 }
             }
             # Überprüfen ob es sich um ein Verzeichnis handelt
