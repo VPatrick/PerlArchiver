@@ -70,10 +70,12 @@ sub restore_r
 {
     my $self = shift;
     $self->{verbosity}->verbose("Start Restore r.\n","OK");
-    $SourceArchiv = Find_source_r
-    (
-    $self,
-    );
+	$tmp = Utils->new();
+	$SourceArchiv = $tmp->findLastValidArchive
+	(
+	$self->{source},
+	$self->{usertime},
+	);
     chop($SourceArchiv);
     $self->{verbosity}->verbose("Find Source Directory: $SourceArchiv.\n","OK");
     $self->{verbosity}->verbose("The given path is not a directory!\n","WARNING");
@@ -89,10 +91,12 @@ sub restore_rp
 {
     my $self = shift;
     $self->{verbosity}->verbose("Start Restore rp.","OK");
-    $SourceArchiv = Find_source_r
-    (
-    $self,
-    );
+	$tmp = Utils->new();
+	$SourceArchiv = $tmp->findLastValidArchive
+	(
+	$self->{source},
+	$self->{usertime},
+	);
     chop($SourceArchiv);
     my $partial = $self->{partial};
     $FileorArchivSource = Find_source_rp
@@ -143,47 +147,6 @@ sub restore_rp
         $self,
         );
     }
-}
-
-
-##########################################################################################
-#									Find_source_r										 #
-#			Hilfsfunktion um das passenste Verzeichnis zu finden (angegebene Zeit)		 #
-##########################################################################################
-sub Find_source_r
-{
-    my $self = shift;
-    my $FinalSource = "";
-    my $FileTime= "";
-    my $TmpTime="0000_00_00_00_00_00";
-    opendir(my $dir, $self->{source});
-    while(readdir $dir)
-    {
-        if($_ ne "." and $_ ne ".." and $_ ne ".DS_Store")
-        {
-            @tmp = split(/_/,$_);
-            $ArchivName = $tmp[0];
-            $ArchivTime = ("$tmp[1]_$tmp[2]_$tmp[3]_$tmp[4]_$tmp[5]_$tmp[6]");
-            
-            $self->{verbosity}->verbose("Compare times:\n","OK");
-            
-            if($ArchivName eq $self->{sourcename})
-            {
-                if(compare_to($ArchivTime) <= compare_to($self->{usertime}))
-                {
-                    $self->{verbosity}->verbose("Compare $ArchivTime with $self->{usertime}");
-                    if(compare_to($ArchivTime) > compare_to($TmpTime))
-                    {
-                        $tmpTime = $ArchivTime;
-                        $FinalSource = "$self->{source}/${_}";
-                        $FinalTime = $ArchivTime;
-                    }
-                }
-            }
-        }
-    }
-    closedir($dir);
-    return "$FinalSource\n";
 }
 
 
