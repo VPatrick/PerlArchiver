@@ -29,7 +29,9 @@ sub new {
 # Parameter:	level	Verbose-Level
 sub setVerboseLevel {
 	my ($self, $level) = @_;
-	$self->{level} = $level;
+	if ($level =~ m/[0-9]/) {
+		$self->{level} = $level;
+	}
 };
 
 # create
