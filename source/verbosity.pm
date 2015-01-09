@@ -42,12 +42,14 @@ sub getVerboseLevel {
 #				[state]		Status (OK, WARNING, ERROR)
 sub verbose {
 	my ($self, $message, $state) = @_;
-	if ($self->{level} > 0) {
+	if ($self->{level} == 1) {
 		if ($state) {
 			print $self->{message}->colourise($state), "$message\n";
 		} else {
 			print "$message\n";
 		}
+	} elsif ($self->{level} == 2) {
+		print "[DEBUG]\t$message\n";
 	}
 };
 
