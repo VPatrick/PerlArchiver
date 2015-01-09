@@ -1,0 +1,685 @@
+digraph {
+graph [overlap=false]
+subgraph cluster_Cwd {
+	label="Cwd";
+	"Cwd::BEGIN@843";
+	"Cwd::CORE:match";
+	"Cwd::BEGIN@172";
+	"Cwd::BEGIN@170";
+	"Cwd::_win32_cwd";
+	"Cwd::BEGIN@209";
+	"Cwd::BEGIN@171";
+	"Cwd::CORE:subst";
+	"Cwd::CORE:fteexec";
+	"Cwd::BEGIN@783";
+}
+subgraph cluster_mro {
+	label="mro";
+	"mro::method_changed_in";
+}
+subgraph cluster_overload {
+	label="overload";
+	"overload::BEGIN@83";
+	"overload::BEGIN@114";
+	"overload::BEGIN@144";
+}
+subgraph cluster_constant {
+	label="constant";
+	"constant::BEGIN@3";
+	"constant::CORE:qr";
+	"constant::BEGIN@64";
+	"constant::BEGIN@4";
+	"constant::BEGIN@24";
+	"constant::import";
+	"constant::CORE:match";
+	"constant::BEGIN@39";
+	"constant::BEGIN@126";
+	"constant::BEGIN@2";
+	"constant::CORE:regcomp";
+	"constant::BEGIN@6";
+}
+subgraph cluster_Internals {
+	label="Internals";
+	"Internals::SvREADONLY";
+}
+subgraph cluster_warnings {
+	label="warnings";
+	"warnings::_mkMask";
+	"warnings::unimport";
+	"warnings::register_categories";
+	"warnings::CORE:match";
+	"warnings::CORE:regcomp";
+	"warnings::import";
+}
+subgraph cluster_ActivePerl_Config {
+	label="ActivePerl::Config";
+	"ActivePerl::Config::BEGIN@43";
+	"ActivePerl::Config::BEGIN@3";
+	"ActivePerl::Config::override";
+}
+subgraph cluster_File_Spec {
+	label="File::Spec";
+	"File::Spec::BEGIN@3";
+	"File::Spec::BEGIN@4";
+}
+subgraph cluster_File_Spec_Unix {
+	label="File::Spec::Unix";
+	"File::Spec::Unix::curdir";
+	"File::Spec::Unix::BEGIN@242";
+	"File::Spec::Unix::updir";
+	"File::Spec::Unix::BEGIN@145";
+	"File::Spec::Unix::BEGIN@4";
+	"File::Spec::Unix::BEGIN@127";
+	"File::Spec::Unix::BEGIN@179";
+	"File::Spec::Unix::BEGIN@220";
+	"File::Spec::Unix::BEGIN@136";
+	"File::Spec::Unix::BEGIN@3";
+}
+subgraph cluster_Scalar_Util {
+	label="Scalar::Util";
+	"Scalar::Util::BEGIN@9";
+}
+subgraph cluster_XSLoader {
+	label="XSLoader";
+	"XSLoader::load";
+}
+subgraph cluster_Verbosity {
+	label="Verbosity";
+	"Verbosity::verbose";
+	"Verbosity::new";
+}
+subgraph cluster_strict {
+	label="strict";
+	"strict::unimport";
+	"strict::CORE:regcomp";
+	"strict::import";
+	"strict::CORE:match";
+	"strict::bits";
+}
+subgraph cluster_Win32_Shortcut {
+	label="Win32::Shortcut";
+	"Win32::Shortcut::bootstrap";
+}
+subgraph cluster_overloading {
+	label="overloading";
+	"overloading::BEGIN@2";
+	"overloading::unimport";
+}
+subgraph cluster_Carp {
+	label="Carp";
+	"Carp::BEGIN@49";
+	"Carp::_fetch_sub";
+	"Carp::BEGIN@5";
+	"Carp::BEGIN@3";
+	"Carp::BEGIN@171";
+	"Carp::BEGIN@131";
+	"Carp::BEGIN@568";
+	"Carp::BEGIN@4";
+	"Carp::BEGIN@73";
+	"Carp::BEGIN@575";
+	"Carp::BEGIN@61";
+	"Carp::BEGIN@6";
+	"Carp::BEGIN@555";
+}
+subgraph cluster_List_Util {
+	label="List::Util";
+	"List::Util::BEGIN@30";
+	"List::Util::BEGIN@9";
+}
+subgraph cluster_version {
+	label="version";
+	"version::(bool";
+	"version::(cmp";
+}
+subgraph cluster_File_Path {
+	label="File::Path";
+	"File::Path::_is_subdir";
+	"File::Path::_slash_lc";
+	"File::Path::CORE:readdir";
+	"File::Path::BEGIN@8";
+	"File::Path::CORE:open_dir";
+	"File::Path::BEGIN@10";
+	"File::Path::CORE:unlink";
+	"File::Path::CORE:lstat";
+	"File::Path::CORE:chdir";
+	"File::Path::CORE:stat";
+	"File::Path::BEGIN@6";
+	"File::Path::BEGIN@18";
+	"File::Path::CORE:subst";
+	"File::Path::CORE:closedir";
+	"File::Path::_rmtree";
+	"File::Path::BEGIN@7";
+	"File::Path::CORE:ftdir";
+	"File::Path::BEGIN@329";
+	"File::Path::rmtree";
+	"File::Path::BEGIN@19";
+	"File::Path::BEGIN@3";
+	"File::Path::CORE:chmod";
+	"File::Path::CORE:match";
+	"File::Path::CORE:rmdir";
+	"File::Path::BEGIN@4";
+}
+subgraph cluster_Win32 {
+	label="Win32";
+	"Win32::BEGIN@4";
+	"Win32::BEGIN@5";
+	"Win32::bootstrap";
+	"Win32::GetCwd";
+}
+subgraph cluster_Exporter_Heavy {
+	label="Exporter::Heavy";
+	"Exporter::Heavy::heavy_export_ok_tags";
+	"Exporter::Heavy::BEGIN@202";
+	"Exporter::Heavy::_push_tags";
+	"Exporter::Heavy::BEGIN@3";
+	"Exporter::Heavy::BEGIN@4";
+}
+subgraph cluster_vars {
+	label="vars";
+	"vars::BEGIN@8";
+	"vars::CORE:match";
+	"vars::BEGIN@7";
+	"vars::BEGIN@3";
+	"vars::import";
+}
+subgraph cluster_File_Basename {
+	label="File::Basename";
+	"File::Basename::CORE:match";
+	"File::Basename::BEGIN@50";
+	"File::Basename::fileparse_set_fstype";
+	"File::Basename::BEGIN@371";
+	"File::Basename::BEGIN@51";
+	"File::Basename::BEGIN@42";
+	"File::Basename::CORE:regcomp";
+	"File::Basename::BEGIN@52";
+}
+subgraph cluster_File_Spec_Win32 {
+	label="File::Spec::Win32";
+	"File::Spec::Win32::CORE:match";
+	"File::Spec::Win32::_canon_cat";
+	"File::Spec::Win32::splitpath";
+	"File::Spec::Win32::catfile";
+	"File::Spec::Win32::CORE:subst";
+	"File::Spec::Win32::BEGIN@3";
+	"File::Spec::Win32::splitdir";
+	"File::Spec::Win32::BEGIN@5";
+	"File::Spec::Win32::CORE:regcomp";
+}
+subgraph cluster_Message {
+	label="Message";
+	"Message::new";
+	"Message::BEGIN@57";
+	"Message::BEGIN@40";
+	"Message::BEGIN@74";
+}
+subgraph cluster_UNIVERSAL {
+	label="UNIVERSAL";
+	"UNIVERSAL::VERSION";
+	"UNIVERSAL::isa";
+}
+subgraph cluster_warnings_register {
+	label="warnings::register";
+	"warnings::register::import";
+}
+subgraph cluster_lib {
+	label="lib";
+	"lib::import";
+	"lib::CORE:match";
+	"lib::BEGIN@8";
+	"lib::BEGIN@6";
+	"lib::CORE:ftdir";
+	"lib::CORE:ftis";
+	"lib::_get_dirs";
+}
+subgraph cluster_File_Find {
+	label="File::Find";
+	"File::Find::BEGIN@4";
+	"File::Find::BEGIN@2";
+	"File::Find::CORE:qr";
+	"File::Find::BEGIN@357";
+	"File::Find::BEGIN@3";
+	"File::Find::BEGIN@5";
+}
+subgraph cluster_Term_ANSIColor {
+	label="Term::ANSIColor";
+	"Term::ANSIColor::CORE:sort";
+	"Term::ANSIColor::BEGIN@26";
+	"Term::ANSIColor::BEGIN@27";
+	"Term::ANSIColor::BEGIN@42";
+	"Term::ANSIColor::BEGIN@23";
+	"Term::ANSIColor::BEGIN@24";
+	"Term::ANSIColor::BEGIN@22";
+}
+subgraph cluster_main {
+	label="main";
+	"main::BEGIN@1";
+	"main::BEGIN@0";
+	"main::NULL";
+	"main::CORE:ftfile";
+	"main::BEGIN@2";
+	"main::RUNTIME";
+}
+subgraph cluster_Config {
+	label="Config";
+	"Config::BEGIN@7";
+	"Config::CORE:substcont";
+	"Config::BEGIN@6";
+	"Config::BEGIN@11";
+	"Config::BEGIN@10";
+	"Config::CORE:regcomp";
+	"Config::fetch_string";
+	"Config::CORE:pack";
+	"Config::BEGIN@5";
+	"Config::FETCH";
+	"Config::TIEHASH";
+	"Config::import";
+	"Config::AUTOLOAD";
+	"Config::CORE:unpack";
+	"Config::launcher";
+	"Config::_fetch_string";
+	"Config::CORE:subst";
+	"Config::CORE:match";
+	"Config::BEGIN@27";
+	"Config::BEGIN@9";
+	"Config::BEGIN@47";
+}
+subgraph cluster_File_Copy {
+	label="File::Copy";
+	"File::Copy::BEGIN@12";
+	"File::Copy::BEGIN@10";
+	"File::Copy::BEGIN@14";
+	"File::Copy::BEGIN@12.1";
+	"File::Copy::BEGIN@13";
+	"File::Copy::BEGIN@11";
+}
+subgraph cluster_Exporter {
+	label="Exporter";
+	"Exporter::as_heavy";
+	"Exporter::CORE:subst";
+	"Exporter::export_ok_tags";
+	"Exporter::CORE:match";
+	"Exporter::import";
+}
+subgraph cluster_del {
+	label="del";
+	"del::del";
+	"del::CORE:ftis";
+	"del::new";
+	"del::BEGIN@4";
+	"del::BEGIN@2.2";
+	"del::findPreDir";
+	"del::addDestination";
+	"del::BEGIN@3.3";
+	"del::CORE:open_dir";
+	"del::BEGIN@11";
+	"del::BEGIN@5";
+	"del::BEGIN@1.4";
+	"del::BEGIN@10";
+	"del::BEGIN@9";
+	"del::CORE:match";
+	"del::delete_d";
+	"del::BEGIN@2.5";
+	"del::BEGIN@3";
+	"del::BEGIN@6";
+	"del::CORE:print";
+	"del::CORE:regcomp";
+	"del::CORE:closedir";
+	"del::CORE:readline";
+	"del::CORE:readdir";
+	"del::check";
+	"del::BEGIN@8";
+	"del::BEGIN@7";
+	"del::BEGIN@2";
+	"del::BEGIN@1";
+}
+subgraph cluster_DynaLoader {
+	label="DynaLoader";
+	"DynaLoader::BEGIN@23";
+	"DynaLoader::dl_load_flags";
+	"DynaLoader::CORE:subst";
+	"DynaLoader::dl_install_xsub";
+	"DynaLoader::CORE:ftdir";
+	"DynaLoader::CORE:ftsize";
+	"DynaLoader::BEGIN@18";
+	"DynaLoader::dl_find_symbol";
+	"DynaLoader::dl_undef_symbols";
+	"DynaLoader::dl_load_file";
+	"DynaLoader::CORE:ftfile";
+	"DynaLoader::bootstrap";
+}
+"Message::BEGIN@40" -> "Term::ANSIColor::BEGIN@23";
+"del::BEGIN@8" -> "List::Util::BEGIN@9";
+"Config::AUTOLOAD" -> "Config::CORE:subst";
+"Exporter::as_heavy" -> "Exporter::Heavy::BEGIN@202";
+"del::findPreDir" -> "del::CORE:readdir";
+"del::check" -> "del::CORE:readline";
+"del::BEGIN@5" -> "Cwd::BEGIN@172";
+"del::BEGIN@8" -> "File::Spec::BEGIN@4";
+"overload::BEGIN@83" -> "overloading::BEGIN@2";
+"DynaLoader::bootstrap" -> "DynaLoader::dl_install_xsub";
+"File::Path::_is_subdir" -> "File::Spec::Win32::splitdir";
+"del::BEGIN@8" -> "File::Spec::Unix::curdir";
+"File::Path::_rmtree" -> "File::Spec::Unix::curdir";
+"DynaLoader::bootstrap" -> "Win32::Shortcut::bootstrap";
+"del::BEGIN@8" -> "File::Spec::BEGIN@3";
+"Config::AUTOLOAD" -> "Config::CORE:unpack";
+"main::BEGIN@2" -> "del::BEGIN@5";
+"lib::import" -> "lib::CORE:ftis";
+"main::BEGIN@0" -> "main::CORE:ftfile";
+"lib::BEGIN@6" -> "Config::TIEHASH";
+"del::BEGIN@10" -> "File::Path::BEGIN@18";
+"constant::import" -> "constant::CORE:match";
+"del::BEGIN@3.3" -> "Message::BEGIN@40";
+"del::BEGIN@4" -> "File::Basename::BEGIN@52";
+"DynaLoader::bootstrap" -> "DynaLoader::CORE:subst";
+"File::Path::rmtree" -> "UNIVERSAL::isa";
+"File::Path::_rmtree" -> "File::Path::CORE:closedir";
+"constant::import" -> "mro::method_changed_in";
+"Exporter::as_heavy" -> "Exporter::Heavy::BEGIN@4";
+"del::BEGIN@8" -> "File::Find::CORE:qr";
+"del::BEGIN@9" -> "File::Copy::BEGIN@12.1";
+"Config::AUTOLOAD" -> "Config::BEGIN@27";
+"Exporter::as_heavy" -> "Exporter::Heavy::BEGIN@3";
+"del::BEGIN@11" -> "del::BEGIN@1";
+"del::BEGIN@10" -> "File::Path::BEGIN@10";
+"Cwd::_win32_cwd" -> "Win32::GetCwd";
+"Win32::GetCwd" -> "Win32::GetCwd";
+"Message::BEGIN@40" -> "Term::ANSIColor::CORE:sort";
+"del::BEGIN@10" -> "File::Path::BEGIN@6";
+"File::Path::_rmtree" -> "File::Path::CORE:chdir";
+"Cwd::BEGIN@783" -> "DynaLoader::bootstrap";
+"del::BEGIN@7" -> "DynaLoader::bootstrap";
+"del::BEGIN@6" -> "lib::BEGIN@6";
+"del::BEGIN@2" -> "strict::CORE:regcomp";
+"del::check" -> "del::CORE:print";
+"del::BEGIN@5" -> "Cwd::BEGIN@209";
+"File::Path::_rmtree" -> "File::Spec::Unix::updir";
+"del::BEGIN@9" -> "overload::BEGIN@114";
+"del::BEGIN@5" -> "Cwd::CORE:fteexec";
+"lib::BEGIN@6" -> "Config::BEGIN@10";
+"DynaLoader::bootstrap" -> "DynaLoader::dl_load_flags";
+"File::Path::rmtree" -> "File::Path::CORE:subst";
+"del::delete_d" -> "del::findPreDir";
+"Config::AUTOLOAD" -> "Config::BEGIN@6";
+"Config::AUTOLOAD" -> "Config::BEGIN@7";
+"constant::import" -> "constant::CORE:regcomp";
+"File::Spec::Unix::BEGIN@127" -> "constant::BEGIN@39";
+"del::BEGIN@9" -> "File::Copy::BEGIN@12";
+"Cwd::BEGIN@172" -> "vars::BEGIN@3";
+"lib::import" -> "lib::CORE:ftdir";
+"lib::BEGIN@8" -> "strict::import";
+"vars::BEGIN@8" -> "strict::import";
+"constant::BEGIN@3" -> "strict::import";
+"Term::ANSIColor::BEGIN@23" -> "strict::import";
+"del::BEGIN@2" -> "strict::import";
+"File::Basename::BEGIN@50" -> "strict::import";
+"File::Spec::Win32::BEGIN@3" -> "strict::import";
+"List::Util::BEGIN@9" -> "strict::import";
+"del::BEGIN@1" -> "strict::import";
+"Exporter::Heavy::BEGIN@3" -> "strict::import";
+"Cwd::BEGIN@170" -> "strict::import";
+"Config::BEGIN@9" -> "strict::import";
+"File::Find::BEGIN@3" -> "strict::import";
+"ActivePerl::Config::BEGIN@3" -> "strict::import";
+"Scalar::Util::BEGIN@9" -> "strict::import";
+"Config::BEGIN@5" -> "strict::import";
+"Carp::BEGIN@4" -> "strict::import";
+"File::Spec::Unix::BEGIN@3" -> "strict::import";
+"File::Spec::BEGIN@3" -> "strict::import";
+"File::Copy::BEGIN@11" -> "strict::import";
+"del::BEGIN@1.4" -> "strict::import";
+"File::Find::BEGIN@357" -> "strict::import";
+"Win32::BEGIN@4" -> "strict::import";
+"File::Path::BEGIN@4" -> "strict::import";
+"del::BEGIN@4" -> "File::Basename::fileparse_set_fstype";
+"del::BEGIN@8" -> "File::Spec::Unix::BEGIN@242";
+"Term::ANSIColor::BEGIN@26" -> "Carp::BEGIN@171";
+"File::Path::_rmtree" -> "File::Path::CORE:readdir";
+"lib::BEGIN@6" -> "Config::BEGIN@9";
+"lib::import" -> "lib::_get_dirs";
+"DynaLoader::bootstrap" -> "DynaLoader::CORE:ftfile";
+"del::BEGIN@8" -> "File::Find::BEGIN@3";
+"File::Path::_is_subdir" -> "File::Spec::Win32::splitpath";
+"Config::fetch_string" -> "ActivePerl::Config::override";
+"del::BEGIN@5" -> "Cwd::CORE:match";
+"File::Spec::Win32::_canon_cat" -> "File::Spec::Win32::CORE:match";
+"File::Spec::Win32::catfile" -> "File::Spec::Win32::CORE:match";
+"File::Spec::Win32::splitdir" -> "File::Spec::Win32::CORE:match";
+"File::Spec::Win32::splitpath" -> "File::Spec::Win32::CORE:match";
+"del::findPreDir" -> "Verbosity::verbose";
+"del::delete_d" -> "Verbosity::verbose";
+"del::addDestination" -> "Verbosity::verbose";
+"del::check" -> "Verbosity::verbose";
+"main::BEGIN@2" -> "del::BEGIN@6";
+"main::NULL" -> "main::BEGIN@1";
+"main::BEGIN@2" -> "del::BEGIN@3";
+"del::BEGIN@10" -> "File::Path::BEGIN@329";
+"del::BEGIN@3.3" -> "Message::BEGIN@57";
+"Term::ANSIColor::BEGIN@26" -> "Carp::BEGIN@3";
+"lib::BEGIN@6" -> "version::(bool";
+"main::BEGIN@2" -> "del::BEGIN@11";
+"del::BEGIN@8" -> "File::Find::BEGIN@357";
+"Exporter::import" -> "Exporter::CORE:match";
+"File::Basename::fileparse_set_fstype" -> "File::Basename::CORE:regcomp";
+"del::BEGIN@9" -> "overload::BEGIN@83";
+"Carp::BEGIN@5" -> "warnings::import";
+"Term::ANSIColor::BEGIN@24" -> "warnings::import";
+"File::Find::BEGIN@4" -> "warnings::import";
+"del::BEGIN@2.2" -> "warnings::import";
+"Config::BEGIN@10" -> "warnings::import";
+"File::Basename::BEGIN@52" -> "warnings::import";
+"Config::BEGIN@6" -> "warnings::import";
+"overloading::BEGIN@2" -> "warnings::import";
+"del::BEGIN@3" -> "warnings::import";
+"del::BEGIN@2.5" -> "warnings::import";
+"File::Copy::BEGIN@12" -> "warnings::import";
+"main::BEGIN@1" -> "warnings::import";
+"del::BEGIN@7" -> "DynaLoader::BEGIN@23";
+"strict::unimport" -> "strict::bits";
+"strict::import" -> "strict::bits";
+"del::BEGIN@8" -> "File::Spec::Unix::BEGIN@3";
+"constant::import" -> "Internals::SvREADONLY";
+"constant::BEGIN@24" -> "Internals::SvREADONLY";
+"File::Spec::Unix::BEGIN@127" -> "constant::BEGIN@2";
+"Term::ANSIColor::BEGIN@26" -> "Carp::BEGIN@568";
+"del::addDestination" -> "del::CORE:ftis";
+"Term::ANSIColor::BEGIN@26" -> "Carp::BEGIN@575";
+"lib::BEGIN@6" -> "Config::BEGIN@11";
+"del::BEGIN@10" -> "File::Path::BEGIN@7";
+"Exporter::export_ok_tags" -> "Exporter::as_heavy";
+"del::BEGIN@10" -> "File::Path::BEGIN@8";
+"del::BEGIN@5" -> "Cwd::BEGIN@170";
+"Exporter::import" -> "Exporter::CORE:subst";
+"Exporter::as_heavy" -> "Exporter::CORE:subst";
+"del::BEGIN@7" -> "DynaLoader::BEGIN@18";
+"Term::ANSIColor::BEGIN@26" -> "Carp::BEGIN@49";
+"main::NULL" -> "main::BEGIN@0";
+"del::findPreDir" -> "del::CORE:regcomp";
+"Config::FETCH" -> "Config::launcher";
+"del::BEGIN@8" -> "File::Spec::Unix::BEGIN@179";
+"del::new" -> "Verbosity::new";
+"Config::BEGIN@11" -> "vars::import";
+"Config::BEGIN@7" -> "vars::import";
+"constant::BEGIN@6" -> "vars::import";
+"File::Spec::BEGIN@4" -> "vars::import";
+"Cwd::BEGIN@172" -> "vars::import";
+"File::Spec::Unix::BEGIN@4" -> "vars::import";
+"File::Spec::Win32::BEGIN@5" -> "vars::import";
+"Win32::BEGIN@5" -> "vars::import";
+"File::Path::BEGIN@19" -> "vars::import";
+"DynaLoader::bootstrap" -> "DynaLoader::CORE:ftdir";
+"Term::ANSIColor::BEGIN@26" -> "Carp::BEGIN@5";
+"del::BEGIN@11" -> "del::BEGIN@3.3";
+"del::BEGIN@4" -> "File::Basename::BEGIN@371";
+"File::Spec::Win32::_canon_cat" -> "File::Spec::Win32::CORE:subst";
+"del::del" -> "File::Path::rmtree";
+"main::BEGIN@2" -> "del::BEGIN@9";
+"overload::BEGIN@144" -> "warnings::register::import";
+"File::Find::BEGIN@5" -> "warnings::register::import";
+"vars::BEGIN@7" -> "warnings::register::import";
+"constant::BEGIN@4" -> "warnings::register::import";
+"File::Copy::BEGIN@14" -> "Config::import";
+"lib::BEGIN@6" -> "Config::import";
+"DynaLoader::BEGIN@23" -> "Config::import";
+"del::BEGIN@10" -> "File::Path::BEGIN@3";
+"del::BEGIN@6" -> "Config::FETCH";
+"del::BEGIN@7" -> "Config::FETCH";
+"File::Spec::Unix::BEGIN@127" -> "constant::BEGIN@24";
+"del::BEGIN@10" -> "File::Path::BEGIN@4";
+"DynaLoader::bootstrap" -> "DynaLoader::dl_undef_symbols";
+"Cwd::BEGIN@172" -> "vars::BEGIN@7";
+"Cwd::_win32_cwd" -> "Cwd::CORE:subst";
+"main::BEGIN@2" -> "del::BEGIN@4";
+"warnings::register::import" -> "warnings::register_categories";
+"Term::ANSIColor::BEGIN@26" -> "Carp::BEGIN@555";
+"del::BEGIN@9" -> "overload::BEGIN@144";
+"del::BEGIN@8" -> "List::Util::BEGIN@30";
+"File::Path::_rmtree" -> "File::Path::CORE:open_dir";
+"lib::BEGIN@6" -> "Config::BEGIN@47";
+"DynaLoader::bootstrap" -> "Win32::bootstrap";
+"Cwd::BEGIN@783" -> "Win32::BEGIN@5";
+"Carp::BEGIN@131" -> "strict::unimport";
+"constant::BEGIN@39" -> "strict::unimport";
+"List::Util::BEGIN@30" -> "strict::unimport";
+"Carp::BEGIN@575" -> "strict::unimport";
+"Exporter::Heavy::BEGIN@4" -> "strict::unimport";
+"constant::BEGIN@126" -> "strict::unimport";
+"Cwd::BEGIN@843" -> "strict::unimport";
+"File::Spec::Unix::BEGIN@179" -> "strict::unimport";
+"Carp::BEGIN@555" -> "strict::unimport";
+"constant::BEGIN@64" -> "strict::unimport";
+"File::Path::BEGIN@329" -> "strict::unimport";
+"Config::BEGIN@47" -> "strict::unimport";
+"Win32::GetCwd" -> "Cwd::BEGIN@783";
+"File::Path::rmtree" -> "File::Path::_is_subdir";
+"main::RUNTIME" -> "del::delete_d";
+"File::Path::_rmtree" -> "File::Path::CORE:ftdir";
+"DynaLoader::bootstrap" -> "DynaLoader::CORE:ftsize";
+"File::Path::rmtree" -> "Cwd::_win32_cwd";
+"lib::import" -> "lib::CORE:match";
+"File::Path::rmtree" -> "File::Path::CORE:match";
+"DynaLoader::bootstrap" -> "DynaLoader::dl_load_file";
+"File::Spec::Unix::BEGIN@127" -> "constant::BEGIN@4";
+"main::RUNTIME" -> "del::addDestination";
+"Cwd::BEGIN@783" -> "Win32::BEGIN@4";
+"File::Path::_rmtree" -> "File::Path::CORE:rmdir";
+"Exporter::Heavy::BEGIN@202" -> "warnings::unimport";
+"Carp::BEGIN@6" -> "warnings::unimport";
+"File::Copy::BEGIN@12.1" -> "warnings::unimport";
+"Carp::BEGIN@568" -> "warnings::unimport";
+"main::BEGIN@1" -> "warnings::CORE:match";
+"del::BEGIN@4" -> "File::Basename::BEGIN@51";
+"Config::AUTOLOAD" -> "Config::CORE:substcont";
+"warnings::register_categories" -> "warnings::_mkMask";
+"del::BEGIN@4" -> "Exporter::import";
+"Message::BEGIN@40" -> "Exporter::import";
+"Term::ANSIColor::BEGIN@26" -> "Exporter::import";
+"Message::BEGIN@57" -> "Exporter::import";
+"del::BEGIN@9" -> "Exporter::import";
+"del::BEGIN@10" -> "Exporter::import";
+"del::BEGIN@5" -> "Exporter::import";
+"Message::BEGIN@74" -> "Exporter::import";
+"Cwd::BEGIN@171" -> "Exporter::import";
+"del::BEGIN@8" -> "Exporter::import";
+"File::Path::BEGIN@6" -> "Exporter::import";
+"del::BEGIN@7" -> "Exporter::import";
+"File::Path::rmtree" -> "File::Path::_slash_lc";
+"del::BEGIN@3.3" -> "Message::BEGIN@74";
+"overload::BEGIN@83" -> "overloading::unimport";
+"overload::BEGIN@114" -> "overloading::unimport";
+"File::Path::_rmtree" -> "File::Path::CORE:unlink";
+"File::Spec::Unix::BEGIN@145" -> "constant::import";
+"File::Spec::Unix::BEGIN@136" -> "constant::import";
+"File::Spec::Unix::BEGIN@220" -> "constant::import";
+"File::Spec::Unix::BEGIN@242" -> "constant::import";
+"File::Spec::Unix::BEGIN@127" -> "constant::import";
+"File::Basename::fileparse_set_fstype" -> "File::Basename::CORE:match";
+"File::Spec::Unix::BEGIN@127" -> "constant::CORE:qr";
+"Config::fetch_string" -> "Config::_fetch_string";
+"del::BEGIN@6" -> "lib::BEGIN@8";
+"lib::BEGIN@6" -> "version::(cmp";
+"del::findPreDir" -> "del::CORE:match";
+"del::addDestination" -> "del::CORE:match";
+"del::check" -> "del::CORE:match";
+"Cwd::BEGIN@172" -> "vars::BEGIN@8";
+"File::Spec::Unix::BEGIN@127" -> "constant::BEGIN@6";
+"del::BEGIN@5" -> "XSLoader::load";
+"del::BEGIN@8" -> "XSLoader::load";
+"main::NULL" -> "main::BEGIN@2";
+"main::BEGIN@2" -> "del::BEGIN@10";
+"Message::BEGIN@40" -> "Term::ANSIColor::BEGIN@22";
+"File::Spec::Unix::BEGIN@127" -> "constant::BEGIN@64";
+"del::BEGIN@5" -> "Cwd::BEGIN@171";
+"Config::FETCH" -> "Config::AUTOLOAD";
+"Term::ANSIColor::BEGIN@26" -> "Carp::BEGIN@61";
+"del::BEGIN@11" -> "del::BEGIN@2.2";
+"Config::AUTOLOAD" -> "Config::CORE:pack";
+"del::BEGIN@6" -> "lib::import";
+"Term::ANSIColor::BEGIN@42" -> "Exporter::export_ok_tags";
+"Term::ANSIColor::BEGIN@26" -> "Carp::BEGIN@73";
+"Term::ANSIColor::BEGIN@26" -> "Carp::BEGIN@4";
+"File::Spec::Unix::BEGIN@127" -> "constant::BEGIN@126";
+"Config::AUTOLOAD" -> "Config::CORE:match";
+"Config::_fetch_string" -> "Config::CORE:match";
+"del::BEGIN@8" -> "File::Find::BEGIN@2";
+"del::BEGIN@4" -> "File::Basename::BEGIN@50";
+"File::Spec::Unix::BEGIN@127" -> "constant::BEGIN@3";
+"main::BEGIN@2" -> "del::BEGIN@2";
+"Exporter::Heavy::heavy_export_ok_tags" -> "Exporter::Heavy::_push_tags";
+"Message::BEGIN@40" -> "Term::ANSIColor::BEGIN@24";
+"del::delete_d" -> "del::check";
+"File::Path::_rmtree" -> "File::Path::CORE:lstat";
+"File::Path::rmtree" -> "File::Path::CORE:lstat";
+"Config::BEGIN@27" -> "ActivePerl::Config::BEGIN@43";
+"Config::BEGIN@27" -> "ActivePerl::Config::BEGIN@3";
+"main::BEGIN@2" -> "del::BEGIN@7";
+"DynaLoader::bootstrap" -> "DynaLoader::dl_find_symbol";
+"del::BEGIN@8" -> "File::Spec::Win32::BEGIN@5";
+"Verbosity::new" -> "Message::new";
+"del::BEGIN@8" -> "File::Find::BEGIN@4";
+"vars::import" -> "vars::CORE:match";
+"del::BEGIN@9" -> "File::Copy::BEGIN@10";
+"del::BEGIN@3.3" -> "del::BEGIN@2.5";
+"del::BEGIN@2" -> "strict::CORE:match";
+"del::findPreDir" -> "del::CORE:open_dir";
+"del::BEGIN@9" -> "File::Copy::BEGIN@11";
+"main::BEGIN@1" -> "warnings::CORE:regcomp";
+"del::BEGIN@10" -> "File::Path::BEGIN@19";
+"del::BEGIN@8" -> "File::Spec::Unix::BEGIN@145";
+"Message::BEGIN@40" -> "Term::ANSIColor::BEGIN@42";
+"del::BEGIN@8" -> "File::Find::BEGIN@5";
+"Config::AUTOLOAD" -> "Config::BEGIN@5";
+"del::BEGIN@9" -> "File::Copy::BEGIN@13";
+"del::BEGIN@8" -> "File::Spec::Unix::BEGIN@4";
+"Config::FETCH" -> "Config::fetch_string";
+"del::BEGIN@8" -> "File::Spec::Unix::BEGIN@127";
+"del::delete_d" -> "del::del";
+"Term::ANSIColor::BEGIN@26" -> "Carp::BEGIN@131";
+"del::BEGIN@8" -> "File::Spec::Win32::BEGIN@3";
+"Carp::BEGIN@73" -> "Carp::_fetch_sub";
+"Carp::BEGIN@61" -> "Carp::_fetch_sub";
+"File::Spec::Win32::catfile" -> "File::Spec::Win32::CORE:regcomp";
+"File::Spec::Win32::splitpath" -> "File::Spec::Win32::CORE:regcomp";
+"main::BEGIN@2" -> "del::BEGIN@8";
+"File::Path::_rmtree" -> "File::Path::CORE:stat";
+"del::BEGIN@5" -> "Cwd::BEGIN@843";
+"Term::ANSIColor::BEGIN@26" -> "Carp::BEGIN@6";
+"del::findPreDir" -> "del::CORE:closedir";
+"File::Spec::Win32::catfile" -> "File::Spec::Win32::_canon_cat";
+"del::BEGIN@4" -> "File::Basename::BEGIN@42";
+"del::BEGIN@8" -> "File::Spec::Unix::BEGIN@136";
+"Term::ANSIColor::BEGIN@42" -> "Exporter::Heavy::heavy_export_ok_tags";
+"Cwd::BEGIN@783" -> "UNIVERSAL::VERSION";
+"File::Path::_rmtree" -> "File::Spec::Win32::catfile";
+"del::BEGIN@3.3" -> "del::BEGIN@1.4";
+"File::Path::_rmtree" -> "File::Path::CORE:chmod";
+"del::BEGIN@9" -> "File::Copy::BEGIN@14";
+"Message::BEGIN@40" -> "Term::ANSIColor::BEGIN@27";
+"Config::_fetch_string" -> "Config::CORE:regcomp";
+"del::BEGIN@8" -> "Scalar::Util::BEGIN@9";
+"File::Path::rmtree" -> "File::Path::_rmtree";
+"File::Path::_rmtree" -> "File::Path::_rmtree";
+"Message::BEGIN@40" -> "Term::ANSIColor::BEGIN@26";
+"del::BEGIN@8" -> "File::Spec::Unix::BEGIN@220";
+"main::RUNTIME" -> "del::new";
+}

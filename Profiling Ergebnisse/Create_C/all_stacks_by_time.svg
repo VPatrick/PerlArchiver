@@ -1,6 +1,6 @@
 <?xml version="1.0" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" width="1200" height="226" onload="init(evt)" viewBox="0 0 1200 226" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg version="1.1" width="1200" height="290" onload="init(evt)" viewBox="0 0 1200 290" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <defs >
 	<linearGradient id="background" y1="0" y2="1" x1="0" x2="0" >
 		<stop stop-color="#eeeeee" offset="5%" />
@@ -18,422 +18,347 @@
 	function c() { details.nodeValue = ' '; }
 ]]>
 </script>
-<rect x="0.0" y="0" width="1200.0" height="226.0" fill="url(#background)"  />
+<rect x="0.0" y="0" width="1200.0" height="290.0" fill="url(#background)"  />
 <text text-anchor="middle" x="600" y="24" font-size="17" font-family="Verdana" fill="rgb(0,0,0)"  >Flame Graph</text>
-<text text-anchor="" x="10" y="209" font-size="12" font-family="Verdana" fill="rgb(0,0,0)" id="details" > </text>
-<g class="func_g" onmouseover="s('File::Copy::CORE:syswrite (14,771 microseconds, 0.06%)')" onmouseout="c()">
-<title>File::Copy::CORE:syswrite (14,771 microseconds, 0.06%)</title><a xlink:href="File-Copy-pm-5-sub.html#File__Copy__CORE_syswrite" target="_top"><rect x="808.2" y="81" width="0.7" height="15.0" fill="rgb(218,137,26)" rx="2" ry="2" />
+<text text-anchor="" x="10" y="273" font-size="12" font-family="Verdana" fill="rgb(0,0,0)" id="details" > </text>
+<g class="func_g" onmouseover="s('Create::verbose (2,000 microseconds, 0.03%)')" onmouseout="c()">
+<title>Create::verbose (2,000 microseconds, 0.03%)</title><a xlink:href="Create-pm-3-line.html#165" target="_top"><rect x="177.1" y="145" width="0.4" height="15.0" fill="rgb(251,121,51)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('Create::BEGIN@251 (2,179 microseconds, 0.01%)')" onmouseout="c()">
-<title>Create::BEGIN@251 (2,179 microseconds, 0.01%)</title><a xlink:href="Create-pm-2-sub.html#251" target="_top"><rect x="1187.9" y="145" width="0.1" height="15.0" fill="rgb(242,118,20)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Copy::_eq (22,000 microseconds, 0.32%)')" onmouseout="c()">
+<title>File::Copy::_eq (22,000 microseconds, 0.32%)</title><a xlink:href="File-Copy-pm-5-line.html#55" target="_top"><rect x="516.1" y="113" width="3.7" height="15.0" fill="rgb(217,25,7)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::CORE:syswrite (26,283 microseconds, 0.11%)')" onmouseout="c()">
-<title>File::Copy::CORE:syswrite (26,283 microseconds, 0.11%)</title><a xlink:href="File-Copy-pm-5-sub.html#File__Copy__CORE_syswrite" target="_top"><rect x="1185.4" y="113" width="1.3" height="15.0" fill="rgb(240,6,47)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('Config::BEGIN@27 (10,000 microseconds, 0.14%)')" onmouseout="c()">
+<title>Config::BEGIN@27 (10,000 microseconds, 0.14%)</title><a xlink:href="Config_heavy-pl-14-line.html#27" target="_top"><rect x="1188.3" y="145" width="1.7" height="15.0" fill="rgb(209,219,18)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('Config::FETCH (4,330 microseconds, 0.02%)')" onmouseout="c()">
-<title>Config::FETCH (4,330 microseconds, 0.02%)</title><a xlink:href="Config-pm-10-sub.html#65" target="_top"><rect x="625.9" y="81" width="0.2" height="15.0" fill="rgb(246,226,14)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Copy::CORE:ftdir (36,001 microseconds, 0.52%)')" onmouseout="c()">
+<title>File::Copy::CORE:ftdir (36,001 microseconds, 0.52%)</title><a xlink:href="File-Copy-pm-5-line.html#File__Copy__CORE_ftdir" target="_top"><rect x="539.4" y="97" width="6.1" height="15.0" fill="rgb(247,18,10)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::CORE:syswrite (15,042 microseconds, 0.06%)')" onmouseout="c()">
-<title>File::Copy::CORE:syswrite (15,042 microseconds, 0.06%)</title><a xlink:href="File-Copy-pm-5-sub.html#File__Copy__CORE_syswrite" target="_top"><rect x="619.5" y="65" width="0.8" height="15.0" fill="rgb(218,28,51)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('Create::verbose (2,000 microseconds, 0.03%)')" onmouseout="c()">
+<title>Create::verbose (2,000 microseconds, 0.03%)</title><a xlink:href="Create-pm-3-line.html#165" target="_top"><rect x="956.6" y="81" width="0.3" height="15.0" fill="rgb(229,35,15)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::CORE:close (63,754 microseconds, 0.27%)')" onmouseout="c()">
-<title>File::Copy::CORE:close (63,754 microseconds, 0.27%)</title><a xlink:href="File-Copy-pm-5-sub.html#File__Copy__CORE_close" target="_top"><rect x="434.3" y="65" width="3.1" height="15.0" fill="rgb(213,56,17)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('Term::ANSIColor::BEGIN@26 (10,000 microseconds, 0.14%)')" onmouseout="c()">
+<title>Term::ANSIColor::BEGIN@26 (10,000 microseconds, 0.14%)</title><a xlink:href="Term-ANSIColor-pm-28-line.html#26" target="_top"><rect x="1178.1" y="161" width="1.7" height="15.0" fill="rgb(234,157,0)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('Create::copyDir (16,217,075 microseconds, 67.51%)')" onmouseout="c()">
-<title>Create::copyDir (16,217,075 microseconds, 67.51%)</title><a xlink:href="Create-pm-2-sub.html#151" target="_top"><rect x="12.9" y="113" width="796.5" height="15.0" fill="rgb(239,28,24)" rx="2" ry="2" />
-<text text-anchor="" x="15.8612999897067" y="123.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >Create::copyDir</text>
+<g class="func_g" onmouseover="s('Create::__ANON__[Create.pm:212] (1,009,007 microseconds, 14.54%)')" onmouseout="c()">
+<title>Create::__ANON__[Create.pm:212] (1,009,007 microseconds, 14.54%)</title><a xlink:href="Create-pm-3-line.html#190" target="_top"><rect x="348.3" y="145" width="171.5" height="15.0" fill="rgb(219,65,46)" rx="2" ry="2" />
+<text text-anchor="" x="351.307902341845" y="155.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >Create::__ANON__[Create..</text>
 </a>
 </g>
-<g class="func_g" onmouseover="s('Config::FETCH (4,298 microseconds, 0.02%)')" onmouseout="c()">
-<title>Config::FETCH (4,298 microseconds, 0.02%)</title><a xlink:href="Config-pm-10-sub.html#65" target="_top"><rect x="1003.9" y="113" width="0.2" height="15.0" fill="rgb(215,93,10)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Copy::CORE:ftdir (32,001 microseconds, 0.46%)')" onmouseout="c()">
+<title>File::Copy::CORE:ftdir (32,001 microseconds, 0.46%)</title><a xlink:href="File-Copy-pm-5-line.html#File__Copy__CORE_ftdir" target="_top"><rect x="960.3" y="65" width="5.5" height="15.0" fill="rgb(205,77,31)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('Create::copyDir (12,336,098 microseconds, 51.35%)')" onmouseout="c()">
-<title>Create::copyDir (12,336,098 microseconds, 51.35%)</title><a xlink:href="Create-pm-2-sub.html#151" target="_top"><rect x="14.9" y="97" width="605.9" height="15.0" fill="rgb(241,155,38)" rx="2" ry="2" />
-<text text-anchor="" x="17.8682167230009" y="107.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >Create::copyDir</text>
+<g class="func_g" onmouseover="s('Create::CORE:ftfile (36,001 microseconds, 0.52%)')" onmouseout="c()">
+<title>Create::CORE:ftfile (36,001 microseconds, 0.52%)</title><a xlink:href="Create-pm-3-line.html#Create__CORE_ftfile" target="_top"><rect x="167.1" y="161" width="6.1" height="15.0" fill="rgb(243,192,35)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('main::BEGIN@1 (36,904 microseconds, 0.15%)')" onmouseout="c()">
-<title>main::BEGIN@1 (36,904 microseconds, 0.15%)</title><a xlink:href="TestCreate-pl-1-sub.html#1" target="_top"><rect x="1187.8" y="161" width="1.8" height="15.0" fill="rgb(240,56,44)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('Create::copyDir (6,821,070 microseconds, 98.27%)')" onmouseout="c()">
+<title>Create::copyDir (6,821,070 microseconds, 98.27%)</title><a xlink:href="Create-pm-3-line.html#251" target="_top"><rect x="10.0" y="193" width="1159.6" height="15.0" fill="rgb(205,30,49)" rx="2" ry="2" />
+<text text-anchor="" x="13" y="203.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >Create::copyDir</text>
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::CORE:close (57,174 microseconds, 0.24%)')" onmouseout="c()">
-<title>File::Copy::CORE:close (57,174 microseconds, 0.24%)</title><a xlink:href="File-Copy-pm-5-sub.html#File__Copy__CORE_close" target="_top"><rect x="814.3" y="97" width="2.8" height="15.0" fill="rgb(243,153,33)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Copy::copy (1,201,013 microseconds, 17.30%)')" onmouseout="c()">
+<title>File::Copy::copy (1,201,013 microseconds, 17.30%)</title><a xlink:href="File-Copy-pm-5-line.html#67" target="_top"><rect x="737.3" y="97" width="204.2" height="15.0" fill="rgb(216,52,22)" rx="2" ry="2" />
+<text text-anchor="" x="740.27692073184" y="107.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >File::Copy::copy</text>
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::CORE:open (3,682,910 microseconds, 15.33%)')" onmouseout="c()">
-<title>File::Copy::CORE:open (3,682,910 microseconds, 15.33%)</title><a xlink:href="File-Copy-pm-5-sub.html#File__Copy__CORE_open" target="_top"><rect x="437.6" y="65" width="180.9" height="15.0" fill="rgb(242,147,40)" rx="2" ry="2" />
-<text text-anchor="" x="440.640287848888" y="75.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >File::Copy::CORE:open</text>
+<g class="func_g" onmouseover="s('Create::__ANON__[Create.pm:212] (1,278,022 microseconds, 18.41%)')" onmouseout="c()">
+<title>Create::__ANON__[Create.pm:212] (1,278,022 microseconds, 18.41%)</title><a xlink:href="Create-pm-3-line.html#190" target="_top"><rect x="952.3" y="97" width="217.3" height="15.0" fill="rgb(207,90,7)" rx="2" ry="2" />
+<text text-anchor="" x="955.332595044542" y="107.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >Create::__ANON__[Create.pm:212]</text>
 </a>
 </g>
-<g class="func_g" onmouseover="s('Create::CORE:ftfile (8,093 microseconds, 0.03%)')" onmouseout="c()">
-<title>Create::CORE:ftfile (8,093 microseconds, 0.03%)</title><a xlink:href="Create-pm-2-sub.html#Create__CORE_ftfile" target="_top"><rect x="12.3" y="113" width="0.4" height="15.0" fill="rgb(223,222,42)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Copy::_eq (30,000 microseconds, 0.43%)')" onmouseout="c()">
+<title>File::Copy::_eq (30,000 microseconds, 0.43%)</title><a xlink:href="File-Copy-pm-5-line.html#55" target="_top"><rect x="718.1" y="97" width="5.1" height="15.0" fill="rgb(217,127,51)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('Create::verbose (3,977 microseconds, 0.02%)')" onmouseout="c()">
-<title>Create::verbose (3,977 microseconds, 0.02%)</title><a xlink:href="Create-pm-2-sub.html#136" target="_top"><rect x="998.5" y="129" width="0.2" height="15.0" fill="rgb(222,227,16)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('Create::CORE:readdir (1,000 microseconds, 0.01%)')" onmouseout="c()">
+<title>Create::CORE:readdir (1,000 microseconds, 0.01%)</title><a xlink:href="Create-pm-3-line.html#Create__CORE_readdir" target="_top"><rect x="173.2" y="161" width="0.2" height="15.0" fill="rgb(219,193,37)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('Create::CORE:readdir (2,548 microseconds, 0.01%)')" onmouseout="c()">
-<title>Create::CORE:readdir (2,548 microseconds, 0.01%)</title><a xlink:href="Create-pm-2-sub.html#Create__CORE_readdir" target="_top"><rect x="17.2" y="81" width="0.1" height="15.0" fill="rgb(236,9,5)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('Win32::CopyFile (707,006 microseconds, 10.19%)')" onmouseout="c()">
+<title>Win32::CopyFile (707,006 microseconds, 10.19%)</title><a xlink:href="Win32-pm-33-line.html#Win32__CopyFile" target="_top"><rect x="41.1" y="129" width="120.2" height="15.0" fill="rgb(217,221,10)" rx="2" ry="2" />
+<text text-anchor="" x="44.1104765632827" y="139.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >Win32::CopyFile</text>
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::BEGIN@13 (7,828 microseconds, 0.03%)')" onmouseout="c()">
-<title>File::Copy::BEGIN@13 (7,828 microseconds, 0.03%)</title><a xlink:href="File-Copy-pm-5-sub.html#13" target="_top"><rect x="1188.6" y="129" width="0.4" height="15.0" fill="rgb(206,109,24)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('Create::copyDir (1,342,023 microseconds, 19.33%)')" onmouseout="c()">
+<title>Create::copyDir (1,342,023 microseconds, 19.33%)</title><a xlink:href="Create-pm-3-line.html#251" target="_top"><rect x="941.5" y="113" width="228.1" height="15.0" fill="rgb(248,122,16)" rx="2" ry="2" />
+<text text-anchor="" x="944.452258374998" y="123.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >Create::copyDir</text>
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::CORE:stat (13,354 microseconds, 0.06%)')" onmouseout="c()">
-<title>File::Copy::CORE:stat (13,354 microseconds, 0.06%)</title><a xlink:href="File-Copy-pm-5-sub.html#File__Copy__CORE_stat" target="_top"><rect x="234.4" y="33" width="0.7" height="15.0" fill="rgb(245,185,48)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Copy::copy (937,009 microseconds, 13.50%)')" onmouseout="c()">
+<title>File::Copy::copy (937,009 microseconds, 13.50%)</title><a xlink:href="File-Copy-pm-5-line.html#67" target="_top"><rect x="177.5" y="145" width="159.2" height="15.0" fill="rgb(222,143,16)" rx="2" ry="2" />
+<text text-anchor="" x="180.453755126609" y="155.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >File::Copy::copy</text>
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::CORE:close (65,833 microseconds, 0.27%)')" onmouseout="c()">
-<title>File::Copy::CORE:close (65,833 microseconds, 0.27%)</title><a xlink:href="File-Copy-pm-5-sub.html#File__Copy__CORE_close" target="_top"><rect x="242.5" y="49" width="3.2" height="15.0" fill="rgb(234,123,48)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Copy::copy (997,007 microseconds, 14.36%)')" onmouseout="c()">
+<title>File::Copy::copy (997,007 microseconds, 14.36%)</title><a xlink:href="File-Copy-pm-5-line.html#67" target="_top"><rect x="350.3" y="129" width="169.5" height="15.0" fill="rgb(246,95,17)" rx="2" ry="2" />
+<text text-anchor="" x="353.347933591896" y="139.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >File::Copy::copy</text>
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::CORE:binmode (2,417 microseconds, 0.01%)')" onmouseout="c()">
-<title>File::Copy::CORE:binmode (2,417 microseconds, 0.01%)</title><a xlink:href="File-Copy-pm-5-sub.html#File__Copy__CORE_binmode" target="_top"><rect x="27.3" y="33" width="0.1" height="15.0" fill="rgb(238,140,1)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Copy::_eq (17,001 microseconds, 0.24%)')" onmouseout="c()">
+<title>File::Copy::_eq (17,001 microseconds, 0.24%)</title><a xlink:href="File-Copy-pm-5-line.html#55" target="_top"><rect x="1166.7" y="65" width="2.9" height="15.0" fill="rgb(227,96,0)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::CORE:syswrite (15,834 microseconds, 0.07%)')" onmouseout="c()">
-<title>File::Copy::CORE:syswrite (15,834 microseconds, 0.07%)</title><a xlink:href="File-Copy-pm-5-sub.html#File__Copy__CORE_syswrite" target="_top"><rect x="996.8" y="97" width="0.8" height="15.0" fill="rgb(227,187,28)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('Create::copyDir (2,626,036 microseconds, 37.83%)')" onmouseout="c()">
+<title>Create::copyDir (2,626,036 microseconds, 37.83%)</title><a xlink:href="Create-pm-3-line.html#251" target="_top"><rect x="723.2" y="129" width="446.4" height="15.0" fill="rgb(216,126,32)" rx="2" ry="2" />
+<text text-anchor="" x="726.166704585651" y="139.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >Create::copyDir</text>
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::CORE:stat (13,030 microseconds, 0.05%)')" onmouseout="c()">
-<title>File::Copy::CORE:stat (13,030 microseconds, 0.05%)</title><a xlink:href="File-Copy-pm-5-sub.html#File__Copy__CORE_stat" target="_top"><rect x="995.9" y="97" width="0.6" height="15.0" fill="rgb(217,150,44)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('Create::BEGIN@170 (20,000 microseconds, 0.29%)')" onmouseout="c()">
+<title>Create::BEGIN@170 (20,000 microseconds, 0.29%)</title><a xlink:href="Create-pm-3-line.html#170" target="_top"><rect x="1176.4" y="209" width="3.4" height="15.0" fill="rgb(231,9,11)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::CORE:ftsize (2,048 microseconds, 0.01%)')" onmouseout="c()">
-<title>File::Copy::CORE:ftsize (2,048 microseconds, 0.01%)</title><a xlink:href="File-Copy-pm-5-sub.html#File__Copy__CORE_ftsize" target="_top"><rect x="629.4" y="81" width="0.1" height="15.0" fill="rgb(242,1,38)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('Create::CORE:ftfile (73,000 microseconds, 1.05%)')" onmouseout="c()">
+<title>Create::CORE:ftfile (73,000 microseconds, 1.05%)</title><a xlink:href="Create-pm-3-line.html#Create__CORE_ftfile" target="_top"><rect x="10.0" y="177" width="12.4" height="15.0" fill="rgb(220,160,39)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::CORE:open (3,634,374 microseconds, 15.13%)')" onmouseout="c()">
-<title>File::Copy::CORE:open (3,634,374 microseconds, 15.13%)</title><a xlink:href="File-Copy-pm-5-sub.html#File__Copy__CORE_open" target="_top"><rect x="817.3" y="97" width="178.6" height="15.0" fill="rgb(208,19,32)" rx="2" ry="2" />
-<text text-anchor="" x="820.331390974585" y="107.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >File::Copy::CORE:open</text>
+<g class="func_g" onmouseover="s('Config::FETCH (2,000 microseconds, 0.03%)')" onmouseout="c()">
+<title>Config::FETCH (2,000 microseconds, 0.03%)</title><a xlink:href="Config-pm-13-line.html#66" target="_top"><rect x="960.0" y="65" width="0.3" height="15.0" fill="rgb(214,225,40)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::CORE:ftdir (2,568 microseconds, 0.01%)')" onmouseout="c()">
-<title>File::Copy::CORE:ftdir (2,568 microseconds, 0.01%)</title><a xlink:href="File-Copy-pm-5-sub.html#File__Copy__CORE_ftdir" target="_top"><rect x="30.7" y="33" width="0.1" height="15.0" fill="rgb(206,183,22)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Copy::__ANON__[C:/Perl64/lib/File/Copy.pm:324] (727,006 microseconds, 10.47%)')" onmouseout="c()">
+<title>File::Copy::__ANON__[C:/Perl64/lib/File/Copy.pm:324] (727,006 microseconds, 10.47%)</title><a xlink:href="File-Copy-pm-5-line.html#321" target="_top"><rect x="37.7" y="145" width="123.6" height="15.0" fill="rgb(214,27,23)" rx="2" ry="2" />
+<text text-anchor="" x="40.7104244798638" y="155.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >File::Copy::__AN..</text>
 </a>
 </g>
-<g class="func_g" onmouseover="s('Create::CORE:readdir (2,442 microseconds, 0.01%)')" onmouseout="c()">
-<title>Create::CORE:readdir (2,442 microseconds, 0.01%)</title><a xlink:href="Create-pm-2-sub.html#Create__CORE_readdir" target="_top"><rect x="11.3" y="129" width="0.1" height="15.0" fill="rgb(249,119,11)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('Win32::CopyFile (1,178,018 microseconds, 16.97%)')" onmouseout="c()">
+<title>Win32::CopyFile (1,178,018 microseconds, 16.97%)</title><a xlink:href="Win32-pm-33-line.html#Win32__CopyFile" target="_top"><rect x="966.4" y="49" width="200.3" height="15.0" fill="rgb(206,15,39)" rx="2" ry="2" />
+<text text-anchor="" x="969.443321198543" y="59.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >Win32::CopyFile</text>
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::_eq (11,038 microseconds, 0.05%)')" onmouseout="c()">
-<title>File::Copy::_eq (11,038 microseconds, 0.05%)</title><a xlink:href="File-Copy-pm-5-sub.html#93" target="_top"><rect x="620.3" y="65" width="0.5" height="15.0" fill="rgb(207,42,3)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('Create::verbose (1,000 microseconds, 0.01%)')" onmouseout="c()">
+<title>Create::verbose (1,000 microseconds, 0.01%)</title><a xlink:href="Create-pm-3-line.html#165" target="_top"><rect x="24.6" y="161" width="0.2" height="15.0" fill="rgb(236,101,2)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::CORE:open (3,659,740 microseconds, 15.23%)')" onmouseout="c()">
-<title>File::Copy::CORE:open (3,659,740 microseconds, 15.23%)</title><a xlink:href="File-Copy-pm-5-sub.html#File__Copy__CORE_open" target="_top"><rect x="245.9" y="49" width="179.8" height="15.0" fill="rgb(209,167,1)" rx="2" ry="2" />
-<text text-anchor="" x="248.945861568437" y="59.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >File::Copy::CORE:open</text>
+<g class="func_g" onmouseover="s('File::Copy::CORE:ftdir (54,002 microseconds, 0.78%)')" onmouseout="c()">
+<title>File::Copy::CORE:ftdir (54,002 microseconds, 0.78%)</title><a xlink:href="File-Copy-pm-5-line.html#File__Copy__CORE_ftdir" target="_top"><rect x="746.1" y="81" width="9.2" height="15.0" fill="rgb(212,224,23)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::CORE:ftsize (2,289 microseconds, 0.01%)')" onmouseout="c()">
-<title>File::Copy::CORE:ftsize (2,289 microseconds, 0.01%)</title><a xlink:href="File-Copy-pm-5-sub.html#File__Copy__CORE_ftsize" target="_top"><rect x="30.8" y="33" width="0.1" height="15.0" fill="rgb(207,186,37)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Copy::_eq (41,000 microseconds, 0.59%)')" onmouseout="c()">
+<title>File::Copy::_eq (41,000 microseconds, 0.59%)</title><a xlink:href="File-Copy-pm-5-line.html#55" target="_top"><rect x="329.8" y="129" width="6.9" height="15.0" fill="rgb(226,67,17)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::CORE:stat (14,040 microseconds, 0.06%)')" onmouseout="c()">
-<title>File::Copy::CORE:stat (14,040 microseconds, 0.06%)</title><a xlink:href="File-Copy-pm-5-sub.html#File__Copy__CORE_stat" target="_top"><rect x="618.5" y="65" width="0.7" height="15.0" fill="rgb(232,70,25)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('Create::__ANON__[Create.pm:212] (1,226,013 microseconds, 17.66%)')" onmouseout="c()">
+<title>Create::__ANON__[Create.pm:212] (1,226,013 microseconds, 17.66%)</title><a xlink:href="Create-pm-3-line.html#190" target="_top"><rect x="733.0" y="113" width="208.5" height="15.0" fill="rgb(250,79,31)" rx="2" ry="2" />
+<text text-anchor="" x="736.026855627566" y="123.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >Create::__ANON__[Create.pm:212]</text>
 </a>
 </g>
-<g class="func_g" onmouseover="s('Create::CORE:readdir (2,323 microseconds, 0.01%)')" onmouseout="c()">
-<title>Create::CORE:readdir (2,323 microseconds, 0.01%)</title><a xlink:href="Create-pm-2-sub.html#Create__CORE_readdir" target="_top"><rect x="12.7" y="113" width="0.2" height="15.0" fill="rgb(229,62,19)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('Create::copyDir (4,899,054 microseconds, 70.58%)')" onmouseout="c()">
+<title>Create::copyDir (4,899,054 microseconds, 70.58%)</title><a xlink:href="Create-pm-3-line.html#251" target="_top"><rect x="336.7" y="161" width="832.9" height="15.0" fill="rgb(252,222,32)" rx="2" ry="2" />
+<text text-anchor="" x="339.747725258221" y="171.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >Create::copyDir</text>
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::CORE:binmode (2,298 microseconds, 0.01%)')" onmouseout="c()">
-<title>File::Copy::CORE:binmode (2,298 microseconds, 0.01%)</title><a xlink:href="File-Copy-pm-5-sub.html#File__Copy__CORE_binmode" target="_top"><rect x="242.4" y="49" width="0.1" height="15.0" fill="rgb(216,188,15)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('Create::__ANON__[Create.pm:212] (838,006 microseconds, 12.07%)')" onmouseout="c()">
+<title>Create::__ANON__[Create.pm:212] (838,006 microseconds, 12.07%)</title><a xlink:href="Create-pm-3-line.html#190" target="_top"><rect x="22.4" y="177" width="142.5" height="15.0" fill="rgb(250,168,33)" rx="2" ry="2" />
+<text text-anchor="" x="25.4101901044789" y="187.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >Create::__ANON__[Cr..</text>
 </a>
 </g>
-<g class="func_g" onmouseover="s('Create::create_c (23,976,893 microseconds, 99.81%)')" onmouseout="c()">
-<title>Create::create_c (23,976,893 microseconds, 99.81%)</title><a xlink:href="Create-pm-2-sub.html#63" target="_top"><rect x="10.0" y="161" width="1177.8" height="15.0" fill="rgb(244,74,1)" rx="2" ry="2" />
-<text text-anchor="" x="13.0007711882535" y="171.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >Create::create_c</text>
+<g class="func_g" onmouseover="s('Create::CORE:ftdir (10,000 microseconds, 0.14%)')" onmouseout="c()">
+<title>Create::CORE:ftdir (10,000 microseconds, 0.14%)</title><a xlink:href="Create-pm-3-line.html#Create__CORE_ftdir" target="_top"><rect x="165.4" y="161" width="1.7" height="15.0" fill="rgb(231,34,51)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('Create::CORE:ftfile (8,690 microseconds, 0.04%)')" onmouseout="c()">
-<title>Create::CORE:ftfile (8,690 microseconds, 0.04%)</title><a xlink:href="Create-pm-2-sub.html#Create__CORE_ftfile" target="_top"><rect x="20.3" y="49" width="0.4" height="15.0" fill="rgb(220,189,35)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('Scalar::Util::blessed (1,000 microseconds, 0.01%)')" onmouseout="c()">
+<title>Scalar::Util::blessed (1,000 microseconds, 0.01%)</title><a xlink:href="Scalar-Util-pm-19-line.html#Scalar__Util__blessed" target="_top"><rect x="336.6" y="113" width="0.1" height="15.0" fill="rgb(220,8,41)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::_eq (19,259 microseconds, 0.08%)')" onmouseout="c()">
-<title>File::Copy::_eq (19,259 microseconds, 0.08%)</title><a xlink:href="File-Copy-pm-5-sub.html#93" target="_top"><rect x="997.6" y="97" width="0.9" height="15.0" fill="rgb(219,63,33)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('Create::create_c (6,821,070 microseconds, 98.27%)')" onmouseout="c()">
+<title>Create::create_c (6,821,070 microseconds, 98.27%)</title><a xlink:href="Create-pm-3-line.html#76" target="_top"><rect x="10.0" y="225" width="1159.6" height="15.0" fill="rgb(212,96,25)" rx="2" ry="2" />
+<text text-anchor="" x="13" y="235.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >Create::create_c</text>
 </a>
 </g>
-<g class="func_g" onmouseover="s('Create::copyDir (23,976,630 microseconds, 99.81%)')" onmouseout="c()">
-<title>Create::copyDir (23,976,630 microseconds, 99.81%)</title><a xlink:href="Create-pm-2-sub.html#151" target="_top"><rect x="10.0" y="145" width="1177.8" height="15.0" fill="rgb(249,101,18)" rx="2" ry="2" />
-<text text-anchor="" x="13.0135178985589" y="155.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >Create::copyDir</text>
+<g class="func_g" onmouseover="s('File::Copy::BEGIN@13 (50,000 microseconds, 0.72%)')" onmouseout="c()">
+<title>File::Copy::BEGIN@13 (50,000 microseconds, 0.72%)</title><a xlink:href="File-Copy-pm-5-line.html#13" target="_top"><rect x="1181.5" y="193" width="8.5" height="15.0" fill="rgb(211,82,1)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::_eq (10,926 microseconds, 0.05%)')" onmouseout="c()">
-<title>File::Copy::_eq (10,926 microseconds, 0.05%)</title><a xlink:href="File-Copy-pm-5-sub.html#93" target="_top"><rect x="808.9" y="81" width="0.5" height="15.0" fill="rgb(237,14,25)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Copy::__ANON__[C:/Perl64/lib/File/Copy.pm:324] (1,182,018 microseconds, 17.03%)')" onmouseout="c()">
+<title>File::Copy::__ANON__[C:/Perl64/lib/File/Copy.pm:324] (1,182,018 microseconds, 17.03%)</title><a xlink:href="File-Copy-pm-5-line.html#321" target="_top"><rect x="965.8" y="65" width="200.9" height="15.0" fill="rgb(215,131,34)" rx="2" ry="2" />
+<text text-anchor="" x="968.763310781859" y="75.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >File::Copy::__ANON__[C:/Perl..</text>
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::CORE:ftdir (2,225 microseconds, 0.01%)')" onmouseout="c()">
-<title>File::Copy::CORE:ftdir (2,225 microseconds, 0.01%)</title><a xlink:href="File-Copy-pm-5-sub.html#File__Copy__CORE_ftdir" target="_top"><rect x="629.3" y="81" width="0.1" height="15.0" fill="rgb(233,226,12)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('Create::CORE:ftfile (68,000 microseconds, 0.98%)')" onmouseout="c()">
+<title>Create::CORE:ftfile (68,000 microseconds, 0.98%)</title><a xlink:href="Create-pm-3-line.html#Create__CORE_ftfile" target="_top"><rect x="336.7" y="145" width="11.6" height="15.0" fill="rgb(241,182,5)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::CORE:binmode (2,249 microseconds, 0.01%)')" onmouseout="c()">
-<title>File::Copy::CORE:binmode (2,249 microseconds, 0.01%)</title><a xlink:href="File-Copy-pm-5-sub.html#File__Copy__CORE_binmode" target="_top"><rect x="626.1" y="81" width="0.1" height="15.0" fill="rgb(206,199,25)" rx="2" ry="2" />
-</a>
-</g>
-<g class="func_g" onmouseover="s('main::BEGIN@10 (4,826 microseconds, 0.02%)')" onmouseout="c()">
-<title>main::BEGIN@10 (4,826 microseconds, 0.02%)</title><a xlink:href="Create-pm-2-sub.html#10" target="_top"><rect x="1189.3" y="145" width="0.2" height="15.0" fill="rgb(213,88,40)" rx="2" ry="2" />
-</a>
-</g>
-<g class="func_g" onmouseover="s('File::Copy::copy (3,836,189 microseconds, 15.97%)')" onmouseout="c()">
-<title>File::Copy::copy (3,836,189 microseconds, 15.97%)</title><a xlink:href="File-Copy-pm-5-sub.html#105" target="_top"><rect x="621.0" y="97" width="188.4" height="15.0" fill="rgb(248,157,17)" rx="2" ry="2" />
-<text text-anchor="" x="624.013754970487" y="107.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >File::Copy::copy</text>
-</a>
-</g>
-<g class="func_g" onmouseover="s('Create::copyDir (4,424,108 microseconds, 18.42%)')" onmouseout="c()">
-<title>Create::copyDir (4,424,108 microseconds, 18.42%)</title><a xlink:href="Create-pm-2-sub.html#151" target="_top"><rect x="19.4" y="65" width="217.3" height="15.0" fill="rgb(219,3,37)" rx="2" ry="2" />
-<text text-anchor="" x="22.3698292159696" y="75.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >Create::copyDir</text>
-</a>
-</g>
-<g class="func_g" onmouseover="s('File::Copy::CORE:sysread (6,101 microseconds, 0.03%)')" onmouseout="c()">
-<title>File::Copy::CORE:sysread (6,101 microseconds, 0.03%)</title><a xlink:href="File-Copy-pm-5-sub.html#File__Copy__CORE_sysread" target="_top"><rect x="807.9" y="81" width="0.3" height="15.0" fill="rgb(240,33,36)" rx="2" ry="2" />
-</a>
-</g>
-<g class="func_g" onmouseover="s('Create::CORE:readdir (2,506 microseconds, 0.01%)')" onmouseout="c()">
-<title>Create::CORE:readdir (2,506 microseconds, 0.01%)</title><a xlink:href="Create-pm-2-sub.html#Create__CORE_readdir" target="_top"><rect x="19.2" y="65" width="0.2" height="15.0" fill="rgb(239,132,53)" rx="2" ry="2" />
-</a>
-</g>
-<g class="func_g" onmouseover="s('File::Copy::CORE:open (3,608,025 microseconds, 15.02%)')" onmouseout="c()">
-<title>File::Copy::CORE:open (3,608,025 microseconds, 15.02%)</title><a xlink:href="File-Copy-pm-5-sub.html#File__Copy__CORE_open" target="_top"><rect x="1007.2" y="113" width="177.3" height="15.0" fill="rgb(219,60,1)" rx="2" ry="2" />
-<text text-anchor="" x="1010.24007436564" y="123.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >File::Copy::CORE:open</text>
-</a>
-</g>
-<g class="func_g" onmouseover="s('Create::verbose (3,998 microseconds, 0.02%)')" onmouseout="c()">
-<title>Create::verbose (3,998 microseconds, 0.02%)</title><a xlink:href="Create-pm-2-sub.html#136" target="_top"><rect x="809.4" y="113" width="0.2" height="15.0" fill="rgb(254,216,28)" rx="2" ry="2" />
-</a>
-</g>
-<g class="func_g" onmouseover="s('Create::copyDir (20,095,247 microseconds, 83.65%)')" onmouseout="c()">
-<title>Create::copyDir (20,095,247 microseconds, 83.65%)</title><a xlink:href="Create-pm-2-sub.html#151" target="_top"><rect x="11.4" y="129" width="987.1" height="15.0" fill="rgb(242,164,19)" rx="2" ry="2" />
-<text text-anchor="" x="14.4370970304124" y="139.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >Create::copyDir</text>
-</a>
-</g>
-<g class="func_g" onmouseover="s('File::Copy::_eq (10,966 microseconds, 0.05%)')" onmouseout="c()">
-<title>File::Copy::_eq (10,966 microseconds, 0.05%)</title><a xlink:href="File-Copy-pm-5-sub.html#93" target="_top"><rect x="427.4" y="49" width="0.5" height="15.0" fill="rgb(206,153,50)" rx="2" ry="2" />
-</a>
-</g>
-<g class="func_g" onmouseover="s('File::Copy::CORE:ftsize (2,062 microseconds, 0.01%)')" onmouseout="c()">
-<title>File::Copy::CORE:ftsize (2,062 microseconds, 0.01%)</title><a xlink:href="File-Copy-pm-5-sub.html#File__Copy__CORE_ftsize" target="_top"><rect x="245.8" y="49" width="0.1" height="15.0" fill="rgb(207,22,28)" rx="2" ry="2" />
-</a>
-</g>
-<g class="func_g" onmouseover="s('File::Copy::CORE:binmode (2,332 microseconds, 0.01%)')" onmouseout="c()">
-<title>File::Copy::CORE:binmode (2,332 microseconds, 0.01%)</title><a xlink:href="File-Copy-pm-5-sub.html#File__Copy__CORE_binmode" target="_top"><rect x="434.2" y="65" width="0.1" height="15.0" fill="rgb(251,46,24)" rx="2" ry="2" />
-</a>
-</g>
-<g class="func_g" onmouseover="s('Config::FETCH (4,344 microseconds, 0.02%)')" onmouseout="c()">
-<title>Config::FETCH (4,344 microseconds, 0.02%)</title><a xlink:href="Config-pm-10-sub.html#65" target="_top"><rect x="814.0" y="97" width="0.2" height="15.0" fill="rgb(242,131,29)" rx="2" ry="2" />
-</a>
-</g>
-<g class="func_g" onmouseover="s('File::Copy::CORE:ftdir (2,551 microseconds, 0.01%)')" onmouseout="c()">
-<title>File::Copy::CORE:ftdir (2,551 microseconds, 0.01%)</title><a xlink:href="File-Copy-pm-5-sub.html#File__Copy__CORE_ftdir" target="_top"><rect x="437.4" y="65" width="0.1" height="15.0" fill="rgb(226,202,48)" rx="2" ry="2" />
-</a>
-</g>
-<g class="func_g" onmouseover="s('File::Copy::CORE:open (4,143,771 microseconds, 17.25%)')" onmouseout="c()">
-<title>File::Copy::CORE:open (4,143,771 microseconds, 17.25%)</title><a xlink:href="File-Copy-pm-5-sub.html#File__Copy__CORE_open" target="_top"><rect x="30.9" y="33" width="203.5" height="15.0" fill="rgb(213,217,9)" rx="2" ry="2" />
-<text text-anchor="" x="33.891833630417" y="43.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >File::Copy::CORE:open</text>
-</a>
-</g>
-<g class="func_g" onmouseover="s('File::Copy::CORE:syswrite (15,004 microseconds, 0.06%)')" onmouseout="c()">
-<title>File::Copy::CORE:syswrite (15,004 microseconds, 0.06%)</title><a xlink:href="File-Copy-pm-5-sub.html#File__Copy__CORE_syswrite" target="_top"><rect x="426.6" y="49" width="0.8" height="15.0" fill="rgb(208,20,30)" rx="2" ry="2" />
-</a>
-</g>
-<g class="func_g" onmouseover="s('Create::CORE:ftfile (7,779 microseconds, 0.03%)')" onmouseout="c()">
-<title>Create::CORE:ftfile (7,779 microseconds, 0.03%)</title><a xlink:href="Create-pm-2-sub.html#Create__CORE_ftfile" target="_top"><rect x="10.9" y="129" width="0.4" height="15.0" fill="rgb(231,10,14)" rx="2" ry="2" />
-</a>
+<g class="func_g" onmouseover="s('all (6,941,070 microseconds, 100%)')" onmouseout="c()">
+<title>all (6,941,070 microseconds, 100%)</title><rect x="10.0" y="241" width="1180.0" height="15.0" fill="rgb(248,208,50)" rx="2" ry="2" />
+<text text-anchor="" x="13" y="251.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  ></text>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::copy (3,848,424 microseconds, 16.02%)')" onmouseout="c()">
-<title>File::Copy::copy (3,848,424 microseconds, 16.02%)</title><a xlink:href="File-Copy-pm-5-sub.html#105" target="_top"><rect x="998.7" y="129" width="189.1" height="15.0" fill="rgb(219,54,52)" rx="2" ry="2" />
-<text text-anchor="" x="1001.71644988098" y="139.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >File::Copy::copy</text>
+<g class="func_g" onmouseover="s('Create::verbose (1,000 microseconds, 0.01%)')" onmouseout="c()">
+<title>Create::verbose (1,000 microseconds, 0.01%)</title><a xlink:href="Create-pm-3-line.html#165" target="_top"><rect x="350.2" y="129" width="0.1" height="15.0" fill="rgb(247,106,40)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Spec::BEGIN@4 (2,514 microseconds, 0.01%)')" onmouseout="c()">
-<title>File::Spec::BEGIN@4 (2,514 microseconds, 0.01%)</title><a xlink:href="File-Spec-pm-6-sub.html#4" target="_top"><rect x="1188.9" y="113" width="0.1" height="15.0" fill="rgb(243,0,26)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Copy::_eq (12,000 microseconds, 0.17%)')" onmouseout="c()">
+<title>File::Copy::_eq (12,000 microseconds, 0.17%)</title><a xlink:href="File-Copy-pm-5-line.html#55" target="_top"><rect x="939.4" y="81" width="2.1" height="15.0" fill="rgb(242,75,17)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::CORE:binmode (2,286 microseconds, 0.01%)')" onmouseout="c()">
-<title>File::Copy::CORE:binmode (2,286 microseconds, 0.01%)</title><a xlink:href="File-Copy-pm-5-sub.html#File__Copy__CORE_binmode" target="_top"><rect x="1004.1" y="113" width="0.1" height="15.0" fill="rgb(238,28,34)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('Config::FETCH (10,000 microseconds, 0.14%)')" onmouseout="c()">
+<title>Config::FETCH (10,000 microseconds, 0.14%)</title><a xlink:href="Config-pm-13-line.html#66" target="_top"><rect x="1188.3" y="177" width="1.7" height="15.0" fill="rgb(213,128,28)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::CORE:ftsize (2,187 microseconds, 0.01%)')" onmouseout="c()">
-<title>File::Copy::CORE:ftsize (2,187 microseconds, 0.01%)</title><a xlink:href="File-Copy-pm-5-sub.html#File__Copy__CORE_ftsize" target="_top"><rect x="1007.1" y="113" width="0.1" height="15.0" fill="rgb(250,62,47)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('Create::verbose (1,000 microseconds, 0.01%)')" onmouseout="c()">
+<title>Create::verbose (1,000 microseconds, 0.01%)</title><a xlink:href="Create-pm-3-line.html#165" target="_top"><rect x="737.1" y="97" width="0.2" height="15.0" fill="rgb(240,227,54)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('Create::verbose (4,067 microseconds, 0.02%)')" onmouseout="c()">
-<title>Create::verbose (4,067 microseconds, 0.02%)</title><a xlink:href="Create-pm-2-sub.html#136" target="_top"><rect x="427.9" y="81" width="0.2" height="15.0" fill="rgb(212,225,53)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('Scalar::Util::blessed (1,000 microseconds, 0.01%)')" onmouseout="c()">
+<title>Scalar::Util::blessed (1,000 microseconds, 0.01%)</title><a xlink:href="Scalar-Util-pm-19-line.html#Scalar__Util__blessed" target="_top"><rect x="941.3" y="65" width="0.2" height="15.0" fill="rgb(221,71,7)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::CORE:sysread (6,198 microseconds, 0.03%)')" onmouseout="c()">
-<title>File::Copy::CORE:sysread (6,198 microseconds, 0.03%)</title><a xlink:href="File-Copy-pm-5-sub.html#File__Copy__CORE_sysread" target="_top"><rect x="996.5" y="97" width="0.3" height="15.0" fill="rgb(234,141,26)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('Config::FETCH (1,000 microseconds, 0.01%)')" onmouseout="c()">
+<title>Config::FETCH (1,000 microseconds, 0.01%)</title><a xlink:href="Config-pm-13-line.html#66" target="_top"><rect x="745.9" y="81" width="0.2" height="15.0" fill="rgb(211,50,50)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::CORE:close (62,776 microseconds, 0.26%)')" onmouseout="c()">
-<title>File::Copy::CORE:close (62,776 microseconds, 0.26%)</title><a xlink:href="File-Copy-pm-5-sub.html#File__Copy__CORE_close" target="_top"><rect x="626.2" y="81" width="3.1" height="15.0" fill="rgb(208,221,27)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Copy::copy (1,251,022 microseconds, 18.02%)')" onmouseout="c()">
+<title>File::Copy::copy (1,251,022 microseconds, 18.02%)</title><a xlink:href="File-Copy-pm-5-line.html#67" target="_top"><rect x="956.9" y="81" width="212.7" height="15.0" fill="rgb(223,174,29)" rx="2" ry="2" />
+<text text-anchor="" x="959.922665357158" y="91.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >File::Copy::copy</text>
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::CORE:ftdir (2,174 microseconds, 0.01%)')" onmouseout="c()">
-<title>File::Copy::CORE:ftdir (2,174 microseconds, 0.01%)</title><a xlink:href="File-Copy-pm-5-sub.html#File__Copy__CORE_ftdir" target="_top"><rect x="245.7" y="49" width="0.1" height="15.0" fill="rgb(233,195,42)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('Create::copyDir (3,822,047 microseconds, 55.06%)')" onmouseout="c()">
+<title>Create::copyDir (3,822,047 microseconds, 55.06%)</title><a xlink:href="Create-pm-3-line.html#251" target="_top"><rect x="519.8" y="145" width="649.8" height="15.0" fill="rgb(254,78,38)" rx="2" ry="2" />
+<text text-anchor="" x="522.841719968557" y="155.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >Create::copyDir</text>
 </a>
-</g>
-<g class="func_g" onmouseover="s('Create::verbose (3,990 microseconds, 0.02%)')" onmouseout="c()">
-<title>Create::verbose (3,990 microseconds, 0.02%)</title><a xlink:href="Create-pm-2-sub.html#136" target="_top"><rect x="236.7" y="65" width="0.2" height="15.0" fill="rgb(235,69,29)" rx="2" ry="2" />
-</a>
-</g>
-<g class="func_g" onmouseover="s('File::Copy::_eq (21,545 microseconds, 0.09%)')" onmouseout="c()">
-<title>File::Copy::_eq (21,545 microseconds, 0.09%)</title><a xlink:href="File-Copy-pm-5-sub.html#93" target="_top"><rect x="1186.7" y="113" width="1.1" height="15.0" fill="rgb(241,131,50)" rx="2" ry="2" />
-</a>
-</g>
-<g class="func_g" onmouseover="s('File::Copy::CORE:ftsize (2,062 microseconds, 0.01%)')" onmouseout="c()">
-<title>File::Copy::CORE:ftsize (2,062 microseconds, 0.01%)</title><a xlink:href="File-Copy-pm-5-sub.html#File__Copy__CORE_ftsize" target="_top"><rect x="817.2" y="97" width="0.1" height="15.0" fill="rgb(245,189,1)" rx="2" ry="2" />
-</a>
-</g>
-<g class="func_g" onmouseover="s('File::Copy::copy (4,390,279 microseconds, 18.28%)')" onmouseout="c()">
-<title>File::Copy::copy (4,390,279 microseconds, 18.28%)</title><a xlink:href="File-Copy-pm-5-sub.html#105" target="_top"><rect x="21.0" y="49" width="215.7" height="15.0" fill="rgb(222,41,34)" rx="2" ry="2" />
-<text text-anchor="" x="24.0315041250576" y="59.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >File::Copy::copy</text>
-</a>
-</g>
-<g class="func_g" onmouseover="s('File::Copy::CORE:binmode (2,266 microseconds, 0.01%)')" onmouseout="c()">
-<title>File::Copy::CORE:binmode (2,266 microseconds, 0.01%)</title><a xlink:href="File-Copy-pm-5-sub.html#File__Copy__CORE_binmode" target="_top"><rect x="814.2" y="97" width="0.1" height="15.0" fill="rgb(240,55,49)" rx="2" ry="2" />
-</a>
-</g>
-<g class="func_g" onmouseover="s('all (24,022,669 microseconds, 100%)')" onmouseout="c()">
-<title>all (24,022,669 microseconds, 100%)</title><rect x="10.0" y="177" width="1180.0" height="15.0" fill="rgb(224,201,11)" rx="2" ry="2" />
-<text text-anchor="" x="13" y="187.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  ></text>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::CORE:syswrite (15,250 microseconds, 0.06%)')" onmouseout="c()">
-<title>File::Copy::CORE:syswrite (15,250 microseconds, 0.06%)</title><a xlink:href="File-Copy-pm-5-sub.html#File__Copy__CORE_syswrite" target="_top"><rect x="235.4" y="33" width="0.7" height="15.0" fill="rgb(229,77,42)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('Create::__ANON__[Create.pm:212] (961,009 microseconds, 13.85%)')" onmouseout="c()">
+<title>Create::__ANON__[Create.pm:212] (961,009 microseconds, 13.85%)</title><a xlink:href="Create-pm-3-line.html#190" target="_top"><rect x="173.4" y="161" width="163.3" height="15.0" fill="rgb(209,90,48)" rx="2" ry="2" />
+<text text-anchor="" x="176.373692626506" y="171.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >Create::__ANON__[Creat..</text>
 </a>
 </g>
-<g class="func_g" onmouseover="s('Config::FETCH (4,459 microseconds, 0.02%)')" onmouseout="c()">
-<title>Config::FETCH (4,459 microseconds, 0.02%)</title><a xlink:href="Config-pm-10-sub.html#65" target="_top"><rect x="433.9" y="65" width="0.3" height="15.0" fill="rgb(217,109,44)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Copy::__ANON__[C:/Perl64/lib/File/Copy.pm:324] (861,009 microseconds, 12.40%)')" onmouseout="c()">
+<title>File::Copy::__ANON__[C:/Perl64/lib/File/Copy.pm:324] (861,009 microseconds, 12.40%)</title><a xlink:href="File-Copy-pm-5-line.html#321" target="_top"><rect x="183.4" y="129" width="146.4" height="15.0" fill="rgb(228,215,7)" rx="2" ry="2" />
+<text text-anchor="" x="186.403846272592" y="139.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >File::Copy::__ANON__..</text>
 </a>
 </g>
-<g class="func_g" onmouseover="s('XSLoader::load (2,595 microseconds, 0.01%)')" onmouseout="c()">
-<title>XSLoader::load (2,595 microseconds, 0.01%)</title><a xlink:href="XSLoader-pm-20-sub.html#17" target="_top"><rect x="1189.1" y="129" width="0.1" height="15.0" fill="rgb(245,27,26)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('Create::CORE:readdir (1,000 microseconds, 0.01%)')" onmouseout="c()">
+<title>Create::CORE:readdir (1,000 microseconds, 0.01%)</title><a xlink:href="Create-pm-3-line.html#Create__CORE_readdir" target="_top"><rect x="732.9" y="113" width="0.1" height="15.0" fill="rgb(214,2,7)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('Create::CORE:ftfile (9,259 microseconds, 0.04%)')" onmouseout="c()">
-<title>Create::CORE:ftfile (9,259 microseconds, 0.04%)</title><a xlink:href="Create-pm-2-sub.html#Create__CORE_ftfile" target="_top"><rect x="16.7" y="81" width="0.5" height="15.0" fill="rgb(206,202,25)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Copy::__ANON__[C:/Perl64/lib/File/Copy.pm:324] (1,015,009 microseconds, 14.62%)')" onmouseout="c()">
+<title>File::Copy::__ANON__[C:/Perl64/lib/File/Copy.pm:324] (1,015,009 microseconds, 14.62%)</title><a xlink:href="File-Copy-pm-5-line.html#321" target="_top"><rect x="545.5" y="97" width="172.6" height="15.0" fill="rgb(243,51,25)" rx="2" ry="2" />
+<text text-anchor="" x="548.512453203577" y="107.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >File::Copy::__ANON__[C:/..</text>
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::CORE:stat (12,712 microseconds, 0.05%)')" onmouseout="c()">
-<title>File::Copy::CORE:stat (12,712 microseconds, 0.05%)</title><a xlink:href="File-Copy-pm-5-sub.html#File__Copy__CORE_stat" target="_top"><rect x="1184.5" y="113" width="0.6" height="15.0" fill="rgb(226,75,19)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('Create::CORE:ftfile (36,000 microseconds, 0.52%)')" onmouseout="c()">
+<title>Create::CORE:ftfile (36,000 microseconds, 0.52%)</title><a xlink:href="Create-pm-3-line.html#Create__CORE_ftfile" target="_top"><rect x="726.7" y="113" width="6.2" height="15.0" fill="rgb(220,180,49)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('Config::FETCH (4,324 microseconds, 0.02%)')" onmouseout="c()">
-<title>Config::FETCH (4,324 microseconds, 0.02%)</title><a xlink:href="Config-pm-10-sub.html#65" target="_top"><rect x="242.2" y="49" width="0.2" height="15.0" fill="rgb(208,11,38)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Copy::CORE:ftdir (44,000 microseconds, 0.63%)')" onmouseout="c()">
+<title>File::Copy::CORE:ftdir (44,000 microseconds, 0.63%)</title><a xlink:href="File-Copy-pm-5-line.html#File__Copy__CORE_ftdir" target="_top"><rect x="30.2" y="145" width="7.5" height="15.0" fill="rgb(234,8,22)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('Create::CORE:readdir (2,361 microseconds, 0.01%)')" onmouseout="c()">
-<title>Create::CORE:readdir (2,361 microseconds, 0.01%)</title><a xlink:href="Create-pm-2-sub.html#Create__CORE_readdir" target="_top"><rect x="14.8" y="97" width="0.1" height="15.0" fill="rgb(238,187,41)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Copy::copy (1,107,010 microseconds, 15.95%)')" onmouseout="c()">
+<title>File::Copy::copy (1,107,010 microseconds, 15.95%)</title><a xlink:href="File-Copy-pm-5-line.html#67" target="_top"><rect x="535.0" y="113" width="188.2" height="15.0" fill="rgb(229,53,4)" rx="2" ry="2" />
+<text text-anchor="" x="537.972121742375" y="123.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >File::Copy::copy</text>
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::_eq (10,894 microseconds, 0.05%)')" onmouseout="c()">
-<title>File::Copy::_eq (10,894 microseconds, 0.05%)</title><a xlink:href="File-Copy-pm-5-sub.html#93" target="_top"><rect x="236.1" y="33" width="0.6" height="15.0" fill="rgb(230,87,21)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('Win32::CopyFile (909,007 microseconds, 13.10%)')" onmouseout="c()">
+<title>Win32::CopyFile (909,007 microseconds, 13.10%)</title><a xlink:href="Win32-pm-33-line.html#Win32__CopyFile" target="_top"><rect x="361.6" y="97" width="154.5" height="15.0" fill="rgb(226,85,44)" rx="2" ry="2" />
+<text text-anchor="" x="364.568105467179" y="107.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >Win32::CopyFile</text>
 </a>
 </g>
-<g class="func_g" onmouseover="s('Create::verbose (3,930 microseconds, 0.02%)')" onmouseout="c()">
-<title>Create::verbose (3,930 microseconds, 0.02%)</title><a xlink:href="Create-pm-2-sub.html#136" target="_top"><rect x="620.8" y="97" width="0.2" height="15.0" fill="rgb(219,129,17)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Copy::__ANON__[C:/Perl64/lib/File/Copy.pm:324] (1,083,011 microseconds, 15.60%)')" onmouseout="c()">
+<title>File::Copy::__ANON__[C:/Perl64/lib/File/Copy.pm:324] (1,083,011 microseconds, 15.60%)</title><a xlink:href="File-Copy-pm-5-line.html#321" target="_top"><rect x="755.3" y="81" width="184.1" height="15.0" fill="rgb(254,123,3)" rx="2" ry="2" />
+<text text-anchor="" x="758.297536779168" y="91.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >File::Copy::__ANON__[C:/P..</text>
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::CORE:ftdir (2,174 microseconds, 0.01%)')" onmouseout="c()">
-<title>File::Copy::CORE:ftdir (2,174 microseconds, 0.01%)</title><a xlink:href="File-Copy-pm-5-sub.html#File__Copy__CORE_ftdir" target="_top"><rect x="1007.0" y="113" width="0.1" height="15.0" fill="rgb(208,229,12)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('Create::copyDir (5,910,064 microseconds, 85.15%)')" onmouseout="c()">
+<title>Create::copyDir (5,910,064 microseconds, 85.15%)</title><a xlink:href="Create-pm-3-line.html#251" target="_top"><rect x="164.9" y="177" width="1004.7" height="15.0" fill="rgb(240,122,40)" rx="2" ry="2" />
+<text text-anchor="" x="167.873392415355" y="187.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >Create::copyDir</text>
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::CORE:ftsize (2,179 microseconds, 0.01%)')" onmouseout="c()">
-<title>File::Copy::CORE:ftsize (2,179 microseconds, 0.01%)</title><a xlink:href="File-Copy-pm-5-sub.html#File__Copy__CORE_ftsize" target="_top"><rect x="437.5" y="65" width="0.1" height="15.0" fill="rgb(249,29,2)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('main::BEGIN@2 (90,000 microseconds, 1.30%)')" onmouseout="c()">
+<title>main::BEGIN@2 (90,000 microseconds, 1.30%)</title><a xlink:href="TestCreate-pl-1-line.html#2" target="_top"><rect x="1174.7" y="225" width="15.3" height="15.0" fill="rgb(226,132,0)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('Create::copyDir (8,358,426 microseconds, 34.79%)')" onmouseout="c()">
-<title>Create::copyDir (8,358,426 microseconds, 34.79%)</title><a xlink:href="Create-pm-2-sub.html#151" target="_top"><rect x="17.3" y="81" width="410.6" height="15.0" fill="rgb(215,167,2)" rx="2" ry="2" />
-<text text-anchor="" x="20.3318782955042" y="91.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >Create::copyDir</text>
+<g class="func_g" onmouseover="s('File::Copy::__ANON__[C:/Perl64/lib/File/Copy.pm:324] (909,007 microseconds, 13.10%)')" onmouseout="c()">
+<title>File::Copy::__ANON__[C:/Perl64/lib/File/Copy.pm:324] (909,007 microseconds, 13.10%)</title><a xlink:href="File-Copy-pm-5-line.html#321" target="_top"><rect x="361.6" y="113" width="154.5" height="15.0" fill="rgb(253,204,25)" rx="2" ry="2" />
+<text text-anchor="" x="364.568105467179" y="123.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >File::Copy::__ANON__[..</text>
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::CORE:stat (13,103 microseconds, 0.05%)')" onmouseout="c()">
-<title>File::Copy::CORE:stat (13,103 microseconds, 0.05%)</title><a xlink:href="File-Copy-pm-5-sub.html#File__Copy__CORE_stat" target="_top"><rect x="807.2" y="81" width="0.7" height="15.0" fill="rgb(233,44,36)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('Create::CORE:ftfile (42,001 microseconds, 0.61%)')" onmouseout="c()">
+<title>Create::CORE:ftfile (42,001 microseconds, 0.61%)</title><a xlink:href="Create-pm-3-line.html#Create__CORE_ftfile" target="_top"><rect x="945.2" y="97" width="7.1" height="15.0" fill="rgb(212,74,31)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::CORE:close (57,111 microseconds, 0.24%)')" onmouseout="c()">
-<title>File::Copy::CORE:close (57,111 microseconds, 0.24%)</title><a xlink:href="File-Copy-pm-5-sub.html#File__Copy__CORE_close" target="_top"><rect x="1004.2" y="113" width="2.8" height="15.0" fill="rgb(213,175,49)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Copy::CORE:ftdir (13,000 microseconds, 0.19%)')" onmouseout="c()">
+<title>File::Copy::CORE:ftdir (13,000 microseconds, 0.19%)</title><a xlink:href="File-Copy-pm-5-line.html#File__Copy__CORE_ftdir" target="_top"><rect x="181.2" y="129" width="2.2" height="15.0" fill="rgb(233,109,8)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('Create::BEGIN@64 (25,085 microseconds, 0.10%)')" onmouseout="c()">
-<title>Create::BEGIN@64 (25,085 microseconds, 0.10%)</title><a xlink:href="Create-pm-2-sub.html#64" target="_top"><rect x="1188.0" y="145" width="1.3" height="15.0" fill="rgb(223,58,0)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('Create::__ANON__[Create.pm:212] (1,138,010 microseconds, 16.40%)')" onmouseout="c()">
+<title>Create::__ANON__[Create.pm:212] (1,138,010 microseconds, 16.40%)</title><a xlink:href="Create-pm-3-line.html#190" target="_top"><rect x="529.7" y="129" width="193.5" height="15.0" fill="rgb(206,224,31)" rx="2" ry="2" />
+<text text-anchor="" x="532.702041013075" y="139.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >Create::__ANON__[Create.pm:..</text>
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::copy (3,888,839 microseconds, 16.19%)')" onmouseout="c()">
-<title>File::Copy::copy (3,888,839 microseconds, 16.19%)</title><a xlink:href="File-Copy-pm-5-sub.html#105" target="_top"><rect x="236.9" y="65" width="191.0" height="15.0" fill="rgb(211,128,23)" rx="2" ry="2" />
-<text text-anchor="" x="239.87917810449" y="75.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >File::Copy::copy</text>
+<g class="func_g" onmouseover="s('main::BEGIN@1 (30,000 microseconds, 0.43%)')" onmouseout="c()">
+<title>main::BEGIN@1 (30,000 microseconds, 0.43%)</title><a xlink:href="TestCreate-pl-1-line.html#1" target="_top"><rect x="1169.6" y="225" width="5.1" height="15.0" fill="rgb(249,38,6)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('Config::FETCH (4,304 microseconds, 0.02%)')" onmouseout="c()">
-<title>Config::FETCH (4,304 microseconds, 0.02%)</title><a xlink:href="Config-pm-10-sub.html#65" target="_top"><rect x="27.1" y="33" width="0.2" height="15.0" fill="rgb(221,17,16)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('Scalar::Util::blessed (1,000 microseconds, 0.01%)')" onmouseout="c()">
+<title>Scalar::Util::blessed (1,000 microseconds, 0.01%)</title><a xlink:href="Scalar-Util-pm-19-line.html#Scalar__Util__blessed" target="_top"><rect x="1169.4" y="49" width="0.2" height="15.0" fill="rgb(234,131,49)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::CORE:ftdir (2,292 microseconds, 0.01%)')" onmouseout="c()">
-<title>File::Copy::CORE:ftdir (2,292 microseconds, 0.01%)</title><a xlink:href="File-Copy-pm-5-sub.html#File__Copy__CORE_ftdir" target="_top"><rect x="817.1" y="97" width="0.1" height="15.0" fill="rgb(209,89,26)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('Create::BEGIN@3 (20,000 microseconds, 0.29%)')" onmouseout="c()">
+<title>Create::BEGIN@3 (20,000 microseconds, 0.29%)</title><a xlink:href="Verbosity-pm-26-line.html#3" target="_top"><rect x="1176.4" y="193" width="3.4" height="15.0" fill="rgb(234,105,53)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::CORE:sysread (6,192 microseconds, 0.03%)')" onmouseout="c()">
-<title>File::Copy::CORE:sysread (6,192 microseconds, 0.03%)</title><a xlink:href="File-Copy-pm-5-sub.html#File__Copy__CORE_sysread" target="_top"><rect x="619.2" y="65" width="0.3" height="15.0" fill="rgb(220,88,18)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('Create::copyDir (6,821,070 microseconds, 98.27%)')" onmouseout="c()">
+<title>Create::copyDir (6,821,070 microseconds, 98.27%)</title><a xlink:href="Create-pm-3-line.html#251" target="_top"><rect x="10.0" y="209" width="1159.6" height="15.0" fill="rgb(214,137,7)" rx="2" ry="2" />
+<text text-anchor="" x="13" y="219.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >Create::copyDir</text>
 </a>
 </g>
-<g class="func_g" onmouseover="s('Create::verbose (3,974 microseconds, 0.02%)')" onmouseout="c()">
-<title>Create::verbose (3,974 microseconds, 0.02%)</title><a xlink:href="Create-pm-2-sub.html#136" target="_top"><rect x="20.8" y="49" width="0.2" height="15.0" fill="rgb(241,161,15)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Copy::BEGIN@323 (10,000 microseconds, 0.14%)')" onmouseout="c()">
+<title>File::Copy::BEGIN@323 (10,000 microseconds, 0.14%)</title><a xlink:href="TestCreate-pl-1-line.html#323" target="_top"><rect x="1165.0" y="33" width="1.7" height="15.0" fill="rgb(232,118,26)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::CORE:close (65,867 microseconds, 0.27%)')" onmouseout="c()">
-<title>File::Copy::CORE:close (65,867 microseconds, 0.27%)</title><a xlink:href="File-Copy-pm-5-sub.html#File__Copy__CORE_close" target="_top"><rect x="27.4" y="33" width="3.3" height="15.0" fill="rgb(239,33,50)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('Config::AUTOLOAD (10,000 microseconds, 0.14%)')" onmouseout="c()">
+<title>Config::AUTOLOAD (10,000 microseconds, 0.14%)</title><a xlink:href="Config-pm-13-line.html#79" target="_top"><rect x="1188.3" y="161" width="1.7" height="15.0" fill="rgb(209,66,34)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('Create::CORE:ftfile (8,175 microseconds, 0.03%)')" onmouseout="c()">
-<title>Create::CORE:ftfile (8,175 microseconds, 0.03%)</title><a xlink:href="Create-pm-2-sub.html#Create__CORE_ftfile" target="_top"><rect x="14.3" y="97" width="0.4" height="15.0" fill="rgb(215,59,35)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('Scalar::Util::blessed (10,000 microseconds, 0.14%)')" onmouseout="c()">
+<title>Scalar::Util::blessed (10,000 microseconds, 0.14%)</title><a xlink:href="Scalar-Util-pm-19-line.html#Scalar__Util__blessed" target="_top"><rect x="163.2" y="129" width="1.7" height="15.0" fill="rgb(237,70,46)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('Create::CORE:readdir (2,471 microseconds, 0.01%)')" onmouseout="c()">
-<title>Create::CORE:readdir (2,471 microseconds, 0.01%)</title><a xlink:href="Create-pm-2-sub.html#Create__CORE_readdir" target="_top"><rect x="20.7" y="49" width="0.1" height="15.0" fill="rgb(245,206,12)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('Create::BEGIN@77 (60,000 microseconds, 0.86%)')" onmouseout="c()">
+<title>Create::BEGIN@77 (60,000 microseconds, 0.86%)</title><a xlink:href="Create-pm-3-line.html#77" target="_top"><rect x="1179.8" y="209" width="10.2" height="15.0" fill="rgb(221,67,49)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::CORE:stat (12,378 microseconds, 0.05%)')" onmouseout="c()">
-<title>File::Copy::CORE:stat (12,378 microseconds, 0.05%)</title><a xlink:href="File-Copy-pm-5-sub.html#File__Copy__CORE_stat" target="_top"><rect x="425.7" y="49" width="0.6" height="15.0" fill="rgb(236,115,45)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Copy::_eq (21,000 microseconds, 0.30%)')" onmouseout="c()">
+<title>File::Copy::_eq (21,000 microseconds, 0.30%)</title><a xlink:href="File-Copy-pm-5-line.html#55" target="_top"><rect x="161.3" y="145" width="3.6" height="15.0" fill="rgb(242,179,5)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::CORE:sysread (6,170 microseconds, 0.03%)')" onmouseout="c()">
-<title>File::Copy::CORE:sysread (6,170 microseconds, 0.03%)</title><a xlink:href="File-Copy-pm-5-sub.html#File__Copy__CORE_sysread" target="_top"><rect x="426.3" y="49" width="0.3" height="15.0" fill="rgb(227,75,18)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('Win32::CopyFile (993,009 microseconds, 14.31%)')" onmouseout="c()">
+<title>Win32::CopyFile (993,009 microseconds, 14.31%)</title><a xlink:href="Win32-pm-33-line.html#Win32__CopyFile" target="_top"><rect x="549.3" y="81" width="168.8" height="15.0" fill="rgb(214,33,42)" rx="2" ry="2" />
+<text text-anchor="" x="552.252510495338" y="91.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >Win32::CopyFile</text>
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::copy (3,923,450 microseconds, 16.33%)')" onmouseout="c()">
-<title>File::Copy::copy (3,923,450 microseconds, 16.33%)</title><a xlink:href="File-Copy-pm-5-sub.html#105" target="_top"><rect x="428.1" y="81" width="192.7" height="15.0" fill="rgb(212,123,31)" rx="2" ry="2" />
-<text text-anchor="" x="431.099785339557" y="91.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >File::Copy::copy</text>
+<g class="func_g" onmouseover="s('Win32::CopyFile (1,071,011 microseconds, 15.43%)')" onmouseout="c()">
+<title>Win32::CopyFile (1,071,011 microseconds, 15.43%)</title><a xlink:href="Win32-pm-33-line.html#Win32__CopyFile" target="_top"><rect x="757.3" y="65" width="182.1" height="15.0" fill="rgb(237,14,36)" rx="2" ry="2" />
+<text text-anchor="" x="760.337568029219" y="75.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >Win32::CopyFile</text>
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::CORE:open (3,618,225 microseconds, 15.06%)')" onmouseout="c()">
-<title>File::Copy::CORE:open (3,618,225 microseconds, 15.06%)</title><a xlink:href="File-Copy-pm-5-sub.html#File__Copy__CORE_open" target="_top"><rect x="629.5" y="81" width="177.7" height="15.0" fill="rgb(229,194,30)" rx="2" ry="2" />
-<text text-anchor="" x="632.514617121607" y="91.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >File::Copy::CORE:open</text>
+<g class="func_g" onmouseover="s('Message::BEGIN@40 (20,000 microseconds, 0.29%)')" onmouseout="c()">
+<title>Message::BEGIN@40 (20,000 microseconds, 0.29%)</title><a xlink:href="Message-pm-27-line.html#40" target="_top"><rect x="1176.4" y="177" width="3.4" height="15.0" fill="rgb(214,205,11)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::copy (3,845,180 microseconds, 16.01%)')" onmouseout="c()">
-<title>File::Copy::copy (3,845,180 microseconds, 16.01%)</title><a xlink:href="File-Copy-pm-5-sub.html#105" target="_top"><rect x="809.6" y="113" width="188.9" height="15.0" fill="rgb(238,40,26)" rx="2" ry="2" />
-<text text-anchor="" x="812.644785730559" y="123.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >File::Copy::copy</text>
+<g class="func_g" onmouseover="s('Win32::CopyFile (861,009 microseconds, 12.40%)')" onmouseout="c()">
+<title>Win32::CopyFile (861,009 microseconds, 12.40%)</title><a xlink:href="Win32-pm-33-line.html#Win32__CopyFile" target="_top"><rect x="183.4" y="113" width="146.4" height="15.0" fill="rgb(234,177,35)" rx="2" ry="2" />
+<text text-anchor="" x="186.403846272592" y="123.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >Win32::CopyFile</text>
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::CORE:sysread (6,333 microseconds, 0.03%)')" onmouseout="c()">
-<title>File::Copy::CORE:sysread (6,333 microseconds, 0.03%)</title><a xlink:href="File-Copy-pm-5-sub.html#File__Copy__CORE_sysread" target="_top"><rect x="1185.1" y="113" width="0.3" height="15.0" fill="rgb(213,60,34)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Copy::copy (824,006 microseconds, 11.87%)')" onmouseout="c()">
+<title>File::Copy::copy (824,006 microseconds, 11.87%)</title><a xlink:href="File-Copy-pm-5-line.html#67" target="_top"><rect x="24.8" y="161" width="140.1" height="15.0" fill="rgb(234,81,43)" rx="2" ry="2" />
+<text text-anchor="" x="27.7902265628721" y="171.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >File::Copy::copy</text>
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::CORE:sysread (6,270 microseconds, 0.03%)')" onmouseout="c()">
-<title>File::Copy::CORE:sysread (6,270 microseconds, 0.03%)</title><a xlink:href="File-Copy-pm-5-sub.html#File__Copy__CORE_sysread" target="_top"><rect x="235.1" y="33" width="0.3" height="15.0" fill="rgb(229,60,29)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('Create::CORE:ftfile (57,001 microseconds, 0.82%)')" onmouseout="c()">
+<title>Create::CORE:ftfile (57,001 microseconds, 0.82%)</title><a xlink:href="Create-pm-3-line.html#Create__CORE_ftfile" target="_top"><rect x="520.0" y="129" width="9.7" height="15.0" fill="rgb(214,16,44)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('Create::CORE:ftfile (7,816 microseconds, 0.03%)')" onmouseout="c()">
-<title>Create::CORE:ftfile (7,816 microseconds, 0.03%)</title><a xlink:href="Create-pm-2-sub.html#Create__CORE_ftfile" target="_top"><rect x="18.9" y="65" width="0.3" height="15.0" fill="rgb(249,136,46)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Copy::CORE:ftdir (52,000 microseconds, 0.75%)')" onmouseout="c()">
+<title>File::Copy::CORE:ftdir (52,000 microseconds, 0.75%)</title><a xlink:href="File-Copy-pm-5-line.html#File__Copy__CORE_ftdir" target="_top"><rect x="352.7" y="113" width="8.9" height="15.0" fill="rgb(210,117,15)" rx="2" ry="2" />
 </a>
 </g>
 </svg>

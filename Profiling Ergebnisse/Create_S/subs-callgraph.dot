@@ -1,264 +1,606 @@
 digraph {
 graph [overlap=false]
-subgraph cluster_Scalar_Util {
-	label="Scalar::Util";
-	"Scalar::Util::BEGIN@9";
-}
-subgraph cluster_XSLoader {
-	label="XSLoader";
-	"XSLoader::load";
-}
-subgraph cluster_File_Spec {
-	label="File::Spec";
-	"File::Spec::BEGIN@4";
-	"File::Spec::BEGIN@3";
-}
-subgraph cluster_Config {
-	label="Config";
-	"Config::BEGIN@11";
-	"Config::TIEHASH";
-	"Config::BEGIN@45";
-	"Config::BEGIN@10";
-	"Config::BEGIN@9";
-	"Config::import";
+subgraph cluster_Carp {
+	label="Carp";
+	"Carp::BEGIN@3";
+	"Carp::BEGIN@4";
+	"Carp::BEGIN@555";
+	"Carp::BEGIN@5";
+	"Carp::BEGIN@131";
+	"Carp::BEGIN@73";
+	"Carp::BEGIN@49";
+	"Carp::BEGIN@61";
+	"Carp::BEGIN@568";
+	"Carp::_fetch_sub";
+	"Carp::BEGIN@171";
+	"Carp::BEGIN@6";
+	"Carp::BEGIN@575";
 }
 subgraph cluster_File_Spec_Unix {
 	label="File::Spec::Unix";
+	"File::Spec::Unix::BEGIN@127";
+	"File::Spec::Unix::BEGIN@242";
 	"File::Spec::Unix::BEGIN@4";
+	"File::Spec::Unix::BEGIN@179";
 	"File::Spec::Unix::BEGIN@3";
-	"File::Spec::Unix::BEGIN@149";
+	"File::Spec::Unix::BEGIN@220";
+	"File::Spec::Unix::BEGIN@145";
+	"File::Spec::Unix::BEGIN@136";
+}
+subgraph cluster_File_Copy {
+	label="File::Copy";
+	"File::Copy::BEGIN@13";
+	"File::Copy::BEGIN@12.1";
+	"File::Copy::BEGIN@14";
+	"File::Copy::BEGIN@11";
+	"File::Copy::BEGIN@12";
+	"File::Copy::BEGIN@10";
+}
+subgraph cluster_DynaLoader {
+	label="DynaLoader";
+	"DynaLoader::dl_install_xsub";
+	"DynaLoader::bootstrap";
+	"DynaLoader::dl_load_file";
+	"DynaLoader::CORE:ftsize";
+	"DynaLoader::dl_undef_symbols";
+	"DynaLoader::CORE:ftdir";
+	"DynaLoader::CORE:subst";
+	"DynaLoader::CORE:ftfile";
+	"DynaLoader::dl_find_symbol";
+	"DynaLoader::BEGIN@23";
+	"DynaLoader::dl_load_flags";
+	"DynaLoader::BEGIN@18";
+}
+subgraph cluster_mro {
+	label="mro";
+	"mro::method_changed_in";
+}
+subgraph cluster_Internals {
+	label="Internals";
+	"Internals::SvREADONLY";
+}
+subgraph cluster_Win32_Shortcut {
+	label="Win32::Shortcut";
+	"Win32::Shortcut::_SetArguments";
+	"Win32::Shortcut::_SetHotkey";
+	"Win32::Shortcut::BEGIN@134";
+	"Win32::Shortcut::DESTROY";
+	"Win32::Shortcut::_Release";
+	"Win32::Shortcut::Save";
+	"Win32::Shortcut::_Instance";
+	"Win32::Shortcut::_SetWorkingDirectory";
+	"Win32::Shortcut::_SetIconLocation";
+	"Win32::Shortcut::_SetDescription";
+	"Win32::Shortcut::_SetPath";
+	"Win32::Shortcut::_Save";
+	"Win32::Shortcut::new";
+	"Win32::Shortcut::bootstrap";
+	"Win32::Shortcut::_SetShowCmd";
+}
+subgraph cluster_Win32 {
+	label="Win32";
+	"Win32::GetFullPathName";
+	"Win32::bootstrap";
+	"Win32::BEGIN@5";
+	"Win32::BEGIN@4";
+}
+subgraph cluster_Cwd {
+	label="Cwd";
+	"Cwd::bootstrap";
+}
+subgraph cluster_Create {
+	label="Create";
+	"Create::CORE:unlink";
+	"Create::new";
+	"Create::BEGIN@3";
+	"Create::CORE:sort";
+	"Create::BEGIN@77";
+	"Create::CORE:match";
+	"Create::addDestination";
+	"Create::CORE:closedir";
+	"Create::BEGIN@2.3";
+	"Create::CORE:close";
+	"Create::CORE:readdir";
+	"Create::CORE:open_dir";
+	"Create::CORE:subst";
+	"Create::__ANON__[Create.pm:318]";
+	"Create::create_s";
+	"Create::BEGIN@2";
+	"Create::CORE:regcomp";
+	"Create::BEGIN@560";
+	"Create::BEGIN@178";
+	"Create::__ANON__[Create.pm:358]";
+	"Create::CORE:ftdir";
+	"Create::CORE:open";
+	"Create::compareFile";
+	"Create::compareDir";
+	"Create::addArchiveName";
+	"Create::addSource";
+	"Create::BEGIN@1";
+	"Create::CORE:ftis";
+	"Create::verbose";
+	"Create::CORE:print";
+	"Create::BEGIN@1.2";
+}
+subgraph cluster_Verbosity {
+	label="Verbosity";
+	"Verbosity::new";
+	"Verbosity::verbose";
+}
+subgraph cluster_main {
+	label="main";
+	"main::RUNTIME";
+	"main::BEGIN@2";
+	"main::BEGIN@0";
+	"main::BEGIN@1";
+	"main::CORE:ftfile";
+	"main::BEGIN@11";
+	"main::BEGIN@10";
+	"main::NULL";
 }
 subgraph cluster_List_Util {
 	label="List::Util";
-	"List::Util::BEGIN@11";
+	"List::Util::BEGIN@9";
+	"List::Util::BEGIN@30";
+}
+subgraph cluster_Digest_MD5 {
+	label="Digest::MD5";
+	"Digest::MD5::new";
+	"Digest::MD5::addfile";
+	"Digest::MD5::BEGIN@3";
+	"Digest::MD5::BEGIN@4";
+	"Digest::MD5::DESTROY";
+	"Digest::MD5::hexdigest";
+}
+subgraph cluster_warnings {
+	label="warnings";
+	"warnings::CORE:match";
+	"warnings::import";
+	"warnings::register_categories";
+	"warnings::unimport";
+	"warnings::CORE:regcomp";
+	"warnings::_mkMask";
+}
+subgraph cluster_strict {
+	label="strict";
+	"strict::CORE:regcomp";
+	"strict::bits";
+	"strict::CORE:match";
+	"strict::unimport";
+	"strict::import";
+}
+subgraph cluster_File_Spec {
+	label="File::Spec";
+	"File::Spec::BEGIN@3";
+	"File::Spec::BEGIN@4";
 }
 subgraph cluster_Digest {
 	label="Digest";
-	"Digest::BEGIN@4";
-	"Digest::new";
 	"Digest::BEGIN@3";
+	"Digest::new";
+	"Digest::BEGIN@4";
 	"Digest::AUTOLOAD";
 	"Digest::BEGIN@37";
 	"Digest::CORE:subst";
 }
-subgraph cluster_Digest_MD5 {
-	label="Digest::MD5";
-	"Digest::MD5::addfile";
-	"Digest::MD5::hexdigest";
-	"Digest::MD5::BEGIN@3";
-	"Digest::MD5::new";
-	"Digest::MD5::DESTROY";
-	"Digest::MD5::BEGIN@4";
+subgraph cluster_warnings_register {
+	label="warnings::register";
+	"warnings::register::import";
 }
-subgraph cluster_warnings {
-	label="warnings";
-	"warnings::unimport";
-	"warnings::CORE:regcomp";
-	"warnings::register_categories";
-	"warnings::_mkMask";
-	"warnings::CORE:match";
-	"warnings::import";
+subgraph cluster_Message {
+	label="Message";
+	"Message::BEGIN@40";
+	"Message::BEGIN@74";
+	"Message::BEGIN@57";
+	"Message::new";
 }
-subgraph cluster_File_Copy {
-	label="File::Copy";
-	"File::Copy::BEGIN@10";
-	"File::Copy::BEGIN@11";
-	"File::Copy::BEGIN@13";
-	"File::Copy::BEGIN@47";
-	"File::Copy::BEGIN@12";
-	"File::Copy::BEGIN@12.1";
-	"File::Copy::BEGIN@14";
+subgraph cluster_constant {
+	label="constant";
+	"constant::CORE:qr";
+	"constant::BEGIN@126";
+	"constant::BEGIN@3";
+	"constant::CORE:regcomp";
+	"constant::BEGIN@64";
+	"constant::CORE:match";
+	"constant::BEGIN@6";
+	"constant::BEGIN@24";
+	"constant::BEGIN@39";
+	"constant::import";
+	"constant::BEGIN@4";
+	"constant::BEGIN@2";
 }
 subgraph cluster_version {
 	label="version";
-	"version::(bool";
 	"version::(cmp";
+	"version::(bool";
+}
+subgraph cluster_vars {
+	label="vars";
+	"vars::import";
+	"vars::BEGIN@7";
+	"vars::BEGIN@8";
+	"vars::BEGIN@3";
+	"vars::CORE:match";
+}
+subgraph cluster_Config {
+	label="Config";
+	"Config::_fetch_string";
+	"Config::BEGIN@9";
+	"Config::BEGIN@27";
+	"Config::TIEHASH";
+	"Config::launcher";
+	"Config::BEGIN@7";
+	"Config::CORE:match";
+	"Config::BEGIN@6";
+	"Config::FETCH";
+	"Config::CORE:pack";
+	"Config::CORE:regcomp";
+	"Config::CORE:substcont";
+	"Config::import";
+	"Config::AUTOLOAD";
+	"Config::fetch_string";
+	"Config::BEGIN@5";
+	"Config::CORE:unpack";
+	"Config::CORE:subst";
+	"Config::BEGIN@10";
+	"Config::BEGIN@47";
+	"Config::BEGIN@11";
+}
+subgraph cluster_Exporter {
+	label="Exporter";
+	"Exporter::export_ok_tags";
+	"Exporter::CORE:subst";
+	"Exporter::import";
+	"Exporter::CORE:match";
+	"Exporter::as_heavy";
+}
+subgraph cluster_Scalar_Util {
+	label="Scalar::Util";
+	"Scalar::Util::BEGIN@9";
+}
+subgraph cluster_ActivePerl_Config {
+	label="ActivePerl::Config";
+	"ActivePerl::Config::BEGIN@3";
+	"ActivePerl::Config::override";
+	"ActivePerl::Config::BEGIN@43";
+}
+subgraph cluster_Exporter_Heavy {
+	label="Exporter::Heavy";
+	"Exporter::Heavy::heavy_export_ok_tags";
+	"Exporter::Heavy::BEGIN@3";
+	"Exporter::Heavy::_push_tags";
+	"Exporter::Heavy::BEGIN@202";
+	"Exporter::Heavy::BEGIN@4";
+}
+subgraph cluster_Term_ANSIColor {
+	label="Term::ANSIColor";
+	"Term::ANSIColor::BEGIN@26";
+	"Term::ANSIColor::BEGIN@23";
+	"Term::ANSIColor::BEGIN@27";
+	"Term::ANSIColor::BEGIN@42";
+	"Term::ANSIColor::BEGIN@22";
+	"Term::ANSIColor::BEGIN@24";
+	"Term::ANSIColor::CORE:sort";
+}
+subgraph cluster_UNIVERSAL {
+	label="UNIVERSAL";
+	"UNIVERSAL::VERSION";
 }
 subgraph cluster_Digest_base {
 	label="Digest::base";
 	"Digest::base::BEGIN@3";
 	"Digest::base::BEGIN@4";
 }
-subgraph cluster_overload {
-	label="overload";
-	"overload::BEGIN@116";
-	"overload::BEGIN@146";
-	"overload::BEGIN@85";
-}
-subgraph cluster_vars {
-	label="vars";
-	"vars::BEGIN@3";
-	"vars::BEGIN@8";
-	"vars::import";
-	"vars::CORE:match";
-	"vars::BEGIN@7";
-}
-subgraph cluster_Create {
-	label="Create";
-	"Create::compareDir";
-	"Create::CORE:match";
-	"Create::addDestination";
-	"Create::CORE:ftfile";
-	"Create::CORE:ftdir";
-	"Create::verbose";
-	"Create::CORE:open_dir";
-	"Create::BEGIN@251";
-	"Create::compareFile";
-	"Create::new";
-	"Create::BEGIN@64";
-	"Create::CORE:readdir";
-	"Create::CORE:unlink";
-	"Create::CORE:open";
-	"Create::create_s";
-	"Create::CORE:closedir";
-	"Create::CORE:close";
-	"Create::CORE:symlink";
-	"Create::addSource";
+subgraph cluster_XSLoader {
+	label="XSLoader";
+	"XSLoader::load";
 }
 subgraph cluster_overloading {
 	label="overloading";
 	"overloading::BEGIN@2";
 	"overloading::unimport";
 }
-subgraph cluster_Exporter {
-	label="Exporter";
-	"Exporter::import";
-	"Exporter::CORE:match";
+subgraph cluster_File_Spec_Win32 {
+	label="File::Spec::Win32";
+	"File::Spec::Win32::BEGIN@3";
+	"File::Spec::Win32::BEGIN@5";
 }
-subgraph cluster_main {
-	label="main";
-	"main::BEGIN@10";
-	"main::BEGIN@1";
-	"main::RUNTIME";
-	"main::BEGIN@11";
+subgraph cluster_overload {
+	label="overload";
+	"overload::BEGIN@83";
+	"overload::BEGIN@144";
+	"overload::BEGIN@114";
 }
-subgraph cluster_strict {
-	label="strict";
-	"strict::import";
-	"strict::CORE:regcomp";
-	"strict::unimport";
-	"strict::bits";
-	"strict::CORE:match";
-}
-subgraph cluster_warnings_register {
-	label="warnings::register";
-	"warnings::register::import";
-}
-"main::RUNTIME" -> "Create::addDestination";
-"Create::compareDir" -> "Create::CORE:ftfile";
-"Create::compareFile" -> "Digest::AUTOLOAD";
-"Create::compareFile" -> "Digest::MD5::DESTROY";
-"File::Copy::BEGIN@13" -> "File::Spec::Unix::BEGIN@149";
-"Create::compareFile" -> "Digest::MD5::hexdigest";
-"Create::BEGIN@251" -> "Digest::BEGIN@4";
-"File::Copy::BEGIN@14" -> "Config::BEGIN@10";
-"Create::BEGIN@64" -> "File::Copy::BEGIN@47";
-"main::BEGIN@11" -> "strict::CORE:match";
-"Create::compareDir" -> "Create::CORE:readdir";
-"Create::create_s" -> "Create::CORE:readdir";
-"Exporter::import" -> "Exporter::CORE:match";
-"strict::import" -> "strict::bits";
-"strict::unimport" -> "strict::bits";
-"Create::BEGIN@64" -> "overload::BEGIN@85";
-"File::Copy::BEGIN@12.1" -> "warnings::unimport";
-"Create::BEGIN@64" -> "Exporter::import";
-"Create::compareFile" -> "Digest::MD5::addfile";
-"Create::compareFile" -> "Create::CORE:open";
-"Digest::new" -> "Digest::CORE:subst";
-"main::RUNTIME" -> "Create::addSource";
-"overload::BEGIN@116" -> "overloading::unimport";
-"overload::BEGIN@85" -> "overloading::unimport";
-"Create::create_s" -> "Create::CORE:match";
-"Create::BEGIN@64" -> "File::Copy::BEGIN@13";
-"Config::BEGIN@45" -> "strict::unimport";
-"Digest::BEGIN@37" -> "strict::unimport";
-"File::Spec::Unix::BEGIN@149" -> "strict::unimport";
-"main::BEGIN@10" -> "warnings::CORE:match";
-"main::BEGIN@11" -> "strict::CORE:regcomp";
-"Create::compareDir" -> "Create::compareFile";
-"Create::BEGIN@64" -> "List::Util::BEGIN@11";
-"main::RUNTIME" -> "Create::new";
-"warnings::register_categories" -> "warnings::_mkMask";
-"warnings::register::import" -> "warnings::register_categories";
-"File::Copy::BEGIN@14" -> "version::(bool";
-"main::BEGIN@10" -> "warnings::import";
-"Config::BEGIN@10" -> "warnings::import";
-"File::Copy::BEGIN@12" -> "warnings::import";
-"overloading::BEGIN@2" -> "warnings::import";
-"File::Copy::BEGIN@14" -> "Config::BEGIN@11";
-"Create::compareDir" -> "Create::CORE:unlink";
-"Digest::new" -> "Digest::base::BEGIN@3";
-"Create::compareDir" -> "Create::CORE:closedir";
-"Create::create_s" -> "Create::CORE:closedir";
-"Create::compareDir" -> "Create::compareDir";
-"Create::create_s" -> "Create::compareDir";
-"File::Copy::BEGIN@14" -> "Config::BEGIN@45";
-"File::Copy::BEGIN@14" -> "Config::TIEHASH";
-"Digest::AUTOLOAD" -> "Digest::new";
-"Digest::new" -> "Digest::base::BEGIN@4";
-"Create::compareFile" -> "Digest::MD5::new";
-"Digest::new" -> "Digest::MD5::new";
-"File::Copy::BEGIN@14" -> "Config::import";
-"Create::compareDir" -> "Create::CORE:ftdir";
-"File::Spec::BEGIN@4" -> "vars::BEGIN@8";
-"Create::BEGIN@64" -> "File::Copy::BEGIN@11";
-"File::Copy::BEGIN@14" -> "Config::BEGIN@9";
-"File::Copy::BEGIN@13" -> "File::Spec::Unix::BEGIN@3";
-"Create::compareDir" -> "Create::CORE:open_dir";
-"Create::create_s" -> "Create::CORE:open_dir";
-"Create::BEGIN@64" -> "File::Copy::BEGIN@14";
-"main::BEGIN@1" -> "Create::BEGIN@64";
-"Config::BEGIN@11" -> "vars::import";
-"Digest::BEGIN@4" -> "vars::import";
-"File::Spec::BEGIN@4" -> "vars::import";
-"File::Spec::Unix::BEGIN@4" -> "vars::import";
-"Digest::base::BEGIN@4" -> "vars::import";
-"Digest::MD5::BEGIN@4" -> "vars::import";
-"Create::BEGIN@64" -> "overload::BEGIN@116";
-"File::Copy::BEGIN@14" -> "version::(cmp";
-"main::RUNTIME" -> "Create::create_s";
-"vars::import" -> "vars::CORE:match";
-"Create::compareFile" -> "Create::CORE:close";
-"Create::compareDir" -> "Create::CORE:symlink";
-"main::BEGIN@1" -> "main::BEGIN@10";
-"Create::BEGIN@64" -> "Scalar::Util::BEGIN@9";
-"Create::BEGIN@64" -> "File::Copy::BEGIN@12";
-"Create::BEGIN@251" -> "Digest::BEGIN@37";
+"Create::BEGIN@77" -> "File::Copy::BEGIN@12.1";
+"File::Spec::Unix::BEGIN@127" -> "constant::BEGIN@39";
+"Win32::Shortcut::BEGIN@134" -> "UNIVERSAL::VERSION";
+"Create::BEGIN@77" -> "File::Copy::BEGIN@10";
+"DynaLoader::bootstrap" -> "DynaLoader::CORE:ftfile";
+"Create::BEGIN@3" -> "Create::BEGIN@2.3";
+"Win32::Shortcut::Save" -> "Win32::GetFullPathName";
+"Win32::GetFullPathName" -> "Win32::GetFullPathName";
+"Create::__ANON__[Create.pm:358]" -> "Win32::Shortcut::new";
 "File::Copy::BEGIN@13" -> "File::Spec::BEGIN@3";
-"Create::BEGIN@64" -> "File::Copy::BEGIN@10";
-"File::Spec::BEGIN@4" -> "vars::BEGIN@3";
-"Create::compareDir" -> "Create::verbose";
-"Create::compareFile" -> "Create::verbose";
-"Create::addDestination" -> "Create::verbose";
-"Create::new" -> "Create::verbose";
-"Create::create_s" -> "Create::verbose";
-"Create::addSource" -> "Create::verbose";
-"Digest::new" -> "XSLoader::load";
-"Create::BEGIN@64" -> "XSLoader::load";
-"main::BEGIN@1" -> "Create::BEGIN@251";
-"Digest::new" -> "Digest::MD5::BEGIN@4";
+"Win32::Shortcut::Save" -> "Win32::Shortcut::_SetShowCmd";
+"File::Spec::BEGIN@4" -> "vars::BEGIN@8";
+"Create::BEGIN@77" -> "File::Copy::BEGIN@12";
+"Term::ANSIColor::BEGIN@26" -> "Carp::BEGIN@5";
+"main::BEGIN@11" -> "strict::CORE:regcomp";
+"Create::compareFile" -> "Create::CORE:close";
+"constant::BEGIN@64" -> "strict::unimport";
+"Carp::BEGIN@575" -> "strict::unimport";
+"Config::BEGIN@47" -> "strict::unimport";
+"Digest::BEGIN@37" -> "strict::unimport";
+"constant::BEGIN@126" -> "strict::unimport";
+"Carp::BEGIN@555" -> "strict::unimport";
+"Carp::BEGIN@131" -> "strict::unimport";
+"Exporter::Heavy::BEGIN@4" -> "strict::unimport";
+"List::Util::BEGIN@30" -> "strict::unimport";
+"constant::BEGIN@39" -> "strict::unimport";
+"File::Spec::Unix::BEGIN@179" -> "strict::unimport";
+"File::Spec::BEGIN@4" -> "vars::BEGIN@7";
+"File::Copy::BEGIN@13" -> "File::Spec::Unix::BEGIN@242";
+"Term::ANSIColor::BEGIN@26" -> "Carp::BEGIN@49";
+"Term::ANSIColor::BEGIN@26" -> "Carp::BEGIN@73";
+"Carp::BEGIN@73" -> "Carp::_fetch_sub";
+"Carp::BEGIN@61" -> "Carp::_fetch_sub";
+"Create::compareFile" -> "Create::CORE:open";
+"Digest::BEGIN@4" -> "vars::import";
+"constant::BEGIN@6" -> "vars::import";
+"Config::BEGIN@11" -> "vars::import";
+"File::Spec::Unix::BEGIN@4" -> "vars::import";
+"File::Spec::Win32::BEGIN@5" -> "vars::import";
+"Digest::base::BEGIN@4" -> "vars::import";
+"Win32::BEGIN@5" -> "vars::import";
+"Config::BEGIN@7" -> "vars::import";
+"Digest::MD5::BEGIN@4" -> "vars::import";
+"File::Spec::BEGIN@4" -> "vars::import";
+"main::BEGIN@1" -> "warnings::CORE:regcomp";
+"Digest::AUTOLOAD" -> "Digest::new";
+"File::Copy::BEGIN@13" -> "File::Spec::Win32::BEGIN@5";
+"Win32::Shortcut::Save" -> "Win32::Shortcut::_SetDescription";
+"constant::import" -> "Internals::SvREADONLY";
+"constant::BEGIN@24" -> "Internals::SvREADONLY";
+"DynaLoader::bootstrap" -> "DynaLoader::dl_undef_symbols";
+"Config::AUTOLOAD" -> "Config::CORE:match";
+"Config::_fetch_string" -> "Config::CORE:match";
 "Digest::new" -> "Digest::MD5::BEGIN@3";
-"main::RUNTIME" -> "main::BEGIN@1";
-"Create::BEGIN@64" -> "overload::BEGIN@146";
-"Create::BEGIN@64" -> "File::Copy::BEGIN@12.1";
-"main::BEGIN@10" -> "warnings::CORE:regcomp";
-"File::Copy::BEGIN@13" -> "File::Spec::BEGIN@4";
-"List::Util::BEGIN@11" -> "strict::import";
+"overload::BEGIN@144" -> "warnings::register::import";
+"constant::BEGIN@4" -> "warnings::register::import";
+"vars::BEGIN@7" -> "warnings::register::import";
+"Create::BEGIN@560" -> "Digest::BEGIN@3";
+"File::Copy::BEGIN@13" -> "DynaLoader::BEGIN@23";
+"Digest::new" -> "Digest::base::BEGIN@3";
+"File::Copy::BEGIN@13" -> "File::Spec::Unix::BEGIN@220";
+"constant::import" -> "mro::method_changed_in";
+"Create::BEGIN@560" -> "Digest::BEGIN@4";
+"Win32::BEGIN@4" -> "strict::import";
+"File::Spec::Unix::BEGIN@3" -> "strict::import";
+"File::Spec::Win32::BEGIN@3" -> "strict::import";
+"ActivePerl::Config::BEGIN@3" -> "strict::import";
+"Term::ANSIColor::BEGIN@23" -> "strict::import";
 "Scalar::Util::BEGIN@9" -> "strict::import";
-"Digest::MD5::BEGIN@3" -> "strict::import";
-"File::Spec::BEGIN@3" -> "strict::import";
+"Config::BEGIN@9" -> "strict::import";
 "vars::BEGIN@8" -> "strict::import";
 "File::Copy::BEGIN@11" -> "strict::import";
-"Config::BEGIN@9" -> "strict::import";
-"Digest::base::BEGIN@3" -> "strict::import";
+"Exporter::Heavy::BEGIN@3" -> "strict::import";
+"File::Spec::BEGIN@3" -> "strict::import";
 "Digest::BEGIN@3" -> "strict::import";
-"File::Spec::Unix::BEGIN@3" -> "strict::import";
+"Digest::MD5::BEGIN@3" -> "strict::import";
+"Carp::BEGIN@4" -> "strict::import";
+"Config::BEGIN@5" -> "strict::import";
+"constant::BEGIN@3" -> "strict::import";
 "main::BEGIN@11" -> "strict::import";
+"Digest::base::BEGIN@3" -> "strict::import";
+"Create::BEGIN@1.2" -> "strict::import";
+"List::Util::BEGIN@9" -> "strict::import";
+"Create::BEGIN@1" -> "strict::import";
+"main::RUNTIME" -> "Create::addSource";
+"File::Spec::Unix::BEGIN@127" -> "constant::BEGIN@3";
+"Digest::new" -> "Digest::MD5::BEGIN@4";
+"Create::create_s" -> "Create::CORE:sort";
+"Config::AUTOLOAD" -> "Config::BEGIN@27";
+"Config::FETCH" -> "Config::launcher";
+"main::RUNTIME" -> "Create::new";
+"Create::BEGIN@178" -> "Create::BEGIN@3";
 "File::Copy::BEGIN@13" -> "File::Spec::Unix::BEGIN@4";
-"File::Spec::BEGIN@4" -> "vars::BEGIN@7";
-"overload::BEGIN@85" -> "overloading::BEGIN@2";
-"Create::BEGIN@251" -> "Digest::BEGIN@3";
-"overload::BEGIN@146" -> "warnings::register::import";
-"vars::BEGIN@7" -> "warnings::register::import";
-"main::BEGIN@1" -> "main::BEGIN@11";
+"Config::fetch_string" -> "Config::_fetch_string";
+"main::BEGIN@1" -> "warnings::CORE:match";
+"Term::ANSIColor::BEGIN@42" -> "Exporter::Heavy::heavy_export_ok_tags";
+"Create::compareDir" -> "Create::CORE:closedir";
+"Create::create_s" -> "Create::CORE:closedir";
+"Exporter::export_ok_tags" -> "Exporter::as_heavy";
+"Create::BEGIN@77" -> "overload::BEGIN@114";
+"main::RUNTIME" -> "Create::addDestination";
+"Message::BEGIN@40" -> "Term::ANSIColor::BEGIN@27";
+"File::Copy::BEGIN@13" -> "File::Spec::Unix::BEGIN@145";
+"Create::compareDir" -> "Create::CORE:match";
+"Create::create_s" -> "Create::CORE:match";
+"Create::__ANON__[Create.pm:358]" -> "Win32::Shortcut::Save";
+"Config::AUTOLOAD" -> "Config::BEGIN@6";
+"Digest::new" -> "XSLoader::load";
+"Create::BEGIN@77" -> "XSLoader::load";
+"File::Copy::BEGIN@13" -> "XSLoader::load";
+"strict::unimport" -> "strict::bits";
+"strict::import" -> "strict::bits";
+"File::Copy::BEGIN@14" -> "Config::import";
+"DynaLoader::BEGIN@23" -> "Config::import";
+"Term::ANSIColor::BEGIN@26" -> "Carp::BEGIN@575";
+"Exporter::as_heavy" -> "Exporter::Heavy::BEGIN@202";
+"Create::verbose" -> "Verbosity::verbose";
+"Create::BEGIN@77" -> "File::Copy::BEGIN@13";
+"Win32::Shortcut::DESTROY" -> "Win32::Shortcut::_Release";
+"main::RUNTIME" -> "Create::addArchiveName";
+"Win32::Shortcut::Save" -> "Win32::Shortcut::_SetIconLocation";
+"DynaLoader::bootstrap" -> "DynaLoader::CORE:ftsize";
+"Config::AUTOLOAD" -> "Config::BEGIN@7";
+"File::Copy::BEGIN@13" -> "File::Spec::BEGIN@4";
+"Digest::new" -> "Digest::base::BEGIN@4";
+"DynaLoader::bootstrap" -> "DynaLoader::dl_load_flags";
+"DynaLoader::BEGIN@23" -> "Config::TIEHASH";
+"Term::ANSIColor::BEGIN@26" -> "Carp::BEGIN@61";
+"File::Spec::Unix::BEGIN@127" -> "constant::BEGIN@4";
+"Term::ANSIColor::BEGIN@42" -> "Exporter::export_ok_tags";
+"DynaLoader::BEGIN@23" -> "version::(cmp";
+"File::Spec::Unix::BEGIN@127" -> "constant::BEGIN@6";
+"main::BEGIN@0" -> "main::CORE:ftfile";
+"Message::BEGIN@40" -> "Term::ANSIColor::BEGIN@42";
+"Term::ANSIColor::BEGIN@26" -> "Carp::BEGIN@6";
+"Exporter::as_heavy" -> "Exporter::Heavy::BEGIN@3";
+"Create::BEGIN@560" -> "Digest::BEGIN@37";
+"Create::verbose" -> "Create::CORE:subst";
+"Create::compareDir" -> "Create::CORE:subst";
+"Create::BEGIN@178" -> "Create::BEGIN@2";
+"Win32::Shortcut::BEGIN@134" -> "Win32::BEGIN@5";
+"Config::BEGIN@27" -> "ActivePerl::Config::BEGIN@43";
+"Create::compareDir" -> "Create::CORE:open_dir";
+"Create::create_s" -> "Create::CORE:open_dir";
+"File::Copy::BEGIN@13" -> "DynaLoader::BEGIN@18";
+"Config::FETCH" -> "Config::AUTOLOAD";
+"DynaLoader::BEGIN@23" -> "Config::BEGIN@11";
+"Create::create_s" -> "Create::CORE:print";
+"DynaLoader::bootstrap" -> "DynaLoader::dl_load_file";
+"Digest::new" -> "Digest::CORE:subst";
+"main::BEGIN@2" -> "Create::BEGIN@77";
+"Message::BEGIN@40" -> "Term::ANSIColor::BEGIN@23";
+"DynaLoader::BEGIN@23" -> "Config::BEGIN@9";
+"Term::ANSIColor::BEGIN@26" -> "Carp::BEGIN@555";
+"File::Spec::Unix::BEGIN@127" -> "constant::BEGIN@24";
+"Win32::Shortcut::BEGIN@134" -> "Win32::BEGIN@4";
+"File::Copy::BEGIN@13" -> "File::Spec::Unix::BEGIN@179";
+"File::Copy::BEGIN@13" -> "File::Spec::Unix::BEGIN@3";
+"overload::BEGIN@114" -> "overloading::unimport";
+"overload::BEGIN@83" -> "overloading::unimport";
+"main::NULL" -> "main::BEGIN@1";
+"warnings::register_categories" -> "warnings::_mkMask";
+"Exporter::Heavy::heavy_export_ok_tags" -> "Exporter::Heavy::_push_tags";
+"Term::ANSIColor::BEGIN@26" -> "Carp::BEGIN@568";
+"main::NULL" -> "main::BEGIN@0";
+"DynaLoader::bootstrap" -> "DynaLoader::dl_install_xsub";
+"main::RUNTIME" -> "Create::create_s";
+"Create::compareDir" -> "Create::__ANON__[Create.pm:318]";
+"Create::compareFile" -> "Digest::MD5::addfile";
+"main::BEGIN@2" -> "Create::BEGIN@560";
+"main::BEGIN@2" -> "Create::BEGIN@178";
+"Create::create_s" -> "Create::CORE:regcomp";
+"Config::AUTOLOAD" -> "Config::BEGIN@5";
+"Carp::BEGIN@6" -> "warnings::unimport";
+"File::Copy::BEGIN@12.1" -> "warnings::unimport";
+"Carp::BEGIN@568" -> "warnings::unimport";
+"Exporter::Heavy::BEGIN@202" -> "warnings::unimport";
+"warnings::register::import" -> "warnings::register_categories";
+"Message::BEGIN@40" -> "Term::ANSIColor::BEGIN@22";
+"Message::BEGIN@40" -> "Term::ANSIColor::BEGIN@26";
+"Create::compareDir" -> "Create::CORE:ftis";
+"Create::create_s" -> "Create::compareDir";
+"Create::compareDir" -> "Create::compareDir";
+"Create::compareFile" -> "Digest::AUTOLOAD";
+"Create::compareDir" -> "Create::compareFile";
+"File::Spec::Unix::BEGIN@127" -> "constant::BEGIN@126";
+"Create::compareFile" -> "Digest::MD5::hexdigest";
+"DynaLoader::BEGIN@23" -> "Config::BEGIN@10";
+"Term::ANSIColor::BEGIN@26" -> "Carp::BEGIN@131";
+"Message::BEGIN@40" -> "Term::ANSIColor::BEGIN@24";
+"Create::compareFile" -> "Digest::MD5::new";
+"Digest::new" -> "Digest::MD5::new";
+"Create::BEGIN@77" -> "Scalar::Util::BEGIN@9";
+"Exporter::as_heavy" -> "Exporter::Heavy::BEGIN@4";
+"DynaLoader::bootstrap" -> "Win32::bootstrap";
+"constant::import" -> "constant::CORE:regcomp";
+"DynaLoader::bootstrap" -> "Cwd::bootstrap";
+"Exporter::import" -> "Exporter::CORE:match";
+"DynaLoader::BEGIN@23" -> "version::(bool";
+"Create::BEGIN@77" -> "overload::BEGIN@83";
+"Create::BEGIN@3" -> "Message::BEGIN@40";
+"Config::FETCH" -> "Config::fetch_string";
+"Create::compareFile" -> "Digest::MD5::DESTROY";
+"main::BEGIN@2" -> "main::BEGIN@11";
+"Create::BEGIN@178" -> "Create::BEGIN@1";
+"Term::ANSIColor::BEGIN@26" -> "Carp::BEGIN@171";
+"Create::BEGIN@3" -> "Message::BEGIN@74";
+"Config::AUTOLOAD" -> "Config::CORE:subst";
+"Win32::Shortcut::BEGIN@134" -> "DynaLoader::bootstrap";
+"File::Copy::BEGIN@13" -> "DynaLoader::bootstrap";
+"Create::__ANON__[Create.pm:358]" -> "DynaLoader::bootstrap";
+"Term::ANSIColor::BEGIN@26" -> "Carp::BEGIN@3";
+"File::Copy::BEGIN@13" -> "File::Spec::Unix::BEGIN@127";
+"vars::import" -> "vars::CORE:match";
+"Create::BEGIN@77" -> "overload::BEGIN@144";
+"File::Spec::BEGIN@4" -> "vars::BEGIN@3";
+"Create::BEGIN@77" -> "List::Util::BEGIN@30";
+"Win32::Shortcut::Save" -> "Win32::Shortcut::_Save";
+"Config::AUTOLOAD" -> "Config::CORE:substcont";
+"Create::BEGIN@77" -> "File::Copy::BEGIN@11";
+"File::Copy::BEGIN@13" -> "Config::FETCH";
+"Create::create_s" -> "Create::CORE:readdir";
+"Create::compareDir" -> "Create::CORE:readdir";
+"main::BEGIN@11" -> "strict::CORE:match";
+"Create::BEGIN@3" -> "Create::BEGIN@1.2";
+"Create::__ANON__[Create.pm:358]" -> "Win32::Shortcut::DESTROY";
+"File::Spec::Unix::BEGIN@127" -> "constant::CORE:qr";
+"Message::BEGIN@57" -> "Exporter::import";
+"Message::BEGIN@40" -> "Exporter::import";
+"Message::BEGIN@74" -> "Exporter::import";
+"Term::ANSIColor::BEGIN@26" -> "Exporter::import";
+"Create::BEGIN@77" -> "Exporter::import";
+"Create::verbose" -> "Verbosity::new";
+"Exporter::as_heavy" -> "Exporter::CORE:subst";
+"Exporter::import" -> "Exporter::CORE:subst";
+"Verbosity::new" -> "Message::new";
+"Create::compareDir" -> "Create::CORE:ftdir";
+"Win32::Shortcut::Save" -> "Win32::Shortcut::_SetHotkey";
+"Config::BEGIN@27" -> "ActivePerl::Config::BEGIN@3";
+"File::Spec::Unix::BEGIN@242" -> "constant::import";
+"File::Spec::Unix::BEGIN@136" -> "constant::import";
+"File::Spec::Unix::BEGIN@127" -> "constant::import";
+"File::Spec::Unix::BEGIN@220" -> "constant::import";
+"File::Spec::Unix::BEGIN@145" -> "constant::import";
+"DynaLoader::bootstrap" -> "DynaLoader::dl_find_symbol";
+"File::Copy::BEGIN@13" -> "File::Spec::Win32::BEGIN@3";
+"Win32::Shortcut::Save" -> "Win32::Shortcut::_SetArguments";
+"DynaLoader::bootstrap" -> "DynaLoader::CORE:subst";
+"Create::BEGIN@3" -> "Message::BEGIN@57";
+"File::Spec::Unix::BEGIN@127" -> "constant::BEGIN@2";
+"Create::__ANON__[Create.pm:318]" -> "Create::CORE:unlink";
+"overload::BEGIN@83" -> "overloading::BEGIN@2";
+"Config::BEGIN@6" -> "warnings::import";
+"Config::BEGIN@10" -> "warnings::import";
+"File::Copy::BEGIN@12" -> "warnings::import";
+"Create::BEGIN@2.3" -> "warnings::import";
+"main::BEGIN@1" -> "warnings::import";
+"overloading::BEGIN@2" -> "warnings::import";
+"Term::ANSIColor::BEGIN@24" -> "warnings::import";
+"Carp::BEGIN@5" -> "warnings::import";
+"Create::BEGIN@2" -> "warnings::import";
+"main::BEGIN@10" -> "warnings::import";
+"File::Spec::Unix::BEGIN@127" -> "constant::BEGIN@64";
+"Config::fetch_string" -> "ActivePerl::Config::override";
+"constant::import" -> "constant::CORE:match";
+"Config::AUTOLOAD" -> "Config::CORE:pack";
+"Config::_fetch_string" -> "Config::CORE:regcomp";
+"main::NULL" -> "main::BEGIN@2";
+"Message::BEGIN@40" -> "Term::ANSIColor::CORE:sort";
+"Win32::GetFullPathName" -> "Win32::Shortcut::BEGIN@134";
+"Config::AUTOLOAD" -> "Config::CORE:unpack";
+"Term::ANSIColor::BEGIN@26" -> "Carp::BEGIN@4";
+"main::BEGIN@2" -> "main::BEGIN@10";
+"Create::BEGIN@77" -> "File::Copy::BEGIN@14";
+"DynaLoader::bootstrap" -> "DynaLoader::CORE:ftdir";
+"DynaLoader::BEGIN@23" -> "Config::BEGIN@47";
+"Win32::Shortcut::Save" -> "Win32::Shortcut::_SetPath";
+"Create::addDestination" -> "Create::verbose";
+"Create::compareDir" -> "Create::verbose";
+"Create::compareFile" -> "Create::verbose";
+"Create::addArchiveName" -> "Create::verbose";
+"Create::addSource" -> "Create::verbose";
+"Create::__ANON__[Create.pm:358]" -> "Create::verbose";
+"Create::create_s" -> "Create::verbose";
+"Create::__ANON__[Create.pm:318]" -> "Create::verbose";
+"Create::new" -> "Create::verbose";
+"Create::BEGIN@77" -> "List::Util::BEGIN@9";
+"DynaLoader::bootstrap" -> "Win32::Shortcut::bootstrap";
+"Win32::Shortcut::Save" -> "Win32::Shortcut::_SetWorkingDirectory";
+"Win32::Shortcut::new" -> "Win32::Shortcut::_Instance";
+"Create::compareDir" -> "Create::__ANON__[Create.pm:358]";
+"File::Copy::BEGIN@13" -> "File::Spec::Unix::BEGIN@136";
 }
