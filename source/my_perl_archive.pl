@@ -22,9 +22,11 @@ foreach (@ARGV) {
 	}
 }
 
-Getopt::Long::Configure("bundling");
+my $level = 0;
+
+Getopt::Long::Configure("bundling", "ignorecase_always");
 GetOptions (
-	"verbose|v"  => sub { $invoker->setVerboseLevel(@ARGV) },
+	"verbose|v=i"  => \$level,
 	"create|c|cs" => sub { $invoker->create(@ARGV) },
 	"restore|r" => sub { $invoker->restore(@ARGV) },
 	"partial|p" => sub { $invoker->partial(@ARGV) },
@@ -33,6 +35,10 @@ GetOptions (
 	"list|l" => sub { $invoker->list(@ARGV) },
 	"help|h" => sub { help() }
 ) or die("Error in command line arguments\n");
+
+if ($level > 0) {
+	$invoker->setVerboseLevel($level);
+}
 
 sub help() {
 	pod2usage(-verbose => 2, -input => $FindBin::Bin . "/help.pod");
