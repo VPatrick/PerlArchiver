@@ -5,6 +5,7 @@
 #								Erstellt am 12.2014										 #
 ##########################################################################################
 
+use strict;
 use warnings;
 use File::Find;
 use File::Copy;
@@ -73,8 +74,8 @@ sub restore_r
 {
     my $self = shift;
     $self->{verbosity}->verbose("Start Restore r.\n","OK");
-    $tmp = Utils->new();
-    $SourceArchiv = $tmp->findLastValidArchive
+    my $tmp = Utils->new();
+    my $SourceArchiv = $tmp->findLastValidArchive
     (
     $self->{source},
     $self->{usertime},
@@ -84,8 +85,8 @@ sub restore_r
     die if(!(-d $SourceArchiv));
     RestoreDirectory
     (
-		$SourceArchiv,
-		$self,
+    $SourceArchiv,
+    $self,
     );
 }
 
@@ -93,57 +94,59 @@ sub restore_rp
 {
     my $self = shift;
     $self->{verbosity}->verbose("Start Restore rp.","OK");
-	$tmp = Utils->new();
-	# Hier wird der genaue Pfad (d.h. mit datetime Ergänzung herausgefunden)
-    $SourceArchiv = $tmp->findLastValidArchive
+    my $tmp = Utils->new();
+    # Hier wird der genaue Pfad (d.h. mit datetime Ergänzung herausgefunden)
+    my $SourceArchiv = $tmp->findLastValidArchive
     (
-		$self->{source},
-		$self->{usertime},
+    $self->{source},
+    $self->{usertime},
     );
-	# Falls ein relativer Pfad angegeben wurde werden die angegeben Pfade um den relative Pfad erweitert
+    # Falls ein relativer Pfad angegeben wurde werden die angegeben Pfade um den relative Pfad erweitert
     my $partial = $self->{partial};
+    my $FileorArchivSource = "";
+    my $FileorArchivDestination = "";
     if($self->{rel_path} eq "1"){
         $FileorArchivSource = "$SourceArchiv$self->{partial}";
-		my @tmp2 = split(/\//,$SourceArchiv);
-		my $tmp2 = scalar(@tmp2)-1;
-		my $tmp3 = $tmp2[$tmp2];
-		my @split1 = split(/_\d{4}_\d{2}_\d{2}_\d{2}_\d{2}_\d{2}$/, $tmp3);
-		my $archiveName = $split1[0];
+        my @tmp2 = split(/\//,$SourceArchiv);
+        my $tmp2 = scalar(@tmp2)-1;
+        my $tmp3 = $tmp2[$tmp2];
+        my @split1 = split(/_\d{4}_\d{2}_\d{2}_\d{2}_\d{2}_\d{2}$/, $tmp3);
+        my $archiveName = $split1[0];
         $FileorArchivDestination = "$self->{destination}/$archiveName$self->{partial}";
     }
     else{
-	# Falls dies nicht der Fall ist muss die Datei oder das Unterverzeichnis gesucht werden dabei wird der erste Treffer ausgewertet
+        # Falls dies nicht der Fall ist muss die Datei oder das Unterverzeichnis gesucht werden dabei wird der erste Treffer ausgewertet
         $FileorArchivSource = Find_source_rp
         (
-            $SourceArchiv,
-            $partial,
+        $SourceArchiv,
+        $partial,
         );
         $self->{verbosity}->verbose("The given Subdirectory or File does not exist!","WARNING");
         die if (!(-f $FileorArchivSource || -d $FileorArchivSource));
         my $destination = $self->{destination};
         $FileorArchivDestination = Find_source_rp
         (
-            $destination,
-            $partial,
+        $destination,
+        $partial,
         );
     }
-	# Falls das Zielverzeichnis nicht existiert wird ein Zielverzeichnis erstellt
-	if(! (-e $FileorArchivDestination))
-	{
-		mkdir("$FileorArchivDestination") if(-d $FileorArchivSource);
-		File::Copy::copy $FileorArchivSource,$FileorArchivDestination;
-		$self->{verbosity}->verbose("The given destination path does not exist!\nA directory is created!","WARNING");
-	}
+    # Falls das Zielverzeichnis nicht existiert wird ein Zielverzeichnis erstellt
+    if(! (-e $FileorArchivDestination))
+    {
+        mkdir("$FileorArchivDestination") if(-d $FileorArchivSource);
+        File::Copy::copy $FileorArchivSource,$FileorArchivDestination;
+        $self->{verbosity}->verbose("The given destination path does not exist!\nA directory is created!","WARNING");
+    }
     die if(!(-f $FileorArchivDestination||-d $FileorArchivDestination));
-	# Falls es ein Directory ist wird die RestoreSubDirectory- aufgerufen falls es ein File ist die RestoreFile Methode
+    # Falls es ein Directory ist wird die RestoreSubDirectory- aufgerufen falls es ein File ist die RestoreFile Methode
     if(-d $FileorArchivSource){
         $self->{verbosity}->verbose("Find source directory path: $FileorArchivSource.","OK");
         $self->{verbosity}->verbose("Find destination directory path: $FileorArchivDestination.","OK");
-		RestoreSubDirectory
-        (	
-			$FileorArchivSource,
-			$FileorArchivDestination,
-			$self,
+        RestoreSubDirectory
+        (
+        $FileorArchivSource,
+        $FileorArchivDestination,
+        $self,
         );
     }
     elsif(-f $FileorArchivSource)
@@ -152,9 +155,9 @@ sub restore_rp
         $self->{verbosity}->verbose("Find destination file path: $FileorArchivDestination\n.","OK");
         RestoreFile
         (
-			$FileorArchivSource,
-			$FileorArchivDestination,
-			$self,
+        $FileorArchivSource,
+        $FileorArchivDestination,
+        $self,
         );
     }
 }
@@ -191,7 +194,7 @@ sub Find_source_rp
 ##########################################################################################
 sub RestoreDirectory{
     my($SourceArchiv,$self) = @_;
-    $DestinationName = DestinationArchiv($self->{destination},$self->{sourcename});
+    my $DestinationName = DestinationArchiv($self->{destination},$self->{sourcename});
     $self->{verbosity}->verbose("Remove $self->{destination}/${DestinationName}\n","OK") if(-d "$self->{destination}/${DestinationName}");
     File::Path::remove_tree("$self->{destination}/${DestinationName}") if(-d "$self->{destination}/${DestinationName}");
     $self->{verbosity}->verbose("Make $self->{destination}/$self->{sourcename}}\n","OK");
