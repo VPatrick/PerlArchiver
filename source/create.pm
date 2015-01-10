@@ -164,7 +164,7 @@ sub create_cs {
 #*****************************************************************************************************
 sub verbose {
     my ($self,$message,$state)=@_;
-    if($self->{flag}==1)
+    if($self->{flag} == 1)
     {
         # Ausgabe der Nachricht
         use Verbosity;
@@ -177,6 +177,11 @@ sub verbose {
         }
         $v->verbose($message,$state);
     }
+}
+
+sub setVerboseLevel {
+	my ($self, $level) = @_;
+	$self->{flag} = $level;
 }
 
 #*****************************************************************************************************
