@@ -1,0 +1,377 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" width="1200" height="322" onload="init(evt)" viewBox="0 0 1200 322" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<defs >
+	<linearGradient id="background" y1="0" y2="1" x1="0" x2="0" >
+		<stop stop-color="#eeeeee" offset="5%" />
+		<stop stop-color="#eeeeb0" offset="95%" />
+	</linearGradient>
+</defs>
+<style type="text/css">
+	.func_g:hover { stroke:black; stroke-width:0.5; }
+</style>
+<script type="text/ecmascript">
+<![CDATA[
+	var details;
+	function init(evt) { details = document.getElementById("details").firstChild; }
+	function s(info) { details.nodeValue = "sub " + info; }
+	function c() { details.nodeValue = ' '; }
+]]>
+</script>
+<rect x="0.0" y="0" width="1200.0" height="322.0" fill="url(#background)"  />
+<text text-anchor="middle" x="600" y="24" font-size="17" font-family="Verdana" fill="rgb(0,0,0)"  >Flame Graph</text>
+<text text-anchor="" x="10" y="305" font-size="12" font-family="Verdana" fill="rgb(0,0,0)" id="details" > </text>
+<g class="func_g" onmouseover="s('del::BEGIN@10 (10,000 microseconds, 0.11%)')" onmouseout="c()">
+<title>del::BEGIN@10 (10,000 microseconds, 0.11%)</title><a xlink:href="del-pm-3-line.html#10" target="_top"><rect x="1169.9" y="241" width="1.3" height="15.0" fill="rgb(213,105,34)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('del::BEGIN@8 (40,000 microseconds, 0.42%)')" onmouseout="c()">
+<title>del::BEGIN@8 (40,000 microseconds, 0.42%)</title><a xlink:href="del-pm-3-line.html#8" target="_top"><rect x="1182.5" y="241" width="5.0" height="15.0" fill="rgb(232,139,32)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('File::Path::CORE:lstat (78,000 microseconds, 0.83%)')" onmouseout="c()">
+<title>File::Path::CORE:lstat (78,000 microseconds, 0.83%)</title><a xlink:href="File-Path-pm-30-line.html#File__Path__CORE_lstat" target="_top"><rect x="745.7" y="113" width="9.8" height="15.0" fill="rgb(227,229,32)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('del::BEGIN@11 (30,000 microseconds, 0.32%)')" onmouseout="c()">
+<title>del::BEGIN@11 (30,000 microseconds, 0.32%)</title><a xlink:href="del-pm-3-line.html#11" target="_top"><rect x="1171.2" y="241" width="3.8" height="15.0" fill="rgb(250,75,4)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('File::Path::_rmtree (2,456,024 microseconds, 26.09%)')" onmouseout="c()">
+<title>File::Path::_rmtree (2,456,024 microseconds, 26.09%)</title><a xlink:href="File-Path-pm-30-line.html#257" target="_top"><rect x="832.6" y="113" width="307.8" height="15.0" fill="rgb(242,165,14)" rx="2" ry="2" />
+<text text-anchor="" x="835.552472500012" y="123.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >File::Path::_rmtree</text>
+</a>
+</g>
+<g class="func_g" onmouseover="s('File::Path::CORE:unlink (609,004 microseconds, 6.47%)')" onmouseout="c()">
+<title>File::Path::CORE:unlink (609,004 microseconds, 6.47%)</title><a xlink:href="File-Path-pm-30-line.html#File__Path__CORE_unlink" target="_top"><rect x="1052.5" y="65" width="76.3" height="15.0" fill="rgb(216,69,49)" rx="2" ry="2" />
+<text text-anchor="" x="1055.51079593173" y="75.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >File::Pat..</text>
+</a>
+</g>
+<g class="func_g" onmouseover="s('File::Spec::Win32::CORE:subst (1,000 microseconds, 0.01%)')" onmouseout="c()">
+<title>File::Spec::Win32::CORE:subst (1,000 microseconds, 0.01%)</title><a xlink:href="File-Spec-Win32-pm-19-line.html#File__Spec__Win32__CORE_subst" target="_top"><rect x="1146.1" y="81" width="0.2" height="15.0" fill="rgb(237,169,30)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('File::Spec::Win32::CORE:match (10,000 microseconds, 0.11%)')" onmouseout="c()">
+<title>File::Spec::Win32::CORE:match (10,000 microseconds, 0.11%)</title><a xlink:href="File-Spec-Win32-pm-19-line.html#File__Spec__Win32__CORE_match" target="_top"><rect x="1164.4" y="113" width="1.3" height="15.0" fill="rgb(215,173,19)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('File::Path::CORE:chmod (53,000 microseconds, 0.56%)')" onmouseout="c()">
+<title>File::Path::CORE:chmod (53,000 microseconds, 0.56%)</title><a xlink:href="File-Path-pm-30-line.html#File__Path__CORE_chmod" target="_top"><rect x="739.1" y="113" width="6.6" height="15.0" fill="rgb(238,75,33)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('File::Spec::Win32::catfile (16,000 microseconds, 0.17%)')" onmouseout="c()">
+<title>File::Spec::Win32::catfile (16,000 microseconds, 0.17%)</title><a xlink:href="File-Spec-Win32-pm-19-line.html#130" target="_top"><rect x="1133.5" y="81" width="2.0" height="15.0" fill="rgb(249,139,12)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('File::Path::CORE:lstat (106,000 microseconds, 1.13%)')" onmouseout="c()">
+<title>File::Path::CORE:lstat (106,000 microseconds, 1.13%)</title><a xlink:href="File-Path-pm-30-line.html#File__Path__CORE_lstat" target="_top"><rect x="1037.8" y="65" width="13.3" height="15.0" fill="rgb(244,205,1)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('File::Path::CORE:unlink (1,008,003 microseconds, 10.71%)')" onmouseout="c()">
+<title>File::Path::CORE:unlink (1,008,003 microseconds, 10.71%)</title><a xlink:href="File-Path-pm-30-line.html#File__Path__CORE_unlink" target="_top"><rect x="612.7" y="129" width="126.4" height="15.0" fill="rgb(215,144,8)" rx="2" ry="2" />
+<text text-anchor="" x="615.720608140701" y="139.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >File::Path::CORE:..</text>
+</a>
+</g>
+<g class="func_g" onmouseover="s('File::Path::CORE:lstat (107,000 microseconds, 1.14%)')" onmouseout="c()">
+<title>File::Path::CORE:lstat (107,000 microseconds, 1.14%)</title><a xlink:href="File-Path-pm-30-line.html#File__Path__CORE_lstat" target="_top"><rect x="599.3" y="129" width="13.4" height="15.0" fill="rgb(221,20,7)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('del::BEGIN@9 (10,000 microseconds, 0.11%)')" onmouseout="c()">
+<title>del::BEGIN@9 (10,000 microseconds, 0.11%)</title><a xlink:href="del-pm-3-line.html#9" target="_top"><rect x="1187.5" y="241" width="1.2" height="15.0" fill="rgb(237,33,26)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('File::Path::CORE:ftdir (1,000 microseconds, 0.01%)')" onmouseout="c()">
+<title>File::Path::CORE:ftdir (1,000 microseconds, 0.01%)</title><a xlink:href="File-Path-pm-30-line.html#File__Path__CORE_ftdir" target="_top"><rect x="931.3" y="81" width="0.1" height="15.0" fill="rgb(246,70,34)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Config::BEGIN@27 (10,000 microseconds, 0.11%)')" onmouseout="c()">
+<title>Config::BEGIN@27 (10,000 microseconds, 0.11%)</title><a xlink:href="Config_heavy-pl-14-line.html#27" target="_top"><rect x="1181.2" y="193" width="1.3" height="15.0" fill="rgb(220,228,20)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('File::Path::_rmtree (5,331,053 microseconds, 56.62%)')" onmouseout="c()">
+<title>File::Path::_rmtree (5,331,053 microseconds, 56.62%)</title><a xlink:href="File-Path-pm-30-line.html#257" target="_top"><rect x="498.0" y="193" width="668.2" height="15.0" fill="rgb(241,157,39)" rx="2" ry="2" />
+<text text-anchor="" x="501.040402473383" y="203.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >File::Path::_rmtree</text>
+</a>
+</g>
+<g class="func_g" onmouseover="s('File::Path::rmtree (5,351,053 microseconds, 56.84%)')" onmouseout="c()">
+<title>File::Path::rmtree (5,351,053 microseconds, 56.84%)</title><a xlink:href="File-Path-pm-30-line.html#187" target="_top"><rect x="495.5" y="225" width="670.7" height="15.0" fill="rgb(249,88,51)" rx="2" ry="2" />
+<text text-anchor="" x="498.533780621849" y="235.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >File::Path::rmtree</text>
+</a>
+</g>
+<g class="func_g" onmouseover="s('File::Path::CORE:unlink (615,006 microseconds, 6.53%)')" onmouseout="c()">
+<title>File::Path::CORE:unlink (615,006 microseconds, 6.53%)</title><a xlink:href="File-Path-pm-30-line.html#File__Path__CORE_unlink" target="_top"><rect x="755.5" y="113" width="77.1" height="15.0" fill="rgb(217,210,37)" rx="2" ry="2" />
+<text text-anchor="" x="758.473098578805" y="123.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >File::Pat..</text>
+</a>
+</g>
+<g class="func_g" onmouseover="s('Config::AUTOLOAD (10,000 microseconds, 0.11%)')" onmouseout="c()">
+<title>Config::AUTOLOAD (10,000 microseconds, 0.11%)</title><a xlink:href="Config-pm-11-line.html#79" target="_top"><rect x="1181.2" y="209" width="1.3" height="15.0" fill="rgb(226,51,51)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('del::check (3,874,009 microseconds, 41.15%)')" onmouseout="c()">
+<title>del::check (3,874,009 microseconds, 41.15%)</title><a xlink:href="del-pm-3-line.html#149" target="_top"><rect x="10.0" y="241" width="485.5" height="15.0" fill="rgb(214,62,14)" rx="2" ry="2" />
+<text text-anchor="" x="13" y="251.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >del::check</text>
+</a>
+</g>
+<g class="func_g" onmouseover="s('Cwd::BEGIN@783 (20,000 microseconds, 0.21%)')" onmouseout="c()">
+<title>Cwd::BEGIN@783 (20,000 microseconds, 0.21%)</title><a xlink:href="TestDelete-pl-1-line.html#783" target="_top"><rect x="495.5" y="177" width="2.5" height="15.0" fill="rgb(249,131,20)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('all (9,415,062 microseconds, 100%)')" onmouseout="c()">
+<title>all (9,415,062 microseconds, 100%)</title><rect x="10.0" y="273" width="1180.0" height="15.0" fill="rgb(219,12,28)" rx="2" ry="2" />
+<text text-anchor="" x="13" y="283.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  ></text>
+</g>
+<g class="func_g" onmouseover="s('File::Spec::Win32::CORE:subst (11,001 microseconds, 0.12%)')" onmouseout="c()">
+<title>File::Spec::Win32::CORE:subst (11,001 microseconds, 0.12%)</title><a xlink:href="File-Spec-Win32-pm-19-line.html#File__Spec__Win32__CORE_subst" target="_top"><rect x="1157.8" y="97" width="1.4" height="15.0" fill="rgb(250,30,43)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('File::Path::_rmtree (5,331,053 microseconds, 56.62%)')" onmouseout="c()">
+<title>File::Path::_rmtree (5,331,053 microseconds, 56.62%)</title><a xlink:href="File-Path-pm-30-line.html#257" target="_top"><rect x="498.0" y="209" width="668.2" height="15.0" fill="rgb(231,126,53)" rx="2" ry="2" />
+<text text-anchor="" x="501.040402473383" y="219.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >File::Path::_rmtree</text>
+</a>
+</g>
+<g class="func_g" onmouseover="s('File::Path::CORE:unlink (595,013 microseconds, 6.32%)')" onmouseout="c()">
+<title>File::Path::CORE:unlink (595,013 microseconds, 6.32%)</title><a xlink:href="File-Path-pm-30-line.html#File__Path__CORE_unlink" target="_top"><rect x="516.5" y="145" width="74.5" height="15.0" fill="rgb(252,140,50)" rx="2" ry="2" />
+<text text-anchor="" x="519.464574406523" y="155.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >File::Pat..</text>
+</a>
+</g>
+<g class="func_g" onmouseover="s('File::Spec::Win32::CORE:match (20,000 microseconds, 0.21%)')" onmouseout="c()">
+<title>File::Spec::Win32::CORE:match (20,000 microseconds, 0.21%)</title><a xlink:href="File-Spec-Win32-pm-19-line.html#File__Spec__Win32__CORE_match" target="_top"><rect x="1159.7" y="129" width="2.5" height="15.0" fill="rgb(254,56,11)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('File::Spec::Win32::_canon_cat (26,001 microseconds, 0.28%)')" onmouseout="c()">
+<title>File::Spec::Win32::_canon_cat (26,001 microseconds, 0.28%)</title><a xlink:href="File-Spec-Win32-pm-19-line.html#382" target="_top"><rect x="1130.2" y="49" width="3.3" height="15.0" fill="rgb(245,144,7)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('File::Path::_rmtree (835,006 microseconds, 8.87%)')" onmouseout="c()">
+<title>File::Path::_rmtree (835,006 microseconds, 8.87%)</title><a xlink:href="File-Path-pm-30-line.html#257" target="_top"><rect x="1028.8" y="81" width="104.7" height="15.0" fill="rgb(236,70,44)" rx="2" ry="2" />
+<text text-anchor="" x="1031.82309410365" y="91.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >File::Path::_..</text>
+</a>
+</g>
+<g class="func_g" onmouseover="s('del::BEGIN@5 (20,000 microseconds, 0.21%)')" onmouseout="c()">
+<title>del::BEGIN@5 (20,000 microseconds, 0.21%)</title><a xlink:href="del-pm-3-line.html#5" target="_top"><rect x="1175.0" y="241" width="2.5" height="15.0" fill="rgb(219,49,14)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Exporter::as_heavy (10,000 microseconds, 0.11%)')" onmouseout="c()">
+<title>Exporter::as_heavy (10,000 microseconds, 0.11%)</title><a xlink:href="Exporter-pm-6-line.html#15" target="_top"><rect x="1173.7" y="161" width="1.3" height="15.0" fill="rgb(230,125,37)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('del::BEGIN@3.3 (30,000 microseconds, 0.32%)')" onmouseout="c()">
+<title>del::BEGIN@3.3 (30,000 microseconds, 0.32%)</title><a xlink:href="Verbosity-pm-31-line.html#3" target="_top"><rect x="1171.2" y="225" width="3.8" height="15.0" fill="rgb(249,103,6)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('File::Path::CORE:unlink (697,009 microseconds, 7.40%)')" onmouseout="c()">
+<title>File::Path::CORE:unlink (697,009 microseconds, 7.40%)</title><a xlink:href="File-Path-pm-30-line.html#File__Path__CORE_unlink" target="_top"><rect x="941.5" y="81" width="87.3" height="15.0" fill="rgb(225,196,30)" rx="2" ry="2" />
+<text text-anchor="" x="944.466194597878" y="91.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >File::Path:..</text>
+</a>
+</g>
+<g class="func_g" onmouseover="s('File::Path::CORE:lstat (45,001 microseconds, 0.48%)')" onmouseout="c()">
+<title>File::Path::CORE:lstat (45,001 microseconds, 0.48%)</title><a xlink:href="File-Path-pm-30-line.html#File__Path__CORE_lstat" target="_top"><rect x="838.4" y="97" width="5.7" height="15.0" fill="rgb(214,2,29)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('File::Spec::Win32::CORE:match (1,000 microseconds, 0.01%)')" onmouseout="c()">
+<title>File::Spec::Win32::CORE:match (1,000 microseconds, 0.01%)</title><a xlink:href="File-Spec-Win32-pm-19-line.html#File__Spec__Win32__CORE_match" target="_top"><rect x="1146.0" y="81" width="0.1" height="15.0" fill="rgb(220,4,12)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('File::Spec::Win32::catfile (56,000 microseconds, 0.59%)')" onmouseout="c()">
+<title>File::Spec::Win32::catfile (56,000 microseconds, 0.59%)</title><a xlink:href="File-Spec-Win32-pm-19-line.html#130" target="_top"><rect x="1159.2" y="145" width="7.0" height="15.0" fill="rgb(208,125,45)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('del::BEGIN@7 (20,000 microseconds, 0.21%)')" onmouseout="c()">
+<title>del::BEGIN@7 (20,000 microseconds, 0.21%)</title><a xlink:href="del-pm-3-line.html#7" target="_top"><rect x="1180.0" y="241" width="2.5" height="15.0" fill="rgb(218,193,33)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('File::Path::CORE:chmod (13,000 microseconds, 0.14%)')" onmouseout="c()">
+<title>File::Path::CORE:chmod (13,000 microseconds, 0.14%)</title><a xlink:href="File-Path-pm-30-line.html#File__Path__CORE_chmod" target="_top"><rect x="597.7" y="129" width="1.6" height="15.0" fill="rgb(211,208,20)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('File::Spec::Win32::CORE:match (11,000 microseconds, 0.12%)')" onmouseout="c()">
+<title>File::Spec::Win32::CORE:match (11,000 microseconds, 0.12%)</title><a xlink:href="File-Spec-Win32-pm-19-line.html#File__Spec__Win32__CORE_match" target="_top"><rect x="1141.6" y="97" width="1.4" height="15.0" fill="rgb(221,170,15)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Message::BEGIN@40 (30,000 microseconds, 0.32%)')" onmouseout="c()">
+<title>Message::BEGIN@40 (30,000 microseconds, 0.32%)</title><a xlink:href="Message-pm-32-line.html#40" target="_top"><rect x="1171.2" y="209" width="3.8" height="15.0" fill="rgb(246,195,34)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('File::Path::_rmtree (3,249,030 microseconds, 34.51%)')" onmouseout="c()">
+<title>File::Path::_rmtree (3,249,030 microseconds, 34.51%)</title><a xlink:href="File-Path-pm-30-line.html#257" target="_top"><rect x="739.1" y="129" width="407.2" height="15.0" fill="rgb(217,92,46)" rx="2" ry="2" />
+<text text-anchor="" x="742.054725451261" y="139.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >File::Path::_rmtree</text>
+</a>
+</g>
+<g class="func_g" onmouseover="s('File::Spec::Win32::CORE:subst (13,000 microseconds, 0.14%)')" onmouseout="c()">
+<title>File::Spec::Win32::CORE:subst (13,000 microseconds, 0.14%)</title><a xlink:href="File-Spec-Win32-pm-19-line.html#File__Spec__Win32__CORE_subst" target="_top"><rect x="1131.8" y="33" width="1.7" height="15.0" fill="rgb(218,85,32)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('File::Spec::Win32::catfile (103,002 microseconds, 1.09%)')" onmouseout="c()">
+<title>File::Spec::Win32::catfile (103,002 microseconds, 1.09%)</title><a xlink:href="File-Spec-Win32-pm-19-line.html#130" target="_top"><rect x="1146.3" y="129" width="12.9" height="15.0" fill="rgb(220,56,38)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Term::ANSIColor::BEGIN@26 (10,000 microseconds, 0.11%)')" onmouseout="c()">
+<title>Term::ANSIColor::BEGIN@26 (10,000 microseconds, 0.11%)</title><a xlink:href="Term-ANSIColor-pm-33-line.html#26" target="_top"><rect x="1172.5" y="193" width="1.2" height="15.0" fill="rgb(232,168,23)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('main::BEGIN@1 (10,000 microseconds, 0.11%)')" onmouseout="c()">
+<title>main::BEGIN@1 (10,000 microseconds, 0.11%)</title><a xlink:href="TestDelete-pl-1-line.html#1" target="_top"><rect x="1166.2" y="257" width="1.2" height="15.0" fill="rgb(212,206,18)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Exporter::export_ok_tags (10,000 microseconds, 0.11%)')" onmouseout="c()">
+<title>Exporter::export_ok_tags (10,000 microseconds, 0.11%)</title><a xlink:href="Exporter-pm-6-line.html#88" target="_top"><rect x="1173.7" y="177" width="1.3" height="15.0" fill="rgb(238,74,40)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('File::Path::CORE:unlink (624,002 microseconds, 6.63%)')" onmouseout="c()">
+<title>File::Path::CORE:unlink (624,002 microseconds, 6.63%)</title><a xlink:href="File-Path-pm-30-line.html#File__Path__CORE_unlink" target="_top"><rect x="844.1" y="97" width="78.2" height="15.0" fill="rgb(214,151,40)" rx="2" ry="2" />
+<text text-anchor="" x="847.083183679251" y="107.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >File::Pat..</text>
+</a>
+</g>
+<g class="func_g" onmouseover="s('File::Spec::Unix::BEGIN@127 (10,000 microseconds, 0.11%)')" onmouseout="c()">
+<title>File::Spec::Unix::BEGIN@127 (10,000 microseconds, 0.11%)</title><a xlink:href="File-Spec-Unix-pm-20-line.html#127" target="_top"><rect x="1185.0" y="225" width="1.2" height="15.0" fill="rgb(207,87,7)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('File::Spec::Win32::CORE:subst (4,000 microseconds, 0.04%)')" onmouseout="c()">
+<title>File::Spec::Win32::CORE:subst (4,000 microseconds, 0.04%)</title><a xlink:href="File-Spec-Win32-pm-19-line.html#File__Spec__Win32__CORE_subst" target="_top"><rect x="1165.7" y="113" width="0.5" height="15.0" fill="rgb(235,58,0)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('File::Path::CORE:chmod (39,003 microseconds, 0.41%)')" onmouseout="c()">
+<title>File::Path::CORE:chmod (39,003 microseconds, 0.41%)</title><a xlink:href="File-Path-pm-30-line.html#File__Path__CORE_chmod" target="_top"><rect x="502.1" y="145" width="4.8" height="15.0" fill="rgb(242,123,37)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('XSLoader::load (10,000 microseconds, 0.11%)')" onmouseout="c()">
+<title>XSLoader::load (10,000 microseconds, 0.11%)</title><a xlink:href="XSLoader-pm-39-line.html#17" target="_top"><rect x="1186.2" y="225" width="1.3" height="15.0" fill="rgb(224,36,42)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('File::Path::CORE:lstat (80,004 microseconds, 0.85%)')" onmouseout="c()">
+<title>File::Path::CORE:lstat (80,004 microseconds, 0.85%)</title><a xlink:href="File-Path-pm-30-line.html#File__Path__CORE_lstat" target="_top"><rect x="931.4" y="81" width="10.1" height="15.0" fill="rgb(238,7,14)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('File::Spec::Win32::_canon_cat (13,000 microseconds, 0.14%)')" onmouseout="c()">
+<title>File::Spec::Win32::_canon_cat (13,000 microseconds, 0.14%)</title><a xlink:href="File-Spec-Win32-pm-19-line.html#382" target="_top"><rect x="1133.9" y="65" width="1.6" height="15.0" fill="rgb(251,131,30)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Term::ANSIColor::BEGIN@42 (10,000 microseconds, 0.11%)')" onmouseout="c()">
+<title>Term::ANSIColor::BEGIN@42 (10,000 microseconds, 0.11%)</title><a xlink:href="Term-ANSIColor-pm-33-line.html#42" target="_top"><rect x="1173.7" y="193" width="1.3" height="15.0" fill="rgb(240,16,25)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('File::Spec::Win32::_canon_cat (23,000 microseconds, 0.24%)')" onmouseout="c()">
+<title>File::Spec::Win32::_canon_cat (23,000 microseconds, 0.24%)</title><a xlink:href="File-Spec-Win32-pm-19-line.html#382" target="_top"><rect x="1137.5" y="81" width="2.9" height="15.0" fill="rgb(212,109,44)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('main::BEGIN@2 (170,000 microseconds, 1.81%)')" onmouseout="c()">
+<title>main::BEGIN@2 (170,000 microseconds, 1.81%)</title><a xlink:href="TestDelete-pl-1-line.html#2" target="_top"><rect x="1167.4" y="257" width="21.3" height="15.0" fill="rgb(234,50,33)" rx="2" ry="2" />
+<text text-anchor="" x="1170.44041047328" y="267.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >m..</text>
+</a>
+</g>
+<g class="func_g" onmouseover="s('File::Spec::Win32::CORE:regcomp (1,000 microseconds, 0.01%)')" onmouseout="c()">
+<title>File::Spec::Win32::CORE:regcomp (1,000 microseconds, 0.01%)</title><a xlink:href="File-Spec-Win32-pm-19-line.html#File__Spec__Win32__CORE_regcomp" target="_top"><rect x="1162.2" y="129" width="0.1" height="15.0" fill="rgb(207,48,38)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('File::Path::_rmtree (4,533,036 microseconds, 48.15%)')" onmouseout="c()">
+<title>File::Path::_rmtree (4,533,036 microseconds, 48.15%)</title><a xlink:href="File-Path-pm-30-line.html#257" target="_top"><rect x="591.0" y="145" width="568.2" height="15.0" fill="rgb(238,100,3)" rx="2" ry="2" />
+<text text-anchor="" x="594.038203793845" y="155.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >File::Path::_rmtree</text>
+</a>
+</g>
+<g class="func_g" onmouseover="s('File::Path::_rmtree (5,331,053 microseconds, 56.62%)')" onmouseout="c()">
+<title>File::Path::_rmtree (5,331,053 microseconds, 56.62%)</title><a xlink:href="File-Path-pm-30-line.html#257" target="_top"><rect x="498.0" y="177" width="668.2" height="15.0" fill="rgb(230,170,8)" rx="2" ry="2" />
+<text text-anchor="" x="501.040402473383" y="187.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >File::Path::_rmtree</text>
+</a>
+</g>
+<g class="func_g" onmouseover="s('File::Path::CORE:stat (10,000 microseconds, 0.11%)')" onmouseout="c()">
+<title>File::Path::CORE:stat (10,000 microseconds, 0.11%)</title><a xlink:href="File-Path-pm-30-line.html#File__Path__CORE_stat" target="_top"><rect x="515.2" y="145" width="1.3" height="15.0" fill="rgb(245,176,28)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('File::Path::CORE:chmod (46,001 microseconds, 0.49%)')" onmouseout="c()">
+<title>File::Path::CORE:chmod (46,001 microseconds, 0.49%)</title><a xlink:href="File-Path-pm-30-line.html#File__Path__CORE_chmod" target="_top"><rect x="1032.1" y="65" width="5.7" height="15.0" fill="rgb(207,6,33)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('File::Path::_rmtree (5,331,053 microseconds, 56.62%)')" onmouseout="c()">
+<title>File::Path::_rmtree (5,331,053 microseconds, 56.62%)</title><a xlink:href="File-Path-pm-30-line.html#257" target="_top"><rect x="498.0" y="161" width="668.2" height="15.0" fill="rgb(219,143,15)" rx="2" ry="2" />
+<text text-anchor="" x="501.040402473383" y="171.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >File::Path::_rmtree</text>
+</a>
+</g>
+<g class="func_g" onmouseover="s('del::del (5,351,053 microseconds, 56.84%)')" onmouseout="c()">
+<title>del::del (5,351,053 microseconds, 56.84%)</title><a xlink:href="del-pm-3-line.html#309" target="_top"><rect x="495.5" y="241" width="670.7" height="15.0" fill="rgb(212,102,11)" rx="2" ry="2" />
+<text text-anchor="" x="498.533780621849" y="251.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >del::del</text>
+</a>
+</g>
+<g class="func_g" onmouseover="s('Config::FETCH (10,000 microseconds, 0.11%)')" onmouseout="c()">
+<title>Config::FETCH (10,000 microseconds, 0.11%)</title><a xlink:href="Config-pm-11-line.html#66" target="_top"><rect x="1181.2" y="225" width="1.3" height="15.0" fill="rgb(252,66,30)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('File::Spec::Win32::catfile (39,001 microseconds, 0.41%)')" onmouseout="c()">
+<title>File::Spec::Win32::catfile (39,001 microseconds, 0.41%)</title><a xlink:href="File-Spec-Win32-pm-19-line.html#130" target="_top"><rect x="1135.5" y="97" width="4.9" height="15.0" fill="rgb(224,190,24)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Cwd::_win32_cwd (20,000 microseconds, 0.21%)')" onmouseout="c()">
+<title>Cwd::_win32_cwd (20,000 microseconds, 0.21%)</title><a xlink:href="Cwd-pm-7-line.html#775" target="_top"><rect x="495.5" y="209" width="2.5" height="15.0" fill="rgb(220,147,11)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('File::Spec::Win32::catfile (37,001 microseconds, 0.39%)')" onmouseout="c()">
+<title>File::Spec::Win32::catfile (37,001 microseconds, 0.39%)</title><a xlink:href="File-Spec-Win32-pm-19-line.html#130" target="_top"><rect x="1128.8" y="65" width="4.7" height="15.0" fill="rgb(224,202,34)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('del::BEGIN@6 (20,000 microseconds, 0.21%)')" onmouseout="c()">
+<title>del::BEGIN@6 (20,000 microseconds, 0.21%)</title><a xlink:href="del-pm-3-line.html#6" target="_top"><rect x="1177.5" y="241" width="2.5" height="15.0" fill="rgb(220,187,30)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('File::Spec::Win32::_canon_cat (26,000 microseconds, 0.28%)')" onmouseout="c()">
+<title>File::Spec::Win32::_canon_cat (26,000 microseconds, 0.28%)</title><a xlink:href="File-Spec-Win32-pm-19-line.html#382" target="_top"><rect x="1143.0" y="97" width="3.3" height="15.0" fill="rgb(236,201,33)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('File::Path::_rmtree (1,701,019 microseconds, 18.07%)')" onmouseout="c()">
+<title>File::Path::_rmtree (1,701,019 microseconds, 18.07%)</title><a xlink:href="File-Path-pm-30-line.html#257" target="_top"><rect x="922.3" y="97" width="213.2" height="15.0" fill="rgb(208,4,21)" rx="2" ry="2" />
+<text text-anchor="" x="925.290036109277" y="107.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >File::Path::_rmtree</text>
+</a>
+</g>
+<g class="func_g" onmouseover="s('File::Path::CORE:chmod (37,000 microseconds, 0.39%)')" onmouseout="c()">
+<title>File::Path::CORE:chmod (37,000 microseconds, 0.39%)</title><a xlink:href="File-Path-pm-30-line.html#File__Path__CORE_chmod" target="_top"><rect x="926.7" y="81" width="4.6" height="15.0" fill="rgb(220,228,36)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('File::Spec::Win32::CORE:match (10,000 microseconds, 0.11%)')" onmouseout="c()">
+<title>File::Spec::Win32::CORE:match (10,000 microseconds, 0.11%)</title><a xlink:href="File-Spec-Win32-pm-19-line.html#File__Spec__Win32__CORE_match" target="_top"><rect x="1156.5" y="97" width="1.3" height="15.0" fill="rgb(222,64,49)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('Win32::GetCwd (20,000 microseconds, 0.21%)')" onmouseout="c()">
+<title>Win32::GetCwd (20,000 microseconds, 0.21%)</title><a xlink:href="Win32-pm-37-line.html#Win32__GetCwd" target="_top"><rect x="495.5" y="193" width="2.5" height="15.0" fill="rgb(207,60,45)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('del::CORE:readline (3,874,009 microseconds, 41.15%)')" onmouseout="c()">
+<title>del::CORE:readline (3,874,009 microseconds, 41.15%)</title><a xlink:href="del-pm-3-line.html#del__CORE_readline" target="_top"><rect x="10.0" y="225" width="485.5" height="15.0" fill="rgb(222,5,30)" rx="2" ry="2" />
+<text text-anchor="" x="13" y="235.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >del::CORE:readline</text>
+</a>
+</g>
+<g class="func_g" onmouseover="s('File::Path::CORE:chmod (14,001 microseconds, 0.15%)')" onmouseout="c()">
+<title>File::Path::CORE:chmod (14,001 microseconds, 0.15%)</title><a xlink:href="File-Path-pm-30-line.html#File__Path__CORE_chmod" target="_top"><rect x="836.7" y="97" width="1.7" height="15.0" fill="rgb(224,122,35)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('del::delete_d (9,225,062 microseconds, 97.98%)')" onmouseout="c()">
+<title>del::delete_d (9,225,062 microseconds, 97.98%)</title><a xlink:href="del-pm-3-line.html#75" target="_top"><rect x="10.0" y="257" width="1156.2" height="15.0" fill="rgb(225,69,8)" rx="2" ry="2" />
+<text text-anchor="" x="13" y="267.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >del::delete_d</text>
+</a>
+</g>
+<g class="func_g" onmouseover="s('File::Spec::Win32::catfile (47,000 microseconds, 0.50%)')" onmouseout="c()">
+<title>File::Spec::Win32::catfile (47,000 microseconds, 0.50%)</title><a xlink:href="File-Spec-Win32-pm-19-line.html#130" target="_top"><rect x="1140.4" y="113" width="5.9" height="15.0" fill="rgb(244,227,4)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('File::Spec::Win32::_canon_cat (61,001 microseconds, 0.65%)')" onmouseout="c()">
+<title>File::Spec::Win32::_canon_cat (61,001 microseconds, 0.65%)</title><a xlink:href="File-Spec-Win32-pm-19-line.html#382" target="_top"><rect x="1151.5" y="113" width="7.7" height="15.0" fill="rgb(235,42,38)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('File::Path::CORE:ftdir (1,000 microseconds, 0.01%)')" onmouseout="c()">
+<title>File::Path::CORE:ftdir (1,000 microseconds, 0.01%)</title><a xlink:href="File-Path-pm-30-line.html#File__Path__CORE_ftdir" target="_top"><rect x="506.9" y="145" width="0.2" height="15.0" fill="rgb(244,70,0)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('overload::BEGIN@83 (10,000 microseconds, 0.11%)')" onmouseout="c()">
+<title>overload::BEGIN@83 (10,000 microseconds, 0.11%)</title><a xlink:href="overload-pm-28-line.html#83" target="_top"><rect x="1187.5" y="225" width="1.2" height="15.0" fill="rgb(230,16,50)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('File::Spec::Win32::_canon_cat (31,000 microseconds, 0.33%)')" onmouseout="c()">
+<title>File::Spec::Win32::_canon_cat (31,000 microseconds, 0.33%)</title><a xlink:href="File-Spec-Win32-pm-19-line.html#382" target="_top"><rect x="1162.3" y="129" width="3.9" height="15.0" fill="rgb(221,161,14)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('File::Path::CORE:rmdir (11,000 microseconds, 0.12%)')" onmouseout="c()">
+<title>File::Path::CORE:rmdir (11,000 microseconds, 0.12%)</title><a xlink:href="File-Path-pm-30-line.html#File__Path__CORE_rmdir" target="_top"><rect x="1051.1" y="65" width="1.4" height="15.0" fill="rgb(239,191,36)" rx="2" ry="2" />
+</a>
+</g>
+<g class="func_g" onmouseover="s('File::Path::CORE:lstat (65,001 microseconds, 0.69%)')" onmouseout="c()">
+<title>File::Path::CORE:lstat (65,001 microseconds, 0.69%)</title><a xlink:href="File-Path-pm-30-line.html#File__Path__CORE_lstat" target="_top"><rect x="507.1" y="145" width="8.1" height="15.0" fill="rgb(229,26,22)" rx="2" ry="2" />
+</a>
+</g>
+</svg>

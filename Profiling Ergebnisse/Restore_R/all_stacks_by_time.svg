@@ -1,6 +1,6 @@
 <?xml version="1.0" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" width="1200" height="290" onload="init(evt)" viewBox="0 0 1200 290" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg version="1.1" width="1200" height="306" onload="init(evt)" viewBox="0 0 1200 306" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <defs >
 	<linearGradient id="background" y1="0" y2="1" x1="0" x2="0" >
 		<stop stop-color="#eeeeee" offset="5%" />
@@ -18,866 +18,705 @@
 	function c() { details.nodeValue = ' '; }
 ]]>
 </script>
-<rect x="0.0" y="0" width="1200.0" height="290.0" fill="url(#background)"  />
+<rect x="0.0" y="0" width="1200.0" height="306.0" fill="url(#background)"  />
 <text text-anchor="middle" x="600" y="24" font-size="17" font-family="Verdana" fill="rgb(0,0,0)"  >Flame Graph</text>
-<text text-anchor="" x="10" y="273" font-size="12" font-family="Verdana" fill="rgb(0,0,0)" id="details" > </text>
-<g class="func_g" onmouseover="s('File::Copy::Recursive::CORE:ftlink (5,622 microseconds, 0.02%)')" onmouseout="c()">
-<title>File::Copy::Recursive::CORE:ftlink (5,622 microseconds, 0.02%)</title><a xlink:href="File-Copy-Recursive-pm-22-sub.html#File__Copy__Recursive__CORE_ftlink" target="_top"><rect x="17.8" y="129" width="0.2" height="15.0" fill="rgb(218,177,10)" rx="2" ry="2" />
+<text text-anchor="" x="10" y="289" font-size="12" font-family="Verdana" fill="rgb(0,0,0)" id="details" > </text>
+<g class="func_g" onmouseover="s('File::Copy::CORE:ftdir (39,001 microseconds, 0.38%)')" onmouseout="c()">
+<title>File::Copy::CORE:ftdir (39,001 microseconds, 0.38%)</title><a xlink:href="File-Copy-pm-19-line.html#File__Copy__CORE_ftdir" target="_top"><rect x="314.8" y="65" width="4.4" height="15.0" fill="rgb(222,110,34)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('Config::FETCH (4,207 microseconds, 0.02%)')" onmouseout="c()">
-<title>Config::FETCH (4,207 microseconds, 0.02%)</title><a xlink:href="Config-pm-13-sub.html#65" target="_top"><rect x="822.3" y="113" width="0.2" height="15.0" fill="rgb(220,33,11)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Spec::Win32::CORE:regcomp (10,000 microseconds, 0.10%)')" onmouseout="c()">
+<title>File::Spec::Win32::CORE:regcomp (10,000 microseconds, 0.10%)</title><a xlink:href="File-Spec-Win32-pm-12-line.html#File__Spec__Win32__CORE_regcomp" target="_top"><rect x="267.3" y="65" width="1.2" height="15.0" fill="rgb(219,145,28)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Spec::Unix::catdir (42,093 microseconds, 0.16%)')" onmouseout="c()">
-<title>File::Spec::Unix::catdir (42,093 microseconds, 0.16%)</title><a xlink:href="File-Spec-Unix-pm-12-sub.html#83" target="_top"><rect x="996.5" y="129" width="1.9" height="15.0" fill="rgb(234,140,25)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Copy::Recursive::__ANON__[C:/Perl64/site/lib/File/Copy/Recursive.pm:271] (1,502,019 microseconds, 14.45%)')" onmouseout="c()">
+<title>File::Copy::Recursive::__ANON__[C:/Perl64/site/lib/File/Copy/Recursive.pm:271] (1,502,019 microseconds, 14.45%)</title><a xlink:href="File-Copy-Recursive-pm-24-line.html#213" target="_top"><rect x="109.1" y="97" width="170.6" height="15.0" fill="rgb(248,3,32)" rx="2" ry="2" />
+<text text-anchor="" x="112.13782145791" y="107.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >File::Copy::Recursive::..</text>
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::CORE:open (4,129,352 microseconds, 15.69%)')" onmouseout="c()">
-<title>File::Copy::CORE:open (4,129,352 microseconds, 15.69%)</title><a xlink:href="File-Copy-pm-18-sub.html#File__Copy__CORE_open" target="_top"><rect x="424.0" y="81" width="185.2" height="15.0" fill="rgb(227,3,0)" rx="2" ry="2" />
-<text text-anchor="" x="426.963357836083" y="91.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >File::Copy::CORE:open</text>
+<g class="func_g" onmouseover="s('File::Spec::Win32::CORE:regcomp (1,000 microseconds, 0.01%)')" onmouseout="c()">
+<title>File::Spec::Win32::CORE:regcomp (1,000 microseconds, 0.01%)</title><a xlink:href="File-Spec-Win32-pm-12-line.html#File__Spec__Win32__CORE_regcomp" target="_top"><rect x="1160.2" y="129" width="0.2" height="15.0" fill="rgb(251,10,15)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::CORE:sysread (7,646 microseconds, 0.03%)')" onmouseout="c()">
-<title>File::Copy::CORE:sysread (7,646 microseconds, 0.03%)</title><a xlink:href="File-Copy-pm-18-sub.html#File__Copy__CORE_sysread" target="_top"><rect x="609.5" y="81" width="0.3" height="15.0" fill="rgb(223,224,52)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Copy::Recursive::CORE:chmod (26,001 microseconds, 0.25%)')" onmouseout="c()">
+<title>File::Copy::Recursive::CORE:chmod (26,001 microseconds, 0.25%)</title><a xlink:href="File-Copy-Recursive-pm-24-line.html#File__Copy__Recursive__CORE_chmod" target="_top"><rect x="110.5" y="81" width="3.0" height="15.0" fill="rgb(239,19,22)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::Recursive::CORE:stat (5,212 microseconds, 0.02%)')" onmouseout="c()">
-<title>File::Copy::Recursive::CORE:stat (5,212 microseconds, 0.02%)</title><a xlink:href="File-Copy-Recursive-pm-22-sub.html#File__Copy__Recursive__CORE_stat" target="_top"><rect x="223.5" y="81" width="0.2" height="15.0" fill="rgb(236,65,8)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Spec::Win32::splitpath (25,000 microseconds, 0.24%)')" onmouseout="c()">
+<title>File::Spec::Win32::splitpath (25,000 microseconds, 0.24%)</title><a xlink:href="File-Spec-Win32-pm-12-line.html#210" target="_top"><rect x="793.0" y="113" width="2.8" height="15.0" fill="rgb(214,86,29)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::CORE:sysread (6,403 microseconds, 0.02%)')" onmouseout="c()">
-<title>File::Copy::CORE:sysread (6,403 microseconds, 0.02%)</title><a xlink:href="File-Copy-pm-18-sub.html#File__Copy__CORE_sysread" target="_top"><rect x="213.9" y="49" width="0.3" height="15.0" fill="rgb(240,91,44)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Copy::Recursive::CORE:stat (59,000 microseconds, 0.57%)')" onmouseout="c()">
+<title>File::Copy::Recursive::CORE:stat (59,000 microseconds, 0.57%)</title><a xlink:href="File-Copy-Recursive-pm-24-line.html#File__Copy__Recursive__CORE_stat" target="_top"><rect x="147.6" y="65" width="6.7" height="15.0" fill="rgb(252,201,0)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Spec::Unix::CORE:subst (3,976 microseconds, 0.02%)')" onmouseout="c()">
-<title>File::Spec::Unix::CORE:subst (3,976 microseconds, 0.02%)</title><a xlink:href="File-Spec-Unix-pm-12-sub.html#File__Spec__Unix__CORE_subst" target="_top"><rect x="615.2" y="81" width="0.2" height="15.0" fill="rgb(233,221,54)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Copy::Recursive::CORE:ftdir (33,000 microseconds, 0.32%)')" onmouseout="c()">
+<title>File::Copy::Recursive::CORE:ftdir (33,000 microseconds, 0.32%)</title><a xlink:href="File-Copy-Recursive-pm-24-line.html#File__Copy__Recursive__CORE_ftdir" target="_top"><rect x="93.0" y="97" width="3.8" height="15.0" fill="rgb(220,77,37)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('Config::FETCH (4,286 microseconds, 0.02%)')" onmouseout="c()">
-<title>Config::FETCH (4,286 microseconds, 0.02%)</title><a xlink:href="Config-pm-13-sub.html#65" target="_top"><rect x="36.1" y="49" width="0.2" height="15.0" fill="rgb(248,66,28)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Spec::Win32::splitpath (39,000 microseconds, 0.38%)')" onmouseout="c()">
+<title>File::Spec::Win32::splitpath (39,000 microseconds, 0.38%)</title><a xlink:href="File-Spec-Win32-pm-12-line.html#210" target="_top"><rect x="261.4" y="65" width="4.5" height="15.0" fill="rgb(230,173,47)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::CORE:ftsize (2,895 microseconds, 0.01%)')" onmouseout="c()">
-<title>File::Copy::CORE:ftsize (2,895 microseconds, 0.01%)</title><a xlink:href="File-Copy-pm-18-sub.html#File__Copy__CORE_ftsize" target="_top"><rect x="630.4" y="97" width="0.1" height="15.0" fill="rgb(233,221,26)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Spec::Win32::CORE:match (1,000 microseconds, 0.01%)')" onmouseout="c()">
+<title>File::Spec::Win32::CORE:match (1,000 microseconds, 0.01%)</title><a xlink:href="File-Spec-Win32-pm-12-line.html#File__Spec__Win32__CORE_match" target="_top"><rect x="800.9" y="97" width="0.2" height="15.0" fill="rgb(225,196,23)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Spec::Unix::canonpath (35,371 microseconds, 0.13%)')" onmouseout="c()">
-<title>File::Spec::Unix::canonpath (35,371 microseconds, 0.13%)</title><a xlink:href="File-Spec-Unix-pm-12-sub.html#43" target="_top"><rect x="996.8" y="113" width="1.6" height="15.0" fill="rgb(219,201,43)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Spec::Win32::CORE:match (10,000 microseconds, 0.10%)')" onmouseout="c()">
+<title>File::Spec::Win32::CORE:match (10,000 microseconds, 0.10%)</title><a xlink:href="File-Spec-Win32-pm-12-line.html#File__Spec__Win32__CORE_match" target="_top"><rect x="600.6" y="81" width="1.2" height="15.0" fill="rgb(245,189,8)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::Recursive::__ANON__[/Library/Perl/5.16/File/Copy/Recursive.pm:75] (30,334 microseconds, 0.12%)')" onmouseout="c()">
-<title>File::Copy::Recursive::__ANON__[/Library/Perl/5.16/File/Copy/Recursive.pm:75] (30,334 microseconds, 0.12%)</title><a xlink:href="File-Copy-Recursive-pm-22-sub.html#41" target="_top"><rect x="816.4" y="129" width="1.4" height="15.0" fill="rgb(225,84,23)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Copy::Recursive::CORE:stat (28,000 microseconds, 0.27%)')" onmouseout="c()">
+<title>File::Copy::Recursive::CORE:stat (28,000 microseconds, 0.27%)</title><a xlink:href="File-Copy-Recursive-pm-24-line.html#File__Copy__Recursive__CORE_stat" target="_top"><rect x="46.0" y="145" width="3.2" height="15.0" fill="rgb(241,37,4)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Spec::Unix::canonpath (24,845 microseconds, 0.09%)')" onmouseout="c()">
-<title>File::Spec::Unix::canonpath (24,845 microseconds, 0.09%)</title><a xlink:href="File-Spec-Unix-pm-12-sub.html#43" target="_top"><rect x="1183.3" y="145" width="1.1" height="15.0" fill="rgb(248,92,32)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Spec::Win32::CORE:subst (25,000 microseconds, 0.24%)')" onmouseout="c()">
+<title>File::Spec::Win32::CORE:subst (25,000 microseconds, 0.24%)</title><a xlink:href="File-Spec-Win32-pm-12-line.html#File__Spec__Win32__CORE_subst" target="_top"><rect x="801.1" y="97" width="2.8" height="15.0" fill="rgb(249,122,49)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('Term::ANSIColor::BEGIN@28 (3,029 microseconds, 0.01%)')" onmouseout="c()">
-<title>Term::ANSIColor::BEGIN@28 (3,029 microseconds, 0.01%)</title><a xlink:href="Term-ANSIColor-pm-28-sub.html#28" target="_top"><rect x="1187.8" y="177" width="0.1" height="15.0" fill="rgb(216,153,20)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('Cwd::BEGIN@783 (30,000 microseconds, 0.29%)')" onmouseout="c()">
+<title>Cwd::BEGIN@783 (30,000 microseconds, 0.29%)</title><a xlink:href="TestRestoreWin-pl-1-line.html#783" target="_top"><rect x="1169.6" y="161" width="3.4" height="15.0" fill="rgb(214,52,19)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::Recursive::__ANON__[/Library/Perl/5.16/File/Copy/Recursive.pm:271] (21,964,681 microseconds, 83.48%)')" onmouseout="c()">
-<title>File::Copy::Recursive::__ANON__[/Library/Perl/5.16/File/Copy/Recursive.pm:271] (21,964,681 microseconds, 83.48%)</title><a xlink:href="File-Copy-Recursive-pm-22-sub.html#213" target="_top"><rect x="13.3" y="161" width="985.1" height="15.0" fill="rgb(236,144,19)" rx="2" ry="2" />
-<text text-anchor="" x="16.2906911018066" y="171.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >File::Copy::Recursive::__ANON__[/Library/Perl/5.16/File/Copy/Recursive.pm:271]</text>
+<g class="func_g" onmouseover="s('File::Copy::Recursive::CORE:chmod (35,000 microseconds, 0.34%)')" onmouseout="c()">
+<title>File::Copy::Recursive::CORE:chmod (35,000 microseconds, 0.34%)</title><a xlink:href="File-Copy-Recursive-pm-24-line.html#File__Copy__Recursive__CORE_chmod" target="_top"><rect x="89.0" y="97" width="4.0" height="15.0" fill="rgb(215,157,43)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::Recursive::CORE:chmod (11,493 microseconds, 0.04%)')" onmouseout="c()">
-<title>File::Copy::Recursive::CORE:chmod (11,493 microseconds, 0.04%)</title><a xlink:href="File-Copy-Recursive-pm-22-sub.html#File__Copy__Recursive__CORE_chmod" target="_top"><rect x="29.3" y="65" width="0.6" height="15.0" fill="rgb(219,26,12)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Copy::__ANON__[C:/Perl64/lib/File/Copy.pm:324] (1,319,011 microseconds, 12.69%)')" onmouseout="c()">
+<title>File::Copy::__ANON__[C:/Perl64/lib/File/Copy.pm:324] (1,319,011 microseconds, 12.69%)</title><a xlink:href="File-Copy-pm-19-line.html#321" target="_top"><rect x="842.2" y="113" width="149.8" height="15.0" fill="rgb(253,84,25)" rx="2" ry="2" />
+<text text-anchor="" x="845.166558753764" y="123.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >File::Copy::__ANON__..</text>
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::Recursive::CORE:ftdir (2,473 microseconds, 0.01%)')" onmouseout="c()">
-<title>File::Copy::Recursive::CORE:ftdir (2,473 microseconds, 0.01%)</title><a xlink:href="File-Copy-Recursive-pm-22-sub.html#File__Copy__Recursive__CORE_ftdir" target="_top"><rect x="224.3" y="65" width="0.1" height="15.0" fill="rgb(207,198,36)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('Config::FETCH (1,000 microseconds, 0.01%)')" onmouseout="c()">
+<title>Config::FETCH (1,000 microseconds, 0.01%)</title><a xlink:href="Config-pm-20-line.html#66" target="_top"><rect x="154.8" y="49" width="0.1" height="15.0" fill="rgb(208,174,32)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::Recursive::CORE:stat (10,596 microseconds, 0.04%)')" onmouseout="c()">
-<title>File::Copy::Recursive::CORE:stat (10,596 microseconds, 0.04%)</title><a xlink:href="File-Copy-Recursive-pm-22-sub.html#File__Copy__Recursive__CORE_stat" target="_top"><rect x="31.7" y="49" width="0.5" height="15.0" fill="rgb(208,184,14)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Spec::Win32::CORE:match (2,000 microseconds, 0.02%)')" onmouseout="c()">
+<title>File::Spec::Win32::CORE:match (2,000 microseconds, 0.02%)</title><a xlink:href="File-Spec-Win32-pm-12-line.html#File__Spec__Win32__CORE_match" target="_top"><rect x="1160.0" y="129" width="0.2" height="15.0" fill="rgb(240,112,49)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::Recursive::CORE:stat (4,399 microseconds, 0.02%)')" onmouseout="c()">
-<title>File::Copy::Recursive::CORE:stat (4,399 microseconds, 0.02%)</title><a xlink:href="File-Copy-Recursive-pm-22-sub.html#File__Copy__Recursive__CORE_stat" target="_top"><rect x="1002.2" y="145" width="0.2" height="15.0" fill="rgb(239,217,38)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Copy::Recursive::CORE:stat (26,001 microseconds, 0.25%)')" onmouseout="c()">
+<title>File::Copy::Recursive::CORE:stat (26,001 microseconds, 0.25%)</title><a xlink:href="File-Copy-Recursive-pm-24-line.html#File__Copy__Recursive__CORE_stat" target="_top"><rect x="1027.9" y="145" width="3.0" height="15.0" fill="rgb(238,35,37)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Spec::Unix::catfile (93,136 microseconds, 0.35%)')" onmouseout="c()">
-<title>File::Spec::Unix::catfile (93,136 microseconds, 0.35%)</title><a xlink:href="File-Spec-Unix-pm-12-sub.html#96" target="_top"><rect x="216.4" y="81" width="4.2" height="15.0" fill="rgb(206,23,34)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('Scalar::Util::blessed (1,000 microseconds, 0.01%)')" onmouseout="c()">
+<title>Scalar::Util::blessed (1,000 microseconds, 0.01%)</title><a xlink:href="Scalar-Util-pm-15-line.html#Scalar__Util__blessed" target="_top"><rect x="1159.2" y="113" width="0.1" height="15.0" fill="rgb(253,9,46)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Spec::Unix::canonpath (37,714 microseconds, 0.14%)')" onmouseout="c()">
-<title>File::Spec::Unix::canonpath (37,714 microseconds, 0.14%)</title><a xlink:href="File-Spec-Unix-pm-12-sub.html#43" target="_top"><rect x="217.4" y="65" width="1.7" height="15.0" fill="rgb(238,95,24)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Spec::Win32::_canon_cat (99,000 microseconds, 0.95%)')" onmouseout="c()">
+<title>File::Spec::Win32::_canon_cat (99,000 microseconds, 0.95%)</title><a xlink:href="File-Spec-Win32-pm-12-line.html#382" target="_top"><rect x="268.5" y="65" width="11.2" height="15.0" fill="rgb(244,80,46)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Spec::Unix::catfile (92,905 microseconds, 0.35%)')" onmouseout="c()">
-<title>File::Spec::Unix::catfile (92,905 microseconds, 0.35%)</title><a xlink:href="File-Spec-Unix-pm-12-sub.html#96" target="_top"><rect x="808.5" y="129" width="4.2" height="15.0" fill="rgb(249,124,22)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Copy::Recursive::__ANON__[C:/Perl64/site/lib/File/Copy/Recursive.pm:125] (12,000 microseconds, 0.12%)')" onmouseout="c()">
+<title>File::Copy::Recursive::__ANON__[C:/Perl64/site/lib/File/Copy/Recursive.pm:125] (12,000 microseconds, 0.12%)</title><a xlink:href="File-Copy-Recursive-pm-24-line.html#113" target="_top"><rect x="68.3" y="129" width="1.3" height="15.0" fill="rgb(226,103,40)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::CORE:stat (5,896 microseconds, 0.02%)')" onmouseout="c()">
-<title>File::Copy::CORE:stat (5,896 microseconds, 0.02%)</title><a xlink:href="File-Copy-pm-18-sub.html#File__Copy__CORE_stat" target="_top"><rect x="801.7" y="97" width="0.3" height="15.0" fill="rgb(227,209,41)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Copy::Recursive::CORE:stat (25,000 microseconds, 0.24%)')" onmouseout="c()">
+<title>File::Copy::Recursive::CORE:stat (25,000 microseconds, 0.24%)</title><a xlink:href="File-Copy-Recursive-pm-24-line.html#File__Copy__Recursive__CORE_stat" target="_top"><rect x="305.7" y="81" width="2.8" height="15.0" fill="rgb(231,134,14)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::Recursive::CORE:ftlink (2,581 microseconds, 0.01%)')" onmouseout="c()">
-<title>File::Copy::Recursive::CORE:ftlink (2,581 microseconds, 0.01%)</title><a xlink:href="File-Copy-Recursive-pm-22-sub.html#File__Copy__Recursive__CORE_ftlink" target="_top"><rect x="414.2" y="97" width="0.1" height="15.0" fill="rgb(222,196,27)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Copy::Recursive::CORE:stat (17,000 microseconds, 0.16%)')" onmouseout="c()">
+<title>File::Copy::Recursive::CORE:stat (17,000 microseconds, 0.16%)</title><a xlink:href="File-Copy-Recursive-pm-24-line.html#File__Copy__Recursive__CORE_stat" target="_top"><rect x="66.3" y="129" width="2.0" height="15.0" fill="rgb(224,133,47)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::Recursive::CORE:ftdir (2,360 microseconds, 0.01%)')" onmouseout="c()">
-<title>File::Copy::Recursive::CORE:ftdir (2,360 microseconds, 0.01%)</title><a xlink:href="File-Copy-Recursive-pm-22-sub.html#File__Copy__Recursive__CORE_ftdir" target="_top"><rect x="20.4" y="113" width="0.1" height="15.0" fill="rgb(232,106,25)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Copy::Recursive::fcopy (1,323,013 microseconds, 12.73%)')" onmouseout="c()">
+<title>File::Copy::Recursive::fcopy (1,323,013 microseconds, 12.73%)</title><a xlink:href="File-Copy-Recursive-pm-24-line.html#127" target="_top"><rect x="1010.1" y="161" width="150.3" height="15.0" fill="rgb(248,19,16)" rx="2" ry="2" />
+<text text-anchor="" x="1013.12121724215" y="171.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >File::Copy::Recursiv..</text>
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::copy (4,083,825 microseconds, 15.52%)')" onmouseout="c()">
-<title>File::Copy::copy (4,083,825 microseconds, 15.52%)</title><a xlink:href="File-Copy-pm-18-sub.html#105" target="_top"><rect x="32.2" y="65" width="183.1" height="15.0" fill="rgb(209,5,23)" rx="2" ry="2" />
-<text text-anchor="" x="35.1730198355027" y="75.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >File::Copy::copy</text>
+<g class="func_g" onmouseover="s('File::Copy::CORE:ftdir (34,000 microseconds, 0.33%)')" onmouseout="c()">
+<title>File::Copy::CORE:ftdir (34,000 microseconds, 0.33%)</title><a xlink:href="File-Copy-pm-19-line.html#File__Copy__CORE_ftdir" target="_top"><rect x="458.4" y="81" width="3.9" height="15.0" fill="rgb(230,38,43)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::Recursive::__ANON__[/Library/Perl/5.16/File/Copy/Recursive.pm:271] (4,375,371 microseconds, 16.63%)')" onmouseout="c()">
-<title>File::Copy::Recursive::__ANON__[/Library/Perl/5.16/File/Copy/Recursive.pm:271] (4,375,371 microseconds, 16.63%)</title><a xlink:href="File-Copy-Recursive-pm-22-sub.html#213" target="_top"><rect x="24.4" y="97" width="196.2" height="15.0" fill="rgb(206,105,8)" rx="2" ry="2" />
-<text text-anchor="" x="27.3708414681932" y="107.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >File::Copy::Recursive::__AN..</text>
+<g class="func_g" onmouseover="s('Win32::CopyFile (1,319,011 microseconds, 12.69%)')" onmouseout="c()">
+<title>Win32::CopyFile (1,319,011 microseconds, 12.69%)</title><a xlink:href="Win32-pm-36-line.html#Win32__CopyFile" target="_top"><rect x="842.2" y="97" width="149.8" height="15.0" fill="rgb(238,209,47)" rx="2" ry="2" />
+<text text-anchor="" x="845.166558753764" y="107.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >Win32::CopyFile</text>
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Spec::Unix::CORE:match (8,086 microseconds, 0.03%)')" onmouseout="c()">
-<title>File::Spec::Unix::CORE:match (8,086 microseconds, 0.03%)</title><a xlink:href="File-Spec-Unix-pm-12-sub.html#File__Spec__Unix__CORE_match" target="_top"><rect x="612.3" y="81" width="0.4" height="15.0" fill="rgb(246,33,5)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('Config::FETCH (21,000 microseconds, 0.20%)')" onmouseout="c()">
+<title>Config::FETCH (21,000 microseconds, 0.20%)</title><a xlink:href="Config-pm-20-line.html#66" target="_top"><rect x="638.4" y="97" width="2.4" height="15.0" fill="rgb(230,108,25)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::CORE:stat (5,304 microseconds, 0.02%)')" onmouseout="c()">
-<title>File::Copy::CORE:stat (5,304 microseconds, 0.02%)</title><a xlink:href="File-Copy-pm-18-sub.html#File__Copy__CORE_stat" target="_top"><rect x="402.4" y="65" width="0.3" height="15.0" fill="rgb(244,176,10)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Copy::Recursive::CORE:ftdir (78,003 microseconds, 0.75%)')" onmouseout="c()">
+<title>File::Copy::Recursive::CORE:ftdir (78,003 microseconds, 0.75%)</title><a xlink:href="File-Copy-Recursive-pm-24-line.html#File__Copy__Recursive__CORE_ftdir" target="_top"><rect x="812.1" y="129" width="8.8" height="15.0" fill="rgb(210,111,26)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('all (26,310,661 microseconds, 100%)')" onmouseout="c()">
-<title>all (26,310,661 microseconds, 100%)</title><rect x="10.0" y="241" width="1180.0" height="15.0" fill="rgb(218,172,0)" rx="2" ry="2" />
-<text text-anchor="" x="13" y="251.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  ></text>
-</g>
-<g class="func_g" onmouseover="s('File::Copy::CORE:ftsize (2,552 microseconds, 0.01%)')" onmouseout="c()">
-<title>File::Copy::CORE:ftsize (2,552 microseconds, 0.01%)</title><a xlink:href="File-Copy-pm-18-sub.html#File__Copy__CORE_ftsize" target="_top"><rect x="825.5" y="113" width="0.1" height="15.0" fill="rgb(247,134,33)" rx="2" ry="2" />
-</a>
-</g>
-<g class="func_g" onmouseover="s('File::Copy::Recursive::CORE:match (2,544 microseconds, 0.01%)')" onmouseout="c()">
-<title>File::Copy::Recursive::CORE:match (2,544 microseconds, 0.01%)</title><a xlink:href="File-Copy-Recursive-pm-22-sub.html#File__Copy__Recursive__CORE_match" target="_top"><rect x="15.1" y="145" width="0.1" height="15.0" fill="rgb(212,177,50)" rx="2" ry="2" />
-</a>
-</g>
-<g class="func_g" onmouseover="s('File::Spec::Unix::splitpath (25,152 microseconds, 0.10%)')" onmouseout="c()">
-<title>File::Spec::Unix::splitpath (25,152 microseconds, 0.10%)</title><a xlink:href="File-Spec-Unix-pm-12-sub.html#262" target="_top"><rect x="992.6" y="129" width="1.2" height="15.0" fill="rgb(222,215,42)" rx="2" ry="2" />
-</a>
-</g>
-<g class="func_g" onmouseover="s('File::Spec::Unix::CORE:subst (3,706 microseconds, 0.01%)')" onmouseout="c()">
-<title>File::Spec::Unix::CORE:subst (3,706 microseconds, 0.01%)</title><a xlink:href="File-Spec-Unix-pm-12-sub.html#File__Spec__Unix__CORE_subst" target="_top"><rect x="219.0" y="49" width="0.1" height="15.0" fill="rgb(212,143,47)" rx="2" ry="2" />
-</a>
-</g>
-<g class="func_g" onmouseover="s('File::Copy::CORE:syswrite (16,840 microseconds, 0.06%)')" onmouseout="c()">
-<title>File::Copy::CORE:syswrite (16,840 microseconds, 0.06%)</title><a xlink:href="File-Copy-pm-18-sub.html#File__Copy__CORE_syswrite" target="_top"><rect x="991.4" y="113" width="0.8" height="15.0" fill="rgb(242,82,54)" rx="2" ry="2" />
-</a>
-</g>
-<g class="func_g" onmouseover="s('File::Copy::Recursive::fcopy (4,493,506 microseconds, 17.08%)')" onmouseout="c()">
-<title>File::Copy::Recursive::fcopy (4,493,506 microseconds, 17.08%)</title><a xlink:href="File-Copy-Recursive-pm-22-sub.html#127" target="_top"><rect x="411.1" y="113" width="201.6" height="15.0" fill="rgb(240,135,9)" rx="2" ry="2" />
-<text text-anchor="" x="414.134981151141" y="123.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >File::Copy::Recursive::fcopy</text>
-</a>
-</g>
-<g class="func_g" onmouseover="s('File::Copy::CORE:ftsize (2,408 microseconds, 0.01%)')" onmouseout="c()">
-<title>File::Copy::CORE:ftsize (2,408 microseconds, 0.01%)</title><a xlink:href="File-Copy-pm-18-sub.html#File__Copy__CORE_ftsize" target="_top"><rect x="423.9" y="81" width="0.1" height="15.0" fill="rgb(238,85,54)" rx="2" ry="2" />
-</a>
-</g>
-<g class="func_g" onmouseover="s('File::Copy::CORE:binmode (2,258 microseconds, 0.01%)')" onmouseout="c()">
-<title>File::Copy::CORE:binmode (2,258 microseconds, 0.01%)</title><a xlink:href="File-Copy-pm-18-sub.html#File__Copy__CORE_binmode" target="_top"><rect x="1007.6" y="129" width="0.1" height="15.0" fill="rgb(206,103,1)" rx="2" ry="2" />
-</a>
-</g>
-<g class="func_g" onmouseover="s('File::Copy::Recursive::fcopy (4,038,068 microseconds, 15.35%)')" onmouseout="c()">
-<title>File::Copy::Recursive::fcopy (4,038,068 microseconds, 15.35%)</title><a xlink:href="File-Copy-Recursive-pm-22-sub.html#127" target="_top"><rect x="812.7" y="145" width="181.1" height="15.0" fill="rgb(227,74,8)" rx="2" ry="2" />
-<text text-anchor="" x="815.656988990976" y="155.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >File::Copy::Recursive::fc..</text>
-</a>
-</g>
-<g class="func_g" onmouseover="s('File::Spec::Unix::catdir (32,565 microseconds, 0.12%)')" onmouseout="c()">
-<title>File::Spec::Unix::catdir (32,565 microseconds, 0.12%)</title><a xlink:href="File-Spec-Unix-pm-12-sub.html#83" target="_top"><rect x="219.1" y="65" width="1.5" height="15.0" fill="rgb(233,71,33)" rx="2" ry="2" />
-</a>
-</g>
-<g class="func_g" onmouseover="s('File::Spec::Unix::canonpath (24,316 microseconds, 0.09%)')" onmouseout="c()">
-<title>File::Spec::Unix::canonpath (24,316 microseconds, 0.09%)</title><a xlink:href="File-Spec-Unix-pm-12-sub.html#43" target="_top"><rect x="408.2" y="81" width="1.1" height="15.0" fill="rgb(248,134,21)" rx="2" ry="2" />
-</a>
-</g>
-<g class="func_g" onmouseover="s('File::Copy::Recursive::CORE:stat (3,554 microseconds, 0.01%)')" onmouseout="c()">
-<title>File::Copy::Recursive::CORE:stat (3,554 microseconds, 0.01%)</title><a xlink:href="File-Copy-Recursive-pm-22-sub.html#File__Copy__Recursive__CORE_stat" target="_top"><rect x="15.2" y="145" width="0.2" height="15.0" fill="rgb(216,45,28)" rx="2" ry="2" />
-</a>
-</g>
-<g class="func_g" onmouseover="s('File::Spec::Unix::CORE:subst (3,881 microseconds, 0.01%)')" onmouseout="c()">
-<title>File::Spec::Unix::CORE:subst (3,881 microseconds, 0.01%)</title><a xlink:href="File-Spec-Unix-pm-12-sub.html#File__Spec__Unix__CORE_subst" target="_top"><rect x="220.4" y="33" width="0.2" height="15.0" fill="rgb(211,72,25)" rx="2" ry="2" />
-</a>
-</g>
-<g class="func_g" onmouseover="s('File::Spec::Unix::CORE:match (7,981 microseconds, 0.03%)')" onmouseout="c()">
-<title>File::Spec::Unix::CORE:match (7,981 microseconds, 0.03%)</title><a xlink:href="File-Spec-Unix-pm-12-sub.html#File__Spec__Unix__CORE_match" target="_top"><rect x="993.4" y="113" width="0.4" height="15.0" fill="rgb(228,202,42)" rx="2" ry="2" />
-</a>
-</g>
-<g class="func_g" onmouseover="s('File::Copy::Recursive::CORE:chmod (11,997 microseconds, 0.05%)')" onmouseout="c()">
-<title>File::Copy::Recursive::CORE:chmod (11,997 microseconds, 0.05%)</title><a xlink:href="File-Copy-Recursive-pm-22-sub.html#File__Copy__Recursive__CORE_chmod" target="_top"><rect x="619.4" y="113" width="0.6" height="15.0" fill="rgb(236,116,16)" rx="2" ry="2" />
-</a>
-</g>
-<g class="func_g" onmouseover="s('File::Copy::Recursive::CORE:stat (11,573 microseconds, 0.04%)')" onmouseout="c()">
-<title>File::Copy::Recursive::CORE:stat (11,573 microseconds, 0.04%)</title><a xlink:href="File-Copy-Recursive-pm-22-sub.html#File__Copy__Recursive__CORE_stat" target="_top"><rect x="415.6" y="81" width="0.5" height="15.0" fill="rgb(247,101,15)" rx="2" ry="2" />
-</a>
-</g>
-<g class="func_g" onmouseover="s('File::Copy::Recursive::CORE:ftdir (4,100 microseconds, 0.02%)')" onmouseout="c()">
-<title>File::Copy::Recursive::CORE:ftdir (4,100 microseconds, 0.02%)</title><a xlink:href="File-Copy-Recursive-pm-22-sub.html#File__Copy__Recursive__CORE_ftdir" target="_top"><rect x="14.7" y="145" width="0.1" height="15.0" fill="rgb(249,3,52)" rx="2" ry="2" />
-</a>
-</g>
-<g class="func_g" onmouseover="s('File::Spec::Unix::canonpath (26,796 microseconds, 0.10%)')" onmouseout="c()">
-<title>File::Spec::Unix::canonpath (26,796 microseconds, 0.10%)</title><a xlink:href="File-Spec-Unix-pm-12-sub.html#43" target="_top"><rect x="1184.7" y="129" width="1.2" height="15.0" fill="rgb(208,77,48)" rx="2" ry="2" />
-</a>
-</g>
-<g class="func_g" onmouseover="s('File::Copy::Recursive::CORE:stat (4,221 microseconds, 0.02%)')" onmouseout="c()">
-<title>File::Copy::Recursive::CORE:stat (4,221 microseconds, 0.02%)</title><a xlink:href="File-Copy-Recursive-pm-22-sub.html#File__Copy__Recursive__CORE_stat" target="_top"><rect x="18.2" y="129" width="0.2" height="15.0" fill="rgb(215,159,50)" rx="2" ry="2" />
-</a>
-</g>
-<g class="func_g" onmouseover="s('File::Copy::Recursive::__ANON__[/Library/Perl/5.16/File/Copy/Recursive.pm:125] (3,255 microseconds, 0.01%)')" onmouseout="c()">
-<title>File::Copy::Recursive::__ANON__[/Library/Perl/5.16/File/Copy/Recursive.pm:125] (3,255 microseconds, 0.01%)</title><a xlink:href="File-Copy-Recursive-pm-22-sub.html#113" target="_top"><rect x="24.2" y="97" width="0.2" height="15.0" fill="rgb(243,81,11)" rx="2" ry="2" />
-</a>
-</g>
-<g class="func_g" onmouseover="s('File::Copy::CORE:syswrite (25,058 microseconds, 0.10%)')" onmouseout="c()">
-<title>File::Copy::CORE:syswrite (25,058 microseconds, 0.10%)</title><a xlink:href="File-Copy-pm-18-sub.html#File__Copy__CORE_syswrite" target="_top"><rect x="1178.9" y="129" width="1.1" height="15.0" fill="rgb(222,23,43)" rx="2" ry="2" />
-</a>
-</g>
-<g class="func_g" onmouseover="s('File::Copy::CORE:stat (6,711 microseconds, 0.03%)')" onmouseout="c()">
-<title>File::Copy::CORE:stat (6,711 microseconds, 0.03%)</title><a xlink:href="File-Copy-pm-18-sub.html#File__Copy__CORE_stat" target="_top"><rect x="609.2" y="81" width="0.3" height="15.0" fill="rgb(239,163,15)" rx="2" ry="2" />
-</a>
-</g>
-<g class="func_g" onmouseover="s('File::Copy::CORE:syswrite (16,307 microseconds, 0.06%)')" onmouseout="c()">
-<title>File::Copy::CORE:syswrite (16,307 microseconds, 0.06%)</title><a xlink:href="File-Copy-pm-18-sub.html#File__Copy__CORE_syswrite" target="_top"><rect x="404.2" y="65" width="0.7" height="15.0" fill="rgb(209,89,52)" rx="2" ry="2" />
-</a>
-</g>
-<g class="func_g" onmouseover="s('main::BEGIN@11 (16,667 microseconds, 0.06%)')" onmouseout="c()">
-<title>main::BEGIN@11 (16,667 microseconds, 0.06%)</title><a xlink:href="Restore-pm-2-sub.html#11" target="_top"><rect x="1186.6" y="209" width="0.7" height="15.0" fill="rgb(228,114,1)" rx="2" ry="2" />
-</a>
-</g>
-<g class="func_g" onmouseover="s('Restore::RestoreDirectory (26,222,119 microseconds, 99.66%)')" onmouseout="c()">
-<title>Restore::RestoreDirectory (26,222,119 microseconds, 99.66%)</title><a xlink:href="Restore-pm-2-sub.html#221" target="_top"><rect x="10.0" y="209" width="1176.0" height="15.0" fill="rgb(215,155,19)" rx="2" ry="2" />
-<text text-anchor="" x="13.019459868386" y="219.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >Restore::RestoreDirectory</text>
-</a>
-</g>
-<g class="func_g" onmouseover="s('File::Spec::Unix::catdir (40,070 microseconds, 0.15%)')" onmouseout="c()">
-<title>File::Spec::Unix::catdir (40,070 microseconds, 0.15%)</title><a xlink:href="File-Spec-Unix-pm-12-sub.html#83" target="_top"><rect x="409.3" y="81" width="1.8" height="15.0" fill="rgb(250,166,52)" rx="2" ry="2" />
-</a>
-</g>
-<g class="func_g" onmouseover="s('File::Copy::CORE:syswrite (28,346 microseconds, 0.11%)')" onmouseout="c()">
-<title>File::Copy::CORE:syswrite (28,346 microseconds, 0.11%)</title><a xlink:href="File-Copy-pm-18-sub.html#File__Copy__CORE_syswrite" target="_top"><rect x="609.8" y="81" width="1.3" height="15.0" fill="rgb(218,153,13)" rx="2" ry="2" />
-</a>
-</g>
-<g class="func_g" onmouseover="s('File::Copy::Recursive::CORE:stat (10,259 microseconds, 0.04%)')" onmouseout="c()">
-<title>File::Copy::Recursive::CORE:stat (10,259 microseconds, 0.04%)</title><a xlink:href="File-Copy-Recursive-pm-22-sub.html#File__Copy__Recursive__CORE_stat" target="_top"><rect x="1003.0" y="129" width="0.5" height="15.0" fill="rgb(235,169,22)" rx="2" ry="2" />
-</a>
-</g>
-<g class="func_g" onmouseover="s('File::Copy::CORE:close (62,028 microseconds, 0.24%)')" onmouseout="c()">
-<title>File::Copy::CORE:close (62,028 microseconds, 0.24%)</title><a xlink:href="File-Copy-pm-18-sub.html#File__Copy__CORE_close" target="_top"><rect x="822.6" y="113" width="2.8" height="15.0" fill="rgb(254,145,39)" rx="2" ry="2" />
-</a>
-</g>
-<g class="func_g" onmouseover="s('File::Copy::_eq (9,821 microseconds, 0.04%)')" onmouseout="c()">
-<title>File::Copy::_eq (9,821 microseconds, 0.04%)</title><a xlink:href="File-Copy-pm-18-sub.html#93" target="_top"><rect x="806.9" y="97" width="0.4" height="15.0" fill="rgb(246,161,11)" rx="2" ry="2" />
-</a>
-</g>
-<g class="func_g" onmouseover="s('File::Copy::Recursive::CORE:chmod (6,933 microseconds, 0.03%)')" onmouseout="c()">
-<title>File::Copy::Recursive::CORE:chmod (6,933 microseconds, 0.03%)</title><a xlink:href="File-Copy-Recursive-pm-22-sub.html#File__Copy__Recursive__CORE_chmod" target="_top"><rect x="26.5" y="81" width="0.3" height="15.0" fill="rgb(214,128,37)" rx="2" ry="2" />
-</a>
-</g>
-<g class="func_g" onmouseover="s('File::Copy::Recursive::CORE:ftlink (6,532 microseconds, 0.02%)')" onmouseout="c()">
-<title>File::Copy::Recursive::CORE:ftlink (6,532 microseconds, 0.02%)</title><a xlink:href="File-Copy-Recursive-pm-22-sub.html#File__Copy__Recursive__CORE_ftlink" target="_top"><rect x="20.5" y="113" width="0.3" height="15.0" fill="rgb(227,223,5)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Copy::Recursive::dircopy (10,211,096 microseconds, 98.27%)')" onmouseout="c()">
+<title>File::Copy::Recursive::dircopy (10,211,096 microseconds, 98.27%)</title><a xlink:href="File-Copy-Recursive-pm-24-line.html#176" target="_top"><rect x="10.0" y="209" width="1159.6" height="15.0" fill="rgb(239,8,37)" rx="2" ry="2" />
+<text text-anchor="" x="13" y="219.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >File::Copy::Recursive::dircopy</text>
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::Recursive::__ANON__[/Library/Perl/5.16/File/Copy/Recursive.pm:75] (25,315 microseconds, 0.10%)')" onmouseout="c()">
-<title>File::Copy::Recursive::__ANON__[/Library/Perl/5.16/File/Copy/Recursive.pm:75] (25,315 microseconds, 0.10%)</title><a xlink:href="File-Copy-Recursive-pm-22-sub.html#41" target="_top"><rect x="223.7" y="81" width="1.2" height="15.0" fill="rgb(249,137,0)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Copy::Recursive::CORE:ftdir (82,001 microseconds, 0.79%)')" onmouseout="c()">
+<title>File::Copy::Recursive::CORE:ftdir (82,001 microseconds, 0.79%)</title><a xlink:href="File-Copy-Recursive-pm-24-line.html#File__Copy__Recursive__CORE_ftdir" target="_top"><rect x="615.8" y="113" width="9.4" height="15.0" fill="rgb(239,6,17)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Spec::Unix::catfile (117,048 microseconds, 0.44%)')" onmouseout="c()">
-<title>File::Spec::Unix::catfile (117,048 microseconds, 0.44%)</title><a xlink:href="File-Spec-Unix-pm-12-sub.html#96" target="_top"><rect x="612.7" y="113" width="5.2" height="15.0" fill="rgb(253,4,45)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('Config::FETCH (11,000 microseconds, 0.11%)')" onmouseout="c()">
+<title>Config::FETCH (11,000 microseconds, 0.11%)</title><a xlink:href="Config-pm-20-line.html#66" target="_top"><rect x="457.2" y="81" width="1.2" height="15.0" fill="rgb(252,67,52)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::CORE:sysread (6,211 microseconds, 0.02%)')" onmouseout="c()">
-<title>File::Copy::CORE:sysread (6,211 microseconds, 0.02%)</title><a xlink:href="File-Copy-pm-18-sub.html#File__Copy__CORE_sysread" target="_top"><rect x="991.2" y="113" width="0.2" height="15.0" fill="rgb(211,42,21)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Copy::copy (942,013 microseconds, 9.07%)')" onmouseout="c()">
+<title>File::Copy::copy (942,013 microseconds, 9.07%)</title><a xlink:href="File-Copy-pm-19-line.html#67" target="_top"><rect x="154.4" y="65" width="107.0" height="15.0" fill="rgb(217,195,13)" rx="2" ry="2" />
+<text text-anchor="" x="157.448448941286" y="75.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >File::Copy::copy</text>
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Spec::Unix::catdir (33,366 microseconds, 0.13%)')" onmouseout="c()">
-<title>File::Spec::Unix::catdir (33,366 microseconds, 0.13%)</title><a xlink:href="File-Spec-Unix-pm-12-sub.html#83" target="_top"><rect x="1184.4" y="145" width="1.5" height="15.0" fill="rgb(223,4,4)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Copy::Recursive::CORE:stat (23,001 microseconds, 0.22%)')" onmouseout="c()">
+<title>File::Copy::Recursive::CORE:stat (23,001 microseconds, 0.22%)</title><a xlink:href="File-Copy-Recursive-pm-24-line.html#File__Copy__Recursive__CORE_stat" target="_top"><rect x="27.1" y="161" width="2.7" height="15.0" fill="rgb(236,41,29)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Spec::Unix::splitpath (26,533 microseconds, 0.10%)')" onmouseout="c()">
-<title>File::Spec::Unix::splitpath (26,533 microseconds, 0.10%)</title><a xlink:href="File-Spec-Unix-pm-12-sub.html#262" target="_top"><rect x="807.3" y="113" width="1.2" height="15.0" fill="rgb(233,32,43)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('Scalar::Util::blessed (1,000 microseconds, 0.01%)')" onmouseout="c()">
+<title>Scalar::Util::blessed (1,000 microseconds, 0.01%)</title><a xlink:href="Scalar-Util-pm-15-line.html#Scalar__Util__blessed" target="_top"><rect x="792.9" y="81" width="0.1" height="15.0" fill="rgb(234,150,47)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::_eq (9,679 microseconds, 0.04%)')" onmouseout="c()">
-<title>File::Copy::_eq (9,679 microseconds, 0.04%)</title><a xlink:href="File-Copy-pm-18-sub.html#93" target="_top"><rect x="611.1" y="81" width="0.4" height="15.0" fill="rgb(249,79,42)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Copy::Recursive::fcopy (1,559,008 microseconds, 15.00%)')" onmouseout="c()">
+<title>File::Copy::Recursive::fcopy (1,559,008 microseconds, 15.00%)</title><a xlink:href="File-Copy-Recursive-pm-24-line.html#127" target="_top"><rect x="424.7" y="113" width="177.1" height="15.0" fill="rgb(242,69,53)" rx="2" ry="2" />
+<text text-anchor="" x="427.720801347615" y="123.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >File::Copy::Recursive::f..</text>
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::Recursive::CORE:stat (4,879 microseconds, 0.02%)')" onmouseout="c()">
-<title>File::Copy::Recursive::CORE:stat (4,879 microseconds, 0.02%)</title><a xlink:href="File-Copy-Recursive-pm-22-sub.html#File__Copy__Recursive__CORE_stat" target="_top"><rect x="816.2" y="129" width="0.2" height="15.0" fill="rgb(232,31,5)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Copy::Recursive::CORE:ftlink (44,001 microseconds, 0.42%)')" onmouseout="c()">
+<title>File::Copy::Recursive::CORE:ftlink (44,001 microseconds, 0.42%)</title><a xlink:href="File-Copy-Recursive-pm-24-line.html#File__Copy__Recursive__CORE_ftlink" target="_top"><rect x="300.7" y="81" width="5.0" height="15.0" fill="rgb(245,128,31)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Spec::Unix::catfile (103,007 microseconds, 0.39%)')" onmouseout="c()">
-<title>File::Spec::Unix::catfile (103,007 microseconds, 0.39%)</title><a xlink:href="File-Spec-Unix-pm-12-sub.html#96" target="_top"><rect x="993.8" y="145" width="4.6" height="15.0" fill="rgb(205,160,47)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Spec::Win32::CORE:subst (11,000 microseconds, 0.11%)')" onmouseout="c()">
+<title>File::Spec::Win32::CORE:subst (11,000 microseconds, 0.11%)</title><a xlink:href="File-Spec-Win32-pm-12-line.html#File__Spec__Win32__CORE_subst" target="_top"><rect x="423.5" y="65" width="1.2" height="15.0" fill="rgb(247,48,45)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('main::BEGIN@9 (36,098 microseconds, 0.14%)')" onmouseout="c()">
-<title>main::BEGIN@9 (36,098 microseconds, 0.14%)</title><a xlink:href="Restore-pm-2-sub.html#9" target="_top"><rect x="1188.3" y="209" width="1.6" height="15.0" fill="rgb(228,51,27)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Copy::Recursive::CORE:chmod (8,000 microseconds, 0.08%)')" onmouseout="c()">
+<title>File::Copy::Recursive::CORE:chmod (8,000 microseconds, 0.08%)</title><a xlink:href="File-Copy-Recursive-pm-24-line.html#File__Copy__Recursive__CORE_chmod" target="_top"><rect x="287.1" y="81" width="0.9" height="15.0" fill="rgb(226,83,14)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::Recursive::CORE:stat (5,400 microseconds, 0.02%)')" onmouseout="c()">
-<title>File::Copy::Recursive::CORE:stat (5,400 microseconds, 0.02%)</title><a xlink:href="File-Copy-Recursive-pm-22-sub.html#File__Copy__Recursive__CORE_stat" target="_top"><rect x="414.3" y="97" width="0.3" height="15.0" fill="rgb(215,18,8)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Spec::Win32::_canon_cat (102,000 microseconds, 0.98%)')" onmouseout="c()">
+<title>File::Spec::Win32::_canon_cat (102,000 microseconds, 0.98%)</title><a xlink:href="File-Spec-Win32-pm-12-line.html#382" target="_top"><rect x="998.5" y="129" width="11.6" height="15.0" fill="rgb(208,68,28)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::Recursive::CORE:ftdir (11,269 microseconds, 0.04%)')" onmouseout="c()">
-<title>File::Copy::Recursive::CORE:ftdir (11,269 microseconds, 0.04%)</title><a xlink:href="File-Copy-Recursive-pm-22-sub.html#File__Copy__Recursive__CORE_ftdir" target="_top"><rect x="29.9" y="65" width="0.5" height="15.0" fill="rgb(212,155,24)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Copy::Recursive::CORE:ftlink (40,001 microseconds, 0.38%)')" onmouseout="c()">
+<title>File::Copy::Recursive::CORE:ftlink (40,001 microseconds, 0.38%)</title><a xlink:href="File-Copy-Recursive-pm-24-line.html#File__Copy__Recursive__CORE_ftlink" target="_top"><rect x="115.8" y="81" width="4.6" height="15.0" fill="rgb(216,162,41)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::Recursive::__ANON__[/Library/Perl/5.16/File/Copy/Recursive.pm:125] (3,303 microseconds, 0.01%)')" onmouseout="c()">
-<title>File::Copy::Recursive::__ANON__[/Library/Perl/5.16/File/Copy/Recursive.pm:125] (3,303 microseconds, 0.01%)</title><a xlink:href="File-Copy-Recursive-pm-22-sub.html#113" target="_top"><rect x="27.4" y="81" width="0.2" height="15.0" fill="rgb(206,114,27)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Copy::_eq (15,000 microseconds, 0.14%)')" onmouseout="c()">
+<title>File::Copy::_eq (15,000 microseconds, 0.14%)</title><a xlink:href="File-Copy-pm-19-line.html#55" target="_top"><rect x="259.7" y="49" width="1.7" height="15.0" fill="rgb(205,222,3)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::copy (4,024,488 microseconds, 15.30%)')" onmouseout="c()">
-<title>File::Copy::copy (4,024,488 microseconds, 15.30%)</title><a xlink:href="File-Copy-pm-18-sub.html#105" target="_top"><rect x="224.9" y="81" width="180.4" height="15.0" fill="rgb(239,195,5)" rx="2" ry="2" />
-<text text-anchor="" x="227.854321383564" y="91.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >File::Copy::copy</text>
+<g class="func_g" onmouseover="s('Config::AUTOLOAD (20,000 microseconds, 0.19%)')" onmouseout="c()">
+<title>Config::AUTOLOAD (20,000 microseconds, 0.19%)</title><a xlink:href="Config-pm-20-line.html#79" target="_top"><rect x="1170.7" y="129" width="2.3" height="15.0" fill="rgb(224,45,45)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::Recursive::__ANON__[/Library/Perl/5.16/File/Copy/Recursive.pm:271] (17,773,791 microseconds, 67.55%)')" onmouseout="c()">
-<title>File::Copy::Recursive::__ANON__[/Library/Perl/5.16/File/Copy/Recursive.pm:271] (17,773,791 microseconds, 67.55%)</title><a xlink:href="File-Copy-Recursive-pm-22-sub.html#213" target="_top"><rect x="15.5" y="145" width="797.2" height="15.0" fill="rgb(227,227,0)" rx="2" ry="2" />
-<text text-anchor="" x="18.524840066137" y="155.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >File::Copy::Recursive::__ANON__[/Library/Perl/5.16/File/Copy/Recursive.pm:271]</text>
+<g class="func_g" onmouseover="s('File::Copy::Recursive::__ANON__[C:/Perl64/site/lib/File/Copy/Recursive.pm:271] (6,626,062 microseconds, 63.77%)')" onmouseout="c()">
+<title>File::Copy::Recursive::__ANON__[C:/Perl64/site/lib/File/Copy/Recursive.pm:271] (6,626,062 microseconds, 63.77%)</title><a xlink:href="File-Copy-Recursive-pm-24-line.html#213" target="_top"><rect x="51.4" y="145" width="752.5" height="15.0" fill="rgb(229,202,4)" rx="2" ry="2" />
+<text text-anchor="" x="54.4494024499437" y="155.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >File::Copy::Recursive::__ANON__[C:/Perl64/site/lib/File/Copy/Recursive.pm:271]</text>
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::Recursive::CORE:match (2,365 microseconds, 0.01%)')" onmouseout="c()">
-<title>File::Copy::Recursive::CORE:match (2,365 microseconds, 0.01%)</title><a xlink:href="File-Copy-Recursive-pm-22-sub.html#File__Copy__Recursive__CORE_match" target="_top"><rect x="12.9" y="161" width="0.1" height="15.0" fill="rgb(216,13,1)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Copy::_eq (22,000 microseconds, 0.21%)')" onmouseout="c()">
+<title>File::Copy::_eq (22,000 microseconds, 0.21%)</title><a xlink:href="File-Copy-pm-19-line.html#55" target="_top"><rect x="1156.8" y="129" width="2.5" height="15.0" fill="rgb(210,217,2)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Spec::Unix::canonpath (49,995 microseconds, 0.19%)')" onmouseout="c()">
-<title>File::Spec::Unix::canonpath (49,995 microseconds, 0.19%)</title><a xlink:href="File-Spec-Unix-pm-12-sub.html#43" target="_top"><rect x="615.7" y="81" width="2.2" height="15.0" fill="rgb(225,9,10)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Copy::Recursive::CORE:ftlink (35,000 microseconds, 0.34%)')" onmouseout="c()">
+<title>File::Copy::Recursive::CORE:ftlink (35,000 microseconds, 0.34%)</title><a xlink:href="File-Copy-Recursive-pm-24-line.html#File__Copy__Recursive__CORE_ftlink" target="_top"><rect x="820.9" y="129" width="4.0" height="15.0" fill="rgb(207,180,49)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('main::BEGIN@13 (8,707 microseconds, 0.03%)')" onmouseout="c()">
-<title>main::BEGIN@13 (8,707 microseconds, 0.03%)</title><a xlink:href="Restore-pm-2-sub.html#13" target="_top"><rect x="1187.6" y="209" width="0.4" height="15.0" fill="rgb(218,1,16)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Copy::Recursive::CORE:stat (45,000 microseconds, 0.43%)')" onmouseout="c()">
+<title>File::Copy::Recursive::CORE:stat (45,000 microseconds, 0.43%)</title><a xlink:href="File-Copy-Recursive-pm-24-line.html#File__Copy__Recursive__CORE_stat" target="_top"><rect x="102.8" y="97" width="5.1" height="15.0" fill="rgb(242,84,51)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Spec::Unix::CORE:subst (3,714 microseconds, 0.01%)')" onmouseout="c()">
-<title>File::Spec::Unix::CORE:subst (3,714 microseconds, 0.01%)</title><a xlink:href="File-Spec-Unix-pm-12-sub.html#File__Spec__Unix__CORE_subst" target="_top"><rect x="996.3" y="113" width="0.2" height="15.0" fill="rgb(225,121,38)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Copy::Recursive::CORE:stat (23,001 microseconds, 0.22%)')" onmouseout="c()">
+<title>File::Copy::Recursive::CORE:stat (23,001 microseconds, 0.22%)</title><a xlink:href="File-Copy-Recursive-pm-24-line.html#File__Copy__Recursive__CORE_stat" target="_top"><rect x="82.2" y="113" width="2.6" height="15.0" fill="rgb(209,52,33)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::Recursive::CORE:chmod (10,956 microseconds, 0.04%)')" onmouseout="c()">
-<title>File::Copy::Recursive::CORE:chmod (10,956 microseconds, 0.04%)</title><a xlink:href="File-Copy-Recursive-pm-22-sub.html#File__Copy__Recursive__CORE_chmod" target="_top"><rect x="222.4" y="81" width="0.5" height="15.0" fill="rgb(227,202,33)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Copy::Recursive::CORE:stat (55,000 microseconds, 0.53%)')" onmouseout="c()">
+<title>File::Copy::Recursive::CORE:stat (55,000 microseconds, 0.53%)</title><a xlink:href="File-Copy-Recursive-pm-24-line.html#File__Copy__Recursive__CORE_stat" target="_top"><rect x="447.2" y="97" width="6.3" height="15.0" fill="rgb(243,174,11)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Spec::Unix::canonpath (25,665 microseconds, 0.10%)')" onmouseout="c()">
-<title>File::Spec::Unix::canonpath (25,665 microseconds, 0.10%)</title><a xlink:href="File-Spec-Unix-pm-12-sub.html#43" target="_top"><rect x="809.3" y="113" width="1.2" height="15.0" fill="rgb(230,153,33)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Path::rmtree (30,000 microseconds, 0.29%)')" onmouseout="c()">
+<title>File::Path::rmtree (30,000 microseconds, 0.29%)</title><a xlink:href="File-Path-pm-28-line.html#187" target="_top"><rect x="1169.6" y="209" width="3.4" height="15.0" fill="rgb(232,15,27)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('Exporter::export_ok_tags (2,930 microseconds, 0.01%)')" onmouseout="c()">
-<title>Exporter::export_ok_tags (2,930 microseconds, 0.01%)</title><a xlink:href="Exporter-pm-7-sub.html#88" target="_top"><rect x="1187.8" y="161" width="0.1" height="15.0" fill="rgb(233,86,5)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Copy::__ANON__[C:/Perl64/lib/File/Copy.pm:324] (841,006 microseconds, 8.09%)')" onmouseout="c()">
+<title>File::Copy::__ANON__[C:/Perl64/lib/File/Copy.pm:324] (841,006 microseconds, 8.09%)</title><a xlink:href="File-Copy-pm-19-line.html#321" target="_top"><rect x="319.2" y="65" width="95.5" height="15.0" fill="rgb(248,28,29)" rx="2" ry="2" />
+<text text-anchor="" x="322.223916322205" y="75.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >File::Copy::..</text>
 </a>
 </g>
-<g class="func_g" onmouseover="s('Verbosity::BEGIN@33 (7,408 microseconds, 0.03%)')" onmouseout="c()">
-<title>Verbosity::BEGIN@33 (7,408 microseconds, 0.03%)</title><a xlink:href="Verbosity-pm-27-sub.html#33" target="_top"><rect x="1187.6" y="193" width="0.3" height="15.0" fill="rgb(237,203,23)" rx="2" ry="2" />
-</a>
-</g>
-<g class="func_g" onmouseover="s('File::Copy::CORE:ftsize (2,252 microseconds, 0.01%)')" onmouseout="c()">
-<title>File::Copy::CORE:ftsize (2,252 microseconds, 0.01%)</title><a xlink:href="File-Copy-pm-18-sub.html#File__Copy__CORE_ftsize" target="_top"><rect x="1010.4" y="129" width="0.1" height="15.0" fill="rgb(212,170,8)" rx="2" ry="2" />
-</a>
-</g>
-<g class="func_g" onmouseover="s('File::Spec::Unix::canonpath (33,097 microseconds, 0.13%)')" onmouseout="c()">
-<title>File::Spec::Unix::canonpath (33,097 microseconds, 0.13%)</title><a xlink:href="File-Spec-Unix-pm-12-sub.html#43" target="_top"><rect x="409.7" y="65" width="1.4" height="15.0" fill="rgb(250,208,31)" rx="2" ry="2" />
-</a>
-</g>
-<g class="func_g" onmouseover="s('File::Copy::CORE:open (3,733,971 microseconds, 14.19%)')" onmouseout="c()">
-<title>File::Copy::CORE:open (3,733,971 microseconds, 14.19%)</title><a xlink:href="File-Copy-pm-18-sub.html#File__Copy__CORE_open" target="_top"><rect x="1010.5" y="129" width="167.5" height="15.0" fill="rgb(251,178,47)" rx="2" ry="2" />
-<text text-anchor="" x="1013.54220647471" y="139.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >File::Copy::CORE:open</text>
-</a>
-</g>
-<g class="func_g" onmouseover="s('File::Copy::Recursive::CORE:ftdir (11,770 microseconds, 0.04%)')" onmouseout="c()">
-<title>File::Copy::Recursive::CORE:ftdir (11,770 microseconds, 0.04%)</title><a xlink:href="File-Copy-Recursive-pm-22-sub.html#File__Copy__Recursive__CORE_ftdir" target="_top"><rect x="815.6" y="129" width="0.5" height="15.0" fill="rgb(234,178,3)" rx="2" ry="2" />
-</a>
-</g>
-<g class="func_g" onmouseover="s('File::Spec::Unix::canonpath (44,658 microseconds, 0.17%)')" onmouseout="c()">
-<title>File::Spec::Unix::canonpath (44,658 microseconds, 0.17%)</title><a xlink:href="File-Spec-Unix-pm-12-sub.html#43" target="_top"><rect x="994.5" y="129" width="2.0" height="15.0" fill="rgb(252,174,33)" rx="2" ry="2" />
-</a>
-</g>
-<g class="func_g" onmouseover="s('Cwd::CORE:fteexec (2,276 microseconds, 0.01%)')" onmouseout="c()">
-<title>Cwd::CORE:fteexec (2,276 microseconds, 0.01%)</title><a xlink:href="Cwd-pm-8-sub.html#Cwd__CORE_fteexec" target="_top"><rect x="1189.5" y="193" width="0.1" height="15.0" fill="rgb(242,139,20)" rx="2" ry="2" />
-</a>
-</g>
-<g class="func_g" onmouseover="s('File::Copy::CORE:syswrite (61,252 microseconds, 0.23%)')" onmouseout="c()">
-<title>File::Copy::CORE:syswrite (61,252 microseconds, 0.23%)</title><a xlink:href="File-Copy-pm-18-sub.html#File__Copy__CORE_syswrite" target="_top"><rect x="804.1" y="97" width="2.8" height="15.0" fill="rgb(227,54,47)" rx="2" ry="2" />
-</a>
-</g>
-<g class="func_g" onmouseover="s('File::Copy::CORE:sysread (14,082 microseconds, 0.05%)')" onmouseout="c()">
-<title>File::Copy::CORE:sysread (14,082 microseconds, 0.05%)</title><a xlink:href="File-Copy-pm-18-sub.html#File__Copy__CORE_sysread" target="_top"><rect x="1178.3" y="129" width="0.6" height="15.0" fill="rgb(211,143,23)" rx="2" ry="2" />
-</a>
-</g>
-<g class="func_g" onmouseover="s('File::Spec::Unix::CORE:subst (4,077 microseconds, 0.02%)')" onmouseout="c()">
-<title>File::Spec::Unix::CORE:subst (4,077 microseconds, 0.02%)</title><a xlink:href="File-Spec-Unix-pm-12-sub.html#File__Spec__Unix__CORE_subst" target="_top"><rect x="998.2" y="97" width="0.2" height="15.0" fill="rgb(226,89,52)" rx="2" ry="2" />
-</a>
-</g>
-<g class="func_g" onmouseover="s('File::Copy::CORE:stat (5,510 microseconds, 0.02%)')" onmouseout="c()">
-<title>File::Copy::CORE:stat (5,510 microseconds, 0.02%)</title><a xlink:href="File-Copy-pm-18-sub.html#File__Copy__CORE_stat" target="_top"><rect x="990.9" y="113" width="0.3" height="15.0" fill="rgb(248,195,50)" rx="2" ry="2" />
-</a>
+<g class="func_g" onmouseover="s('all (10,391,096 microseconds, 100%)')" onmouseout="c()">
+<title>all (10,391,096 microseconds, 100%)</title><rect x="10.0" y="257" width="1180.0" height="15.0" fill="rgb(218,53,29)" rx="2" ry="2" />
+<text text-anchor="" x="13" y="267.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  ></text>
 </g>
-<g class="func_g" onmouseover="s('File::Spec::Unix::canonpath (41,430 microseconds, 0.16%)')" onmouseout="c()">
-<title>File::Spec::Unix::canonpath (41,430 microseconds, 0.16%)</title><a xlink:href="File-Spec-Unix-pm-12-sub.html#43" target="_top"><rect x="810.8" y="97" width="1.9" height="15.0" fill="rgb(252,63,44)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Copy::__ANON__[C:/Perl64/lib/File/Copy.pm:324] (1,155,006 microseconds, 11.12%)')" onmouseout="c()">
+<title>File::Copy::__ANON__[C:/Perl64/lib/File/Copy.pm:324] (1,155,006 microseconds, 11.12%)</title><a xlink:href="File-Copy-pm-19-line.html#321" target="_top"><rect x="462.3" y="81" width="131.2" height="15.0" fill="rgb(219,59,38)" rx="2" ry="2" />
+<text text-anchor="" x="465.308978764127" y="91.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >File::Copy::__ANO..</text>
 </a>
 </g>
-<g class="func_g" onmouseover="s('main::BEGIN@8 (6,624 microseconds, 0.03%)')" onmouseout="c()">
-<title>main::BEGIN@8 (6,624 microseconds, 0.03%)</title><a xlink:href="Restore-pm-2-sub.html#8" target="_top"><rect x="1188.0" y="209" width="0.3" height="15.0" fill="rgb(243,45,16)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Copy::_eq (32,000 microseconds, 0.31%)')" onmouseout="c()">
+<title>File::Copy::_eq (32,000 microseconds, 0.31%)</title><a xlink:href="File-Copy-pm-19-line.html#55" target="_top"><rect x="593.5" y="81" width="3.6" height="15.0" fill="rgb(248,116,19)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::Recursive::CORE:ftlink (2,276 microseconds, 0.01%)')" onmouseout="c()">
-<title>File::Copy::Recursive::CORE:ftlink (2,276 microseconds, 0.01%)</title><a xlink:href="File-Copy-Recursive-pm-22-sub.html#File__Copy__Recursive__CORE_ftlink" target="_top"><rect x="223.4" y="81" width="0.1" height="15.0" fill="rgb(247,49,17)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Spec::Win32::CORE:subst (41,000 microseconds, 0.39%)')" onmouseout="c()">
+<title>File::Spec::Win32::CORE:subst (41,000 microseconds, 0.39%)</title><a xlink:href="File-Spec-Win32-pm-12-line.html#File__Spec__Win32__CORE_subst" target="_top"><rect x="1005.5" y="113" width="4.6" height="15.0" fill="rgb(232,188,40)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::Recursive::CORE:stat (3,262 microseconds, 0.01%)')" onmouseout="c()">
-<title>File::Copy::Recursive::CORE:stat (3,262 microseconds, 0.01%)</title><a xlink:href="File-Copy-Recursive-pm-22-sub.html#File__Copy__Recursive__CORE_stat" target="_top"><rect x="24.1" y="97" width="0.1" height="15.0" fill="rgb(209,112,12)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('Config::FETCH (2,000 microseconds, 0.02%)')" onmouseout="c()">
+<title>Config::FETCH (2,000 microseconds, 0.02%)</title><a xlink:href="Config-pm-20-line.html#66" target="_top"><rect x="314.6" y="65" width="0.2" height="15.0" fill="rgb(225,213,12)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Spec::Unix::splitpath (39,684 microseconds, 0.15%)')" onmouseout="c()">
-<title>File::Spec::Unix::splitpath (39,684 microseconds, 0.15%)</title><a xlink:href="File-Spec-Unix-pm-12-sub.html#262" target="_top"><rect x="405.3" y="81" width="1.8" height="15.0" fill="rgb(254,203,24)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Copy::Recursive::CORE:ftdir (59,000 microseconds, 0.57%)')" onmouseout="c()">
+<title>File::Copy::Recursive::CORE:ftdir (59,000 microseconds, 0.57%)</title><a xlink:href="File-Copy-Recursive-pm-24-line.html#File__Copy__Recursive__CORE_ftdir" target="_top"><rect x="1018.0" y="145" width="6.7" height="15.0" fill="rgb(253,27,53)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::Recursive::CORE:chmod (7,407 microseconds, 0.03%)')" onmouseout="c()">
-<title>File::Copy::Recursive::CORE:chmod (7,407 microseconds, 0.03%)</title><a xlink:href="File-Copy-Recursive-pm-22-sub.html#File__Copy__Recursive__CORE_chmod" target="_top"><rect x="17.4" y="129" width="0.3" height="15.0" fill="rgb(252,96,34)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Copy::Recursive::fcopy (1,667,019 microseconds, 16.04%)')" onmouseout="c()">
+<title>File::Copy::Recursive::fcopy (1,667,019 microseconds, 16.04%)</title><a xlink:href="File-Copy-Recursive-pm-24-line.html#127" target="_top"><rect x="606.5" y="129" width="189.3" height="15.0" fill="rgb(235,150,47)" rx="2" ry="2" />
+<text text-anchor="" x="609.529288152087" y="139.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >File::Copy::Recursive::fcopy</text>
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Spec::Unix::CORE:subst (4,382 microseconds, 0.02%)')" onmouseout="c()">
-<title>File::Spec::Unix::CORE:subst (4,382 microseconds, 0.02%)</title><a xlink:href="File-Spec-Unix-pm-12-sub.html#File__Spec__Unix__CORE_subst" target="_top"><rect x="812.5" y="81" width="0.2" height="15.0" fill="rgb(227,55,47)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('Win32::CopyFile (876,012 microseconds, 8.43%)')" onmouseout="c()">
+<title>Win32::CopyFile (876,012 microseconds, 8.43%)</title><a xlink:href="Win32-pm-36-line.html#Win32__CopyFile" target="_top"><rect x="160.2" y="33" width="99.5" height="15.0" fill="rgb(206,225,49)" rx="2" ry="2" />
+<text text-anchor="" x="163.24005937391" y="43.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >Win32::CopyFile</text>
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::Recursive::CORE:ftdir (12,537 microseconds, 0.05%)')" onmouseout="c()">
-<title>File::Copy::Recursive::CORE:ftdir (12,537 microseconds, 0.05%)</title><a xlink:href="File-Copy-Recursive-pm-22-sub.html#File__Copy__Recursive__CORE_ftdir" target="_top"><rect x="620.0" y="113" width="0.5" height="15.0" fill="rgb(221,227,0)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Copy::Recursive::CORE:ftlink (34,000 microseconds, 0.33%)')" onmouseout="c()">
+<title>File::Copy::Recursive::CORE:ftlink (34,000 microseconds, 0.33%)</title><a xlink:href="File-Copy-Recursive-pm-24-line.html#File__Copy__Recursive__CORE_ftlink" target="_top"><rect x="78.4" y="113" width="3.8" height="15.0" fill="rgb(248,5,33)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::CORE:close (59,297 microseconds, 0.23%)')" onmouseout="c()">
-<title>File::Copy::CORE:close (59,297 microseconds, 0.23%)</title><a xlink:href="File-Copy-pm-18-sub.html#File__Copy__CORE_close" target="_top"><rect x="1007.7" y="129" width="2.7" height="15.0" fill="rgb(252,205,32)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Copy::CORE:ftdir (47,001 microseconds, 0.45%)')" onmouseout="c()">
+<title>File::Copy::CORE:ftdir (47,001 microseconds, 0.45%)</title><a xlink:href="File-Copy-pm-19-line.html#File__Copy__CORE_ftdir" target="_top"><rect x="154.9" y="49" width="5.3" height="15.0" fill="rgb(244,149,41)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::Recursive::CORE:chmod (6,303 microseconds, 0.02%)')" onmouseout="c()">
-<title>File::Copy::Recursive::CORE:chmod (6,303 microseconds, 0.02%)</title><a xlink:href="File-Copy-Recursive-pm-22-sub.html#File__Copy__Recursive__CORE_chmod" target="_top"><rect x="12.3" y="161" width="0.2" height="15.0" fill="rgb(221,201,24)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('RestoreWin::RestoreDirectory (10,241,096 microseconds, 98.56%)')" onmouseout="c()">
+<title>RestoreWin::RestoreDirectory (10,241,096 microseconds, 98.56%)</title><a xlink:href="RestoreWin-pm-2-line.html#191" target="_top"><rect x="10.0" y="225" width="1163.0" height="15.0" fill="rgb(217,162,6)" rx="2" ry="2" />
+<text text-anchor="" x="13" y="235.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >RestoreWin::RestoreDirectory</text>
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::CORE:stat (5,440 microseconds, 0.02%)')" onmouseout="c()">
-<title>File::Copy::CORE:stat (5,440 microseconds, 0.02%)</title><a xlink:href="File-Copy-pm-18-sub.html#File__Copy__CORE_stat" target="_top"><rect x="213.7" y="49" width="0.2" height="15.0" fill="rgb(217,61,52)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Spec::Unix::BEGIN@127 (10,000 microseconds, 0.10%)')" onmouseout="c()">
+<title>File::Spec::Unix::BEGIN@127 (10,000 microseconds, 0.10%)</title><a xlink:href="File-Spec-Unix-pm-13-line.html#127" target="_top"><rect x="1188.9" y="209" width="1.1" height="15.0" fill="rgb(205,71,36)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::Recursive::__ANON__[/Library/Perl/5.16/File/Copy/Recursive.pm:125] (3,367 microseconds, 0.01%)')" onmouseout="c()">
-<title>File::Copy::Recursive::__ANON__[/Library/Perl/5.16/File/Copy/Recursive.pm:125] (3,367 microseconds, 0.01%)</title><a xlink:href="File-Copy-Recursive-pm-22-sub.html#113" target="_top"><rect x="21.1" y="113" width="0.2" height="15.0" fill="rgb(231,42,34)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Copy::copy (1,265,006 microseconds, 12.17%)')" onmouseout="c()">
+<title>File::Copy::copy (1,265,006 microseconds, 12.17%)</title><a xlink:href="File-Copy-pm-19-line.html#67" target="_top"><rect x="453.5" y="97" width="143.6" height="15.0" fill="rgb(215,206,22)" rx="2" ry="2" />
+<text text-anchor="" x="456.451395309985" y="107.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >File::Copy::copy</text>
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Spec::Unix::splitpath (25,735 microseconds, 0.10%)')" onmouseout="c()">
-<title>File::Spec::Unix::splitpath (25,735 microseconds, 0.10%)</title><a xlink:href="File-Spec-Unix-pm-12-sub.html#262" target="_top"><rect x="611.5" y="97" width="1.2" height="15.0" fill="rgb(247,218,43)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Copy::Recursive::__ANON__[C:/Perl64/site/lib/File/Copy/Recursive.pm:75] (11,000 microseconds, 0.11%)')" onmouseout="c()">
+<title>File::Copy::Recursive::__ANON__[C:/Perl64/site/lib/File/Copy/Recursive.pm:75] (11,000 microseconds, 0.11%)</title><a xlink:href="File-Copy-Recursive-pm-24-line.html#41" target="_top"><rect x="634.2" y="113" width="1.3" height="15.0" fill="rgb(229,104,22)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::CORE:close (70,444 microseconds, 0.27%)')" onmouseout="c()">
-<title>File::Copy::CORE:close (70,444 microseconds, 0.27%)</title><a xlink:href="File-Copy-pm-18-sub.html#File__Copy__CORE_close" target="_top"><rect x="420.6" y="81" width="3.2" height="15.0" fill="rgb(228,3,54)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Copy::Recursive::CORE:ftdir (46,000 microseconds, 0.44%)')" onmouseout="c()">
+<title>File::Copy::Recursive::CORE:ftdir (46,000 microseconds, 0.44%)</title><a xlink:href="File-Copy-Recursive-pm-24-line.html#File__Copy__Recursive__CORE_ftdir" target="_top"><rect x="15.7" y="161" width="5.2" height="15.0" fill="rgb(209,21,45)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('Config::FETCH (4,277 microseconds, 0.02%)')" onmouseout="c()">
-<title>Config::FETCH (4,277 microseconds, 0.02%)</title><a xlink:href="Config-pm-13-sub.html#65" target="_top"><rect x="229.4" y="65" width="0.1" height="15.0" fill="rgb(249,73,52)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Copy::Recursive::CORE:ftdir (112,000 microseconds, 1.08%)')" onmouseout="c()">
+<title>File::Copy::Recursive::CORE:ftdir (112,000 microseconds, 1.08%)</title><a xlink:href="File-Copy-Recursive-pm-24-line.html#File__Copy__Recursive__CORE_ftdir" target="_top"><rect x="288.0" y="81" width="12.7" height="15.0" fill="rgb(225,143,22)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Spec::Unix::CORE:subst (3,970 microseconds, 0.02%)')" onmouseout="c()">
-<title>File::Spec::Unix::CORE:subst (3,970 microseconds, 0.02%)</title><a xlink:href="File-Spec-Unix-pm-12-sub.html#File__Spec__Unix__CORE_subst" target="_top"><rect x="1185.8" y="113" width="0.1" height="15.0" fill="rgb(213,220,25)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Spec::Win32::catfile (81,002 microseconds, 0.78%)')" onmouseout="c()">
+<title>File::Spec::Win32::catfile (81,002 microseconds, 0.78%)</title><a xlink:href="File-Spec-Win32-pm-12-line.html#130" target="_top"><rect x="1160.4" y="161" width="9.2" height="15.0" fill="rgb(221,182,8)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Spec::Unix::splitpath (24,444 microseconds, 0.09%)')" onmouseout="c()">
-<title>File::Spec::Unix::splitpath (24,444 microseconds, 0.09%)</title><a xlink:href="File-Spec-Unix-pm-12-sub.html#262" target="_top"><rect x="215.3" y="65" width="1.1" height="15.0" fill="rgb(237,215,23)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Copy::Recursive::__ANON__[C:/Perl64/site/lib/File/Copy/Recursive.pm:271] (8,633,080 microseconds, 83.08%)')" onmouseout="c()">
+<title>File::Copy::Recursive::__ANON__[C:/Perl64/site/lib/File/Copy/Recursive.pm:271] (8,633,080 microseconds, 83.08%)</title><a xlink:href="File-Copy-Recursive-pm-24-line.html#213" target="_top"><rect x="29.8" y="161" width="980.3" height="15.0" fill="rgb(232,221,22)" rx="2" ry="2" />
+<text text-anchor="" x="32.7593381872326" y="171.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >File::Copy::Recursive::__ANON__[C:/Perl64/site/lib/File/Copy/Recursive.pm:271]</text>
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::_eq (9,655 microseconds, 0.04%)')" onmouseout="c()">
-<title>File::Copy::_eq (9,655 microseconds, 0.04%)</title><a xlink:href="File-Copy-pm-18-sub.html#93" target="_top"><rect x="404.9" y="65" width="0.4" height="15.0" fill="rgb(237,28,9)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('Win32::CopyFile (1,045,011 microseconds, 10.06%)')" onmouseout="c()">
+<title>Win32::CopyFile (1,045,011 microseconds, 10.06%)</title><a xlink:href="Win32-pm-36-line.html#Win32__CopyFile" target="_top"><rect x="1038.2" y="113" width="118.6" height="15.0" fill="rgb(231,54,47)" rx="2" ry="2" />
+<text text-anchor="" x="1041.17045863112" y="123.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >Win32::CopyFile</text>
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::Recursive::CORE:ftdir (10,827 microseconds, 0.04%)')" onmouseout="c()">
-<title>File::Copy::Recursive::CORE:ftdir (10,827 microseconds, 0.04%)</title><a xlink:href="File-Copy-Recursive-pm-22-sub.html#File__Copy__Recursive__CORE_ftdir" target="_top"><rect x="222.9" y="81" width="0.5" height="15.0" fill="rgb(238,46,50)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Copy::copy (1,387,016 microseconds, 13.35%)')" onmouseout="c()">
+<title>File::Copy::copy (1,387,016 microseconds, 13.35%)</title><a xlink:href="File-Copy-pm-19-line.html#67" target="_top"><rect x="635.5" y="113" width="157.5" height="15.0" fill="rgb(224,177,27)" rx="2" ry="2" />
+<text text-anchor="" x="638.487113197684" y="123.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >File::Copy::copy</text>
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::Recursive::__ANON__[/Library/Perl/5.16/File/Copy/Recursive.pm:271] (26,219,642 microseconds, 99.65%)')" onmouseout="c()">
-<title>File::Copy::Recursive::__ANON__[/Library/Perl/5.16/File/Copy/Recursive.pm:271] (26,219,642 microseconds, 99.65%)</title><a xlink:href="File-Copy-Recursive-pm-22-sub.html#213" target="_top"><rect x="10.0" y="177" width="1175.9" height="15.0" fill="rgb(230,220,31)" rx="2" ry="2" />
-<text text-anchor="" x="13.0262499676569" y="187.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >File::Copy::Recursive::__ANON__[/Library/Perl/5.16/File/Copy/Recursive.pm:271]</text>
+<g class="func_g" onmouseover="s('File::Spec::Win32::_canon_cat (27,001 microseconds, 0.26%)')" onmouseout="c()">
+<title>File::Spec::Win32::_canon_cat (27,001 microseconds, 0.26%)</title><a xlink:href="File-Spec-Win32-pm-12-line.html#382" target="_top"><rect x="421.7" y="81" width="3.0" height="15.0" fill="rgb(249,159,14)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::Recursive::BEGIN@83 (5,748 microseconds, 0.02%)')" onmouseout="c()">
-<title>File::Copy::Recursive::BEGIN@83 (5,748 microseconds, 0.02%)</title><a xlink:href="File-Copy-Recursive-pm-22-sub.html#83" target="_top"><rect x="1187.1" y="193" width="0.2" height="15.0" fill="rgb(237,162,1)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Copy::__ANON__[C:/Perl64/lib/File/Copy.pm:324] (1,047,011 microseconds, 10.08%)')" onmouseout="c()">
+<title>File::Copy::__ANON__[C:/Perl64/lib/File/Copy.pm:324] (1,047,011 microseconds, 10.08%)</title><a xlink:href="File-Copy-pm-19-line.html#321" target="_top"><rect x="1037.9" y="129" width="118.9" height="15.0" fill="rgb(233,201,6)" rx="2" ry="2" />
+<text text-anchor="" x="1040.94334110666" y="139.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >File::Copy::__AN..</text>
 </a>
 </g>
-<g class="func_g" onmouseover="s('Config::FETCH (4,278 microseconds, 0.02%)')" onmouseout="c()">
-<title>Config::FETCH (4,278 microseconds, 0.02%)</title><a xlink:href="Config-pm-13-sub.html#65" target="_top"><rect x="627.1" y="97" width="0.2" height="15.0" fill="rgb(239,213,6)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Copy::Recursive::CORE:chmod (46,000 microseconds, 0.44%)')" onmouseout="c()">
+<title>File::Copy::Recursive::CORE:chmod (46,000 microseconds, 0.44%)</title><a xlink:href="File-Copy-Recursive-pm-24-line.html#File__Copy__Recursive__CORE_chmod" target="_top"><rect x="1012.7" y="145" width="5.3" height="15.0" fill="rgb(240,7,21)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::copy (4,356,990 microseconds, 16.56%)')" onmouseout="c()">
-<title>File::Copy::copy (4,356,990 microseconds, 16.56%)</title><a xlink:href="File-Copy-pm-18-sub.html#105" target="_top"><rect x="416.1" y="97" width="195.4" height="15.0" fill="rgb(228,56,37)" rx="2" ry="2" />
-<text text-anchor="" x="419.103396351861" y="107.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >File::Copy::copy</text>
+<g class="func_g" onmouseover="s('File::Spec::Win32::catfile (122,000 microseconds, 1.17%)')" onmouseout="c()">
+<title>File::Spec::Win32::catfile (122,000 microseconds, 1.17%)</title><a xlink:href="File-Spec-Win32-pm-12-line.html#130" target="_top"><rect x="265.9" y="81" width="13.8" height="15.0" fill="rgb(252,6,39)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Spec::Unix::CORE:subst (3,645 microseconds, 0.01%)')" onmouseout="c()">
-<title>File::Spec::Unix::CORE:subst (3,645 microseconds, 0.01%)</title><a xlink:href="File-Spec-Unix-pm-12-sub.html#File__Spec__Unix__CORE_subst" target="_top"><rect x="409.2" y="65" width="0.1" height="15.0" fill="rgb(228,52,42)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('Scalar::Util::blessed (1,000 microseconds, 0.01%)')" onmouseout="c()">
+<title>Scalar::Util::blessed (1,000 microseconds, 0.01%)</title><a xlink:href="Scalar-Util-pm-15-line.html#Scalar__Util__blessed" target="_top"><rect x="261.3" y="33" width="0.1" height="15.0" fill="rgb(229,47,29)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::Recursive::CORE:stat (10,730 microseconds, 0.04%)')" onmouseout="c()">
-<title>File::Copy::Recursive::CORE:stat (10,730 microseconds, 0.04%)</title><a xlink:href="File-Copy-Recursive-pm-22-sub.html#File__Copy__Recursive__CORE_stat" target="_top"><rect x="817.3" y="113" width="0.5" height="15.0" fill="rgb(229,88,8)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Spec::Win32::_canon_cat (67,002 microseconds, 0.64%)')" onmouseout="c()">
+<title>File::Spec::Win32::_canon_cat (67,002 microseconds, 0.64%)</title><a xlink:href="File-Spec-Win32-pm-12-line.html#382" target="_top"><rect x="796.3" y="113" width="7.6" height="15.0" fill="rgb(224,203,53)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::CORE:syswrite (14,981 microseconds, 0.06%)')" onmouseout="c()">
-<title>File::Copy::CORE:syswrite (14,981 microseconds, 0.06%)</title><a xlink:href="File-Copy-pm-18-sub.html#File__Copy__CORE_syswrite" target="_top"><rect x="214.2" y="49" width="0.7" height="15.0" fill="rgb(233,177,3)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Copy::Recursive::fcopy (1,684,015 microseconds, 16.21%)')" onmouseout="c()">
+<title>File::Copy::Recursive::fcopy (1,684,015 microseconds, 16.21%)</title><a xlink:href="File-Copy-Recursive-pm-24-line.html#127" target="_top"><rect x="803.9" y="145" width="191.2" height="15.0" fill="rgb(251,124,20)" rx="2" ry="2" />
+<text text-anchor="" x="806.896801646333" y="155.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >File::Copy::Recursive::fcopy</text>
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Spec::Unix::CORE:match (7,738 microseconds, 0.03%)')" onmouseout="c()">
-<title>File::Spec::Unix::CORE:match (7,738 microseconds, 0.03%)</title><a xlink:href="File-Spec-Unix-pm-12-sub.html#File__Spec__Unix__CORE_match" target="_top"><rect x="216.1" y="49" width="0.3" height="15.0" fill="rgb(244,25,29)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('Win32::CopyFile (1,133,006 microseconds, 10.90%)')" onmouseout="c()">
+<title>Win32::CopyFile (1,133,006 microseconds, 10.90%)</title><a xlink:href="Win32-pm-36-line.html#Win32__CopyFile" target="_top"><rect x="464.8" y="65" width="128.7" height="15.0" fill="rgb(215,224,14)" rx="2" ry="2" />
+<text text-anchor="" x="467.807271533243" y="75.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >Win32::CopyFile</text>
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::Recursive::CORE:ftlink (2,388 microseconds, 0.01%)')" onmouseout="c()">
-<title>File::Copy::Recursive::CORE:ftlink (2,388 microseconds, 0.01%)</title><a xlink:href="File-Copy-Recursive-pm-22-sub.html#File__Copy__Recursive__CORE_ftlink" target="_top"><rect x="30.4" y="65" width="0.1" height="15.0" fill="rgb(216,87,19)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Copy::Recursive::CORE:match (1,001 microseconds, 0.01%)')" onmouseout="c()">
+<title>File::Copy::Recursive::CORE:match (1,001 microseconds, 0.01%)</title><a xlink:href="File-Copy-Recursive-pm-24-line.html#File__Copy__Recursive__CORE_match" target="_top"><rect x="45.9" y="145" width="0.1" height="15.0" fill="rgb(237,43,34)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Spec::Unix::CORE:subst (4,157 microseconds, 0.02%)')" onmouseout="c()">
-<title>File::Spec::Unix::CORE:subst (4,157 microseconds, 0.02%)</title><a xlink:href="File-Spec-Unix-pm-12-sub.html#File__Spec__Unix__CORE_subst" target="_top"><rect x="810.3" y="97" width="0.2" height="15.0" fill="rgb(228,40,33)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Copy::Recursive::CORE:chmod (46,000 microseconds, 0.44%)')" onmouseout="c()">
+<title>File::Copy::Recursive::CORE:chmod (46,000 microseconds, 0.44%)</title><a xlink:href="File-Copy-Recursive-pm-24-line.html#File__Copy__Recursive__CORE_chmod" target="_top"><rect x="806.8" y="129" width="5.3" height="15.0" fill="rgb(238,212,17)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::Recursive::CORE:ftlink (4,583 microseconds, 0.02%)')" onmouseout="c()">
-<title>File::Copy::Recursive::CORE:ftlink (4,583 microseconds, 0.02%)</title><a xlink:href="File-Copy-Recursive-pm-22-sub.html#File__Copy__Recursive__CORE_ftlink" target="_top"><rect x="26.9" y="81" width="0.3" height="15.0" fill="rgb(233,38,53)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Spec::Win32::splitpath (30,000 microseconds, 0.29%)')" onmouseout="c()">
+<title>File::Spec::Win32::splitpath (30,000 microseconds, 0.29%)</title><a xlink:href="File-Spec-Win32-pm-12-line.html#210" target="_top"><rect x="418.1" y="81" width="3.4" height="15.0" fill="rgb(208,119,12)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::Recursive::CORE:ftdir (13,990 microseconds, 0.05%)')" onmouseout="c()">
-<title>File::Copy::Recursive::CORE:ftdir (13,990 microseconds, 0.05%)</title><a xlink:href="File-Copy-Recursive-pm-22-sub.html#File__Copy__Recursive__CORE_ftdir" target="_top"><rect x="413.6" y="97" width="0.6" height="15.0" fill="rgb(216,109,25)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Copy::Recursive::CORE:stat (67,001 microseconds, 0.64%)')" onmouseout="c()">
+<title>File::Copy::Recursive::CORE:stat (67,001 microseconds, 0.64%)</title><a xlink:href="File-Copy-Recursive-pm-24-line.html#File__Copy__Recursive__CORE_stat" target="_top"><rect x="122.8" y="81" width="7.6" height="15.0" fill="rgb(223,201,36)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::Recursive::fcopy (4,159,015 microseconds, 15.81%)')" onmouseout="c()">
-<title>File::Copy::Recursive::fcopy (4,159,015 microseconds, 15.81%)</title><a xlink:href="File-Copy-Recursive-pm-22-sub.html#127" target="_top"><rect x="220.6" y="97" width="186.5" height="15.0" fill="rgb(212,37,35)" rx="2" ry="2" />
-<text text-anchor="" x="223.600714374387" y="107.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >File::Copy::Recursive::fcopy</text>
+<g class="func_g" onmouseover="s('File::Copy::CORE:ftdir (79,000 microseconds, 0.76%)')" onmouseout="c()">
+<title>File::Copy::CORE:ftdir (79,000 microseconds, 0.76%)</title><a xlink:href="File-Copy-pm-19-line.html#File__Copy__CORE_ftdir" target="_top"><rect x="833.2" y="113" width="9.0" height="15.0" fill="rgb(218,88,47)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::Recursive::CORE:stat (10,211 microseconds, 0.04%)')" onmouseout="c()">
-<title>File::Copy::Recursive::CORE:stat (10,211 microseconds, 0.04%)</title><a xlink:href="File-Copy-Recursive-pm-22-sub.html#File__Copy__Recursive__CORE_stat" target="_top"><rect x="224.4" y="65" width="0.5" height="15.0" fill="rgb(246,127,21)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Spec::Win32::CORE:match (10,000 microseconds, 0.10%)')" onmouseout="c()">
+<title>File::Spec::Win32::CORE:match (10,000 microseconds, 0.10%)</title><a xlink:href="File-Spec-Win32-pm-12-line.html#File__Spec__Win32__CORE_match" target="_top"><rect x="1161.6" y="145" width="1.1" height="15.0" fill="rgb(211,115,24)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Spec::Unix::catfile (89,360 microseconds, 0.34%)')" onmouseout="c()">
-<title>File::Spec::Unix::catfile (89,360 microseconds, 0.34%)</title><a xlink:href="File-Spec-Unix-pm-12-sub.html#96" target="_top"><rect x="407.1" y="97" width="4.0" height="15.0" fill="rgb(215,209,42)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Copy::CORE:ftdir (36,000 microseconds, 0.35%)')" onmouseout="c()">
+<title>File::Copy::CORE:ftdir (36,000 microseconds, 0.35%)</title><a xlink:href="File-Copy-pm-19-line.html#File__Copy__CORE_ftdir" target="_top"><rect x="640.8" y="97" width="4.1" height="15.0" fill="rgb(237,161,7)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::Recursive::CORE:match (3,188 microseconds, 0.01%)')" onmouseout="c()">
-<title>File::Copy::Recursive::CORE:match (3,188 microseconds, 0.01%)</title><a xlink:href="File-Copy-Recursive-pm-22-sub.html#File__Copy__Recursive__CORE_match" target="_top"><rect x="18.0" y="129" width="0.2" height="15.0" fill="rgb(208,178,29)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Copy::Recursive::CORE:match (21,000 microseconds, 0.20%)')" onmouseout="c()">
+<title>File::Copy::Recursive::CORE:match (21,000 microseconds, 0.20%)</title><a xlink:href="File-Copy-Recursive-pm-24-line.html#File__Copy__Recursive__CORE_match" target="_top"><rect x="120.4" y="81" width="2.4" height="15.0" fill="rgb(247,132,45)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::CORE:binmode (2,232 microseconds, 0.01%)')" onmouseout="c()">
-<title>File::Copy::CORE:binmode (2,232 microseconds, 0.01%)</title><a xlink:href="File-Copy-pm-18-sub.html#File__Copy__CORE_binmode" target="_top"><rect x="822.5" y="113" width="0.1" height="15.0" fill="rgb(232,202,18)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('main::BEGIN@3 (20,000 microseconds, 0.19%)')" onmouseout="c()">
+<title>main::BEGIN@3 (20,000 microseconds, 0.19%)</title><a xlink:href="Verbosity-pm-29-line.html#3" target="_top"><rect x="1176.4" y="209" width="2.2" height="15.0" fill="rgb(242,85,49)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Spec::Unix::splitpath (24,597 microseconds, 0.09%)')" onmouseout="c()">
-<title>File::Spec::Unix::splitpath (24,597 microseconds, 0.09%)</title><a xlink:href="File-Spec-Unix-pm-12-sub.html#262" target="_top"><rect x="1180.7" y="145" width="1.2" height="15.0" fill="rgb(239,177,49)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('main::BEGIN@11 (20,000 microseconds, 0.19%)')" onmouseout="c()">
+<title>main::BEGIN@11 (20,000 microseconds, 0.19%)</title><a xlink:href="RestoreWin-pm-2-line.html#11" target="_top"><rect x="1174.1" y="225" width="2.3" height="15.0" fill="rgb(229,193,25)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::Recursive::CORE:stat (5,145 microseconds, 0.02%)')" onmouseout="c()">
-<title>File::Copy::Recursive::CORE:stat (5,145 microseconds, 0.02%)</title><a xlink:href="File-Copy-Recursive-pm-22-sub.html#File__Copy__Recursive__CORE_stat" target="_top"><rect x="620.6" y="113" width="0.3" height="15.0" fill="rgb(230,75,12)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Copy::Recursive::__ANON__[C:/Perl64/site/lib/File/Copy/Recursive.pm:271] (10,211,096 microseconds, 98.27%)')" onmouseout="c()">
+<title>File::Copy::Recursive::__ANON__[C:/Perl64/site/lib/File/Copy/Recursive.pm:271] (10,211,096 microseconds, 98.27%)</title><a xlink:href="File-Copy-Recursive-pm-24-line.html#213" target="_top"><rect x="10.0" y="193" width="1159.6" height="15.0" fill="rgb(238,218,47)" rx="2" ry="2" />
+<text text-anchor="" x="13" y="203.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >File::Copy::Recursive::__ANON__[C:/Perl64/site/lib/File/Copy/Recursive.pm:271]</text>
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::Recursive::CORE:chmod (6,507 microseconds, 0.02%)')" onmouseout="c()">
-<title>File::Copy::Recursive::CORE:chmod (6,507 microseconds, 0.02%)</title><a xlink:href="File-Copy-Recursive-pm-22-sub.html#File__Copy__Recursive__CORE_chmod" target="_top"><rect x="14.4" y="145" width="0.3" height="15.0" fill="rgb(227,15,31)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Copy::Recursive::CORE:ftlink (53,001 microseconds, 0.51%)')" onmouseout="c()">
+<title>File::Copy::Recursive::CORE:ftlink (53,001 microseconds, 0.51%)</title><a xlink:href="File-Copy-Recursive-pm-24-line.html#File__Copy__Recursive__CORE_ftlink" target="_top"><rect x="96.8" y="97" width="6.0" height="15.0" fill="rgb(222,41,25)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::Recursive::CORE:ftdir (2,542 microseconds, 0.01%)')" onmouseout="c()">
-<title>File::Copy::Recursive::CORE:ftdir (2,542 microseconds, 0.01%)</title><a xlink:href="File-Copy-Recursive-pm-22-sub.html#File__Copy__Recursive__CORE_ftdir" target="_top"><rect x="31.6" y="49" width="0.1" height="15.0" fill="rgb(242,147,54)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Copy::Recursive::CORE:ftdir (21,000 microseconds, 0.20%)')" onmouseout="c()">
+<title>File::Copy::Recursive::CORE:ftdir (21,000 microseconds, 0.20%)</title><a xlink:href="File-Copy-Recursive-pm-24-line.html#File__Copy__Recursive__CORE_ftdir" target="_top"><rect x="113.5" y="81" width="2.3" height="15.0" fill="rgb(210,148,0)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::CORE:close (64,832 microseconds, 0.25%)')" onmouseout="c()">
-<title>File::Copy::CORE:close (64,832 microseconds, 0.25%)</title><a xlink:href="File-Copy-pm-18-sub.html#File__Copy__CORE_close" target="_top"><rect x="36.4" y="49" width="2.9" height="15.0" fill="rgb(216,197,7)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Spec::Win32::CORE:match (10,000 microseconds, 0.10%)')" onmouseout="c()">
+<title>File::Spec::Win32::CORE:match (10,000 microseconds, 0.10%)</title><a xlink:href="File-Spec-Win32-pm-12-line.html#File__Spec__Win32__CORE_match" target="_top"><rect x="264.7" y="49" width="1.2" height="15.0" fill="rgb(220,125,3)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::Recursive::CORE:stat (3,808 microseconds, 0.01%)')" onmouseout="c()">
-<title>File::Copy::Recursive::CORE:stat (3,808 microseconds, 0.01%)</title><a xlink:href="File-Copy-Recursive-pm-22-sub.html#File__Copy__Recursive__CORE_stat" target="_top"><rect x="20.9" y="113" width="0.2" height="15.0" fill="rgb(240,111,30)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('main::BEGIN@4 (10,000 microseconds, 0.10%)')" onmouseout="c()">
+<title>main::BEGIN@4 (10,000 microseconds, 0.10%)</title><a xlink:href="Utils-pm-33-line.html#4" target="_top"><rect x="1179.8" y="209" width="1.1" height="15.0" fill="rgb(213,134,24)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::Recursive::CORE:ftdir (2,814 microseconds, 0.01%)')" onmouseout="c()">
-<title>File::Copy::Recursive::CORE:ftdir (2,814 microseconds, 0.01%)</title><a xlink:href="File-Copy-Recursive-pm-22-sub.html#File__Copy__Recursive__CORE_ftdir" target="_top"><rect x="621.4" y="97" width="0.2" height="15.0" fill="rgb(237,88,25)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Copy::Recursive::CORE:readdir (10,000 microseconds, 0.10%)')" onmouseout="c()">
+<title>File::Copy::Recursive::CORE:readdir (10,000 microseconds, 0.10%)</title><a xlink:href="File-Copy-Recursive-pm-24-line.html#File__Copy__Recursive__CORE_readdir" target="_top"><rect x="26.0" y="161" width="1.1" height="15.0" fill="rgb(233,67,37)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::Recursive::CORE:ftlink (2,284 microseconds, 0.01%)')" onmouseout="c()">
-<title>File::Copy::Recursive::CORE:ftlink (2,284 microseconds, 0.01%)</title><a xlink:href="File-Copy-Recursive-pm-22-sub.html#File__Copy__Recursive__CORE_ftlink" target="_top"><rect x="816.1" y="129" width="0.1" height="15.0" fill="rgb(219,44,44)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Copy::Recursive::CORE:ftlink (45,000 microseconds, 0.43%)')" onmouseout="c()">
+<title>File::Copy::Recursive::CORE:ftlink (45,000 microseconds, 0.43%)</title><a xlink:href="File-Copy-Recursive-pm-24-line.html#File__Copy__Recursive__CORE_ftlink" target="_top"><rect x="20.9" y="161" width="5.1" height="15.0" fill="rgb(222,67,42)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::CORE:open (3,787,963 microseconds, 14.40%)')" onmouseout="c()">
-<title>File::Copy::CORE:open (3,787,963 microseconds, 14.40%)</title><a xlink:href="File-Copy-pm-18-sub.html#File__Copy__CORE_open" target="_top"><rect x="232.5" y="65" width="169.9" height="15.0" fill="rgb(213,17,43)" rx="2" ry="2" />
-<text text-anchor="" x="235.539372780888" y="75.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >File::Copy::CORE:open</text>
+<g class="func_g" onmouseover="s('File::Copy::Recursive::__ANON__[C:/Perl64/site/lib/File/Copy/Recursive.pm:271] (4,728,040 microseconds, 45.50%)')" onmouseout="c()">
+<title>File::Copy::Recursive::__ANON__[C:/Perl64/site/lib/File/Copy/Recursive.pm:271] (4,728,040 microseconds, 45.50%)</title><a xlink:href="File-Copy-Recursive-pm-24-line.html#213" target="_top"><rect x="69.6" y="129" width="536.9" height="15.0" fill="rgb(229,171,10)" rx="2" ry="2" />
+<text text-anchor="" x="72.61891796592" y="139.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >File::Copy::Recursive::__ANON__[C:/Perl64/site/lib/File/Copy/Recursive.pm:271]</text>
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Spec::Unix::catdir (56,782 microseconds, 0.22%)')" onmouseout="c()">
-<title>File::Spec::Unix::catdir (56,782 microseconds, 0.22%)</title><a xlink:href="File-Spec-Unix-pm-12-sub.html#83" target="_top"><rect x="615.4" y="97" width="2.5" height="15.0" fill="rgb(226,65,25)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Spec::Win32::catfile (132,000 microseconds, 1.27%)')" onmouseout="c()">
+<title>File::Spec::Win32::catfile (132,000 microseconds, 1.27%)</title><a xlink:href="File-Spec-Win32-pm-12-line.html#130" target="_top"><rect x="995.1" y="145" width="15.0" height="15.0" fill="rgb(234,11,6)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::Recursive::CORE:match (2,534 microseconds, 0.01%)')" onmouseout="c()">
-<title>File::Copy::Recursive::CORE:match (2,534 microseconds, 0.01%)</title><a xlink:href="File-Copy-Recursive-pm-22-sub.html#File__Copy__Recursive__CORE_match" target="_top"><rect x="20.8" y="113" width="0.1" height="15.0" fill="rgb(252,131,32)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Spec::Win32::CORE:subst (22,001 microseconds, 0.21%)')" onmouseout="c()">
+<title>File::Spec::Win32::CORE:subst (22,001 microseconds, 0.21%)</title><a xlink:href="File-Spec-Win32-pm-12-line.html#File__Spec__Win32__CORE_subst" target="_top"><rect x="1167.1" y="129" width="2.5" height="15.0" fill="rgb(234,120,6)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::Recursive::__ANON__[/Library/Perl/5.16/File/Copy/Recursive.pm:75] (34,137 microseconds, 0.13%)')" onmouseout="c()">
-<title>File::Copy::Recursive::__ANON__[/Library/Perl/5.16/File/Copy/Recursive.pm:75] (34,137 microseconds, 0.13%)</title><a xlink:href="File-Copy-Recursive-pm-22-sub.html#41" target="_top"><rect x="414.6" y="97" width="1.5" height="15.0" fill="rgb(211,120,15)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('Config::FETCH (1,000 microseconds, 0.01%)')" onmouseout="c()">
+<title>Config::FETCH (1,000 microseconds, 0.01%)</title><a xlink:href="Config-pm-20-line.html#66" target="_top"><rect x="1033.7" y="129" width="0.2" height="15.0" fill="rgb(214,7,40)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::CORE:close (60,620 microseconds, 0.23%)')" onmouseout="c()">
-<title>File::Copy::CORE:close (60,620 microseconds, 0.23%)</title><a xlink:href="File-Copy-pm-18-sub.html#File__Copy__CORE_close" target="_top"><rect x="229.6" y="65" width="2.8" height="15.0" fill="rgb(205,128,34)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Copy::__ANON__[C:/Perl64/lib/File/Copy.pm:324] (876,012 microseconds, 8.43%)')" onmouseout="c()">
+<title>File::Copy::__ANON__[C:/Perl64/lib/File/Copy.pm:324] (876,012 microseconds, 8.43%)</title><a xlink:href="File-Copy-pm-19-line.html#321" target="_top"><rect x="160.2" y="49" width="99.5" height="15.0" fill="rgb(248,112,18)" rx="2" ry="2" />
+<text text-anchor="" x="163.24005937391" y="59.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >File::Copy::_..</text>
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::Recursive::__ANON__[/Library/Perl/5.16/File/Copy/Recursive.pm:271] (8,693,324 microseconds, 33.04%)')" onmouseout="c()">
-<title>File::Copy::Recursive::__ANON__[/Library/Perl/5.16/File/Copy/Recursive.pm:271] (8,693,324 microseconds, 33.04%)</title><a xlink:href="File-Copy-Recursive-pm-22-sub.html#213" target="_top"><rect x="21.3" y="113" width="389.8" height="15.0" fill="rgb(252,197,30)" rx="2" ry="2" />
-<text text-anchor="" x="24.2503289111913" y="123.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >File::Copy::Recursive::__ANON__[/Library/Perl/5.16/File/C..</text>
+<g class="func_g" onmouseover="s('main::BEGIN@14 (20,000 microseconds, 0.19%)')" onmouseout="c()">
+<title>main::BEGIN@14 (20,000 microseconds, 0.19%)</title><a xlink:href="RestoreWin-pm-2-line.html#14" target="_top"><rect x="1178.6" y="225" width="2.3" height="15.0" fill="rgb(206,175,18)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::Recursive::fcopy (4,090,888 microseconds, 15.55%)')" onmouseout="c()">
-<title>File::Copy::Recursive::fcopy (4,090,888 microseconds, 15.55%)</title><a xlink:href="File-Copy-Recursive-pm-22-sub.html#127" target="_top"><rect x="998.4" y="161" width="183.5" height="15.0" fill="rgb(215,219,31)" rx="2" ry="2" />
-<text text-anchor="" x="1001.3789680015" y="171.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >File::Copy::Recursive::fc..</text>
+<g class="func_g" onmouseover="s('File::Spec::Win32::CORE:match (1,000 microseconds, 0.01%)')" onmouseout="c()">
+<title>File::Spec::Win32::CORE:match (1,000 microseconds, 0.01%)</title><a xlink:href="File-Spec-Win32-pm-12-line.html#File__Spec__Win32__CORE_match" target="_top"><rect x="795.7" y="97" width="0.1" height="15.0" fill="rgb(250,71,6)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Spec::Unix::CORE:match (8,277 microseconds, 0.03%)')" onmouseout="c()">
-<title>File::Spec::Unix::CORE:match (8,277 microseconds, 0.03%)</title><a xlink:href="File-Spec-Unix-pm-12-sub.html#File__Spec__Unix__CORE_match" target="_top"><rect x="808.1" y="97" width="0.4" height="15.0" fill="rgb(231,97,54)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Copy::Recursive::BEGIN@10 (10,000 microseconds, 0.10%)')" onmouseout="c()">
+<title>File::Copy::Recursive::BEGIN@10 (10,000 microseconds, 0.10%)</title><a xlink:href="File-Copy-Recursive-pm-24-line.html#10" target="_top"><rect x="1175.2" y="209" width="1.2" height="15.0" fill="rgb(238,136,2)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::Recursive::BEGIN@10 (4,690 microseconds, 0.02%)')" onmouseout="c()">
-<title>File::Copy::Recursive::BEGIN@10 (4,690 microseconds, 0.02%)</title><a xlink:href="File-Copy-Recursive-pm-22-sub.html#10" target="_top"><rect x="1186.8" y="193" width="0.2" height="15.0" fill="rgb(217,204,37)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Copy::CORE:ftdir (36,001 microseconds, 0.35%)')" onmouseout="c()">
+<title>File::Copy::CORE:ftdir (36,001 microseconds, 0.35%)</title><a xlink:href="File-Copy-pm-19-line.html#File__Copy__CORE_ftdir" target="_top"><rect x="1033.9" y="129" width="4.0" height="15.0" fill="rgb(229,39,42)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::Recursive::CORE:stat (5,567 microseconds, 0.02%)')" onmouseout="c()">
-<title>File::Copy::Recursive::CORE:stat (5,567 microseconds, 0.02%)</title><a xlink:href="File-Copy-Recursive-pm-22-sub.html#File__Copy__Recursive__CORE_stat" target="_top"><rect x="30.5" y="65" width="0.2" height="15.0" fill="rgb(214,135,7)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Copy::Recursive::CORE:ftlink (41,001 microseconds, 0.39%)')" onmouseout="c()">
+<title>File::Copy::Recursive::CORE:ftlink (41,001 microseconds, 0.39%)</title><a xlink:href="File-Copy-Recursive-pm-24-line.html#File__Copy__Recursive__CORE_ftlink" target="_top"><rect x="41.2" y="145" width="4.7" height="15.0" fill="rgb(243,15,25)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::Recursive::CORE:stat (3,351 microseconds, 0.01%)')" onmouseout="c()">
-<title>File::Copy::Recursive::CORE:stat (3,351 microseconds, 0.01%)</title><a xlink:href="File-Copy-Recursive-pm-22-sub.html#File__Copy__Recursive__CORE_stat" target="_top"><rect x="13.0" y="161" width="0.1" height="15.0" fill="rgb(212,226,7)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('Config::FETCH (20,000 microseconds, 0.19%)')" onmouseout="c()">
+<title>Config::FETCH (20,000 microseconds, 0.19%)</title><a xlink:href="Config-pm-20-line.html#66" target="_top"><rect x="1170.7" y="145" width="2.3" height="15.0" fill="rgb(225,92,23)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('Config::FETCH (4,446 microseconds, 0.02%)')" onmouseout="c()">
-<title>Config::FETCH (4,446 microseconds, 0.02%)</title><a xlink:href="Config-pm-13-sub.html#65" target="_top"><rect x="420.3" y="81" width="0.2" height="15.0" fill="rgb(230,42,7)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Copy::Recursive::CORE:ftlink (20,002 microseconds, 0.19%)')" onmouseout="c()">
+<title>File::Copy::Recursive::CORE:ftlink (20,002 microseconds, 0.19%)</title><a xlink:href="File-Copy-Recursive-pm-24-line.html#File__Copy__Recursive__CORE_ftlink" target="_top"><rect x="145.4" y="65" width="2.2" height="15.0" fill="rgb(247,120,20)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::Recursive::__ANON__[/Library/Perl/5.16/File/Copy/Recursive.pm:271] (13,364,400 microseconds, 50.79%)')" onmouseout="c()">
-<title>File::Copy::Recursive::__ANON__[/Library/Perl/5.16/File/Copy/Recursive.pm:271] (13,364,400 microseconds, 50.79%)</title><a xlink:href="File-Copy-Recursive-pm-22-sub.html#213" target="_top"><rect x="18.5" y="129" width="599.4" height="15.0" fill="rgb(249,76,18)" rx="2" ry="2" />
-<text text-anchor="" x="21.5360517583232" y="139.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >File::Copy::Recursive::__ANON__[/Library/Perl/5.16/File/Copy/Recursive.pm:271]</text>
+<g class="func_g" onmouseover="s('File::Copy::Recursive::__ANON__[C:/Perl64/site/lib/File/Copy/Recursive.pm:75] (1,000 microseconds, 0.01%)')" onmouseout="c()">
+<title>File::Copy::Recursive::__ANON__[C:/Perl64/site/lib/File/Copy/Recursive.pm:75] (1,000 microseconds, 0.01%)</title><a xlink:href="File-Copy-Recursive-pm-24-line.html#41" target="_top"><rect x="154.3" y="65" width="0.1" height="15.0" fill="rgb(239,62,27)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::Recursive::CORE:chmod (11,199 microseconds, 0.04%)')" onmouseout="c()">
-<title>File::Copy::Recursive::CORE:chmod (11,199 microseconds, 0.04%)</title><a xlink:href="File-Copy-Recursive-pm-22-sub.html#File__Copy__Recursive__CORE_chmod" target="_top"><rect x="815.1" y="129" width="0.5" height="15.0" fill="rgb(235,0,54)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('overload::BEGIN@83 (10,000 microseconds, 0.10%)')" onmouseout="c()">
+<title>overload::BEGIN@83 (10,000 microseconds, 0.10%)</title><a xlink:href="overload-pm-22-line.html#83" target="_top"><rect x="1173.0" y="209" width="1.1" height="15.0" fill="rgb(207,123,0)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Spec::Unix::canonpath (19,400 microseconds, 0.07%)')" onmouseout="c()">
-<title>File::Spec::Unix::canonpath (19,400 microseconds, 0.07%)</title><a xlink:href="File-Spec-Unix-pm-12-sub.html#43" target="_top"><rect x="219.7" y="49" width="0.9" height="15.0" fill="rgb(221,83,21)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Copy::Recursive::__ANON__[C:/Perl64/site/lib/File/Copy/Recursive.pm:271] (10,211,096 microseconds, 98.27%)')" onmouseout="c()">
+<title>File::Copy::Recursive::__ANON__[C:/Perl64/site/lib/File/Copy/Recursive.pm:271] (10,211,096 microseconds, 98.27%)</title><a xlink:href="File-Copy-Recursive-pm-24-line.html#213" target="_top"><rect x="10.0" y="177" width="1159.6" height="15.0" fill="rgb(206,42,35)" rx="2" ry="2" />
+<text text-anchor="" x="13" y="187.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >File::Copy::Recursive::__ANON__[C:/Perl64/site/lib/File/Copy/Recursive.pm:271]</text>
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::Recursive::CORE:match (2,325 microseconds, 0.01%)')" onmouseout="c()">
-<title>File::Copy::Recursive::CORE:match (2,325 microseconds, 0.01%)</title><a xlink:href="File-Copy-Recursive-pm-22-sub.html#File__Copy__Recursive__CORE_match" target="_top"><rect x="23.9" y="97" width="0.2" height="15.0" fill="rgb(210,195,3)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Spec::Win32::catfile (28,001 microseconds, 0.27%)')" onmouseout="c()">
+<title>File::Spec::Win32::catfile (28,001 microseconds, 0.27%)</title><a xlink:href="File-Spec-Win32-pm-12-line.html#130" target="_top"><rect x="421.5" y="97" width="3.2" height="15.0" fill="rgb(227,191,14)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::Recursive::CORE:ftlink (5,132 microseconds, 0.02%)')" onmouseout="c()">
-<title>File::Copy::Recursive::CORE:ftlink (5,132 microseconds, 0.02%)</title><a xlink:href="File-Copy-Recursive-pm-22-sub.html#File__Copy__Recursive__CORE_ftlink" target="_top"><rect x="14.8" y="145" width="0.3" height="15.0" fill="rgb(216,145,9)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Copy::Recursive::CORE:ftdir (32,000 microseconds, 0.31%)')" onmouseout="c()">
+<title>File::Copy::Recursive::CORE:ftdir (32,000 microseconds, 0.31%)</title><a xlink:href="File-Copy-Recursive-pm-24-line.html#File__Copy__Recursive__CORE_ftdir" target="_top"><rect x="74.7" y="113" width="3.7" height="15.0" fill="rgb(219,154,15)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::Recursive::CORE:chmod (11,672 microseconds, 0.04%)')" onmouseout="c()">
-<title>File::Copy::Recursive::CORE:chmod (11,672 microseconds, 0.04%)</title><a xlink:href="File-Copy-Recursive-pm-22-sub.html#File__Copy__Recursive__CORE_chmod" target="_top"><rect x="413.1" y="97" width="0.5" height="15.0" fill="rgb(217,162,29)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('RestoreWin::restore_r (10,241,096 microseconds, 98.56%)')" onmouseout="c()">
+<title>RestoreWin::restore_r (10,241,096 microseconds, 98.56%)</title><a xlink:href="RestoreWin-pm-2-line.html#73" target="_top"><rect x="10.0" y="241" width="1163.0" height="15.0" fill="rgb(215,222,26)" rx="2" ry="2" />
+<text text-anchor="" x="13" y="251.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >RestoreWin::restore_r</text>
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::Recursive::__ANON__[/Library/Perl/5.16/File/Copy/Recursive.pm:125] (3,334 microseconds, 0.01%)')" onmouseout="c()">
-<title>File::Copy::Recursive::__ANON__[/Library/Perl/5.16/File/Copy/Recursive.pm:125] (3,334 microseconds, 0.01%)</title><a xlink:href="File-Copy-Recursive-pm-22-sub.html#113" target="_top"><rect x="13.1" y="161" width="0.2" height="15.0" fill="rgb(213,25,1)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('Win32::CopyFile (1,276,015 microseconds, 12.28%)')" onmouseout="c()">
+<title>Win32::CopyFile (1,276,015 microseconds, 12.28%)</title><a xlink:href="Win32-pm-36-line.html#Win32__CopyFile" target="_top"><rect x="646.5" y="81" width="144.9" height="15.0" fill="rgb(216,207,9)" rx="2" ry="2" />
+<text text-anchor="" x="649.502426693007" y="91.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >Win32::CopyFile</text>
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::Recursive::CORE:stat (3,464 microseconds, 0.01%)')" onmouseout="c()">
-<title>File::Copy::Recursive::CORE:stat (3,464 microseconds, 0.01%)</title><a xlink:href="File-Copy-Recursive-pm-22-sub.html#File__Copy__Recursive__CORE_stat" target="_top"><rect x="27.3" y="81" width="0.1" height="15.0" fill="rgb(221,58,40)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Spec::Win32::CORE:subst (12,000 microseconds, 0.12%)')" onmouseout="c()">
+<title>File::Spec::Win32::CORE:subst (12,000 microseconds, 0.12%)</title><a xlink:href="File-Spec-Win32-pm-12-line.html#File__Spec__Win32__CORE_subst" target="_top"><rect x="278.3" y="49" width="1.4" height="15.0" fill="rgb(215,128,42)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::Recursive::CORE:chmod (6,405 microseconds, 0.02%)')" onmouseout="c()">
-<title>File::Copy::Recursive::CORE:chmod (6,405 microseconds, 0.02%)</title><a xlink:href="File-Copy-Recursive-pm-22-sub.html#File__Copy__Recursive__CORE_chmod" target="_top"><rect x="23.4" y="97" width="0.2" height="15.0" fill="rgb(241,94,54)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Spec::Win32::CORE:match (1,001 microseconds, 0.01%)')" onmouseout="c()">
+<title>File::Spec::Win32::CORE:match (1,001 microseconds, 0.01%)</title><a xlink:href="File-Spec-Win32-pm-12-line.html#File__Spec__Win32__CORE_match" target="_top"><rect x="423.4" y="65" width="0.1" height="15.0" fill="rgb(248,219,53)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::_eq (9,775 microseconds, 0.04%)')" onmouseout="c()">
-<title>File::Copy::_eq (9,775 microseconds, 0.04%)</title><a xlink:href="File-Copy-pm-18-sub.html#93" target="_top"><rect x="214.9" y="49" width="0.4" height="15.0" fill="rgb(228,156,51)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Spec::Win32::splitpath (9,000 microseconds, 0.09%)')" onmouseout="c()">
+<title>File::Spec::Win32::splitpath (9,000 microseconds, 0.09%)</title><a xlink:href="File-Spec-Win32-pm-12-line.html#210" target="_top"><rect x="1159.3" y="145" width="1.1" height="15.0" fill="rgb(248,54,3)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('XSLoader::load (3,046 microseconds, 0.01%)')" onmouseout="c()">
-<title>XSLoader::load (3,046 microseconds, 0.01%)</title><a xlink:href="XSLoader-pm-30-sub.html#17" target="_top"><rect x="1189.7" y="193" width="0.1" height="15.0" fill="rgb(235,14,40)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Spec::Win32::splitpath (16,000 microseconds, 0.15%)')" onmouseout="c()">
+<title>File::Spec::Win32::splitpath (16,000 microseconds, 0.15%)</title><a xlink:href="File-Spec-Win32-pm-12-line.html#210" target="_top"><rect x="993.3" y="129" width="1.8" height="15.0" fill="rgb(233,67,22)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('Restore::restore_r (26,222,455 microseconds, 99.66%)')" onmouseout="c()">
-<title>Restore::restore_r (26,222,455 microseconds, 99.66%)</title><a xlink:href="Restore-pm-2-sub.html#69" target="_top"><rect x="10.0" y="225" width="1176.0" height="15.0" fill="rgb(206,129,19)" rx="2" ry="2" />
-<text text-anchor="" x="13.0046956631021" y="235.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >Restore::restore_r</text>
+<g class="func_g" onmouseover="s('File::Copy::Recursive::CORE:chmod (19,000 microseconds, 0.18%)')" onmouseout="c()">
+<title>File::Copy::Recursive::CORE:chmod (19,000 microseconds, 0.18%)</title><a xlink:href="File-Copy-Recursive-pm-24-line.html#File__Copy__Recursive__CORE_chmod" target="_top"><rect x="54.1" y="129" width="2.1" height="15.0" fill="rgb(231,115,16)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::copy (4,129,955 microseconds, 15.70%)')" onmouseout="c()">
-<title>File::Copy::copy (4,129,955 microseconds, 15.70%)</title><a xlink:href="File-Copy-pm-18-sub.html#105" target="_top"><rect x="622.1" y="113" width="185.2" height="15.0" fill="rgb(219,227,17)" rx="2" ry="2" />
-<text text-anchor="" x="625.077075166415" y="123.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >File::Copy::copy</text>
+<g class="func_g" onmouseover="s('File::Copy::Recursive::CORE:stat (38,001 microseconds, 0.37%)')" onmouseout="c()">
+<title>File::Copy::Recursive::CORE:stat (38,001 microseconds, 0.37%)</title><a xlink:href="File-Copy-Recursive-pm-24-line.html#File__Copy__Recursive__CORE_stat" target="_top"><rect x="824.9" y="129" width="4.3" height="15.0" fill="rgb(227,162,33)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::CORE:close (64,159 microseconds, 0.24%)')" onmouseout="c()">
-<title>File::Copy::CORE:close (64,159 microseconds, 0.24%)</title><a xlink:href="File-Copy-pm-18-sub.html#File__Copy__CORE_close" target="_top"><rect x="627.4" y="97" width="2.9" height="15.0" fill="rgb(239,59,3)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Copy::Recursive::CORE:ftdir (26,000 microseconds, 0.25%)')" onmouseout="c()">
+<title>File::Copy::Recursive::CORE:ftdir (26,000 microseconds, 0.25%)</title><a xlink:href="File-Copy-Recursive-pm-24-line.html#File__Copy__Recursive__CORE_ftdir" target="_top"><rect x="38.3" y="145" width="2.9" height="15.0" fill="rgb(254,199,32)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::CORE:sysread (33,903 microseconds, 0.13%)')" onmouseout="c()">
-<title>File::Copy::CORE:sysread (33,903 microseconds, 0.13%)</title><a xlink:href="File-Copy-pm-18-sub.html#File__Copy__CORE_sysread" target="_top"><rect x="402.7" y="65" width="1.5" height="15.0" fill="rgb(221,86,17)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Copy::Recursive::CORE:chmod (23,000 microseconds, 0.22%)')" onmouseout="c()">
+<title>File::Copy::Recursive::CORE:chmod (23,000 microseconds, 0.22%)</title><a xlink:href="File-Copy-Recursive-pm-24-line.html#File__Copy__Recursive__CORE_chmod" target="_top"><rect x="72.1" y="113" width="2.6" height="15.0" fill="rgb(206,210,22)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::Recursive::CORE:chmod (10,876 microseconds, 0.04%)')" onmouseout="c()">
-<title>File::Copy::Recursive::CORE:chmod (10,876 microseconds, 0.04%)</title><a xlink:href="File-Copy-Recursive-pm-22-sub.html#File__Copy__Recursive__CORE_chmod" target="_top"><rect x="1001.1" y="145" width="0.5" height="15.0" fill="rgb(210,228,16)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Spec::Win32::splitpath (41,000 microseconds, 0.39%)')" onmouseout="c()">
+<title>File::Spec::Win32::splitpath (41,000 microseconds, 0.39%)</title><a xlink:href="File-Spec-Win32-pm-12-line.html#210" target="_top"><rect x="597.1" y="97" width="4.7" height="15.0" fill="rgb(253,7,41)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::Recursive::dircopy (26,220,120 microseconds, 99.66%)')" onmouseout="c()">
-<title>File::Copy::Recursive::dircopy (26,220,120 microseconds, 99.66%)</title><a xlink:href="File-Copy-Recursive-pm-22-sub.html#176" target="_top"><rect x="10.0" y="193" width="1176.0" height="15.0" fill="rgb(249,17,0)" rx="2" ry="2" />
-<text text-anchor="" x="13.0226710381865" y="203.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >File::Copy::Recursive::dircopy</text>
+<g class="func_g" onmouseover="s('File::Copy::Recursive::CORE:ftdir (108,001 microseconds, 1.04%)')" onmouseout="c()">
+<title>File::Copy::Recursive::CORE:ftdir (108,001 microseconds, 1.04%)</title><a xlink:href="File-Copy-Recursive-pm-24-line.html#File__Copy__Recursive__CORE_ftdir" target="_top"><rect x="431.1" y="97" width="12.2" height="15.0" fill="rgb(231,211,45)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::Recursive::__ANON__[/Library/Perl/5.16/File/Copy/Recursive.pm:125] (3,357 microseconds, 0.01%)')" onmouseout="c()">
-<title>File::Copy::Recursive::__ANON__[/Library/Perl/5.16/File/Copy/Recursive.pm:125] (3,357 microseconds, 0.01%)</title><a xlink:href="File-Copy-Recursive-pm-22-sub.html#113" target="_top"><rect x="18.4" y="129" width="0.1" height="15.0" fill="rgb(229,106,48)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Copy::Recursive::fcopy (1,249,008 microseconds, 12.02%)')" onmouseout="c()">
+<title>File::Copy::Recursive::fcopy (1,249,008 microseconds, 12.02%)</title><a xlink:href="File-Copy-Recursive-pm-24-line.html#127" target="_top"><rect x="279.7" y="97" width="141.8" height="15.0" fill="rgb(246,85,27)" rx="2" ry="2" />
+<text text-anchor="" x="282.70523994774" y="107.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >File::Copy::Recursi..</text>
 </a>
 </g>
-<g class="func_g" onmouseover="s('main::BEGIN@10 (8,004 microseconds, 0.03%)')" onmouseout="c()">
-<title>main::BEGIN@10 (8,004 microseconds, 0.03%)</title><a xlink:href="Restore-pm-2-sub.html#10" target="_top"><rect x="1186.2" y="209" width="0.4" height="15.0" fill="rgb(209,72,3)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Copy::Recursive::CORE:ftdir (57,000 microseconds, 0.55%)')" onmouseout="c()">
+<title>File::Copy::Recursive::CORE:ftdir (57,000 microseconds, 0.55%)</title><a xlink:href="File-Copy-Recursive-pm-24-line.html#File__Copy__Recursive__CORE_ftdir" target="_top"><rect x="138.9" y="65" width="6.5" height="15.0" fill="rgb(214,24,52)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::Recursive::CORE:ftdir (2,827 microseconds, 0.01%)')" onmouseout="c()">
-<title>File::Copy::Recursive::CORE:ftdir (2,827 microseconds, 0.01%)</title><a xlink:href="File-Copy-Recursive-pm-22-sub.html#File__Copy__Recursive__CORE_ftdir" target="_top"><rect x="415.5" y="81" width="0.1" height="15.0" fill="rgb(214,158,45)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('main::BEGIN@13 (20,000 microseconds, 0.19%)')" onmouseout="c()">
+<title>main::BEGIN@13 (20,000 microseconds, 0.19%)</title><a xlink:href="RestoreWin-pm-2-line.html#13" target="_top"><rect x="1176.4" y="225" width="2.2" height="15.0" fill="rgb(224,139,34)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::Recursive::CORE:ftlink (5,094 microseconds, 0.02%)')" onmouseout="c()">
-<title>File::Copy::Recursive::CORE:ftlink (5,094 microseconds, 0.02%)</title><a xlink:href="File-Copy-Recursive-pm-22-sub.html#File__Copy__Recursive__CORE_ftlink" target="_top"><rect x="12.6" y="161" width="0.3" height="15.0" fill="rgb(207,146,44)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Copy::Recursive::CORE:ftdir (49,001 microseconds, 0.47%)')" onmouseout="c()">
+<title>File::Copy::Recursive::CORE:ftdir (49,001 microseconds, 0.47%)</title><a xlink:href="File-Copy-Recursive-pm-24-line.html#File__Copy__Recursive__CORE_ftdir" target="_top"><rect x="56.2" y="129" width="5.6" height="15.0" fill="rgb(247,226,6)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::Recursive::CORE:ftdir (2,545 microseconds, 0.01%)')" onmouseout="c()">
-<title>File::Copy::Recursive::CORE:ftdir (2,545 microseconds, 0.01%)</title><a xlink:href="File-Copy-Recursive-pm-22-sub.html#File__Copy__Recursive__CORE_ftdir" target="_top"><rect x="817.2" y="113" width="0.1" height="15.0" fill="rgb(235,49,39)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Copy::copy (965,007 microseconds, 9.29%)')" onmouseout="c()">
+<title>File::Copy::copy (965,007 microseconds, 9.29%)</title><a xlink:href="File-Copy-pm-19-line.html#67" target="_top"><rect x="308.5" y="81" width="109.6" height="15.0" fill="rgb(248,38,36)" rx="2" ry="2" />
+<text text-anchor="" x="311.54927911358" y="91.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >File::Copy::copy</text>
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::Recursive::__ANON__[/Library/Perl/5.16/File/Copy/Recursive.pm:75] (25,001 microseconds, 0.10%)')" onmouseout="c()">
-<title>File::Copy::Recursive::__ANON__[/Library/Perl/5.16/File/Copy/Recursive.pm:75] (25,001 microseconds, 0.10%)</title><a xlink:href="File-Copy-Recursive-pm-22-sub.html#41" target="_top"><rect x="1002.4" y="145" width="1.1" height="15.0" fill="rgb(215,119,26)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Copy::Recursive::__ANON__[C:/Perl64/site/lib/File/Copy/Recursive.pm:125] (11,000 microseconds, 0.11%)')" onmouseout="c()">
+<title>File::Copy::Recursive::__ANON__[C:/Perl64/site/lib/File/Copy/Recursive.pm:125] (11,000 microseconds, 0.11%)</title><a xlink:href="File-Copy-Recursive-pm-24-line.html#113" target="_top"><rect x="107.9" y="97" width="1.2" height="15.0" fill="rgb(251,223,0)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Spec::Unix::CORE:subst (3,781 microseconds, 0.01%)')" onmouseout="c()">
-<title>File::Spec::Unix::CORE:subst (3,781 microseconds, 0.01%)</title><a xlink:href="File-Spec-Unix-pm-12-sub.html#File__Spec__Unix__CORE_subst" target="_top"><rect x="411.0" y="49" width="0.1" height="15.0" fill="rgb(211,42,49)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Spec::Win32::CORE:match (10,000 microseconds, 0.10%)')" onmouseout="c()">
+<title>File::Spec::Win32::CORE:match (10,000 microseconds, 0.10%)</title><a xlink:href="File-Spec-Win32-pm-12-line.html#File__Spec__Win32__CORE_match" target="_top"><rect x="420.4" y="65" width="1.1" height="15.0" fill="rgb(219,152,0)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::_eq (16,502 microseconds, 0.06%)')" onmouseout="c()">
-<title>File::Copy::_eq (16,502 microseconds, 0.06%)</title><a xlink:href="File-Copy-pm-18-sub.html#93" target="_top"><rect x="1180.0" y="129" width="0.7" height="15.0" fill="rgb(241,117,34)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('main::BEGIN@10 (10,000 microseconds, 0.10%)')" onmouseout="c()">
+<title>main::BEGIN@10 (10,000 microseconds, 0.10%)</title><a xlink:href="RestoreWin-pm-2-line.html#10" target="_top"><rect x="1173.0" y="225" width="1.1" height="15.0" fill="rgb(216,115,20)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::Recursive::__ANON__[/Library/Perl/5.16/File/Copy/Recursive.pm:75] (26,826 microseconds, 0.10%)')" onmouseout="c()">
-<title>File::Copy::Recursive::__ANON__[/Library/Perl/5.16/File/Copy/Recursive.pm:75] (26,826 microseconds, 0.10%)</title><a xlink:href="File-Copy-Recursive-pm-22-sub.html#41" target="_top"><rect x="620.9" y="113" width="1.2" height="15.0" fill="rgb(253,24,45)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('Win32::CopyFile (840,006 microseconds, 8.08%)')" onmouseout="c()">
+<title>Win32::CopyFile (840,006 microseconds, 8.08%)</title><a xlink:href="Win32-pm-36-line.html#Win32__CopyFile" target="_top"><rect x="319.3" y="49" width="95.4" height="15.0" fill="rgb(245,52,52)" rx="2" ry="2" />
+<text text-anchor="" x="322.337475084438" y="59.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >Win32::CopyF..</text>
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::Recursive::CORE:ftdir (2,248 microseconds, 0.01%)')" onmouseout="c()">
-<title>File::Copy::Recursive::CORE:ftdir (2,248 microseconds, 0.01%)</title><a xlink:href="File-Copy-Recursive-pm-22-sub.html#File__Copy__Recursive__CORE_ftdir" target="_top"><rect x="26.8" y="81" width="0.1" height="15.0" fill="rgb(249,115,45)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Copy::Recursive::CORE:chmod (49,001 microseconds, 0.47%)')" onmouseout="c()">
+<title>File::Copy::Recursive::CORE:chmod (49,001 microseconds, 0.47%)</title><a xlink:href="File-Copy-Recursive-pm-24-line.html#File__Copy__Recursive__CORE_chmod" target="_top"><rect x="32.7" y="145" width="5.6" height="15.0" fill="rgb(205,147,11)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Spec::Unix::CORE:match (7,515 microseconds, 0.03%)')" onmouseout="c()">
-<title>File::Spec::Unix::CORE:match (7,515 microseconds, 0.03%)</title><a xlink:href="File-Spec-Unix-pm-12-sub.html#File__Spec__Unix__CORE_match" target="_top"><rect x="406.8" y="65" width="0.3" height="15.0" fill="rgb(253,118,3)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Copy::Recursive::CORE:ftlink (31,001 microseconds, 0.30%)')" onmouseout="c()">
+<title>File::Copy::Recursive::CORE:ftlink (31,001 microseconds, 0.30%)</title><a xlink:href="File-Copy-Recursive-pm-24-line.html#File__Copy__Recursive__CORE_ftlink" target="_top"><rect x="625.2" y="113" width="3.5" height="15.0" fill="rgb(250,3,52)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::Recursive::CORE:match (2,362 microseconds, 0.01%)')" onmouseout="c()">
-<title>File::Copy::Recursive::CORE:match (2,362 microseconds, 0.01%)</title><a xlink:href="File-Copy-Recursive-pm-22-sub.html#File__Copy__Recursive__CORE_match" target="_top"><rect x="27.2" y="81" width="0.1" height="15.0" fill="rgb(210,12,3)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Copy::__ANON__[C:/Perl64/lib/File/Copy.pm:324] (1,290,016 microseconds, 12.41%)')" onmouseout="c()">
+<title>File::Copy::__ANON__[C:/Perl64/lib/File/Copy.pm:324] (1,290,016 microseconds, 12.41%)</title><a xlink:href="File-Copy-pm-19-line.html#321" target="_top"><rect x="644.9" y="97" width="146.5" height="15.0" fill="rgb(239,130,26)" rx="2" ry="2" />
+<text text-anchor="" x="647.912490462989" y="107.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >File::Copy::__ANON__..</text>
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Spec::Unix::CORE:subst (4,162 microseconds, 0.02%)')" onmouseout="c()">
-<title>File::Spec::Unix::CORE:subst (4,162 microseconds, 0.02%)</title><a xlink:href="File-Spec-Unix-pm-12-sub.html#File__Spec__Unix__CORE_subst" target="_top"><rect x="617.7" y="65" width="0.2" height="15.0" fill="rgb(215,24,17)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Copy::_eq (30,000 microseconds, 0.29%)')" onmouseout="c()">
+<title>File::Copy::_eq (30,000 microseconds, 0.29%)</title><a xlink:href="File-Copy-pm-19-line.html#55" target="_top"><rect x="414.7" y="65" width="3.4" height="15.0" fill="rgb(218,109,43)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::_eq (9,779 microseconds, 0.04%)')" onmouseout="c()">
-<title>File::Copy::_eq (9,779 microseconds, 0.04%)</title><a xlink:href="File-Copy-pm-18-sub.html#93" target="_top"><rect x="992.2" y="113" width="0.4" height="15.0" fill="rgb(227,195,28)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Copy::Recursive::CORE:chmod (30,000 microseconds, 0.29%)')" onmouseout="c()">
+<title>File::Copy::Recursive::CORE:chmod (30,000 microseconds, 0.29%)</title><a xlink:href="File-Copy-Recursive-pm-24-line.html#File__Copy__Recursive__CORE_chmod" target="_top"><rect x="135.5" y="65" width="3.4" height="15.0" fill="rgb(208,35,23)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::Recursive::CORE:ftlink (2,303 microseconds, 0.01%)')" onmouseout="c()">
-<title>File::Copy::Recursive::CORE:ftlink (2,303 microseconds, 0.01%)</title><a xlink:href="File-Copy-Recursive-pm-22-sub.html#File__Copy__Recursive__CORE_ftlink" target="_top"><rect x="620.5" y="113" width="0.1" height="15.0" fill="rgb(208,20,54)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Spec::Win32::CORE:match (11,000 microseconds, 0.11%)')" onmouseout="c()">
+<title>File::Spec::Win32::CORE:match (11,000 microseconds, 0.11%)</title><a xlink:href="File-Spec-Win32-pm-12-line.html#File__Spec__Win32__CORE_match" target="_top"><rect x="277.1" y="49" width="1.2" height="15.0" fill="rgb(217,225,4)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Spec::Unix::CORE:subst (3,861 microseconds, 0.01%)')" onmouseout="c()">
-<title>File::Spec::Unix::CORE:subst (3,861 microseconds, 0.01%)</title><a xlink:href="File-Spec-Unix-pm-12-sub.html#File__Spec__Unix__CORE_subst" target="_top"><rect x="1184.3" y="129" width="0.1" height="15.0" fill="rgb(205,48,1)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Spec::Win32::_canon_cat (21,000 microseconds, 0.20%)')" onmouseout="c()">
+<title>File::Spec::Win32::_canon_cat (21,000 microseconds, 0.20%)</title><a xlink:href="File-Spec-Win32-pm-12-line.html#382" target="_top"><rect x="604.1" y="97" width="2.4" height="15.0" fill="rgb(249,184,25)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::copy (3,898,841 microseconds, 14.82%)')" onmouseout="c()">
-<title>File::Copy::copy (3,898,841 microseconds, 14.82%)</title><a xlink:href="File-Copy-pm-18-sub.html#105" target="_top"><rect x="817.8" y="129" width="174.8" height="15.0" fill="rgb(215,20,42)" rx="2" ry="2" />
-<text text-anchor="" x="820.773095578148" y="139.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >File::Copy::copy</text>
+<g class="func_g" onmouseover="s('File::Copy::Recursive::CORE:ftlink (29,000 microseconds, 0.28%)')" onmouseout="c()">
+<title>File::Copy::Recursive::CORE:ftlink (29,000 microseconds, 0.28%)</title><a xlink:href="File-Copy-Recursive-pm-24-line.html#File__Copy__Recursive__CORE_ftlink" target="_top"><rect x="1024.7" y="145" width="3.2" height="15.0" fill="rgb(208,90,28)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::Recursive::__ANON__[/Library/Perl/5.16/File/Copy/Recursive.pm:75] (32,246 microseconds, 0.12%)')" onmouseout="c()">
-<title>File::Copy::Recursive::__ANON__[/Library/Perl/5.16/File/Copy/Recursive.pm:75] (32,246 microseconds, 0.12%)</title><a xlink:href="File-Copy-Recursive-pm-22-sub.html#41" target="_top"><rect x="30.7" y="65" width="1.5" height="15.0" fill="rgb(232,156,38)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Copy::Recursive::fcopy (1,193,015 microseconds, 11.48%)')" onmouseout="c()">
+<title>File::Copy::Recursive::fcopy (1,193,015 microseconds, 11.48%)</title><a xlink:href="File-Copy-Recursive-pm-24-line.html#127" target="_top"><rect x="130.4" y="81" width="135.5" height="15.0" fill="rgb(234,193,52)" rx="2" ry="2" />
+<text text-anchor="" x="133.373764230453" y="91.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >File::Copy::Recurs..</text>
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::CORE:open (3,884,220 microseconds, 14.76%)')" onmouseout="c()">
-<title>File::Copy::CORE:open (3,884,220 microseconds, 14.76%)</title><a xlink:href="File-Copy-pm-18-sub.html#File__Copy__CORE_open" target="_top"><rect x="39.5" y="49" width="174.2" height="15.0" fill="rgb(251,199,34)" rx="2" ry="2" />
-<text text-anchor="" x="42.4836604947599" y="59.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >File::Copy::CORE:open</text>
+<g class="func_g" onmouseover="s('Win32::GetCwd (30,000 microseconds, 0.29%)')" onmouseout="c()">
+<title>Win32::GetCwd (30,000 microseconds, 0.29%)</title><a xlink:href="Win32-pm-36-line.html#Win32__GetCwd" target="_top"><rect x="1169.6" y="177" width="3.4" height="15.0" fill="rgb(250,183,40)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::Recursive::CORE:stat (11,615 microseconds, 0.04%)')" onmouseout="c()">
-<title>File::Copy::Recursive::CORE:stat (11,615 microseconds, 0.04%)</title><a xlink:href="File-Copy-Recursive-pm-22-sub.html#File__Copy__Recursive__CORE_stat" target="_top"><rect x="621.6" y="97" width="0.5" height="15.0" fill="rgb(216,105,34)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Copy::Recursive::CORE:chmod (3,000 microseconds, 0.03%)')" onmouseout="c()">
+<title>File::Copy::Recursive::CORE:chmod (3,000 microseconds, 0.03%)</title><a xlink:href="File-Copy-Recursive-pm-24-line.html#File__Copy__Recursive__CORE_chmod" target="_top"><rect x="430.7" y="97" width="0.4" height="15.0" fill="rgb(223,156,43)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::Recursive::__ANON__[/Library/Perl/5.16/File/Copy/Recursive.pm:125] (3,442 microseconds, 0.01%)')" onmouseout="c()">
-<title>File::Copy::Recursive::__ANON__[/Library/Perl/5.16/File/Copy/Recursive.pm:125] (3,442 microseconds, 0.01%)</title><a xlink:href="File-Copy-Recursive-pm-22-sub.html#113" target="_top"><rect x="15.4" y="145" width="0.1" height="15.0" fill="rgb(227,223,35)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Copy::Recursive::CORE:ftlink (34,000 microseconds, 0.33%)')" onmouseout="c()">
+<title>File::Copy::Recursive::CORE:ftlink (34,000 microseconds, 0.33%)</title><a xlink:href="File-Copy-Recursive-pm-24-line.html#File__Copy__Recursive__CORE_ftlink" target="_top"><rect x="443.3" y="97" width="3.9" height="15.0" fill="rgb(208,53,11)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::CORE:stat (5,473 microseconds, 0.02%)')" onmouseout="c()">
-<title>File::Copy::CORE:stat (5,473 microseconds, 0.02%)</title><a xlink:href="File-Copy-pm-18-sub.html#File__Copy__CORE_stat" target="_top"><rect x="1178.0" y="129" width="0.3" height="15.0" fill="rgb(237,191,18)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Copy::_eq (14,000 microseconds, 0.13%)')" onmouseout="c()">
+<title>File::Copy::_eq (14,000 microseconds, 0.13%)</title><a xlink:href="File-Copy-pm-19-line.html#55" target="_top"><rect x="791.4" y="97" width="1.6" height="15.0" fill="rgb(231,70,30)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::Recursive::CORE:ftdir (11,471 microseconds, 0.04%)')" onmouseout="c()">
-<title>File::Copy::Recursive::CORE:ftdir (11,471 microseconds, 0.04%)</title><a xlink:href="File-Copy-Recursive-pm-22-sub.html#File__Copy__Recursive__CORE_ftdir" target="_top"><rect x="1001.6" y="145" width="0.5" height="15.0" fill="rgb(213,208,51)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Copy::copy (1,131,012 microseconds, 10.88%)')" onmouseout="c()">
+<title>File::Copy::copy (1,131,012 microseconds, 10.88%)</title><a xlink:href="File-Copy-pm-19-line.html#67" target="_top"><rect x="1030.9" y="145" width="128.4" height="15.0" fill="rgb(238,0,46)" rx="2" ry="2" />
+<text text-anchor="" x="1033.90258428947" y="155.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >File::Copy::copy</text>
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::copy (3,952,479 microseconds, 15.02%)')" onmouseout="c()">
-<title>File::Copy::copy (3,952,479 microseconds, 15.02%)</title><a xlink:href="File-Copy-pm-18-sub.html#105" target="_top"><rect x="1003.5" y="145" width="177.2" height="15.0" fill="rgb(229,99,48)" rx="2" ry="2" />
-<text text-anchor="" x="1006.48330627924" y="155.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >File::Copy::copy</text>
+<g class="func_g" onmouseover="s('File::Copy::_eq (12,000 microseconds, 0.12%)')" onmouseout="c()">
+<title>File::Copy::_eq (12,000 microseconds, 0.12%)</title><a xlink:href="File-Copy-pm-19-line.html#55" target="_top"><rect x="992.0" y="113" width="1.3" height="15.0" fill="rgb(222,127,50)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::Recursive::CORE:ftlink (4,500 microseconds, 0.02%)')" onmouseout="c()">
-<title>File::Copy::Recursive::CORE:ftlink (4,500 microseconds, 0.02%)</title><a xlink:href="File-Copy-Recursive-pm-22-sub.html#File__Copy__Recursive__CORE_ftlink" target="_top"><rect x="23.7" y="97" width="0.2" height="15.0" fill="rgb(235,217,20)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('main::BEGIN@8 (20,000 microseconds, 0.19%)')" onmouseout="c()">
+<title>main::BEGIN@8 (20,000 microseconds, 0.19%)</title><a xlink:href="RestoreWin-pm-2-line.html#8" target="_top"><rect x="1180.9" y="225" width="2.3" height="15.0" fill="rgb(233,73,36)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::Recursive::CORE:chmod (8,439 microseconds, 0.03%)')" onmouseout="c()">
-<title>File::Copy::Recursive::CORE:chmod (8,439 microseconds, 0.03%)</title><a xlink:href="File-Copy-Recursive-pm-22-sub.html#File__Copy__Recursive__CORE_chmod" target="_top"><rect x="20.0" y="113" width="0.4" height="15.0" fill="rgb(218,193,54)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('Exporter::import (10,000 microseconds, 0.10%)')" onmouseout="c()">
+<title>Exporter::import (10,000 microseconds, 0.10%)</title><a xlink:href="Exporter-pm-7-line.html#28" target="_top"><rect x="1187.7" y="209" width="1.2" height="15.0" fill="rgb(245,193,22)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('main::BEGIN@12 (4,859 microseconds, 0.02%)')" onmouseout="c()">
-<title>main::BEGIN@12 (4,859 microseconds, 0.02%)</title><a xlink:href="Restore-pm-2-sub.html#12" target="_top"><rect x="1187.3" y="209" width="0.3" height="15.0" fill="rgb(247,14,29)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Copy::Recursive::CORE:chmod (34,000 microseconds, 0.33%)')" onmouseout="c()">
+<title>File::Copy::Recursive::CORE:chmod (34,000 microseconds, 0.33%)</title><a xlink:href="File-Copy-Recursive-pm-24-line.html#File__Copy__Recursive__CORE_chmod" target="_top"><rect x="11.8" y="161" width="3.9" height="15.0" fill="rgb(212,47,22)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Spec::Unix::catdir (48,453 microseconds, 0.18%)')" onmouseout="c()">
-<title>File::Spec::Unix::catdir (48,453 microseconds, 0.18%)</title><a xlink:href="File-Spec-Unix-pm-12-sub.html#83" target="_top"><rect x="810.5" y="113" width="2.2" height="15.0" fill="rgb(240,78,36)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Copy::Recursive::__ANON__[C:/Perl64/site/lib/File/Copy/Recursive.pm:125] (20,000 microseconds, 0.19%)')" onmouseout="c()">
+<title>File::Copy::Recursive::__ANON__[C:/Perl64/site/lib/File/Copy/Recursive.pm:125] (20,000 microseconds, 0.19%)</title><a xlink:href="File-Copy-Recursive-pm-24-line.html#113" target="_top"><rect x="49.2" y="145" width="2.2" height="15.0" fill="rgb(251,39,22)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::CORE:binmode (2,380 microseconds, 0.01%)')" onmouseout="c()">
-<title>File::Copy::CORE:binmode (2,380 microseconds, 0.01%)</title><a xlink:href="File-Copy-pm-18-sub.html#File__Copy__CORE_binmode" target="_top"><rect x="627.3" y="97" width="0.1" height="15.0" fill="rgb(250,173,52)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Spec::Win32::catfile (42,000 microseconds, 0.40%)')" onmouseout="c()">
+<title>File::Spec::Win32::catfile (42,000 microseconds, 0.40%)</title><a xlink:href="File-Spec-Win32-pm-12-line.html#130" target="_top"><rect x="601.8" y="113" width="4.7" height="15.0" fill="rgb(254,9,11)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::Recursive::CORE:ftdir (2,426 microseconds, 0.01%)')" onmouseout="c()">
-<title>File::Copy::Recursive::CORE:ftdir (2,426 microseconds, 0.01%)</title><a xlink:href="File-Copy-Recursive-pm-22-sub.html#File__Copy__Recursive__CORE_ftdir" target="_top"><rect x="1002.9" y="129" width="0.1" height="15.0" fill="rgb(243,157,30)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Copy::Recursive::__ANON__[C:/Perl64/site/lib/File/Copy/Recursive.pm:271] (2,993,031 microseconds, 28.80%)')" onmouseout="c()">
+<title>File::Copy::Recursive::__ANON__[C:/Perl64/site/lib/File/Copy/Recursive.pm:271] (2,993,031 microseconds, 28.80%)</title><a xlink:href="File-Copy-Recursive-pm-24-line.html#213" target="_top"><rect x="84.8" y="113" width="339.9" height="15.0" fill="rgb(227,138,30)" rx="2" ry="2" />
+<text text-anchor="" x="87.8359056638491" y="123.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >File::Copy::Recursive::__ANON__[C:/Perl64/site/li..</text>
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Spec::Unix::CORE:match (7,748 microseconds, 0.03%)')" onmouseout="c()">
-<title>File::Spec::Unix::CORE:match (7,748 microseconds, 0.03%)</title><a xlink:href="File-Spec-Unix-pm-12-sub.html#File__Spec__Unix__CORE_match" target="_top"><rect x="1181.5" y="129" width="0.4" height="15.0" fill="rgb(235,67,1)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Copy::Recursive::CORE:ftlink (40,000 microseconds, 0.38%)')" onmouseout="c()">
+<title>File::Copy::Recursive::CORE:ftlink (40,000 microseconds, 0.38%)</title><a xlink:href="File-Copy-Recursive-pm-24-line.html#File__Copy__Recursive__CORE_ftlink" target="_top"><rect x="61.8" y="129" width="4.5" height="15.0" fill="rgb(216,171,12)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('Config::FETCH (4,209 microseconds, 0.02%)')" onmouseout="c()">
-<title>Config::FETCH (4,209 microseconds, 0.02%)</title><a xlink:href="Config-pm-13-sub.html#65" target="_top"><rect x="1007.4" y="129" width="0.2" height="15.0" fill="rgb(246,181,16)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('main::BEGIN@9 (60,000 microseconds, 0.58%)')" onmouseout="c()">
+<title>main::BEGIN@9 (60,000 microseconds, 0.58%)</title><a xlink:href="RestoreWin-pm-2-line.html#9" target="_top"><rect x="1183.2" y="225" width="6.8" height="15.0" fill="rgb(250,85,31)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::Recursive::fcopy (4,249,344 microseconds, 16.15%)')" onmouseout="c()">
-<title>File::Copy::Recursive::fcopy (4,249,344 microseconds, 16.15%)</title><a xlink:href="File-Copy-Recursive-pm-22-sub.html#127" target="_top"><rect x="617.9" y="129" width="190.6" height="15.0" fill="rgb(230,15,46)" rx="2" ry="2" />
-<text text-anchor="" x="620.912555694831" y="139.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >File::Copy::Recursive::fcopy</text>
+<g class="func_g" onmouseover="s('Cwd::_win32_cwd (30,000 microseconds, 0.29%)')" onmouseout="c()">
+<title>Cwd::_win32_cwd (30,000 microseconds, 0.29%)</title><a xlink:href="Cwd-pm-8-line.html#775" target="_top"><rect x="1169.6" y="193" width="3.4" height="15.0" fill="rgb(249,20,12)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::CORE:sysread (47,862 microseconds, 0.18%)')" onmouseout="c()">
-<title>File::Copy::CORE:sysread (47,862 microseconds, 0.18%)</title><a xlink:href="File-Copy-pm-18-sub.html#File__Copy__CORE_sysread" target="_top"><rect x="802.0" y="97" width="2.1" height="15.0" fill="rgb(224,141,23)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('Message::BEGIN@40 (10,000 microseconds, 0.10%)')" onmouseout="c()">
+<title>Message::BEGIN@40 (10,000 microseconds, 0.10%)</title><a xlink:href="Message-pm-30-line.html#40" target="_top"><rect x="1177.5" y="193" width="1.1" height="15.0" fill="rgb(245,162,37)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Spec::Unix::catfile (91,286 microseconds, 0.35%)')" onmouseout="c()">
-<title>File::Spec::Unix::catfile (91,286 microseconds, 0.35%)</title><a xlink:href="File-Spec-Unix-pm-12-sub.html#96" target="_top"><rect x="1181.9" y="161" width="4.0" height="15.0" fill="rgb(245,73,2)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Copy::Recursive::CORE:chmod (34,001 microseconds, 0.33%)')" onmouseout="c()">
+<title>File::Copy::Recursive::CORE:chmod (34,001 microseconds, 0.33%)</title><a xlink:href="File-Copy-Recursive-pm-24-line.html#File__Copy__Recursive__CORE_chmod" target="_top"><rect x="612.0" y="113" width="3.8" height="15.0" fill="rgb(235,150,28)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::CORE:binmode (2,409 microseconds, 0.01%)')" onmouseout="c()">
-<title>File::Copy::CORE:binmode (2,409 microseconds, 0.01%)</title><a xlink:href="File-Copy-pm-18-sub.html#File__Copy__CORE_binmode" target="_top"><rect x="420.5" y="81" width="0.1" height="15.0" fill="rgb(252,52,49)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('main::BEGIN@1 (150,000 microseconds, 1.44%)')" onmouseout="c()">
+<title>main::BEGIN@1 (150,000 microseconds, 1.44%)</title><a xlink:href="TestRestoreWin-pl-1-line.html#1" target="_top"><rect x="1173.0" y="241" width="17.0" height="15.0" fill="rgb(209,147,11)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::Recursive::fcopy (4,210,296 microseconds, 16.00%)')" onmouseout="c()">
-<title>File::Copy::Recursive::fcopy (4,210,296 microseconds, 16.00%)</title><a xlink:href="File-Copy-Recursive-pm-22-sub.html#127" target="_top"><rect x="27.6" y="81" width="188.8" height="15.0" fill="rgb(214,142,48)" rx="2" ry="2" />
-<text text-anchor="" x="30.5972284462573" y="91.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >File::Copy::Recursive::fcopy</text>
+<g class="func_g" onmouseover="s('File::Copy::Recursive::CORE:stat (49,000 microseconds, 0.47%)')" onmouseout="c()">
+<title>File::Copy::Recursive::CORE:stat (49,000 microseconds, 0.47%)</title><a xlink:href="File-Copy-Recursive-pm-24-line.html#File__Copy__Recursive__CORE_stat" target="_top"><rect x="628.7" y="113" width="5.5" height="15.0" fill="rgb(231,191,16)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('main::BEGIN@1 (85,219 microseconds, 0.32%)')" onmouseout="c()">
-<title>main::BEGIN@1 (85,219 microseconds, 0.32%)</title><a xlink:href="TestRestore-pl-1-sub.html#1" target="_top"><rect x="1186.0" y="225" width="3.9" height="15.0" fill="rgb(228,120,32)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Copy::copy (1,445,011 microseconds, 13.91%)')" onmouseout="c()">
+<title>File::Copy::copy (1,445,011 microseconds, 13.91%)</title><a xlink:href="File-Copy-pm-19-line.html#67" target="_top"><rect x="829.2" y="129" width="164.1" height="15.0" fill="rgb(248,77,2)" rx="2" ry="2" />
+<text text-anchor="" x="832.220859859249" y="139.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >File::Copy::copy</text>
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::CORE:open (3,685,920 microseconds, 14.01%)')" onmouseout="c()">
-<title>File::Copy::CORE:open (3,685,920 microseconds, 14.01%)</title><a xlink:href="File-Copy-pm-18-sub.html#File__Copy__CORE_open" target="_top"><rect x="825.6" y="113" width="165.3" height="15.0" fill="rgb(232,203,24)" rx="2" ry="2" />
-<text text-anchor="" x="828.602837981203" y="123.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >File::Copy::CORE:open</text>
+<g class="func_g" onmouseover="s('File::Spec::Win32::catfile (71,002 microseconds, 0.68%)')" onmouseout="c()">
+<title>File::Spec::Win32::catfile (71,002 microseconds, 0.68%)</title><a xlink:href="File-Spec-Win32-pm-12-line.html#130" target="_top"><rect x="795.8" y="129" width="8.1" height="15.0" fill="rgb(246,171,5)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Copy::CORE:open (3,816,456 microseconds, 14.51%)')" onmouseout="c()">
-<title>File::Copy::CORE:open (3,816,456 microseconds, 14.51%)</title><a xlink:href="File-Copy-pm-18-sub.html#File__Copy__CORE_open" target="_top"><rect x="630.5" y="97" width="171.2" height="15.0" fill="rgb(243,74,39)" rx="2" ry="2" />
-<text text-anchor="" x="633.538610742845" y="107.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >File::Copy::CORE:open</text>
+<g class="func_g" onmouseover="s('File::Spec::Win32::_canon_cat (60,001 microseconds, 0.58%)')" onmouseout="c()">
+<title>File::Spec::Win32::_canon_cat (60,001 microseconds, 0.58%)</title><a xlink:href="File-Spec-Win32-pm-12-line.html#382" target="_top"><rect x="1162.7" y="145" width="6.9" height="15.0" fill="rgb(227,112,54)" rx="2" ry="2" />
 </a>
 </g>
-<g class="func_g" onmouseover="s('File::Spec::Unix::canonpath (43,635 microseconds, 0.17%)')" onmouseout="c()">
-<title>File::Spec::Unix::canonpath (43,635 microseconds, 0.17%)</title><a xlink:href="File-Spec-Unix-pm-12-sub.html#43" target="_top"><rect x="613.4" y="97" width="2.0" height="15.0" fill="rgb(218,102,17)" rx="2" ry="2" />
+<g class="func_g" onmouseover="s('File::Spec::Win32::CORE:match (1,000 microseconds, 0.01%)')" onmouseout="c()">
+<title>File::Spec::Win32::CORE:match (1,000 microseconds, 0.01%)</title><a xlink:href="File-Spec-Win32-pm-12-line.html#File__Spec__Win32__CORE_match" target="_top"><rect x="995.0" y="113" width="0.1" height="15.0" fill="rgb(215,189,3)" rx="2" ry="2" />
 </a>
 </g>
 </svg>
