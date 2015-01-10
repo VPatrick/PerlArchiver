@@ -53,5 +53,11 @@ sub verbose {
 	}
 };
 
+# Destruktor
+sub DESTROY {
+	my $self = shift;
+	$self->{message} = undef;
+};
+
 1;
 __END__

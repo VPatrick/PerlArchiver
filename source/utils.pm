@@ -70,5 +70,11 @@ sub compare_to {
 	return "$y$m$d$H$M$S";
 };
 
+# Destruktor
+sub DESTROY {
+	my $self = shift;
+	$self->{verbosity} = undef;
+};
+
 1;
 __END__
