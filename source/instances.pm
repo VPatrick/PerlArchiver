@@ -39,13 +39,13 @@ sub restore {
 	my ($self, $level) = @_;
 	my $instance = undef;
 	if (!$instance) {
-		#if ($^O == "MSWin32") {
-		#	use RestoreWin;
-		#	$instance = RestoreWin->new;
-		#} else {
-		#	use Restore;
-		#	$instance = Restore->new;
-		#}
+		if ($^O == "MSWin32") {
+			use RestoreWin;
+			$instance = RestoreWin->new;
+		} else {
+			use Restore;
+			$instance = Restore->new;
+		}
 	}
 	if ($level and $level > 0) {
 		$instance->setVerboseLevel($level);
