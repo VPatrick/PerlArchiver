@@ -9,8 +9,30 @@
 
 use warnings;
 use strict;
+use Verbosity;
 
 package Create;
+
+#*****************************************************************************************************
+#                                         verbose
+# Beschreibung: Erzeugt eine Ausgabe auf STDOUT, wenn das Flag gesetzt wurde
+# Parameter:    $message = Ist die auszugebende Nachricht
+#               $state = Gibt den Status der Nachtricht an {OK, WARNING, ERROR}
+#*****************************************************************************************************
+my $verbose = sub {
+    my ($self,$message,$state)=@_;
+    if($self->{flag} >= 1)
+    {
+        # Ausgabe der Nachricht
+        if($^O eq "MSWin32")
+        {
+            $_=$message;
+            s/\//\\/g;
+            $message=$_;
+        }
+        $self->{verbosity}->verbose($message,$state);
+    }
+};
 
 #*****************************************************************************************************
 #                                         Konstruktor
@@ -26,9 +48,10 @@ sub new {
         destination   => "",
         flag  => $inFlag || 0,
         archiveName => "",
+        verbosity => Verbosity->new($inFlag || 0),
     };
     bless ($self, $class);
-    $self->verbose("New","OK");
+    $verbose->($self,"New","OK");
     return $self;
 }
 
@@ -41,7 +64,7 @@ sub addSource{
     my ($self,$source) = @_;
     # Hinzufügen des Quellverzeichnisses
     $self->{source}=$source;
-    $self->verbose("New source added: $self->{source}","OK");
+    $verbose->($self,"New source added: $self->{source}","OK");
 }
 
 #*****************************************************************************************************
@@ -53,7 +76,7 @@ sub addDestination{
     my ($self,$destination) = @_;
     # Hinzufügen des Zielverzeichnisses
     $self->{destination}=$destination;
-    $self->verbose("New destination added: $self->{destination}","OK");
+    $verbose->($self,"New destination added: $self->{destination}","OK");
 }
 
 #*****************************************************************************************************
@@ -65,7 +88,22 @@ sub addArchiveName{
     my ($self,$archiveName) = @_;
     # Hinzufügen des Archivverzeichnisses
     $self->{archiveName}=$archiveName;
-    $self->verbose("New archive name added: $self->{archiveName}","OK");
+    $verbose->($self,"New archive name added: $self->{archiveName}","OK");
+}
+
+
+#*****************************************************************************************************
+#                                         setVerboseLevel
+# Beschreibung: Setzt den Level der Verbose Ausgabe
+# Parameter:    $level 0 = Keine Ausgabe
+#                      1 = Normale Ausgabe
+#                      2 ...8 = reserviert
+#                      9 = Debug Ausgabe
+#*****************************************************************************************************
+sub setVerboseLevel {
+    my ($self, $level) = @_;
+    $self->{flag} = $level;
+    $self->{verbosity}->setVerboseLevel($level);
 }
 
 #*****************************************************************************************************
@@ -76,7 +114,7 @@ sub addArchiveName{
 sub create_c {
     use File::Copy;
     my $self=shift;
-    $self->verbose("Start create c:\n***************\n");
+    $verbose->($self,"Start create c:\n***************\n");
     # Überprüfen ob Quellverzeichnis vorhanden ist
     opendir(my $dsh,$self->{source}) || die("Can't find directory $self->{source}: $!");
     closedir($dsh);
@@ -101,7 +139,7 @@ sub create_c {
     $self->addArchiveName($sourceName);
     # Erstellen des Zielverzeichnisses
     mkdir($self->{destination}."/".$self->{archiveName}."_".$now);
-    $self->verbose("Create Archive: $self->{destination}/$self->{archiveName}_$now\n","OK");
+    $verbose->($self,"Create Archive: $self->{destination}/$self->{archiveName}_$now\n","OK");
     # Kopieren der Daten
     $self->copyDir("",$self->{archiveName}."_".$now);
 }
@@ -114,7 +152,7 @@ sub create_c {
 sub create_s {
     my ($self)=shift;
     my $previousArchiveAvailable=0;
-    $self->verbose("Start create s:\n***************\n");
+    $verbose->($self,"Start create s:\n***************\n");
     # Öffnen des Archivverzeichnisses
     opendir(my $dsh,$self->{destination}) || die("Can't find directory $self->{destination}: $!");
     # Alle Verzeichnisse des Archivverzeichnisses einlesen
@@ -129,7 +167,7 @@ sub create_s {
     {
         # Falls vorhergehendes Archiv vorhanden
         $previousArchiveAvailable=1;
-        $self->verbose("Compare Archives:\nOlder:\t$folder[$i-1]\nNewer:\t$folder[$i]\n");
+        $verbose->($self,"Compare Archives:\nOlder:\t$folder[$i-1]\nNewer:\t$folder[$i]\n");
         # Vergleich von einem Archiv mit dem vorhergehenden
         $self->compareDir("$folder[$i-1]","$folder[$i]");
 
@@ -137,7 +175,7 @@ sub create_s {
     # Falls kein vorhergehendes Archiv vorhanden ist
     if(!$previousArchiveAvailable)
     {
-        $self->verbose("No previous archive available","WARNING");
+        $verbose->($self,"No previous archive available","WARNING");
     }
 }
 
@@ -149,39 +187,11 @@ sub create_s {
 #*****************************************************************************************************
 sub create_cs {
     my $self=shift;
-    $self->verbose("Create cs started\n****************\n");
+    $verbose->($self,"Create cs started\n****************\n");
     # Erstellen des neuen Archivs
     $self->create_c();
     # Verschlanken der Archive
     $self->create_s($self->{archiveName});
-}
-
-#*****************************************************************************************************
-#                                         verbose
-# Beschreibung: Erzeugt eine Ausgabe auf STDOUT, wenn das Flag gesetzt wurde
-# Parameter:    $message = Ist die auszugebende Nachricht
-#               $state = Gibt den Status der Nachtricht an {OK, WARNING, ERROR}
-#*****************************************************************************************************
-sub verbose {
-    my ($self,$message,$state)=@_;
-    if($self->{flag} == 1)
-    {
-        # Ausgabe der Nachricht
-        use Verbosity;
-        my $v = Verbosity->new(1);
-        if($^O eq "MSWin32")
-        {
-            $_=$message;
-            s/\//\\/g;
-            $message=$_;
-        }
-        $v->verbose($message,$state);
-    }
-}
-
-sub setVerboseLevel {
-	my ($self, $level) = @_;
-	$self->{flag} = $level;
 }
 
 #*****************************************************************************************************
@@ -197,22 +207,22 @@ my $copyFile = sub{
     # Ausgabe auf der Konsole
     if($^O eq "MSWin32")
     {
-        $self->verbose("Copy file:\nSource:\t\t$fileSource\\$fileName\nDestination:\t$fileDestination\\$fileName");
+        $verbose->($self,"Copy file:\nSource:\t\t$fileSource\\$fileName\nDestination:\t$fileDestination\\$fileName");
     }
     else
     {
-        $self->verbose("Copy file:\nSource:\t\t\t$fileSource/$fileName\nDestination:\t$fileDestination/$fileName");
+        $verbose->($self,"Copy file:\nSource:\t\t\t$fileSource/$fileName\nDestination:\t$fileDestination/$fileName");
     }
     # Kopieren der Datei
     if(copy("$fileSource/$fileName","$fileDestination/$fileName"))
     {
         # Datei wurde kopiert
-        $self->verbose("Copied!\n","OK");
+        $verbose->($self,"Copied!\n","OK");
     }
     else
     {
         # Datei konnte nicht kopiert werden
-        $self->verbose("Can't copy file $fileName!\n","ERROR");
+        $verbose->($self,"Can't copy file $fileName!\n","ERROR");
     }
 };
 
@@ -228,22 +238,22 @@ my $createDir = sub{
     # Ausgabe auf der Konsole
     if($^O eq "MSWin32")
     {
-        $self->verbose("Create Directroy:\nDestination:\t$dirPath\\$dirName");
+        $verbose->($self,"Create Directroy:\nDestination:\t$dirPath\\$dirName");
     }
     else
     {
-        $self->verbose("Create Directroy:\nDestination:\t$dirPath/$dirName");
+        $verbose->($self,"Create Directroy:\nDestination:\t$dirPath/$dirName");
     }
     # Verzeichnis erstellen
     if(mkdir("$dirPath/$dirName"))
     {
         # Verzeichnis wurde ertellt
-        $self->verbose("Created!\n","OK");
+        $verbose->($self,"Created!\n","OK");
     }
     else
     {
         # Verzeichnis konnte nicht erstellt werden
-        $self->verbose("Can't create directory $dirName!\n","ERROR");
+        $verbose->($self,"Can't create directory $dirName!\n","ERROR");
     }
 };
 
@@ -257,7 +267,7 @@ sub copyDir {
     my ($self,$directory,$destination)=@_;
     # Öffnen des Quellverzeichnisses bzw. dessen Unterverzeichnisses
     opendir(my $dsh,"$self->{source}/$directory") || die("Can't find directory $directory: $!");
-    $self->verbose("Open directory: $self->{source}$directory\n","OK");
+    $verbose->($self,"Open directory: $self->{source}$directory\n","OK");
     # Kopieren aller Dateien bzw. Erzeugen eines Unterverzeichnisses
     while(my $file=readdir $dsh) {
         if($file ne ".." and $file ne ".")
@@ -280,7 +290,7 @@ sub copyDir {
     }
     # Schließen des Quellverzeichnisses bzw. dessen Unterverzeichnisses
     closedir($dsh);
-    $self->verbose("Leave directory: $self->{source}$directory\n","OK");
+    $verbose->($self,"Leave directory: $self->{source}$directory\n","OK");
 }
 
 #*****************************************************************************************************
@@ -295,22 +305,22 @@ my $deleteFile = sub{
     # Ausgabe auf der Konsole
     if($^O eq "MSWin32")
     {
-        $self->verbose("Delete file:\n$filePath\\$fileName");
+        $verbose->($self,"Delete file:\n$filePath\\$fileName");
     }
     else
     {
-        $self->verbose("Delete file:\n$filePath/$fileName");
+        $verbose->($self,"Delete file:\n$filePath/$fileName");
     }
     # Löschen der alten Datei
     if(unlink("$filePath/$fileName")>0)
     {
         # Datei wurde gelöscht
-        $self->verbose("Deleted!\n","OK");
+        $verbose->($self,"Deleted!\n","OK");
     }
     else
     {
         # Datei konnte nicht gelöscht werden
-        $self->verbose("Can't delete file $fileName!\n","ERROR");
+        $verbose->($self,"Can't delete file $fileName!\n","ERROR");
     }
 };
 
@@ -329,7 +339,7 @@ my $createLink = sub{
     if($^O eq "MSWin32")
     {
         # Falls Windows, erzeugen eines shortcuts
-        $self->verbose("Link files:\nOriginal:\t$linkDestination\\$fileName\nLink:\t\t$linkSource\\$fileName");
+        $verbose->($self,"Link files:\nOriginal:\t$linkDestination\\$fileName\nLink:\t\t$linkSource\\$fileName");
         require Win32::Shortcut or die("Can't import Win32::Shortcut: $!");
         my $link = Win32::Shortcut->new();
         $link->{'Path'}="$linkSource\\$fileName";
@@ -339,18 +349,18 @@ my $createLink = sub{
     else
     {
         # Falls Unix basiertes Betriebssystem, erzeugen eines softlinks
-        $self->verbose("Link files:\nOriginal:\t$linkDestination/$fileName\nLink:\t$linkSource/$fileName");
+        $verbose->($self,"Link files:\nOriginal:\t$linkDestination/$fileName\nLink:\t$linkSource/$fileName");
         $result=symlink("$linkSource/$fileName","$linkDestination/$fileName");
     }
     if($result)
     {
         # Datei wurde verlinkt
-        $self->verbose("Linked!\n","OK");
+        $verbose->($self,"Linked!\n","OK");
     }
     else
     {
         # Datei konnte nicht verlinkt werden
-        $self->verbose("Can't create link!\n","ERROR");
+        $verbose->($self,"Can't create link!\n","ERROR");
     }
 };
 
@@ -370,19 +380,19 @@ my $updateLink = sub{
         require Win32::Shortcut or die("Can't import Win32::Shortcut: $!");
         my $link = Win32::Shortcut->new();
         $link->Load("$linkPath\\$linkName");
-        $self->verbose("Update link:\nOld Path:\t$link->{'Path'}\nNew Path:\t$linkSource");
+        $verbose->($self,"Update link:\nOld Path:\t$link->{'Path'}\nNew Path:\t$linkSource");
         $link->{'Path'}="$linkSource";
         $result=$link->Save();
         $link->Close();
         if($result)
         {
             # Verlinkung wurde aktualisiert
-            $self->verbose("Link updated!\n","OK");
+            $verbose->($self,"Link updated!\n","OK");
         }
         else
         {
             # Verlinkung konnte nicht aktualisiert
-            $self->verbose("Can't update link!\n","ERROR");
+            $verbose->($self,"Can't update link!\n","ERROR");
         }
     }
 };
@@ -403,18 +413,18 @@ my $getLinkPath = sub{
         require Win32::Shortcut or die("Can't import Win32::Shortcut: $!");
         my $link = Win32::Shortcut->new();
         $result=$link->Load("$linkPath\\$linkName");
-        $self->verbose("Get original file path from link:\nLink:\t$linkPath\\$linkName\nPath:\t$link->{'Path'}");
+        $verbose->($self,"Get original file path from link:\nLink:\t$linkPath\\$linkName\nPath:\t$link->{'Path'}");
         $path=$link->{'Path'};
         $link->Close();
         if($result)
         {
             # Verlinkung wurde aktualisiert
-            $self->verbose("Link found!\n","OK");
+            $verbose->($self,"Link found!\n","OK");
         }
         else
         {
             # Verlinkung konnte nicht aktualisiert
-            $self->verbose("Can't find link!\n","ERROR");
+            $verbose->($self,"Can't find link!\n","ERROR");
         }
     }
     return $path;
@@ -531,7 +541,7 @@ sub compareDir {
             # Überpüfung ob es sich um ein Verzeichnis handelt
             elsif (-d "$self->{destination}/$olderDir/$newFile")
             {
-                $self->verbose("Compare Diretory:\nOlder Directory:\t$self->{destination}/$olderDir/$newFile\nNewer Directory:\t$self->{destination}/$newerDir/$newFile\n");
+                $verbose->($self,"Compare Diretory:\nOlder Directory:\t$self->{destination}/$olderDir/$newFile\nNewer Directory:\t$self->{destination}/$newerDir/$newFile\n");
                 # Rekursiver Aufruf der Methode zur Untesuchung des Unterverzeichnisses
                 $self->compareDir("$olderDir/$newFile","$newerDir/$newFile");
             }
@@ -552,7 +562,7 @@ sub compareDir {
 sub compareFile {
     my ($self,$olderFile,$newerFile)=@_;
     # Ausgabe auf Konsole
-    $self->verbose("Compare Files:\nOlder file:\t$olderFile\nNewer file:\t$newerFile");
+    $verbose->($self,"Compare Files:\nOlder file:\t$olderFile\nNewer file:\t$newerFile");
     # Importieren des Core Module Digest
     use Digest;
     # Erzeugen eines MD5 Objekts
@@ -577,7 +587,7 @@ sub compareFile {
     if($digestOldFile eq $digestNewFile)
     {
         # Falls beide Dateien gleich sind => unverändert
-        $self->verbose("Files are equal!\n","OK");
+        $verbose->($self,"Files are equal!\n","OK");
         return "true";
     }
     else
@@ -585,12 +595,12 @@ sub compareFile {
         if(-l $olderFile or $olderFile=~/.lnk$/)
         {
             # Falls ältere Datei bereits ein link ist => unverändert
-            $self->verbose("Old file is already link!\n","OK");
+            $verbose->($self,"Old file is already link!\n","OK");
             return "true";
             
         }
         # Falls beide Dateien nicht gleich sind => verändert
-        $self->verbose("Files are diffrent!\n","OK");
+        $verbose->($self,"Files are diffrent!\n","OK");
         return "false";
     }
 }
@@ -602,7 +612,7 @@ sub compareFile {
 #*****************************************************************************************************
 sub DESTROY {
     my $self = shift;
-    $self->verbose("Destroy","OK");
+    $self->{verbosity}=undef;
 }
 
 1;
