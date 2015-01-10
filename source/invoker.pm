@@ -3,6 +3,7 @@ use warnings;
 use Verbosity;
 use Message;
 use Instances;
+use Data::Dumper;
 
 # Invoker
 # Beschreibung: Dieses Modul dient zum Aufruf der entsprechenden Funktionen von my_perl_archiver
@@ -30,7 +31,7 @@ sub new {
 sub setVerboseLevel {
 	my ($self, $level) = @_;
 	if ($level =~ m/[0-9]/) {
-		$self->{level} = $level;
+		$self->{level} = ($level eq 0) ? 1 : $level;
 	}
 };
 
@@ -41,6 +42,7 @@ sub create {
 	my ($self, @arguments) = @_;
 	if ($#arguments >= 1) {
 		my $create = $self->{instances}->create($self->{level});
+		print Data::Dumper->Dump(@arguments);
 		$create->addSource($arguments[0]);
 		$create->addDestination($arguments[1]);
 		$create->create_c();
@@ -56,6 +58,7 @@ sub create {
 sub slim {
 	my ($self, @arguments) = @_;
 	my $create = $self->{instances}->create($self->{level});
+	print Data::Dumper->Dump(@arguments);
 	if ($#arguments == 1) {
 		if (-d $arguments[1]) {
 			$create->create_s();
@@ -110,13 +113,13 @@ sub del {
 	my ($self, @arguments) = @_;
 	if ($#arguments == 0) {
 		if ($^O eq "MSWin32") {
-            use del;
-            my $delete = del->new;
-            if ($self->{level} > 0) {
-            	$delete->setVerboseLevel($self->{level});
-            }
-            $delete->addDestination($arguments[0]);
-            $delete->delete_d();
+			#use del;
+			#my $delete = del->new;
+			#if ($self->{level} > 0) {
+			#	$delete->setVerboseLevel($self->{level});
+			#}
+			#$delete->addDestination($arguments[0]);
+			#$delete->delete_d();
 		} else {
 			$self->{message}->warning("The delete function is currently not supported.");
 			exit;
