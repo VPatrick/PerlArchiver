@@ -25,7 +25,7 @@ foreach (@ARGV) {
 Getopt::Long::Configure("bundling");
 GetOptions (
 	"verbose|v:i"  => sub { $invoker->setVerboseLevel($_[1]) },
-	"create|c|cs" => sub { $invoker->create(@ARGV) },
+	"create|c" => sub { $invoker->create(@ARGV) },
 	"restore|r" => sub { $invoker->restore(@ARGV) },
 	"partial|p" => sub { $invoker->partial(@ARGV) },
 	"slim|s" => sub { $invoker->slim(@ARGV) },
