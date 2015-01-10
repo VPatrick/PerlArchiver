@@ -61,7 +61,7 @@ sub addPartial{
     my($self,$Partial) = @_;
     $self->{partial} = $Partial;
     $self->{rel_path} = "0";
-    $self->{rel_path} = "1" if($Partial =~ m/\\/);
+    $self->{rel_path} = "1" if($Partial =~ m/\//);
     $self->{verbosity}->verbose("New partial added: $self->{partial}");
 }
 sub setVerboseLevel{
@@ -79,7 +79,6 @@ sub restore_r
     $self->{source},
     $self->{usertime},
     );
-    chop($SourceArchiv);
     $self->{verbosity}->verbose("Find Source Directory: $SourceArchiv.\n","OK");
     $self->{verbosity}->verbose("The given path is not a directory!\n","WARNING");
     die if(!(-d $SourceArchiv));
@@ -94,18 +93,26 @@ sub restore_rp
 {
     my $self = shift;
     $self->{verbosity}->verbose("Start Restore rp.","OK");
-    $SourceArchiv = Find_source_r
+	$tmp = Utils->new();
+	# Hier wird der genaue Pfad (d.h. mit datetime Ergänzung herausgefunden)
+    $SourceArchiv = $tmp->findLastValidArchive
     (
-		$self,
+		$self->{source},
+		$self->{usertime},
     );
-    chop($SourceArchiv);
+	# Falls ein relativer Pfad angegeben wurde werden die angegeben Pfade um den relative Pfad erweitert
     my $partial = $self->{partial};
-    
     if($self->{rel_path} eq "1"){
-        $FileorArchivSource = "$self->{source}\\$self->{rel_path}";
-        $FileorArchivSource = "$self->{destination}\\$self->{rel_path}"
+        $FileorArchivSource = "$SourceArchiv$self->{partial}";
+		my @tmp2 = split(/\//,$SourceArchiv);
+		my $tmp2 = scalar(@tmp2)-1;
+		my $tmp3 = $tmp2[$tmp2];
+		my @split1 = split(/_\d{4}_\d{2}_\d{2}_\d{2}_\d{2}_\d{2}$/, $tmp3);
+		my $archiveName = $split1[0];
+        $FileorArchivDestination = "$self->{destination}/$archiveName$self->{partial}";
     }
     else{
+	# Falls dies nicht der Fall ist muss die Datei oder das Unterverzeichnis gesucht werden dabei wird der erste Treffer ausgewertet
         $FileorArchivSource = Find_source_rp
         (
             $SourceArchiv,
@@ -114,32 +121,26 @@ sub restore_rp
         $self->{verbosity}->verbose("The given Subdirectory or File does not exist!","WARNING");
         die if (!(-f $FileorArchivSource || -d $FileorArchivSource));
         my $destination = $self->{destination};
-	
         $FileorArchivDestination = Find_source_rp
         (
             $destination,
             $partial,
         );
     }
-	
+	# Falls das Zielverzeichnis nicht existiert wird ein Zielverzeichnis erstellt
 	if(! (-e $FileorArchivDestination))
 	{
-		opendir my $Dir, $self->{destination};
-		my @files = readdir $Dir;
-		closedir $Dir;
-		my @tmp = grep(/^$self->{sourcename}/,@files);
-		my $tmp1 = $tmp[0];
-		File::Path::make_path("$self->{destination}\\$tmp1\\$self->{partial}");
-        $FileorArchivDestination = "$self->{destination}\\$tmp1\\$self->{partial}";
+		mkdir("$FileorArchivDestination") if(-d $FileorArchivSource);
+		File::Copy::copy $FileorArchivSource,$FileorArchivDestination;
+		$self->{verbosity}->verbose("The given destination path does not exist!\nA directory is created!","WARNING");
 	}
-    
-    $self->{verbosity}->verbose("The given destination path does not exist!\nPlease set a directory or file with the given name!","WARNING");
     die if(!(-f $FileorArchivDestination||-d $FileorArchivDestination));
+	# Falls es ein Directory ist wird die RestoreSubDirectory- aufgerufen falls es ein File ist die RestoreFile Methode
     if(-d $FileorArchivSource){
         $self->{verbosity}->verbose("Find source directory path: $FileorArchivSource.","OK");
         $self->{verbosity}->verbose("Find destination directory path: $FileorArchivDestination.","OK");
-        RestoreSubDirectory
-        (
+		RestoreSubDirectory
+        (	
 			$FileorArchivSource,
 			$FileorArchivDestination,
 			$self,
@@ -169,15 +170,15 @@ sub Find_source_rp
     opendir Dir, $Directory || die "Can`t open Directory!";
     my @Files = readdir Dir;
     closedir Dir;
-    return "${Directory}\\${partial}" if(grep(/$partial/,@Files));
+    return "${Directory}/${partial}" if(grep(/$partial/,@Files));
     foreach (@Files)
     {
         if($_ ne "." and $_ ne ".." and $_ ne ".DS_Store")
         {
-            if(-d "${Directory}\\${_}")
+            if(-d "${Directory}/${_}")
             {
-                return "${Directory}\\${_}" if($_ eq $partial);
-                return Find_source_rp("${Directory}\\${_}",$partial);
+                return "${Directory}/${_}" if($_ eq $partial);
+                return Find_source_rp("${Directory}/${_}",$partial);
             }
         }
     }
@@ -191,12 +192,12 @@ sub Find_source_rp
 sub RestoreDirectory{
     my($SourceArchiv,$self) = @_;
     $DestinationName = DestinationArchiv($self->{destination},$self->{sourcename});
-    $self->{verbosity}->verbose("Remove $self->{destination}\\${DestinationName}\n","OK");
-    File::Path::remove_tree("$self->{destination}\\${DestinationName}") if(-d "$self->{destination}\\${DestinationName}");
-    $self->{verbosity}->verbose("Make $self->{destination}\\$self->{sourcename}}_${FinalTime}\n","OK");
-    File::Path::make_path("$self->{destination}\\$self->{sourcename}_${FinalTime}");
-    $self->{verbosity}->verbose("Copy from $SourceArchiv to $self->{destination}}\\$self->{sourcename}_${FinalTime}","OK");
-    File::Copy::Recursive::dircopy($SourceArchiv,"$self->{destination}\\$self->{sourcename}_${FinalTime}");
+    $self->{verbosity}->verbose("Remove $self->{destination}/${DestinationName}\n","OK") if(-d "$self->{destination}/${DestinationName}");
+    File::Path::remove_tree("$self->{destination}/${DestinationName}") if(-d "$self->{destination}/${DestinationName}");
+    $self->{verbosity}->verbose("Make $self->{destination}/$self->{sourcename}}\n","OK");
+    File::Path::make_path("$self->{destination}/$self->{sourcename}");
+    $self->{verbosity}->verbose("Copy from $SourceArchiv to $self->{destination}}/$self->{sourcename}","OK");
+    File::Copy::Recursive::dircopy($SourceArchiv,"$self->{destination}/$self->{sourcename}");
 }
 
 
@@ -225,12 +226,11 @@ sub DestinationArchiv{
 ##########################################################################################
 sub RestoreSubDirectory{
     my($Source,$Destination,$self)=@_;
-    #$FatherDir = DirectoryUp($Destination);
     $self->{verbosity}->verbose("Remove $Destination\n","OK")if(-d $Destination);
     File::Path::remove_tree($Destination) if(-d $Destination);
-    $self->{verbosity}->verbose("Make Dir: ${Destination}\\$self->{partial}\n","OK");
-    File::Path::make_path("${Destination}\\$self->{partial}");
-    $self->{verbosity}->verbose("Copy Dir from $Source to ${Destination}\\$self->{partial}\n","OK");
+    $self->{verbosity}->verbose("Make Dir: ${Destination}\n","OK");
+    File::Path::make_path("$Destination");
+    $self->{verbosity}->verbose("Copy Dir from $Source to ${Destination}/$self->{partial}\n","OK");
     File::Copy::Recursive::dircopy($Source, $Destination);
 }
 
@@ -241,15 +241,12 @@ sub RestoreSubDirectory{
 ##########################################################################################
 sub RestoreFile{
     my($Source,$Destination,$self)=@_;
-	print "$Source\n";
-	print "$Destination\n";
     if(-f $Destination)
     {
-        my $FatherDir = DirectoryUp($Destination) if(-f $Destination);
         $self->{verbosity}->verbose("Delete Destinationfile: $Destination.\n");
-        unlink($Destination);
-        $self->{verbosity}->verbose("Copy File to $FatherDir\n");
-        File::Copy::copy($Source,$FatherDir);
+        unlink $Destination or die "Konnte nicht gelöscht werden!";
+        $self->{verbosity}->verbose("Copy File to $Destination\n");
+        File::Copy::copy $Source,$Destination;
     }
     elsif(-d $Destination)
     {
@@ -259,25 +256,9 @@ sub RestoreFile{
 }
 
 
-##########################################################################################
-#									DirectoryUp											 #
-#				Hilfsfunktion um ein Verzeichnis hoch zu wechseln						 #
-##########################################################################################
-sub DirectoryUp{
-    @tmp = split(/\\/,shift);
-    $Return =$tmp[0];
-    for(my $i = 1;$i < scalar(@tmp)-1; $i++)
-    {
-        $Return .= "\\${tmp[$i]}";
-    }
-    return $Return;
-}
-
-
 sub DESTROY{
     my $self = shift;
     $FinalTime ="";
-    $self->{verbosity}->verbose("Destroy");
 };
 1;
 __END__
