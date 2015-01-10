@@ -1,7 +1,6 @@
 use strict;
 use warnings;
 use Verbosity;
-use Data::Dumper;
 
 # Utils
 # Beschreibung: Hilfsklasse
