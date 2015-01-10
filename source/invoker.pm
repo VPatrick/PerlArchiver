@@ -151,5 +151,14 @@ sub list {
 	}
 };
 
+# Destruktor
+# Gibt Ressourcen frei und zerstört das Objekt
+sub DESTROY {
+	my $self = shift;
+	$self->{verbosity} = undef;
+	$self->{message} = undef;
+	$self->{instances} = undef;
+};
+
 1;
 __END__
