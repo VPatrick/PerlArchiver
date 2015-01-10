@@ -261,7 +261,8 @@ sub RestoreFile{
 
 sub DESTROY{
     my $self = shift;
-    $FinalTime ="";
+    $FinalTime = undef;
+    $self->{verbosity}=undef;
 };
 1;
 __END__
