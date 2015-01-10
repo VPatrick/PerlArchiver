@@ -9,7 +9,7 @@ package Message;
 
 # Konstruktor
 sub new {
-	my ($invocant, $level) = @_;
+	my $invocant = shift;
 	my $class = ref($invocant) || $invocant;
 	my $self = {};
 	bless ($self, $class);
