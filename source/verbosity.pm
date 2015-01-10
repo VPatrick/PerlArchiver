@@ -15,7 +15,7 @@ sub new {
 	my $class = ref($invocant) || $invocant;
 	my $self = {
 		level => $level || 0,
-		message = Message->new
+		message => Message->new
 	};
 	bless ($self, $class);
 	return $self;
