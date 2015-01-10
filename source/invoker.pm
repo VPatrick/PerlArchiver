@@ -42,9 +42,13 @@ sub create {
 	my ($self, @arguments) = @_;
 	if ($#arguments >= 1) {
 		my $create = $self->{instances}->create($self->{level});
-		print Data::Dumper->Dump(@arguments);
-		$create->addSource($arguments[0]);
-		$create->addDestination($arguments[1]);
+		if ($arguments[0] eq "-s") {
+			$create->addSource($arguments[1]);
+			$create->addDestination($arguments[2]);
+		} else {
+			$create->addSource($arguments[0]);
+			$create->addDestination($arguments[1]);
+		}
 		$create->create_c();
 	} else {
 		print $self->{message}->error("Wrong amount of parameters given: ");
@@ -58,7 +62,6 @@ sub create {
 sub slim {
 	my ($self, @arguments) = @_;
 	my $create = $self->{instances}->create($self->{level});
-	print Data::Dumper->Dump(@arguments);
 	if ($#arguments == 1) {
 		if (-d $arguments[1]) {
 			$create->create_s();
