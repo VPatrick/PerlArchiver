@@ -75,14 +75,16 @@ sub restore_r
     my $self = shift;
     $self->{verbosity}->verbose("Start Restore r.\n","OK");
     my $tmp = Utils->new();
+    $self->{verbosity}->verbose("Call findLastValidArchive\n","OK");
     my $SourceArchiv = $tmp->findLastValidArchive
     (
     $self->{source},
     $self->{usertime},
     );
     $self->{verbosity}->verbose("Find Source Directory: $SourceArchiv.\n","OK");
-    $self->{verbosity}->verbose("The given path is not a directory!\n","WARNING");
+    $self->{verbosity}->verbose("The given path is not a directory!\n","ERROR") if(!(-d $SourceArchiv));
     die if(!(-d $SourceArchiv));
+    $self->verbosity->verbose("Call Restore Directory!\n","OK");
     RestoreDirectory
     (
     $SourceArchiv,
@@ -96,6 +98,7 @@ sub restore_rp
     $self->{verbosity}->verbose("Start Restore rp.","OK");
     my $tmp = Utils->new();
     # Hier wird der genaue Pfad (d.h. mit datetime Ergänzung herausgefunden)
+    $self->{verbosity}->verbose("Call findLastValidArchive\n","OK");
     my $SourceArchiv = $tmp->findLastValidArchive
     (
     $self->{source},
@@ -105,7 +108,9 @@ sub restore_rp
     my $partial = $self->{partial};
     my $FileorArchivSource = "";
     my $FileorArchivDestination = "";
+    my $FileCopied = 0;
     if($self->{rel_path} eq "1"){
+        $self->{verbosity}->verbose("Partial is a relative path\n","OK");
         $FileorArchivSource = "$SourceArchiv$self->{partial}";
         my @tmp2 = split(/\//,$SourceArchiv);
         my $tmp2 = scalar(@tmp2)-1;
@@ -116,32 +121,42 @@ sub restore_rp
     }
     else{
         # Falls dies nicht der Fall ist muss die Datei oder das Unterverzeichnis gesucht werden dabei wird der erste Treffer ausgewertet
+        $self->{verbosity}->verbose("Partial is not a relative path. The first match will be processed.\n","WARNING");
+        $self->{verbosity}->verbose("Call Find_source_rp\n","OK");
         $FileorArchivSource = Find_source_rp
         (
         $SourceArchiv,
         $partial,
+        $self,
         );
-        $self->{verbosity}->verbose("The given Subdirectory or File does not exist!","WARNING");
+        $self->{verbosity}->verbose("The given source subdirectory or file does not exist!\n","ERROR") if(!(-f $FileorArchivSource || -d $FileorArchivSource));
         die if (!(-f $FileorArchivSource || -d $FileorArchivSource));
         my $destination = $self->{destination};
+        $self->{verbosity}->verbose("Call Find_source_rp\n","OK");
         $FileorArchivDestination = Find_source_rp
         (
         $destination,
         $partial,
+        $self,
         );
+        $self->{verbosity}->verbose("The given destination subdirectory or file does not exist!\n","ERROR") if(!(-f $FileorArchivSource || -d $FileorArchivSource));
     }
     # Falls das Zielverzeichnis nicht existiert wird ein Zielverzeichnis erstellt
     if(! (-e $FileorArchivDestination))
     {
+        $self->{verbosity}->verbose("The destination file or directory does not exist! A new file or directory will be created!\n","WARNING");
+        $self->{verbosity}->verbose("Create new directory: $FileorArchivDestination\n","OK") if(-d $FileorArchivSource);
         mkdir("$FileorArchivDestination") if(-d $FileorArchivSource);
-        File::Copy::copy $FileorArchivSource,$FileorArchivDestination;
-        $self->{verbosity}->verbose("The given destination path does not exist!\nA directory is created!","WARNING");
+        $self->{verbosity}->verbose("Create new file: $FileorArchivDestination\n","OK");
+        File::Copy::copy $FileorArchivSource,$FileorArchivDestination if(-f $FileorArchivSource);
+        $FileCopied = 1 if(-f $FileorArchivSource);
     }
     die if(!(-f $FileorArchivDestination||-d $FileorArchivDestination));
     # Falls es ein Directory ist wird die RestoreSubDirectory- aufgerufen falls es ein File ist die RestoreFile Methode
     if(-d $FileorArchivSource){
         $self->{verbosity}->verbose("Find source directory path: $FileorArchivSource.","OK");
         $self->{verbosity}->verbose("Find destination directory path: $FileorArchivDestination.","OK");
+        $self->{verbosity}->verbose("Call RestoreSubDirectory\n","OK");
         RestoreSubDirectory
         (
         $FileorArchivSource,
@@ -151,14 +166,18 @@ sub restore_rp
     }
     elsif(-f $FileorArchivSource)
     {
-        $self->{verbosity}->verbose("Find source file path: $FileorArchivSource\n.","OK");
-        $self->{verbosity}->verbose("Find destination file path: $FileorArchivDestination\n.","OK");
-        RestoreFile
-        (
-        $FileorArchivSource,
-        $FileorArchivDestination,
-        $self,
-        );
+        $self->{verbosity}->verbose("Find source file path: $FileorArchivSource.\n","OK");
+        $self->{verbosity}->verbose("Find destination file path: $FileorArchivDestination.\n","OK");
+        $self->{verbosity}->verbose("Call RestoreFile.\n","OK");
+        if($FileCopied eq 0)
+        {
+            RestoreFile
+            (
+            $FileorArchivSource,
+            $FileorArchivDestination,
+            $self,
+            );
+        }
     }
 }
 
@@ -169,10 +188,12 @@ sub restore_rp
 ##########################################################################################
 sub Find_source_rp
 {
-    my ($Directory,$partial) = @_;
+    my ($Directory,$partial,$self) = @_;
+    $self->{verbosity}->verbose("Open directory $Directory\n","OK");
     opendir Dir, $Directory || die "Can`t open Directory!";
     my @Files = readdir Dir;
     closedir Dir;
+    $self->{verbosity}->verbose("Close directory $Directory\n","OK");
     return "${Directory}/${partial}" if(grep(/$partial/,@Files));
     foreach (@Files)
     {
@@ -180,7 +201,9 @@ sub Find_source_rp
         {
             if(-d "${Directory}/${_}")
             {
+                $self->{verbosity}->verbose("Found partial\n","OK"), if($_ eq $partial);
                 return "${Directory}/${_}" if($_ eq $partial);
+                $self->{verbosity}->verbose("Call Find_source_rp");
                 return Find_source_rp("${Directory}/${_}",$partial);
             }
         }
