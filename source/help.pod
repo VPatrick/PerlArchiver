@@ -54,7 +54,7 @@ B<my_perl_archiver> will create archives. If an archive exists B<my_perl_archive
 
 =head1 AUTHORS
 
-Patrick Vogt, Michel Angelo Rammuno, Muhammed Kasikci, Michalea Fenzel
+Patrick Vogt, Michel Angelo Rammuno, Muhammed Kasikci, Michalea Fentze
 
 Technische Hochschule Georg-Simon-Ohm Nuernberg
 
