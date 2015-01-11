@@ -3,6 +3,7 @@ use strict;
 use warnings;
 use File::Basename qw(dirname);
 use Cwd qw(abs_path);
+#use lib qw(dirname(dirname abs_path $0) . "/PerlArchiver/source");
 use lib qw(dirname(dirname abs_path $0) . "/Archiver");
 use Win32::Shortcut;
 use File::Find;
@@ -14,11 +15,11 @@ sub new {
 	my $invocant = shift;
 	my $class = ref($invocant) || $invocant;
 	my $self = {
-		 deleteFile     => "",                  #Zu löschendes Objekt inkl Pfad
+		 deleteFile     => "",                  #Zu loeschendes Objekt inkl Pfad
 		 mainArchivpath => "",                  #Nur Pfad
 		 archivFullName => "",                  #Archivname ohne Pfad mit Datum
 		 archivName     => "",                  #Archivname ohne Datum
-		 verbosity      => Verbosity->new,
+		 verbosity      => Verbosity->new(0),
 	};
 	bless $self, $class;
 	return $self;
@@ -75,8 +76,8 @@ sub setVerboseLevel {
 sub delete_d {
 	my $inself = shift;
 	my @foundDir;
-	my @allFoundLnk;
-	my %vipFoundLnk;
+	my @allFoundLink;
+	my %vipFoundLink;
 	$inself->{verbosity}->verbose( "Start Delete d.\n", "OK" );
 
 	#Nachfrage loeschen
@@ -102,30 +103,30 @@ sub delete_d {
 		  ->verbose( "Searching for linked files in previous folder.\n", "OK" );
 
 		#Übergebe PreDir, suche nach Links
-		@allFoundLnk = $inself->findLinksPreDir($newCheckdir);
+		@allFoundLink = $inself->findLinksPreDir($newCheckdir);
 
    # übergibt alle gefundenen Links, erhält Link mit Verknüpfung auf DelFiles
-		if (@allFoundLnk) {
-			%vipFoundLnk = $inself->checkLink(@allFoundLnk);
+		if (@allFoundLink) {
+			%vipFoundLink = $inself->checkLink(@allFoundLink);
 		}
 
 #gefundene Dateien müssen in PreDir kopiert werden und in allen Archiven neu verknüpft
-		if ( keys %vipFoundLnk ) {
+		if ( keys %vipFoundLink ) {
 			$inself->{verbosity}->verbose(
 "Found linked files in previous folder with links to current directory.\n",
 				"OK"
 			);
 
 			#gefundene Dateien in PreArchiv umkopieren
-			foreach my $lnk ( sort keys %vipFoundLnk ) {
-				my @LnkPath = split( /\./, $lnk );
-				my @DatEnd  = split( /\./, $vipFoundLnk{$lnk} );
-				my $newDat = "$LnkPath[0].$DatEnd[1]";
+			foreach my $lnk ( sort keys %vipFoundLink ) {
+				my @LinkPath = split( /\./, $lnk );
+				my @DatEnd  = split( /\./, $vipFoundLink{$lnk} );
+				my $newDat = "$LinkPath[0].$DatEnd[1]";
 				$inself->{verbosity}->verbose(
 "Copying files from current directory in previous folder.\n",
 					"OK"
 				);
-				copy( $vipFoundLnk{$lnk}, $newDat );
+				copy( $vipFoundLink{$lnk}, $newDat );
 				$inself->{verbosity}
 				  ->verbose( "Delete unnecessary links in previous folder.\n",
 							 "OK" );
@@ -135,7 +136,7 @@ sub delete_d {
 				$inself->{verbosity}
 				  ->verbose( "Updating Links to other relevant directories.\n",
 							 "OK" );
-				$inself->changeLnks( $lnk, $newDat, @foundDir );
+				$inself->changeLinks( $lnk, $newDat, @foundDir );
 			}
 		}
 	}
@@ -149,7 +150,7 @@ sub delete_d {
 sub check {
 	my $inself = shift;
 	print
-"Do you really want to delete this file: $inself->{'deleteFile'} ? (Y/N) \n";
+"Do you really want to delete this file or directory: $inself->{'deleteFile'} ? (Y/N) \n";
 	while (1) {
 		my $eingabe = <STDIN>;
 		chomp $eingabe;
@@ -214,12 +215,12 @@ sub findPreDir {
 sub findLinksPreDir {
 	my ( $inself, $preDir ) = @_;
 	my $fullPreDir;
-	my @allLnkFiles;    #Alle Verlinkungen im PreArchiv
+	my @allLinkFiles;    #Alle Verlinkungen im PreArchiv
 	if ( $preDir =~ m/\./ )    #ist es einzelne Datei
 	{
 		my @datName = split( /\./, $preDir );
-		my $datNameLnk = "$datName[0].lnk";
-		$fullPreDir = "$inself->{'mainArchivpath'}$datNameLnk";
+		my $datNameLink = "$datName[0].lnk";
+		$fullPreDir = "$inself->{'mainArchivpath'}$datNameLink";
 	}
 	else                       #oder Ordner
 	{
@@ -232,7 +233,7 @@ sub findLinksPreDir {
 			my @files;
 			my $file = $File::Find::name;
 			if ( $file =~ m/.lnk$/i ) {
-				push( @allLnkFiles, $file );
+				push( @allLinkFiles, $file );
 			}
 		},
 		no_chdir => 1,
@@ -242,31 +243,31 @@ sub findLinksPreDir {
 	if ( -e $fullPreDir ) {
 		find( \%options, $fullPreDir );
 	}
-	return @allLnkFiles;
+	return @allLinkFiles;
 }
 
-#-----------------Prüft gefundene .lnk-Dateien auf verknüpfung mit aktuellem DelArchiv------------------
+#-----------------Prueft gefundene .lnk-Dateien auf verknüpfung mit aktuellem DelArchiv------------------
 sub checkLink {
-	my ( $inself, @allLnkFiles ) = @_;
-	my @newLnkFiles;    #Verlinkungen mit Datei im DelArchiv
+	my ( $inself, @allLinkFiles ) = @_;
+	my @newLinkFiles;    #Verlinkungen mit Datei im DelArchiv
 	my %newFiles;
-	foreach (@allLnkFiles) {
+	foreach (@allLinkFiles) {
 		my $LINK = Win32::Shortcut->new();
 		$LINK->Load($_);
 
-		# Alle Verknüpfungen auf das zu löschende Verzeichnis finden
+		# Alle Verknuepfungen auf das zu loeschende Verzeichnis finden
 		if ( $LINK->{'Path'} =~ m/$inself->{archivFullName}/i ) {
 			$newFiles{$_} = $LINK->{'Path'};
-			push( @newLnkFiles, $_ );
+			push( @newLinkFiles, $_ );
 		}
 		$LINK->Close();
 	}
 	return %newFiles;
 }
 
-#------------------------------Verknüpfungen suchen ------------------------------
-sub changeLnks {
-	my ( $inself, $newLnk, $newDat, @foundDir ) = @_;
+#------------------------------Verknuepfungen suchen ------------------------------
+sub changeLinks {
+	my ( $inself, $newLink, $newDat, @foundDir ) = @_;
 
 	#alle restlichen Archive nach lnk-Datei durchsuchen
 	foreach my $dir (@foundDir) {
@@ -275,7 +276,7 @@ sub changeLnks {
 		if ( $dir eq $foundDir[0] ) { next; }
 		my $newCheckdir = "$dir";
 		my @tmp         =
-		  split( /\_\d{4}\_\d{2}\_\d{2}\_\d{2}\_\d{2}\_\d{2}/, $newLnk );
+		  split( /\_\d{4}\_\d{2}\_\d{2}\_\d{2}\_\d{2}\_\d{2}/, $newLink );
 		if ( $#tmp > 0 ) {
 			$newCheckdir = "$dir$tmp[1]";
 		}
@@ -293,7 +294,7 @@ sub changeLnks {
 	}
 }
 
-#----------------------Verknüpfung erneuern----------------------------------------------
+#----------------------Verknuepfung erneuern----------------------------------------------
 sub newLink {
 	my ( $inself, $newDat, %newLinks ) = @_;
 	foreach ( keys %newLinks ) {
@@ -305,9 +306,15 @@ sub newLink {
 	}
 }
 
-#----------------------Endgültig löschen----------------------------------------------
+#----------------------Endgueltig loeschen----------------------------------------------
 sub del {
 	my $inself = shift;
 	rmtree( $inself->{'deleteFile'} );
 }
+
+sub DESTROY {
+    my $self = shift;
+    $self->{verbosity}=undef;
+}
+
 1;
