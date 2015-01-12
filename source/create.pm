@@ -37,7 +37,7 @@ my $verbose = sub {
 #*****************************************************************************************************
 #                                         Konstruktor
 # Beschreibung: Erzeugt ein neues Objekt der Create Klasse
-# Parameter:    inFlag = Ansteuerung der Ausgabe von Programminformationen (optional)
+# Parameter:    $inFlag = Ansteuerung der Ausgabe von Programminformationen (optional)
 #                1 => Ausgabe der Informationen
 #*****************************************************************************************************
 sub new {
@@ -58,7 +58,7 @@ sub new {
 #*****************************************************************************************************
 #                                           addSource
 # Beschreibung: Fügt ein Quellverzeichnis hinzu
-# Parameter:    Source = Pfad zum Quellverzeichnis
+# Parameter:    $source = Pfad zum Quellverzeichnis
 #*****************************************************************************************************
 sub addSource{
     my ($self,$source) = @_;
@@ -70,7 +70,7 @@ sub addSource{
 #*****************************************************************************************************
 #                                         addDestination
 # Beschreibung: Fügt ein Zielverzeichnis hinzu
-# Parameter:    destination = Pfad zum Zielverzeichnis
+# Parameter:    $destination = Pfad zum Zielverzeichnis
 #*****************************************************************************************************
 sub addDestination{
     my ($self,$destination) = @_;
@@ -82,7 +82,7 @@ sub addDestination{
 #*****************************************************************************************************
 #                                         addArchiveName
 # Beschreibung: Fügt den Archivname hinzu, der für die Verschlankung benötigt wird
-# Parameter:    archiveName = Pfad zum Zielverzeichnis
+# Parameter:    $archiveName = Pfad zum Zielverzeichnis
 #*****************************************************************************************************
 sub addArchiveName{
     my ($self,$archiveName) = @_;
@@ -260,8 +260,8 @@ my $createDir = sub{
 #*****************************************************************************************************
 #                                         copyDir
 # Beschreibung: Kopiert alle Dateien in diesem und allen Unterverzeichnissen
-# Parameter:    directory = Aktuelles Unterverzeichnis
-#               destination = Ziel Unterverzeichnis
+# Parameter:    $directory = Aktuelles Unterverzeichnis
+#               $destination = Ziel Unterverzeichnis
 #*****************************************************************************************************
 sub copyDir {
     my ($self,$directory,$destination)=@_;
@@ -434,8 +434,8 @@ my $getLinkPath = sub{
 #                                        compareDir
 # Beschreibung: Vergleicht die Archive zur Verschlankung, ist eine Datei unverändert wird diese durch
 #               eine Verlinkung auf das neue Archiv ersetzt
-# Parameter:    olderDir = altes Archivverzeichnis
-#               newerDir = neues Archivverzeichnis
+# Parameter:    $olderDir = altes Archivverzeichnis
+#               $newerDir = neues Archivverzeichnis
 #*****************************************************************************************************
 sub compareDir {
     my ($self,$olderDir,$newerDir)=@_;
@@ -554,10 +554,10 @@ sub compareDir {
 #*****************************************************************************************************
 #                                        compareFile
 # Beschreibung: Vergleicht zwei Dateien aus unterschiedlichen Archiven auf Gleichheit
-# Parameter:    olderFile = ältere Datei
-#               newerFile = neuere Datei
+# Parameter:    $olderFile = ältere Datei
+#               $newerFile = neuere Datei
 # Return:       "true"  -> Files are equal
-#               "false" -> Files are diffrent
+#               "false" -> Files are different
 #*****************************************************************************************************
 sub compareFile {
     my ($self,$olderFile,$newerFile)=@_;
