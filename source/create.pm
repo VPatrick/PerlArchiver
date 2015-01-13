@@ -30,6 +30,12 @@ my $verbose = sub {
             s/\//\\/g;
             $message=$_;
         }
+        else
+        {
+            $_=$message;
+            s/\\//g;
+            $message=$_;
+        }
         $self->{verbosity}->verbose($message,$state);
     }
 };
@@ -125,9 +131,10 @@ sub create_c {
     my $now=sprintf("%04d_%02d_%02d_%02d_%02d_%02d",$year,$mon,$day,$hour,$min,$sec);
     $_=$self->{source};
     # Überprüfen um welches Betriebssystem es sich handelt
+    s/://;
     if($^O eq "MSWin32")
     {
-        s/://;
+        
         s/\\/_/g;
     }
     else
