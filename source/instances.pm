@@ -16,41 +16,43 @@ sub new {
 	return $self;
 };
 
+my $create_instance = undef;
+
 # get_create_instance
 # Beschreibung: Erzeugt eine Instanz von Create
 # Parameter: level	Verbose-Level
 sub create {
 	my ($self, $level) = @_;
 	use Create;
-	my $instance = undef;
-	if (!$instance) {
-		$instance = Create->new;
+	if (! defined $create_instance) {
+		$create_instance = Create->new;
 	}
 	if ($level and $level > 0) {
-		$instance->setVerboseLevel($level);
+		$create_instance->setVerboseLevel($level);
 	}
-	return $instance;
+	return $create_instance;
 };
+
+my $restore_instance = undef;
 
 # get_restore_instance
 # Beschreibung: Erzeugt systemabhängig eine Instanz von Restore oder RestoreWin
 # Parameter: level	Verbose-Level
 sub restore {
 	my ($self, $level) = @_;
-	my $instance = undef;
-	if (!$instance) {
+	if (! defined $restore_instance) {
 		if ($^O == "MSWin32") {
 			use RestoreWin;
-			$instance = RestoreWin->new;
+			$restore_instance = RestoreWin->new;
 		} else {
 			use Restore;
-			$instance = Restore->new;
+			$restore_instance = Restore->new;
 		}
 	}
 	if ($level and $level > 0) {
-		$instance->setVerboseLevel($level);
+		$restore_instance->setVerboseLevel($level);
 	}
-	return $instance;
+	return $restore_instance;
 };
 
 1;

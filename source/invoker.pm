@@ -50,7 +50,7 @@ sub create {
 		}
 		$create->create_c();
 	} else {
-		print $self->{message}->error("Wrong amount of parameters given: ");
+		print $self->{message}->error("Wrong amount of parameters given: Path to source and destination directory needed.");
 		exit;
 	}
 };
@@ -70,7 +70,7 @@ sub slim {
 			$create->create_s();
 		}
 	} else {
-		print $self->{message}->error("Wrong amount of paramters given: ");
+		print $self->{message}->error("Wrong amount of paramters given.");
 		exit;
 	}
 };
@@ -88,7 +88,7 @@ sub restore {
 		$restore->addUserTime($arguments[3]);
 		$restore->restore_r();
 	} else {
-		print $self->{message}->error("Wrong amount of parameters given: ");
+		print $self->{message}->error("Wrong amount of parameters given: Four parameters needed.");
 		exit;
 	}
 };
@@ -103,7 +103,7 @@ sub partial {
 		$restore->addPartial($arguments[4]);
 		$restore->restore_rp();
 	} else {
-		print $self->{message}->error("Wrong amount of parameters given: ");
+		print $self->{message}->error("Wrong amount of parameters given: Five parameters needed.");
 		exit;
 	}
 }

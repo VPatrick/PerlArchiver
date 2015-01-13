@@ -136,6 +136,7 @@ sub create_c {
         s/\//_/g;
     }
     my $sourceName=$_;
+	
     $self->addArchiveName($sourceName);
     # Erstellen des Zielverzeichnisses
     mkdir($self->{destination}."/".$self->{archiveName}."_".$now);
@@ -190,6 +191,7 @@ sub create_cs {
     $verbose->($self,"Create cs started\n****************\n");
     # Erstellen des neuen Archivs
     $self->create_c();
+	
     # Verschlanken der Archive
     $self->create_s($self->{archiveName});
 }
