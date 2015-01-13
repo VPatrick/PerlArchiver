@@ -24,7 +24,7 @@ my $verbose = sub {
     if($self->{flag} >= 1)
     {
         # Ausgabe der Nachricht
-        if($^O eq "MSWin32" or $^O eq "cygwin")
+        if($^O eq "MSWin32")
         {
             $_=$message;
             s/\//\\/g;
@@ -132,7 +132,7 @@ sub create_c {
     $_=$self->{source};
     # Überprüfen um welches Betriebssystem es sich handelt
     s/://;
-    if($^O eq "MSWin32" or $^O eq "cygwin")
+    if($^O eq "MSWin32")
     {
         
         s/\\/_/g;
@@ -212,7 +212,7 @@ sub create_cs {
 my $copyFile = sub{
     my ($self,$fileName,$fileSource,$fileDestination)=@_;
     # Ausgabe auf der Konsole
-    if($^O eq "MSWin32" or $^O eq "cygwin")
+    if($^O eq "MSWin32")
     {
         $verbose->($self,"Copy file:\nSource:\t\t$fileSource\\$fileName\nDestination:\t$fileDestination\\$fileName");
     }
@@ -243,7 +243,7 @@ my $copyFile = sub{
 my $createDir = sub{
     my ($self,$dirName,$dirPath)=@_;
     # Ausgabe auf der Konsole
-    if($^O eq "MSWin32" or $^O eq "cygwin")
+    if($^O eq "MSWin32")
     {
         $verbose->($self,"Create Directroy:\nDestination:\t$dirPath\\$dirName");
     }
@@ -310,7 +310,7 @@ sub copyDir {
 my $deleteFile = sub{
     my ($self,$fileName,$filePath)=@_;
     # Ausgabe auf der Konsole
-    if($^O eq "MSWin32" or $^O eq "cygwin")
+    if($^O eq "MSWin32")
     {
         $verbose->($self,"Delete file:\n$filePath\\$fileName");
     }
@@ -343,7 +343,7 @@ my $createLink = sub{
     my ($self,$fileName,$linkSource,$linkDestination)=@_;
     # Überprüfen um welches Betriebssystem es sich handelt
     my $result="false";
-    if($^O eq "MSWin32" or $^O eq "cygwin")
+    if($^O eq "MSWin32")
     {
         # Falls Windows, erzeugen eines shortcuts
         $verbose->($self,"Link files:\nOriginal:\t$linkDestination\\$fileName\nLink:\t\t$linkSource\\$fileName");
@@ -382,7 +382,7 @@ my $createLink = sub{
 my $updateLink = sub{
     my ($self,$linkName,$linkSource,$linkPath)=@_;
     my $result="false";
-    if($^O eq "MSWin32" or $^O eq "cygwin")
+    if($^O eq "MSWin32")
     {
         require Win32::Shortcut or die("Can't import Win32::Shortcut: $!");
         my $link = Win32::Shortcut->new();
@@ -415,7 +415,7 @@ my $getLinkPath = sub{
     my ($self,$linkName,$linkPath)=@_;
     my $result=0;
     my $path="";
-    if($^O eq "MSWin32" or $^O eq "cygwin")
+    if($^O eq "MSWin32")
     {
         require Win32::Shortcut or die("Can't import Win32::Shortcut: $!");
         my $link = Win32::Shortcut->new();
@@ -460,7 +460,7 @@ sub compareDir {
                 s/.lnk//;
                 my $newFileNoLink=$_;
                 # Überprüfung der Dateien auf Gleichheit
-                if($^O eq "MSWin32" or $^O eq "cygwin")
+                if($^O eq "MSWin32")
                 {
                     # Überprüfung ob neue Datei ein Link ist
                     if($newFile=~/.lnk$/i)
