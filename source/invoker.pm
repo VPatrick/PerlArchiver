@@ -115,13 +115,13 @@ sub del {
 	my ($self, @arguments) = @_;
 	if ($#arguments == 0) {
 		if ($^O eq "MSWin32") {
-			#use del;
-			#my $delete = del->new;
-			#if ($self->{level} > 0) {
-			#	$delete->setVerboseLevel($self->{level});
-			#}
-			#$delete->addDestination($arguments[0]);
-			#$delete->delete_d();
+			use del;
+			my $delete = del->new;
+			if ($self->{level} > 0) {
+				$delete->setVerboseLevel($self->{level});
+			}
+			$delete->addDestination($arguments[0]);
+			$delete->delete_d();
 		} else {
 			$self->{message}->warning("The delete function is currently not supported.");
 			exit;
