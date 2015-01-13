@@ -68,9 +68,17 @@ sub new {
 #*****************************************************************************************************
 sub addSource{
     my ($self,$source) = @_;
-    # Hinzufügen des Quellverzeichnisses
-    $self->{source}=$source;
-    $verbose->($self,"New source added: $self->{source}","OK");
+    if(-e $source)
+    {
+        # Hinzufügen des Quellverzeichnisses
+        $self->{source}=$source;
+        $verbose->($self,"New source added: $self->{source}","OK");
+    }
+    else
+    {
+        $verbose->($self,"Can't find source directrory: $source","ERROR");
+        die();
+    }
 }
 
 #*****************************************************************************************************
@@ -80,9 +88,17 @@ sub addSource{
 #*****************************************************************************************************
 sub addDestination{
     my ($self,$destination) = @_;
-    # Hinzufügen des Zielverzeichnisses
-    $self->{destination}=$destination;
-    $verbose->($self,"New destination added: $self->{destination}","OK");
+    if(-e $destination)
+    {
+        # Hinzufügen des Zielverzeichnisses
+        $self->{destination}=$destination;
+        $verbose->($self,"New destination added: $self->{destination}","OK");
+    }
+    else
+    {
+        $verbose->($self,"Can't find destinaton directrory: $destination","ERROR");
+        die();
+    }
 }
 
 #*****************************************************************************************************
@@ -129,22 +145,13 @@ sub create_c {
     $year+=1900;
     $mon+=1;
     my $now=sprintf("%04d_%02d_%02d_%02d_%02d_%02d",$year,$mon,$day,$hour,$min,$sec);
-    $_=$self->{source};
-    # Überprüfen um welches Betriebssystem es sich handelt
-    s/://;
-    if($^O eq "MSWin32")
-    {
-        
-        s/\\/_/g;
-    }
-    else
-    {
-        s/^\///;
-        s/\//_/g;
-    }
-    my $sourceName=$_;
-	
-    $self->addArchiveName($sourceName);
+    use Digest;
+    # Erzeugen eines MD5 Objekts
+    my $md5=Digest->MD5;
+    $md5->add($self->{source});
+    # Erzeugen des Hashwerts für die neuere Datei
+    my $sourceNamedigest=$md5->hexdigest;
+    $self->addArchiveName($sourceNamedigest);
     # Erstellen des Zielverzeichnisses
     mkdir($self->{destination}."/".$self->{archiveName}."_".$now);
     $verbose->($self,"Create Archive: $self->{destination}/$self->{archiveName}_$now\n","OK");
