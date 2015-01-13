@@ -260,31 +260,6 @@ sub RestoreSubDirectory{
     File::Copy::Recursive::dircopy($Source, $Destination);
 }
 
-my $getLinkPath = sub{
-    my ($self,$linkPathName)=@_;
-    my $result=0;
-    my $path="";
-    if($^O eq "MSWin32")
-    {
-        require Win32::Shortcut or die("Can't import Win32::Shortcut: $!");
-        my $link = Win32::Shortcut->new();
-        $result=$link->Load($linkPathName);
-        $verbose->($self,"Get original file path from link:\nLink:\t$linkPath\\$linkName\nPath:\t$link->{'Path'}");
-        $path=$link->{'Path'};
-        $link->Close();
-        if($result)
-        {
-            # Verlinkung wurde aktualisiert
-            $verbose->($self,"Link found!\n","OK");
-        }
-        else
-        {
-            # Verlinkung konnte nicht aktualisiert
-            $verbose->($self,"Can't find link!\n","ERROR");
-        }
-    }
-    return $path;
-};
 
 ##########################################################################################
 #									RestoreFile											 #
@@ -297,9 +272,7 @@ sub RestoreFile{
         $self->{verbosity}->verbose("Delete Destinationfile: $Destination.\n");
         unlink $Destination or die "Konnte nicht gelöscht werden!";
         $self->{verbosity}->verbose("Copy File to $Destination\n");
-        $path=$getLinkPath->($self,$Source)
-        File::Copy::copy $path,$Destination;
-        
+        File::Copy::copy $Source,$Destination;
     }
     elsif(-d $Destination)
     {
