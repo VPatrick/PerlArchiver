@@ -115,7 +115,7 @@ sub del {
 	my ($self, @arguments) = @_;
 	if ($#arguments == 0) {
 		if ($^O eq "MSWin32") {
-			use del;
+            require del;
 			my $delete = del->new;
 			if ($self->{level} > 0) {
 				$delete->setVerboseLevel($self->{level});
