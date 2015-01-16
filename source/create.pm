@@ -41,176 +41,6 @@ my $verbose = sub {
 };
 
 #*****************************************************************************************************
-#                                         Konstruktor
-# Beschreibung: Erzeugt ein neues Objekt der Create Klasse
-# Parameter:    $inFlag = Ansteuerung der Ausgabe von Programminformationen (optional)
-#                1 => Ausgabe der Informationen
-#*****************************************************************************************************
-sub new {
-    my ($invocant,$inFlag) = @_;
-    my $class   = ref($invocant) || $invocant;
-    my $self = {
-        source  => "",
-        destination   => "",
-        flag  => $inFlag || 0,
-        archiveName => "",
-        verbosity => Verbosity->new($inFlag || 0),
-    };
-    bless ($self, $class);
-    $verbose->($self,"New","OK");
-    return $self;
-}
-
-#*****************************************************************************************************
-#                                           addSource
-# Beschreibung: Fügt ein Quellverzeichnis hinzu
-# Parameter:    $source = Pfad zum Quellverzeichnis
-#*****************************************************************************************************
-sub addSource{
-    my ($self,$source) = @_;
-    if(-e $source)
-    {
-        # Hinzufügen des Quellverzeichnisses
-        $self->{source}=$source;
-        $verbose->($self,"New source added: $self->{source}","OK");
-    }
-    else
-    {
-        $verbose->($self,"Can't find source directrory: $source","ERROR");
-        die();
-    }
-}
-
-#*****************************************************************************************************
-#                                         addDestination
-# Beschreibung: Fügt ein Zielverzeichnis hinzu
-# Parameter:    $destination = Pfad zum Zielverzeichnis
-#*****************************************************************************************************
-sub addDestination{
-    my ($self,$destination) = @_;
-    if(-e $destination)
-    {
-        # Hinzufügen des Zielverzeichnisses
-        $self->{destination}=$destination;
-        $verbose->($self,"New destination added: $self->{destination}","OK");
-    }
-    else
-    {
-        $verbose->($self,"Can't find destinaton directrory: $destination","ERROR");
-        die();
-    }
-}
-
-#*****************************************************************************************************
-#                                         addArchiveName
-# Beschreibung: Fügt den Archivname hinzu, der für die Verschlankung benötigt wird
-# Parameter:    $archiveName = Pfad zum Zielverzeichnis
-#*****************************************************************************************************
-sub addArchiveName{
-    my ($self,$archiveName) = @_;
-    # Hinzufügen des Archivverzeichnisses
-    $self->{archiveName}=$archiveName;
-    $verbose->($self,"New archive name added: $self->{archiveName}","OK");
-}
-
-
-#*****************************************************************************************************
-#                                         setVerboseLevel
-# Beschreibung: Setzt den Level der Verbose Ausgabe
-# Parameter:    $level 0 = Keine Ausgabe
-#                      1 = Normale Ausgabe
-#                      2 ...8 = reserviert
-#                      9 = Debug Ausgabe
-#*****************************************************************************************************
-sub setVerboseLevel {
-    my ($self, $level) = @_;
-    $self->{flag} = $level;
-    $self->{verbosity}->setVerboseLevel($level);
-}
-
-#*****************************************************************************************************
-#                                         create_c
-# Beschreibung: Erzeugt eine Kopie des Quellverzeichnis im Zielverzeichnis
-# Parameter:    Keine
-#*****************************************************************************************************
-sub create_c {
-    use File::Copy;
-    my $self=shift;
-    $verbose->($self,"Start create c:\n***************\n");
-    # Überprüfen ob Quellverzeichnis vorhanden ist
-    opendir(my $dsh,$self->{source}) || die("Can't find directory $self->{source}: $!");
-    closedir($dsh);
-    # Erzeugen des Verzeichnisnamens
-    my ($sec,$min,$hour,$day,$mon,$year,$wday,$yday,$isdst)=localtime();
-    $year+=1900;
-    $mon+=1;
-    my $now=sprintf("%04d_%02d_%02d_%02d_%02d_%02d",$year,$mon,$day,$hour,$min,$sec);
-    use Digest;
-    # Erzeugen eines MD5 Objekts
-    my $md5=Digest->MD5;
-    $md5->add($self->{source});
-    # Erzeugen des Hashwerts für die neuere Datei
-    my $sourceNamedigest=$md5->hexdigest;
-    $self->addArchiveName($sourceNamedigest);
-    # Erstellen des Zielverzeichnisses
-    mkdir($self->{destination}."/".$self->{archiveName}."_".$now);
-    $verbose->($self,"Create Archive: $self->{destination}/$self->{archiveName}_$now\n","OK");
-    # Kopieren der Daten
-    $self->copyDir("",$self->{archiveName}."_".$now);
-}
-
-#*****************************************************************************************************
-#                                         create_s
-# Beschreibung: Verschlankt das Archiv im Zielverzeichnis
-# Parameter:    Keine
-#*****************************************************************************************************
-sub create_s {
-    my ($self)=shift;
-    my $previousArchiveAvailable=0;
-    $verbose->($self,"Start create s:\n***************\n");
-    # Öffnen des Archivverzeichnisses
-    opendir(my $dsh,$self->{destination}) || die("Can't find directory $self->{destination}: $!");
-    # Alle Verzeichnisse des Archivverzeichnisses einlesen
-    my @folder=readdir $dsh;
-    my @seperateFolder=grep(/^$self->{archiveName}/,@folder);
-    @folder=sort(@seperateFolder);
-    # Schließen des Archivverzeichnisses
-    closedir($dsh);
-    # Durchlaufen aller Archivverzeichnisse und Suche nach unveränderten Dateien
-    
-    for(my $i=scalar(@folder)-1;$i>0;$i--)
-    {
-        # Falls vorhergehendes Archiv vorhanden
-        $previousArchiveAvailable=1;
-        $verbose->($self,"Compare Archives:\nOlder:\t$folder[$i-1]\nNewer:\t$folder[$i]\n");
-        # Vergleich von einem Archiv mit dem vorhergehenden
-        $self->compareDir("$folder[$i-1]","$folder[$i]");
-
-    }
-    # Falls kein vorhergehendes Archiv vorhanden ist
-    if(!$previousArchiveAvailable)
-    {
-        $verbose->($self,"No previous archive available","WARNING");
-    }
-}
-
-#*****************************************************************************************************
-#                                         create_cs
-# Beschreibung: Erzeugt eine Kopie des Quellverzeichnis im Zielverzeichnis und verschlankt es
-#               anschließend
-# Parameter:    Keine
-#*****************************************************************************************************
-sub create_cs {
-    my $self=shift;
-    $verbose->($self,"Create cs started\n****************\n");
-    # Erstellen des neuen Archivs
-    $self->create_c();
-	
-    # Verschlanken der Archive
-    $self->create_s($self->{archiveName});
-}
-
-#*****************************************************************************************************
 #                                        copyFile
 # Beschreibung: Kopiert eine Datei Datei
 # Parameter:    $self = Instanz von Create
@@ -279,8 +109,8 @@ my $createDir = sub{
 # Parameter:    $directory = Aktuelles Unterverzeichnis
 #               $destination = Ziel Unterverzeichnis
 #*****************************************************************************************************
-sub copyDir {
-    my ($self,$directory,$destination)=@_;
+my $copyDir = sub  {
+    my ($self,$copyDir,$directory,$destination)=@_;
     # Öffnen des Quellverzeichnisses bzw. dessen Unterverzeichnisses
     opendir(my $dsh,"$self->{source}/$directory") || die("Can't find directory $directory: $!");
     $verbose->($self,"Open directory: $self->{source}$directory\n","OK");
@@ -300,14 +130,15 @@ sub copyDir {
                 # Erzeugen des Unterverzeichnisses
                 $createDir->($self,"$file","$self->{destination}/$destination$directory");
                 # Rekursiver Aufruf der Methode zum Kopieren des Unterverzeichnisses
-                $self->copyDir("$directory/$file","$destination");
+                #$self->copyDir("$directory/$file","$destination");
+                $copyDir->($self,$copyDir,"$directory/$file",$destination);
             }
         }
     }
     # Schließen des Quellverzeichnisses bzw. dessen Unterverzeichnisses
     closedir($dsh);
     $verbose->($self,"Leave directory: $self->{source}$directory\n","OK");
-}
+};
 
 #*****************************************************************************************************
 #                                        deleteFile
@@ -447,127 +278,6 @@ my $getLinkPath = sub{
 };
 
 #*****************************************************************************************************
-#                                        compareDir
-# Beschreibung: Vergleicht die Archive zur Verschlankung, ist eine Datei unverändert wird diese durch
-#               eine Verlinkung auf das neue Archiv ersetzt
-# Parameter:    $olderDir = altes Archivverzeichnis
-#               $newerDir = neues Archivverzeichnis
-#*****************************************************************************************************
-sub compareDir {
-    my ($self,$olderDir,$newerDir)=@_;
-    # Öffnen des Archivverzeichnisses bzw. dessen Unterverzeichnisse
-    opendir(my $doh,"$self->{destination}/$newerDir") || die("Can't find directory $newerDir: $!");
-    # Verglichen aller Dateien, inklusive Unterverzeichnisse
-    while(my $newFile=readdir $doh) {
-        if($newFile ne ".." and $newFile ne ".")
-        {
-            # Überprüfen ob es sich um eine Datei handelt
-            if (!-d "$self->{destination}/$newerDir/$newFile")
-            {
-                # Entfernen von lnk-Endung
-                $_=$newFile;
-                s/.lnk//;
-                my $newFileNoLink=$_;
-                # Überprüfung der Dateien auf Gleichheit
-                if($^O eq "MSWin32")
-                {
-                    # Überprüfung ob neue Datei ein Link ist
-                    if($newFile=~/.lnk$/i)
-                    {
-                        # Überprüfung ob alte Datei als Link vorhanden ist
-                        if(-e "$self->{destination}\\$olderDir\\$newFile")
-                        {
-                            # Hole Pfad der aktuellen Datei
-                            my $path=$getLinkPath->($self,"$newFile","$self->{destination}\\$newerDir");
-                            # Aktualisiere alten Link
-                            $updateLink->($self,$newFile,$path,"$self->{destination}\\$olderDir");
-                        }
-                        # Überpüfung ob alte Datei als normale Datei vorhanden ist
-                        elsif(-e "$self->{destination}\\$olderDir\\$newFileNoLink")
-                        {
-                            # Hole Pfad der aktuellen Datei
-                            my $path=$getLinkPath->($self,"$newFile","$self->{destination}\\$newerDir");
-                            # Überprüfe ob beide Dateien gleich sind
-                            my $result=$self->compareFile("$self->{destination}\\$olderDir\\$newFileNoLink",$path);
-                            if($result eq "true")
-                            {
-                                # Falls beide Dateien gleich sind
-                                # Löschen der alten Datei
-                                $deleteFile->($self,$newFileNoLink,"$self->{destination}/$olderDir");
-                                # Entfernen des Dateinames
-                                $_=$path;
-                                s/\\$newFileNoLink//;
-                                $path=$_;
-                                # Erstellen eines Links zur neueren Datei
-                                $createLink->($self,$newFileNoLink,$path,"$self->{destination}/$olderDir");
-                            }
-                        }
-                    }
-                    else # Neue Datei ist kein Link
-                    {
-                        # Überprüfe ob beide Dateien gleich sind
-                        # Überpüfung ob alte Datei ein normale Datei ist
-                        if(-e "$self->{destination}\\$olderDir\\$newFileNoLink")
-                        {
-                            my $result=$self->compareFile("$self->{destination}\\$olderDir\\$newFileNoLink","$self->{destination}\\$newerDir\\$newFile");
-                            if($result eq "true")
-                            {
-                                # Falls beide Dateien gleich sind
-                                # Löschen der alten Datei
-                                $deleteFile->($self,$newFile,"$self->{destination}\\$olderDir");
-                                # Erstellen eines Links zur neueren Datei
-                                $createLink->($self,$newFile,"$self->{destination}\\$newerDir","$self->{destination}\\$olderDir");
-                            }
-                        }
-                        # Überpüfung ob alte Datei ein link ist
-                        elsif("$self->{destination}\\$olderDir\\$newFile"=~/.lnk$/i)
-                        {
-                            # Hole Pfad der aktuellen Datei
-                            my $path=$getLinkPath->($self,"$newFile","$self->{destination}\\$olderDir");
-                            # Überpüfung ob beide Dateien gleich sind
-                            my $result=$self->compareFile($path,"$self->{destination}\\$newerDir\\$newFileNoLink",);
-                            if($result eq "true")
-                            {
-                                # Falls beide Dateien gleich sind
-                                # Entfernen des Dateinames
-                                $_=$path;
-                                s/\\$newFileNoLink//;
-                                $path=$_;
-                                # Aktualisiere alten Link
-                                $updateLink->($self,$newFile,$path,"$self->{destination}\\$olderDir");
-                            }
-                        }
-                    }
-                }
-                else
-                {
-                    # Falls Unix basiertes System
-                    # Überpüfung ob beide Dateien gleich sind
-                    my $result=$self->compareFile("$self->{destination}/$olderDir/$newFileNoLink","$self->{destination}/$newerDir/$newFile");
-                    if($result eq "true")
-                    {
-                        # Falls beide Dateien gleich sind
-                        # Löschen der alten Datei
-                        $deleteFile->($self,$newFile,"$self->{destination}/$olderDir");
-                        # Erstellen eines Links zur neueren Datei
-                        $createLink->($self,$newFile,"$self->{destination}/$newerDir","$self->{destination}/$olderDir");
-                    }
-                }
-            }
-            # Überpüfung ob es sich um ein Verzeichnis handelt
-            elsif (-d "$self->{destination}/$olderDir/$newFile")
-            {
-                $verbose->($self,"Compare Diretory:\nOlder Directory:\t$self->{destination}/$olderDir/$newFile\nNewer Directory:\t$self->{destination}/$newerDir/$newFile\n");
-                # Rekursiver Aufruf der Methode zur Untesuchung des Unterverzeichnisses
-                $self->compareDir("$olderDir/$newFile","$newerDir/$newFile");
-            }
-        }
-    }
-    # Schließen des Archivverzeichnisses bzw. dessen Unterverzeichnisses
-    closedir($doh);
-}
-
-#*****************************************************************************************************
 #                                        compareFile
 # Beschreibung: Vergleicht zwei Dateien aus unterschiedlichen Archiven auf Gleichheit
 # Parameter:    $olderFile = ältere Datei
@@ -575,7 +285,7 @@ sub compareDir {
 # Return:       "true"  -> Files are equal
 #               "false" -> Files are different
 #*****************************************************************************************************
-sub compareFile {
+my $compareFile = sub  {
     my ($self,$olderFile,$newerFile)=@_;
     # Ausgabe auf Konsole
     $verbose->($self,"Compare Files:\nOlder file:\t$olderFile\nNewer file:\t$newerFile");
@@ -619,6 +329,298 @@ sub compareFile {
         $verbose->($self,"Files are diffrent!\n","OK");
         return "false";
     }
+};
+
+#*****************************************************************************************************
+#                                        compareDir
+# Beschreibung: Vergleicht die Archive zur Verschlankung, ist eine Datei unverändert wird diese durch
+#               eine Verlinkung auf das neue Archiv ersetzt
+# Parameter:    $olderDir = altes Archivverzeichnis
+#               $newerDir = neues Archivverzeichnis
+#*****************************************************************************************************
+my $compareDir = sub  {
+    my ($self,$compareDir,$olderDir,$newerDir)=@_;
+    # Öffnen des Archivverzeichnisses bzw. dessen Unterverzeichnisse
+    opendir(my $doh,"$self->{destination}/$newerDir") || die("Can't find directory $newerDir: $!");
+    # Verglichen aller Dateien, inklusive Unterverzeichnisse
+    while(my $newFile=readdir $doh) {
+        if($newFile ne ".." and $newFile ne ".")
+        {
+            # Überprüfen ob es sich um eine Datei handelt
+            if (!-d "$self->{destination}/$newerDir/$newFile")
+            {
+                # Entfernen von lnk-Endung
+                $_=$newFile;
+                s/.lnk//;
+                my $newFileNoLink=$_;
+                # Überprüfung der Dateien auf Gleichheit
+                if($^O eq "MSWin32")
+                {
+                    # Überprüfung ob neue Datei ein Link ist
+                    if($newFile=~/.lnk$/i)
+                    {
+                        # Überprüfung ob alte Datei als Link vorhanden ist
+                        if(-e "$self->{destination}\\$olderDir\\$newFile")
+                        {
+                            # Hole Pfad der aktuellen Datei
+                            my $path=$getLinkPath->($self,"$newFile","$self->{destination}\\$newerDir");
+                            # Aktualisiere alten Link
+                            $updateLink->($self,$newFile,$path,"$self->{destination}\\$olderDir");
+                        }
+                        # Überpüfung ob alte Datei als normale Datei vorhanden ist
+                        elsif(-e "$self->{destination}\\$olderDir\\$newFileNoLink")
+                        {
+                            # Hole Pfad der aktuellen Datei
+                            my $path=$getLinkPath->($self,"$newFile","$self->{destination}\\$newerDir");
+                            # Überprüfe ob beide Dateien gleich sind
+                            my $result=$compareFile->($self,"$self->{destination}\\$olderDir\\$newFileNoLink",$path);
+                            if($result eq "true")
+                            {
+                                # Falls beide Dateien gleich sind
+                                # Löschen der alten Datei
+                                $deleteFile->($self,$newFileNoLink,"$self->{destination}/$olderDir");
+                                # Entfernen des Dateinames
+                                $_=$path;
+                                s/\\$newFileNoLink//;
+                                $path=$_;
+                                # Erstellen eines Links zur neueren Datei
+                                $createLink->($self,$newFileNoLink,$path,"$self->{destination}/$olderDir");
+                            }
+                        }
+                    }
+                    else # Neue Datei ist kein Link
+                    {
+                        # Überprüfe ob beide Dateien gleich sind
+                        # Überpüfung ob alte Datei ein normale Datei ist
+                        if(-e "$self->{destination}\\$olderDir\\$newFileNoLink")
+                        {
+                            my $result=$compareFile->($self,"$self->{destination}\\$olderDir\\$newFileNoLink","$self->{destination}\\$newerDir\\$newFile");
+                            if($result eq "true")
+                            {
+                                # Falls beide Dateien gleich sind
+                                # Löschen der alten Datei
+                                $deleteFile->($self,$newFile,"$self->{destination}\\$olderDir");
+                                # Erstellen eines Links zur neueren Datei
+                                $createLink->($self,$newFile,"$self->{destination}\\$newerDir","$self->{destination}\\$olderDir");
+                            }
+                        }
+                        # Überpüfung ob alte Datei ein link ist
+                        elsif("$self->{destination}\\$olderDir\\$newFile"=~/.lnk$/i)
+                        {
+                            # Hole Pfad der aktuellen Datei
+                            my $path=$getLinkPath->($self,"$newFile","$self->{destination}\\$olderDir");
+                            # Überpüfung ob beide Dateien gleich sind
+                            my $result=$compareFile->($self,$path,"$self->{destination}\\$newerDir\\$newFileNoLink",);
+                            if($result eq "true")
+                            {
+                                # Falls beide Dateien gleich sind
+                                # Entfernen des Dateinames
+                                $_=$path;
+                                s/\\$newFileNoLink//;
+                                $path=$_;
+                                # Aktualisiere alten Link
+                                $updateLink->($self,$newFile,$path,"$self->{destination}\\$olderDir");
+                            }
+                        }
+                    }
+                }
+                else
+                {
+                    # Falls Unix basiertes System
+                    # Überpüfung ob beide Dateien gleich sind
+                    my $result=$compareFile->($self,"$self->{destination}/$olderDir/$newFileNoLink","$self->{destination}/$newerDir/$newFile");
+                    if($result eq "true")
+                    {
+                        # Falls beide Dateien gleich sind
+                        # Löschen der alten Datei
+                        $deleteFile->($self,$newFile,"$self->{destination}/$olderDir");
+                        # Erstellen eines Links zur neueren Datei
+                        $createLink->($self,$newFile,"$self->{destination}/$newerDir","$self->{destination}/$olderDir");
+                    }
+                }
+            }
+            # Überpüfung ob es sich um ein Verzeichnis handelt
+            elsif (-d "$self->{destination}/$olderDir/$newFile")
+            {
+                $verbose->($self,"Compare Diretory:\nOlder Directory:\t$self->{destination}/$olderDir/$newFile\nNewer Directory:\t$self->{destination}/$newerDir/$newFile\n");
+                # Rekursiver Aufruf der Methode zur Untesuchung des Unterverzeichnisses
+                $compareDir->($self,$compareDir,"$olderDir/$newFile","$newerDir/$newFile");
+            }
+        }
+    }
+    # Schließen des Archivverzeichnisses bzw. dessen Unterverzeichnisses
+    closedir($doh);
+};
+
+#*****************************************************************************************************
+#                                         Konstruktor
+# Beschreibung: Erzeugt ein neues Objekt der Create Klasse
+# Parameter:    $inFlag = Ansteuerung der Ausgabe von Programminformationen (optional)
+#                1 => Ausgabe der Informationen
+#*****************************************************************************************************
+sub new {
+    my ($invocant,$inFlag) = @_;
+    my $class   = ref($invocant) || $invocant;
+    my $self = {
+        source  => "",
+        destination   => "",
+        flag  => $inFlag || 0,
+        archiveName => "",
+        verbosity => Verbosity->new($inFlag || 0),
+    };
+    bless ($self, $class);
+    $verbose->($self,"New","OK");
+    return $self;
+}
+
+#*****************************************************************************************************
+#                                           addSource
+# Beschreibung: Fügt ein Quellverzeichnis hinzu
+# Parameter:    $source = Pfad zum Quellverzeichnis
+#*****************************************************************************************************
+sub addSource{
+    my ($self,$source) = @_;
+    if(-e $source)
+    {
+        # Hinzufügen des Quellverzeichnisses
+        $self->{source}=$source;
+        $verbose->($self,"New source added: $self->{source}","OK");
+    }
+    else
+    {
+        $verbose->($self,"Can't find source directrory: $source","ERROR");
+        die();
+    }
+}
+
+#*****************************************************************************************************
+#                                         addDestination
+# Beschreibung: Fügt ein Zielverzeichnis hinzu
+# Parameter:    $destination = Pfad zum Zielverzeichnis
+#*****************************************************************************************************
+sub addDestination{
+    my ($self,$destination) = @_;
+    if(-e $destination)
+    {
+        # Hinzufügen des Zielverzeichnisses
+        $self->{destination}=$destination;
+        $verbose->($self,"New destination added: $self->{destination}","OK");
+    }
+    else
+    {
+        $verbose->($self,"Can't find destinaton directrory: $destination","ERROR");
+        die();
+    }
+}
+
+#*****************************************************************************************************
+#                                         addArchiveName
+# Beschreibung: Fügt den Archivname hinzu, der für die Verschlankung benötigt wird
+# Parameter:    $archiveName = Pfad zum Zielverzeichnis
+#*****************************************************************************************************
+sub addArchiveName{
+    my ($self,$archiveName) = @_;
+    # Hinzufügen des Archivverzeichnisses
+    $self->{archiveName}=$archiveName;
+    $verbose->($self,"New archive name added: $self->{archiveName}","OK");
+}
+
+
+#*****************************************************************************************************
+#                                         setVerboseLevel
+# Beschreibung: Setzt den Level der Verbose Ausgabe
+# Parameter:    $level 0 = Keine Ausgabe
+#                      1 = Normale Ausgabe
+#                      2 ...8 = reserviert
+#                      9 = Debug Ausgabe
+#*****************************************************************************************************
+sub setVerboseLevel {
+    my ($self, $level) = @_;
+    $self->{flag} = $level;
+    $self->{verbosity}->setVerboseLevel($level);
+}
+
+#*****************************************************************************************************
+#                                         create_c
+# Beschreibung: Erzeugt eine Kopie des Quellverzeichnis im Zielverzeichnis
+# Parameter:    Keine
+#*****************************************************************************************************
+sub create_c {
+    use File::Copy;
+    my $self=shift;
+    $verbose->($self,"Start create c:\n***************\n");
+    # Überprüfen ob Quellverzeichnis vorhanden ist
+    opendir(my $dsh,$self->{source}) || die("Can't find directory $self->{source}: $!");
+    closedir($dsh);
+    # Erzeugen des Verzeichnisnamens
+    my ($sec,$min,$hour,$day,$mon,$year,$wday,$yday,$isdst)=localtime();
+    $year+=1900;
+    $mon+=1;
+    my $now=sprintf("%04d_%02d_%02d_%02d_%02d_%02d",$year,$mon,$day,$hour,$min,$sec);
+    use Digest;
+    # Erzeugen eines MD5 Objekts
+    my $md5=Digest->MD5;
+    $md5->add($self->{source});
+    # Erzeugen des Hashwerts für die neuere Datei
+    my $sourceNamedigest=$md5->hexdigest;
+    $self->addArchiveName($sourceNamedigest);
+    # Erstellen des Zielverzeichnisses
+    mkdir($self->{destination}."/".$self->{archiveName}."_".$now);
+    $verbose->($self,"Create Archive: $self->{destination}/$self->{archiveName}_$now\n","OK");
+    # Kopieren der Daten
+    #$self->copyDir("",$self->{archiveName}."_".$now);
+    $copyDir->($self,$copyDir,"",$self->{archiveName}."_".$now);
+}
+
+#*****************************************************************************************************
+#                                         create_s
+# Beschreibung: Verschlankt das Archiv im Zielverzeichnis
+# Parameter:    Keine
+#*****************************************************************************************************
+sub create_s {
+    my ($self)=shift;
+    my $previousArchiveAvailable=0;
+    $verbose->($self,"Start create s:\n***************\n");
+    # Öffnen des Archivverzeichnisses
+    opendir(my $dsh,$self->{destination}) || die("Can't find directory $self->{destination}: $!");
+    # Alle Verzeichnisse des Archivverzeichnisses einlesen
+    my @folder=readdir $dsh;
+    my @seperateFolder=grep(/^$self->{archiveName}/,@folder);
+    @folder=sort(@seperateFolder);
+    # Schließen des Archivverzeichnisses
+    closedir($dsh);
+    # Durchlaufen aller Archivverzeichnisse und Suche nach unveränderten Dateien
+    
+    for(my $i=scalar(@folder)-1;$i>0;$i--)
+    {
+        # Falls vorhergehendes Archiv vorhanden
+        $previousArchiveAvailable=1;
+        $verbose->($self,"Compare Archives:\nOlder:\t$folder[$i-1]\nNewer:\t$folder[$i]\n");
+        # Vergleich von einem Archiv mit dem vorhergehenden
+        $compareDir->($self,$compareDir,"$folder[$i-1]","$folder[$i]");
+        
+    }
+    # Falls kein vorhergehendes Archiv vorhanden ist
+    if(!$previousArchiveAvailable)
+    {
+        $verbose->($self,"No previous archive available","WARNING");
+    }
+}
+
+#*****************************************************************************************************
+#                                         create_cs
+# Beschreibung: Erzeugt eine Kopie des Quellverzeichnis im Zielverzeichnis und verschlankt es
+#               anschließend
+# Parameter:    Keine
+#*****************************************************************************************************
+sub create_cs {
+    my $self=shift;
+    $verbose->($self,"Create cs started\n****************\n");
+    # Erstellen des neuen Archivs
+    $self->create_c();
+    
+    # Verschlanken der Archive
+    $self->create_s($self->{archiveName});
 }
 
 #*****************************************************************************************************
