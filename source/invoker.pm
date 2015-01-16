@@ -3,6 +3,7 @@ use warnings;
 use Verbosity;
 use Message;
 use Instances;
+use Data::Dumper;
 
 # Invoker
 # Beschreibung: Dieses Modul dient zum Aufruf der entsprechenden Funktionen von my_perl_archiver
@@ -62,13 +63,18 @@ sub slim {
 	my ($self, @arguments) = @_;
 	my $create = $self->{instances}->create($self->{level});
 	if ($#arguments == 1) {
-		if (-d $arguments[1]) {
-			$create->create_s();
+		$create->create_s();
+	} elsif ($#arguments == 0) {
+		my @split = split(/_\d{4}_\d{2}_\d{2}_\d{2}_\d{2}_\d{2}$/, $arguments[0]);
+		my @split2 = undef;
+		if ($^O eq "MSWin32") {
+			@split2 = split(/\\/, $split[0]);
 		} else {
-			$create->addDestination($arguments[0]);
-			$create->addArchiveName($arguments[1]);
-			$create->create_s();
+			@split2 = split(/\//, $split[0]);
 		}
+		$create->addDestination($arguments[0]);
+		$create->addArchiveName($split2[$#split2]);
+		$create->create_s();
 	} else {
 		print $self->{message}->error("Wrong amount of paramters given.");
 		exit;

@@ -35,5 +35,5 @@ GetOptions (
 ) or die("Error in command line arguments\n");
 
 sub help() {
-	pod2usage(-verbose => 2, -input => $FindBin::Bin . "/help.pod");
+	pod2usage(-verbose => 2, -input => "./help.pod");
 };
