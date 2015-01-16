@@ -13,7 +13,8 @@ sub new {
 	my ($invocant) = @_;
 	my $class = ref($invocant) || $invocant;
 	my $self = {
-		verbosity => Verbosity->new
+		verbosity => Verbosity->new,
+		message => Message->new
 	};
 	bless ($self, $class);
 	return $self;
@@ -70,10 +71,31 @@ sub compare_to {
 	return "$y$m$d$H$M$S";
 };
 
+# getPathFromHash
+# Beschreibung: Liefert einen, zu einem Hash gehörenden, Pfad
+# Parameter:	hash	MD5-Hash
+#				path	Pfad zur Hash-Tabelle
+# Rückgabewert: path	Pfad zu einem Verzeichnis
+sub getPathFromHash {
+	my ($self, $hash, $path) = @_;
+	open (my $file, $path) or do {
+		print $self->{message}->error("Can't open hash table.");
+		exit;
+	};
+	while (my $hashPathPair = <$file>) {
+		if ($hashPathPair =~ /^$hash/) {
+			my @split = split(/\:/, $hashPathPair, 2);
+			return $split[1];
+		}
+	}
+	return undef;
+};
+
 # Destruktor
 sub DESTROY {
 	my $self = shift;
 	$self->{verbosity} = undef;
+	$self->{message} = undef;
 };
 
 1;
