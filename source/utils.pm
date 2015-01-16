@@ -1,6 +1,7 @@
 use strict;
 use warnings;
 use Verbosity;
+use Cwd;
 
 # Utils
 # Beschreibung: Hilfsklasse
@@ -104,6 +105,16 @@ sub getPathFromHash {
 		}
 	}
 	return undef;
+};
+
+# getAbsPath
+# Beschreibung: Liefert einen absoluten Pfad
+# Parameter:	path	Pfad
+# Rückgabewert:	path	Absoluter Pfad
+sub getAbsPath {
+	my ($self, $path) = @_;
+	chdir $path;
+	return Cwd::getcwd();
 };
 
 # Destruktor

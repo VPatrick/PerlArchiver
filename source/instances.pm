@@ -41,7 +41,7 @@ my $restore_instance = undef;
 sub restore {
 	my ($self, $level) = @_;
 	if (! defined $restore_instance) {
-		if ($^O == "MSWin32") {
+		if ($^O eq "MSWin32") {
 			use RestoreWin;
 			$restore_instance = RestoreWin->new;
 		} else {

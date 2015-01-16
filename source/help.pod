@@ -14,6 +14,7 @@ Options:
 	--delete|-d		Delete an existing archive
 	--list|-l		List all files of an existing archive
 	--slim|-s		Slim
+	--mapping|-m	List all mappings of hashes and paths
 
 =head1 OPTIONS
 
@@ -23,11 +24,11 @@ Options:
 
 Creating a backup (copy) of a directory and all its subdirectories in an arbitrary target directory.
 
-=item B<-restore> [] [] [] []
+=item B<-restore> [Path to source direcotory] [Path to destination directory] [Source name] [Timestamp]
 
 Restoring a file, a subdirectory or all of the archived directory.
 
-=item B<-partial> [Path to object which should be restored]
+=item B<-partial> [Relative path to object which should be restored]
 
 Is only valid in combination with B<-r>-switch.
 
@@ -46,6 +47,10 @@ Care is taken that the totality of all archives of a subdirectory consumes as li
 =item B<-verbose> [Optional level]
 
 Cause B<my_perl_archiver> to be verbose
+
+=item B<-mapping> [Archive]
+
+List all mappings of hashes and paths.
 
 =item B<-help>
 

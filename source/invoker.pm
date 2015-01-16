@@ -3,7 +3,7 @@ use warnings;
 use Verbosity;
 use Message;
 use Instances;
-use Data::Dumper;
+use Utils;
 
 # Invoker
 # Beschreibung: Dieses Modul dient zum Aufruf der entsprechenden Funktionen von my_perl_archiver
@@ -16,9 +16,9 @@ sub new {
 	my ($invocant) = @_;
 	my $class = ref($invocant) || $invocant;
 	my $self = {
-		verbosity => Verbosity->new,
 		message => Message->new,
 		instances => Instances->new,
+		utils => Utils->new,
 		level => 0
 	};
 	bless ($self, $class);
@@ -76,7 +76,7 @@ sub slim {
 		$create->addArchiveName($split2[$#split2]);
 		$create->create_s();
 	} else {
-		print $self->{message}->error("Wrong amount of paramters given.");
+		print $self->{message}->error("Wrong amount of paramters given: Path to destination direcotry needed.");
 		exit;
 	}
 };
@@ -86,15 +86,15 @@ sub slim {
 # Parameter:	arguments	Parameter für restore
 sub restore {
 	my ($self, @arguments) = @_;
-	if ($#arguments == 3) {
+	if ($#arguments >= 3) {
 		my $restore = $self->{instances}->restore($self->{level});
-		$restore->addSource($arguments[0]);
-		$restore->addDestination($arguments[1]);
+		$restore->addSource($self->{utils}->getAbsPath($arguments[0]));
+		$restore->addDestination($self->{utils}->getAbsPath($arguments[1]));
 		$restore->addSourceName($arguments[2]);
 		$restore->addUserTime($arguments[3]);
 		$restore->restore_r();
 	} else {
-		print $self->{message}->error("Wrong amount of parameters given: Four parameters needed.");
+		print $self->{message}->error("Wrong amount of parameters given: Path to source directory, path to destination direcotry, source name and timestamp needed.");
 		exit;
 	}
 };
@@ -109,7 +109,7 @@ sub partial {
 		$restore->addPartial($arguments[4]);
 		$restore->restore_rp();
 	} else {
-		print $self->{message}->error("Wrong amount of parameters given: Five parameters needed.");
+		print $self->{message}->error("Wrong amount of parameters given: Relative path to object for partial restoring needed.");
 		exit;
 	}
 }
@@ -126,7 +126,7 @@ sub del {
 			if ($self->{level} > 0) {
 				$delete->setVerboseLevel($self->{level});
 			}
-			$delete->addDestination($arguments[0]);
+			$delete->addDestination($self->{utils}->getAbsPath($arguments[0]));
 			$delete->delete_d();
 		} else {
 			$self->{message}->warning("The delete function is currently not supported.");
@@ -149,9 +149,33 @@ sub list {
 		if ($self->{level} > 0) {
 			$list->setVerboseLevel($self->{level});
 		}
-		$list->list($arguments[0], $arguments[1]);
+		$list->list($self->{utils}->getAbsPath($arguments[0]), $arguments[1]);
 	} else {
 		print $self->{message}->error("Wrong amount of paramters given: Path to an archive and a timestamp (yyyy_mm_dd_hh_ii_ss) needed.");
+		exit;
+	}
+};
+
+# printHashTable
+# Beschreibung: Gibt die Zuweisungstabelle auf STDOUT aus
+# Parameter:	arguments	Parameter für printHashTable
+sub printHashTable {
+	my ($self, @arguments) = @_;
+	if ($#arguments == 0) {
+		my $path = $self->{utils}->getAbsPath($arguments[0]);
+		open (my $file, "$path/hashtable.txt") or do {
+			$self->{message}->error("Can't open hash table.");
+			exit;
+		};
+		while (my $line = <$file>) {
+			my @split = split(/\:/, $line, 2);
+			my @split2 = split(/$split[0]\:/, $line, 2);
+			my $pair = "$split[0] : $split2[1]";
+			chomp $pair;
+			print $pair, "\n";
+		}
+	} else {
+		print $self->{message}->error("Wrong amount of parameters given: Path to archive needed.");
 		exit;
 	}
 };
@@ -159,7 +183,6 @@ sub list {
 # Destruktor
 sub DESTROY {
 	my $self = shift;
-	$self->{verbosity} = undef;
 	$self->{message} = undef;
 	$self->{instances} = undef;
 };

@@ -4,6 +4,7 @@ use Cwd;
 use Message;
 use Utils;
 use Verbosity;
+use Data::Dumper;
 
 # List
 # Beschreibung: Dieses Modul listet die Inhalte eines Archivs auf
@@ -47,10 +48,10 @@ sub list {
 	my @split = undef;
 	my @split2 = undef;
 	if ($^O eq "MSWin32") {
-		@split = split(/_\d{4}_\d{2}_\d{2}_\d{2}_\d{2}_\d{2}\\$/, $archive);
+		@split = split(/_\d{4}_\d{2}_\d{2}_\d{2}_\d{2}_\d{2}$/, $archive);
 		@split2 = split(/\\/, $split[0]);
 	} else {
-		@split = split(/_\d{4}_\d{2}_\d{2}_\d{2}_\d{2}_\d{2}\/$/, $archive);
+		@split = split(/_\d{4}_\d{2}_\d{2}_\d{2}_\d{2}_\d{2}$/, $archive);
 		@split2 = split(/\//, $split[0]);
 	}
 	

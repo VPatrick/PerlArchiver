@@ -16,7 +16,7 @@ my $message = Message->new;
 my $invoker = Invoker->new;
 
 foreach (@ARGV) {
-	if ($_ =~ m/-(cr|cd|cl|cp|rc|rd|rl|rs|dc|dr|dl|dp|ds|lc|lr|ld|lp|ls)/i) {
+	if ($_ =~ m/-(cr|cd|cl|cp|cm|ch|rc|rd|rl|rs|rm|rh|dc|dr|dl|dp|ds|dm|dh|lc|lr|ld|lp|ls|lm|lh|mc|mr|md|ml|mh|hc|hr|hd|hl|hm|hv)/i) {
 		print $message->error("The combination of $_ is not valid.");
 		exit;
 	}
@@ -31,8 +31,12 @@ GetOptions (
 	"slim|s" => sub { $invoker->slim(@ARGV) },
 	"delete|d" => sub { $invoker->del(@ARGV) },
 	"list|l" => sub { $invoker->list(@ARGV) },
+	"mapping|m" => sub { $invoker->printHashTable(@ARGV) },
 	"help|h" => sub { help() }
-) or die("Error in command line arguments\n");
+) or do {
+	print $message->error("Error in command line arguements.");
+	exit;
+};
 
 sub help() {
 	pod2usage(-verbose => 2, -input => "./help.pod");
