@@ -48,7 +48,7 @@ Care is taken that the totality of all archives of a subdirectory consumes as li
 
 Cause B<my_perl_archiver> to be verbose
 
-=item B<-mapping> [Archive]
+=item B<-mapping> [Archive] [Filename of hash table]
 
 List all mappings of hashes and paths.
 

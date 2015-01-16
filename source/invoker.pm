@@ -162,18 +162,11 @@ sub list {
 sub printHashTable {
 	my ($self, @arguments) = @_;
 	my $file = undef;
+	my $path = $self->{utils}->getAbsPath($arguments[0]);
 	if ($#arguments == 0) {
-		my $path = $self->{utils}->getAbsPath($arguments[0]);
-		open ($file, "$path/hashtable.txt") or do {
-			$self->{message}->error("Can't open hash table.");
-			exit;
-		};
+		open ($file, "$path/hashtable.txt");
 	} elsif ($#arguments == 1) {
-		my $path = $self->{utils}->getAbsPath($arguments[0]);
-		open ($file, "$path/$arguments[1]") or do {
-			$self->{message}->error("Can't open hash table: $arguments[1]");
-			exit;
-		};
+		open ($file, "$path/$arguments[1]");
 	} else {
 		print $self->{message}->error("Wrong amount of parameters given: Path to archive needed.");
 		exit;
