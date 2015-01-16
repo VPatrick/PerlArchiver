@@ -44,7 +44,21 @@ sub list {
 		exit;
 	}
 	
+	my @split = undef;
+	my @split2 = undef;
+	if ($^O eq "MSWin32") {
+		@split = split(/_\d{4}_\d{2}_\d{2}_\d{2}_\d{2}_\d{2}\\$/, $archive);
+		@split2 = split(/\\/, $split[0]);
+	} else {
+		@split = split(/_\d{4}_\d{2}_\d{2}_\d{2}_\d{2}_\d{2}\/$/, $archive);
+		@split2 = split(/\//, $split[0]);
+	}
+	
+	my $archiveName = $split2[$#split2];
+	
 	chdir $archive;
+	$archive = Cwd::getcwd();
+	chdir "..";
 	$archive = Cwd::getcwd();
 	
 	if ($self->{verbosity}->getVerboseLevel() > 0) {
@@ -55,7 +69,7 @@ sub list {
 	find(sub {
 		return if($_ eq '.' || $_ eq '..');
 		push @list, $File::Find::name;
-	}, $self->{utils}->findLastValidArchive($archive, $timestamp));
+	}, $self->{utils}->findLastValidArchive($archive, $timestamp, $archiveName));
 	
 	$self->print_list(@list);
 };

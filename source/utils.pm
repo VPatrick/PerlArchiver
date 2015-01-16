@@ -32,21 +32,36 @@ sub setVerboseLevel {
 # Beschreibung: Findet das zuletzt gültige Archiv
 # Parameter:	source		Verzeichnis für Archive
 #				timestamp	Zeitpunkt
+#				archiveName Name des Archivs
 sub findLastValidArchive {
-	my ($self, $source, $timestamp) = @_;
+	my ($self, $source, $timestamp, $archiveName) = @_;
 	opendir (my $dir, $source);
 	my $finalSource = "";
 	my $finalTimestamp = "";
 	my $tmpTimestamp = "0000_00_00_00_00_00";
+	my $lock = ($archiveName) ? 1 : 0;
+	
 	while (readdir $dir) {
 		if ($_ ne "." and $_ ne ".." and $_ ne ".DS_Store") {
 			my @split1 = split(/_\d{4}_\d{2}_\d{2}_\d{2}_\d{2}_\d{2}$/, $_);
-			my $archiveName = $split1[0];
-			my @split2 = split(/$archiveName\_/, $_);
+			my $currentArchiveName = $split1[0];
+			my @split2 = split(/$currentArchiveName\_/, $_);
 			my $archiveTimestamp = $split2[1];
-            
-			$self->{verbosity}->verbose("Compare times");
-			if ($archiveName) {
+			
+			if ($archiveName and $currentArchiveName eq $archiveName) {
+				$self->{verbosity}->verbose("Compare times");
+				$lock = 1;
+				if ($self->compare_to($archiveTimestamp) <= $self->compare_to($timestamp)) {
+					$self->{verbosity}->verbose("Compare $archiveTimestamp with $timestamp");
+					if ($self->compare_to($archiveTimestamp) > $self->compare_to($tmpTimestamp)) {
+						$tmpTimestamp = $archiveTimestamp;
+						$finalSource = "${source}/${_}";
+						$finalTimestamp = $archiveTimestamp;
+					}
+				}
+			}
+			if ($lock eq 0 and $currentArchiveName) {
+				$self->{verbosity}->verbose("Compare times");
 				if ($self->compare_to($archiveTimestamp) <= $self->compare_to($timestamp)) {
 					$self->{verbosity}->verbose("Compare $archiveTimestamp with $timestamp");
 					if ($self->compare_to($archiveTimestamp) > $self->compare_to($tmpTimestamp)) {
