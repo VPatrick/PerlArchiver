@@ -9,7 +9,8 @@ my_perl_archiver [options] [file ...]
 Options:
 
 	--create|-c		Create an archive
-	--restore|-r|-rp	Restore an archive
+	--restore|-r|-r	Restore an archive
+	--partial|-p	Restore a subdirecotry or a file
 	--delete|-d		Delete an existing archive
 	--list|-l		List all files of an existing archive
 	--slim|-s		Slim
@@ -18,27 +19,31 @@ Options:
 
 =over 4
 
-=item B<-create>
+=item B<-create> [Path to source directory] [Path to destination directory]
 
 Creating a backup (copy) of a directory and all its subdirectories in an arbitrary target directory.
 
-=item B<-restore>
+=item B<-restore> [] [] [] []
 
 Restoring a file, a subdirectory or all of the archived directory.
 
-=item B<-delete>
+=item B<-partial> [Path to object which should be restored]
+
+Is only valid in combination with B<-r>-switch.
+
+=item B<-delete> [Path to object which should be deleted]
 
 Removal of archive of a directory including its subdirectories or removing parts (subdirectories and files) of an archive
 
-=item B<-list>
+=item B<-list> [Path to archive directory] [Timestamp]
 
 List all files, links and subdirectories of an archive.
 
-=item B<-slim>
+=item B<-slim> [Path to destination directory]
 
 Care is taken that the totality of all archives of a subdirectory consumes as little space.
 
-=item B<-verbose>
+=item B<-verbose> [Optional level]
 
 Cause B<my_perl_archiver> to be verbose
 
@@ -54,7 +59,7 @@ B<my_perl_archiver> will create archives. If an archive exists B<my_perl_archive
 
 =head1 AUTHORS
 
-Patrick Vogt, Michel Angelo Rammuno, Muhammed Kasikci, Michalea Fentze
+Patrick Vogt, Michel Angelo Rammuno, Muhammed Kasikci, Michaela Fentze
 
 Technische Hochschule Georg-Simon-Ohm Nuernberg
 
