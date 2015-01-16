@@ -29,19 +29,12 @@ sub addDestination {
 	my ( $self, $destination ) = @_;
 	
 	if ( !-e $destination ) {
-		print "No such file or directory!";
+		print "\[ERROR\]\tNo such file or directory:\n\t$self->{deleteFile}!";
 		exit;
 	}
 
-		#Verzeichnispfad splitten
-	my @DeleteDirectory;
-	if($destination =~ m/\\/){
-		@DeleteDirectory = split( /\\/, $destination );
-	}
-		
-	elsif($destination =~ m/\//){
-		@DeleteDirectory = split( /\//, $destination );
-	}
+	#Verzeichnispfad splitten
+	my @DeleteDirectory= split( /[\\\/]+/, $destination );
 	
 	my $main;
 	foreach (@DeleteDirectory) {
@@ -62,9 +55,9 @@ sub addDestination {
 	$self->{deleteFile}     = $destination;
 	$self->{mainArchivpath} = $main;             #Nur Pfad
 	$self->{archivFullName} = $archivFullName;   #Archivname ohne Pfad mit Datum
-	$self->{archivName}     = $archivName;		 #Archivname ohne Pfad ohne Datum
+	$self->{archivName}     = $archivName;		#Archivname ohne Pfad ohne Datum
 	
-	$self->{verbosity}->verbose("Added new path to delete: $self->{deleteFile}");
+	$self->{verbosity}->verbose("Added new path to delete:\n\t$self->{deleteFile}", "OK");
 }
 
 sub setVerboseLevel {
@@ -78,13 +71,12 @@ sub delete_d {
 	my @foundDir;
 	my @allFoundLink;
 	my %vipFoundLink;
-	$inself->{verbosity}->verbose( "Start Delete d.\n", "OK" );
+	$inself->{verbosity}->verbose( "Start Delete d.", "OK" );
 
 	#Nachfrage loeschen
 	$inself->{verbosity}->verbose( "Start Delete-Check.\n", "OK" );
 	$inself->check();
-	$inself->{verbosity}
-	  ->verbose( "Searching for the previous folder.\n", "OK" );
+	$inself->{verbosity} ->verbose( "Searching for previous folders.\n", "OK" );
 
 	#PreArchiv finden
 	@foundDir = $inself->findPreDir();
@@ -92,15 +84,15 @@ sub delete_d {
 	#Es muss nur verlinkt werden wenn es PreArchiv gibt
 	if (@foundDir) {
 		my $newCheckdir = "$foundDir[0]";
-		my @tmp         = split( /\_\d{4}\_\d{2}\_\d{2}\_\d{2}\_\d{2}\_\d{2}/,
-						 $inself->{'deleteFile'} );
+		my @tmp         = split( /\_\d{4}\_\d{2}\_\d{2}\_\d{2}\_\d{2}\_\d{2}/, $inself->{'deleteFile'} );
 
 		#Erstelle Pfad mit PreDir zu DelFile
 		if ( $#tmp > 0 ) {
 			$newCheckdir = "$foundDir[0]$tmp[1]";
 		}
+		print"\n";
 		$inself->{verbosity}
-		  ->verbose( "Searching for linked files in previous folder.\n", "OK" );
+		  ->verbose( "Searching for linked files in previous folder:\n\t$newCheckdir\n", "OK" );
 
 		#Übergebe PreDir, suche nach Links
 		@allFoundLink = $inself->findLinksPreDir($newCheckdir);
@@ -112,35 +104,24 @@ sub delete_d {
 
 #gefundene Dateien müssen in PreDir kopiert werden und in allen Archiven neu verknüpft
 		if ( keys %vipFoundLink ) {
-			$inself->{verbosity}->verbose(
-"Found linked files in previous folder with links to current directory.\n",
-				"OK"
-			);
-
+			print"\n";
 			#gefundene Dateien in PreArchiv umkopieren
 			foreach my $lnk ( sort keys %vipFoundLink ) {
 				my @LinkPath = split( /\./, $lnk );
 				my @DatEnd  = split( /\./, $vipFoundLink{$lnk} );
 				my $newDat = "$LinkPath[0].$DatEnd[1]";
-				$inself->{verbosity}->verbose(
-"Copying files from current directory in previous folder.\n",
-					"OK"
-				);
+				my @fileName = split(/[\\\/]+/, $newDat);
+				$inself->{verbosity}->verbose("Copying file $fileName[$#fileName] from current directory in previous folder.", "OK");
 				copy( $vipFoundLink{$lnk}, $newDat );
-				$inself->{verbosity}
-				  ->verbose( "Delete unnecessary links in previous folder.\n",
-							 "OK" );
+				@fileName = split(/[\\\/]+/, $lnk);
+				$inself->{verbosity}->verbose( "Delete unnecessary link $fileName[$#fileName] in previous folder.", "OK" );
 				unlink($lnk);
-
 				#Verknüpfungen erneuern
-				$inself->{verbosity}
-				  ->verbose( "Updating Links to other relevant directories.\n",
-							 "OK" );
 				$inself->changeLinks( $lnk, $newDat, @foundDir );
 			}
 		}
 	}
-	$inself->{verbosity}->verbose( "Delete $inself->{'deleteFile'}!\n", "OK" );
+	$inself->{verbosity}->verbose( "Delete $inself->{'deleteFile'}!", "OK" );
 
 	#loeschen
 	$inself->del();
@@ -149,8 +130,7 @@ sub delete_d {
 #----------------------Nachfrage, ob wirklich geloescht werden soll --------------------------
 sub check {
 	my $inself = shift;
-	print
-"Do you really want to delete this file or directory: $inself->{'deleteFile'} ? (Y/N) \n";
+	print"\n\[WARNING\] Do you really want to delete this file or directory:\n$inself->{'deleteFile'}?\n(Y/N)\n";
 	while (1) {
 		my $eingabe = <STDIN>;
 		chomp $eingabe;
@@ -160,19 +140,18 @@ sub check {
 			 || $eingabe =~ m/^y$/i )
 		{
 			$inself->{verbosity}
-			  ->verbose( "Start delete: $inself->{deleteFile}.\n", "OK" );
+			  ->verbose( "Start delete:\n\t$inself->{deleteFile}.", "OK" );
 			last;
 		}
 		elsif (    $eingabe =~ m/^n$/i
 				|| $eingabe =~ m/^nein$/i
 				|| $eingabe =~ m/^no$/i )
 		{
-			$inself->{verbosity}
-			  ->verbose( "Stop: aborted delete.\n", "WARNING" );
+			print("\[WARNING\] aborted delete.\n" );
 			exit;
 		}
 		else {
-			print "ERROR: It was not answered by \"yes\" (Y) or \"no\" (N)!\n";
+			print("\[ERROR\]\tIt was not answered by \"yes\" (Y) or \"no\" (N)!\nTry again:\n" );
 		}
 	}
 }
@@ -204,7 +183,9 @@ sub findPreDir {
 		{
 			shift(@sortFoundArchives);
 		}
-		$inself->{verbosity}->verbose( "Found previous folder.\n", "OK" );
+		foreach(@sortFoundArchives){
+		$inself->{verbosity}->verbose( "Found previous folder:\n\t$_", "OK" );
+		}
 		return @sortFoundArchives;
 	}
 	$inself->{verbosity}->verbose( "No previous directory found.\n", "OK" );
@@ -214,25 +195,26 @@ sub findPreDir {
 #----------------------Verknuepfungen pruefen bei Archiv-------------------------------------------------
 sub findLinksPreDir {
 	my ( $inself, $preDir ) = @_;
-	my $fullPreDir;
+	my $temp = "$inself->{'mainArchivpath'}$preDir"; #Ordner oder .lnk-Datei
+	$temp =~ s/\//\\/g;
+	my $fullPreDir = $temp;
 	my @allLinkFiles;    #Alle Verlinkungen im PreArchiv
-	if ( $preDir =~ m/\./ )    #ist es einzelne Datei
+	
+	if ($preDir =~ m/\./ && $preDir !~ m/\.lnk$/)    #ist es einzelne Datei
 	{
-		my @datName = split( /\./, $preDir );
-		my $datNameLink = "$datName[0].lnk";
-		$fullPreDir = "$inself->{'mainArchivpath'}$datNameLink";
+#		#Dateiendung durch .lnk ersetzen
+#		my @datName = split( /\./, $preDir );
+#		my $datNameLink = "$datName[0].lnk";
+		
+		$fullPreDir = "$inself->{'mainArchivpath'}$preDir.lnk";
 	}
-	else                       #oder Ordner
-	{
-		$fullPreDir = "$inself->{'mainArchivpath'}$preDir";
-	}
-
+	
 	#finde im vorhergehenden PreArchiv .lnk-Dateien
 	my %options = (
 		wanted => sub {
 			my @files;
 			my $file = $File::Find::name;
-			if ( $file =~ m/.lnk$/i ) {
+			if ( $file =~ m/\.lnk$/i ) {
 				push( @allLinkFiles, $file );
 			}
 		},
@@ -257,8 +239,12 @@ sub checkLink {
 
 		# Alle Verknuepfungen auf das zu loeschende Verzeichnis finden
 		if ( $LINK->{'Path'} =~ m/$inself->{archivFullName}/i ) {
+			my $pName = $_;
+			$pName =~ s/\//\\/g;
 			$newFiles{$_} = $LINK->{'Path'};
 			push( @newLinkFiles, $_ );
+			my @fileName = split(/[\\\/]+/, $_);
+			$inself->{verbosity}->verbose("Found linked file $fileName[$#fileName] in\n\t$pName\n\twith links to current directory.", "OK");
 		}
 		$LINK->Close();
 	}
@@ -271,22 +257,18 @@ sub changeLinks {
 
 	#alle restlichen Archive nach lnk-Datei durchsuchen
 	foreach my $dir (@foundDir) {
-
 		#letze Predir schon oben geprüft
 		if ( $dir eq $foundDir[0] ) { next; }
 		my $newCheckdir = "$dir";
-		my @tmp         =
-		  split( /\_\d{4}\_\d{2}\_\d{2}\_\d{2}\_\d{2}\_\d{2}/, $newLink );
+		my @tmp = split( /\_\d{4}\_\d{2}\_\d{2}\_\d{2}\_\d{2}\_\d{2}/, $newLink );
 		if ( $#tmp > 0 ) {
 			$newCheckdir = "$dir$tmp[1]";
 		}
 		my @foundFiles = $inself->findLinksPreDir($newCheckdir);
 		if (@foundFiles) {
-
 			#Prüfe ob link auf DelDatei
 			my %newLinks = $inself->checkLink(@foundFiles);
 			if ( keys %newLinks ) {
-
 				#Gefunde Links neu verlinken
 				$inself->newLink( $newDat, %newLinks );
 			}
@@ -298,6 +280,9 @@ sub changeLinks {
 sub newLink {
 	my ( $inself, $newDat, %newLinks ) = @_;
 	foreach ( keys %newLinks ) {
+		my $fileName=$_;
+		$fileName =~ s/\//\\/g;
+		$inself->{verbosity} ->verbose( "Updating link\n\t$fileName\n\tto new directory.\n", "OK" );
 		my $LINK = Win32::Shortcut->new();
 		$LINK->Load($_);
 		$LINK->{'Path'} = $newDat;
