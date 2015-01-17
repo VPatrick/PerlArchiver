@@ -121,8 +121,10 @@ sub delete_d {
 			}
 		}
 	}
+
 	#loeschen
 	$inself->del();
+
 }
 
 #----------------------Nachfrage, ob wirklich geloescht werden soll --------------------------
@@ -162,7 +164,7 @@ sub findPreDir {
 
 	#Archive mit dem selben Namen finden
 	opendir( my $dh, $inself->{'mainArchivpath'} )
-	  || die "Archiv kann nicht geöffnet werden!";
+	  || die "$!";
 	while ( readdir $dh ) {
 		if (    $_ =~ m/$inself->{'archivName'}/i
 			 && $_ ne $inself->{'archivFullName'}
@@ -186,8 +188,14 @@ sub findPreDir {
 		}
 		return @sortFoundArchives;
 	}
-	$inself->{verbosity}->verbose( "No previous directory found.\n", "OK" );
-	return @foundArchives;
+	else{
+		$inself->{verbosity}->verbose( "No previous directory found.\n", "OK" );
+		#Hashtable aktualisieren, wenn einziges vorhandenes Archiv gelöscht wird
+		if ($inself->{deleteFile} =~ m/\_\d{4}\_\d{2}\_\d{2}\_\d{2}\_\d{2}\_\d{2}$/) {
+			$inself->updateHashtable();
+		}
+		return @foundArchives;
+	}
 }
 
 #----------------------Verknuepfungen pruefen bei Archiv-------------------------------------------------
@@ -294,7 +302,34 @@ sub del {
 	my $inself = shift;
 	$inself->{verbosity}->verbose( "Delete $inself->{'deleteFile'}!", "OK" );
 	rmtree( $inself->{'deleteFile'}) or die "$!";
+}
 
+sub updateHashtable{
+	my $inself = shift;
+	my @output;
+
+	open(IN, "$inself->{mainArchivpath}hashtable.txt") or die "$!";
+	my @input = <IN>;
+	close (IN);
+	
+	foreach my $line(@input){
+		if($line !~ m/^$inself->{archivName}/){
+			push (@output, $line);
+		}
+	}
+	if (@output) {
+		$inself->{verbosity}->verbose( "Updating Hashtable.txt!", "OK" );
+		open(OUT,">$inself->{mainArchivpath}hashtable.txt") or die "$!";
+		foreach my $line(@output){
+			print OUT $line;
+		}
+		close(OUT);
+	}
+	else{
+		$inself->{verbosity}->verbose( "No Archive left. Delete Hashtable.txt!", "OK" );
+		#Keine Archive mehr vorhanden
+		unlink("$inself->{mainArchivpath}hashtable.txt");
+	}
 
 }
 
