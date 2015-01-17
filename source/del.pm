@@ -1,15 +1,15 @@
 package del;
 use strict;
 use warnings;
-use File::Basename qw(dirname);
-use Cwd qw(abs_path);
-use lib qw(dirname(dirname abs_path $0) . "/PerlArchiver/source");
-#use lib qw(dirname(dirname abs_path $0) . "/Archiver");
+#use File::Basename qw(dirname);
+#use Cwd qw(abs_path);
+#use lib qw(dirname(dirname abs_path $0) . "/PerlArchiver/source");
 use Win32::Shortcut;
 use File::Find;
 use File::Copy;
 use File::Path;
 use Verbosity;
+use Message;
 
 sub new {
 	my $invocant = shift;
@@ -20,16 +20,16 @@ sub new {
 		 archivFullName => "",                  #Archivname ohne Pfad mit Datum
 		 archivName     => "",                  #Archivname ohne Datum
 		 verbosity      => Verbosity->new(0),
+		 message => Message->new,
 	};
 	bless $self, $class;
 	return $self;
 }
 
 sub addDestination {
-	my ( $self, $destination ) = @_;
-	
+	my ( $self, $destination ) = @_;	
 	if ( !-e $destination ) {
-		print "\[ERROR\]\tNo such file or directory:\n\t$self->{deleteFile}!";
+		print $self->{message}->error("No such file or directory:\n\t$self->{deleteFile}!");
 		exit;
 	}
 
@@ -121,8 +121,6 @@ sub delete_d {
 			}
 		}
 	}
-	$inself->{verbosity}->verbose( "Delete $inself->{'deleteFile'}!", "OK" );
-
 	#loeschen
 	$inself->del();
 }
@@ -130,7 +128,7 @@ sub delete_d {
 #----------------------Nachfrage, ob wirklich geloescht werden soll --------------------------
 sub check {
 	my $inself = shift;
-	print"\n\[WARNING\] Do you really want to delete this file or directory:\n$inself->{'deleteFile'}?\n(Y/N)\n";
+	print $inself->{message}->warning("Do you really want to delete this file or directory:\n\t$inself->{'deleteFile'}?\n\t(Y/N)");
 	while (1) {
 		my $eingabe = <STDIN>;
 		chomp $eingabe;
@@ -147,11 +145,11 @@ sub check {
 				|| $eingabe =~ m/^nein$/i
 				|| $eingabe =~ m/^no$/i )
 		{
-			print("\[WARNING\] aborted delete.\n" );
+			print $inself->{message}->warning("aborted delete!");
 			exit;
 		}
 		else {
-			print("\[ERROR\]\tIt was not answered by \"yes\" (Y) or \"no\" (N)!\nTry again:\n" );
+			print $inself->{message}->error("It was not answered by \"yes\" (Y) or \"no\" (N)!\nTry again:");
 		}
 	}
 }
@@ -294,7 +292,10 @@ sub newLink {
 #----------------------Endgueltig loeschen----------------------------------------------
 sub del {
 	my $inself = shift;
-	rmtree( $inself->{'deleteFile'} );
+	$inself->{verbosity}->verbose( "Delete $inself->{'deleteFile'}!", "OK" );
+	rmtree( $inself->{'deleteFile'}) or die "$!";
+
+
 }
 
 sub DESTROY {
