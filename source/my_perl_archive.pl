@@ -15,12 +15,20 @@ use Message;
 my $message = Message->new;
 my $invoker = Invoker->new;
 
-foreach (@ARGV) {
-	if ($_ =~ m/-(cr|cd|cl|cp|cm|ch|rc|rd|rl|rs|rm|rh|dc|dr|dl|dp|ds|dm|dh|lc|lr|ld|lp|ls|lm|lh|mc|mr|md|ml|mh|hc|hr|hd|hl|hm|hv)/i) {
-		print $message->error("The combination of $_ is not valid.");
-		exit;
-	}
+my @params = grep(/^-[scrdlhmp]{1}$/, @ARGV);
+if (!@params) {
+	@params = grep(/^--(create|restore|delete|list|help|mapping|slim|partial){1}$/, @ARGV);
 }
+my $params = join " ", @params;
+if (!$params) {
+	$params = $ARGV[0];
+}
+checkParams($params, '^(-[crdlhmsp]{1})\\s{0,1}(-{0,1}[crdlhm]{1})');
+checkParams($params, '^(-[rdlhmsp]{1})\\s{0,1}(-{0,1}s)');
+checkParams($params, '^(-[cdlhmsp]{1})\\s{0,1}(-{0,1}p)');
+checkParams($params, '^(--(?:create|restore|delete|list|help|mapping|slim|partial){1})\\s{0,1}(--(?:create|restore|delete|list|help|mapping){1})');
+checkParams($params, '^(--(?:restore|delete|list|help|mapping|slim|partial){1})\\s{0,1}((?:--){0,1}slim)');
+checkParams($params, '^(--(?:create|delete|list|help|mapping|slim|partial){1})\\s{0,1}((?:--){0,1}partial)');
 
 Getopt::Long::Configure("bundling");
 GetOptions (
@@ -38,6 +46,20 @@ GetOptions (
 	exit;
 };
 
-sub help() {
+# help
+# Beschreibung:	Gibt die Hilfedatei auf STDOUT aus
+sub help {
 	pod2usage(-verbose => 2, -input => "./help.pod");
+};
+
+# checkParams
+# Beschreibung:	Prüft die Switches gegen reguläre Ausdrücke
+# Parameter:	params	Switches
+#				regex	Regulärer Ausdruck
+sub checkParams {
+	my ($params, $regex) = @_;
+	if ($params =~ m/$regex/s) {
+		print $message->error("The combination of $1 and $2 is invalid.");
+		exit;
+	}
 };
