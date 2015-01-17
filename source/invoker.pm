@@ -3,7 +3,6 @@ use warnings;
 use Verbosity;
 use Message;
 use Instances;
-use Utils;
 
 # Invoker
 # Beschreibung: Dieses Modul dient zum Aufruf der entsprechenden Funktionen von my_perl_archiver
@@ -18,7 +17,6 @@ sub new {
 	my $self = {
 		message => Message->new,
 		instances => Instances->new,
-		utils => Utils->new,
 		level => 0
 	};
 	bless ($self, $class);
@@ -88,8 +86,8 @@ sub restore {
 	my ($self, @arguments) = @_;
 	if ($#arguments >= 3) {
 		my $restore = $self->{instances}->restore($self->{level});
-		$restore->addSource($self->{utils}->getAbsPath($arguments[0]));
-		$restore->addDestination($self->{utils}->getAbsPath($arguments[1]));
+		$restore->addSource(Cwd::abs_path($arguments[0]));
+		$restore->addDestination(Cwd::abs_path($arguments[1]));
 		$restore->addSourceName($arguments[2]);
 		$restore->addUserTime($arguments[3]);
 		$restore->restore_r();
@@ -126,7 +124,7 @@ sub del {
 			if ($self->{level} > 0) {
 				$delete->setVerboseLevel($self->{level});
 			}
-			$delete->addDestination($self->{utils}->getAbsPath($arguments[0]));
+			$delete->addDestination(Cwd::abs_path($arguments[0]));
 			$delete->delete_d();
 		} else {
 			$self->{message}->warning("The delete function is currently not supported.");
@@ -149,7 +147,7 @@ sub list {
 		if ($self->{level} > 0) {
 			$list->setVerboseLevel($self->{level});
 		}
-		$list->list($self->{utils}->getAbsPath($arguments[0]), $arguments[1]);
+		$list->list(Cwd::abs_path($arguments[0]), $arguments[1]);
 	} else {
 		print $self->{message}->error("Wrong amount of paramters given: Path to an archive and a timestamp (yyyy_mm_dd_hh_ii_ss) needed.");
 		exit;
@@ -162,7 +160,7 @@ sub list {
 sub printHashTable {
 	my ($self, @arguments) = @_;
 	my $file = undef;
-	my $path = $self->{utils}->getAbsPath($arguments[0]);
+	my $path = Cwd::abs_path($arguments[0]);
 	if ($#arguments == 0) {
 		open ($file, "$path/hashtable.txt");
 	} elsif ($#arguments == 1) {
