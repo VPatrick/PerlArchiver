@@ -4,7 +4,7 @@
 #                                       Create Archiv
 #   Beschreibung:   Dieses Modul erstellt ein neues Archiv oder verschlankt ein bestehendes
 #   Autor:          Ramunno, Michel Angelo
-#   Erstellt:       08.01.2015
+#   Erstellt:       17.01.2015
 #*****************************************************************************************************
 
 use warnings;
@@ -38,6 +38,30 @@ my $verbose = sub {
         }
         $self->{verbosity}->verbose($message,$state);
     }
+};
+
+#*****************************************************************************************************
+#                                        updateHashtable
+# Beschreibung: Überprüft ob es bereits einen Eintrag in der Hashtable für dieses Archiv gibt,
+#               falls nicht wird ein neuer Eintrag erstellt
+# Parameter:    $self = Instanz von Create
+#*****************************************************************************************************
+my $updateHashtable = sub {
+    my ($self)=@_;
+    use Fcntl;
+    sysopen(my $hashtable, "$self->{destination}/hashtable.txt", O_RDWR|O_CREAT) or die("Can't create hashtable entry\n");
+    my $hashfound=0;
+    while (my $line = <$hashtable>) {
+        
+        if ($line =~ /$self->{archiveName}/) {
+            $hashfound=1;
+        }
+    }
+    if($hashfound==0)
+    {
+        print({$hashtable} "$self->{archiveName}:$self->{source}\n");
+    }
+    close($hashtable);
 };
 
 #*****************************************************************************************************
@@ -112,7 +136,7 @@ my $createDir = sub{
 my $copyDir = sub  {
     my ($self,$copyDir,$directory,$destination)=@_;
     # Öffnen des Quellverzeichnisses bzw. dessen Unterverzeichnisses
-    opendir(my $dsh,"$self->{source}/$directory") || die("Can't find directory $directory: $!");
+    opendir(my $dsh,"$self->{source}/$directory") || die("Can't find directory $directory: $!\n");
     $verbose->($self,"Open directory: $self->{source}$directory\n","OK");
     # Kopieren aller Dateien bzw. Erzeugen eines Unterverzeichnisses
     while(my $file=readdir $dsh) {
@@ -187,7 +211,7 @@ my $createLink = sub{
     {
         # Falls Windows, erzeugen eines shortcuts
         $verbose->($self,"Link files:\nOriginal:\t$linkDestination\\$fileName\nLink:\t\t$linkSource\\$fileName");
-        require Win32::Shortcut or die("Can't import Win32::Shortcut: $!");
+        require Win32::Shortcut or die("Can't import Win32::Shortcut: $!\n");
         my $link = Win32::Shortcut->new();
         $link->{'Path'}="$linkSource\\$fileName";
         $link->{'File'}="$linkDestination\\$fileName.lnk";
@@ -224,7 +248,7 @@ my $updateLink = sub{
     my $result="false";
     if($^O eq "MSWin32")
     {
-        require Win32::Shortcut or die("Can't import Win32::Shortcut: $!");
+        require Win32::Shortcut or die("Can't import Win32::Shortcut: $!\n");
         my $link = Win32::Shortcut->new();
         $link->Load("$linkPath\\$linkName");
         $verbose->($self,"Update link:\nOld Path:\t$link->{'Path'}\nNew Path:\t$linkSource");
@@ -257,7 +281,7 @@ my $getLinkPath = sub{
     my $path="";
     if($^O eq "MSWin32")
     {
-        require Win32::Shortcut or die("Can't import Win32::Shortcut: $!");
+        require Win32::Shortcut or die("Can't import Win32::Shortcut: $!\n");
         my $link = Win32::Shortcut->new();
         $result=$link->Load("$linkPath\\$linkName");
         $verbose->($self,"Get original file path from link:\nLink:\t$linkPath\\$linkName\nPath:\t$link->{'Path'}");
@@ -341,7 +365,7 @@ my $compareFile = sub  {
 my $compareDir = sub  {
     my ($self,$compareDir,$olderDir,$newerDir)=@_;
     # Öffnen des Archivverzeichnisses bzw. dessen Unterverzeichnisse
-    opendir(my $doh,"$self->{destination}/$newerDir") || die("Can't find directory $newerDir: $!");
+    opendir(my $doh,"$self->{destination}/$newerDir") || die("Can't find directory $newerDir: $!\n");
     # Verglichen aller Dateien, inklusive Unterverzeichnisse
     while(my $newFile=readdir $doh) {
         if($newFile ne ".." and $newFile ne ".")
@@ -550,7 +574,7 @@ sub create_c {
     my $self=shift;
     $verbose->($self,"Start create c:\n***************\n");
     # Überprüfen ob Quellverzeichnis vorhanden ist
-    opendir(my $dsh,$self->{source}) || die("Can't find directory $self->{source}: $!");
+    opendir(my $dsh,$self->{source}) || die("Can't find directory $self->{source}: $!\n");
     closedir($dsh);
     # Erzeugen des Verzeichnisnamens
     my ($sec,$min,$hour,$day,$mon,$year,$wday,$yday,$isdst)=localtime();
@@ -564,6 +588,8 @@ sub create_c {
     # Erzeugen des Hashwerts für die neuere Datei
     my $sourceNamedigest=$md5->hexdigest;
     $self->addArchiveName($sourceNamedigest);
+    # Überprüfen ob bereits Eintrag für Archiv vorhanden, ggf. erstellen
+    $updateHashtable->($self);
     # Erstellen des Zielverzeichnisses
     mkdir($self->{destination}."/".$self->{archiveName}."_".$now);
     $verbose->($self,"Create Archive: $self->{destination}/$self->{archiveName}_$now\n","OK");
@@ -582,7 +608,7 @@ sub create_s {
     my $previousArchiveAvailable=0;
     $verbose->($self,"Start create s:\n***************\n");
     # Öffnen des Archivverzeichnisses
-    opendir(my $dsh,$self->{destination}) || die("Can't find directory $self->{destination}: $!");
+    opendir(my $dsh,$self->{destination}) || die("Can't find directory $self->{destination}: $!\n");
     # Alle Verzeichnisse des Archivverzeichnisses einlesen
     my @folder=readdir $dsh;
     my @seperateFolder=grep(/^$self->{archiveName}/,@folder);
