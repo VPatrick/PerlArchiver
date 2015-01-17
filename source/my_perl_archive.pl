@@ -4,7 +4,7 @@ use warnings;
 
 use File::Basename qw(dirname);
 use Cwd qw(abs_path);
-use lib dirname(dirname abs_path $0) . "/PerlArchiver/source";
+use lib dirname(dirname abs_path $0) . "/source";
 
 use Getopt::Long;
 use Pod::Usage qw(pod2usage);
