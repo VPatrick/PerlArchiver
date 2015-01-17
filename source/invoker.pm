@@ -70,7 +70,8 @@ sub slim {
 		} else {
 			@split2 = split(/\//, $split[0]);
 		}
-		$create->addDestination($arguments[0]);
+		my @split3 = split(/$split2[$#split2]\//, $arguments[0]);
+		$create->addDestination($split3[0]);
 		$create->addArchiveName($split2[$#split2]);
 		$create->create_s();
 	} else {
