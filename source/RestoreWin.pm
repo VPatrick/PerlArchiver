@@ -336,7 +336,7 @@ sub FindArchive{
         die;
     }
     use Utils;
-    $tmp = Utils->new();
+    my $tmp = Utils->new();
     $self->{verbosity}->verbose("Call findLastValidArchive","OK");
     return $tmp->findLastValidArchive($self->{source}, $self->{usertime},$hash);
 }
@@ -374,7 +374,7 @@ sub getLinkPath{
 sub DESTROY{
     my $self = shift;
     $self->{verbosity}=undef;
-    $flag = undef;
+    $Flag = undef;
 };
 1;
 __END__
