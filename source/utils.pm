@@ -110,21 +110,6 @@ sub getPathFromHash {
 	return undef;
 };
 
-<<<<<<< HEAD
-=======
-# getAbsPath
-# Beschreibung: Liefert einen absoluten Pfad
-# Parameter:	path	Pfad
-# Rückgabewert:	path	Absoluter Pfad
-sub getAbsPath {
-	my ($self, $path) = @_;
-	#chdir $path;
-	#return Cwd::getcwd();
-	
-	return Cwd::abs_path($path);
-};
-
->>>>>>> FETCH_HEAD
 # Destruktor
 sub DESTROY {
 	my $self = shift;
