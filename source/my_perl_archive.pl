@@ -15,9 +15,9 @@ use Message;
 my $message = Message->new;
 my $invoker = Invoker->new;
 
-my @params = grep(/^-[scrdlhmp]{1}$/, @ARGV);
+my @params = grep(/^-[scrdlhmpv]{1}$/, @ARGV);
 if (!@params) {
-	@params = grep(/^--(create|restore|delete|list|help|mapping|slim|partial){1}$/, @ARGV);
+	@params = grep(/^--(create|restore|delete|list|help|mapping|slim|partial|verbose){1}$/, @ARGV);
 }
 my $params = join " ", @params;
 if (!$params) {
