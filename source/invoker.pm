@@ -172,9 +172,8 @@ sub printHashTable {
 	}
 	if (defined $file) {
 		while (my $line = <$file>) {
-			my @split = split(/\:/, $line, 2);
-			my @split2 = split(/$split[0]\:/, $line, 2);
-			my $pair = "$split[0] : $split2[1]";
+			my ($hash, $path) = split(/\:/, $line, 2);
+			my $pair = "$hash : $path";
 			chomp $pair;
 			print $pair, "\n";
 		}
