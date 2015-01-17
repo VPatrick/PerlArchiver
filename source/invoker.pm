@@ -41,11 +41,11 @@ sub create {
 	if ($#arguments >= 1) {
 		my $create = $self->{instances}->create($self->{level});
 		if ($arguments[0] eq "-s") {
-			$create->addSource($arguments[1]);
-			$create->addDestination($arguments[2]);
+			$create->addSource(Cwd::abs_path($arguments[1]));
+			$create->addDestination(Cwd::abs_path($arguments[2]));
 		} else {
-			$create->addSource($arguments[0]);
-			$create->addDestination($arguments[1]);
+			$create->addSource(Cwd::abs_path($arguments[0]));
+			$create->addDestination(Cwd::abs_path($arguments[1]));
 		}
 		$create->create_c();
 	} else {
