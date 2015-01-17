@@ -59,6 +59,7 @@ my $updateHashtable = sub {
     }
     if($hashfound==0)
     {
+        # Neuer Eintrag in die Hashtable schreiben
         print({$hashtable} "$self->{archiveName}:$self->{source}\n");
     }
     close($hashtable);
@@ -270,7 +271,7 @@ my $updateLink = sub{
 
 #*****************************************************************************************************
 #                                        getLinkPath
-# Beschreibung: Überpruft ob link gültig ist
+# Beschreibung: Liefert den Pfad der original Datei zurück
 # Parameter:    $self = Instanz von Create
 #               $linkName = Name der Linkdatei
 #               $linkPath = Verzeichnis in dem sich der Link befindet
@@ -299,6 +300,21 @@ my $getLinkPath = sub{
         }
     }
     return $path;
+};
+
+#*****************************************************************************************************
+#                                        getAbsPath
+# Beschreibung: Liefert den absoluten Pfad des Verzeichnisses zurück
+# Parameter:    $self = Instanz von Create
+#               $source = Pfad absolut oder relativ
+# Return:       Absoluten Pfad des Verzeichnisses
+#*****************************************************************************************************
+my $getAbsPath = sub {
+    my ($self,$source)=@_;
+    use Cwd 'abs_path';
+    my $absolutePath = abs_path($source);
+    $source = $absolutePath;
+    return $source;
 };
 
 #*****************************************************************************************************
@@ -504,6 +520,7 @@ sub new {
 #*****************************************************************************************************
 sub addSource{
     my ($self,$source) = @_;
+    $source = $getAbsPath->($self,$source);
     if(-e $source)
     {
         # Hinzufügen des Quellverzeichnisses
@@ -524,6 +541,7 @@ sub addSource{
 #*****************************************************************************************************
 sub addDestination{
     my ($self,$destination) = @_;
+    $destination = $getAbsPath->($self,$destination);
     if(-e $destination)
     {
         # Hinzufügen des Zielverzeichnisses
