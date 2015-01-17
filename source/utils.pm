@@ -75,6 +75,9 @@ sub findLastValidArchive {
 		}
 	}
 	closedir ($dir);
+	if ($^O eq "MSWin32") {
+		$finalSource =~ s/\//\\/g;
+	}
 	return $finalSource;
 };
 
