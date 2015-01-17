@@ -116,8 +116,10 @@ sub getPathFromHash {
 # Rückgabewert:	path	Absoluter Pfad
 sub getAbsPath {
 	my ($self, $path) = @_;
-	chdir $path;
-	return Cwd::getcwd();
+	#chdir $path;
+	#return Cwd::getcwd();
+	
+	return Cwd::abs_path($path);
 };
 
 # Destruktor
