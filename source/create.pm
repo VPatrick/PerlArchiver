@@ -494,18 +494,18 @@ my $compareDir = sub  {
 #*****************************************************************************************************
 #                                         Konstruktor
 # Beschreibung: Erzeugt ein neues Objekt der Create Klasse
-# Parameter:    $inFlag = Ansteuerung der Ausgabe von Programminformationen (optional)
+# Parameter:    $Flag = Ansteuerung der Ausgabe von Programminformationen (optional)
 #                1 => Ausgabe der Informationen
 #*****************************************************************************************************
 sub new {
-    my ($invocant,$inFlag) = @_;
+    my ($invocant,$flag) = @_;
     my $class   = ref($invocant) || $invocant;
     my $self = {
         source  => "",
         destination   => "",
-        flag  => $inFlag || 0,
+        flag  => $flag || 0,
         archiveName => "",
-        verbosity => Verbosity->new($inFlag || 0),
+        verbosity => Verbosity->new($flag || 0),
     };
     bless ($self, $class);
     $verbose->($self,"New","OK");
@@ -557,7 +557,7 @@ sub addDestination{
 #*****************************************************************************************************
 #                                         addArchiveName
 # Beschreibung: Fügt den Archivname hinzu, der für die Verschlankung benötigt wird
-# Parameter:    $archiveName = Pfad zum Zielverzeichnis
+# Parameter:    $archiveName = Name des Archivs ohne dateTime
 #*****************************************************************************************************
 sub addArchiveName{
     my ($self,$archiveName) = @_;
@@ -569,7 +569,7 @@ sub addArchiveName{
 
 #*****************************************************************************************************
 #                                         setVerboseLevel
-# Beschreibung: Setzt den Level der Verbose Ausgabe
+# Beschreibung: Setzt den Level der verbose Ausgabe
 # Parameter:    $level 0 = Keine Ausgabe
 #                      1 = Normale Ausgabe
 #                      2 ...8 = reserviert
