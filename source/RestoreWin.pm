@@ -72,9 +72,19 @@ sub addUserTime{
 }
 sub addPartial{
     my($self,$Partial) = @_;
-    $self->{partial} = $Partial;
     $self->{rel_path} = "0";
     $self->{rel_path} = "1" if($Partial =~ m/\\/);
+    if(!($Partial =~ m/^\\/))
+    {
+        my @tmp1 = split(/\\/,$Partial);
+        foreach(@tmp1)
+        {
+            $self->{partial} .= "\\$_";
+        }
+    }
+    else{
+        $self->{partial} = $Partial;
+    }
     $self->{verbosity}->verbose("New partial added: $self->{partial}");
 }
 sub setVerboseLevel{
@@ -104,49 +114,98 @@ sub restore_rp{
     $self->{verbosity}->verbose("Call FindArchive\n","OK");
     my $SourceArchiv = $self->FindArchive();
     # Falls ein relativer Pfad angegeben wurde werden die angegeben Pfade um den relative Pfad erweitert
-    my $partial = $self->{partial};
+    # Falls nicht wird die Datei oder das Unterverzeichnis gesucht
     my $FileorArchivSource = "";
     my $FileorArchivDestination = "";
+    my $FileFolder = "";
     my $FileCopied = 0;
+    my $IsLink = 0;
     if($self->{rel_path} eq "1"){
         $self->{verbosity}->verbose("Partial is a relative path\n","OK");
         $FileorArchivSource = "$SourceArchiv$self->{partial}";
-        my @tmp2 = split(/\\/,$SourceArchiv);
-        my $tmp2 = scalar(@tmp2)-1;
-        my $tmp3 = $tmp2[$tmp2];
-        my @split1 = split(/_\d{4}_\d{2}_\d{2}_\d{2}_\d{2}_\d{2}$/, $tmp3);
-        my $archiveName = $split1[0];
-        $FileorArchivDestination = "$self->{destination}\\$archiveName$self->{partial}";
+        
+        # Prüfen ob die Datei im Archiv ein Link ist oder nicht
+        my @tmp1 = split(/\\/,$self->{partial});
+        my $testpath = $SourceArchiv;
+        for(my $i=0;$i<$#tmp1;$i++)
+        {
+            $testpath .= "$tmp1[$i]";
+        }
+        opendir my $Dir, $testpath or $self->{verbosity}->verbose("Can not open dir $testpath","ERROR");
+        my @files = readdir $Dir;
+        closedir $Dir;
+        foreach(@files)
+        {
+            $IsLink = 1 if($_ =~ m/$tmp1[$#tmp1].lnk/);
+        }
+        # Falls es ein link ist muss die orginal Datei gefunden werden
+        $FileorArchivSource = $self->getLinkPath("$tmp1[$#tmp1].lnk",$testpath) if($IsLink == 1);
+        $FileorArchivDestination = "$self->{destination}$self->{partial}";
+        
+        if(!(-e $FileorArchivDestination))
+        {
+            $FileFolder = $self->{destination};
+            my @tmp = split(/\\/,$self->{partial});
+            for(my $i=0; $i<$#tmp-1;$i++)
+            {
+                $FileFolder .= "$tmp[$i]";
+            }
+        }
     }
     else{
         # Falls dies nicht der Fall ist muss die Datei oder das Unterverzeichnis gesucht werden dabei wird der erste Treffer ausgewertet
         $self->{verbosity}->verbose("Partial is not a relative path. The first match will be processed.\n","WARNING");
         $self->{verbosity}->verbose("Call Find_source_rp\n","OK");
-        $FileorArchivSource = Find_source_rp
+        # Es wird rekursiv nach einem Match gesucht und der erste Treffer wird zurückgegeben
+        $FileorArchivSource = $self->Find_source_rp
         (
         $SourceArchiv,
-        $partial,
+        $self->{partial},
         );
         $self->{verbosity}->verbose("The given source subdirectory or file does not exist!\n","ERROR") if(!(-f $FileorArchivSource || -d $FileorArchivSource));
-        die if (!(-f $FileorArchivSource || -d $FileorArchivSource));
+        die if (!(-f $FileorArchivSource || -d $FileorArchivSource || $FileorArchivSource =~ m/.lnk$/i));
+        # Falls der Pfad der zurückgegeben wurde ein Link ist muss zuerst die orginal Datei gefunden werden
+        $FileorArchivSource = $self->getLinkPath("$self->{partial}".".lnk",$SourceArchiv) if($FileorArchivSource =~ m/.lnk$/i);
         my $destination = $self->{destination};
         $self->{verbosity}->verbose("Call Find_source_rp\n","OK");
-        $FileorArchivDestination = Find_source_rp
+        $FileorArchivDestination = $self->Find_source_rp
         (
         $destination,
-        $partial,
+        $self->{partial},
         );
         $self->{verbosity}->verbose("The given destination subdirectory or file does not exist!\n","ERROR") if(!(-f $FileorArchivSource || -d $FileorArchivSource));
     }
     # Falls das Zielverzeichnis nicht existiert wird ein Zielverzeichnis erstellt
     if(! (-e $FileorArchivDestination))
     {
+        if($FileorArchivDestination eq "")
+        {
+            $FileorArchivDestination = $self->{destination};
+            my @tmp1 = split(/\\/,$FileorArchivSource);
+            my @tmp2 = split(/\\/,$SourceArchiv);
+            my @difference = my @intersection =();
+            my %count = ();
+            foreach my $element (@tmp1, @tmp2) { $count{$element}++ }
+            foreach my $element (keys %count) {
+                push @{ $count{$element} > 1 ? \@intersection : \@difference }, $element;
+            }
+            foreach(@difference)
+            {
+                $FileorArchivDestination .= "\\$_";
+            }
+        }
         $self->{verbosity}->verbose("The destination file or directory does not exist! A new file or directory will be created!\n","WARNING");
-        $self->{verbosity}->verbose("Create new directory: $FileorArchivDestination\n","OK") if(-d $FileorArchivSource);
-        mkdir("$FileorArchivDestination") if(-d $FileorArchivSource);
-        $self->{verbosity}->verbose("Create new file: $FileorArchivDestination\n","OK");
-        File::Copy::copy $FileorArchivSource,$FileorArchivDestination if(-f $FileorArchivSource);
-        $FileCopied = 1 if(-f $FileorArchivSource);
+        if(-d $FileorArchivSource)
+        {
+            $self->{verbosity}->verbose("Create new directory: $FileorArchivDestination\n","OK");
+            mkdir("$FileorArchivDestination");
+        }
+        else
+        {
+            $self->{verbosity}->verbose("Create new file: $FileorArchivDestination\n","OK") if(-f $FileorArchivSource);
+            File::Copy::copy $FileorArchivSource,$FileFolder if(-f $FileorArchivSource);
+            $FileCopied = 1 if(-f $FileorArchivSource);
+        }
     }
     die if(!(-f $FileorArchivDestination||-d $FileorArchivDestination));
     # Falls es ein Directory ist wird die RestoreSubDirectory- aufgerufen falls es ein File ist die RestoreFile Methode
@@ -154,7 +213,7 @@ sub restore_rp{
         $self->{verbosity}->verbose("Find source directory path: $FileorArchivSource.","OK");
         $self->{verbosity}->verbose("Find destination directory path: $FileorArchivDestination.","OK");
         $self->{verbosity}->verbose("Call RestoreSubDirectory\n","OK");
-        RestoreSubDirectory
+        $self->RestoreSubDirectory
         (
         $FileorArchivSource,
         $FileorArchivDestination,
@@ -167,10 +226,11 @@ sub restore_rp{
         $self->{verbosity}->verbose("Call RestoreFile.\n","OK");
         if($FileCopied eq 0)
         {
-            RestoreFile
+            $self->RestoreFile
             (
             $FileorArchivSource,
             $FileorArchivDestination,
+            $self->{partial},
             );
         }
     }
@@ -188,17 +248,28 @@ sub Find_source_rp{
     my @Files = readdir Dir;
     closedir Dir;
     $self->{verbosity}->verbose("Close directory $Directory\n","OK");
-    return "${Directory}\\${partial}" if(grep(/$partial/,@Files));
+    return "${Directory}\\${partial}" if(grep(/$partial$/,@Files));
     foreach (@Files)
+    {
+        if($_ ne "." and $_ ne ".." and $_ ne ".DS_Store")
+        {
+            if($_ =~ m/$partial$/ || $_ =~ m/$partial.lnk$/)
+            {
+                $self->{verbosity}->verbose("Found partial\n","OK");
+                return "${Directory}\\${_}";
+            }
+        }
+    }
+    foreach(@Files)
     {
         if($_ ne "." and $_ ne ".." and $_ ne ".DS_Store")
         {
             if(-d "${Directory}\\${_}")
             {
-                $self->{verbosity}->verbose("Found partial\n","OK"), if($_ eq $partial);
-                return "${Directory}\\${_}" if($_ eq $partial);
+                $self->{verbosity}->verbose("Found $Directory\\${_}") if($_ =~ m/$partial/);
+                return "$Directory\\${_}" if($_ =~ m/$partial/);
                 $self->{verbosity}->verbose("Call Find_source_rp");
-                return Find_source_rp("${Directory}\\${_}",$partial);
+                return $self->Find_source_rp("${Directory}\\${_}",$partial);
             }
         }
     }
@@ -257,12 +328,10 @@ sub RecusriveRestore{
         if($_ ne ".." and $_ ne "."){
             if (-l "$Source\\$_" or $_ =~ m/.lnk$/i)
             {
-                print "YES a Link!\n";
                 my $SourceDatei = $self->getLinkPath($_,$Source);
                 $self->RestoreFile($SourceDatei,$Destination,$_);
             }
             elsif(-f "$Source\\$_"){
-                print "YES a file!\n";
                 $self->RestoreFile("$Source\\$_",$Destination, $_);
             }
             elsif(-d "$Source\\$_")
@@ -290,7 +359,7 @@ sub RestoreSubDirectory{
     $self->{verbosity}->verbose("Make Dir: ${Destination}\n","OK");
     mkdir("$Destination");
     $self->{verbosity}->verbose("Copy Dir from $Source to ${Destination}\n","OK");
-    RecusriveRestore($Source,$Destination);
+    $self->RecusriveRestore($Source,$Destination);
 }
 
 
@@ -326,7 +395,7 @@ sub FindArchive{
     {
         if($_ =~ m/$self->{sourcename}$/)
         {
-            my @tmp = split(/:/,$_);
+            my @tmp = split(/:/,$_,2);
             $hash = $tmp[0];
             $self->{verbosity}->verbose("Find Hash: $hash","OK");
         }
