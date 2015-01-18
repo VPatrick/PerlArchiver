@@ -128,7 +128,7 @@ sub del {
 			$delete->addDestination(Cwd::abs_path($arguments[0]));
 			$delete->delete_d();
 		} else {
-			$self->{message}->warning("The delete function is currently not supported.");
+			$self->{message}->warning("The delete function is currently not supported under: $^O");
 			exit;
 		}
 	} else {
