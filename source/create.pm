@@ -67,7 +67,7 @@ my $updateHashtable = sub {
 
 #*****************************************************************************************************
 #                                        copyFile
-# Beschreibung: Kopiert eine Datei von Quellverzeichnis ins Zielverzeichnis
+# Beschreibung: Kopiert eine Datei vom Quellverzeichnis ins Zielverzeichnis
 # Parameter:    $self = Instanz von Create
 #               $fileName = Name der Datei die gelöscht werden soll
 #               $fileSource = Verzeichnis in dem sich die Datei befindet
@@ -118,7 +118,7 @@ my $createDir = sub{
     # Verzeichnis erstellen
     if(mkdir("$dirPath/$dirName"))
     {
-        # Verzeichnis wurde ertellt
+        # Verzeichnis wurde erstellt
         $verbose->($self,"Created!\n","OK");
     }
     else
@@ -130,7 +130,7 @@ my $createDir = sub{
 
 #*****************************************************************************************************
 #                                         copyDir
-# Beschreibung: Kopiert alle Dateien in diesem und allen Unterverzeichnissen in das Zielverzeichnis
+# Beschreibung: Kopiert alle Dateien in diesem Verzeichnis und allen Unterverzeichnissen in das Zielverzeichnis
 # Parameter:    $directory = Aktuelles Unterverzeichnis
 #               $destination = Ziel Unterverzeichnis
 #*****************************************************************************************************
@@ -263,7 +263,7 @@ my $updateLink = sub{
         }
         else
         {
-            # Verlinkung konnte nicht aktualisiert
+            # Verlinkung konnte nicht aktualisiert werden
             $verbose->($self,"Can't update link!\n","ERROR");
         }
     }
@@ -296,7 +296,7 @@ my $getLinkPath = sub{
         }
         else
         {
-            # Verlinkung konnte nicht aktualisiert
+            # Verlinkung konnte nicht aktualisiert werden
             $verbose->($self,"Can't find link!\n","ERROR");
         }
     }
@@ -305,10 +305,10 @@ my $getLinkPath = sub{
 
 #*****************************************************************************************************
 #                                        getAbsPath
-# Beschreibung: Liefert den absoluten Pfad des angegeben Verzeichnisses zurück
+# Beschreibung: Liefert den absoluten Pfad des angegebenen Verzeichnisses zurück
 # Parameter:    $self = Instanz von Create
 #               $source = Pfad absolut oder relativ
-# Rückgabe:     Absoluten Pfad des Verzeichnisses
+# Rückgabe:     Absoluter Pfad des Verzeichnisses
 #*****************************************************************************************************
 my $getAbsPath = sub {
     my ($self,$source)=@_;
@@ -406,7 +406,7 @@ my $compareDir = sub  {
                             # Aktualisiere alten Link
                             $updateLink->($self,$newFile,$path,"$self->{destination}\\$olderDir");
                         }
-                        # Überpüfung ob alte Datei als normale Datei vorhanden ist
+                        # Überprüfung ob alte Datei als normale Datei vorhanden ist
                         elsif(-e "$self->{destination}\\$olderDir\\$newFileNoLink")
                         {
                             # Hole Pfad der aktuellen Datei
@@ -418,7 +418,7 @@ my $compareDir = sub  {
                                 # Falls beide Dateien gleich sind
                                 # Löschen der alten Datei
                                 $deleteFile->($self,$newFileNoLink,"$self->{destination}/$olderDir");
-                                # Entfernen des Dateinames
+                                # Entfernen des Dateinamens
                                 $_=$path;
                                 s/\\$newFileNoLink//;
                                 $path=$_;
@@ -430,7 +430,7 @@ my $compareDir = sub  {
                     else # Neue Datei ist kein Link
                     {
                         # Überprüfe ob beide Dateien gleich sind
-                        # Überpüfung ob alte Datei ein normale Datei ist
+                        # Überprüfung ob alte Datei eine normale Datei ist
                         if(-e "$self->{destination}\\$olderDir\\$newFileNoLink")
                         {
                             my $result=$compareFile->($self,"$self->{destination}\\$olderDir\\$newFileNoLink","$self->{destination}\\$newerDir\\$newFile");
@@ -443,7 +443,7 @@ my $compareDir = sub  {
                                 $createLink->($self,$newFile,"$self->{destination}\\$newerDir","$self->{destination}\\$olderDir");
                             }
                         }
-                        # Überpüfung ob alte Datei ein link ist
+                        # Überprüfung ob alte Datei ein link ist
                         elsif("$self->{destination}\\$olderDir\\$newFile"=~/.lnk$/i)
                         {
                             # Hole Pfad der aktuellen Datei
@@ -453,7 +453,7 @@ my $compareDir = sub  {
                             if($result eq "true")
                             {
                                 # Falls beide Dateien gleich sind
-                                # Entfernen des Dateinames
+                                # Entfernen des Dateinamens
                                 $_=$path;
                                 s/\\$newFileNoLink//;
                                 $path=$_;
@@ -466,7 +466,7 @@ my $compareDir = sub  {
                 else
                 {
                     # Falls Unix basiertes System
-                    # Überpüfung ob beide Dateien gleich sind
+                    # Überprüfung ob beide Dateien gleich sind
                     my $result=$compareFile->($self,"$self->{destination}/$olderDir/$newFileNoLink","$self->{destination}/$newerDir/$newFile");
                     if($result eq "true")
                     {
@@ -478,7 +478,7 @@ my $compareDir = sub  {
                     }
                 }
             }
-            # Überpüfung ob es sich um ein Verzeichnis handelt
+            # Überprüfung ob es sich um ein Verzeichnis handelt
             elsif (-d "$self->{destination}/$olderDir/$newFile")
             {
                 $verbose->($self,"Compare Diretory:\nOlder Directory:\t$self->{destination}/$olderDir/$newFile\nNewer Directory:\t$self->{destination}/$newerDir/$newFile\n");
@@ -583,7 +583,7 @@ sub setVerboseLevel {
 
 #*****************************************************************************************************
 #                                         create_c
-# Beschreibung: Erzeugt eine Kopie des Quellverzeichnis im Zielverzeichnis
+# Beschreibung: Erzeugt eine Kopie des Quellverzeichnisses im Zielverzeichnis
 # Parameter:    Keine
 #*****************************************************************************************************
 sub create_c {
@@ -652,7 +652,7 @@ sub create_s {
 
 #*****************************************************************************************************
 #                                         create_cs
-# Beschreibung: Erzeugt eine Kopie des Quellverzeichnis im Zielverzeichnis und verschlankt es
+# Beschreibung: Erzeugt eine Kopie des Quellverzeichnisses im Zielverzeichnis und verschlankt es
 #               anschließend
 # Parameter:    Keine
 #*****************************************************************************************************
