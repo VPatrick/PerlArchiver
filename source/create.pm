@@ -67,11 +67,11 @@ my $updateHashtable = sub {
 
 #*****************************************************************************************************
 #                                        copyFile
-# Beschreibung: Kopiert eine Datei Datei
+# Beschreibung: Kopiert eine Datei von Quellverzeichnis ins Zielverzeichnis
 # Parameter:    $self = Instanz von Create
 #               $fileName = Name der Datei die gelöscht werden soll
 #               $fileSource = Verzeichnis in dem sich die Datei befindet
-#               $fileDestination = Verzeichnis in das die Datei kopiert wereden soll
+#               $fileDestination = Verzeichnis in das die Datei kopiert werden soll
 #*****************************************************************************************************
 my $copyFile = sub{
     my ($self,$fileName,$fileSource,$fileDestination)=@_;
@@ -99,10 +99,10 @@ my $copyFile = sub{
 
 #*****************************************************************************************************
 #                                        createDir
-# Beschreibung: Erzeugt einen neuen Verzeichnisses
+# Beschreibung: Erzeugt ein neues Verzeichnis
 # Parameter:    $self = Instanz von Create
 #               $dirName = Name des Verzeichnisses
-#               $dirPath = Path des Verzeichnisses
+#               $dirPath = Pfad des Verzeichnisses
 #*****************************************************************************************************
 my $createDir = sub{
     my ($self,$dirName,$dirPath)=@_;
@@ -130,7 +130,7 @@ my $createDir = sub{
 
 #*****************************************************************************************************
 #                                         copyDir
-# Beschreibung: Kopiert alle Dateien in diesem und allen Unterverzeichnissen
+# Beschreibung: Kopiert alle Dateien in diesem und allen Unterverzeichnissen in das Zielverzeichnis
 # Parameter:    $directory = Aktuelles Unterverzeichnis
 #               $destination = Ziel Unterverzeichnis
 #*****************************************************************************************************
@@ -167,7 +167,7 @@ my $copyDir = sub  {
 
 #*****************************************************************************************************
 #                                        deleteFile
-# Beschreibung: Erzeugt einen neuen symbolischen Link auf eine Datei
+# Beschreibung: Löscht eine Datei im angegebenen Verzeichnis
 # Parameter:    $self = Instanz von Create
 #               $fileName = Name der Datei die gelöscht werden soll
 #               $filePath = Verzeichnis in dem sich die Datei befindet
@@ -198,7 +198,7 @@ my $deleteFile = sub{
 
 #*****************************************************************************************************
 #                                        createLink
-# Beschreibung: Erzeugt einen neuen symbolischen Link auf eine Datei
+# Beschreibung: Erzeugt einen neuen symbolischen Link auf eine Datei im angegebenen Verzeichnis
 # Parameter:    $self = Instanz von Create
 #               $fileName = Name der Datei die verlinkt werden soll
 #               $linkSource = Verzeichnis in dem sich die originale Datei befindet
@@ -238,11 +238,11 @@ my $createLink = sub{
 
 #*****************************************************************************************************
 #                                        updateLink
-# Beschreibung: Erzeugt einen neuen symbolischen Link auf eine Datei
+# Beschreibung: Aktualisiert den symbolischen Link auf die original Datei
 # Parameter:    $self = Instanz von Create
-#               $linkName = Name der Linkdatei
+#               $linkName = Name der Link-Datei
 #               $linkSource = Verzeichnis in dem sich die originale Datei befindet
-#               $linkPath = Verzeichnis in dem sich der Link befindet
+#               $linkPath = Verzeichnis in dem sich die Link-Datei befindet
 #*****************************************************************************************************
 my $updateLink = sub{
     my ($self,$linkName,$linkSource,$linkPath)=@_;
@@ -273,8 +273,9 @@ my $updateLink = sub{
 #                                        getLinkPath
 # Beschreibung: Liefert den Pfad der original Datei zurück
 # Parameter:    $self = Instanz von Create
-#               $linkName = Name der Linkdatei
-#               $linkPath = Verzeichnis in dem sich der Link befindet
+#               $linkName = Name der Link-Datei
+#               $linkPath = Verzeichnis in dem sich die Link-Datei befindet
+# Rückgabe:     Pfad zur originalen Datei
 #*****************************************************************************************************
 my $getLinkPath = sub{
     my ($self,$linkName,$linkPath)=@_;
@@ -304,10 +305,10 @@ my $getLinkPath = sub{
 
 #*****************************************************************************************************
 #                                        getAbsPath
-# Beschreibung: Liefert den absoluten Pfad des Verzeichnisses zurück
+# Beschreibung: Liefert den absoluten Pfad des angegeben Verzeichnisses zurück
 # Parameter:    $self = Instanz von Create
 #               $source = Pfad absolut oder relativ
-# Return:       Absoluten Pfad des Verzeichnisses
+# Rückgabe:     Absoluten Pfad des Verzeichnisses
 #*****************************************************************************************************
 my $getAbsPath = sub {
     my ($self,$source)=@_;
@@ -317,11 +318,11 @@ my $getAbsPath = sub {
 
 #*****************************************************************************************************
 #                                        compareFile
-# Beschreibung: Vergleicht zwei Dateien aus unterschiedlichen Archiven auf Gleichheit
+# Beschreibung: Vergleicht zwei Dateien auf Gleichheit
 # Parameter:    $olderFile = ältere Datei
 #               $newerFile = neuere Datei
-# Return:       "true"  -> Files are equal
-#               "false" -> Files are different
+# Rückgabe:     "true"  -> Dateien sind gleich
+#               "false" -> Dateien sind unterschiedlich
 #*****************************************************************************************************
 my $compareFile = sub  {
     my ($self,$olderFile,$newerFile)=@_;
@@ -373,8 +374,8 @@ my $compareFile = sub  {
 #                                        compareDir
 # Beschreibung: Vergleicht die Archive zur Verschlankung, ist eine Datei unverändert wird diese durch
 #               eine Verlinkung auf das neue Archiv ersetzt
-# Parameter:    $olderDir = altes Archivverzeichnis
-#               $newerDir = neues Archivverzeichnis
+# Parameter:    $olderDir = Älteres Archivverzeichnis
+#               $newerDir = Neueres Archivverzeichnis
 #*****************************************************************************************************
 my $compareDir = sub  {
     my ($self,$compareDir,$olderDir,$newerDir)=@_;
