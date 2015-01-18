@@ -1,5 +1,6 @@
 use strict;
 use warnings;
+use Message;
 
 # Instances
 # Beschreibung: Dieses Modul erzeugt Instanzen von diversen Klassen
@@ -11,7 +12,9 @@ package Instances;
 sub new {
 	my ($invocant, $level) = @_;
 	my $class = ref($invocant) || $invocant;
-	my $self = {};
+	my $self = {
+		message => Message->new
+	};
 	bless ($self, $class);
 	return $self;
 };
@@ -45,8 +48,8 @@ sub restore {
 			use RestoreWin;
 			$restore_instance = RestoreWin->new;
 		} else {
-			use Restore;
-			$restore_instance = Restore->new;
+			print $self->{message}->warning("The restore function is currently not supported under: $^O");
+			exit;
 		}
 	}
 	if ($level and $level > 0) {
