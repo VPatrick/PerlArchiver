@@ -1,0 +1,496 @@
+Create -c
+C:\Perl64\bin>perl my_perl_archive.pl -v -c C:\Perl64\Data C:\Perl64\Archiv
+
+Create slim -cs:
+C:\Perl64\bin>perl my_perl_archive.pl -v -cs C:\Perl64\Data C:\Perl64\Archiv
+
+slim -s
+C:\Perl64\bin>perl my_perl_archive.pl -v -s C:\Perl64\Archiv\8e3b34436cd23aca7266028f3700c854_2015_01_20_10_08_42
+
+6028f3700c854_2015_01_20_10_08_42
+[OK]    New destination added: C:\Perl64\Archiv
+[OK]    New archive name added: 8e3b34436cd23aca7266028f3700c854
+Start create s:
+***************
+
+Compare Archives:
+Older:  8e3b34436cd23aca7266028f3700c854_2015_01_20_10_49_02
+Newer:  8e3b34436cd23aca7266028f3700c854_2015_01_20_10_49_04
+
+Compare Files:
+Older file:     C:\Perl64\Archiv\8e3b34436cd23aca7266028f3700c854_2015_01_20_10_
+49_02\Dateiaufrufe.txt
+Newer file:     C:\Perl64\Archiv\8e3b34436cd23aca7266028f3700c854_2015_01_20_10_
+49_04\Dateiaufrufe.txt
+[OK]    Files are equal!
+
+Delete file:
+C:\Perl64\Archiv\8e3b34436cd23aca7266028f3700c854_2015_01_20_10_49_02\Dateiaufru
+fe.txt
+[OK]    Deleted!
+
+Link files:
+Original:       C:\Perl64\Archiv\8e3b34436cd23aca7266028f3700c854_2015_01_20_10_
+49_02\Dateiaufrufe.txt
+Link:           C:\Perl64\Archiv\8e3b34436cd23aca7266028f3700c854_2015_01_20_10_
+49_04\Dateiaufrufe.txt
+[OK]    Linked!
+
+Compare Files:
+Older file:     C:\Perl64\Archiv\8e3b34436cd23aca7266028f3700c854_2015_01_20_10_
+49_02\test.txt
+Newer file:     C:\Perl64\Archiv\8e3b34436cd23aca7266028f3700c854_2015_01_20_10_
+49_04\test.txt
+[OK]    Files are equal!
+
+Delete file:
+C:\Perl64\Archiv\8e3b34436cd23aca7266028f3700c854_2015_01_20_10_49_02\test.txt
+[OK]    Deleted!
+
+Link files:
+Original:       C:\Perl64\Archiv\8e3b34436cd23aca7266028f3700c854_2015_01_20_10_
+49_02\test.txt
+Link:           C:\Perl64\Archiv\8e3b34436cd23aca7266028f3700c854_2015_01_20_10_
+49_04\test.txt
+[OK]    Linked!
+
+Compare Diretory:
+Older Directory:        C:\Perl64\Archiv\8e3b34436cd23aca7266028f3700c854_2015_0
+1_20_10_49_02\Unterordner
+Newer Directory:        C:\Perl64\Archiv\8e3b34436cd23aca7266028f3700c854_2015_0
+1_20_10_49_04\Unterordner
+
+Compare Files:
+Older file:     C:\Perl64\Archiv\8e3b34436cd23aca7266028f3700c854_2015_01_20_10_
+49_02\Unterordner\utext.txt
+Newer file:     C:\Perl64\Archiv\8e3b34436cd23aca7266028f3700c854_2015_01_20_10_
+49_04\Unterordner\utext.txt
+[OK]    Files are equal!
+
+Delete file:
+C:\Perl64\Archiv\8e3b34436cd23aca7266028f3700c854_2015_01_20_10_49_02\Unterordne
+r\utext.txt
+[OK]    Deleted!
+
+Link files:
+Original:       C:\Perl64\Archiv\8e3b34436cd23aca7266028f3700c854_2015_01_20_10_
+49_02\Unterordner\utext.txt
+Link:           C:\Perl64\Archiv\8e3b34436cd23aca7266028f3700c854_2015_01_20_10_
+49_04\Unterordner\utext.txt
+[OK]    Linked!
+
+Compare Archives:
+Older:  8e3b34436cd23aca7266028f3700c854_2015_01_20_10_49_00
+Newer:  8e3b34436cd23aca7266028f3700c854_2015_01_20_10_49_02
+
+Get original file path from link:
+Link:   C:\Perl64\Archiv\8e3b34436cd23aca7266028f3700c854_2015_01_20_10_49_02\Da
+teiaufrufe.txt.lnk
+Path:   C:\Perl64\Archiv\8e3b34436cd23aca7266028f3700c854_2015_01_20_10_49_04\Da
+teiaufrufe.txt
+[OK]    Link found!
+
+Compare Files:
+Older file:     C:\Perl64\Archiv\8e3b34436cd23aca7266028f3700c854_2015_01_20_10_
+49_00\Dateiaufrufe.txt
+Newer file:     C:\Perl64\Archiv\8e3b34436cd23aca7266028f3700c854_2015_01_20_10_
+49_04\Dateiaufrufe.txt
+[OK]    Files are equal!
+
+Delete file:
+C:\Perl64\Archiv\8e3b34436cd23aca7266028f3700c854_2015_01_20_10_49_00\Dateiaufru
+fe.txt
+[OK]    Deleted!
+
+Link files:
+Original:       C:\Perl64\Archiv\8e3b34436cd23aca7266028f3700c854_2015_01_20_10_
+49_00\Dateiaufrufe.txt
+Link:           C:\Perl64\Archiv\8e3b34436cd23aca7266028f3700c854_2015_01_20_10_
+49_04\Dateiaufrufe.txt
+[OK]    Linked!
+
+Get original file path from link:
+Link:   C:\Perl64\Archiv\8e3b34436cd23aca7266028f3700c854_2015_01_20_10_49_02\te
+st.txt.lnk
+Path:   C:\Perl64\Archiv\8e3b34436cd23aca7266028f3700c854_2015_01_20_10_49_04\te
+st.txt
+[OK]    Link found!
+
+Compare Files:
+Older file:     C:\Perl64\Archiv\8e3b34436cd23aca7266028f3700c854_2015_01_20_10_
+49_00\test.txt
+Newer file:     C:\Perl64\Archiv\8e3b34436cd23aca7266028f3700c854_2015_01_20_10_
+49_04\test.txt
+[OK]    Files are equal!
+
+Delete file:
+C:\Perl64\Archiv\8e3b34436cd23aca7266028f3700c854_2015_01_20_10_49_00\test.txt
+[OK]    Deleted!
+
+Link files:
+Original:       C:\Perl64\Archiv\8e3b34436cd23aca7266028f3700c854_2015_01_20_10_
+49_00\test.txt
+Link:           C:\Perl64\Archiv\8e3b34436cd23aca7266028f3700c854_2015_01_20_10_
+49_04\test.txt
+[OK]    Linked!
+
+Compare Diretory:
+Older Directory:        C:\Perl64\Archiv\8e3b34436cd23aca7266028f3700c854_2015_0
+1_20_10_49_00\Unterordner
+Newer Directory:        C:\Perl64\Archiv\8e3b34436cd23aca7266028f3700c854_2015_0
+1_20_10_49_02\Unterordner
+
+Get original file path from link:
+Link:   C:\Perl64\Archiv\8e3b34436cd23aca7266028f3700c854_2015_01_20_10_49_02\Un
+terordner\utext.txt.lnk
+Path:   C:\Perl64\Archiv\8e3b34436cd23aca7266028f3700c854_2015_01_20_10_49_04\Un
+terordner\utext.txt
+[OK]    Link found!
+
+Compare Files:
+Older file:     C:\Perl64\Archiv\8e3b34436cd23aca7266028f3700c854_2015_01_20_10_
+49_00\Unterordner\utext.txt
+Newer file:     C:\Perl64\Archiv\8e3b34436cd23aca7266028f3700c854_2015_01_20_10_
+49_04\Unterordner\utext.txt
+[OK]    Files are equal!
+
+Delete file:
+C:\Perl64\Archiv\8e3b34436cd23aca7266028f3700c854_2015_01_20_10_49_00\Unterordne
+r\utext.txt
+[OK]    Deleted!
+
+Link files:
+Original:       C:\Perl64\Archiv\8e3b34436cd23aca7266028f3700c854_2015_01_20_10_
+49_00\Unterordner\utext.txt
+Link:           C:\Perl64\Archiv\8e3b34436cd23aca7266028f3700c854_2015_01_20_10_
+49_04\Unterordner\utext.txt
+[OK]    Linked!
+
+Compare Archives:
+Older:  8e3b34436cd23aca7266028f3700c854_2015_01_20_10_40_57
+Newer:  8e3b34436cd23aca7266028f3700c854_2015_01_20_10_49_00
+
+Get original file path from link:
+Link:   C:\Perl64\Archiv\8e3b34436cd23aca7266028f3700c854_2015_01_20_10_49_00\Da
+teiaufrufe.txt.lnk
+Path:   C:\Perl64\Archiv\8e3b34436cd23aca7266028f3700c854_2015_01_20_10_49_04\Da
+teiaufrufe.txt
+[OK]    Link found!
+
+Compare Files:
+Older file:     C:\Perl64\Archiv\8e3b34436cd23aca7266028f3700c854_2015_01_20_10_
+40_57\Dateiaufrufe.txt
+Newer file:     C:\Perl64\Archiv\8e3b34436cd23aca7266028f3700c854_2015_01_20_10_
+49_04\Dateiaufrufe.txt
+[OK]    Files are equal!
+
+Delete file:
+C:\Perl64\Archiv\8e3b34436cd23aca7266028f3700c854_2015_01_20_10_40_57\Dateiaufru
+fe.txt
+[OK]    Deleted!
+
+Link files:
+Original:       C:\Perl64\Archiv\8e3b34436cd23aca7266028f3700c854_2015_01_20_10_
+40_57\Dateiaufrufe.txt
+Link:           C:\Perl64\Archiv\8e3b34436cd23aca7266028f3700c854_2015_01_20_10_
+49_04\Dateiaufrufe.txt
+[OK]    Linked!
+
+Get original file path from link:
+Link:   C:\Perl64\Archiv\8e3b34436cd23aca7266028f3700c854_2015_01_20_10_49_00\te
+st.txt.lnk
+Path:   C:\Perl64\Archiv\8e3b34436cd23aca7266028f3700c854_2015_01_20_10_49_04\te
+st.txt
+[OK]    Link found!
+
+Compare Files:
+Older file:     C:\Perl64\Archiv\8e3b34436cd23aca7266028f3700c854_2015_01_20_10_
+40_57\test.txt
+Newer file:     C:\Perl64\Archiv\8e3b34436cd23aca7266028f3700c854_2015_01_20_10_
+49_04\test.txt
+[OK]    Files are equal!
+
+Delete file:
+C:\Perl64\Archiv\8e3b34436cd23aca7266028f3700c854_2015_01_20_10_40_57\test.txt
+[OK]    Deleted!
+
+Link files:
+Original:       C:\Perl64\Archiv\8e3b34436cd23aca7266028f3700c854_2015_01_20_10_
+40_57\test.txt
+Link:           C:\Perl64\Archiv\8e3b34436cd23aca7266028f3700c854_2015_01_20_10_
+49_04\test.txt
+[OK]    Linked!
+
+Compare Diretory:
+Older Directory:        C:\Perl64\Archiv\8e3b34436cd23aca7266028f3700c854_2015_0
+1_20_10_40_57\Unterordner
+Newer Directory:        C:\Perl64\Archiv\8e3b34436cd23aca7266028f3700c854_2015_0
+1_20_10_49_00\Unterordner
+
+Get original file path from link:
+Link:   C:\Perl64\Archiv\8e3b34436cd23aca7266028f3700c854_2015_01_20_10_49_00\Un
+terordner\utext.txt.lnk
+Path:   C:\Perl64\Archiv\8e3b34436cd23aca7266028f3700c854_2015_01_20_10_49_04\Un
+terordner\utext.txt
+[OK]    Link found!
+
+Compare Files:
+Older file:     C:\Perl64\Archiv\8e3b34436cd23aca7266028f3700c854_2015_01_20_10_
+40_57\Unterordner\utext.txt
+Newer file:     C:\Perl64\Archiv\8e3b34436cd23aca7266028f3700c854_2015_01_20_10_
+49_04\Unterordner\utext.txt
+[OK]    Files are equal!
+
+Delete file:
+C:\Perl64\Archiv\8e3b34436cd23aca7266028f3700c854_2015_01_20_10_40_57\Unterordne
+r\utext.txt
+[OK]    Deleted!
+
+Link files:
+Original:       C:\Perl64\Archiv\8e3b34436cd23aca7266028f3700c854_2015_01_20_10_
+40_57\Unterordner\utext.txt
+Link:           C:\Perl64\Archiv\8e3b34436cd23aca7266028f3700c854_2015_01_20_10_
+49_04\Unterordner\utext.txt
+[OK]    Linked!
+
+Compare Archives:
+Older:  8e3b34436cd23aca7266028f3700c854_2015_01_20_10_11_45
+Newer:  8e3b34436cd23aca7266028f3700c854_2015_01_20_10_40_57
+
+Get original file path from link:
+Link:   C:\Perl64\Archiv\8e3b34436cd23aca7266028f3700c854_2015_01_20_10_40_57\Da
+teiaufrufe.txt.lnk
+Path:   C:\Perl64\Archiv\8e3b34436cd23aca7266028f3700c854_2015_01_20_10_49_04\Da
+teiaufrufe.txt
+[OK]    Link found!
+
+Compare Files:
+Older file:     C:\Perl64\Archiv\8e3b34436cd23aca7266028f3700c854_2015_01_20_10_
+11_45\Dateiaufrufe.txt
+Newer file:     C:\Perl64\Archiv\8e3b34436cd23aca7266028f3700c854_2015_01_20_10_
+49_04\Dateiaufrufe.txt
+[OK]    Files are equal!
+
+Delete file:
+C:\Perl64\Archiv\8e3b34436cd23aca7266028f3700c854_2015_01_20_10_11_45\Dateiaufru
+fe.txt
+[OK]    Deleted!
+
+Link files:
+Original:       C:\Perl64\Archiv\8e3b34436cd23aca7266028f3700c854_2015_01_20_10_
+11_45\Dateiaufrufe.txt
+Link:           C:\Perl64\Archiv\8e3b34436cd23aca7266028f3700c854_2015_01_20_10_
+49_04\Dateiaufrufe.txt
+[OK]    Linked!
+
+Compare Archives:
+Older:  8e3b34436cd23aca7266028f3700c854_2015_01_20_10_10_20
+Newer:  8e3b34436cd23aca7266028f3700c854_2015_01_20_10_11_45
+
+Get original file path from link:
+Link:   C:\Perl64\Archiv\8e3b34436cd23aca7266028f3700c854_2015_01_20_10_11_45\Da
+teiaufrufe.txt.lnk
+Path:   C:\Perl64\Archiv\8e3b34436cd23aca7266028f3700c854_2015_01_20_10_49_04\Da
+teiaufrufe.txt
+[OK]    Link found!
+
+Compare Files:
+Older file:     C:\Perl64\Archiv\8e3b34436cd23aca7266028f3700c854_2015_01_20_10_
+10_20\Dateiaufrufe.txt
+Newer file:     C:\Perl64\Archiv\8e3b34436cd23aca7266028f3700c854_2015_01_20_10_
+49_04\Dateiaufrufe.txt
+[OK]    Files are diffrent!
+
+Compare Archives:
+Older:  8e3b34436cd23aca7266028f3700c854_2015_01_20_10_08_42
+Newer:  8e3b34436cd23aca7266028f3700c854_2015_01_20_10_10_20
+
+
+
+
+
+
+restore -r
+C:\Perl64\bin>perl my_perl_archive.pl -v -r C:\Perl64\Archiv C:\Perl64\Data 8e3b34436cd23aca7266028f3700c854 2015_01_20_13_13_13
+
+New source added: C:/Perl64/Archiv
+New destination added: C:/Perl64/Data
+New source name added: 8e3b34436cd23aca7266028f3700c854
+New usertime added: 2015_01_20_13_13_13
+[OK]    Start Restore r.
+
+[OK]    Call FindArchive
+
+[ERROR] Can't find Archiv with the same name!
+Died at RestoreWin.pm line 405, <TXT> line 1.
+[ERROR] Error in command line arguements.
+
+partial -p
+C:\Perl64\bin>perl my_perl_archive.pl -v -r -p C:\Perl64\Archiv\8e3b34436cd23aca
+7266028f3700c854_2015_01_20_10_08_42\test.txt.lnk
+[ERROR] Wrong amount of parameters given: Path to source directory, path to dest
+ination direcotry, source name and timestamp needed.
+
+C:\Perl64\bin>perl my_perl_archive.pl -v -r C:\Perl64\Archiv C:\Perl64\Data 8e3b
+34436cd23aca7266028f3700c854 2015_01_20_10_08_42 text.txt.lnk
+New source added: C:/Perl64/Archiv
+New destination added: C:/Perl64/Data
+New source name added: 8e3b34436cd23aca7266028f3700c854
+New usertime added: 2015_01_20_10_08_42
+[OK]    Start Restore r.
+
+[OK]    Call FindArchive
+
+[ERROR] Can't find Archiv with the same name!
+Died at RestoreWin.pm line 405, <TXT> line 1.
+[ERROR] Error in command line arguements.
+
+
+Delete Archiv -d:
+
+C:\Perl64\bin>perl my_perl_archive.pl -v -d C:\Perl64\Archiv\8e3b34436cd23aca7266028f3700c854_2015_01_20_10_27_26
+
+[OK]    Added new path to delete:
+        C:/Perl64/Archiv/8e3b34436cd23aca7266028f3700c854_2015_01_20_10_27_26
+[OK]    Start Delete d.
+[OK]    Start Delete-Check.
+
+[WARNING]       Do you really want to delete this file or directory:
+        C:/Perl64/Archiv/8e3b34436cd23aca7266028f3700c854_2015_01_20_10_27_26?
+        (Y/N)
+y
+[OK]    Start delete:
+        C:/Perl64/Archiv/8e3b34436cd23aca7266028f3700c854_2015_01_20_10_27_26.
+[OK]    Searching for previous folders.
+
+[OK]    Found previous folder:
+        8e3b34436cd23aca7266028f3700c854_2015_01_20_10_27_22
+[OK]    Found previous folder:
+        8e3b34436cd23aca7266028f3700c854_2015_01_20_10_11_45
+[OK]    Found previous folder:
+        8e3b34436cd23aca7266028f3700c854_2015_01_20_10_10_20
+[OK]    Found previous folder:
+        8e3b34436cd23aca7266028f3700c854_2015_01_20_10_08_42
+
+[OK]    Searching for linked files in previous folder:
+        8e3b34436cd23aca7266028f3700c854_2015_01_20_10_27_22
+
+[OK]    Delete C:/Perl64/Archiv/8e3b34436cd23aca7266028f3700c854_2015_01_20_10_2
+7_26!
+
+
+
+
+C:\Perl64\bin>perl my_perl_archive.pl -v -d C:\Perl64\Archiv\8e3b34436cd23aca726
+
+6028f3700c854_2015_01_20_10_11_45\Unterordner
+[OK]    Added new path to delete:
+        C:/Perl64/Archiv/8e3b34436cd23aca7266028f3700c854_2015_01_20_10_11_45/Un
+terordner
+[OK]    Start Delete d.
+[OK]    Start Delete-Check.
+
+[WARNING]       Do you really want to delete this file or directory:
+        C:/Perl64/Archiv/8e3b34436cd23aca7266028f3700c854_2015_01_20_10_11_45/Un
+terordner?
+        (Y/N)
+y
+[OK]    Start delete:
+        C:/Perl64/Archiv/8e3b34436cd23aca7266028f3700c854_2015_01_20_10_11_45/Un
+terordner.
+[OK]    Searching for previous folders.
+
+[OK]    Found previous folder:
+        8e3b34436cd23aca7266028f3700c854_2015_01_20_10_10_20
+[OK]    Found previous folder:
+        8e3b34436cd23aca7266028f3700c854_2015_01_20_10_08_42
+
+[OK]    Searching for linked files in previous folder:
+        8e3b34436cd23aca7266028f3700c854_2015_01_20_10_10_20/Unterordner
+
+[OK]    Found linked file utext.txt.lnk in
+        C:\Perl64\Archiv\8e3b34436cd23aca7266028f3700c854_2015_01_20_10_10_20\Un
+terordner\utext.txt.lnk
+        with links to current directory.
+
+[OK]    Copying file utext.txt from current directory in previous folder.
+[OK]    Delete unnecessary link utext.txt.lnk in previous folder.
+[OK]    Delete C:/Perl64/Archiv/8e3b34436cd23aca7266028f3700c854_2015_01_20_10_1
+1_45/Unterordner!
+
+C:\Perl64\bin>perl my_perl_archive.pl -v -d C:\Perl64\Archiv\8e3b34436cd23aca726
+6028f3700c854_2015_01_20_10_11_45\test.txt
+[OK]    Added new path to delete:
+        C:/Perl64/Archiv/8e3b34436cd23aca7266028f3700c854_2015_01_20_10_11_45/te
+st.txt
+[OK]    Start Delete d.
+[OK]    Start Delete-Check.
+
+[WARNING]       Do you really want to delete this file or directory:
+        C:/Perl64/Archiv/8e3b34436cd23aca7266028f3700c854_2015_01_20_10_11_45/te
+st.txt?
+        (Y/N)
+y
+[OK]    Start delete:
+        C:/Perl64/Archiv/8e3b34436cd23aca7266028f3700c854_2015_01_20_10_11_45/te
+st.txt.
+[OK]    Searching for previous folders.
+
+[OK]    Found previous folder:
+        8e3b34436cd23aca7266028f3700c854_2015_01_20_10_10_20
+[OK]    Found previous folder:
+        8e3b34436cd23aca7266028f3700c854_2015_01_20_10_08_42
+
+[OK]    Searching for linked files in previous folder:
+        8e3b34436cd23aca7266028f3700c854_2015_01_20_10_10_20/test.txt
+
+[OK]    Found linked file test.txt.lnk in
+        C:\Perl64\Archiv\8e3b34436cd23aca7266028f3700c854_2015_01_20_10_10_20\te
+st.txt.lnk
+        with links to current directory.
+
+[OK]    Copying file test.txt from current directory in previous folder.
+[OK]    Delete unnecessary link test.txt.lnk in previous folder.
+[OK]    Found linked file test.txt.lnk in
+        C:\Perl64\Archiv\8e3b34436cd23aca7266028f3700c854_2015_01_20_10_08_42\te
+st.txt.lnk
+        with links to current directory.
+[OK]    Updating link
+        C:\Perl64\Archiv\8e3b34436cd23aca7266028f3700c854_2015_01_20_10_08_42\te
+st.txt.lnk
+        to new directory.
+
+[OK]    Delete C:/Perl64/Archiv/8e3b34436cd23aca7266028f3700c854_2015_01_20_10_1
+1_45/test.txt!
+
+
+
+
+List -l
+C:\Perl64\bin>perl my_perl_archive.pl -v -l C:\Perl64\Archiv\8e3b34436cd23aca7266028f3700c854_2015_01_20_10_08_42 2015_01_31_11_11_11
+Compare times
+Compare 2015_01_20_10_08_42 with 2015_01_31_11_11_11
+Compare times
+Compare 2015_01_20_10_10_20 with 2015_01_31_11_11_11
+Compare times
+Compare 2015_01_20_10_11_45 with 2015_01_31_11_11_11
+Compare times
+Compare 2015_01_20_10_40_57 with 2015_01_31_11_11_11
+Compare times
+Compare 2015_01_20_10_49_00 with 2015_01_31_11_11_11
+Compare times
+Compare 2015_01_20_10_49_02 with 2015_01_31_11_11_11
+Compare times
+Compare 2015_01_20_10_49_04 with 2015_01_31_11_11_11
+        /Dateiaufrufe.txt
+        /test.txt
+dir     /Unterordner
+        /utext.txt
+
+
+
+C:\Perl64\bin>perl my_perl_archive.pl -m C:\Perl64\Archiv
+8e3b34436cd23aca7266028f3700c854 : C:/Perl64/Data
+
+
+

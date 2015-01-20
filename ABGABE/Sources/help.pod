@@ -1,0 +1,75 @@
+=head1 NAME
+
+my_perl_archiver - Create, Restore, Delete and List archives
+
+=head1 SYNOPSIS
+
+my_perl_archiver [options] [file ...]
+
+Options:
+
+	--create|-c		Create an archive
+	--restore|-r|-r	Restore an archive
+	--partial|-p	Restore a subdirecotry or a file
+	--delete|-d		Delete an existing archive
+	--list|-l		List all files of an existing archive
+	--slim|-s		Slim
+	--mapping|-m	List all mappings of hashes and paths
+
+Folgende Kombinationen von Switches in Kurz- und Langform sind nicht erlaubt: cr, cd, cl, cp, cm, ch, rc, rd, rl, rs, rm, rh, dc, dr, dp, dl, ds, dm, dh, lc, lr, ld, lp, ls, lm, lh, mc, mr, md, ml, mh, hc, hr, hd, hl, hm, hv.
+
+=head1 OPTIONS
+
+=over 4
+
+=item B<-create> [Path to source directory] [Path to destination directory]
+
+Creating a backup (copy) of a directory and all its subdirectories in an arbitrary target directory.
+
+=item B<-restore> [Path to source direcotory] [Path to destination directory] [Source name] [Timestamp]
+
+Restoring a file, a subdirectory or all of the archived directory.
+
+=item B<-partial> [Relative path to object which should be restored]
+
+Is only valid in combination with B<-r>-switch.
+
+=item B<-delete> [Path to object which should be deleted]
+
+Removal of archive of a directory including its subdirectories or removing parts (subdirectories and files) of an archive
+
+=item B<-list> [Path to archive directory] [Timestamp]
+
+List all files, links and subdirectories of an archive.
+
+=item B<-slim> [Path to destination directory]
+
+Care is taken that the totality of all archives of a subdirectory consumes as little space.
+
+=item B<-verbose> [Optional level]
+
+Cause B<my_perl_archiver> to be verbose
+
+=item B<-mapping> [Archive] [Filename of hash table]
+
+List all mappings of hashes and paths.
+
+=item B<-help>
+
+Prints the manual page and exits.
+
+=back
+
+=head1 DESCRIPTION
+
+B<my_perl_archiver> will create archives. If an archive exists B<my_perl_archiver> will restore, delete or list it.
+
+=head1 AUTHORS
+
+Patrick Vogt, Michel Angelo Rammuno, Muhammed Kasikci, Michaela Fentze
+
+Technische Hochschule Georg-Simon-Ohm Nuernberg
+
+Prof. Dr.-Ing. Axel Hein
+
+=cut
