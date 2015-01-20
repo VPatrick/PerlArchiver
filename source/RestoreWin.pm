@@ -103,7 +103,7 @@ sub restore_r{
     $self->{verbosity}->verbose("Call Restore Directory!\n","OK");
     $self->RestoreDirectory
     (
-    $SourceArchiv,
+		$SourceArchiv,
     );
 }
 
@@ -157,10 +157,14 @@ sub restore_rp{
         $self->{verbosity}->verbose("Partial is not a relative path. The first match will be processed.\n","WARNING");
         $self->{verbosity}->verbose("Call Find_source_rp\n","OK");
         # Es wird rekursiv nach einem Match gesucht und der erste Treffer wird zurückgegeben
-        $FileorArchivSource = $self->Find_source_rp
+		my @tmp = split(/\\/,$self->{partial});
+		my $Partial = "";
+		foreach (@tmp)
+		{$Partial = $_ if ($_ ne "");}
+		$FileorArchivSource = $self->Find_source_rp
         (
-        $SourceArchiv,
-        $self->{partial},
+			$SourceArchiv,
+			$Partial,
         );
         $self->{verbosity}->verbose("The given source subdirectory or file does not exist!\n","ERROR") if(!(-f $FileorArchivSource || -d $FileorArchivSource));
         die if (!(-f $FileorArchivSource || -d $FileorArchivSource || $FileorArchivSource =~ m/.lnk$/i));
@@ -171,7 +175,7 @@ sub restore_rp{
         $FileorArchivDestination = $self->Find_source_rp
         (
         $destination,
-        $self->{partial},
+        $Partial,
         );
         $self->{verbosity}->verbose("The given destination subdirectory or file does not exist!\n","ERROR") if(!(-f $FileorArchivSource || -d $FileorArchivSource));
     }
