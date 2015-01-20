@@ -389,25 +389,10 @@ sub RestoreFile{
 ##########################################################################################
 sub FindArchive{
     my $self = shift;
-    my $hash = "";
-    open (TXT, "$self->{source}\\hashtable.txt") or die "Can not open hashtable file!";
-    while(<TXT>)
-    {
-        if($_ =~ m/$self->{sourcename}$/)
-        {
-            my @tmp = split(/:/,$_,2);
-            $hash = $tmp[0];
-            $self->{verbosity}->verbose("Find Hash: $hash","OK");
-        }
-    }
-    if($hash eq ""){
-        $self->{verbosity}->verbose("Can't find Archiv with the same name!","ERROR");
-        die;
-    }
     use Utils;
     my $tmp = Utils->new();
     $self->{verbosity}->verbose("Call findLastValidArchive","OK");
-    return $tmp->findLastValidArchive($self->{source}, $self->{usertime},$hash);
+    return $tmp->findLastValidArchive($self->{source}, $self->{usertime},$self->{sourcename});
 }
 
 ##########################################################################################
